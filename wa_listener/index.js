@@ -41,6 +41,7 @@ if (existsSync(envPath)) {
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
+const PAIRING_PHONE_NUMBER = process.env.WA_PAIRING_PHONE_NUMBER?.replace(/\D/g, "");
 const AUTH_DIR = process.env.AUTH_DIR || join(__dir, "auth_state");
 const RECONNECT_DELAY_MS = 5_000;
 const MAX_RECONNECTS = 120;
@@ -216,6 +217,21 @@ async function connectToWhatsApp() {
     markOnlineOnConnect: false,
     generateHighQualityLinkPreview: false,
   });
+
+  if (!state.creds.registered && PAIRING_PHONE_NUMBER) {
+    setTimeout(async () => {
+      try {
+        const code = await sock.requestPairingCode(PAIRING_PHONE_NUMBER);
+        console.log("");
+        console.log("WhatsApp pairing code:");
+        console.log(code);
+        console.log("");
+        console.log("Open WhatsApp -> Linked devices -> Link with phone number instead.");
+      } catch (error) {
+        console.error("Error requesting WhatsApp pairing code:", error?.message || error);
+      }
+    }, 2_000);
+  }
 
   sock.ev.on("connection.update", async ({ connection, lastDisconnect, qr }) => {
     if (qr) {

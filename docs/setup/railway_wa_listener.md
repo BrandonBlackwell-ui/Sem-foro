@@ -21,9 +21,14 @@ Set these in Railway service variables:
 SUPABASE_URL=https://vqgfkfvywbpjldreuplb.supabase.co
 SUPABASE_SERVICE_KEY=your_service_role_key
 AUTH_DIR=/data/auth_state
+WA_PAIRING_PHONE_NUMBER=5215512345678
 ```
 
 Do not put these values in git.
+
+`WA_PAIRING_PHONE_NUMBER` is optional but recommended on Railway because log
+timestamps can make terminal QR codes hard to scan. Use digits only, including
+country code.
 
 ## Persistent volume
 
@@ -45,7 +50,9 @@ Without this volume, every redeploy/restart may require scanning a new QR.
 
 1. Deploy the service.
 2. Open Railway logs.
-3. Scan the QR printed by the listener.
+3. If `WA_PAIRING_PHONE_NUMBER` is set, use the printed pairing code in
+   WhatsApp -> Linked devices -> Link with phone number instead.
+   Otherwise, scan the QR printed by the listener.
 4. Wait for:
 
 ```txt
