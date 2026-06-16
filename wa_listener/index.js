@@ -24,7 +24,7 @@ import QRCode from "qrcode";
 import qrcode from "qrcode-terminal";
 import pino from "pino";
 import WebSocket from "ws";
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, rmSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -335,8 +335,15 @@ async function connectToWhatsApp() {
           );
           setTimeout(connectToWhatsApp, PAIRING_RETRY_DELAY_MS);
         } else {
-          console.log("Session logged out. Delete wa_listener/auth_state and restart to scan a new QR.");
-          process.exit(1);
+          reconnectCount++;
+          latestQrDataUrl = null;
+          latestQrAt = null;
+          console.log(
+            "Session logged out. Clearing saved WhatsApp auth state " +
+            `from ${AUTH_DIR} and waiting ${Math.round(PAIRING_RETRY_DELAY_MS / 1000)}s for a new QR...`
+          );
+          rmSync(AUTH_DIR, { recursive: true, force: true });
+          setTimeout(connectToWhatsApp, PAIRING_RETRY_DELAY_MS);
         }
       } else {
         console.error("Maximum reconnect attempts reached. Restart the listener manually.");
