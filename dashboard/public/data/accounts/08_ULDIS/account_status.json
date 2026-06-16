@@ -1,0 +1,363 @@
+{
+  "number": "08",
+  "folderTitle": "08. ULDIS",
+  "folderId": "1gozsVYahJl5rKdbv0DCPtplzRZn6oqQc",
+  "folderModifiedTime": "2026-02-09T19:17:02.950Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "_chat (1).txt (en WhatsApp Chat - Interno Uldis-09Junio2026)",
+    "modifiedTime": "2026-06-09T16:45:42Z",
+    "source": "04.Conversaciones_WA"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-05T00:00:00Z",
+    "source": "02. ULDIS_Entregables",
+    "file": "ULDIS NOTA REFORMA 4 DE MARZO 2026",
+    "fileId": "1aG-9dVujsGeCIBw1z8x89GfS-93QXss0LRnIar6FGEc"
+  },
+  "subfolderActivity": {
+    "01.Contrato_OC": {
+      "subfolderId": "15Swoy07rF8Moo9AlO7GmnzgYzYeE5EsG",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:07Z_verify",
+      "last_verified_at": "2026-06-12T14:09:07Z"
+    },
+    "02. ULDIS_Entregables": {
+      "subfolderId": "1RY7sbZBdmwQUpQPDkW5cGJBSIexEhOr3",
+      "fileCount": 11,
+      "latestModified": "2026-05-05T19:34:39.493000Z",
+      "latestFile": " ULDIS NOTA REFORMA 4 DE MAYO 2026",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T23:38:32Z_verify",
+      "last_verified_at": "2026-06-10T23:38:32Z"
+    },
+    "03. ULDIS_Reportes_Avance": {
+      "subfolderId": "1xGWe92mHOOArIL796U0-paPqVRjxDG6E",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T23:38:32Z_verify",
+      "last_verified_at": "2026-06-10T23:38:32Z"
+    },
+    "04.Conversaciones_WA": {
+      "subfolderId": "1xvbhTmNzO2qA3LoVuB6Tu8ycv5zdiG2J",
+      "fileCount": 14,
+      "latestModified": "2026-06-09T16:45:42Z",
+      "latestFile": "_chat (1).txt (en WhatsApp Chat - Interno Uldis-09Junio2026)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T23:38:33Z_verify",
+      "last_verified_at": "2026-06-10T23:38:33Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Interno Uldis-09Junio2026, WhatsApp Chat - Interno Uldis"
+    },
+    "05. ULDIS_Transcripciones_Llamadas": {
+      "subfolderId": "1XqRO7e9kO3pryn-xH-WxAUMk7ff-CL-n",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T23:38:34Z_verify",
+      "last_verified_at": "2026-06-10T23:38:34Z"
+    },
+    "06. ULDIS_Agenda_Trabajos": {
+      "subfolderId": "1c1wya_LHto7w7IQFCE9vCNz6NrX2bmk-",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T23:38:34Z_verify",
+      "last_verified_at": "2026-06-10T23:38:34Z"
+    }
+  },
+  "pqProxy": {
+    "score": 54,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable es un artículo editorial (op-ed 'La trampa de la bancarización') sobre UIF y criptomonedas, con fuentes verificadas (INEGI, SCJN, FinCEN). Es contenido pre-colocación de alta calidad, no un reporte de resultados. Calidad narrativa muy alta. | DELTA 2026-05-06: PQ: dos publicaciones Reforma en ventana de 60 días sobre tema core suben PQ; falta EPV explícito.",
+    "suggestion": "Adjuntar EPV/Meltwater a cada link Reforma y montar tracker mensual de publicaciones para visibilizar PQ.",
+    "fileEvaluated": "ULDIS NOTA REFORMA 4 DE MARZO 2026",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Adjuntar EPV/Meltwater a cada link Reforma y montar tracker mensual de publicaciones para visibilizar PQ.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "baja",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-10T23:38:19Z",
+  "driveFiles": [
+    {
+      "id": "1ABEvGufc-VIGjPg0m6wzSgCYcjzYRvvQ",
+      "name": "_chat (1).txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-06-09T16:45:42.000Z",
+      "size": "23026",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis-09Junio2026"
+    },
+    {
+      "id": "1g6pvyuzRMuPmYALK7c4z-btoxZ8y4_oY",
+      "name": "00003139-Reformas fiscales_ Del cumplimiento fiscal al riesgo penal.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-28T13:12:16.000Z",
+      "size": "8415",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis-09Junio2026"
+    },
+    {
+      "id": "1JDBoodIoYyGJtyZH2j_JwbYVycAx5aNd",
+      "name": "00003124-uldis mena lapinch - Buscar con Google.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-27T18:32:14.000Z",
+      "size": "396530",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis-09Junio2026"
+    },
+    {
+      "id": "18lMy_UsA3qlLd737wXfkJfhWBPc3FTZR",
+      "name": "00003101-Plan_Posicionamiento_Uldis_VF.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-27T18:19:50.000Z",
+      "size": "105553",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis-09Junio2026"
+    },
+    {
+      "id": "1NQw47RL4Wf0zMU6zm6eYbqC73XqPUYxy",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T18:27:30.000Z",
+      "size": "8605",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis"
+    },
+    {
+      "id": "1T2YvLavpStTOs0ZN6H2RVloxUo68EuK0",
+      "name": "00003080-PHOTO-2026-05-07-11-27-21 (1).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T17:27:20.000Z",
+      "size": "190951",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis-09Junio2026"
+    },
+    {
+      "id": "16bKz6bBu0ipIceI9HQBSvsuFHNFMiH1T",
+      "name": "00003080-PHOTO-2026-05-07-11-27-21.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T17:27:20.000Z",
+      "size": "190951",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis"
+    },
+    {
+      "id": "161bf-e2U2GNdVdpNGZ8kH5CaUZRi0DQY",
+      "name": "00003078-Uldis Mena Lapinch - Top 10 Google (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T17:19:04.000Z",
+      "size": "354458",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis-09Junio2026"
+    },
+    {
+      "id": "1tAPEjjfwuO3uZEhDqSDFJAEp_bFx-Fy1",
+      "name": "00003078-Uldis Mena Lapinch - Top 10 Google.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T17:19:04.000Z",
+      "size": "354458",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis"
+    },
+    {
+      "id": "1XIaRaKFVspakoXuaQG5iXFVUQF45uDaw",
+      "name": "00003072-AUDIO-2026-05-07-11-16-09 (1).opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-07T17:16:10.000Z",
+      "size": "47480",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis-09Junio2026"
+    },
+    {
+      "id": "1GnFIGG3FrWJ_O68fOxYHbwDu0-waOeLM",
+      "name": "00003072-AUDIO-2026-05-07-11-16-09.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-07T17:16:10.000Z",
+      "size": "47480",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis"
+    },
+    {
+      "id": "11CF6D9CzmSh66my6lFsNRLuU9yEI0BPzzb2YsKGH7WA",
+      "name": " ULDIS NOTA REFORMA 4 DE MAYO 2026",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-05T19:34:39.493Z",
+      "size": "685584",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1aG-9dVujsGeCIBw1z8x89GfS-93QXss0LRnIar6FGEc",
+      "name": "ULDIS NOTA REFORMA 4 DE MARZO 2026",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-05T19:32:36.797Z",
+      "size": "550418",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1XTzDb3sGNCDRQcvUJ0QGjOz7ZsaVwdXF",
+      "name": "articulo_UIF_mena_limpio.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T20:12:32.000Z",
+      "size": "19423",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Z_cswvqN43uQtuTA_JzpBR77gAv6IAYA",
+      "name": "00003019-articulo_UIF_mena_limpio (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T20:11:46.000Z",
+      "size": "19506",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis-09Junio2026"
+    },
+    {
+      "id": "1p574fPau_PdHVyliLDvNFE0wx4QSKAIX",
+      "name": "00003019-articulo_UIF_mena_limpio.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T20:11:46.000Z",
+      "size": "19506",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis"
+    },
+    {
+      "id": "1CpxmHoaEBEJprW_HsJgMUp5H24BBIIfL",
+      "name": "00003175-STICKER-2026-06-03-11-12-06.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-26T01:11:54.000Z",
+      "size": "233618",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Uldis-09Junio2026"
+    },
+    {
+      "id": "1_RrTsC_s5nGtMODgyUOVE5huBDE-2ipC",
+      "name": "columna_uldis_mena_2pags.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-24T20:24:09.000Z",
+      "size": "16573",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1_Xca-4VfrjNVdkpapbiVs0VKY1i-3wJd",
+      "name": "columna_uldis_mena_CFF2026_1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-24T19:48:56.000Z",
+      "size": "14177",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1KmvBPyKiuQqymW9U-tT5MzouCC-IWNee",
+      "name": "temas_experto_mena_lapinch (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-24T18:16:56.000Z",
+      "size": "18996",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1MQXsqRSUPte3pWBRGWcO65O_uRk_lLwa",
+      "name": "Copia de Caso García Luna_ el expediente penitenciario y la detención de Eduardo Gómez García.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-01-30T14:10:22.000Z",
+      "size": "9493",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1R-KK3YBPXb4tISODsH3AkoD9SylPkvxS",
+      "name": "Caso García Luna_ el expediente penitenciario y la detención de Eduardo Gómez García.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-01-29T15:42:22.000Z",
+      "size": "15631",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1ZHeKU6jHsaslDDMdYDTf6MN1ORPjys1L",
+      "name": "ULDIS notas VIERNES 16 ENERO.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-01-21T21:32:48.000Z",
+      "size": "9024",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1oQL4CgAeI36YW1-xIZbNhJ1IcUY67wh3",
+      "name": "NOTAS REUNION ULDIS 20 DE ENERO.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-01-21T21:31:56.000Z",
+      "size": "7397",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1jpdNCy9odyRixj1onGiHjdXL0WcoQArG",
+      "name": "FICHA ULDIS.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-01-20T17:07:44.000Z",
+      "size": "1515890",
+      "subfolder": "02",
+      "subfolderName": "02. ULDIS_Entregables",
+      "nestedPath": null
+    }
+  ]
+}

@@ -1,0 +1,444 @@
+{
+  "number": "02",
+  "account_id": "02",
+  "account_name": "MAJA",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1_Zcp3vjm8joUJxh-9QRkAEiLXAhPVxkH",
+      "title": "Maja_Sportswear_ContratoModificaciones220526.docx",
+      "subfolder": "01",
+      "subfolderName": "01.MAJA_Contrato_OC",
+      "modifiedTime": "2026-05-25T16:56:12.050Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1M8IvCfJ1K7d8OGKSHrnA5PCGqFKSeUQA",
+      "title": "Blackwell_MAJA_SISTEMA INTEGRAL DE GESTIÓN REPUTACIONAL.pdf",
+      "subfolder": "01",
+      "subfolderName": "01.MAJA_Contrato_OC",
+      "modifiedTime": "2026-04-20T23:39:54.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1fTNw1kDBNmdafExPkAyWDPNr1cvvik1R",
+      "title": "MAJA_GerardoOrduno 040626.docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-06-04T18:25:29.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1DBjgW4wwefeL6xVvkMZVuajI0FJDdA-X",
+      "title": "MAJA_GKA_Kite_PlanPR_slide.pptx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-05-25T16:58:08.028Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1CX9COpcyb_RkVy2DwbbZ_M1ItDcnr2cX",
+      "title": "MAJA_Estrategia_Respuesta_Reactiva_18 may2026.docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-05-18T19:51:45.515Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1I4YZ3ZzBlXvwxOkcRp3uAYL2MsDeYFDG",
+      "title": "MAJA_Estrategia_Respuesta_Reactiva_EMEEQUIS.docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-05-18T16:00:50.172Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1uZuW2_LLfW7A1vMGgobt9ZFs1G3xcIIv",
+      "title": "MAJA_Plan de comunicación_Mayo-Julio.pptx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-05-11T22:13:04.363Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "12PIb7a6Yh4KRFgWNZJN8sJhgYmTz3g8y",
+      "title": "MAJA_Ags_boletin_v2.docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-05-11T21:22:57.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1l1lJlXE0LQCXxOKFLlK0f2BgVkqvHZDy",
+      "title": "MAJA_Colima_Zentralia_boletin.docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-05-05T01:31:48.574Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "18sNru1juNckD9aoLUYVLuzIm9lAst967",
+      "title": "2026 MAJA - 4 ACTIVIDADES AL AIRE LIBRE PARA FESTEJAR (1).docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-05-05T01:30:58.055Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1HLKHubKfzBbJ0H6Wn-YdVFFxeVcUMnrF",
+      "title": "Copia de Perfil_ReginaReyesHeroles_MilenioEmprende.docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-04-29T20:53:19.655Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "10IiPN8NA0RmnksfWqiT1Oo1djAHTplno",
+      "title": "Copia de Maja - Kits - Cotización mensajería.xlsx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-04-29T20:52:17.491Z",
+      "kind": "Excel→texto"
+    },
+    {
+      "id": "1V6VDwenq80uJ18sjQyJuNARXodBlWeGm",
+      "title": "Copia de Maja - De Jefes.docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-04-29T20:51:05.155Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1h5T6t4AzGl3STQ5UlVEX8ph42jZ170sp",
+      "title": "2026 MAJA - MAJA Kids 200426.docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-04-20T19:26:00.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1cWGfslZmfrIN5a9aix6Ss8pPmdihOdki",
+      "title": "2026 - Entrevista EL CEO - MAJA.docx",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "modifiedTime": "2026-04-06T16:05:13.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1nKk38Nrwx-172Q2yc-3BANr_Pg-fHZpn",
+      "title": "MAJA_Reporte mensual MAYO 26.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.MAJA_Reportes_Avance",
+      "modifiedTime": "2026-06-09T01:27:02.054Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "189xuZ5U6DZGmSYU1nQIS90xv91qimHeS",
+      "title": "MAJA_Reporte mensual ABRIL 26.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.MAJA_Reportes_Avance",
+      "modifiedTime": "2026-05-06T18:57:23.507Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1cctUqQrtBnIvl3iffv88TL0tpvgCjdTM",
+      "title": "MAJA_ Reporte de actividades marzo_VF 100426 (1).pdf",
+      "subfolder": "03",
+      "subfolderName": "03.MAJA_Reportes_Avance",
+      "modifiedTime": "2026-04-23T03:36:03.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "10e69-c9EiE-WoE4hwwas4E3mRN4YvWCU",
+      "title": "Maja + BWS_ 2026_06_09.docx",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "modifiedTime": "2026-06-09T18:37:52.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1LAuZbkRYnv2Rkd1W1kaUDo9umVPIOQax",
+      "title": "_MAJA + BWS_ 2026_05_19 .pdf",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-19T18:31:46.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1OPqzMAOKq2-HVjJgkrLKtJDBT5JWjwTfYHYBMabFWiU",
+      "title": "Presentación Plan Trimestral: 2026/05/08",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-08T21:10:15.121Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1AaicELyMKCMfHT_awpt5W8HNIIhWLaDQ",
+      "title": "Presentación Plan Trimestral: 2026/05/08 12:00 CST - Notas de Gemini",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-08T19:24:27.104Z",
+      "kind": "atajo→Google Doc→texto"
+    },
+    {
+      "id": "1EovziTVoaSCRT0EJJF3g62DNxRTEqGC87g4vbx7btaw",
+      "title": "Maja + BWS: 2026/05/05",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-05T19:05:09.241Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1OVkjdHXTnMY99E2lbZCH5Y9la-w9llNv",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "modifiedTime": "2026-05-18T16:31:56.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1QUfiW185yBS5NVKL_1-mv_MUUl0BPa38",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "modifiedTime": "2026-05-18T16:31:44.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1ttYR9iHbXqf4NsE6Oxiqxs5haulkq8Gs",
+      "title": "00002207-MAJA_Estrategia_Respuesta_Reactiva_04may2026.docx",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "modifiedTime": "2026-05-18T16:20:04.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "18SMgx9PiHgQ1ZIJa2I1Hg9ZqXZaJhFHk",
+      "title": "00002181-PHOTO-2026-05-08-20-44-37.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "modifiedTime": "2026-05-09T02:47:54.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1-9apWzpSDLqdLFZTrXH_IqET-4nZnugM",
+      "title": "00002163-PHOTO-2026-05-04-22-01-22.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T04:02:08.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1BuOQh3LKHkBcl_fN6fH0ElpxxXoPDu6w",
+      "title": "00002161-SEGUIMIENTO MAJA SPORTSWEAR- Jorge Antonio Cano Félix_04052026.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T02:42:50.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1Ig-18rmKQNfTlUt89xst6o4ZWIq4Aqlr",
+      "title": "00002151-MAJA_Estrategia_Respuesta_Reactiva_04may2026.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "modifiedTime": "2026-05-04T22:45:20.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1GfLfWOnh1A_Ovt-eNi7cw8oXk_Ae5JdB",
+      "title": "Copia de Maja - Checklist.xlsx",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "modifiedTime": "2026-06-09T17:56:57.066Z",
+      "kind": "Excel→texto"
+    },
+    {
+      "id": "1xcjVQhxiXPXuBA1Ap2rqEqWdHrKXsKJvqAcRn-PaWeM",
+      "title": "ACTIVIDADES DEL 1-5 JUNIO",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "modifiedTime": "2026-06-05T20:39:42.968Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1SQHUaFMAwd9NtHtgdNRAuT1h41cphXQeDNcZ7QpmRQo",
+      "title": "ACTIVIDADES DEL 25-29 MAYO",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "modifiedTime": "2026-05-29T20:05:49.779Z",
+      "kind": "Google Doc→texto"
+    }
+  ],
+  "files_read_count": 33,
+  "files_skipped": [
+    "[05] Teamback MAJA + BWS: 2026/06/02: error de lectura (HttpError)",
+    "[05] MINUTA: 2026/05/12 : error de lectura (HttpError)",
+    "[05] MINUTA: 2026/05/12 : error de lectura (HttpError)",
+    "[04] 00002158-AUDIO-2026-05-04-18-08-00.opus: formato no soportado (audio/ogg)",
+    "[04] 00002087-VIDEO-2026-04-30-19-59-49.mp4: formato no soportado (video/mp4)",
+    "[04] 00000332-VIDEO-2026-04-30-19-52-06.mp4: formato no soportado (video/mp4)"
+  ],
+  "account_summary": {
+    "project_purpose": "Gestión integral de reputación y comunicación estratégica para MAJA Sportswear: contención de crisis mediática (video Pedro Ferriz Hijár sobre presunto lavado de dinero / vínculos políticos), recuperación narrativa con desacople MAJA-Amilcar Cabrera, y posicionamiento proactivo como marca mexicana de outdoor con crecimiento acelerado (300% anual), propósito ambiental e expansión nacional a 118+ tiendas.",
+    "content_summary": "MAJA opera en bifocal hasta junio 2026: (1) crisis reputacional contenida mediante protocolo no-respuesta a 6+ menciones de Pedro Ferriz (enero-mayo), sin amplificación masiva en medios principales; (2) posicionamiento proactivo consolidado con 57+ publicaciones abril-mayo (50-57% T1: Mundo Ejecutivo, Expansión, El Economista, Excélsior, Milenio), entrevistas ejecutivas (El CEO 07-04, La Razón GKA 05-06), y lanzamientos de contenido editorial (MAJA Kids, Polaris collab). Contrato modificaciones pendiente firma (+90 días). KPIs de 20 impactos/mes en cumplimiento. Riesgos: reconciliación KPI vs métrica, impacto impreso trimestral pendiente, presupuesto press trips bajo revisión, vocería multi-persona en entrenamiento.",
+    "current_status": "Contrato base 16-01-26 vigente; modificaciones del 25-05-26 aún SIN FIRMA CLIENTE (+100 días de espera). Monitoreo diario activo hasta 06-09-26. Crisis contenida por no-respuesta estratégica (último reporte Ferriz 25-02-26 sin mención a MAJA). Posicionamiento positivo acelerado en febrero-junio con 57+ publicaciones (Mundo Ejecutivo, Quadratín, El Horizonte). Entrevista Regina Reyes Heroles (Milenio) reprogramada a agosto. Plan tienda-laboratorio en desarrollo sin brief ejecutivo visible. Reportes mensuales entregados (abril, mayo, reporte junio pendiente confirmación).",
+    "scope_of_service": [
+      "Diagnóstico inmediato y protocolo crisis mediática (video Ferriz, análisis narrativo 424 interacciones, activación 36h)",
+      "Estrategia desacople narrativo MAJA-Amilcar Cabrera: mensajes ancla, hoja hechos, Q&A reactivo, comunicado oficial",
+      "Monitoreo diario reputacional (2 cortes AM/PM lunes-sábado) con bitácora menciones, URLs, alertas automatizadas",
+      "Carta aclaratoria formal a Pedro Ferriz para corrección imprecisiones (gestión vía tercero, en evaluación)",
+      "Mensajes y talking points para stakeholders internos, friends & family e influencers (sin activaciones directas)",
+      "Reportes mensuales reputación, riesgos, visibilidad, posicionamiento con KPIs cuantitativos",
+      "Bureau narrativo: diseño, control y amplificación narrativa corporativa en medios estratégicos",
+      "Posicionamiento ejecutivo: construcción autoridad voceros en espacios alto impacto (El CEO, La Razón, Milenio)",
+      "Entrenamiento y preparación directivos/voceros para interacciones con medios (sesiones prácticas/teóricas, guía vocería)",
+      "20 impactos mensuales (~80 por cuatrimestre): 45% Tier 1 (medios nacionales: Expansión, Mundo Ejecutivo, Milenio, El Economista, Excélsior)",
+      "Mínimo 1 impacto formato impreso por cuatrimestre",
+      "Press trips coordinados (Baja California: La Paz/Loreto; Desierto Leones alternativa presupuesto bajo)",
+      "Gestión de riesgos reputacionales y acompañamiento primeras 36h crisis",
+      "Boletines geolocalizados por apertura tiendas (Colima 30-04-26, Aguascalientes 11-05-26 con cobertura media local)",
+      "Lanzamiento MAJA Kids narrativa orgánica (20-04-26, historia Iván, colección 4-14, técnica alta gama)",
+      "Envío proactivo kits a KOLs, periodistas, editores (cumpleaños, oportunidades editoriales)",
+      "Desarrollo contenido editorial (Polaris collab 38pp, rutas off road, Gerardo Orduño)",
+      "Plan tienda-laboratorio: retail media y experiencia en tienda (cámaras, café, RA) — en desarrollo"
+    ],
+    "client_promises": [
+      {
+        "promise": "Diagnóstico inmediato crisis (video Ferriz, análisis narrativo, protocolo activación 36h)",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Estrategia desacople narrativo MAJA-Amilcar Cabrera con mensajes ancla, hoja hechos, Q&A",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Carta aclaratoria formal a Pedro Ferriz para corrección imprecisiones (gestión vía tercero evaluada)",
+        "cadence": "único",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Monitoreo diario reputacional (2 cortes AM/PM lunes-sábado) con bitácora menciones",
+        "cadence": "continuo",
+        "status": "cumplido"
+      },
+      {
+        "promise": "20 impactos mensuales en medios; 80 por cuatrimestre (mayo-agosto; sep-dic)",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "45% de impactos en Tier 1 (medios nacionales: Expansión, Mundo Ejecutivo, Milenio, El Economista, Excélsior, etc.)",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Mínimo 1 impacto formato impreso por cuatrimestre",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Reportes mensuales reputación, riesgos, visibilidad, posicionamiento con KPIs cuantitativos",
+        "cadence": "mensual",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Preparación y entrenamiento voceros para interacciones con medios (sesiones prácticas/teóricas, guía vocería)",
+        "cadence": "evento",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Mensajes y talking points para stakeholders internos, influencers sin activaciones públicas",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Firma contrato modificaciones Blackwell-MAJA (validación términos, autorización cliente)",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Entrevista Regina Reyes Heroles (Milenio columnista) — mayo, reprogramada a agosto",
+        "cadence": "evento",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Plan tienda-laboratorio documentado (retail media, experiencia, brief ejecutivo)",
+        "cadence": "evento",
+        "status": "en_proceso"
+      }
+    ],
+    "fulfilled": [
+      "Diagnóstico crisis 16-01-26: análisis video Ferriz, 424 interacciones cuantificadas, protocolo activación 36h documentado (chat Interno Maja 16-01-26, propuesta Blackwell_MAJA_Propuesta manejo de crisis 160126.pdf)",
+      "Estrategia desacople narrativo: mensajes ancla, hoja hechos, Q&A reactivo, comunicado aprobado 16-01-26 (propuesta manejo crisis, Interno Maja + BWS chat)",
+      "Monitoreo diario activo comprobado: 2 cortes AM/PM hasta 06-09-26, bitácora diaria menciones, alertas automatizadas (Interno Maja chat múltiples reportes diarios, tarjetas PDF de monitoreo 17-02 a 26-02-26)",
+      "Protocolo crisis documentado: no-respuesta a 6+ menciones Ferriz (18-02, 22-04, 30-04, 25-02, 19-02, 20-02) sin amplificación pública (Interno Maja chat, reporte estrategia reactiva 04-05-26)",
+      "Boletín Colima 30-04-26: tienda 116, presencia Occidente, cobertura local con transmisión live (checklist abril 2026)",
+      "Boletín Aguascalientes Altaria 11-05-26: tienda 118, plan 40 aperturas, convocatoria medios local (checklist mayo 2026)",
+      "Contenido editorial MAJA Kids 20-04-26: narrativa orgánica, colección 4-14, técnica alta gama (chat 13-03-26, PDF Polaris collab 38pp adjunto)",
+      "Entrevista El CEO JING 07-04-26: 30-40 min Zoom, narrativa crecimiento, historia fundadores, plataforma digital (checklist abril, reportes confirmados)",
+      "Entrevista La Razón GKA Freestyle Kite World Cup 05-06-26: acompañamiento, briefing book vocero, publicación pendiente (actividades 25-29 mayo 2026)",
+      "Publicaciones Monde Ejecutivo 25-02-26, Quadratín 25-02 y 26-02-26, El Horizonte 24-02-26 sobre apertura Monterrey (reportes chat 25-02 a 26-02-26)",
+      "Monitoreo de Emeequis/La Silla Rota (Jorge Cano Félix): estrategia reactiva 04-05-26 desarrollada con postura oficial, recomendación no proactiva (documento 00002151 y 00002161)",
+      "Guía de vocería 25-02-26: 5 páginas, lineamientos para eventos, Q&A, preparación previa (GUÍA DE VOCERÍA_250226.pdf)",
+      "Reportes mensuales: abril, mayo confirmados (checklist abril-mayo, reportes mensuales referenciados en chats)"
+    ],
+    "pending": [
+      "Firma contrato modificaciones Blackwell-MAJA (25-05-26): +100 días de espera, presión interna reportada 19-05-26 por Humberto (Maja_Sportswear_ContratoModificaciones220526.docx sin confirmación firma)",
+      "Entrevista Regina Reyes Heroles (Milenio): originalmente mayo, reprogramada a 08-06-26 11:30am, luego a 15 junio, finalmente sin fecha confirmada (chat 14-05-26: 'necesito respuesta hoy', último status: pendiente confirmación)",
+      "Plan tienda-laboratorio: accionable en checklist junio pero SIN deliverable visible en entregables (status development en curso, brief ejecutivo no entregado)",
+      "Reconciliación formal KPI 20 impactos/mes con 45% T1: cobertura abril-mayo ~52 publicaciones con ~50% T1 reportado, pero SIN comparativa formal vs KPI contratado en reportes mensuales",
+      "Impacto formato impreso T1 trimestral: sin evidencia publicación impresa consolidada (cobertura mayoritariamente digital, ningún recorte/clipping impreso visible)",
+      "Press trips coordinados: propuesta Baja California (La Paz/Loreto) mencionada en dossier previo pero SIN confirmación ejecución en junio (checklist sin status)",
+      "Revisión contrato interna por Humberto: checklist mayo-junio menciona 'Revisión de contrato' pero SIN status cierre (pendiente 25-29-05, 01-05-06 sin confirmación)",
+      "Reporte junio definitivo: último reporte mensual confirmado es mayo (03-06-26 Reporte_Maja_Reporte mensual MAYO 26.pptx), reporte junio no adjunto en archivos finales"
+    ],
+    "urgent_actions": [
+      {
+        "action": "Confirmar FIRMA del contrato modificaciones Blackwell-MAJA (25-05-26 pendiente +100 días); escalar a liderazgo si cliente no autoriza en 5 días.",
+        "owner": "Manuel Ruiz / Humberto Herrera",
+        "due": "2026-06-15"
+      },
+      {
+        "action": "Contactar cliente para confirmar fecha definitiva entrevista Regina Reyes Heroles (Milenio) — reprogramada 3x; si no hay fecha en 48h, proponer agosto definitivo o cancelar.",
+        "owner": "Sandra Cortes",
+        "due": "2026-06-11"
+      },
+      {
+        "action": "Entregar brief ejecutivo Plan Tienda-Laboratorio (retail media, experiencia): especificar scope, presupuesto, voceros, timeline. Actualmente sin deliverable visible.",
+        "owner": "Sol / Johana",
+        "due": "2026-06-13"
+      },
+      {
+        "action": "Generar reporte mensual JUNIO 2026 con reconciliación formal: 20 impactos vs realizados, % T1 vs 45% target, medios por tier, análisis vs KPI contratado.",
+        "owner": "Daniel Menendez / Monica",
+        "due": "2026-06-14"
+      },
+      {
+        "action": "Documentar y enviar al cliente 1 publicación impresa T1 o comprobar imposibilidad (junio cierra en días): si no existe, comunicar riesgo cumplimiento KPI trimestral.",
+        "owner": "Sol / Daniel Menendez",
+        "due": "2026-06-12"
+      },
+      {
+        "action": "Monitorear menciones Emeequis/La Silla Rota (Jorge Cano Félix, 04-05 y 18-05-26): evaluar si cliente requiere postura reactiva (estrategia 04-05-26 ya documentada pero SIN envío confirmado a medios).",
+        "owner": "Angel / Monica",
+        "due": "2026-06-11"
+      }
+    ],
+    "key_facts": [
+      "Crisis reputacional: 6+ menciones Pedro Ferriz (16-01, 18-02, 20-02, 22-04, 30-04, 25-02-26) sin amplificación masiva; protocolo no-respuesta en vigor",
+      "Posicionamiento proactivo: 57+ publicaciones abril-mayo (50-57% T1: Mundo Ejecutivo, Expansión, El Economista, Excélsior, Milenio, Quadratín, El Horizonte, Cacho Periodista, Macaonline)",
+      "Entrevistas ejecutivas confirmadas: El CEO JING (07-04-26 Zoom 30-40 min), La Razón GKA Kite (05-06-26, publicación pendiente), Regina Reyes Heroles (Milenio, reprogramada 3x, sin fecha definitiva)",
+      "Aperturas tiendas: tienda 116 Colima (30-04-26), tienda 118 Aguascalientes Altaria (11-05-26), tienda San Pedro Garza García Monterrey (inaugurada 20-02-26, cobertura 24-02-26 El Horizonte)",
+      "Lanzamientos contenido: MAJA Kids (20-04-26, colección 4-14 años), Polaris collab (rutas off road, boletín difundido 25-05 a 01-06-26, contenido editorial 38pp)",
+      "KPI mensual: 20 impactos/mes meta; abril-mayo ~52 publicaciones reportadas, ~50% T1 (vs 45% target) — en cumplimiento pero SIN reconciliación formal en reportes",
+      "Contrato: Base 16-01-26 vigente; modificaciones 25-05-26 SIN FIRMA CLIENTE +100 días espera; presión interna 19-05-26 Humberto",
+      "Monitoreo crisis Jorge Cano Félix (Emeequis 04-05, La Silla Rota 18-05-26): menciona ingresos 200k por Maja Sportswear; estrategia reactiva 04-05-26 documentada, SIN confirmación envío postura a medios",
+      "Equipo Blackwell: Sol (directora desde 13-02-26), Daniel Menendez (monitoreo), Monica (reportes), Sandra Cortes (gestión medios), Angel (vocería), Mariana (contenido), Johana (coordinación); Humberto Herrera (cliente lado MAJA)",
+      "Press trips: mencionadas en dossier previo (Baja California: La Paz/Loreto) pero SIN confirmación ejecución junio",
+      "Vocería: José Ignacio de Nicolás (CEO/fundador), Jhabiv (vocero eventos), Kush/Adrián E. (interno), preparación pendiente con sesiones prácticas formales"
+    ]
+  },
+  "analyzed_at": "2026-06-11T02:18:34Z"
+}

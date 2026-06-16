@@ -1,0 +1,317 @@
+{
+  "number": "32",
+  "account_id": "32",
+  "account_name": "COJAB",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1oowzozc65caAAZ24d7W3bwUfRwaSq_HlOMWBANquAvU",
+      "title": "NOTA_EXCELSIOR_30ABRIL26",
+      "subfolder": "02",
+      "subfolderName": "02. COJAB_Entregables",
+      "modifiedTime": "2026-05-13T01:38:46.514Z",
+      "kind": "Google Doc→PDF (escaneado)"
+    },
+    {
+      "id": "1HQ1dbRfYzHT78ZuM-6XpqfZUpFbYHi0b",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-05-13T19:11:28.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1O08N852B8EcPUwms5bbVq327G1KyyOLA",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-05-13T19:11:18.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1Vz32sfVr1nrVqQkVYiXZ3n9DtgO3nJYc",
+      "title": "00003069-PHOTO-2026-05-04-19-52-08.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T01:57:14.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1ItDM4jLMbY76V3M2NH2M9cbkKLdo569o",
+      "title": "00003066-El arte contemporáneo de Marcos Cojab toma el Senado de la República.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T00:47:52.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "15xH58DONv414ZgoYHk5xwTukUV_q3Hh0",
+      "title": "00003055-PHOTO-2026-04-30-13-17-23.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1TZKYU2N3o3O0F_p0Hck32ErBNsC7TyvI",
+      "title": "00003054-PHOTO-2026-04-30-13-17-22.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1TZ9jvCkHqiDrmuh6qyNvuN1nD84WcN8o",
+      "title": "00003059-PHOTO-2026-04-30-13-17-23.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "106d65s9uGvIAPG3hiYwas359A_mys97m",
+      "title": "00003056-PHOTO-2026-04-30-13-17-23.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "14szLeQAtl8jo8_MnNATLl2FcvkLsa1ME",
+      "title": "00003058-PHOTO-2026-04-30-13-17-23.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "18TSlzWWDznozIqwOmt_UgX9kNNgKFmzr",
+      "title": "00003057-PHOTO-2026-04-30-13-17-23.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1j0qXImKnB7dd9cXD7uwYtqY5QQKxOdH6",
+      "title": "00003043-PHOTO-2026-04-30-13-12-23.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T19:12:22.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1tgyiycqX-Uf1zPJCUOYeJv0zoHc-kMHg",
+      "title": "00003060-PHOTO-2026-04-30-13-17-23.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T19:12:22.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1kJNyHKWjHaz-xHmNFQZ3hVfrlHWic3Ma",
+      "title": "00003025-Nota_Cojab_Excelsior.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T19:23:06.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1UX1cdRTsX7ZVf19ErNtUOxIAJ-9PFPBU",
+      "title": "00003010-PHOTO-2026-04-28-15-10-02.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-28T21:12:04.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1szgKzW4kWkdr8PzCrxuG_OYo21S4kedx",
+      "title": "00003009-Marcos_Cojab_Senado_Propuesta.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "modifiedTime": "2026-04-28T21:12:04.000Z",
+      "kind": "PDF→texto"
+    }
+  ],
+  "files_read_count": 16,
+  "files_skipped": [
+    "[04] 00003011-VIDEO-2026-04-28-15-10-02.mp4: formato no soportado (video/mp4)"
+  ],
+  "account_summary": {
+    "project_purpose": "Gestión de relaciones públicas para la inauguración de una exposición de arte contemporáneo de Marcos Cojab en el Senado de la República (28 de abril de 2026), con enfoque en publicación en medios T1 nacionales y difusión de la plataforma .ALQUIMIAMC.",
+    "content_summary": "Blackwell logró una publicación en Excélsior (T1 nacional) el 30 de abril de 2026 con titular \"Marcos Cojab lleva el arte contemporáneo al Senado de la República\" (autor: Porfirio Escandón). Sin embargo, surgió un conflicto operativo post-publicación: la imagen principal de la nota publicada correspondía a un evento diferente (\"Semana de Exposición Cultural\") al que se describía. El cliente (Georgina Azar, asistente de Cojab) solicitó retirar la publicación y hacer una nueva con foto correcta; Blackwell negoció y logró agregar la imagen correcta al inicio del texto como imagen principal (5 de mayo), aunque no pudo eliminar completamente la foto problemática por restricciones técnicas del medio. La cuenta finaliza sin cierre formal registrado.",
+    "current_status": "Cuenta concluida. Última actividad: 5 de mayo de 2026 (confirmación al cliente de ajuste a publicación en Excélsior). El proyecto se completó con 1 publicación T1, aunque con una gestión de crisis reactiva por error de imagen.",
+    "client_promises": [
+      {
+        "promise": "Publicación en medio T1 nacional antes/durante el evento del Senado (28-30 de abril)",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Uso de imágenes correctas del evento en la publicación (banner con mampara del Senado de Marcos Cojab)",
+        "cadence": "único",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Gestión y difusión de la plataforma .ALQUIMIAMC. en contexto de arte contemporáneo mexicano",
+        "cadence": "evento",
+        "status": "cumplido"
+      }
+    ],
+    "fulfilled": [
+      "Publicación en Excélsior, 30 de abril de 2026, 12:25 hrs, sección Nacional (URL: https://www.excelsior.com.mx/nacional/marcos-cojab-arte-senado) — Archivo: NOTA_EXCELSIOR_30ABRIL26",
+      "Redacción de nota con quotes del cliente y posicionamiento de .ALQUIMIAMC. como plataforma de fusión arte-ingeniería — Archivo: 00003025-Nota_Cojab_Excelsior.pdf",
+      "Coordinación y recepción de material fotográfico del evento (Drive compartido por Georgina Azar, 29 de abril) — Archivos: múltiples fotografías de inauguración en Senado",
+      "Reajuste post-publicación: agregación de imagen correcta (Marcos Cojab frente a podio, mampara del Senado) al inicio de la nota, 5 de mayo — Archivo: 00003066-El_arte_contemporáneo_de_Marcos_Cojab_toma_el_Senado_de_la_República.pdf",
+      "Cierre operativo y confirmación con cliente de versión ajustada de publicación (5 de mayo, 11:38 hrs)"
+    ],
+    "pending": [
+      "Eliminación completa de imagen problemática (ribbon-cutting ceremony con todos los funcionarios, no solo Marcos Cojab) de la publicación publicada — Georgina Azar solicitó explícitamente que se bajara la nota y se rehiciera; Blackwell fue incapaz de lograrlo técnicamente con Excélsior",
+      "Publicación de segunda nota adicional con imagen 100% correcta — se propuso como alternativa (4 de mayo, 6:40 hrs) pero no hay evidencia de ejecución ni cierre documentado",
+      "Reporte final de medios reconciliado (clippings, alcance, impacto de la publicación) — no se adjunta reporte de avance formal"
+    ],
+    "key_facts": [
+      "Evento: 28 de abril de 2026, 11:00 hrs, Explanada del Senado de la República, Ciudad de México",
+      "Inauguración: 'Semana de Exposición Cultural, Expresión Plástica y Arte Contemporáneo' (senador Emmanuel Reyes Carmona, presidente de Comisión de Economía)",
+      "Publicación: Excélsior, 30 de abril 2026, 12:25 hrs, sección Nacional, firmada por Porfirio Escandón",
+      "Plataforma cliente: .ALQUIMIAMC. (Marcos Cojab), arte contemporáneo + ingeniería + identidad mexicana",
+      "Tire de la obra icónica: bulldog con collar de oro (representación crítica de diálogo entre arte y poder)",
+      "Equipo Blackwell: Humberto Herrera (director), Mariana, Sol, Johanna, Fabiola",
+      "Asistente cliente: Georgina Azar (+56 15995908, contacto WhatsApp)",
+      "Conflicto: imagen publicada era de 'Semana de Exposición Cultural' (todos los funcionarios en ribbon-cutting), no de Marcos Cojab como figura protagonista; cliente notificó error 1:11 PM mismo día de publicación (30 de abril)"
+    ],
+    "pq_assessment": {
+      "placements": 1,
+      "tier_mix": "T1 nacional (Excélsior)",
+      "score_estimate": 75,
+      "quality_narrative": "Publicación de calidad editorial sólida: nota larga (700+ palabras), contextualizada, con quotes del cliente, profundidad narrativa sobre arte contemporáneo mexicano y posicionamiento de .ALQUIMIAMC. Titular principal bien formulado. Sin embargo, la calidad fue socavada por error crítico de fotografía (imagen del evento 'Semana de Exposición' genérica vs. Marcos Cojab como protagonista). La falta de QC visual pre-publicación fue negligencia operativa. Post-corrección (5 de mayo) agregó imagen correcta al inicio, pero no eliminó la problemática — solución parcial que generó fricción cliente-agencia.",
+      "result_vs_objective": "Objetivo cumplido (1 publicación T1, mensaje posicionado), pero ejecutado con fricción y gestión de crisis innecesaria. Cliente quedó con reservas sobre atención al detalle."
+    },
+    "co_assessment": {
+      "committed": 1,
+      "delivered": 1,
+      "on_time": 1,
+      "late": 0,
+      "missed": 0,
+      "note": "Entregable principal (1 publicación en Excélsior) cumplido en timeline (30 de abril, 2 días post-evento). Sin embargo, hubo incumplimiento operativo: falta de validación de imágenes antes de publicación resultó en reclamo cliente. Resolución fue tardía (5 días después de la queja) y parcial (solo agregación, no eliminación). No se evidencia segunda publicación prometida como alternativa. Operativamente: cumplido en colocación, deficiente en ejecución de calidad."
+    },
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "approval",
+        "date": "29-04-26",
+        "source": "Georgina Azar",
+        "note": "Confirmó la propuesta de nota 'está perfecto gracias' tras revisar borradores"
+      },
+      {
+        "type": "positive",
+        "signal": "praise",
+        "date": "30-04-26",
+        "source": "Humberto Herrera",
+        "note": "Reacción 'super!!!' ante publicación en Excélsior"
+      },
+      {
+        "type": "negative",
+        "signal": "complaint",
+        "date": "30-04-26",
+        "source": "Georgina Azar",
+        "note": "1:11 PM: 'Podrian cambiar esa foto porfa. La primera foto del encabezado no es la del evento.' Solicitud urgente de retirada de publicación y corrección."
+      },
+      {
+        "type": "negative",
+        "signal": "complaint",
+        "date": "04-05-26",
+        "source": "Georgina Azar",
+        "note": "7:52 PM: 'Osea esta publicacion la dejaron asi con esa foto? Es importantisimo quitar esa foto porfa' — insistencia en eliminación total, frustración por resolución parcial"
+      },
+      {
+        "type": "positive",
+        "signal": "approval",
+        "date": "05-05-26",
+        "source": "Georgina Azar",
+        "note": "11:38 AM: 'ok muchas gracias! reviso con Marcos y les comneto' — aceptación final, aunque con reserva ('reviso con Marcos')"
+      }
+    ],
+    "per_file_notes": [
+      {
+        "file": "NOTA_EXCELSIOR_30ABRIL26",
+        "folder": "02. COJAB_Entregables",
+        "finding": "Clipping oficial de publicación de Excélsior: titular 'Marcos Cojab lleva el arte contemporáneo al Senado de la República', autor Porfirio Escandón, 30 de abril 12:25 hrs, con imagen de inauguración (grupo de funcionarios en ribbon-cutting) — ESTA ES LA IMAGEN PROBLEMÁTICA que cliente rechazó."
+      },
+      {
+        "file": "_chat.txt (28-30 abril + 4-5 mayo)",
+        "folder": "04. COJAB_Conversaciones_WA",
+        "finding": "Registro completo de flujo cliente-agencia: brief urgente 28 de abril (3:09 PM) para evento día siguiente, aprobación de propuesta de nota 29 de abril, publicación y reporte al cliente 30 de abril (1:04 PM), solicitud inmediata de corrección foto (1:11 PM), debate interno Blackwell (4 de mayo) sobre si intentar cambio con Excélsior o proponer segunda nota, decisión final de agregar imagen correcta al inicio (5 de mayo). Muestra dinamismo pero falta de resolución definitiva."
+      },
+      {
+        "file": "00003025-Nota_Cojab_Excelsior.pdf",
+        "folder": "04. COJAB_Conversaciones_WA",
+        "finding": "Versión de borrador de nota pre-publicación: texto idéntico al publicado, con quotes clave de Cojab ('Presentar este trabajo en el Senado es colocar el arte en un contexto donde se construye el presente y el futuro de México') y narrativa sobre .ALQUIMIAMC., ingeniería de precisión, identidad mexicana. Este es el texto que se usó en la publicación final."
+      },
+      {
+        "file": "00003066-El_arte_contemporáneo_de_Marcos_Cojab_toma_el_Senado_de_la_República.pdf",
+        "folder": "04. COJAB_Conversaciones_WA",
+        "finding": "Propuesta alternativa de segunda nota (4 de mayo, 6:40 PM) con mismo contenido pero título ligeramente diferente ('El arte contemporáneo de Marcos Cojab TOMA el Senado'); representa el plan B nunca completado. No se evidencia si se publicó o quedó en propuesta."
+      },
+      {
+        "file": "00003069-PHOTO-2026-05-04-19-52-08.jpg",
+        "folder": "04. COJAB_Conversaciones_WA",
+        "finding": "Screenshot de celular mostrando la publicación de Excélsior ON SITE en Excélsior.com.mx: visible la imagen del ribbon-cutting (múltiples funcionarios cortando cinta, no aislado Marcos Cojab) — esta es la foto que generó la queja del cliente. Demuestra que imagen fue publicada tal cual en web."
+      },
+      {
+        "file": "00003054-PHOTO-2026-04-30-13-17-22.jpg, 00003055-PHOTO-2026-04-30-13-17-23.jpg, 00003056-PHOTO-2026-04-30-13-17-23.jpg, 00003057-PHOTO-2026-04-30-13-17-23.jpg, 00003058-PHOTO-2026-04-30-13-17-23.jpg, 00003059-PHOTO-2026-04-30-13-17-23.jpg, 00003060-PHOTO-2026-04-30-13-17-23.jpg",
+        "folder": "04. COJAB_Conversaciones_WA",
+        "finding": "Lote de 7 fotografías CORRECTAS enviadas por cliente (30 de abril, 1:17 PM) mostrando Marcos Cojab como protagonista: enfoque en el artista frente a podio, junto a mampara del Senado con logo de exposición, en diferentes ángulos y con diferentes autoridades (senador, funcionarios, Georgina Azar). Estas eran las que debieron usarse; cliente fue explícito: 'Con esta mampara detras son las correctas'. Blackwell no validó contra el lote correcto pre-publicación."
+      },
+      {
+        "file": "00003043-PHOTO-2026-04-30-13-12-23.jpg",
+        "folder": "04. COJAB_Conversaciones_WA",
+        "finding": "Fotografía de la MAMPARA de Marcos Cojab en el Senado (la pieza/instalación de arte), enviada por cliente 30 de abril 1:12 PM como evidencia visual de que la foto problemática es de otro evento ('Si leen detras son dos cosas diferentes'). Sirve de soporte documental a la queja."
+      },
+      {
+        "file": "00003010-PHOTO-2026-04-28-15-10-02.jpg",
+        "folder": "04. COJAB_Conversaciones_WA",
+        "finding": "Invitación formal al evento (PDF convertido a imagen): 'Marcos Cojab y el Senador Emmanuel Reyes / INVITAN a la exhibición MARCOS COJAB / Semana de Exposición Cultural, Expresión Plástica y Arte Contemporáneo / Martes 28 de Abril 11:00 hrs / EXPLANADA DEL SENADO DE LA REPÚBLICA'. Incluye bulldog con collar de oro (obra icónica de Cojab). Fue enviada por Humberto Herrera a Mariana el 28 de abril como contexto del brief."
+      },
+      {
+        "file": "00003009-Marcos_Cojab_Senado_Propuesta.pdf",
+        "folder": "04. COJAB_Conversaciones_WA",
+        "finding": "Propuesta conceptual de exhibición redactada por Marcos Cojab (enviada 28 de abril como parte del brief): describe la muestra como oportunidad de llevar visión contemporánea del arte mexicano al Senado, alineada con identidad de .ALQUIMIAMC. (arte + ingeniería + identidad). Fundamental para entender el posicionamiento que debía transmitirse en medios."
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Falta de validación visual (QC fotográfico) antes de publicación en medio nacional — imagen publicada no correspondía al evento de Marcos Cojab sino a evento genérico 'Semana de Exposición'",
+        "severity": "alta"
+      },
+      {
+        "risk": "Incapacidad operativa de resolver completamente reclamo cliente (no se pudo eliminar foto problemática, solo agregar foto correcta) — generó fricción y percepción de incumplimiento",
+        "severity": "media"
+      },
+      {
+        "risk": "Propuesta de segunda publicación (4 de mayo) nunca se ejecutó o documentó cierre — acción pendiente que quedó en limbo",
+        "severity": "media"
+      }
+    ],
+    "business_risk": "Riesgo reputacional bajo (proyecto cerrado), pero de haber continuado, la insatisfacción del cliente con la calidad ejecutiva (error fotográfico + resolución parcial) habría puesto en riesgo renovación de contrato o referencias para futuras campañas de arte/cultura.",
+    "opportunity": "Marcos Cojab es un artista emergente con trayectoria internacional y plataforma .ALQUIMIAMC. con potencial de narrativa B2B; oportunidad de posicionarse como especialista de RP para artistas contemporáneos mexicanos en circuito institucional + corporativo (galerías, museos, marcas de lujo, fundaciones).",
+    "strategic_recommendations": [
+      "Implementar checklist visual obligatorio pre-publicación en medios: validación de imágenes contra brief y aprobación escrita del cliente antes de cualquier colocación.",
+      "Establecer SLA claro con medios para correcciones post-publicación (tiempo, costo, limitaciones técnicas) y comunicar esto al cliente ANTES de publicar, no después.",
+      "Para clientes de arte/cultura/moda: contar con especialista de contenido visual que supervise selección de fotografía y composición editorial.",
+      "Si surge disputa post-publicación: ofrecer proactivamente segundo plazo/segundo intento (segunda nota, otro medio, amplificación social) sin esperar a que cliente lo pida."
+    ],
+    "notes": "Cuenta concluida sin cierre formal registrado. El proyecto fue operativamente exitoso en colocación (1 T1 nacional en tiempo record), pero falló en ejecución de calidad visual (QC insuficiente pre-publicación). La reacción del cliente fue profesional pero evidencia decepción. No hay evidencia de que se completara la propuesta de segunda nota como alternativa. Recomendable revisar proceso de validación visual en equipo RP para evitar repetición.",
+    "monday_ticket": {
+      "tipo": "normal",
+      "trigger": "Cierre de cuenta histórica — análisis post-proyecto"
+    },
+    "score_adjustment_recommendation": {
+      "pq_delta": -10,
+      "co_delta": -5,
+      "sc_delta": -8,
+      "reason": "Desempeño editorial sólido (PQ: -10 por error fotográfico que comprometió calidad visual de colocación premium). Cumplimiento operativo afectado por resolución parcial de reclamo (CO: -5). Señales de cliente claramente negativas post-publicación, aunque finalmente resolvió (SC: -8). Sin embargo, proyecto se cerró sin fricción mayor."
+    }
+  },
+  "analyzed_at": "2026-06-05T21:24:56Z"
+}

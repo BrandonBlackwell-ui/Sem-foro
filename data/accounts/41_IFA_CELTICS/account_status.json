@@ -1,0 +1,110 @@
+{
+  "number": "41",
+  "folderTitle": "41. IFA CELTICS",
+  "folderId": "1flzdv5ScxaSf8ea9WC6nne1i9pdt2N5d",
+  "folderModifiedTime": "2026-06-02T14:58:21.125Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "isActive": true,
+  "subfolderActivity": {
+    "01.  IFA_Celtics_Contratos_OC": {
+      "subfolderId": "18NczlgpbDidPbIovH3lVQqDt1H2Wk7ck",
+      "fileCount": 3,
+      "latestModified": "2026-06-10T17:57:44.275000Z",
+      "latestFile": "IFA_Celtics_Blackwell_2026_260603 PROPUESTA COMERCIAL.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:15Z_verify",
+      "last_verified_at": "2026-06-12T14:09:15Z"
+    },
+    "02.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-11T00:28:50Z",
+      "last_verified_at": "2026-06-11T00:28:50Z"
+    },
+    "03.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-11T00:28:50Z",
+      "last_verified_at": "2026-06-11T00:28:50Z"
+    },
+    "04.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-11T00:28:50Z",
+      "last_verified_at": "2026-06-11T00:28:50Z"
+    },
+    "05.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-11T00:28:50Z",
+      "last_verified_at": "2026-06-11T00:28:50Z"
+    },
+    "06.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-11T00:28:50Z",
+      "last_verified_at": "2026-06-11T00:28:50Z"
+    }
+  },
+  "latestDeliverable": {
+    "title": "IFA_Celtics_Blackwell_2026_260603 PROPUESTA COMERCIAL.pdf",
+    "modifiedTime": "2026-06-10T17:57:44.275000Z",
+    "source": "01.  IFA_Celtics_Contratos_OC"
+  },
+  "lastCrawledAt": "2026-06-11T00:28:50Z",
+  "driveFiles": [
+    {
+      "id": "15osqzmiD00nQBRHne5pODCFZJyr1-Uhn",
+      "name": "IFA_Celtics_Blackwell_2026_260603 PROPUESTA COMERCIAL.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-10T17:57:44.275Z",
+      "size": "463939",
+      "subfolder": "01",
+      "subfolderName": "01.  IFA_Celtics_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "15QGTv6qb9E1T_bAJig5MaQXgTsEnodra",
+      "name": "IFA_Celtics_Blackwell_2026_260603 PROPUESTA COMERCIAL.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-10T17:56:52.354Z",
+      "size": "82404",
+      "subfolder": "01",
+      "subfolderName": "01.  IFA_Celtics_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1o0EJ2ykMWqK2g5gpm4GB8UDpIuxbqQzV",
+      "name": "IFA CELTICS - CDA Convenio Confidencialidad - MÉTODOS Y FUNDAMENTOS DE COMUNICACIÓN 4929-0416-0177 v.1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-02T14:58:54.854Z",
+      "size": "183020",
+      "subfolder": "01",
+      "subfolderName": "01.  IFA_Celtics_Contratos_OC",
+      "nestedPath": null
+    }
+  ]
+}

@@ -1,0 +1,1615 @@
+{
+  "number": "07",
+  "folderTitle": "07. APOLLO",
+  "folderId": "1MuMzXOxuaJj-7lSpEs5YVpUFAMmPF5Wm",
+  "folderModifiedTime": "2026-05-25T15:49:13.653Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "ESTATUS 10 DE JUNIO",
+    "modifiedTime": "2026-06-10T23:17:37.071000Z",
+    "source": "06. APOLLO_Agenda_Trabajos"
+  },
+  "deliverableSource": "02. APOLLO_Entregables",
+  "lastActivity": {
+    "time": "2026-05-13T00:36:26Z",
+    "source": "02. APOLLO_Entregables",
+    "file": "editorial_analisis_apollo_2026.pptx (1).pdf",
+    "fileId": "1ZXkGIEN8uquXAi_wljzzSRhfeTwxH7M_"
+  },
+  "subfolderActivity": {
+    "01. APOLLO_Contrato_OC": {
+      "subfolderId": "1UdTaBugh5bOiWl2y_G-KV4B_gSI3xh5C",
+      "fileCount": 2,
+      "latestModified": "2026-06-10T17:27:11.964000Z",
+      "latestFile": "ODC-APOLLO-RENOVACIÓN_28_Abril_2026 (SIN FIRMA).pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:07Z_verify",
+      "last_verified_at": "2026-06-12T14:09:07Z"
+    },
+    "02. APOLLO_Entregables": {
+      "subfolderId": "1HSGu4Sk2yydP_NT7thWXG8lBH4-mCQAF",
+      "fileCount": 33,
+      "latestModified": "2026-06-08T18:40:20Z",
+      "latestFile": "Estatus_Apollo_8 junio_2026 .pptx (en ESTATUS)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:37Z_verify",
+      "last_verified_at": "2026-06-11T01:57:37Z",
+      "nestedNote": "Contiene subcarpetas: ESTATUS, DOCUMENTOS DE ANÁLISIS, ISSUE MANAGEMENT, MAYO 2026"
+    },
+    "03.APOLLO_Reportes_Avance": {
+      "subfolderId": "1Q_n7RITp2-Oz7avz-C7g9demofRRutEs",
+      "fileCount": 4,
+      "latestModified": "2026-06-10T15:49:09Z",
+      "latestFile": "APOLLO_ ReporteMensual_MAYO26.pptx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:41Z_verify",
+      "last_verified_at": "2026-06-11T01:57:41Z"
+    },
+    "04.APOLLO_Conversaciones_WA": {
+      "subfolderId": "1Dq7GmEsmQH7vLo9ahgPwS6vqvPNSk1FR",
+      "fileCount": 299,
+      "latestModified": "2026-04-20T23:55:10Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - Estrategia 2026 - Apollo_BWS)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:41Z_verify",
+      "last_verified_at": "2026-06-11T01:57:41Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Apollo comunicación , WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    "05. APOLLO_Transcripciones_Llamadas": {
+      "subfolderId": "1TkoAKY5VSjoD_hoI7OxMgVCOSltvOyQ2",
+      "fileCount": 11,
+      "latestModified": "2026-06-10T15:49:39Z",
+      "latestFile": "Reporte mensual de mayo Apollo_ 2026_06_10 08_58 CST - Notas de Gemini.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:42Z_verify",
+      "last_verified_at": "2026-06-11T01:57:42Z"
+    },
+    "06. APOLLO_Agenda_Trabajos": {
+      "subfolderId": "1bgpjS5x6RexlO0MxV_obup1a6ogwHk3_",
+      "fileCount": 21,
+      "latestModified": "2026-06-10T23:17:37.071000Z",
+      "latestFile": "ESTATUS 10 DE JUNIO",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:42Z_verify",
+      "last_verified_at": "2026-06-11T01:57:42Z",
+      "nestedNote": "Contiene subcarpetas: MINUTAS "
+    }
+  },
+  "pqProxy": {
+    "score": 50,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable es una ficha estratégica de alianza Apollo–ANEAS (sector hídrico), no un reporte de cobertura PR. Para contexto: OnePager Q1 en 03.Reportes documenta posicionamiento institucional, monitoreo y gestión de crisis, sin mencionar placements cuantificados. | DELTA 2026-05-07: ODC RENOVACIÓN 28-abr SIN FIRMA en circulación. Crisis_high amplifica riesgo si gap contractual persiste.",
+    "suggestion": "Cerrar borrador derecho de réplica HOY con info contrato 089. Mantener monitoreo intensivo Reforma/Financiero/Reforma 72hrs. Acelerar publicación 1B/2A antes del 25-may. Entregar Briefing Book CMP 18-may. Reagendar reunión Humberto+SBI+legal.",
+    "fileEvaluated": "ANEAS_Ficha_Estrategica_Apollo_BW (1).pptx",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 2,
+    "label": "Acción sobre delta del día",
+    "text": "Cerrar borrador derecho de réplica HOY con info contrato 089. Mantener monitoreo intensivo Reforma/Financiero/Reforma 72hrs. Acelerar publicación 1B/2A antes del 25-may. Entregar Briefing Book CMP 18-may. Reagendar reunión Humberto+SBI+legal.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:56:40Z",
+  "driveFiles": [
+    {
+      "id": "1AZoJ-ihbYQbFxAiXRcNRdIzwLgyin2wWN22X5pyTmWE",
+      "name": "ESTATUS 10 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T23:17:37.071Z",
+      "size": "1552",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1WQ2y1vGU75Kx2BWNfKIpXRaRyLEwylLn",
+      "name": "ODC-APOLLO-RENOVACIÓN_28_Abril_2026 (SIN FIRMA).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-10T17:27:11.964Z",
+      "size": "367982",
+      "subfolder": "01",
+      "subfolderName": "01. APOLLO_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1k8XKyae--AV3UWSuQYqQslHgKuStjNWm",
+      "name": "Minuta_Apollo_10jun2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-10T15:59:59.000Z",
+      "size": "24782",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": "MINUTAS "
+    },
+    {
+      "id": "1Kqj_MDfSNzvsQJFVCsnGC80mZCql6rW-",
+      "name": "Reporte mensual de mayo Apollo_ 2026_06_10 08_58 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-10T15:49:39.000Z",
+      "size": "959310",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "13NjNfk2QFOiYIBmSBP4C0zVpdqgCP6or",
+      "name": "APOLLO_ ReporteMensual_MAYO26.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-10T15:49:09.000Z",
+      "size": "5429965",
+      "subfolder": "03",
+      "subfolderName": "03.APOLLO_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1A3rWbYhWBayHkvopzcv0QZ1nNvqb0ZvlfDG1fGo7Dh4",
+      "name": "ESTATUS 8 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T00:46:26.758Z",
+      "size": "1824",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1ojZ1AF-e5zO9h0HcOSZkVIj7Od0ZqkGLD7BKIKLNAoM",
+      "name": "ESTATUS 9 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T00:45:56.084Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1RkpwrMz5gmjxRuZz-WlHGTDFpUtMIdv8",
+      "name": "Minuta_Apollo_08jun2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-08T19:02:00.000Z",
+      "size": "77202",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": "MINUTAS "
+    },
+    {
+      "id": "1kS7cMQ5GDcMxydrdsNOty07unGs14DDr",
+      "name": "Minuta_Apollo_08jun2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-08T18:55:37.000Z",
+      "size": "25447",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": "MINUTAS "
+    },
+    {
+      "id": "1_Rur4sOPJNvVrdrBzRfhQ0ODMESWRcgH",
+      "name": "Estatus_Apollo_8 junio_2026 .pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-08T18:40:20.000Z",
+      "size": "819325",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "15eZpkXA9Mjjxwh0EGzBVoFGkS2WBKJKEFBYmacVEfJg",
+      "name": "Transcripción: 2026/06/08 ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-08T18:39:25.376Z",
+      "size": "21326",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1tqd6PdhkzOtCle58069U7nt_wrc-DIvr",
+      "name": "QUIMICAAPOLLO_REPORTEDECOBERTURA_2026.pptx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-08T18:33:41.000Z",
+      "size": "1242788",
+      "subfolder": "03",
+      "subfolderName": "03.APOLLO_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1IySPuwcQ-dS9SFuAMgGPaonR4fQ3AmODqF9j--Sx8O0",
+      "name": "Actividades del 1 al 5 de junio",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-05T19:04:06.735Z",
+      "size": "1440",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1eeW7m1y2JNkc5G34LDxy-zO8bJ73UwOJNQxT26sz94Y",
+      "name": "Actividades del 25 al 29 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T18:47:38.090Z",
+      "size": "1500",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1nbqEdatiZM3bMZPJyW1sKF-Ao2nrW9Ic",
+      "name": "ODC-APOLLO-RENOVACIÓN_28_Abril_2026 (SIN FIRMA).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-26T16:01:16.734Z",
+      "size": "6965334",
+      "subfolder": "01",
+      "subfolderName": "01. APOLLO_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1LKxKazzuNnHbDNnpfbt-zVuBZ94HQqgE",
+      "name": "Estatus_Apollo_25may2026 .pptx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-25T23:15:24.000Z",
+      "size": "1165192",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1ccrZ7_MQB_QC7hkzgzoYVA4F25wK-XQL",
+      "name": "Minuta_Apollo_Blackwell_25may2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-25T20:52:50.000Z",
+      "size": "27333",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": "MINUTAS "
+    },
+    {
+      "id": "1VchqUR8dt02IVtBAo_qq6gD4pRTY_fo8C9u70sjdcwU",
+      "name": "Transcripcion 2026/05/25 ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-25T20:40:28.544Z",
+      "size": "20146",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1EZuxunz8cPmaQSMe_b8ljObk5XquVXTowF1Up_IBsno",
+      "name": "Actividades del 18 al 22 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T20:44:32.860Z",
+      "size": "2000",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "18Lj7K5582low2Qa6E3BSxhQAmXl9nIQA",
+      "name": "Estatus_Apollo_18may2026 .pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-21T16:18:16.870Z",
+      "size": "899613",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1DhNa6cb5mvlF_Cb90WS09xEBz5R4rD9b",
+      "name": "Por cuatro décadas, Química Apollo se consolida.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-19T14:43:46.000Z",
+      "size": "317639",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "CONTENIDOS MAYO"
+    },
+    {
+      "id": "199VZhnRxELvTUhvWyOMLWwW6bvL3hsD3",
+      "name": "Química Apollo refuerza su enfoque técnico.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-19T14:33:27.000Z",
+      "size": "317489",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "CONTENIDOS MAYO"
+    },
+    {
+      "id": "1Ozz8d1pPKmg56YSEjudaw46vZ2T-oo4K",
+      "name": "Minuta_Apollo_BWS_18may2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-18T23:18:13.000Z",
+      "size": "95949",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": "MINUTAS "
+    },
+    {
+      "id": "1LfFo69WKkCAAJSdBDtN3zDSleujsbxOrkcM2e_lWWb8",
+      "name": "Transcripción: 2026/05/18 ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-18T20:54:12.798Z",
+      "size": "17456",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "158YJVFOQqmOeh_y1hWOdHEMU-e9koVuC",
+      "name": "Minuta_04may2026 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-15T20:09:23.000Z",
+      "size": "135932",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": "MINUTAS "
+    },
+    {
+      "id": "1LxiAZH9HMewm4vRpUQwEobXO29SXO9vB",
+      "name": "Minuta_Apollo_Blackwell_20abr2026 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-15T20:08:31.000Z",
+      "size": "152485",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": "MINUTAS "
+    },
+    {
+      "id": "17GPhzmIyNx7sAeb2xqPn1-f21lc_VCpF",
+      "name": "Minuta_APOLLO270426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-15T20:07:42.000Z",
+      "size": "175071",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": "MINUTAS "
+    },
+    {
+      "id": "17O7i7U5Nv4t0A7_mGQGStsu6pbXDalch",
+      "name": "Carta_Aclaratoria_LaSillaRota_120526.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T19:25:25.000Z",
+      "size": "28478",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ISSUE MANAGEMENT"
+    },
+    {
+      "id": "1T4JxQePIQxx8b04C94MHAZttSWCCR_ql",
+      "name": "CMP2026_BriefingBook_QuimicaApollo_VF (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T19:24:15.000Z",
+      "size": "57434",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "MAYO 2026"
+    },
+    {
+      "id": "15Br9f63b0I81Qb_mSM7m95XelX_SI3B6",
+      "name": "NOTAS_APOLLO_MAYO (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T19:23:22.000Z",
+      "size": "318722",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "MAYO 2026"
+    },
+    {
+      "id": "1uBZ86fbTPIZ_KnLbsyhUk-yqCfme6Mth",
+      "name": "Apollo_Contenidos_CMP2026 (1).pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-15T19:23:10.000Z",
+      "size": "172906",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "MAYO 2026"
+    },
+    {
+      "id": "1jhJGgPGWFdrkAh0ispA8_5ZkUWtfFEtm",
+      "name": "Quimica Apollo_Playbook_2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T19:23:03.000Z",
+      "size": "56666",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "MAYO 2026"
+    },
+    {
+      "id": "1xzCunS64QJrkphG54e6tlzIviboIyHbkPL_xIVFC_10",
+      "name": "Actividades del 11 al 15 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T19:22:14.865Z",
+      "size": "2035",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1ZXkGIEN8uquXAi_wljzzSRhfeTwxH7M_",
+      "name": "editorial_analisis_apollo_2026.pptx (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T00:36:26.000Z",
+      "size": "89428",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "DOCUMENTOS DE ANÁLISIS"
+    },
+    {
+      "id": "1Mcne4Z-XeRPXYlRw9dcwIc1Hz-E4eQJy",
+      "name": "Estatus_Apollo_27abr2026 (8).pptx (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T00:36:16.000Z",
+      "size": "1262823",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1zqcoP2SSAUQqZIdpExBiaJx2Lga44zQa",
+      "name": "Estatus_Apollo_04may2026 .pptx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T00:36:15.000Z",
+      "size": "648611",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "137K-gP_O9yVjDccBP696jHRz2-a0LLdr",
+      "name": "Carta_Aclaratoria_LaSillaRota_070526_VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T00:34:35.000Z",
+      "size": "28189",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ISSUE MANAGEMENT"
+    },
+    {
+      "id": "1A41KTluqLY5pHjX0W-wu1z1CT6WV3DPQ",
+      "name": "cronologia_LSR_Apollo (4) (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T00:34:26.000Z",
+      "size": "117668",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ISSUE MANAGEMENT"
+    },
+    {
+      "id": "1Vn3HTIhnnQUc9PketDPlC2ODZx2w1HFW",
+      "name": "Minuta_Apollo_Blackwell_11may2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-11T22:37:56.000Z",
+      "size": "17824",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": "MINUTAS "
+    },
+    {
+      "id": "1cYGS0toyrxkrBhAD-fJzCxVIn6x7j_4pqSUoRjGPmrk",
+      "name": "Transcripción 2026/05/11 ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-11T21:12:31.313Z",
+      "size": "34789",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "14oC1Lb9l0TQB4Mb0S6q_AWs3aHbV6JWIbrlBjFuawug",
+      "name": "Actividades del 4-8 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-08T19:07:13.795Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1_kVR4hF-PTy6BRzroHgf9oouJnLeOCDVCdPYmMlkFKQ",
+      "name": "Actividades del 27-30 abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-08T18:23:06.479Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "19qnuRjTMaAk47O0voE9bQ0QGku4gRGcq",
+      "name": "QUIMICA APOLLO_Reporte ABRIL (2).pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-08T14:52:39.000Z",
+      "size": "4585006",
+      "subfolder": "03",
+      "subfolderName": "03.APOLLO_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1-567f53CP8qLi9OyVnwsOqUrstHLPAsK-fLQxIiU1xY",
+      "name": "Alineación por crisis: 07/05/26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-07T17:05:44.726Z",
+      "size": "17438",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1NKq9pr4PFdPRi6xCPYmNKtQocfaMmEg5",
+      "name": "Minuta_04may2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T23:13:21.000Z",
+      "size": "135932",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "19vnpgmCDReZZKhGc2ESErckQn64YOvBJvA2cZq9EMsY",
+      "name": " 2026/05/04 ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-04T21:34:13.733Z",
+      "size": "29903",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1um0dgHP18YRI1UjM_47scwK_gk5mTPTM",
+      "name": "Estatus_Apollo_27abr2026 (8).pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-29T22:09:06.795Z",
+      "size": "992867",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "PLAN MAESTRO 2026"
+    },
+    {
+      "id": "1Nkl0ThTyNDBjL4QcuKIG1beMLTSk0Lf1",
+      "name": "ANEAS_Ficha_Estrategica_Apollo_BW (1).pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-29T22:08:09.000Z",
+      "size": "146672",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "DOCUMENTOS DE ANÁLISIS"
+    },
+    {
+      "id": "1OOxARe8l9WzcUzwOWJHUvpCPzILBryKw",
+      "name": "MAPEO_EVENTOS_APOLLO_v2 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:07:22.000Z",
+      "size": "62572",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "DOCUMENTOS DE ANÁLISIS"
+    },
+    {
+      "id": "1E2d8LbL3JLJ8kBs04aU1NwpX7z1ayBHJ",
+      "name": "Análisis de la columna_ _Pemex, los otros derrames_ — Lourdes Mendoza, El Financiero Publicada el 22 de abril de 2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:06:29.000Z",
+      "size": "12448",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ISSUE MANAGEMENT"
+    },
+    {
+      "id": "1B7RudgDBdN-37ugXkRo7N8BnBs_aXjmE",
+      "name": "Cronología_QA_LM (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T22:05:48.000Z",
+      "size": "69001",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ISSUE MANAGEMENT"
+    },
+    {
+      "id": "1fM8-PSKrIS7E0TIecs-KGFbJwLxIy7lw",
+      "name": "Química Apollo- relación publicaciones en X Aníbal Carrasco (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:04:31.000Z",
+      "size": "4075682",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ISSUE MANAGEMENT"
+    },
+    {
+      "id": "1EKmJz1zsajjRdzN4KHRaMmZAEJ_omJi9",
+      "name": "Expediente_Apollo_2026 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:03:31.000Z",
+      "size": "20794",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "ISSUE MANAGEMENT"
+    },
+    {
+      "id": "1LCqtBlJ1A0nxEKBAXfjl_qJoGbzXA81F",
+      "name": "OnePager_Q1_ApolloVF (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T22:02:33.000Z",
+      "size": "496313",
+      "subfolder": "03",
+      "subfolderName": "03.APOLLO_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1tMxRzoNWaZZ9Qq64evAtbDvFid4QZYihhAefKsKndHI",
+      "name": "Actividades 6 al 10 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T16:56:27.676Z",
+      "size": "1227",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1Ui-QOBc8GIlm1q85P_VO47zWGLWmaduMJ9MEUfYpkYE",
+      "name": "Actividades 13 al 17 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T16:55:35.253Z",
+      "size": "1252",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1K-gwFUkErxFcJPAn5voTC7yUDU9qsWLiSQiMXL9Ryj0",
+      "name": "Actividades del 20 al 24 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T16:53:54.299Z",
+      "size": "2026",
+      "subfolder": "06",
+      "subfolderName": "06. APOLLO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1AL_EATV9xteNPFy99Sw4l8iGvcYIn_h1",
+      "name": "APOLLO_BLACKWELL_ 2026_04_20 13_59 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T16:18:08.000Z",
+      "size": "949835",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1MBseYUhqzCGxCQKw1wBkpSQARozCBTThYnJmGT3yk8U",
+      "name": "TEAMBACKxAPOLLO: 2026/04/27 14:01 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-28T19:43:18.149Z",
+      "size": "36556",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "11LrPmaNbhnX4BdGtOqEyXRir-BXoef0z",
+      "name": "APOLLO/BLACKWELL: 2026/04/20 13:59 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-04-23T03:41:46.753Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1Ta4mlEbX7R_HuvF4F6eK87JA8-FO1v3u",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-04-20T23:55:10.000Z",
+      "size": "366344",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1APnIv0iJ2bJa6eB2X6nZmqf3W_G7xqid",
+      "name": "00000708-carpeta Blackwell-2026-04-20.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T14:33:28.000Z",
+      "size": "56854712",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1K3OYDji1mIvqo9Q41k1vYWVIaO10zqZA",
+      "name": "00000706-Reforma_18042026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-18T13:24:24.000Z",
+      "size": "18383106",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1ODda6wsaUpK_Oqs1Brza12-ogB8q-fzV",
+      "name": "00000702-carpeta Blackwell -2026-04-18.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-18T11:21:30.000Z",
+      "size": "23771504",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1n4CpBaF0fS-fD74Ly26Y8dXPC4hP95ZS",
+      "name": "00000694-Reforma_17042026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-17T12:44:16.000Z",
+      "size": "24847585",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1SPRNkv-n7qHwl2_RbnbegMQ1f2blNGTq",
+      "name": "00000691-carpeta Blackwell -2026-04-17.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-17T11:44:02.000Z",
+      "size": "52524537",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1oal3H8DcMbTL0KGxCCVnGPSWeXPQLWiI",
+      "name": "00000685-Reforma_16042026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-16T12:44:50.000Z",
+      "size": "1044897",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1DJ36BHcjvlwZT3_RVs8q641P4rrQFY4Q",
+      "name": "00000686-carpeta Blackwell-2026-04-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-16T11:27:02.000Z",
+      "size": "54488976",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1GNxWtpgZtvdTLVyvzX4rBO2FgkZDfEFd",
+      "name": "00000677-carpeta Blackwell-2026-04-15.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-15T11:55:34.000Z",
+      "size": "55228610",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1mf9StFRyus7h3AZwz10y_LjbpIFncZ8I",
+      "name": "00000672-Jaqueta a Pemex Coquizadoras_14042026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-14T12:37:56.000Z",
+      "size": "24638816",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1S9OhsboZDH9TiuROrS97Y577rjPt4D23",
+      "name": "00000673-PHOTO-2026-04-14-06-37-48.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-14T12:37:54.000Z",
+      "size": "187107",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1IUL03mZjGb1L7WGhJkukp6OjpBnH3CfA",
+      "name": "00000668-carpeta Blackwell-2026-04-14.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-14T11:25:56.000Z",
+      "size": "53768841",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1wByqPmNZqGI-NTuyKDwED1zZYi2lTgiC",
+      "name": "00000666-PHOTO-2026-04-13-09-12-45.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-13T15:30:50.000Z",
+      "size": "196039",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1dWMt8d8xM13jjG6eg3ottn3h-Ot0TfKo",
+      "name": "00000660-carpeta Blackwell-2026-04-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-13T11:37:18.000Z",
+      "size": "55062752",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1D1-JI5ggTEBNNCt7gIDRyxHJmqYECJ_i",
+      "name": "00000658-Primera Plana Reforma 2026-04-11-3 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-11T12:42:50.000Z",
+      "size": "18653446",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1htVcMqZRFu7SHImYtVYlGU1GSMW3aSM8",
+      "name": "00000653-Carpeta Blackwell 2026-04-11.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-11T11:53:22.000Z",
+      "size": "23156589",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1jbhQkO4lIiDZQqaY23z5j4QpV7qElttF",
+      "name": "00000648-Columna Raymundo_El Financiero-2026-04-10-56-57.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T12:31:40.000Z",
+      "size": "1132938",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1LKUN35By7JC8UBvh6q-SL79KrLFua1DI",
+      "name": "00000643-Reforma_Primera Plana-2026-04-10-3.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T12:26:16.000Z",
+      "size": "25095691",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1Gw6bQvfKf1Pt5BoyWqsjdwBLHdmfUX-0",
+      "name": "00000642-carpeta Blackwell-2026-04-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T11:26:00.000Z",
+      "size": "49612229",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "18ZuqxsJWe56wF_DcQj_5abGH4EQXlC5X",
+      "name": "00000637-negocios_reforma.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-09T12:36:50.000Z",
+      "size": "24756028",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "13oDwdTWfFRe8k04HQhaZsQbPcoOmD01K",
+      "name": "00000632-carpeta Blackwell-2026-04-09.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-09T11:41:14.000Z",
+      "size": "48208580",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1430sDRsL3X6FQkh-wQJXFmjfHV95emih",
+      "name": "00000627-Reforma-negocios- 2026-04-08-36.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-08T12:51:30.000Z",
+      "size": "25031178",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1G4_0VL3bdAt4qSQVcgqUVkzws3l8bItJ",
+      "name": "00000628-carpeta Blackwell-2026-04-08.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-08T12:51:30.000Z",
+      "size": "50771376",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1zghmKgDlvb5sgqJvACQNo9BadwjPI5eq",
+      "name": "00000617-carpeta Blackwell-2026-04-07.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-07T11:17:28.000Z",
+      "size": "49878363",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "10yx5XMAdjQZvsJkDXA0e98jKU3pLzqM_",
+      "name": "00000611-carpeta Blackwell-2026-04-06.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-06T15:38:18.000Z",
+      "size": "49217442",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1-hjdXYl7Om9rLfdyXICak0Wk9K3KKOSG",
+      "name": "00000605-carpeta Blackwell-2026-04-04.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-06T15:38:18.000Z",
+      "size": "23430798",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "10k_RPmM0FWvgzmkKRHtiR3zOXDp4Y5ws",
+      "name": "00000600-carpeta Blackwell -2026-04-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-03T11:44:12.000Z",
+      "size": "22891216",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1vgkWkZ72mwmtTxqp7Qsn6cWNHEl2tbQj",
+      "name": "00000595-carpeta Blackwell-2026-04-02.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-02T11:32:20.000Z",
+      "size": "28296434",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "14Kg73EFUXodueAEedYXQ9Psnx4V32Axv",
+      "name": "00000589-carpeta Blackwell-2026-04-01.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-01T12:38:28.000Z",
+      "size": "46363788",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1vWDmE6nryKra3m-j20_CfrpT3mfD7oJ7",
+      "name": "00000591-PHOTO-2026-04-01-06-36-24.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-01T12:38:26.000Z",
+      "size": "304073",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "18V_4V7WErxQQknTO6IUfGfe8eWdJ7T0-",
+      "name": "00000576-carpeta Blackwell-2026-03-31.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-31T11:31:30.000Z",
+      "size": "48183987",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1kK1wYje7ZAovynKEnsBRkA8ES2Q8r3DG",
+      "name": "00000571-carpeta Blackwell-2026-03-30.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-30T12:41:20.000Z",
+      "size": "45885220",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "198PHkkN-F7qiIUXC2E6I6Qkz-idtR6kQ",
+      "name": "00000574-2f16f478728599edc0c185d59491d39f.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-30T12:41:18.000Z",
+      "size": "696919",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1rmVoZHrRsH72AY4fsWCR53YsUyST2toO",
+      "name": "00000562-PHOTO-2026-03-28-06-59-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T12:58:30.000Z",
+      "size": "211415",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1hDDjia1TjK8JokNMb0Aft2NAjaHJoXRp",
+      "name": "00000561-PHOTO-2026-03-28-06-59-27.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T12:58:30.000Z",
+      "size": "324204",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1eQ_ScHc_4sXx-aQp7kPvyqvfjBvuP6oI",
+      "name": "00000563-PHOTO-2026-03-28-06-59-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T12:58:30.000Z",
+      "size": "292645",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1ZZRxsYGS9EhTESW6B2L3a8CYHPbyiawh",
+      "name": "00000565-Carpeta Blackwell 2026-03-28.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-28T11:42:52.000Z",
+      "size": "23351819",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1yOmbdWRx2Zj9kXylNvhy8cdMGMTdJGFV",
+      "name": "00000546-carpeta Blackwell-2026-03-26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T11:15:34.000Z",
+      "size": "53222389",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "14Z7Cy5vE8VVgMa5FQ1M_WP38k-4m01kG",
+      "name": "00000544-carpeta Blackwell-2026-03-25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-25T11:21:22.000Z",
+      "size": "59483797",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1cWfsMbaxMUWma8Oo3vF8y2kBjBIAQ9g5",
+      "name": "00000534-Reforma_-2026-03-24-36 (1).pdf .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-24T12:39:38.000Z",
+      "size": "24949219",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "17aMSecGsn-0NCV1tJlgIowdpwKvGLCtf",
+      "name": "00000532-carpeta Blackwell -2026-03-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-24T10:27:56.000Z",
+      "size": "55196756",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1PiKf800U3bySVsKIKGvVzW3KFee-Ueu_",
+      "name": "00000521-carpeta Blackwell-2026-03-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-23T15:41:14.000Z",
+      "size": "55613053",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1dJ9G2n8bh__HKvkbUSsU_XUgmKwG1l4g",
+      "name": "00000522-Reforma_23032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-23T15:41:12.000Z",
+      "size": "26069923",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1mFdlZj-KEXuC_7Fh2IZegGnyq9Txfb1U",
+      "name": "00000523-El Universal_García Soto_23032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-23T15:41:08.000Z",
+      "size": "310467",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1fEyH0Ga3-ZeDE8i9k4VuGY9FpIs5ASEl",
+      "name": "00000515-carpeta Blackwell-2026-03-21.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-23T15:41:06.000Z",
+      "size": "23626989",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1zJE-JCWTKKs6s9ZzfFB-9eVZXhPNW9HY",
+      "name": "00000509-carpeta Blackwell-2026-03-20.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-20T12:34:36.000Z",
+      "size": "54060641",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1JARYGtaM35eTZxENvXXx0X_3o6E9-SW3",
+      "name": "00000502-carpeta Blackwell-2026-03-19.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-19T12:41:12.000Z",
+      "size": "54234583",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "15mixYo-kCzvAUzTds3sKMs_Vt3hokNHs",
+      "name": "00000506-Reforma-2026-03-19.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-19T12:41:12.000Z",
+      "size": "25510332",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1NTo6e-iPkAC-xMHJyx7gM7jMh4NIc3PQ",
+      "name": "00000499-PHOTO-2026-03-18-06-36-51.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-18T12:40:20.000Z",
+      "size": "136872",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1xxEzK_AU1guWMurmiu754mv4E34O-Jz6",
+      "name": "00000496-carpeta Blackwell-2026-03-18.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-18T11:18:06.000Z",
+      "size": "58635605",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1_HzUenpfEukQYECGT4o_skhWu5Cm_Zll",
+      "name": "00000487-carpeta Blackwell-2026-03-17.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-17T12:41:34.000Z",
+      "size": "57856728",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1RiDI1g5ssgMhckVGiT6eI8ILjRUlVtgX",
+      "name": "00000479-carpeta Blackwell-2026-03-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-16T11:30:26.000Z",
+      "size": "35915838",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "15kD2q14YmJytoCZZEuRAtW-spbrNchaR",
+      "name": "00000473-carpeta Blackwell-2026-03-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-13T11:25:36.000Z",
+      "size": "53396210",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1PokYhb2srP5qVDfc0brC4m6ddXsXIqEu",
+      "name": "00000467-carpeta Blackwell-2026-03-12.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-12T12:24:00.000Z",
+      "size": "54165719",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1KTAoc_XBKzt_3PZ7BZ1kEd5s0IJiiJb9",
+      "name": "00000461-carpeta Blackwell-2026-03-11.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-11T10:42:30.000Z",
+      "size": "58924340",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1pMTku5CpFFcbqUED-VHIISwBmIGlVvSC",
+      "name": "00000454-carpeta Blackwell-2026-03-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T12:34:14.000Z",
+      "size": "59061477",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1vk0ZA9bLSSBA1wesVxClVbw0jZGsK89t",
+      "name": "00000459-Reforma_ Presiona a finanzas precio alto de crudo-2026-03-10-3.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T12:34:12.000Z",
+      "size": "26043479",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1lDXrLAgafuTgODsYuITw1NqA0Ird_zAy",
+      "name": "00000447-carpeta Blackwell-2026-03-09.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-09T15:29:06.000Z",
+      "size": "53639018",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1FZK53pxPIerbA0hfhkWw4pqLDbqso6lA",
+      "name": "00000445-Carpeta Blackwell 2026-03-07.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-07T14:15:16.000Z",
+      "size": "23843102",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "18LHMcIdMHWpQXk2_WPg7G4BzASJT-c27",
+      "name": "00000436-Carpeta Blackwell 2026-03-06.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-06T12:16:08.000Z",
+      "size": "54925501",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1jSP9-C1nf33gh3k4pN6QvZ2XiGnMtqg7",
+      "name": "00000430-Carpeta Blackwell 2026-03-05.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-05T12:36:36.000Z",
+      "size": "53163780",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1JziG9mxBr_j4sjO_eBQyyOUVV69Rxyv5",
+      "name": "00000420-PHOTO-2026-03-03-06-30-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-03T12:31:14.000Z",
+      "size": "118316",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "13nz7FiExIF_CQSIGLGRE9mBzKHOYKHl4",
+      "name": "00000424-carpeta Blackwell-2026-03-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-03T11:58:20.000Z",
+      "size": "55533589",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1o081atdulOXlBBx7iZQA5DDbg5DqztRM",
+      "name": "00000417-carpeta Blackwell-2026-03-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-03T11:58:20.000Z",
+      "size": "55533589",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1oj2Txtb3fcp49XyhTy21UJQcmhI1a1zH",
+      "name": "00000411-carpeta Blackwell-2026-03-02.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-02T12:28:38.000Z",
+      "size": "55636616",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "18JFn2sT1ARtp39y9vA9aIn54sNB4ZsQp",
+      "name": "00000405-carpeta Blackwell-2026-02-28.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-28T12:31:48.000Z",
+      "size": "24688767",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1oqVOXs8P-S5FvkD--wHciMpLOn1wdFkX",
+      "name": "00000399-carpeta Blackwell-2026-02-27.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-27T15:22:18.000Z",
+      "size": "51613471",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1X8zXPLN3RnJThzfmPVnoXPg9miNDOeQD",
+      "name": "00000394-carpeta Blackwell-2026-02-26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-26T11:58:28.000Z",
+      "size": "53470311",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1Xw44BrlVAP4YmqZ0OdaaEOlrWr_8ePSJ",
+      "name": "00000389-carpeta Blackwell-2026-02-25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-25T11:14:58.000Z",
+      "size": "55915909",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1wAZN2YpBW_Uem25dMoHSbNR4nPEpY1j5",
+      "name": "00000384-carpeta Blackwell-2026-02-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-24T10:40:54.000Z",
+      "size": "56019104",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1D6vtsbdC8HykYfO8yZ4onx1AdU9u-RWF",
+      "name": "00000379-carpeta Blackwell-2026-02-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-23T11:41:48.000Z",
+      "size": "51641006",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1TS9CYrlEAwU8J00dYMDnaa5L57brjGOs",
+      "name": "00000370-carpeta Blackwell-2026-02-20 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-20T12:30:52.000Z",
+      "size": "50022574",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1DYJrSisKcSf8JOHy7FZGZHAuRP0C6HSK",
+      "name": "00000371-EXCELSIOR-PEMEX-20022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-20T12:30:50.000Z",
+      "size": "284275",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1mO_QcC4ypIqrVdy6PB_PBSavEZF4is51",
+      "name": "00000365-Reforma Economía_19022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T12:16:36.000Z",
+      "size": "25005360",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1FXph6gMCdvlbs3EoEkXhTIta1H3UDOOv",
+      "name": "00000364-carpeta Blackwell-2026-02-19.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T11:43:56.000Z",
+      "size": "51767588",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1zupsJE5OZcBcdPri071BrNR1IZdqGwCv",
+      "name": "00000356-carpeta Blackwell-2026-02-18.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-18T11:40:50.000Z",
+      "size": "59055094",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1QLH-0CJEM3Ny2E58LFlFMd_cie44chaQ",
+      "name": "00000351-carpeta Blackwell-2026-02-17.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-17T11:37:24.000Z",
+      "size": "56809274",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1PgtqXwdQh8Pz8Socxr5vsTsLfUrs_RE0",
+      "name": "00000346-carpeta Blackwell-2026-02-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-16T12:45:38.000Z",
+      "size": "53564434",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1ULsO-spIAcmQpIMICNn9rk_uCfdLeD9L",
+      "name": "00000348-Reforma_16022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-16T12:30:12.000Z",
+      "size": "24238529",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1nx4iIFue8T6j16d1GiZXvrxC0rsvtc9m",
+      "name": "00000347-Litio_Heraldo de México_16022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-16T12:30:10.000Z",
+      "size": "767949",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "18KJyZ55hhnsRYabmcPIIpikZOfYd5THO",
+      "name": "00000341-carpeta Blackwell-2026-02-14.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-14T11:13:32.000Z",
+      "size": "23233546",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "19m7KnDchD6yqkXquE9QvGD-9ItvC9jWN",
+      "name": "00000335-carpeta Blackwell-2026-02-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-13T11:40:32.000Z",
+      "size": "54848006",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1Xe37hU0WGJJeK2ubWoMGYmbaOZse6w7e",
+      "name": "00000329-carpeta Blackwell-2026-02-12.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-12T12:29:14.000Z",
+      "size": "54730589",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1mD0GyouzWRCOEkV3yg1acLlgbFmjHTij",
+      "name": "00000323-carpeta Blackwell-2026-02-11.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-11T11:45:34.000Z",
+      "size": "59027119",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1y5ikiw1XhrpQaahkEXe3w6ZnUP09X4XJ",
+      "name": "00000317-carpeta Blackwell-2026-02-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-10T11:47:56.000Z",
+      "size": "58788179",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1gZxvj6gmfA1buPbKoLKcKHj7E0RWHjHb",
+      "name": "PLAN Q1 APOLLO.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-09T17:14:40.000Z",
+      "size": "13027",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "PLAN MAESTRO 2026"
+    },
+    {
+      "id": "1N7UchtHwFvkRYPFCYFnw6FKhfi5CoktB",
+      "name": "Plan maestro 2026 APOLLO.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-09T17:14:10.000Z",
+      "size": "22393",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "nestedPath": "PLAN MAESTRO 2026"
+    },
+    {
+      "id": "1QcBLjqF4VB6ieMpd83fr3Vyw32rFpZ_l",
+      "name": "00000311-carpeta Blackwell-2026-02-09 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-09T12:31:36.000Z",
+      "size": "55272820",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1pQQI7KUWNBEUDE3lTmmZcCl1lH5F8EVO",
+      "name": "00000315-Bad Bunny SB26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-09T04:20:36.000Z",
+      "size": "7022325",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    },
+    {
+      "id": "1fOWLInc92o9eMVHBJFlm5eyFHz23cEDZ",
+      "name": "00000306-Carpeta Blackwell 2026-02-07.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-07T12:09:44.000Z",
+      "size": "23610803",
+      "subfolder": "04",
+      "subfolderName": "04.APOLLO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Estrategia 2026 - Apollo_BWS"
+    }
+  ]
+}

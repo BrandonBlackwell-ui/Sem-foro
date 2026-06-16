@@ -1,0 +1,49 @@
+{
+  "number": "03",
+  "account_id": "03",
+  "account_name": "ADUANAS",
+  "cadenceType": null,
+  "files": [],
+  "files_read_count": 0,
+  "files_skipped": [],
+  "account_summary": {
+    "content_summary": null,
+    "key_facts": [],
+    "dated_deltas": [],
+    "pq_assessment": {
+      "placements": null,
+      "tier_mix": null,
+      "quality_narrative": null,
+      "result_vs_objective": null,
+      "score_estimate": null
+    },
+    "sc_signals": [],
+    "co_assessment": {
+      "committed": null,
+      "delivered": null,
+      "on_time": null,
+      "late": null,
+      "missed": null,
+      "note": "No hay archivos adjuntos para analizar. La estructura de carpetas (01-06) reporta estado missing con 0 archivos en cada una."
+    },
+    "media_reconciliation": {
+      "placements": null,
+      "reports": null,
+      "gap": null
+    },
+    "business_risk": "Imposible evaluar riesgos sin acceso a documentación de la cuenta ADUANAS (#03). Estado 'concluded' sin últimas actividad datada sugiere cuenta cerrada, pero sin evidencia de cierre formal, entregables finales o reconciliación.",
+    "opportunity": null,
+    "recommended_action": "Recuperar y adjuntar archivos de las carpetas 01-06 (entregables, reportes, conversaciones, transcripciones, agenda) para completar análisis de la cuenta ADUANAS. Verificar estado de conclusión y fecha de cierre en sistema CRM.",
+    "score_adjustment_recommendation": {
+      "co_delta": 0,
+      "pq_delta": 0,
+      "sc_delta": 0,
+      "reason": "Sin contenido para evaluar. No se puede asignar deltas sin base empírica en documentos reales."
+    },
+    "monday_ticket": {
+      "tipo": "prioridad",
+      "trigger": "ADUANAS #03 (concluded): Recuperar y revisar documentación completa (entregables, reportes, chats, llamadas). Actualmente no hay archivos accesibles. Confirmar estado de cierre y completar reconciliación de cuenta."
+    }
+  },
+  "analyzed_at": "2026-06-04T10:00:31Z"
+}

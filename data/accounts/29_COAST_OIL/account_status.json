@@ -1,0 +1,599 @@
+{
+  "number": "29",
+  "folderTitle": "29. COAST OIL",
+  "folderId": "1F5RblgQbGzyy5a9UGB253VrTfzC_fIg3",
+  "folderModifiedTime": "2026-05-07T19:32:57.601Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "ESTATUS 10 DE JUNIO",
+    "modifiedTime": "2026-06-11T02:04:40.533000Z",
+    "source": "06. COAST OIL_AGENDAS TRABAJO"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-14T19:59:52.957Z",
+    "source": "02. COAST_OIL_ENTREGABLES",
+    "file": "Coastoil_Estatus_seguimiento_v1  -  Reparado.pptx",
+    "fileId": "1liSs2LxR_QxoOm-xSIRtX4gN1qluciYA"
+  },
+  "subfolderActivity": {
+    "01. COAST_OIL_CONTRATO_OC": {
+      "subfolderId": "15dl7cC6RHKSptNxt2BYtwV7dTQkBEZav",
+      "fileCount": 17,
+      "latestModified": "2026-05-27T15:18:47.322000Z",
+      "latestFile": "Contrato BWS Coastoil FIRMADO 220626.pdf",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:12Z_verify",
+      "last_verified_at": "2026-06-12T14:09:12Z",
+      "nestedNote": "Contiene subcarpetas: Expediente"
+    },
+    "02. COAST_OIL_ENTREGABLES": {
+      "subfolderId": "1K0s1iTRXOZfTcqCZlzLpGGrboHO7bs3Q",
+      "fileCount": 15,
+      "latestModified": "2026-06-10T18:15:27.481000Z",
+      "latestFile": "Coastoil_Coastoil Dynamic reafirma su presencia en el Congreso Mexicano del Petróleo 2026  .docx (en Contenidos)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:19Z_verify",
+      "last_verified_at": "2026-06-11T03:40:19Z",
+      "nestedNote": "Contiene subcarpetas: Contenidos"
+    },
+    "03. COAST_OIL_REPORTES_AVANCES": {
+      "subfolderId": "1rgJ5li_e3TNNzDkCSaegEoMBZqHMRXRH",
+      "fileCount": 1,
+      "latestModified": "2026-06-10T17:55:00.146000Z",
+      "latestFile": "COASTOIL_Reporte mensual Mayo 26.pptx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:20Z_verify",
+      "last_verified_at": "2026-06-11T03:40:20Z"
+    },
+    "04. COAST_OIL_CONVERSACIONES_WA": {
+      "subfolderId": "1dytPqk5Zvo-HVq_oMhQh29wDAoXEgy3u",
+      "fileCount": 6,
+      "latestModified": "2026-05-13T18:57:02Z",
+      "latestFile": "_chat 3.txt",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:20Z_verify",
+      "last_verified_at": "2026-06-11T03:40:20Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Coast Oil + Blackwell"
+    },
+    "05. COAST OIL_TRANSCRIPCIONES_LLAMADAS": {
+      "subfolderId": "1rcgJMa40CrKYvhCVYY1Ru1HrWRy_qBLv",
+      "fileCount": 2,
+      "latestModified": "2026-06-10T18:37:16Z",
+      "latestFile": "Estatus Coastoil - BWS _ 2026_06_10 11_58 CST - Notas de Gemini.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:20Z_verify",
+      "last_verified_at": "2026-06-11T03:40:20Z"
+    },
+    "06. COAST OIL_AGENDAS TRABAJO": {
+      "subfolderId": "18Likb_n0HtXui6sTXlOxF5y0UK5n4OvQ",
+      "fileCount": 7,
+      "latestModified": "2026-06-11T02:04:40.533000Z",
+      "latestFile": "ESTATUS 10 DE JUNIO",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:21Z_verify",
+      "last_verified_at": "2026-06-11T03:40:21Z",
+      "nestedNote": "Contiene subcarpetas: MINUTAS"
+    }
+  },
+  "pqProxy": {
+    "score": 54,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable es una propuesta comercial / contrato de trabajo (Plan de Comunicación Corporativa Coastoil Dynamics, 8 meses). No contiene métricas ni placements. Cuenta reciente en fase de arranque. | DELTA 2026-05-06: PQ: KickOff documentado + cuestionario enviado constituyen primer entregable. SC: notas+transcripción Gemini en 02. CO: -2 por subfolder 01.CONTRATO sin contrato visible (esperado en cuenta nueva). | DELTA 2026-05-11T18:30:00Z: Draft V1 contrato cargado al folder 01 el 11-may con placeholders XXXXXX sin completar. Vigencia retroactiva 16-feb-26. | DELTA 2026-05-15T14:00:00Z: primer entregable interno marca arranque de cadencia operativa post-kick off; rellena uno de los slots playbook (02. Entregables); contrato sigue en draft.",
+    "suggestion": "Estatus semanal v1 entregado (mapeo medios + onboarding + monitoreo + calendarización). Cerrar contrato (drafts V1 y V 110526 en 01.) esta semana, completar cuestionario onboarding cliente, y arrancar análisis de posicionamiento mediático para entregar plan de comunicación primer borrador antes del 25-may.",
+    "fileEvaluated": "Coastoil_Estatus_seguimiento_v1  -  Reparado.pptx",
+    "evaluatedAt": "2026-05-15T14:00:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Estatus semanal v1 entregado (mapeo medios + onboarding + monitoreo + calendarización). Cerrar contrato (drafts V1 y V 110526 en 01.) esta semana, completar cuestionario onboarding cliente, y arrancar análisis de posicionamiento mediático para entregar plan de comunicación primer borrador antes del 25-may.",
+    "source": "delta-2026-05-15"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [
+    "slot_empty:03. COAST_OIL_REPORTES_AVANCES",
+    "slot_empty:05. COAST OIL_TRANSCRIPCIONES_LLAMADAS"
+  ],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T03:39:58Z",
+  "driveFiles": [
+    {
+      "id": "1b5sVwfoTjCHXFmGwT7MOlrC8PTVMNm8Uz0vWK6mXkoo",
+      "name": "ESTATUS 10 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-11T02:04:40.533Z",
+      "size": "1425",
+      "subfolder": "06",
+      "subfolderName": "06. COAST OIL_AGENDAS TRABAJO",
+      "nestedPath": null
+    },
+    {
+      "id": "119ALfZOvLpRjQMakv3f0-pbOLtpY9ZWY",
+      "name": "Minuta_Coastoil_100626.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-10T18:57:45.000Z",
+      "size": "119470",
+      "subfolder": "06",
+      "subfolderName": "06. COAST OIL_AGENDAS TRABAJO",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "1Z8Dusxa1u0qu-iB_JWC-FeZlc-UfqvSj",
+      "name": "Minuta_Coastoil_200526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-10T18:40:05.000Z",
+      "size": "134752",
+      "subfolder": "06",
+      "subfolderName": "06. COAST OIL_AGENDAS TRABAJO",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "1WRMMz8x0X2mv4-w7sonomSsvJqzWrQE1",
+      "name": "Estatus Coastoil - BWS _ 2026_06_10 11_58 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-10T18:37:16.000Z",
+      "size": "959740",
+      "subfolder": "05",
+      "subfolderName": "05. COAST OIL_TRANSCRIPCIONES_LLAMADAS",
+      "nestedPath": null
+    },
+    {
+      "id": "1BBQ2wCIpQdVtCalNX5EUuWVkSsdpB2un",
+      "name": "Coastoil_Coastoil Dynamic reafirma su presencia en el Congreso Mexicano del Petróleo 2026  .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-10T18:15:27.481Z",
+      "size": "33378",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": "Contenidos"
+    },
+    {
+      "id": "11_-7sfUby_akEI8EEWHdgMB89WpAtzMS",
+      "name": "COASTOIL_Reporte mensual Mayo 26.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-10T17:55:00.146Z",
+      "size": "137242",
+      "subfolder": "03",
+      "subfolderName": "03. COAST_OIL_REPORTES_AVANCES",
+      "nestedPath": null
+    },
+    {
+      "id": "1xaX9Iz29xDWN76zFXrfxj2VrUGz_-O9nAYxWd6Eo1k8",
+      "name": "ESTATUS 9 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T01:03:29.897Z",
+      "size": "1229",
+      "subfolder": "06",
+      "subfolderName": "06. COAST OIL_AGENDAS TRABAJO",
+      "nestedPath": null
+    },
+    {
+      "id": "1WBlJyG3TKgnOz4G9GPZlrWR24rq4f0NYJSDw6UVbzZQ",
+      "name": "ESTATUS 8 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T00:59:55.470Z",
+      "size": "1180",
+      "subfolder": "06",
+      "subfolderName": "06. COAST OIL_AGENDAS TRABAJO",
+      "nestedPath": null
+    },
+    {
+      "id": "1tacGbQvUZLS0IA-E14qkFTKJe2QSueS1",
+      "name": "CoastoilDynamic_Plan_Comms_v2 (1).pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-05T19:07:44.380Z",
+      "size": "155672",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "180p-BX9HhiCKWCJpCLL-NG2bz1CwF0UM",
+      "name": "QA_Coastoil_v1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-05T19:02:48.359Z",
+      "size": "19741",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1ZjN2zswNOIYTZdPEpCCfZAuss8P1SYG7",
+      "name": "Mensajes_Clave_Coastoil_v1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-05T16:31:16.461Z",
+      "size": "14192",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1S_CpkcaQDnuvZjm4kOuFNdO1VNxg2__ZSgQTnqgDNFA",
+      "name": "BDD - Fuente de energía",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "modifiedTime": "2026-06-04T19:55:35.457Z",
+      "size": "2248",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1Br9aBZtDbvVrqyBn1Agyqa0c524VCh2J",
+      "name": "CoastoilDynamic_Acciones para hacer .pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-04T17:22:09.394Z",
+      "size": "17372",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1YeTN8WBDbBKKwDWSVidR1bQ60K3EKVSj",
+      "name": "Coastoil_BriefCoyuntura_030626.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-03T15:52:16.358Z",
+      "size": "15697",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1r5BHFOka-hcrLE7lCC1xOFFOZBa6a38l",
+      "name": "CoastoilDynamic_Primer borrador de plan de comms.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-31T18:03:07.000Z",
+      "size": "62341",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1Ff5avYVKh7c1VD3JzQtyCww44JJB9y3B",
+      "name": "Medios_Energia_Mexico_2026.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-28T17:53:11.266Z",
+      "size": "1968380",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1WPx4Bw0l-4NUBg_VLKkiSLc_Q9FexTjx",
+      "name": "Coastoil PR _ Media Training Fast Track - CMP  - 2026_05_27 12_00 CST - Transcript.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-27T19:26:36.000Z",
+      "size": "665594",
+      "subfolder": "05",
+      "subfolderName": "05. COAST OIL_TRANSCRIPCIONES_LLAMADAS",
+      "nestedPath": null
+    },
+    {
+      "id": "1TLtE1kbJj5s7pU84jlEdTdxGri-Iy8Se",
+      "name": "Contrato BWS Coastoil FIRMADO 220626.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-27T15:18:47.322Z",
+      "size": "219491",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "13wsnBaT50c8bkF78T-iJLK-rLO6fmjXE",
+      "name": "NDA BWS Coastoil firmado 260526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-27T15:14:50.189Z",
+      "size": "7357566",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "18pGSwj2skvWRsVdLYYViCvZcW0vpxYO-",
+      "name": "CoastoilDynamic_BriefingBook_CMP2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-26T19:18:00.473Z",
+      "size": "79009",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "11e-9X0VtODSO9P7pepVf4MHLmFDMtYqx",
+      "name": "Comprobante de domicilio Coastoil.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T17:30:55.700Z",
+      "size": "447946",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1U5eP-hemJHm66KbKOsdGm2cazrK5Oy7O",
+      "name": "Constancia de situacion fiscal Coastoil Mayo 2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T17:30:39.843Z",
+      "size": "137958",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1_BuBk8In5xa_jVCWyL7N9L59mdhAqWAg",
+      "name": "Opinion de cumplimiento Coastoil.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T17:30:16.574Z",
+      "size": "80441",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1HhCtb5tlzBRPgVY3LiRwUx2T1f9ynT_c",
+      "name": "INE Carlos Andres Botas Machado (Apoderado Coastoil).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T17:29:54.923Z",
+      "size": "483949",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "19bgWWPW22nQJmzY-CEMjbJ0PYSsGF66O",
+      "name": "Constitutiva 27,340 Coastoil Dynamic SA de CV.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-23T00:51:44.552Z",
+      "size": "38596455",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1_6l5wK7vYD5PMhLvDZeoGNSYsZ6vLx6m",
+      "name": "(2,748) Poder General CD Carlos Andrés (Lim. 25 mil dlls).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-23T00:51:09.674Z",
+      "size": "5986454",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1B4ZR5AoiG1zvBqx1zkbPgulyNcYgJFjQ",
+      "name": "ODC_Coastoil_BWS FIRMADO.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-23T00:46:05.397Z",
+      "size": "335065",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1g6oRRryitXT-tjNzBVx_8EbUVjmU4Ca0",
+      "name": "CoastoilDynamic_IntelligenceBrief (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-22T14:59:17.000Z",
+      "size": "262533",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1k0PrbcUhIgyQppU-mljCi7I6NyoZmFkX",
+      "name": "CoastoilDynamic_IntelligenceBrief (2).pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-22T14:58:30.000Z",
+      "size": "141916",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1btj1fnU2li8AlvoPE0Gi9p-SJtNzxfN-",
+      "name": "Anexo A BWS - CD 210526.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-22T01:16:35.257Z",
+      "size": "194171",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1cdZLMXy9V5l3ZKqz2y2hyAD1sB_3R9lD",
+      "name": "Anexo A BWS - CD 210526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-22T01:16:23.767Z",
+      "size": "382335",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1u1Oo067usTjgNuBfSngmkhyQQKkov6Zj",
+      "name": "Blackwell_CD_Orden_de_Compra 210526.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-22T01:10:00.067Z",
+      "size": "194155",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "19_FM354VExcf-ESJwMNaRYMzN4le9D-g",
+      "name": "Contrato de Prestación de Servicios Blackwell-CD 210526.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-22T01:04:10.135Z",
+      "size": "2757881",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1liSs2LxR_QxoOm-xSIRtX4gN1qluciYA",
+      "name": "Coastoil_Estatus_seguimiento_20 mayo (1a sesión).pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-20T19:28:10.316Z",
+      "size": "144092",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1gVSjGt8Rg2HX-9j8w-We2n3A34pQ-7I1r-YCGLsiCZM",
+      "name": "Coastoil_Cuestionario_Onboarding_RP",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-20T16:45:45.902Z",
+      "size": "12213",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1IndjnlE1Y1zJvXVRTiyFh9-bVu0Llg5C",
+      "name": "Blackwell_CD_Orden_de_Compra.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-20T15:05:28.530Z",
+      "size": "193618",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1yh0TeYGC_1gVPzBqKxYJZfuv61ZFNSdH",
+      "name": "Blackwell_CD_Orden_de_compra.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-20T15:05:11.893Z",
+      "size": "347886",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "13nLpxr9PgQqhXzY9mCfkPBHpgiVrXemV",
+      "name": "Draft contrato coastoil V1 130526.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-19T14:51:41.341Z",
+      "size": "158936",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1TIn9WjLedK4nJyTvpeXoSj1xrf4bcYVaamJ7BDpAwPI",
+      "name": "Actividades 11 al 15 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T22:09:08.193Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. COAST OIL_AGENDAS TRABAJO",
+      "nestedPath": null
+    },
+    {
+      "id": "1D_byydd0kL2wj65bv45VCrfntqmus85T",
+      "name": "Draft contrato coastoil V 110526.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T23:28:04.698Z",
+      "size": "47958",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1LpTm-xj5UzlGLYP87gaZJIuatIfRItPY",
+      "name": "_chat 3.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T18:57:02.000Z",
+      "size": "2859",
+      "subfolder": "04",
+      "subfolderName": "04. COAST_OIL_CONVERSACIONES_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1IJXQR4baRYIITEBy6iRx2S8xs_ADobnJ",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T18:56:52.000Z",
+      "size": "19700",
+      "subfolder": "04",
+      "subfolderName": "04. COAST_OIL_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Coast Oil + Blackwell"
+    },
+    {
+      "id": "1W3WcaBXrlDFRu_aADTTZQXLmOnA0fHQH",
+      "name": "00003071-carpeta Blackwell -2026-05-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T11:22:02.000Z",
+      "size": "55270386",
+      "subfolder": "04",
+      "subfolderName": "04. COAST_OIL_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Coast Oil + Blackwell"
+    },
+    {
+      "id": "1N0yCnoDFjRH0xh5sW7qgS9BKIGAnWPVqKvbrW8shTz8",
+      "name": "Actividades 4 al 8 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T00:07:49.573Z",
+      "size": "1101",
+      "subfolder": "06",
+      "subfolderName": "06. COAST OIL_AGENDAS TRABAJO",
+      "nestedPath": null
+    },
+    {
+      "id": "1sWDB5GBudJinfw5Jwe9FO1JuDu2qhOrb",
+      "name": "00003063-Medios_Energia_Mexico_2026.pptx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T16:54:22.000Z",
+      "size": "1230716",
+      "subfolder": "04",
+      "subfolderName": "04. COAST_OIL_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Coast Oil + Blackwell"
+    },
+    {
+      "id": "1Er0ol6_74IwJQkHqCGze2eRu9ob3Po_F",
+      "name": "00003056-PHOTO-2026-05-12-07-05-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-12T12:50:22.000Z",
+      "size": "130293",
+      "subfolder": "04",
+      "subfolderName": "04. COAST_OIL_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Coast Oil + Blackwell"
+    },
+    {
+      "id": "1zlrpYGoMpIUsVbABJM4mjmYzDt4bcl3U",
+      "name": "00003061-carpeta Blackwell-2026-05-12.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T11:02:52.000Z",
+      "size": "58070825",
+      "subfolder": "04",
+      "subfolderName": "04. COAST_OIL_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Coast Oil + Blackwell"
+    },
+    {
+      "id": "1e7mBDyA62LVE5kfyxX_bS7F4JbC7EIG9XAyULxsFU_c",
+      "name": "KickOff Coast Oil + BWS: 2026/04/23 10:01 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-05T21:41:01.291Z",
+      "size": "21856",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "nestedPath": null
+    }
+  ]
+}

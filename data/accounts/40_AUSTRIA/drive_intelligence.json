@@ -1,0 +1,356 @@
+{
+  "number": "40",
+  "account_id": "40",
+  "account_name": "AUSTRIA",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1WhqF_a0RQK0uYy4H55ScLSOZQZI7PVQq",
+      "title": "Testigo_trabajo_realizado.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. Austria_Entregables",
+      "modifiedTime": "2026-05-26T00:20:20.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "153_3o1KEtu69soxCRv754Z88-Vfvw69d",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-05-22T02:44:16.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1vnIbdGuNL01K86nVrRHAyUZ-ydDxZDIW",
+      "title": "00003346-PHOTO-2026-05-11-18-51-15.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-05-12T00:53:02.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1NooZz6guCIJbSVGiIBAUfVnW3yGJVQoO",
+      "title": "00003331-PHOTO-2026-05-06-21-45-58.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T03:46:12.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1okSaZ8hpaazEb2DhnZFGncVklbcPT1S7",
+      "title": "00003332-PHOTO-2026-05-06-21-45-58.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T03:46:12.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1x8YLffUk721EFa_wkBiyYBxDCPFR9J7h",
+      "title": "00003301-PHOTO-2026-05-05-21-14-40.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-05-06T04:40:36.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1ctpWPzztKqmC8kYAJ28QWIOzecqyegoV",
+      "title": "00003241-STICKER-2026-05-04-20-31-36.webp",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T02:39:32.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1s4Zk_BVe77lbNZNMUlVIIHBak1UF2Wga",
+      "title": "00003123-PHOTO-2026-05-04-17-50-49.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-05-04T23:55:52.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1tfuiN0HiOeNPA6CHbBEHj97lUiJxIhIn",
+      "title": "00003116-PHOTO-2026-05-04-17-44-10.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-05-04T23:46:58.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "17R5GcMfrDShE3fIg93sO_7qh2jLzRvfr",
+      "title": "00003115-PHOTO-2026-05-04-17-44-10.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-05-04T23:46:58.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1UTqyQoEVhHfMae0J48pwkF3BM8VfbI5g",
+      "title": "00003089-NOTA A (1).pdf",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T06:03:46.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1N0uoGCejF4mpY-iU2CwglWQLz1GnmrZO",
+      "title": "00003103-PHOTO-2026-04-29-15-03-03.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "18ewJn78Xf-HANmgi7Vcv3BPqBP3acy00",
+      "title": "00003104-PHOTO-2026-04-29-15-03-03.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "181jiFWGS2ePXfKDCB4UIEkAPGruvu1Nv",
+      "title": "00003106-PHOTO-2026-04-29-15-03-03.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1rl9BoxtjHIlab-za88RiA0O_pGlqIwDC",
+      "title": "00003097-PHOTO-2026-04-29-15-03-02.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1G4nI7B-yuOBtwP6wYCAC8CEF-EyOEIO9",
+      "title": "00003105-PHOTO-2026-04-29-15-03-03.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "161u9VjVCWFdemFSq79xYyHjX2bOK3EFc",
+      "title": "00003045-CamScanner 10-04-26 16.31.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T16:30:54.000Z",
+      "kind": "PDF escaneado→nativo"
+    },
+    {
+      "id": "1bAWNIhE6itRcQ6Iu1xoyHqdK-SHPKoUR",
+      "title": "00003037-PHOTO-2026-04-29-09-16-47.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T15:17:36.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1c2exgktorDh51oT932knQ_LnZkWLzxKa",
+      "title": "00003008-GUION AUSTRIA SUSPENSION PROVISIONAL.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "modifiedTime": "2026-04-28T20:14:42.000Z",
+      "kind": "PDF→texto"
+    }
+  ],
+  "files_read_count": 19,
+  "files_skipped": [
+    "[04] 00003266-VIDEO-2026-05-05-14-21-15.mp4: formato no soportado (video/mp4)",
+    "[04] 00003259-AUDIO-2026-05-05-14-01-09.opus: formato no soportado (application/ogg)",
+    "[04] 00003260-VIDEO-2026-05-05-14-01-37.mp4: formato no soportado (video/mp4)",
+    "[04] 00003261-VIDEO-2026-05-05-14-01-37.mp4: formato no soportado (video/mp4)",
+    "[04] 00003256-VIDEO-2026-05-05-13-57-52.mp4: formato no soportado (video/mp4)",
+    "[04] 00003257-VIDEO-2026-05-05-13-57-52.mp4: formato no soportado (video/mp4)",
+    "[04] 00003253-VIDEO-2026-05-05-13-49-48.mp4: formato no soportado (video/mp4)",
+    "[04] 00003244-AUDIO-2026-05-05-09-27-29.opus: formato no soportado (application/ogg)",
+    "[04] 00003189-AUDIO-2026-05-04-18-41-53.opus: formato no soportado (application/ogg)"
+  ],
+  "account_summary": {
+    "project_purpose": "Gestión integral de PR y comunicación estratégica para Austria Sánchez (hija de víctima de feminicidio Maciel Alejandrina Sánchez Ronquillo): posicionamiento mediático pre- y post-suspensión provisional de la jueza Amarande Riojas Orozco, impulso de narrativa de irregularidades judiciales, coordinación de denuncia penal FGR, blindaje contra contraataques defensivos, y preparación de escenarios reactivos pre-veredicto (sentencia 22 mayo 2026).",
+    "content_summary": "Fase abril-mayo 2026 exitosa en primera etapa: 5 placements T1 confirmados por $100,912.50 (Reforma, El Universal x2, Excélsior, Imagen Radio) publicados 13-14 abril; suspensión provisional de jueza Amarande lograda 27 abril; denuncia FGR art. 225 VI CPF presentada y receptada 10 abril (18 págs, sello RECIBIDO); video testimonial Austria viralizado multi-canal 5 mayo (1.1K+ vistas Instagram); columna Mario Maldonado El Universal 29 abril documentó 3 irregularidades; influencer Arlín Medrano amplificación feminista 29 abril. CRÍTICO: contranarativa de Amarande en medios 9-12 mayo sin respuesta defensiva oportuna (dashboard monitoreo NO entregado); escenarios post-sentencia (condenatorio vs absolutorio) no documentados; entrevistas La Silla Rota y Radio Fórmula 103.3 FM pendientes; veredicto inmediato (22 mayo 2026); Austria lista para reactivación mediática pero sin dirección clara post-sentencia.",
+    "current_status": "Entrada a semana crítica pre-veredicto (22 mayo 09:03): contranarativa de Amarande circulando sin detección oportuna (dashboard monitoreo inexistente); escenarios post-sentencia (condenatorio vs absolutorio) no documentados en entregables; Austria Sánchez preparada para reactivación mediática inmediata pero sin plan reactivo confirmado; FGR investigación activa paralela a suspensión TDJ, contenida pero no comunicada públicamente; riesgo regulatorio alto por enemistad manifiesta entre jueza investigada y equipo legal Austria (denuncia cruzada presentada).",
+    "scope_of_service": [
+      "Placements de press release en medios T1 (Reforma, El Universal, Excélsior, Imagen Radio)",
+      "Producción, edición y distribución video testimonial Austria multi-canal (Instagram, TikTok, colectivas)",
+      "Coordinación y presentación denuncia penal contra jueza Amarande ante FGR (art. 225 VI CPF)",
+      "Mapeo de medios, columnistas y líderes de opinión para cobertura 6+ meses",
+      "Coordinación y preparación entrevistas de profundidad (La Silla Rota, Radio Fórmula 103.3 FM)",
+      "Blindaje narrativo y guiones de respuesta ante defensa mediática",
+      "Monitoreo de medios y redes detección temprana de contranarativa",
+      "Preparación escenarios reactivos post-veredicto (condenatorio vs absolutorio)",
+      "Entrenamiento mediático y alineación de narrativa con Austria Sánchez",
+      "Coordinación con team legal (abogados, FGR) y asesores judiciales"
+    ],
+    "client_promises": [
+      {
+        "promise": "5 placements medios T1 (Reforma, El Universal x2, Excélsior, Imagen Radio) énfasis irregularidades jueza Amarande — 13-14 abril 2026",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Gestión post-suspensión 27 abril: narrativa agradecimiento institucional + esclarecimiento irregularidades + rechazo arresto domiciliario",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Producción, edición y difusión video testimonial Austria (empatía, multi-canal, subtítulos) — 5 mayo 2026",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Mapeo medios, columnistas, líderes opinión cobertura 6+ meses según avances judiciales",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Preparación escenarios reactivos condenatorio vs absolutorio con guiones pre-veredicto 22 mayo",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Entrevista Danielle D'Ithurbide (Radio Fórmula 103.3 FM) alineada narrativa — invitación 4 mayo",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Entrevista La Silla Rota (Johanna Palacio) formato profundidad post-suspensión — interés 28 abril",
+        "cadence": "evento",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Denuncia penal FGR contra jueza Amarande (art. 225 VI CPF) — presentada 10 abril 2026",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Dashboard monitoreo medios y redes detección temprana narrativas contrarias",
+        "cadence": "continuo",
+        "status": "pendiente"
+      }
+    ],
+    "fulfilled": [
+      "5 placements T1 publicados 13-14 abril 2026: Reforma $14,850 (Circuito Interior), El Universal $40,500 (columna Maldonado) + $20,250 (tuit), Excélsior $9,450 (Trascendido), Imagen Radio $1,012.50 (Réplica); TOTAL $100,912.50 [Testigo_trabajo_realizado.pdf 17 abril, _chat.txt 13-14 abril]",
+      "Columna Mario Maldonado El Universal 29 abril (Posdata 3): documentó 3 irregularidades Amarande — omisión excusa, falta notificación víctima indirecta Austria, liberación Sabag sin sustento expediente [00003037-PHOTO columna Maldonado, _chat.txt 29 abril 09:16]",
+      "Video Austria grabado, editado 1.2x speed, subtítulos, publicado 5 mayo 20:57 Instagram @nortenarockstar (1.1K+ vistas); distribución multi-canal: Woman on Fire, EjeCentral, OEM, Central Municipal, Reporte Noticias, Heraldo México, TikTok [múltiples archivos video 03-05 mayo en 04 Conversaciones]",
+      "Denuncia formal FGR presentada 10 abril 2026 (CamScanner 18 págs, sello RECIBIDO 10 ABR 2026); tipificación art. 225 VI CPF (actos contra administración justicia); FGR receptó, asignó carpeta investigación, investiga en paralelo a suspensión TDJ [00003045-CamScanner, suscrita Austria Pamela Sánchez Valdés]",
+      "Jueza Amarande Riojas Orozco suspendida provisionalmente 27 abril 2026 por Tribunal Disciplina Judicial (primera jueza electa voto popular CDMX removida de cargo) [00003037-PHOTO Posdata 3, _chat.txt 29 abril]",
+      "Guión alineado narrativa agradecimiento + exigencia suspensión definitiva + rechazo arresto domiciliario redactado 28 abril 14:42-15:42; Austria requería entrenamiento mediático previo [00003008-GUION AUSTRIA SUSPENSION PROVISIONAL.pdf]",
+      "Influencer Arlín Medrano posicionamiento público 29 abril (Instagram Business): 'Este esfuerzo colectivo hizo posible que la jueza que protegió al agresor se separa del cargo. GRACIAS GRACIAS GRACIAS'; narrativa feminista viralizada en colectivas [@arlinmedrano, 00003105-PHOTO]",
+      "Nota 'Opción A' redactada con 3 opciones headline FGR investigando a Amarande; documento listo en cajón para respuesta defensiva posterior [_chat.txt 29 abril 13:03, referencia a 00003089-NOTA A]",
+      "El Heraldo de México (29 abril): artículo 'Caso Maciel' refiere suspensión Amarande como precedente — 'primera jueza penal CDMX electa voto popular separada del cargo' [00003097-PHOTO]",
+      "Reforma (13 abril 2026): artículo 'Separan a Jueza por fallo en feminicidio' (Circuito Interior), documentó procedimiento TDJ contra Amarande [00003104-PHOTO, 00003106-PHOTO en WA Business de Reforma]"
+    ],
+    "pending": [
+      "Entrevista Danielle D'Ithurbide (Radio Fórmula 103.3 FM): invitación formal 4 mayo (coordinador Carlos Jiménez), Austria rechazó inicialmente por nerviosismo, propuesta delegación abogado José Luis Nassar o Alexander; SIN confirmación final ni fecha reprogramada [_chat.txt 04-05 mayo 17:44-18:41]",
+      "Entrevista La Silla Rota (Johanna Palacio interés 28 abril): SIN fecha, formato, participantes confirmados; mencionada aún 19 mayo sin progreso ('quedaron en el tintero'); Johanna Palacio (Medios-Operación Aust desde 28 abril) responsable coordinación sin cierre [_chat.txt 28 abril 13:22, 19 mayo 18:34]",
+      "Dashboard monitoreo medios y redes (mencionado 12 mayo 'en armado'): NO ENTREGADO; brecha crítica causó retraso 5-6 días en detección contranarativa Amarande (notas 9-12 mayo en Imagen del Golfo, 24 Horas, Causa y Efecto, Los Reporteros sin respuesta defensiva) [_chat.txt 12 mayo, absence en carpeta Entregables]",
+      "Documento maestro narrativas y escenarios post-sentencia (mencionado 12 mayo): NO aparece en carpeta Entregables; REQUIERE entrega ANTES veredicto 22 mayo 2026 (urgente)",
+      "Mapeo voceros alternos (expertos independientes, académicos) mencionado 4 mayo: sin concretización, lista participantes o briefing entregado [_chat.txt 4 mayo]",
+      "Decisión estratégica NO RESUELTA: si José Luis Nassar P. sale en entrevista defensiva pública o mantiene postura reactiva — EN RIESGO si Amarande acelera defensa mediática post-audiencia [_chat.txt 4-5 mayo]",
+      "Plan post-sentencia (guiones reacción condenatorio vs absolutorio) no documentado ni entregado; crítico para respuesta inmediata 22 mayo 2026 [absence en Entregables, _chat.txt 12 mayo]"
+    ],
+    "key_facts": [
+      "Denuncia FGR presentada 10 abril 2026 (18 págs): tipificación art. 225 VI CPF (actos contra administración justicia); suscrita Austria Pamela Sánchez Valdés (víctima indirecta); contra jueza Amarande Riojas Orozco del Juzgado Decimoquinto Penal CDMX [00003045-CamScanner]",
+      "Jueza Amarande suspendida provisionalmente 27 abril 2026 por Tribunal Disciplina Judicial — primera jueza electa voto popular (CDMX) removida de cargo en caso de feminicidio Maciel Alejandrina Sánchez Ronquillo (2019)",
+      "5 placements T1 publicados 13-14 abril: Reforma $14,850, El Universal $40,500 + $20,250, Excélsior $9,450, Imagen Radio $1,012.50 = TOTAL $100,912.50 [Testigo_trabajo_realizado.pdf 17 abril]",
+      "Mario Maldonado (columnista El Universal, Posdata 3): 29 abril 2026 documentó 3 irregularidades — (1) omisión de excusa Amarande, (2) falta notificación víctima indirecta Austria, (3) liberación Sabag sin sustento expediente [00003037-PHOTO]",
+      "Video Austria publicado 5 mayo 20:57 Instagram @nortenarockstar: 1.1K+ vistas, edición 1.2x speed + subtítulos, distribución multi-canal (Woman on Fire, EjeCentral, OEM, Central Municipal, Reporte Noticias, Heraldo México, TikTok) [_chat.txt 05 mayo 20:57, archivos video 04-05 mayo]",
+      "Influencer Arlín Medrano (Instagram Business, 29 abril): 'Este esfuerzo colectivo hizo posible que la jueza que protegió al agresor se separa del cargo. GRACIAS GRACIAS GRACIAS' — posicionamiento feminista viralizado [@arlinmedrano 00003105-PHOTO]",
+      "Denuncia cruzada de Amarande: reconoció enemistad manifiesta con asesores judicales Isabel Esteve Gómez Mont y Alexander Ruben Castillo; acusa animus revanchista en despacho Nassar Nassar y Asociados S.C. [00003045-CamScanner págs 4-5, sección 'HECHOS CON APARIENCIA DE DELITO']",
+      "Escenario post-veredicto NO DOCUMENTADO: sentencia esperada 22 mayo 2026 (condenatoria vs absolutoria) sin guiones reactivos, opciones narrativas o plan de respuesta inmediata entregados [absence en carpeta Entregables, _chat.txt 12 mayo]",
+      "Dashboard monitoreo medios NO ENTREGADO: generó brecha crítica 5-6 días sin detección de contranarativa Amarande en Imagen del Golfo, 24 Horas, Causa y Efecto, Los Reporteros (9-12 mayo); sin respuesta defensiva oportuna [_chat.txt 9-12 mayo, 12 mayo 'en armado']",
+      "Entrevista Radio Fórmula 103.3 FM (invitación 4 mayo, coordinador Carlos Jiménez): Austria rechazó inicialmente por nerviosismo; propuesta delegación a abogado José Luis Nassar; SIN confirmación final ni reprogramación [_chat.txt 04-05 mayo 17:44-18:41]",
+      "Entrevista La Silla Rota (Johanna Palacio interés 28 abril): abierta, sin cierre, mencionada aún 19 mayo sin progreso ('quedaron en el tintero'); responsable Johanna Palacio (Medios-Operación Aust) sin entrega de brief, formato o fecha [_chat.txt 28 abril, 19 mayo 18:34]"
+    ],
+    "risks": [
+      {
+        "risk": "Contranarativa de Amarande en medios 9-12 mayo (Imagen del Golfo, 24 Horas, Causa y Efecto, Los Reporteros) SIN respuesta defensiva oportuna por ausencia dashboard monitoreo — riesgo de desgaste narrativo pre-veredicto",
+        "severity": "alta"
+      },
+      {
+        "risk": "Enemistad manifiesta y pública entre jueza Amarande (investigada) y equipo legal Austria (asesores Isabel Esteve Gómez Mont, Alexander Ruben Castillo, despacho Nassar); denuncia cruzada de Amarande acusa animus revanchista — riesgo de impugnación procesal y tainting de procedimiento",
+        "severity": "alta"
+      },
+      {
+        "risk": "Escenarios post-sentencia (condenatorio vs absolutorio) NO documentados; veredicto inmediato 22 mayo sin plan reactivo confirmado — riesgo de respuesta defensiva desorganizada o tardía",
+        "severity": "alta"
+      },
+      {
+        "risk": "Entrevista Radio Fórmula 103.3 FM (Danielle D'Ithurbide, 4 mayo) pendiente sin reprogramación confirmada; Austria nervios iniciales; posible delegación a abogado genera riesgo de inconsistencia narrativa — riesgo de pérdida de oportunidad mediática de profundidad",
+        "severity": "media"
+      },
+      {
+        "risk": "Dashboard monitoreo medios NO entregado; dependencia de reactividad manual genera gaps 5-6 días en detección contranarativa — riesgo operativo de blind spots pre-veredicto",
+        "severity": "media"
+      },
+      {
+        "risk": "Entrevista La Silla Rota (Johanna Palacio, 28 abril) abierta sin cierre desde 5 semanas; responsable sin progreso documentado — riesgo de pérdida formato de profundidad post-suspensión definitiva",
+        "severity": "media"
+      },
+      {
+        "risk": "Decisión estratégica NO resuelta: si José Luis Nassar P. sale en defensa mediática pública o mantiene postura reactiva — riesgo de sobre-exposición legal o falta de credibilidad defensiva ante aceleración mediática de Amarande",
+        "severity": "media"
+      },
+      {
+        "risk": "Denuncia cruzada de Amarande contra asesores judicales genera visibility de conflicto de intereses (abogados defensores = denunciantes de jueza) — riesgo reputacional y de credibilidad narrativa ante medios neutrales",
+        "severity": "media"
+      }
+    ],
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "approval",
+        "source": "Tribunal Disciplina Judicial (TDJ)",
+        "date": "2026-04-27",
+        "note": "Suspensión provisional de Amarande Riojas Orozco concedida — precedente: primera jueza electa voto popular CDMX removida; validación institucional de narrativa irregularidades"
+      },
+      {
+        "type": "positive",
+        "signal": "approval",
+        "source": "Fiscalía General de la República (FGR)",
+        "date": "2026-04-10",
+        "note": "Denuncia receptada y asignada carpeta investigación (art. 225 VI CPF contra Amarande) — validación institucional de denuncia penal Austria"
+      },
+      {
+        "type": "positive",
+        "signal": "praise",
+        "source": "Influencer Arlín Medrano (@arlinmedrano, Instagram Business)",
+        "date": "2026-04-29",
+        "note": "Amplificación feminista: 'Este esfuerzo colectivo hizo posible que la jueza que protegió al agresor se separa del cargo. GRACIAS GRACIAS GRACIAS' — viralización narrativa en colectivas"
+      },
+      {
+        "type": "positive",
+        "signal": "praise",
+        "source": "Mario Maldonado (columnista El Universal, Posdata 3)",
+        "date": "2026-04-29",
+        "note": "Documentación de 3 irregularidades Amarande (omisión excusa, falta notificación víctima indirecta, liberación Sabag sin sustento) — validación mediática de narrativa"
+      },
+      {
+        "type": "negative",
+        "signal": "complaint",
+        "source": "Jueza Amarande Riojas Orozco (denuncia cruzada presentada post-suspensión)",
+        "date": "2026-04-27+",
+        "note": "Reconoce enemistad manifiesta con asesores Austria; acusa animus revanchista despacho Nassar — contranarativa defensiva activada; riesgo de tainting procesal"
+      },
+      {
+        "type": "negative",
+        "signal": "no_response",
+        "source": "Entrevista Radio Fórmula 103.3 FM (invitación 4 mayo, coordinador Carlos Jiménez)",
+        "date": "2026-05-04+",
+        "note": "Austria rechazó inicialmente por nerviosismo; propuesta delegación abogado; SIN confirmación final ni reprogramación — pérdida oportunidad mediática profundidad"
+      },
+      {
+        "type": "negative",
+        "signal": "complaint",
+        "source": "Medios contra-narrativa (Imagen del Golfo, 24 Horas, Causa y Efecto, Los Reporteros)",
+        "date": "2026-05-09 a 2026-05-12",
+        "note": "Contra-narrativa Amarande SIN respuesta defensiva oportuna por ausencia dashboard monitoreo; desgaste pre-veredicto no mitigado [_chat.txt 9-12 mayo]"
+      }
+    ]
+  },
+  "analyzed_at": "2026-06-10T16:19:42Z"
+}

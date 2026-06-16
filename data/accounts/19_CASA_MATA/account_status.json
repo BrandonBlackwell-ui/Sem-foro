@@ -1,0 +1,184 @@
+{
+  "number": "19",
+  "folderTitle": "19. Casa Mata",
+  "folderId": "1BABQF39mYd6PYs2hCj7I2Q2llI017kut",
+  "folderModifiedTime": "2026-03-25T04:28:30.853Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO_FIRMADO.pdf",
+    "modifiedTime": "2026-05-07T22:50:46.051000Z",
+    "source": "01.CASA_MATA_Contrato_OC"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-07T22:50:46Z",
+    "source": "01.CASA_MATA_Contrato_OC",
+    "file": "ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO_FIRMADO.pdf",
+    "fileId": "1NHlRb3VnADkk489eGGwn6gT4790Bnq5g"
+  },
+  "subfolderActivity": {
+    "01.CASA_MATA_Contrato_OC": {
+      "subfolderId": "1P56JzNKFdfV-mj3VSec4EQ2Hxp82LeGA",
+      "fileCount": 2,
+      "latestModified": "2026-05-07T22:50:46.051000Z",
+      "latestFile": "ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO_FIRMADO.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:10Z_verify",
+      "last_verified_at": "2026-06-12T14:09:10Z"
+    },
+    "02. CASA_MATA_Entregables": {
+      "subfolderId": "1GRnzW2oukKThOV131_mmnTj9ZQpm6KqJ",
+      "fileCount": 2,
+      "latestModified": "2026-03-25T22:32:09.039000Z",
+      "latestFile": "pujol_birkenstock.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:16Z_verify",
+      "last_verified_at": "2026-06-11T03:40:16Z"
+    },
+    "03.CASA_MATA_Reportes_Avance": {
+      "subfolderId": "1ci0X_IXXIh0uH0404ARNZzScubztdzpG",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:16Z_verify",
+      "last_verified_at": "2026-06-11T03:40:16Z"
+    },
+    "04.CASA_MATA_Conversaciones_WA": {
+      "subfolderId": "17hGTo4xblRru2vQGUwbOda75OwHDybMn",
+      "fileCount": 3,
+      "latestModified": "2026-04-23T19:16:58Z",
+      "latestFile": "WhatsApp Chat - Maya del Olmo.zip",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:16Z_verify",
+      "last_verified_at": "2026-06-11T03:40:16Z"
+    },
+    "05.CASA_MATA_Transcripciones_Llamadas": {
+      "subfolderId": "1m77ZBgoLrsMQTV2IwvXN1oevPGJg-5dP",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:16Z_verify",
+      "last_verified_at": "2026-06-11T03:40:16Z"
+    },
+    "06.CASA_MATA_Agenda_Trabajos": {
+      "subfolderId": "1x5p6jneCFRuYVM8pBncc5wvoGFbTamCK",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:16Z_verify",
+      "last_verified_at": "2026-06-11T03:40:16Z"
+    }
+  },
+  "pqProxy": {
+    "score": 82,
+    "tierMix": null,
+    "narrativaQuality": "alta",
+    "hasMetrics": true,
+    "evidence": "OC FIRMADA 5-may 2026 entre Blackwell × Pujol/Grupo Olvera (Alfonso Olvera socio director). Esquema alterno mes-A pago $52,200/mes-B crédito Pujol $45,000. Anual: $313,200 + IVA + $270,000 en consumos. Vigencia 1-ene a 31-dic 2026. Carnet a Alonso Palafox. CO+8 cierra gap histórico.",
+    "suggestion": "Mantener disponibilidad activa (modelo crisis-on-demand). Emitir CFDI mayo $52,200 antes del 14-may. Validar consumos Restaurante Pujol del esquema mes-B (julio).",
+    "fileEvaluated": "ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO_FIRMADO.pdf",
+    "evaluatedAt": "2026-05-11T18:50:00Z"
+  },
+  "nextAction": {
+    "type": "operational",
+    "priority": 1,
+    "label": "Activar facturación post-firma",
+    "text": "Mantener disponibilidad activa (modelo crisis-on-demand). Emitir CFDI mayo $52,200 antes del 14-may. Validar consumos Restaurante Pujol del esquema mes-B (julio).",
+    "source": "on-demand-fix-2026-05-11"
+  },
+  "cadenceType": "on-demand",
+  "cadenceNote": "Crisis-on-demand (Pujol/Grupo Olvera). OC firmada 5-may con esquema mes-A pago $52,200 / mes-B crédito Pujol $45,000. No aplica penalización por cadencia semanal — se evalúa por activación.",
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "baja",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T03:39:52Z",
+  "driveFiles": [
+    {
+      "id": "1NHlRb3VnADkk489eGGwn6gT4790Bnq5g",
+      "name": "ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO_FIRMADO.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T22:50:46.051Z",
+      "size": "6292749",
+      "subfolder": "01",
+      "subfolderName": "01.CASA_MATA_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1DLbDl4NbXe0Y4Seb9zlLUmrdaWgDPNGi",
+      "name": "ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T22:50:40.739Z",
+      "size": "21224",
+      "subfolder": "01",
+      "subfolderName": "01.CASA_MATA_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1HKMbYdKqENUirnvpK-7k3gPg3rzD_5d5",
+      "name": "WhatsApp Chat - Maya del Olmo.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-23T19:16:58.000Z",
+      "size": "548830",
+      "subfolder": "04",
+      "subfolderName": "04.CASA_MATA_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1n1fmet822pjPY2AJ5aKHBh-h5w6j1J91",
+      "name": "WhatsApp Chat - Crisis Pujol + Blackwell.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-23T19:16:42.000Z",
+      "size": "1310",
+      "subfolder": "04",
+      "subfolderName": "04.CASA_MATA_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1jWq4YBiz-i7oeznpunfoRUeiPB29lYB3",
+      "name": "WhatsApp Chat - Nat (Pujol).zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-23T19:16:31.000Z",
+      "size": "111862",
+      "subfolder": "04",
+      "subfolderName": "04.CASA_MATA_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1pNLXAmrCJXHTIbGhlXVyImFnRDqNEqjz",
+      "name": "pujol_birkenstock.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-25T22:32:09.039Z",
+      "size": "26523",
+      "subfolder": "02",
+      "subfolderName": "02. CASA_MATA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1n3MmUInvRLA7G5FTxQcm7MiiZJSLYUYI",
+      "name": "Taller manejo clientes complejos.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-10T21:50:56.000Z",
+      "size": "123963",
+      "subfolder": "02",
+      "subfolderName": "02. CASA_MATA_Entregables",
+      "nestedPath": null
+    }
+  ]
+}

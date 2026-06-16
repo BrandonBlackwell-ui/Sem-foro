@@ -1,0 +1,227 @@
+{
+  "number": "22",
+  "folderTitle": "22.TOTALPLAY / Proyecto concluido",
+  "folderId": "1w2zrsgLovH1Esxa8fV9EmYjcCK0TCdus",
+  "folderModifiedTime": "2026-05-28T17:55:58.195Z",
+  "derivedStatus": "concluded",
+  "statusSuffix": "CONCLUIDO",
+  "latestDeliverable": {
+    "title": "Reporte_Totalplay_INFINITY_OneWeek.pptx.pdf",
+    "modifiedTime": "2026-05-04T22:53:43Z",
+    "source": "03.TOTAL_PLAY_Reportes_Avance"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-04T00:00:00Z",
+    "source": "03.Reportes_Avance",
+    "file": "Reporte_Totalplay_INFINITY_OneWeek.pptx",
+    "fileId": "1OW2Jaq29txsZXQ865soHbq3jowztigQi"
+  },
+  "subfolderActivity": {
+    "01. TOTAL_PLAY_Contratos_OC": {
+      "subfolderId": "11af0IGoQHR7AjetejFBIPTyyV29UwIoO",
+      "fileCount": 1,
+      "latestModified": "2026-04-23T22:40:54Z",
+      "latestFile": "ODC-TOTALPLAY ABR2026.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:10Z_verify",
+      "last_verified_at": "2026-06-12T14:09:10Z"
+    },
+    "02. TOTAL_PLAY_Entregables": {
+      "subfolderId": "1-mic9_ylJYH_Tdfr3ENycZyTEjK1jBYW",
+      "fileCount": 2,
+      "latestModified": "2026-04-30T00:03:39Z",
+      "latestFile": "Abril2026_Evidencia-Totalplay.xlsx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:19Z",
+      "last_verified_at": "2026-06-05T19:45:19Z"
+    },
+    "03.TOTAL_PLAY_Reportes_Avance": {
+      "subfolderId": "1aO5iEThBMmjgCAcIXGbZpEgetwpMILed",
+      "fileCount": 5,
+      "latestModified": "2026-05-04T22:53:43Z",
+      "latestFile": "Reporte_Totalplay_INFINITY_OneWeek.pptx.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:19Z",
+      "last_verified_at": "2026-06-05T19:45:19Z"
+    },
+    "04.TOTAL_PLAY_Conversaciones_WhatsApp": {
+      "subfolderId": "1Xb23up9mSzTfxo8_a3iWrmhiJD6cDQYS",
+      "fileCount": 1,
+      "latestModified": "2026-04-30T00:06:59Z",
+      "latestFile": "WhatsApp Chat - TOTALPLAY + BLACKWELL.zip",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:19Z",
+      "last_verified_at": "2026-06-05T19:45:19Z"
+    },
+    "05.TOTAL_PLAY_Transcripciones_llamadas": {
+      "subfolderId": "1IvKynUVhuD-y9RVtrAUTtB0pThceQvIj",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:19Z",
+      "last_verified_at": "2026-06-05T19:45:19Z"
+    },
+    "06.TOTAL_PLAY_Agenda_Trabajos": {
+      "subfolderId": "1oayYI-MvivkomA2Ar98L7ejr4adD-FGj",
+      "fileCount": 2,
+      "latestModified": "2026-04-21T18:57:23Z",
+      "latestFile": "Estrategia_Comunicacion_Totalplay_5T4D10_GLG_2026_2.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:19Z",
+      "last_verified_at": "2026-06-05T19:45:19Z"
+    }
+  },
+  "pqProxy": {
+    "score": 82,
+    "tierMix": {
+      "tier1": 1,
+      "tier2": 6,
+      "tier3": 4,
+      "none": 0
+    },
+    "narrativaQuality": "alta",
+    "hasMetrics": true,
+    "evidence": "Reporte_Totalplay_INFINITY_OneWeek.pptx (03.Reportes): 25 impactos totales, El Economista T1 (web + impreso), La Crónica T2, Quadratín T2, Mundo Ejecutivo T2, MNI Noticias T2, Lado MX T2, +6.7M alcance estimado, $985K equivalencia publicitaria. Narrativa muy estructurada con mensajes posicionados. Evaluado desde 03.Reportes; latestDeliverable en 02 es xlsx. | DELTA 2026-05-06: PQ: evento INFINITY genera 25 impactos T1+T2 con 100% sentimiento positivo y EPV $985K MXN — performance sobresaliente.",
+    "suggestion": "Capitalizar momentum con segunda ola de placements (entrevistas tech/wellness vertical) y reporte ejecutivo a Totalplay con KPIs digitales en mayo.",
+    "fileEvaluated": "Reporte_Totalplay_INFINITY_OneWeek.pptx",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Capitalizar momentum con segunda ola de placements (entrevistas tech/wellness vertical) y reporte ejecutivo a Totalplay con KPIs digitales en mayo.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "baja",
+  "playbookViolations": [],
+  "isActive": false,
+  "lastCrawledAt": "2026-06-05T19:45:19Z",
+  "driveFiles": [
+    {
+      "id": "1xZG28VPdfsJvR4whQr93BlU_GJ2Upvyt",
+      "name": "Reporte_Totalplay_INFINITY_OneWeek.pptx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T22:53:43.000Z",
+      "size": "2524747",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1OW2Jaq29txsZXQ865soHbq3jowztigQi",
+      "name": "Reporte_Totalplay_INFINITY_OneWeek.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-04T22:53:21.253Z",
+      "size": "7096368",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1AZ4M71HHmwT8h54y7TRLisXOmHjCzGta",
+      "name": "WhatsApp Chat - TOTALPLAY + BLACKWELL.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-30T00:06:59.000Z",
+      "size": "9897955",
+      "subfolder": "04",
+      "subfolderName": "04.TOTAL_PLAY_Conversaciones_WhatsApp",
+      "nestedPath": null
+    },
+    {
+      "id": "1PKpy_adyXKCOPmrYk2eIYZho00RUn1YB",
+      "name": "Abril2026_Evidencia-Totalplay.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-04-30T00:03:39.000Z",
+      "size": "12337",
+      "subfolder": "02",
+      "subfolderName": "02. TOTAL_PLAY_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "194shaWt1imx6wW8F3na2fskb86Z8sHcB",
+      "name": "ODC-TOTALPLAY ABR2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T22:40:54.000Z",
+      "size": "5893423",
+      "subfolder": "01",
+      "subfolderName": "01. TOTAL_PLAY_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1QztwIPs2UtUxTSQ608jwPtw0D3OWHGQE",
+      "name": "2026 Totalplay - FlashReport_Totalplay_INFINITY_v2.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-23T22:07:25.033Z",
+      "size": "2922965",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "11nB_DOo-FLB5qzi4I5KuasTWFh1ZB8n1",
+      "name": "Totalplay - Corte de medio - 23 abril.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-04-23T21:01:14.000Z",
+      "size": "13219",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1kAo7ECaPFgB2nzyGgk7IGjFL0sLwOMSt",
+      "name": "2026 Totalplay - Flashreport_Totalplay_INFINITY.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-23T19:32:24.000Z",
+      "size": "3138623",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1FwBD3pSP2TYcogp20vyR-HDUvQyOZale",
+      "name": "comunicado_Totalplay_5T4D10_VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T04:16:53.000Z",
+      "size": "51288",
+      "subfolder": "02",
+      "subfolderName": "02. TOTAL_PLAY_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1vPnJcgbqI-DoGQ8-E_vEWXZXpusG6yfk",
+      "name": "Estrategia_Comunicacion_Totalplay_5T4D10_GLG_2026_2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T18:57:23.000Z",
+      "size": "81321",
+      "subfolder": "06",
+      "subfolderName": "06.TOTAL_PLAY_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1KBDMsAmelsJ3R0nIBOGkiU7Fp5HNcYJ5",
+      "name": "Estrategia_Comunicacion_Totalplay_5T4D10_Cliente_2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-13T03:26:59.000Z",
+      "size": "36393",
+      "subfolder": "06",
+      "subfolderName": "06.TOTAL_PLAY_Agenda_Trabajos",
+      "nestedPath": null
+    }
+  ]
+}

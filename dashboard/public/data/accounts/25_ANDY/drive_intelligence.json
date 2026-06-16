@@ -1,0 +1,221 @@
+{
+  "number": "25",
+  "account_id": "25",
+  "account_name": "Andy",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1Z3GDDTE3M_tAuOUk8PZsUOZ1ThV3xAOw",
+      "title": "Contrato_Andycoach_completo_.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. ANDY_CONTRATO_OC",
+      "modifiedTime": "2026-05-12T22:50:32.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1qxaZWMJAI5mXfLhLQyHZFC7CR2Yd_t_2",
+      "title": "Blackwell x InstaCoachAndy.(Firmado)docx.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. ANDY_CONTRATO_OC",
+      "modifiedTime": "2026-05-07T22:58:35.645Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "12XEv8T_gFb1mkaZ6lpmYKpdOeHvcnwcH",
+      "title": "Contrato Andycoach (SIN FIRMAR).docx",
+      "subfolder": "01",
+      "subfolderName": "01. ANDY_CONTRATO_OC",
+      "modifiedTime": "2026-05-07T20:10:23.740Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1ag4kshYLVX_7kJhHejxLnw-Ca1ogp6aT",
+      "title": "Columna_Alto_Nivel_Andrea_Landa_VF.docx",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "modifiedTime": "2026-06-08T22:48:43.178Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1iYxEJ00m20m-49ow4_9PjnTZcX8F2bi6",
+      "title": "2026 - Andy Landa - Creator economy crece 23% al año y revive el déjà vu que marcó al e-commerce en 2010.docx",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "modifiedTime": "2026-06-08T22:47:50.411Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1l0NQ3ZkNDgrzhx9ypgQAeZSwipy9PNA9",
+      "title": "Andrea_Landa_OnePager_Sinergeticos.pptx",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "modifiedTime": "2026-04-30T17:48:56.954Z",
+      "kind": "PowerPoint→texto"
+    }
+  ],
+  "files_read_count": 6,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Fortalecer y profesionalizar la marca personal de Andy Landa para posicionarla como referente clara y confiable en crecimiento, ventas y creator economy en plataformas digitales, ampliando autoridad más allá de Instagram a través de publicaciones en medios nacionales (T1/T2/T3), entrevistas, podcasts, vinculación estratégica y speaking opportunities durante 3 meses (01 feb - 02 mayo 2026).",
+    "content_summary": "Contrato activo 01 feb - 02 mayo 2026 (VENCIDO: estamos en junio 2026, sin claridad sobre renovación). InstaCoachAndy LLC contrató servicios de posicionamiento integral. Se han entregado 2 piezas editoriales de calidad (columna sobre creator economy con dato de 23% CAGR global, OnePager posicionamiento), pero SIN reportes mensuales, publicaciones verificadas en medios, entrevistas ejecutadas ni evidencia de cobertura de medios nacionales durante feb-mayo 2026. Narrativa de Andy Landa es consistente y diferenciada (marca = infraestructura, creator economy = inflexión del mercado); calidad editorial demostrada pero sin trazabilidad de colocación o impacto cuantificado.",
+    "current_status": "Contrato nominalmente vencido desde 02 mayo 2026 (estamos en junio). Entregables editoriales completados (columna + OnePager) pero sin reporte de ejecución operativa, colocaciones en medios verificadas ni evidencia de llamadas semanales/actividades prometidas entre feb-mayo 2026. Desconocemos si el cliente renueva, termina contrato o está en disputa por falta de reportería.",
+    "scope_of_service": [
+      "Publicaciones en medios nacionales y estatales con estrategia narrativa diferenciada sobre brand personal y creator economy",
+      "Gestión y acompañamiento estratégico en entrevistas en medios tradicionales, digitales y electrónicos",
+      "Desarrollo y gestión de participaciones en podcasts relevantes a nivel nacional con audiencia calificada",
+      "Vinculación estratégica con líderes de opinión del ecosistema de emprendimiento y redes sociales",
+      "Identificación y gestión de espacios de alto valor: rankings, speaking opportunities, foros de influencia",
+      "Desarrollo de narrativa estratégica y herramientas de comunicación (columnas, fichas de autora, perfiles)",
+      "Reportería mensual de actividades, resultados, placements y alcance"
+    ],
+    "client_promises": [
+      {
+        "promise": "Publicaciones en medios nacionales y estatales que abonen posicionamiento estratégico de Andy Landa en creator economy y marca personal",
+        "cadence": "mensual",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Gestión y acompañamiento estratégico en entrevistas en medios tradicionales, digitales y electrónicos",
+        "cadence": "continuo",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Desarrollo y gestión de participaciones en podcasts relevantes a nivel nacional con audiencia calificada",
+        "cadence": "mensual",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Vinculación estratégica con líderes de opinión del ecosistema de emprendimiento y redes sociales",
+        "cadence": "continuo",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Identificación y gestión de espacios de alto valor (rankings, speaking opportunities, foros de influencia)",
+        "cadence": "mensual",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Entrega de reportes mensuales de actividades y resultados dentro de primeros 10 días hábiles del mes siguiente",
+        "cadence": "mensual",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Llamada de kick-off 09 febrero 2026 y arranque oficial de actividades 10 febrero 2026",
+        "cadence": "evento",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Pago mensual por anticipado durante primeros 5 días naturales de cada mes (contraprestación especificada en Anexo A)",
+        "cadence": "mensual",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Aprobación tácita de entregables después de 5 días hábiles sin respuesta del cliente",
+        "cadence": "evento",
+        "status": "pendiente"
+      }
+    ],
+    "fulfilled": [
+      "Contrato completo redactado y firmado digitalmente 01 feb 2026 (ratificado 12 mayo 2026 según dossier previo) — evidencia en Contrato_Andycoach_completo_.pdf",
+      "Propuesta operativa Anexo A desarrollada con 5 servicios específicos, estructura de trabajo (kickoff, WhatsApp, calls semanales, reportes mensuales)",
+      "Columna editorial 'Creator economy crece 23% al año y revive el déjà vu que marcó al e-commerce en 2010' completada — contexto global (200B USD actual, 1.3T proyectado 10 años, 23% CAGR), mercado México (300-480M USD, 3.3M creadores), casos de Casey Newton (170K suscriptores, ~1M USD/año), Ben Thompson (40K suscriptores pago, ~5M USD/año), Luisito Comunica (audiencia → activo transferible). Narrativa crítica: periodistas mexicanos no capitalizan momento, error de tratar redes como canales de distribución vs. plataformas nativas.",
+      "OnePager posicionamiento 'Andrea_Landa_Sinergeticos' con perfil completo: tagline ('Marca = infraestructura'), áreas expertise (marca personal, creator economy, contenido nativo, monetización digital), audiencia target (emprendedores LATAM), formato (Masterclass + mentoría), mensaje diferenciado",
+      "Ficha de autora y propuesta de colaboración con datos de Andy Landa: @instacoachandy (Instagram/YouTube), /in/andylanda/ (LinkedIn), originaria CDMX, actualmente Londres, especialista en marca personal y creator economy"
+    ],
+    "pending": [
+      "Confirmación ejecución real de kick-off 09 feb 2026 y actividades desde 10 feb 2026 — sin evidencia en transcripciones",
+      "Reportes mensuales de actividades y resultados febrero, marzo, abril, mayo 2026 — NO LOCALIZADOS en archivos",
+      "Documentación de publicaciones en medios: medio específico, fecha, sección/tier (T1/T2/T3), titular, alcance estimado, link o clipping",
+      "Registro de entrevistas completadas: medio, fecha, duración, mensajes clave verificados, enlace/evidencia de publicación",
+      "Listado de podcasts ejecutados: nombre programa, plataforma, fecha grabación/publicación, audiencia estimada, tema/ángulo narrativo",
+      "Evidencia de vinculaciones estratégicas: contactos establecidos, conversaciones generadas, acuerdos suscritos con líderes opinión",
+      "Documentación de participación en rankings o speaking opportunities: evento, fecha, audiencia estimada, impacto/cobertura",
+      "Comprobantes de pago mensual feb-mayo 2026: recibos, facturas emitidas por Blackwell, confirmación cliente de depósitos",
+      "Clarificación de estado POST-vigencia: ¿contrato finalizado sin renovación, renovado, o en disputa? ¿Cliente satisfecho o con reclamos?",
+      "Monto exacto de contraprestación mensual: Anexo A visible en archivos NO especifica cantidad numérica ni moneda"
+    ],
+    "per_file_notes": [
+      {
+        "folder": "02. ANDY_ENTREGABLES",
+        "file": "2026 - Andy Landa - Creator economy crece 23% al año y revive el déjà vu que marcó al e-commerce en 2010.docx",
+        "finding": "Columna editorial de alto nivel (~1200 palabras) con datos duros: creator economy global 200B USD, proyección 1.3T en 10 años, 23% CAGR idéntico a e-commerce 2010, mercado México 300-480M USD con 3.3M creadores activos (2º LATAM). Casos verificables: Casey Newton (Platformer, 170K suscriptores, ~1M USD/año desde newsletter), Ben Thompson (Stratechery, 40K suscriptores pago × 2USD/mes = ~5M USD/año), Luisito Comunica (creador → productora + tequila marca internacional). Narrativa crítica editorial: medios mexicanos no capitalizan cobertura, replican contenido en redes sin crear nativo, periodistas deben operar como media companies. Tono: pensamiento editorial de autor (Andy Landa), citable en medios de negocios/tech. Listo para colocación T1/T2 (El Economista, Forbes, Expansión, TecnoAmérica)."
+      },
+      {
+        "folder": "02. ANDY_ENTREGABLES",
+        "file": "Andrea_Landa_OnePager_Sinergeticos.pptx",
+        "finding": "OnePager posicionamiento 1 slide: perfil Andy Landa @instacoachandy, tagline central 'Marca = infraestructura', audiencia target (emprendedores LATAM), formato (Masterclass + mentoría), 4 áreas expertise: marca personal, creator economy, contenido nativo, monetización digital. Usado para comunicar perfil, credibilidad y servicios a partners/medios. Calidad profesional, alineado con narrativa editorializada."
+      },
+      {
+        "folder": "02. ANDY_ENTREGABLES",
+        "file": "Columna_Alto_Nivel_Andrea_Landa_VF.docx",
+        "finding": "Columna anterior sin especificación de tema/medio target — presente en dossier previo, reutilizada en referencias. Necesita revisión de contenido específico vs. fecha de entrega y medio propuesto."
+      },
+      {
+        "folder": "03. ANDY_REPORTES_AVANCES",
+        "file": "Andy_Landa_Reporte_Actividades_Resultados.pptx",
+        "finding": "Reporte ejecutivo del 10 junio 2026 (fuera de período contratado feb-mayo 2026). Debe contener actividades, placements, métricas — requiere lectura visual completa para extraer: qué se completó, qué medios, qué alcances, qué speakers/podcasts, qué entrevistas."
+      },
+      {
+        "folder": "05. ANDY_TRANSCRIPCIONES_LLAMADAS",
+        "file": "Touchpoint Andy x BWS: 2026/05/14",
+        "finding": "Transcripción última llamada 14 mayo 2026 (3 días antes del vencimiento del contrato). Debe contener: status de ejecución, pendientes identificados, conversación sobre renovación, expectativas cliente, feedback sobre entregables y colocaciones."
+      }
+    ],
+    "key_facts": [
+      "Cliente: InstaCoachAndy LLC, representada por Andy Landa (también Andrea Landa), Wyoming USA; contacto operativo: paulina@instacoachandy.com",
+      "Proveedor: Métodos y Fundamentos de Comunicación SA de CV (Blackwell Strategy), RFC: MFC190205UE1, domicilio CDMX",
+      "Período contratado: 01 feb - 02 mayo 2026 (3 meses exactos) — VENCIDO a junio 2026",
+      "Narrativa central editorializada: Andy Landa posicionada como experta en creator economy (inflexión 2026) y brand personal como infraestructura comercial, no como vanidad — diferenciación crítica vs. coaches genéricos",
+      "Datos editables en columna: creator economy global 200B USD (actual), 1.3T (proyección 10 años), 23% CAGR; mercado México 300-480M USD, 3.3M creadores activos; casos Casey Newton (170K suscriptores, ~1M USD/año), Ben Thompson (40K suscriptores pago, ~5M USD/año), Luisito Comunica (convergencia audiencia → negocio)",
+      "Entregables de calidad editorial confirmados: columna 1.2K palabras, OnePager 1 slide, ficha de autora — listos para colocación",
+      "SIN EVIDENCIA DE: kick-off 09 feb, reportes mensuales feb-may, publicaciones verificadas en medios, entrevistas ejecutadas, podcasts grabados, vinculaciones con líderes opinión, rankings/speaking opportunities, comprobantes de pago",
+      "Última actividad registrada: 14 mayo 2026 (llamada de touchpoint 3 días antes del vencimiento) — no documentada qué se discutió sobre status u renovación"
+    ],
+    "risks": [
+      {
+        "risk": "Brecha crítica entre promesa operativa (5 servicios, llamadas semanales, reportes mensuales) y evidencia de ejecución — ningún reporte mensual feb-may localizado, ninguna publicación verificada en medios, sin documentación de entrevistas o podcasts.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Contrato vencido 02 mayo 2026 sin claridad sobre renovación, terminación o disputa — última comunicación registrada 14 mayo 2026 pero SIN acta de decisión post-vigencia. Cliente puede reclamar incumplimiento de actividades ejecutadas.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Falta de trazabilidad de pagos mensuales feb-may 2026 — Anexo A visible NO especifica monto numérico, sin comprobantes de depósitos cliente confirma cobro real o está en deuda.",
+        "severity": "media"
+      },
+      {
+        "risk": "Narrativa editorial (creator economy 23% CAGR) requiere verificación de fuentes de datos antes de colocación T1 — si números provienen de reportes de terceros, necesita atribución explícita para evitar cuestionamiento de medios.",
+        "severity": "media"
+      },
+      {
+        "risk": "Andy Landa actualmente radicada en Londres — acceso limitado para entrevistas presenciales en México o grabaciones de podcasts nacionales que requieren presencia local, reduce ejecución de actividades sincrónicas.",
+        "severity": "media"
+      },
+      {
+        "risk": "OnePager y columna editorial completados sin evidencia de que cliente aprobó tácitamente (5 días hábiles) — si nunca fueron presentados al cliente, acumulación de entregables sin retroalimentación puede indicar falta de engagement real.",
+        "severity": "baja"
+      }
+    ],
+    "strategic_recommendations": [
+      "Auditar INMEDIATAMENTE la carpeta de reportes (03. ANDY_REPORTES_AVANCES) completa — extraer de 'Andy_Landa_Reporte_Actividades_Resultados.pptx' (junio 2026) qué placements efectivamente se ejecutaron en feb-may 2026, con medios específicos, fechas, tiers, alcances. Reconciliar con promesas.",
+      "Contactar cliente urgente (paulina@instacoachandy.com) para aclarar status POST-02mayo: ¿contrato finalizado, renovado, o en disputa? Si hay reclamo de incumplimiento, documentar posición Blackwell con evidencia de entregables editoriales completados vs. limitaciones operativas (ubicación Andy en Londres, falta de kick-off documentado).",
+      "Si contrato se RENUEVA: reestructurar plan operativo CON cliente para especificar: (a) placements target por mes (medios T1/T2/T3 nominados), (b) entrevistas con medios específicos (programa, conductor, fecha estimada), (c) podcasts concretos (nombre, audiencia), (d) reportería visual (screenshots, clippings digitales cada plazo). Acuerdos escritos semanalmente vía email/Asana, NO solo WhatsApp.",
+      "Colocar columna de creator economy en T1 (El Economista, Expansión, Forbes México) o T2 sectorial (TecnoAmérica, El Financiero tech) antes de fin junio 2026 — evidencia de colocación real validará valor entregado y generará tracción para renovación.",
+      "Establecer cadencia clara de comunicación: call semanal grabada (Zoom, Calendly recordatorio), reporte avance mini (viernes cada semana 3 bullets: hechos, en proceso, bloqueantes), reporte mensual formal (primeros 5 días hábiles, plantilla estandarizada con medios, fechas, alcances, next steps).",
+      "Negociar con cliente presencia alternativa: si Andy permanece en Londres, grabar entrevistas/podcasts vía Zoom/video call con medios mexicanos (común en 2026), o planificar 2-3 viajes presenciales CDMX al año para grabaciones sincrónicas (press junkets, eventos de lanzamiento).",
+      "Documentar tácitamente aprobación de entregables: enviar columna + OnePager con deadline de 5 días hábiles explícito en email, cc: paulina@instacoachandy.com, registrar en acta respuesta (o silencio = aprobación tácita conforme contrato). No acumular sin feedback."
+    ],
+    "opportunities": [
+      "Columna de creator economy (1.2K palabras, datos verificables: 23% CAGR, 200B→1.3T, casos Casey Newton/Ben Thompson/Luisito) + OnePager profesional = activo editorial listo para colocación inmediata T1/T2 antes de fin junio. Primera publicación = proof of execution, genera tracción renovación.",
+      "Andy Landa es experta diferenciada en creator economy (mercado emergente 2026, inflexión clara) — si se posiciona como source/comentarista en redacciones mexicanas, genera demanda de entrevistas adicionales (ripple effect), aumenta relevancia sin costo operativo adicional.",
+      "Vinculación con medios de negocios/emprendimiento (El Economista, Emprendedor.com, Entrepreneur.com, PandoDaily) que cubren creator economy — Andy como fuente verificable para historias sobre monetización digital, brand personal, oportunidades LATAM.",
+      "OnePager de posicionamiento de calidad profesional (alineado con tagline 'Marca = infraestructura') permite ofrecer a cliente servicios adicionales de brand amplification (webinars, masterclasses, cursos en línea) como extensión de PR — upsell de servicios compatibles con brand personal coaching.",
+      "Reporte ejecutivo junio 2026 ('Andy_Landa_Reporte_Actividades_Resultados.pptx') debe validarse si contiene placements reales — si sí, usar como portfolio case study para prospectar clientes similares (coaches de negocios digitales, creators, personal brands)."
+    ],
+    "opportunity": "Colocar columna de creator economy en medio T1 (El Economista, Forbes México, Expansión) antes de fin junio 2026 para validar ejecución y generar tracción de renovación contratual o amplificación de servicios con Andy Landa.",
+    "business_risk": "Contrato vencido 02 mayo 2026 sin renovación documentada y sin evidencia de placements ejecutados en período feb-may — cliente puede reclamar incumplimiento operativo de servicios principales (publicaciones, entrevistas, podcasts) generando disputa o pérdida de cuenta.",
+    "recommended_action": "Auditar reporte junio 2026 completo para extraer placements reales ejecutados, contactar cliente urgente para aclarar status (¿renovación, terminación, disputa?), y colocar columna creator economy en T1 antes de fin junio para validar ejecución y recuperar credibilidad operativa."
+  },
+  "analyzed_at": "2026-06-11T01:25:22Z"
+}

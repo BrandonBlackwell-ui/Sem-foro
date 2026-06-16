@@ -1,0 +1,389 @@
+{
+  "generated": "2026-04-22",
+  "schema": {
+    "items": {
+      "contrato": {
+        "label": "Contrato u OC",
+        "w_pq": 0.0,
+        "w_co": 0.1,
+        "w_sc": 0.0,
+        "w_sf": 0.0
+      },
+      "entregables": {
+        "label": "Entregables semanales",
+        "w_pq": 0.5,
+        "w_co": 0.4,
+        "w_sc": 0.2,
+        "w_sf": 0.0
+      },
+      "reporte": {
+        "label": "Reporte de avance",
+        "w_pq": 0.4,
+        "w_co": 0.2,
+        "w_sc": 0.2,
+        "w_sf": 0.0
+      },
+      "whatsapp": {
+        "label": "WhatsApp actualizado",
+        "w_pq": 0.0,
+        "w_co": 0.1,
+        "w_sc": 0.3,
+        "w_sf": 0.6
+      },
+      "transcripciones": {
+        "label": "Transcripciones llamadas",
+        "w_pq": 0.0,
+        "w_co": 0.05,
+        "w_sc": 0.3,
+        "w_sf": 0.4
+      },
+      "agenda": {
+        "label": "Agenda de trabajos",
+        "w_pq": 0.1,
+        "w_co": 0.15,
+        "w_sc": 0.0,
+        "w_sf": 0.0
+      }
+    },
+    "statusScore": {
+      "ok": 100,
+      "partial": 50,
+      "missing": 0,
+      "na": null
+    }
+  },
+  "checklist": {
+    "stprm": {
+      "contrato": "missing",
+      "entregables": "ok",
+      "reporte": "partial",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "ok",
+      "evidence": {
+        "entregables": "Sheet «Control de publicaciones STPRM»",
+        "agenda": "Sheet vigente"
+      }
+    },
+    "ipc": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Cuenta asignada sin workspace Drive"
+    },
+    "azvi": {
+      "contrato": "ok",
+      "entregables": "ok",
+      "reporte": "ok",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "partial",
+      "evidence": {
+        "contrato": "CONTRATO_AZVI.pdf + Adendum_AZVI_011125.pdf",
+        "entregables": "Azvi 2026 subfolder activo",
+        "reporte": "AZVI_Reporte Q1.pdf",
+        "whatsapp": "WhatsApp Azvi + Blackwell (zip)",
+        "agenda": "Correo renovación contrato"
+      }
+    },
+    "tello": {
+      "contrato": "partial",
+      "entregables": "partial",
+      "reporte": "missing",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {
+        "contrato": "Blackwell_Propuesta MTV 30122025.pdf",
+        "whatsapp": "WhatsApp Tello (MTV) zip"
+      }
+    },
+    "nuvoil": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Cuenta asignada sin workspace Drive"
+    },
+    "cima": {
+      "contrato": "ok",
+      "entregables": "ok",
+      "reporte": "partial",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "partial",
+      "evidence": {
+        "contrato": "Contrato 2026 Cima firma autografa LS.pdf",
+        "entregables": "Monitoreo CIMA activo",
+        "reporte": "Notas CIMA-BW",
+        "whatsapp": "CIMA Monitoreo + Notas CIMA-BW (zips)"
+      }
+    },
+    "apollo": {
+      "contrato": "partial",
+      "entregables": "ok",
+      "reporte": "missing",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "ok",
+      "evidence": {
+        "entregables": "Apollo 2026 activity",
+        "whatsapp": "WhatsApp Apollo comunicación + Estrategia 2026 (2 zips)",
+        "agenda": "PLAN MAESTRO 2026"
+      }
+    },
+    "armor": {
+      "contrato": "na",
+      "entregables": "na",
+      "reporte": "na",
+      "whatsapp": "na",
+      "transcripciones": "na",
+      "agenda": "na",
+      "evidence": {},
+      "note": "Fuera de score — folder «terminanción anticipada»"
+    },
+    "jack": {
+      "contrato": "partial",
+      "entregables": "na",
+      "reporte": "partial",
+      "whatsapp": "na",
+      "transcripciones": "na",
+      "agenda": "na",
+      "evidence": {
+        "reporte": "REPORTE GENERAL JACK LEVY 25-26.pdf + REPORTE_JACK.pdf"
+      },
+      "note": "Proyecto detenido — checklist parcialmente n/a"
+    },
+    "maja": {
+      "contrato": "ok",
+      "entregables": "partial",
+      "reporte": "ok",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "partial",
+      "evidence": {
+        "contrato": "Propuesta de servicios MAJA Blackwell",
+        "reporte": "Blackwell_MAJA_SISTEMA INTEGRAL DE GESTIÓN REPUTACIONAL.pdf",
+        "whatsapp": "WhatsApp MAJA A+ zip",
+        "agenda": "Touchpoints + Documentos rectores"
+      }
+    },
+    "turbofin": {
+      "contrato": "ok",
+      "entregables": "ok",
+      "reporte": "ok",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "partial",
+      "evidence": {
+        "contrato": "Contrato turbofin V Firmada 030925.pdf",
+        "entregables": "Turbofin 2026 activity",
+        "reporte": "Reportes Google Alex semanales",
+        "whatsapp": "WhatsApp Turbofin + Blackwell (zip)"
+      }
+    },
+    "pujol": {
+      "contrato": "partial",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {
+        "contrato": "ESQUEMA DE PAGO PUJOL.docx"
+      }
+    },
+    "rocha": {
+      "contrato": "partial",
+      "entregables": "ok",
+      "reporte": "ok",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {
+        "entregables": "Cobertura sostenida",
+        "reporte": "Reporte — RR.pdf (17-abr-26)",
+        "whatsapp": "WhatsApp Medios RR zip"
+      }
+    },
+    "futbol": {
+      "contrato": "missing",
+      "entregables": "partial",
+      "reporte": "missing",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {
+        "whatsapp": "Interno ascenso y descenso + Ascenso 4T (2 zips)"
+      }
+    },
+    "dalinde": {
+      "contrato": "ok",
+      "entregables": "ok",
+      "reporte": "ok",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "ok",
+      "evidence": {
+        "entregables": "Subcarpetas 2025 + 2026",
+        "reporte": "Reportes mensuales",
+        "whatsapp": "WhatsApp Dalinde zip",
+        "agenda": "Agenda 2026"
+      }
+    },
+    "andy": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Cuenta asignada sin workspace Drive"
+    },
+    "veracruz": {
+      "contrato": "partial",
+      "entregables": "partial",
+      "reporte": "missing",
+      "whatsapp": "ok",
+      "transcripciones": "ok",
+      "agenda": "partial",
+      "evidence": {
+        "contrato": "Blackwell_ArturoHaddad_PropuestaComercial.pdf",
+        "entregables": "Comunicado + notas en medios",
+        "whatsapp": "WhatsApp Veracruz Medios zip",
+        "transcripciones": "Transcripción 17-abr + 20-abr",
+        "agenda": "Minuta 17-abr + 20-abr"
+      }
+    },
+    "luca": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Cuenta asignada sin workspace Drive"
+    },
+    "bernardo": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Cuenta asignada sin workspace Drive"
+    },
+    "uldis": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Sin tráfico reciente en Drive"
+    },
+    "credix": {
+      "contrato": "partial",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "partial",
+      "evidence": {
+        "contrato": "RE_ Inicio de proyecto Credix + Blackwell.eml",
+        "whatsapp": "WhatsApp Credix zip",
+        "agenda": "SCREENS SEGUIMIENTO"
+      }
+    },
+    "erikrubi": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Cuenta asignada sin workspace Drive"
+    },
+    "totalplay": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Cuenta asignada sin workspace Drive"
+    },
+    "gicsa": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Cuenta asignada sin workspace Drive"
+    },
+    "aduanas": {
+      "contrato": "missing",
+      "entregables": "ok",
+      "reporte": "ok",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {
+        "entregables": "Reportes Google Alex semanales",
+        "reporte": "Reporte SEP OCT",
+        "whatsapp": "WhatsApp Alex Comms (zip)"
+      },
+      "note": "Sin asignación abril 2026 — evidencia histórica"
+    },
+    "mapelly": {
+      "contrato": "missing",
+      "entregables": "partial",
+      "reporte": "missing",
+      "whatsapp": "ok",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {
+        "entregables": "Link_BG_Mexico.pdf",
+        "whatsapp": "WhatsApp Mapelli-Blackwell zip"
+      },
+      "note": "Sin asignación abril 2026"
+    },
+    "irugami": {
+      "contrato": "missing",
+      "entregables": "missing",
+      "reporte": "missing",
+      "whatsapp": "missing",
+      "transcripciones": "missing",
+      "agenda": "missing",
+      "evidence": {},
+      "note": "Sin asignación abril 2026"
+    },
+    "idlayr": {
+      "contrato": "na",
+      "entregables": "na",
+      "reporte": "na",
+      "whatsapp": "na",
+      "transcripciones": "na",
+      "agenda": "na",
+      "evidence": {},
+      "note": "Fuera de score — folder «proyecto concluido»"
+    }
+  },
+  "schemaVersion": "v2-rebalanced-30abr",
+  "schemaNote": "PQ ya no depende de contrato (eso es CO). PQ ahora viene de entregables(50%) + reporte(40%) + agenda(10%). SC desde entregables/reporte/whatsapp/transcripciones balanceado."
+}

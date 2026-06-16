@@ -1,0 +1,234 @@
+{
+  "number": "34",
+  "account_id": "34",
+  "account_name": "SUPPLY_PAY",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "118a2gy_SJmaCX8Rgbn5FD8_ctXSNGYcQ",
+      "title": "Jorge Ayala firmado.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. Contratos_OC",
+      "modifiedTime": "2026-05-07T19:44:01.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1ykktHmE5YWOkLxpRrNvSsc7jnCwRh7Ln",
+      "title": "nota_draft1.docx",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "modifiedTime": "2026-05-22T03:47:37.723Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1lDD0VrQn03AQ74mvtPOpEtGTBror5qqd",
+      "title": "columna_draft1.docx",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "modifiedTime": "2026-05-22T03:46:38.088Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1xBMP8n_dzxF4XY8xXoyk-JTSjMwgEqFt",
+      "title": "plan_harva_blackwell_1.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "modifiedTime": "2026-05-22T03:15:19.125Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1A85_TeQ4091ZvpiXtavgLkHITm9jc66-",
+      "title": "plan_harva_blackwell_1.docx",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "modifiedTime": "2026-05-22T03:15:00.122Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1R8_zcuKLcxB4iCzLD4_D_DoW9I_NBngX",
+      "title": "plan_harva_blackwell.docx",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "modifiedTime": "2026-05-21T20:25:03.039Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1j9K08x_gXnvwkQfQziuc5Dig2N3BcXXz",
+      "title": "Kick-off Supply Pay- Blackwell_otter_ai_transcript (1).txt",
+      "subfolder": "05",
+      "subfolderName": "05. SUPPLY_PAY_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-13T04:44:57.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1aJp4LygJ8qi15ac4Z2Ps42THfwJzbqMr",
+      "title": "11mayo2026 Kick-off Supply Pay- Blackwell_otter_ai_transcript.txt",
+      "subfolder": "05",
+      "subfolderName": "05. SUPPLY_PAY_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-12T03:14:26.524Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1m-HIWJ7O4aJlwgKt5IJwf4rP22cEGNTM",
+      "title": "12MAY2026_Supplypay_chat 3.txt",
+      "subfolder": "04",
+      "subfolderName": "04. SUPPLY_PAY_CONVERSACIONES_WA",
+      "modifiedTime": "2026-05-13T04:38:54.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1_-OYUDSF0hmB-xVnbL8F678mlO29HCN2",
+      "title": "7 al 11 mayo_chat 2.txt",
+      "subfolder": "04",
+      "subfolderName": "04. SUPPLY_PAY_CONVERSACIONES_WA",
+      "modifiedTime": "2026-05-12T03:07:19.736Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1Ndcz-mMSZB5C-DBnB8yRUELyDyP5F9i0",
+      "title": "agenda_harvest_blackwell.docx",
+      "subfolder": "06",
+      "subfolderName": "06. SUPPLY_PAY_Agenda_Trabajos",
+      "modifiedTime": "2026-05-13T04:52:48.000Z",
+      "kind": "Word→texto"
+    }
+  ],
+  "files_read_count": 11,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Posicionar el cierre de $113M de Harvest AI (ex Supply Pay) — $3M equity + $110M línea de crédito Architect Capital — ante family offices y fondos de VC en México/Latinoamérica mediante cascada de 4 publicaciones narrativas (validación financiera → rebranding/tech → perfil fundador → expertise agroexportador) para generar credibilidad con inversionistas y luego pivot a captación de clientes exportadores.",
+    "content_summary": "Cuenta en ejecución crítica: contrato ejecutable (04-07/05/2026), kickoff realizado exitosamente (11/05), plan estratégico documentado (13/05), dos drafts completados (21/05) pero bloqueados sin aprobación cliente hace 10+ días. Ventana editorial T1 (Forbes, El Economista) semana 25-29/05 cerrada sin publicaciones. CRISIS: cero entregas de contenido aprobado; cliente no completa materiales de rebranding; monitoreo programado pero sin reportes formales. Riesgo máximo de pérdida total de hito comunicacional Q2 2026.",
+    "current_status": "Contrato ejecutable (Jorge Ayala firmó 04-07/05); kickoff realizado 11/05 (Johanna Palacio + Jorge Ayala, 26 min, estrategia cascada definida); 2 drafts entregados 21/05 (nota corporativa + columna opinión) pendientes aprobación hace 10+ días. Plan operativo del 13/05 establece: lunes 11 kickoff ✓, martes 12 materiales cliente (PARCIAL), miércoles 13 ángulos (✓), jueves 14 entrega propuesta (✓), viernes 15 aprobación (✗). Monitoreo 25/05-25/06 programado; cero publicaciones ejecutadas; en espera de aprobación + materiales rebranding completos.",
+    "scope_of_service": [
+      "Redacción y gestión de 4 publicaciones en medios T1: 1 nota corporativa (cierre $113M, Architect, ERP-IA, diferenciadores) + 3 artículos personales Jorge Ayala (factoraje sin recurso / columna opinión, perfil narrativo Pénjamo-Silicon Valley, análisis experto aranceles FSMA T-MEC)",
+      "Selección de medios: Forbes Red, El Financiero, El Economista, Excélsior, Dinero en Imagen (target: family offices, fondos VC México-LatAm)",
+      "Control editorial y aprobación previa: 5 días naturales, silencio=aprobación tácita, gestión cambios in-situ",
+      "Monitoreo diario medios lunes–viernes (25/05–25/06): corte matutino, alertas Harvest/Supply Pay, fundadores, competencia (ProducePay, Silo, Monex, Verqor), coyuntura (arancel tomate, FSMA 204, T-MEC, Pharr-Reynosa)",
+      "Reporte final cuantificado: links publicaciones, KPIs (alcance, impresiones, engagement), share of voice vs competencia, valor mediático, recomendaciones Fase 2 (entrega cierre junio 2026)"
+    ],
+    "key_facts": [
+      "Contrato: Jose Jorge Ayala Soto LLC (McAllen, TX) ↔ Blackwell (RFC MFC190205UE1, CDMX), firmado 04-07/05/2026, vigencia contractual 01/04–02/05/2026 (DESFASE: operación real 11/05–12/06)",
+      "Contraprestación: $175,000 MXN ($10,000 USD) + IVA; pago 50% anticipado (5 días post-firma), 50% a 15 días",
+      "Hito corporativo: cierre $113M en abril 2026 ($3M equity Architect Capital $110M línea crédito 3-4 años); #1 Top Seed Funded Startup Crunchbase abril 2026",
+      "Rebranding oficial: Supply Pay → Harvest AI (anunciado finales abril 2026, ~1-2 semanas antes kickoff 11/05)",
+      "Kickoff: 11/05/2026, Johanna Palacio (Ops Blackwell) + Jorge Ayala (CEO), ~26 minutos, estrategia narrativa cascada definida, diferenciadores alineados, público (family offices, Monashees tipo), mecánica WhatsApp, tono orgánico apegado realidad",
+      "Plan operativo: 13/05/2026 (agenda_harvest_blackwell.docx), cronograma semanal 11-15/05, responsabilidades desglosadas por día, ángulos editoriales (validación financiera → tech → perfil → expertise), selección medios T1, benchmark competitivo (ProducePay, Famous Software, Silo, Monex), benchmarks referentes (Verqor, Agree, Bitso, Stori, Harvey)",
+      "Nota corporativa: nota_draft1.docx completada 21/05, ángulo cierre $113M + línea Architect + ERP-IA + diferenciadores (factoraje sin garantías, USDA, Coface), público family offices/VC, STATUS: ENVIADA APROBACIÓN CLIENTE (vencida desde 22/05; plazo 5 días naturales expirado hace 10 días al 01/06)",
+      "Columna opinión: columna_draft1.docx completada 21/05, tema factoraje sin recurso, diferencial ProducePay, Coface, liability shift comprador americano, STATUS: ENVIADA APROBACIÓN CLIENTE (vencida ~27-28/05; plazo expirado)",
+      "Chats WhatsApp: 07/05-12/05 (grupo operativo), enlaces LinkedIn Harvest, website supplyPay.io/es en construcción junio, anuncio Facebook Architect Capital, envío parcial materiales rebranding martes 12/05",
+      "Fundadores: Jorge Ayala (Pénjamo, Guanajuato; 10 años fresh products; contabilidad México + MBA finanzas EE.UU.; CFO pre-Harva) + William Steele (CEO, Valle McAllen)",
+      "Producto: Harvest AI = ERP nativo IA + factoraje embebido, líneas $50K–$1M revolvente/mes, conexión API bancos, predicción mercados con USDA data",
+      "Respaldos: Coface (2ª aseguradora crédito mundial), Angel Hub Moris (Monterrey), Architect Capital (Silicon Valley)",
+      "Diferencial clave: factoraje SIN garantías tradicionales (solo pagaré fraude/dolo), sin recurso quiebra comprador, control efectivo vía notificación legal Walmart/HEB, liability shift comprador americano, ciclo cash 3+ días vs 30-40 pre-Harva",
+      "Competencia: ProducePay ($60M pérdidas 2026, financiaba pre-venta), Silo Technologies (pivotó broker model, USA), Monex (factoraje con recurso), Famous Software (Fresno, CA)",
+      "Coyuntura: arancel tomate 17% (suspendido 2026, no renovado), FSMA Sección 204 (40-60% empresas produce non-compliant), T-MEC cubre fresh excepto tomate, desabasto EE.UU.-México, Pharr-Reynosa (#1 puerto entrada $850B comercio perecederos)"
+    ],
+    "client_promises": [
+      {
+        "promise": "Entrega nota corporativa posicionando cierre $113M, línea Architect Capital $110M, ERP-IA, diferenciadores (factoraje sin garantías, integración USDA, aseguradora Coface) en T1 (Forbes Red o El Financiero)",
+        "cadence": "único",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Entrega columna invitada Jorge Ayala sobre factoraje sin recurso, diferencial vs ProducePay, rol Coface, liability shift comprador americano en El Economista o El Financiero",
+        "cadence": "único",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Entrega perfil narrativo Jorge Ayala (Pénjamo → Silicon Valley, 10+ años fresh products, MBA finanzas, visión empresarial) en Excélsior o Dinero en Imagen",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Entrega análisis experto Jorge Ayala sobre arancel tomate 17%, FSMA 204, T-MEC, impacto exportadores mexicanos en El Economista, El Financiero o Reforma",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Monitoreo diario medios (lunes-viernes) desde 25/05 hasta 25/06, corte matutino, alertas Harvest/Supply Pay, competencia (ProducePay, Silo, Monex), coyuntura agroexportadora, Trump policy, arancel tomate",
+        "cadence": "continuo",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Control editorial y aprobación previa todos contenidos con plazo máximo 5 días naturales; silencio=aprobación tácita; gestión cambios in-situ sin retraso operacional",
+        "cadence": "continuo",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Reporte final cuantificado: links publicaciones, KPIs (alcance, impresiones, engagement), share of voice vs competencia, valor mediático, recomendaciones extensión Fase 2, entrega cierre junio 2026",
+        "cadence": "único",
+        "status": "pendiente"
+      }
+    ],
+    "fulfilled": [
+      "Contrato de prestación de servicios firmado 04-07/05/2026 (Jorge Ayala firmado.pdf) — todas firmas, estado ejecutable, $175,000 MXN + IVA.",
+      "Llamada de kickoff realizada 11/05/2026 (Kick-off Supply Pay-Blackwell_otter_ai_transcript.txt) — Johanna Palacio + Jorge Ayala, ~26 minutos, estrategia narrativa cascada, diferenciadores, público family offices, mecánica WhatsApp, tono orgánico.",
+      "Plan estratégico documentado (agenda_harvest_blackwell.docx, 13/05/2026) — cronograma semanal 11-15/05, responsabilidades, ángulos editoriales (validación financiera → tech → perfil → expertise), selección medios T1, benchmark competitivo.",
+      "Grupo WhatsApp operativo desde 07/05/2026 (12MAY2026_Supplypay_chat 3.txt, chats precedentes) — comunicación cliente-Blackwell, envío links LinkedIn Harvest, website supplyPay.io/es en construcción, anuncio Architect Capital.",
+      "Nota corporativa draft completada 21/05 (nota_draft1.docx) — ángulo $113M, Architect Capital, ERP-IA, diferenciadores factoraje sin garantías/USDA/Coface, público family offices/VC, ENVIADA APROBACIÓN CLIENTE.",
+      "Columna invitada draft completada 21/05 (columna_draft1.docx) — factoraje sin recurso, diferencial ProducePay, Coface, liability shift comprador americano, ENVIADA APROBACIÓN CLIENTE."
+    ],
+    "pending": [
+      "Aprobación cliente nota_draft1.docx — vencida desde 22/05 (plazo 5 días naturales); al 01/06 mora de 10 días; crítico: ventana editorial T1 semana 25-29/05 CERRADA.",
+      "Aprobación cliente columna_draft1.docx — vencida estimado 27-28/05; gestión sin respuesta cliente; ventana 25-29/05 cerrada.",
+      "Publicación nota corporativa en Forbes Red o El Financiero — programada semana 25-29/05 según plan 13/05; no ejecutada; ventana crítica cerrada.",
+      "Publicación columna invitada en El Economista — programada semana 25-29/05; no ejecutada; ventana cerrada.",
+      "Redacción perfil narrativo Jorge Ayala (Excélsior / Dinero en Imagen) — programado semana 25-29/05; no iniciado; desfase +10 días.",
+      "Redacción análisis experto arancel tomate 17%, FSMA 204, T-MEC — programado semana 1-5/06 con cierre 8-12/06; no iniciado.",
+      "Reportes monitoreo medios diario — solicitado desde 25/05 hasta 25/06; CERO entregas formales documentadas; falta 1+ mes.",
+      "Materiales rebranding Harvest AI completos — bios finales Jorge Ayala + William Steele, manual de marca formal, ejemplo comunicado anterior, documentación oficial cambio nombre Supply Pay → Harvest AI; parcialmente enviado (links LinkedIn, website en construcción)."
+    ],
+    "fulfilled_deliverables": "Entregables completados y confirmados:\n1. Contrato firmado (04-07/05/2026): Jorge Ayala rúbrica, Estado ejecutable, MFC190205UE1 Blackwell RFC confirmado.\n2. Transcripción kickoff (11/05/2026): Johanna Palacio + Jorge Ayala, 26 minutos, estrategia cascada definida, público/medios alineados.\n3. Plan estratégico (13/05/2026): cronograma 11-15/05, ángulos por publicación, selección medios T1, bench competitivo.\n4. Grupo WhatsApp operativo (desde 07/05): chat diario, envío materiales cliente, refs tono, links LinkedIn/Architect.\n5. Nota corporativa draft (21/05/2026): 1 documento completo, ángulo $113M+ERP+diferenciadores, ENVIADA CLIENTE.\n6. Columna opinión draft (21/05/2026): 1 documento, factoraje sin recurso+Coface+liability, ENVIADA CLIENTE.",
+    "per_file_notes": [
+      {
+        "folder": "01. Contratos_OC",
+        "file": "Jorge Ayala firmado.pdf",
+        "finding": "Contrato José Jorge Ayala Soto LLC ↔ Blackwell MFC190205UE1, 04-07/05/2026, $175,000 MXN+IVA (50% anticipado, 50% a 15 días), vigencia contractual 01/04–02/05/2026 pero operación real 11/05–12/06, todas firmas presentes, cláusula 9.6 silencio=aprobación tácita, estado ejecutable."
+      },
+      {
+        "folder": "06. SUPPLY_PAY_Agenda_Trabajos",
+        "file": "agenda_harvest_blackwell.docx",
+        "finding": "Plan estratégico 13/05/2026: cronograma semanal 11-15/05, desglose responsabilidades por día, ángulos editoriales (validación financiera → tech → perfil → expertise agroexportador), selección medios T1 (Forbes Red, El Economista, El Financiero, Excélsior, Dinero), benchmark (ProducePay, Famous Software, Silo, Monex), cierre viernes 15 aprobación formal para arranque semana 18/05 → INCUMPLIDO: viernes 15 NO aprobó cliente."
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Aprobación cliente bloqueada 10+ días: notas draft enviadas 21/05, vencimiento contractual 26/05 (5 días), hoy mora 6+ días sin respuesta; ventana editorial T1 semana 25-29/05 CERRADA sin publicaciones → PÉRDIDA TOTAL hito Q2 2026.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Materiales rebranding Harvest AI INCOMPLETOS: cliente no envió bios finales Jorge Ayala + William Steele, manual de marca, ejemplo comunicado anterior, documentación formal Supply Pay → Harvest AI; equipo Blackwell paralizado para redactar artículos personales sin bios oficiales → riesgo redacción inconsistente con identidad corporativa.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Monitoreo medios 25/05–25/06 programado pero CERO reportes formales entregados; falta 1+ mes de alertas diarias solicitadas; cliente sin visibility sobre cobertura competencia (ProducePay, Silo), coyuntura (aranceles, FSMA, T-MEC) → incumplimiento contractual, reputacional.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Desfase calendario contractual: vigencia 01/04–02/05 pero operación real 11/05–12/06 (plazo kickoff real); cronograma original semana 18/05 inicio publicaciones NO se ejecutó → cadencia cascada 4 piezas comprometida.",
+        "severity": "media"
+      },
+      {
+        "risk": "Coyuntura temporal: arancel tomate 17% NO renovado 2026; ventana de relevancia máxima (abril-mayo) cerrada; redacción análisis experto sobre arancel tomate/FSMA/T-MEC pierde urgencia mediática si se publica junio/julio.",
+        "severity": "media"
+      },
+      {
+        "risk": "Falta designación autoridad aprobación cliente: ¿quién aprueba en nombre Harvest AI? ¿Jorge directamente? ¿William Steele? ¿Administrador grupo WhatsApp? Sin claridad: riesgo aprobaciones ciclo por terceros sin poder decisión.",
+        "severity": "media"
+      },
+      {
+        "risk": "Capacidad redacción interna Blackwell: 2 drafts completados (nota + columna), pero falta redacción perfil Jorge Ayala (Excélsior/Dinero) + análisis experto aranceles; si cliente no aprueba nota+columna pronto, equipo se sobrecarga Ley 3 piezas simultáneamente en junio.",
+        "severity": "baja"
+      }
+    ],
+    "business_risk": "Bloqueo aprobación cliente desde 22/05 ha cerrado ventana editorial crítica T1 (semana 25-29/05) sin publicar nota corporativa ni columna; riesgo de pérdida total de hito comunicacional Q2 2026 para posicionamiento Harvest AI ante family offices/fondos VC, dejando $110M línea crédito sin cobertura mediática de validación.",
+    "opportunity": "Rescate cascada: si cliente aprueba esta semana, publicar simultáneamente nota corporativa + columna en T1 (Forbes Red/El Economista) para capturar remanente de relevancia inversora, y ejecutar perfil Jorge + análisis experto en junio como momentum para pivot a captación de clientes exportadores.",
+    "opportunities": [
+      "Acelerar aprobaciones cliente (esta semana): si nota+columna se publican semanas 2-3 de junio, aún hay ventana para capturar interés inversionistas antes de cierre de semestres VC (julio); requiere meeting urgente con Jorge viernes.",
+      "Pivot narrativo hacia captación clientes: una vez publicadas 2 piezas validación (corporativa+columna), posicionar perfil Jorge + análisis experto como evidencia expertise para atraer exportadores fresh products; ventana junio-julio coyuntura arancel/FSMA/T-MEC sigue relevante.",
+      "Monitoreo retroactivo: compilar alertas 25/05–01/06 (cerradas por falta reportes), publicar summary competencia (ProducePay, Silo, Monex) a cliente como valor agregado, recuperar credibilidad operativa antes de iniciar reportes diarios noviembre.",
+      "Amplificación LinkedIn Harvest: aprovechar grupo WhatsApp para coordinar posts personales Jorge Ayala sobre factoraje/fresh products durante publicaciones T1 (cross-promotion), generar engagement antes que medios."
+    ]
+  },
+  "analyzed_at": "2026-06-09T19:52:14Z"
+}

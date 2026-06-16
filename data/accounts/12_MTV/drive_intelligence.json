@@ -1,0 +1,551 @@
+{
+  "number": "12",
+  "account_id": "12",
+  "account_name": "MTV",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1QjZtCbZZkJMyc0XSN_EFem5WeS0o-HBWHJ9z9NN7PZI",
+      "title": "Blackwell_Propuesta MTV 30122025",
+      "subfolder": "01",
+      "subfolderName": "01. MTV_Contratos_OC",
+      "modifiedTime": "2026-05-11T18:26:57.377Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "10PwOAM2aPpBob67Kwt59be8eDxHxuFGE",
+      "title": "Blackwell_Propuesta MTV 30122025.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. MTV_Contratos_OC",
+      "modifiedTime": "2026-04-21T18:41:22.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1xUsmYk-GaVyYrjSx0NSQWeLUTk46Jr-N",
+      "title": "Hidalgo - Hidalgo consolida modelo propio de política científica con 25 millones de pesos en 2026 ok (1) (1).docx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-06-09T18:33:20.379Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1f7pYjipAFqS-crjnDwyn3kCSDLhuDGbF",
+      "title": "Derecho_Replica_Pletora_MTV.docx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-06-09T17:35:19.723Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1Nx7SnuOYmBFOqGe2H7KmtyEDIqMuR7wd",
+      "title": "MTV_Hidalgo consolida modelo de planeación territorial que se traduce.docx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-06-09T14:51:04.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1Txwy_7n1TxQ58TK0rHxYjsKK09rbbYASCOOIuZU2KeE",
+      "title": "Perfil_Medio_Central",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-06-08T15:34:45.325Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1KgAnKRXbVboQ_IACAj8xXPydu97qAWgT",
+      "title": "Perfil_Medio_Pletora_Hidalgo.docx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-06-08T15:31:17.826Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "11cHlf9tOyxLqm3mmjjur_VjioNZKhXaZ",
+      "title": "Evaluacion_Tello_Vargas_040626.pptx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-06-04T15:39:54.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1LNwr5kuo-HmOmX8xRlxznnAPX82Uzv1M",
+      "title": "Argumentario_Defensivo_Proceso_MTV.docx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-06-04T14:22:56.356Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1cmatjFEIWYoylQiju6eJXEGzwR8avF49",
+      "title": "BriefingBook_Milenio_PedroGamboa 010626.docx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-06-02T20:59:09.961Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1oFQW9v9oeHjwJyuEBPuZyuNTj3yYOCCn",
+      "title": "IMPULSO INDIGENA (1).docx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-05-31T01:19:09.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1vXnoN7yTgZwrqfCFlslFu5PjgCbCvZif",
+      "title": "plan_comunicacion_bimestral_v2_MTV.pptx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-05-25T18:09:51.012Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1XcocEytkepOCrZFOGynYum2cBiIu_JOO",
+      "title": "2026 MTV - Mundo Ejecutivo (2).docx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-05-15T22:05:54.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1hF4StsyaBoiYTjCPe6we_shz58bse3wpJf3ke4fwlUs",
+      "title": "Hidalgo activa el plan para garantizar suelo y certeza al Polo Zapotlán, tras los 2 mil mdd de Solar International ",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-05-15T21:58:25.369Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1AOHk2fP2SwLQ5c6oxLTvF7ubOXhqNt_v",
+      "title": "Testigos de Trabajo Blackwell_Miguel Tello (MTV).pdf",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-05-08T18:07:41.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1cTmJFlgsQwKx3R1zBXUb6abafScEsasj",
+      "title": "Presentación equipo MTV -BWS.pptx",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "modifiedTime": "2026-04-29T20:29:32.144Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1ldjSIqx3jlkKdAlcer38VNbrxtxSK8rb",
+      "title": "Copia de Tello - Checklist  .xlsx",
+      "subfolder": "03",
+      "subfolderName": "03.MTV_Reportes_Avance",
+      "modifiedTime": "2026-06-09T15:08:29.198Z",
+      "kind": "Excel→texto"
+    },
+    {
+      "id": "1ayvdqvxUZ39a4b-JPs6J2JMfQ908UOBn",
+      "title": "MTV_Reporte mensual MAYO 26.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.MTV_Reportes_Avance",
+      "modifiedTime": "2026-06-01T16:57:52.486Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1OcGsUsbkLjA6UIMlvaUX2BRFph6qdu5L",
+      "title": "MTV_Reporte mensual ABRIL 26.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.MTV_Reportes_Avance",
+      "modifiedTime": "2026-05-18T13:57:50.838Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1DMxXWyThHeSmCvBXAvfu6EQDV9VAwK6Z",
+      "title": "Avence actividades MTV -BWS.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.MTV_Reportes_Avance",
+      "modifiedTime": "2026-04-30T23:21:11.845Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1jUcBCfwpvhL0ezyud6lVYtofRbMd6PairoUbpyUQCNY",
+      "title": "Transcripción llamada 26 de mayo 2026",
+      "subfolder": "05",
+      "subfolderName": "05. MTV_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-26T17:39:33.002Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1SAByLmd7AqqIC8rWjJ02RBAgQAmvQxLGJI7ANKKcU1A",
+      "title": "Transcripción plan de comunicación y reporte de resultados abril",
+      "subfolder": "05",
+      "subfolderName": "05. MTV_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-21T17:11:04.186Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1ZS3jOHpnKChVnAKE6_95i9LpyPRcbbqaZVxICgR3NkU",
+      "title": "Transcripción_llamada_12_05_26",
+      "subfolder": "05",
+      "subfolderName": "05. MTV_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-12T20:12:53.769Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1vB0ksNlIJWcCQH0PdZwb5vijlvcLlD7-",
+      "title": "Transcripción_llamada_28_04_26.docx",
+      "subfolder": "05",
+      "subfolderName": "05. MTV_Transcripciones_Llamadas",
+      "modifiedTime": "2026-04-29T20:16:26.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1U8vU0JeXNCuM53Qn7zj9vbeH1phzpA3G",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T16:48:38.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1dFcJ4OQCVPeL9gmTEl6PV-dCIcXlmpDd",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T16:48:24.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1N5hRvAmfOhUe24oAROO07kbVzUVkZkQK",
+      "title": "00000445-Sandra Cortes (com Soc Sep Yunuen).vcf",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T16:48:24.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "15OAOBPiCUxnxWfFm7unNjaZg1WSuMHcP",
+      "title": "00000922-Primer Corte_Miguel Tello Vargas_08052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T13:39:10.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "19hol0fBhYmceH3ZvNc727htgu3eulyfI",
+      "title": "00001294-Primer Corte_Miguel Tello Vargas_08052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T13:39:10.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "10_gv1bg-6X_Q7HEBlKlma2mL8Qq2Affm",
+      "title": "00000920-Tercer Corte_Miguel Tello Vargas_07052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T02:48:16.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1h3M0id11cqc9RNpalAdG0hTMUZ_vw63J",
+      "title": "00001292-Tercer Corte_Miguel Tello Vargas_07052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T02:48:16.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1Uo11k14mym6fE5RwdeK1t3ChxHrHfh72",
+      "title": "00000918-Segundo Corte_Miguel Tello Vargas_07052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T21:08:30.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1GwPmk2ttZB26O91dngfh08qVDxly5VbHMbcCNh6it80",
+      "title": "Actividades del 11 al 15 de mayo",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "modifiedTime": "2026-05-31T01:52:42.447Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1astK92gBhtJhGo_z6bTX-xkawKnFA8CCwByKXD8ROX8",
+      "title": "Actividades 4 al 8 de mayo",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "modifiedTime": "2026-05-31T01:28:39.530Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "18NnQzZSQk3AJFWU2614qVb7y0nB51q_QnWvAlAeEr6M",
+      "title": "Actividades del 18 al 22 de mayo",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "modifiedTime": "2026-05-31T01:26:48.723Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1iLKBofaJAa2isFwe9PhaPtzkBs5apf_BnQislSKsXlY",
+      "title": "Actividades 25 - 29 de mayo",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "modifiedTime": "2026-05-31T01:22:18.966Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1rCtxnn2WlvzX4UJMxZKFB-VIMRdEEJlDfVx9c1Z7hKw",
+      "title": "Actividades 27-30 de abril",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "modifiedTime": "2026-04-30T22:15:34.025Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1z4WiZ5UjMQ831Dm40tTGUDhCRuu1Xgu8",
+      "title": "00001290-Segundo Corte_Miguel Tello Vargas_07052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T21:08:30.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1oU92L7t80vcBfrgq_7pr_MpeEqohHiWo",
+      "title": "00000913-PHOTO-2026-05-07-09-02-46.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T15:07:20.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1fO4qNXyQE83LK5bYDe1vraiE8xgSpgc4",
+      "title": "00000906-Primer Corte_Miguel Tello Vargas_07052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T13:39:34.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1sc1Z2XZrbygHxy2DKe3C9IPKrt6LagZ4",
+      "title": "00001272-Primer Corte_Miguel Tello Vargas_07052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T13:39:34.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1jiwKJtkQiml4C_eXSJRgqPh5SNVM82Rg",
+      "title": "00000904-Tercer Corte_Miguel Tello Vargas_06052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T02:55:30.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1GybUeVbfFpKwO8LNxMr61sYw7laH1SOK",
+      "title": "00001268-Tercer Corte_Miguel Tello Vargas_06052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T02:55:30.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1V8i3qhQ43Exe7gZ-chNV_qwyM9HPaNg3",
+      "title": "00001266-PHOTO-2026-05-06-19-29-51.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T01:33:24.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1k95qUjDR4Ip5SLrP2fulGIH7bP5_-0YL",
+      "title": "00000903-PHOTO-2026-05-06-15-51-13.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-06T21:51:14.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "14vCYvzoiPc_KHXXpufaLHmjKwgYc00QD",
+      "title": "00001264-PHOTO-2026-05-06-15-52-44.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-06T21:51:14.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1jLVJlVOaCJBFdjFBEoQG3m2dFiO3-M0P",
+      "title": "00000901-Segundo Corte_Miguel Tello Vargas_06052026.docx",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "modifiedTime": "2026-05-06T21:49:44.000Z",
+      "kind": "Word→texto"
+    }
+  ],
+  "files_read_count": 47,
+  "files_skipped": [
+    "[05] Tello - 18-05-26.m4a: formato no soportado (audio/x-m4a)",
+    "[04] 00000911-AUDIO-2026-05-07-08-45-24.opus: formato no soportado (audio/ogg)",
+    "[04] 00000909-AUDIO-2026-05-07-08-42-38.opus: formato no soportado (audio/ogg)"
+  ],
+  "account_summary": {
+    "project_purpose": "Posicionar a Miguel Ángel Tello Vargas como referente técnico nacional en planeación estratégica, innovación pública e inversión territorial durante 2026-2027, construyendo narrativa de largo plazo hacia candidatura electoral 2028, mientras se gestiona vulnerabilidades reputacionales (patrimonio, ingresos, asociaciones empresariales, omisiones administrativas en firmas de documentos).",
+    "content_summary": "MTV ejecuta plan bimestral Q2 2026 (mayo-junio) con cobertura activa T1-T2: Mundo Ejecutivo (6-may, infraestructura), La Jornada Hidalgo (6-may, AIFA-Valle México), Revista Acrópolis (portada abril, becas talento). Monitoreo reputacional diario activo (3 cortes). Crítica editorial negativa reciente: El Graderío 824 (7-may, Florentino Peralta) ataca a Tello por «balazo en el pie» al mencionar Estafa Siniestra. Riesgo operativo: firma de CITNOVA 41.4 mdp bloqueada desde hace 1+ años genera presión pública de Patiño Cardona. Plan bimestral abril-mayo ejecutándose; relacionamiento con líderes opinión (Gamboa confirmado 1-jun) progresa.\",\n<parameter name=\"current_status\">MTV ejecuta actualmente plan bimestral mayo-junio 2026 con 3 cortes diarios de monitoreo reputacional. Ha logrado portada en Revista Acrópolis (abril 2026), cobertura T1-T2 sostenida (Mundo Ejecutivo 6-may, La Jornada Hidalgo 6-may, Milenio referencias), y relacionamiento confirmado con Pedro Gamboa (1-jun 16:00 hrs, Casa Prime Hilton). Críticas editoriales sobre omisión de firma CITNOVA (41.4 mdp) y menciones de Estafa Siniestra requieren gestión defensiva inmediata. Visita Tren México-AIFA con medios T1 aún sin fecha operativa concreta.",
+    "scope_of_service": [
+      "Consultoría estratégica y acompañamiento táctico en comunicación nacional",
+      "4 publicaciones web mensuales en medios T1 con control editorial (Q3-Q4)",
+      "1 entrevista mensual en radio o televisión",
+      "1 portada anual en revista (cumplido: Acrópolis abril 2026)",
+      "1 participación anual en foro o podcast especializado",
+      "Monitoreo reputacional lunes-viernes 7:30-8:30am con 3 cortes diarios",
+      "Argumentarios defensivos y Q&A de coyuntura (patrimonio, ingresos, asociaciones, firmas administrativas)",
+      "Gestión de medios nacionales T1-T2 y líderes de opinión",
+      "Coordinación estratégica semanal con equipo interno Pachuca",
+      "Gestión preventiva de riesgos narrativos y crisis reputacionales"
+    ],
+    "client_promises": [
+      {
+        "promise": "2 publicaciones web mensuales en medios T1 con control editorial (Q1-Q2)",
+        "cadence": "mensual",
+        "status": "cumplido"
+      },
+      {
+        "promise": "4 publicaciones web mensuales en medios T1 con control editorial (Q3-Q4)",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "1 entrevista mensual en radio o televisión",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "1 portada anual en revista",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "1 participación anual en foro o podcast especializado",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Monitoreo reputacional lunes-viernes 7:30-8:30am (todo el año)",
+        "cadence": "continuo",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Argumentarios defensivos y Q&A para coyunturas (patrimonio, ingresos, empresas, firmas administrativas)",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Coordinación estratégica semanal con equipo interno Pachuca",
+        "cadence": "semanal",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Gestión relacionamiento líderes opinión (Gamboa, Carriedo, Cacho, Zúñiga, Núñez)",
+        "cadence": "evento",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Visita Tren México-AIFA con medios T1 (Carlos Zúñiga, Jaime Núñez)",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      }
+    ],
+    "fulfilled": [
+      "Portada Revista Acrópolis (abril 2026): 'Impulsa talento hacia el mundo' — narrativa becas talento Hidalgo con posicionamiento técnico MTV (foto verificada en archivos adjuntos, fecha 6-may 2026 corte; publicación facebook Acrópolis confirmada).",
+      "Cobertura T1-T2 infraestructura mayo 2026: Mundo Ejecutivo (6-may, nota 'Infraestructura en Hidalgo: el problema no es el potencial sino la ejecución' con foto screenshot de Mundo Ejecutivo publicado 6-may), La Jornada Hidalgo (6-may, AIFA-Valle México, planeación territorial), Milenio (referencias mayo-jun 2026).",
+      "Monitoreo reputacional activo: 3 cortes diarios reportados 6-may y 7-may 2026 (archivos Primer Corte, Segundo Corte, Tercer Corte con síntesis estructurada de secciones PERFIL POLÍTICO, PROYECTOS GUBERNAMENTALES, COLUMNA PROPIA, NOTAS DE INTERÉS).",
+      "Cobertura talento/TIC/ciencia: Noti7, Focus Hidalgo, Nodo TV, Poder Informativo Digital, Publimetro (mayo-jun 2026) — evento DESCTI 'Niñas en las TIC' con presencia Dulce Amara Cano Hernández, coordinación Tello, cobertura Noti7 confirmada en corte 6-may.",
+      "Entrevista confirmada Pedro Gamboa: Malas Palabras (NQ Radio sin límites) 11:00am referenciada en Facebook (6-may corte), próxima entrevista Gamboa confirmada 1-jun 16:00 hrs, Casa Prime Hilton (Milenio T1).",
+      "Argumentario narrativa urbanismo: Ley Imagen Urbana Pachuca→Tulancingo→Tula publicado en cortes 6-7 may; columna propia 'La ciudad que se vende sola' (Forbes México) sobre gobierno digital e inversión (7-may segundo corte).",
+      "Nota publicada La Jornada: 'Cercanía con AIFA y Valle de México: Hidalgo apuesta por infraestructura y capital humano' (6-may segundo corte) con citación Tello Vargas sobre planeación territorial, conectividad, servicios básicos.",
+      "Participación evento DESCTI: 'Niñas en las TIC: Talento que Transforma' con Dulce Amara Cano Hernández moderando conversatorio 'Voces que inspiran', cobertura Noti7 (6-may segundo corte).",
+      "Plan bimestral abril-mayo-junio: 5 espacios editoriales identificados (Forbes México cumplido 7-may, Jornada Hidalgo cumplido 6-may, Mundo Ejecutivo cumplido 6-may) con ángulos temáticos planeación urbana, infraestructura, innovación.",
+      "Columna propia Forbes México (7-may segundo corte): 'La ciudad que se vende sola: cómo el gobierno digital atrae inversión y talento' — análisis Medellín, Barcelona, Tel Aviv, Guadalajara con alineamiento MTV narrativa competitividad.",
+      "Monitoreo: 3 cortes diarios estructurados (Primer Corte 7-9am, Segundo Corte 12-2pm, Tercer Corte 4-7pm) con cobertura PERFIL POLÍTICO, PROYECTOS GUBERNAMENTALES, COLUMNA PROPIA, NOTAS DE INTERÉS (archivos 6-7 mayo 2026 confirmados)."
+    ],
+    "pending": [
+      "Argumentario defensivo crítica Plaza Juárez: nota 6-may ataca promesas Tuzobús, llama Tello 'funcionario privilegiado' — PENDIENTE redactar postura defensiva/rectificación con argumentos sobre nueva estrategia Semoth (38 unidades, tarifas sin incremento, monitoreo real-time).",
+      "Argumentario defensivo crítica El Graderío 824 (7-may, Florentino Peralta): ataca a Tello como 'balazo en el pie' por refutar Viggiano mencionando Estafa Siniestra (Omar Fayad embajador) — PENDIENTE control de daño narrativo y clarificación contexto administrativo.",
+      "Argumentario defensivo firma CITNOVA 41.4 mdp: Patiño Cardona denuncia públicamente (7-may corte Acrópolis Noticias) que Tello bloquea autorización desde 1+ año para investigación litio, becas, equipo — PENDIENTE explicación administrativa de criterios de aprobación, cronograma de firma.",
+      "Visita Tren México-AIFA con medios T1 (Carlos Zúñiga Milenio, Jaime Núñez): confirmación operativa PENDIENTE, sin fecha concreta, riesgo de amplificación crítica de denuncias de corrupción (trabajadores Nopala Villagrán, solapamiento RH y militares, pagos en efectivo).",
+      "1 participación foro/podcast especializado 2026: PENDIENTE programación (meta anual).",
+      "Columnas Q3-Q4 (target 4/mes): 2 confirmadas (Acrópolis abril + Mundo Ejecutivo 6-may); 2+ faltantes para cumplir meta mensual mayo (nuevos espacios Reporte Índigo, Jornada Hidalgo, Milenio Hidalgo aún sin publicación).",
+      "Relacionamiento Alejandro Cacho: PENDIENTE ejecución (referenciado en dossier como próximo).",
+      "Relacionamiento Maca Carriedo: PENDIENTE ejecución (referenciado en dossier como próximo).",
+      "Plan LinkedIn Tello + padre: en revisión administrativa Blackwell, PENDIENTE aprobación cliente.",
+      "Notas sobre Tuzobús: nota negativa Plaza Juárez (6-may) ataca promesas incumplidas; nota positiva News Hidalgo (6-may) sobre 38 nuevas unidades alimentadoras requiere amplificación editorial para contrarrestar crítica anterior."
+    ],
+    "fulfilled_evidence": [
+      "Portada Revista Acrópolis (abril 2026) — foto de Tello en sofá Acrópolis 'Miguel TELLO' subtítulo 'Becas para transformar el futuro: Hidalgo impulsa talento hacia el mundo' (archivos PHOTO-2026-05-06-15-51-13.jpg, PHOTO-2026-05-06-15-52-44.jpg)",
+      "Nota Mundo Ejecutivo (6-may 2026) — 'Infraestructura en Hidalgo: el problema no es el potencial, sino la ejecución' con foto screenshot Mundo Ejecutivo (archivo PHOTO-2026-05-06-19-29-51.jpg, corte 00001268 y 00000904 Tercer Corte 6-may)",
+      "Columna Forbes México (7-may 2026) — 'La ciudad que se vende sola: cómo el gobierno digital atrae inversión y talento' con casos Medellín, Barcelona, Tel Aviv, Guadalajara (archivo 00001290 Segundo Corte 7-may)",
+      "Monitoreo 3 cortes (6-may y 7-may 2026) — archivos Primer Corte, Segundo Corte, Tercer Corte con síntesis estructurada de medios T1-T2 (archivos 00000901, 00000903, 00000904, 00000906, 00001268, 00001272, 00001290)",
+      "Entrevista Malas Palabras NQ Radio (referenciada 6-may) — post Facebook menciona 'Este miércoles estará con nosotros Miguel Tello... 11:00 de la mañana' (archivo corte 6-may segundo)",
+      "Evento DESCTI 'Niñas en las TIC' — cobertura Noti7, moderación Dulce Amara Cano Hernández, coordinación Tello Vargas (corte 6-may segundo: 'Estudiantes de educación media superior... San Agustín Tlaxiaca... moderado por Dulce Amara Cano Hernández... coordinación con el titular... Miguel Tello Vargas')",
+      "Notas La Jornada Hidalgo (6-may) — 'Cercanía con AIFA y Valle de México: Hidalgo apuesta por infraestructura y capital humano' citando Tello (corte 6-may segundo)",
+      "Plan bimestral actividades (27-30 abril) — documento Google Doc confirmando aprobaciones en marcha (Jornada, Heraldo, Mundo Ejecutivo, presenta plan bimestral, monitoreo 3 cortes diarios)"
+    ],
+    "per_file_notes": [
+      {
+        "folder": "06.MTV_Agenda_Trabajos",
+        "file": "Actividades 27-30 de abril (Google Doc)",
+        "finding": "Plan de trabajo semanal: aprobación nota Jornada becas/fondo, columna Heraldo México publicada, seguimiento Mundo Ejecutivo, envío presente Pedro Gamboa, monitoreo 3 cortes diarios confirmado; pendiente presentación plan bimestral y aprobación nota Mundo Ejecutivo."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00001290-Segundo Corte_Miguel Tello Vargas_07052026.docx",
+        "finding": "Monitoreo 7-may segundo corte: crítica El Graderío 824 (Florentino Peralta) llama a Tello 'balazo en el pie' por mencionar Estafa Siniestra al refutar Viggiano; columna Forbes 'La ciudad que se vende sola' sobre gobierno digital inversión; nota Cursor Ley Imagen Urbana; denúncia pública Patiño (CITNOVA 41.4 mdp sin firma Tello desde 1+ año); cobertura energía CFE Hidalgo (Sheinbaum), denuncias Tren México-Querétaro corrupción, Mundialista estrategia turística Semoth."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00000913-PHOTO-2026-05-07-09-02-46.jpg",
+        "finding": "Chat WhatsApp grupo 'Tello - BWS Operación' (7-may 09:02) confirmando call 30 min para 'desembarcar temas' de ayuda/retroalimentación; Brenda Bernal Tello responde con confirmación; Bezalel (Tello) comenta nota que secretario pasó, pidiendo nota de seguimiento — coordina operativo interno equipo Pachuca."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00000906-Primer Corte_Miguel Tello Vargas_07052026.docx",
+        "finding": "Monitoreo 7-may primer corte: cobertura Zu Noticias, Cumbres Hidalgo, Periódico Pensador Hidalguense (Facebook) sobre Ley Imagen Urbana Pachuca→Tulancingo→Tula; crítica El Graderío 824 repetida (balazo en el pie, Estafa Siniestra); cobertura de proyectos prioritarios planeación."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00001272-Primer Corte_Miguel Tello Vargas_07052026.docx",
+        "finding": "Duplicado monitoreo 7-may primer corte: misma estructura (Zu Noticias, Cumbres Hidalgo, El Graderío 824 crítica, proyectos planeación urbanismo)."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00000904-Tercer Corte_Miguel Tello Vargas_06052026.docx",
+        "finding": "Monitoreo 6-may tercer corte: nota Mundo Ejecutivo 'Infraestructura en Hidalgo: el problema no es el potencial, sino la ejecución' con análisis Tello planeación territorial, conectividad, servicios básicos, financiamiento, gobernanza; cobertura Bóveda Informativa, Vocales Radio, News Hidalgo, Pachuca Vive sobre Ley Imagen Urbana; referencias Facebook El Huarache, Código H."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00001268-Tercer Corte_Miguel Tello Vargas_06052026.docx",
+        "finding": "Duplicado monitoreo 6-may tercer corte: nota Mundo Ejecutivo infraestructura idéntica, cobertura medios T2-T3 sobre urbanismo."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00001266-PHOTO-2026-05-06-19-29-51.jpg",
+        "finding": "Screenshot Mundo Ejecutivo publicado 6-may: titular 'Infraestructura en Hidalgo: el problema no es el potencial, sino la ejecución' con foto recurso gráfico 'Metropoli segura'; nota en sección 'Actualidad' de Mundo Ejecutivo (T1 confirmado)."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00000903-PHOTO-2026-05-06-15-51-13.jpg",
+        "finding": "Portada Revista Acrópolis (abril 2026): foto Tello sentado en sofá, logo Acrópolis 'Hidalgo desde las alturas', subtítulo 'Miguel TELLO' con texto 'Becas para transformar el futuro: Hidalgo impulsa talento hacia el mundo' — diseño profesional, posicionamiento editorial positivo."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00001264-PHOTO-2026-05-06-15-52-44.jpg",
+        "finding": "Imagen duplicada portada Acrópolis (mismo contenido, mismo ángulo foto Tello en sofá, mismo subtítulo becas talento)."
+      },
+      {
+        "folder": "04.MTV_Conversaciones_WA",
+        "file": "00000901-Segundo Corte_Miguel Tello Vargas_06052026.docx",
+        "finding": "Monitoreo 6-may segundo corte: nota La Jornada Hidalgo 'Cercanía con AIFA y Valle de México: Hidalgo apuesta por infraestructura y capital humano' citando Tello sobre planeación territorial, rezagos históricos, conectividad; evento DESCTI 'Niñas en las TIC' con Dulce Amara Cano moderando, cobertura Noti7; post Facebook Acrópolis sobre portada becas talento, post Malas Palabras invitación 11:00am NQ Radio entrevista."
+      }
+    ]
+  },
+  "analyzed_at": "2026-06-11T02:42:20Z"
+}

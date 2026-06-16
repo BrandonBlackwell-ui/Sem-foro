@@ -1,0 +1,1096 @@
+{
+  "number": "21",
+  "folderTitle": "21. Nuvoil",
+  "folderId": "18T8Hx_nq6_5DrXrT6G11SSHQY0Xj_uMv",
+  "folderModifiedTime": "2026-04-23T04:13:56.049Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "ESTATUS 10 DE JUNIO",
+    "modifiedTime": "2026-06-10T23:19:54.074000Z",
+    "source": "06.NUVOIL_Agenda_Trabajos"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-13T18:20:58Z",
+    "source": "02.NUVOIL_Entregables",
+    "file": "Testigos_de_entregables_Nuvoil.xlsx",
+    "fileId": null
+  },
+  "subfolderActivity": {
+    "01.NUVOIL_Contrato_OC": {
+      "subfolderId": "10bKsRO7b56_GHmwdFkcIvMMOyeYI28Mo",
+      "fileCount": 8,
+      "latestModified": "2026-06-10T17:21:25.325000Z",
+      "latestFile": "RPP Esc 3010.pdf (en Expediente)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:10Z_verify",
+      "last_verified_at": "2026-06-12T14:09:10Z",
+      "nestedNote": "Contiene subcarpetas: Expediente"
+    },
+    "02.NUVOIL_Entregables": {
+      "subfolderId": "1TSwWBCNamTurgtDUqpJiawa8v38tyHqb",
+      "fileCount": 26,
+      "latestModified": "2026-06-09T15:55:46.216000Z",
+      "latestFile": "Premio LOGRA_Nuvoil.docx (en Junio) (en BOLETINES)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:58Z_verify",
+      "last_verified_at": "2026-06-11T01:57:58Z",
+      "nestedNote": "Contiene subcarpetas: CMP, ESTATUS, PLAN MAESTRO 2026, MATERIALES GENERADOS"
+    },
+    "03.NUVOIL_Reportes_Avance": {
+      "subfolderId": "1Bo1-0anc7ZJUKhsuKiKnkYjyyasirOcG",
+      "fileCount": 2,
+      "latestModified": "2026-06-02T17:45:42Z",
+      "latestFile": "Nuvoil_Reporte_MAYO (1).pptx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:00Z_verify",
+      "last_verified_at": "2026-06-11T01:58:00Z"
+    },
+    "04.NUVOIL_Conversaciones_WA": {
+      "subfolderId": "1etDNULv8-MIRWS_sJQRIllMERSJVBIAy",
+      "fileCount": 31,
+      "latestModified": "2026-05-08T16:43:45.091000Z",
+      "latestFile": "NUVOIL_INTERNO_08052026_chat.txt",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:00Z_verify",
+      "last_verified_at": "2026-06-11T01:58:00Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    "05.NUVOIL_Transcripciones_Llamadas": {
+      "subfolderId": "1ApEbGKLGMbETnR_y3paAEx8hjJ92J02k",
+      "fileCount": 9,
+      "latestModified": "2026-06-09T16:32:01Z",
+      "latestFile": "Estatus NUVOIL_BLACKWELL - 2026_06_09 10_00 CST - Transcript.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:01Z_verify",
+      "last_verified_at": "2026-06-11T01:58:01Z"
+    },
+    "06.NUVOIL_Agenda_Trabajos": {
+      "subfolderId": "16xqmSaENa2qW-yvHQ0SxUH1ZboBj-cNg",
+      "fileCount": 22,
+      "latestModified": "2026-06-10T23:19:54.074000Z",
+      "latestFile": "ESTATUS 10 DE JUNIO",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:01Z_verify",
+      "last_verified_at": "2026-06-11T01:58:01Z",
+      "nestedNote": "Contiene subcarpetas: MINUTAS"
+    }
+  },
+  "pqProxy": {
+    "score": 88,
+    "tierMix": null,
+    "narrativaQuality": "alta",
+    "hasMetrics": true,
+    "evidence": "Entregable es la presentación de Kick Off (agenda + equipos Nuvoil/Blackwell/Quálitas). No contiene métricas ni placements. Cuenta nueva — primer reporte de resultados pendiente. | DELTA 2026-05-07: Borrador contrato Nuvoil SIN FIRMAS + primer export WA del onboarding. | DELTA 2026-05-11T18:30:00Z: RESULTADOS abril: 12 publicaciones / 3.9K reach / $512K EPV / calificación cliente 10/10. Logro estratégico: nota negativa CEO desplazada en Google News. Solicitud nueva: blindaje CMP 3-6 jun Veracruz. Premio Pacto Global ONU.",
+    "suggestion": "PRIORIDAD CRÍTICA: agendar mesa de trabajo briefing CMP esta semana — definir mensajes stand, voceros, plan de acción crisis contratos mixtos/derrame Golfo. Ejecutar media training virtual acelerado para directivos de mayor rango antes del CMP. Capitalizar premio Pacto Global tras el comunicado oficial del 13-may: columna + podcast (sin saturar). Cerrar Q&A pendiente con datos técnicos/cifras internas que solicitó Paola Verde.",
+    "fileEvaluated": "Estatus Nuvoil - BWS 8-may - Notas de Gemini.docx",
+    "evaluatedAt": "2026-05-11T18:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 2,
+    "label": "Acción sobre delta del día",
+    "text": "PRIORIDAD CRÍTICA: agendar mesa de trabajo briefing CMP esta semana — definir mensajes stand, voceros, plan de acción crisis contratos mixtos/derrame Golfo. Ejecutar media training virtual acelerado para directivos de mayor rango antes del CMP. Capitalizar premio Pacto Global tras el comunicado oficial del 13-may: columna + podcast (sin saturar). Cerrar Q&A pendiente con datos técnicos/cifras internas que solicitó Paola Verde.",
+    "source": "delta-2026-05-11"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:56:57Z",
+  "driveFiles": [
+    {
+      "id": "1qAdEvSKtjmkyCLzoZt07yDW9Mi-nACNUcmajQvvZM40",
+      "name": "ESTATUS 10 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T23:19:54.074Z",
+      "size": "1374",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1PY39iiVHFrTNc3C4EhMRYRq0i-1umSQa",
+      "name": "RPP Esc 3010.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-10T17:21:25.325Z",
+      "size": "64495",
+      "subfolder": "01",
+      "subfolderName": "01.NUVOIL_Contrato_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1apRYBZr-8ggSjMbVwtZsIr1s7PC_xXjv",
+      "name": "Poder 3010 EPC SIC.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-10T17:19:59.656Z",
+      "size": "6290947",
+      "subfolder": "01",
+      "subfolderName": "01.NUVOIL_Contrato_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1jCuH49mSORhz-F9L480c9G1rsPIfzpvi",
+      "name": "Boleta Inscripción SIC (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-10T17:19:55.492Z",
+      "size": "42642",
+      "subfolder": "01",
+      "subfolderName": "01.NUVOIL_Contrato_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "16c8yBtaTcrxsJyFOaTfGLlqWfoxdfC6I",
+      "name": "0. Acta Constitutiva SIC..pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-10T17:19:24.146Z",
+      "size": "16804421",
+      "subfolder": "01",
+      "subfolderName": "01.NUVOIL_Contrato_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1Q4XgKOhL7qTcNWu14V8cIfFf8qXjbSwD41BZyOdmAws",
+      "name": "ESTATUS 8 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T00:58:41.187Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1qR6jXVfeASP_hi7eLfaJQ9-9Q2dxnQAy5w__TYQUFcI",
+      "name": "ESTATUS 9 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T00:57:18.217Z",
+      "size": "1477",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "12pO9ENjV44BBm8EQB5UWWjQAfLSHI2XD",
+      "name": "Minuta_Nuvoil_090626.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-09T16:38:17.000Z",
+      "size": "41816",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "17_kLr95Y1qiEFCNE0unAnzWuBnZR2x5u",
+      "name": "Estatus NUVOIL_BLACKWELL - 2026_06_09 10_00 CST - Transcript.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-09T16:32:01.000Z",
+      "size": "637749",
+      "subfolder": "05",
+      "subfolderName": "05.NUVOIL_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1wPppxEJTBGwKS90CYhp1r8BD-5bl3ade",
+      "name": "Premio LOGRA_Nuvoil.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-09T15:55:46.216Z",
+      "size": "16557",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "Junio"
+    },
+    {
+      "id": "1qmLFAMi9hFNdkhMon6g1RZ7j10NYcIIt",
+      "name": "Nuvoil_CMP.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-05T19:23:06.000Z",
+      "size": "16886",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "CMP"
+    },
+    {
+      "id": "129-W7UkTlKY8ef5sZ9-KkVkraWBLq6f2xRXzlSIJg3w",
+      "name": "Actividades del 1 al 5 de junio",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-05T19:07:57.386Z",
+      "size": "1432",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1Q97l5KmglQVRse5AIJZ1nPJmNARIfB51",
+      "name": "Nuvoil_CMP_V2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-05T17:26:16.722Z",
+      "size": "16321",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "Junio"
+    },
+    {
+      "id": "1f4oCBwA0QsRVIwahzNIIEdtGaWteOKVi",
+      "name": "Nuvoil_BriefCoyuntura_030626.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-03T17:21:42.570Z",
+      "size": "16898",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1vxKhn8RvWwe2fXFROyJt507Iw0A1LqtK",
+      "name": "Nuvoil_Reporte_MAYO (1).pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-02T17:45:42.000Z",
+      "size": "5092443",
+      "subfolder": "03",
+      "subfolderName": "03.NUVOIL_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1IhcI3z39mHqiYyEeGgnHe5MBiwjVJa_W",
+      "name": "Seguimiento nota en prensa(Atzayaelh EL FINANCIERO)_ 2026_06_01 10_00 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-01T16:53:15.545Z",
+      "size": "946271",
+      "subfolder": "05",
+      "subfolderName": "05.NUVOIL_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1qyBT3gREL0bho0z4eyO8mu8utzmhlnN8",
+      "name": "Minuta touchpoint 170426 (1) (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-29T18:50:05.000Z",
+      "size": "90840",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "1t-l2TUWh3R6jHyVZZJr0qjQHPdSTgvMX",
+      "name": "Minuta touchpoint 240426 (1) (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-29T18:50:01.000Z",
+      "size": "94802",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "1Rhd8erxIAqx4PW4oYr7yFvsWLd2UqegE",
+      "name": "Minuta_Nuvoil_010426 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-29T18:49:59.000Z",
+      "size": "82701",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "1o1yk0sOHJLHAfxFkD7a8TQTv20-Y3Kp_",
+      "name": "Minuta_Nuvoil_080526.docx (1) (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-29T18:49:56.000Z",
+      "size": "87088",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "1eLvfZymWbyjj4J14PKNVEozIj0NijS4H",
+      "name": "Minuta_Nuvoil_150526 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-29T18:49:53.000Z",
+      "size": "96533",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "1nyzHz4WppRXLzLY9sjWoWaEPD423Cv7b",
+      "name": "Minuta_Nuvoil_200526  (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-29T18:49:50.000Z",
+      "size": "43803",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "1Oe0lUXwgN50mqKu4Lw-EJR5mCcQNbrTJ",
+      "name": "Minuta_Nuvoil_270326 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-29T18:49:47.000Z",
+      "size": "74673",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": "MINUTAS"
+    },
+    {
+      "id": "1sLKvsYsvwO3wYXF7nt9i3Y1VyiQ7oI97HJXjcafU9UA",
+      "name": "Actividades del 25 al 29 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T18:29:06.139Z",
+      "size": "1757",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1Pq_lo0igLtTNb9-YpTIMi2DW9xYCbw68",
+      "name": "Nuvoil_Estatus semanal_290526.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-29T17:35:57.000Z",
+      "size": "2339992",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1gDaHNMnoJxPB4R_UPEJ37IIbK0aGD1Gx",
+      "name": "Estatus Nuvoil - BWS_ 2026_05_29 09_56 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-29T17:31:37.000Z",
+      "size": "964435",
+      "subfolder": "05",
+      "subfolderName": "05.NUVOIL_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1XZ1QScbJLiR32LAP0_jjnNWpBnsDmtOF",
+      "name": "Medios Energía.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-05-28T20:58:25.180Z",
+      "size": "10153",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1w1c6FrF6Uzu1O5T07KfJRvcMZN3RDpQE",
+      "name": "Nuvoil_BriefingBook_CMP2026_Versión final 280526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-28T18:16:31.000Z",
+      "size": "482773",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "CMP"
+    },
+    {
+      "id": "1ncSlQedmWcLTQlGUocGdGEV3Hj6z04sH",
+      "name": "Nuvoil _ Media Training CMP  - 2026_05_28 09_57 CST - Transcript.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-28T17:21:49.000Z",
+      "size": "663830",
+      "subfolder": "05",
+      "subfolderName": "05.NUVOIL_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1XkisUerWbM2IhAi7ArDef-vZpIp-xzOk",
+      "name": "Banco_Reserva_Ejercicios_Nuvoil_CMP_2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-28T17:19:49.000Z",
+      "size": "17857",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "CMP"
+    },
+    {
+      "id": "1Eth8DaTIPlzWFnyRYPrSJAbqjEsmjSnM",
+      "name": "Media_Training_CMP_2026_Nuvoil_EDITABLE.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-28T15:43:14.000Z",
+      "size": "83766",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "CMP"
+    },
+    {
+      "id": "1zSirV8XOs4AtbB6CCsBqq0yJD0OPZUYS",
+      "name": "2026_Nuvoil, en consorcio con otras empresas, construye planta que produce 345 millones de pies cúbicos estándar de gas natural .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-25T14:54:55.000Z",
+      "size": "16651",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "BOLETINES"
+    },
+    {
+      "id": "1Ke25mqcPE5VRaH6c5TGgsH7hBAvdcE0z",
+      "name": "Matriz_Monitoreo_Nuvoil.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-05-22T23:07:31.630Z",
+      "size": "22249",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1t9_D9L9CpyAwt2trXg9jbOgYLcOuOkc8",
+      "name": "Perfil_Lino_Zentella.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-22T22:57:32.735Z",
+      "size": "23137",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1LpmDtxVJ-LGPRX1CNOc3sBtI6GwQvOxmAQcAeV0TTx4",
+      "name": "Actividades del18 al 22 de mayo ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T19:02:04.677Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1PybOZII_9sFu2245XY1vIR9JlNad2NvxKUXaIzgu1cY",
+      "name": "Actividades 11 al 15 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T18:14:24.460Z",
+      "size": "2032",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1jcRIIH64DOp2ecE7MNj8JmrO_vElvfti",
+      "name": "Nuvoil_Estatus semanal_150526.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-15T17:16:32.000Z",
+      "size": "3141441",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1ICX7v5ZwfNH9Z7nZXFO9pUHqlxurFBMb",
+      "name": "Estatus Nuvoil - BWS_ 2026_05_15 10_00 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T17:06:33.000Z",
+      "size": "946972",
+      "subfolder": "05",
+      "subfolderName": "05.NUVOIL_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1FAgI-nJmkTDjDXYOfoSQbUqbC_Jgkz2m",
+      "name": "Testigos_de_entregables_Nuvoil.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-05-13T18:20:58.000Z",
+      "size": "10020",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Oj7QnBevozGb4im0OcOeldeNLxZ2IoKD",
+      "name": "Contrato firmado Nuvoil-BLACKWELL.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T17:29:28.215Z",
+      "size": "8776328",
+      "subfolder": "01",
+      "subfolderName": "01.NUVOIL_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1U-SqrdgFwdrGu24_gqQF-7gqfLLTbaez",
+      "name": "Estatus Nuvoil - BWS - 2026_04_17 09_57 CST - Transcript.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T00:02:14.000Z",
+      "size": "655904",
+      "subfolder": "05",
+      "subfolderName": "05.NUVOIL_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1sSRTP3fcp5p9sixgxlzPrGYOLN7dp-6g",
+      "name": "Estatus Nuvoil - BWS_ 2026_05_08 09_59 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T18:16:43.000Z",
+      "size": "947922",
+      "subfolder": "05",
+      "subfolderName": "05.NUVOIL_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1ryozvuM3VYByl-2xG0cRM-ktzrCYdZK2CC_dIsFJlRI",
+      "name": "Actividades 4 al 8 de Masyo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-08T18:16:08.897Z",
+      "size": "1523",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1Wgr91l5H633q9VQPU_19EgU9YLjUIuNG0fHokc9AsqY",
+      "name": "Estatus Nuvoil - BWS: 2026/05/08 09:59 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-08T18:03:38.092Z",
+      "size": "9057",
+      "subfolder": "05",
+      "subfolderName": "05.NUVOIL_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1fRQ-_akWIAmn3oMB9ESnaNzKjRTUenXl",
+      "name": "NUVOIL_INTERNO_08052026_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:43:45.091Z",
+      "size": "263694",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1KRmMQevVTTA8y_YaUzdmO0UUQ_yN-GX8",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:41:18.000Z",
+      "size": "263694",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "15XL-t6gsfIgKuM6cZz-oEG0wwhV0Kg3lC0qbY0PIsZo",
+      "name": "Actividades 27 de abril al 1 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-08T14:07:23.661Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1vZYXIr39GsIEVQAtywt1hmKdWf9K8F8p",
+      "name": "Nuvoil_Reporte_ABRIL.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-08T14:05:01.000Z",
+      "size": "3485722",
+      "subfolder": "03",
+      "subfolderName": "03.NUVOIL_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1miu0U8kNKco1f23s6SNAzAa982H-Q7QJ",
+      "name": "Contrato Nuvoil (Sin firmas).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T19:31:51.070Z",
+      "size": "771602",
+      "subfolder": "01",
+      "subfolderName": "01.NUVOIL_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1oCXcVyg-7TQUhPoR4KbUagxND7VdrCRl",
+      "name": "00003534-PHOTO-2026-05-06-15-10-47.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T21:12:22.000Z",
+      "size": "82438",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "103f3X8C00QNJgri8SmD7w8YW8DD4Hlm6",
+      "name": "00003526-Negocios-Reforma-2026-05-06-36 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-06T12:51:06.000Z",
+      "size": "25247414",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1uVPfMZV7LV1HjpUWXt1VgOPC11ioFfJQ",
+      "name": "00003524-carpeta Blackwell-2026-05-06.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-06T11:12:34.000Z",
+      "size": "54866538",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "11xs9mwyGRHvtLZhGoXhDTooVMEVrzaiM",
+      "name": "00003505-carpeta Blackwell -2026-05-04.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T12:00:36.000Z",
+      "size": "54383642",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1spd2sooSmVQ9j-hjd-0QF5xeLNjrAP2E",
+      "name": "Kick Off Nuvoil.pptx (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T22:31:30.000Z",
+      "size": "2111641",
+      "subfolder": "01",
+      "subfolderName": "01.NUVOIL_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "11moPT9uQUFwQRdFXqWH8OEg3yOYT7t9E",
+      "name": "Nuvoil_Estatus semanal_260327.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-29T22:30:26.159Z",
+      "size": "2415135",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1Qvp4OYmYoSkkeqhXamwzrqWHD4325-O-",
+      "name": "Nuvoil_Estatus semanal_240426.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-29T22:29:29.000Z",
+      "size": "12413009",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1tYLKwPoHNr1mLFr_TOjgXbG8g2hUGTy-",
+      "name": "Nuvoil_Estatus semanal_170426.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-29T22:29:18.000Z",
+      "size": "2352411",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1hl0d6_fr1xVhtQxNpmDDof6g9IngL6si",
+      "name": "Nuvoil_Estatus semanal_090426.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-29T22:29:10.000Z",
+      "size": "2378557",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1Qb0Rhq9VWE7gBhT1orFJpYZkly9h2Kv7",
+      "name": "Nuvoil_Estatus semanal_010426.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-29T22:29:02.000Z",
+      "size": "2355972",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1bdhNPyLbwapxktIsnK4RHv9I1GVK-U6D",
+      "name": "_Plan maestro 2026 NUVOIL VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:27:02.000Z",
+      "size": "13800",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "PLAN MAESTRO 2026"
+    },
+    {
+      "id": "1SFJofdsBiS7GAKaJoeljDiDU9Td8gUut",
+      "name": "2026 - Nuvoil - Preguntas Infografía Veracruz.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:25:56.000Z",
+      "size": "23866",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "MATERIALES GENERADOS"
+    },
+    {
+      "id": "1JnHExFGvAfnYiaEfcvWMcfsWT4TytE4R",
+      "name": "QA_Nuvoil_VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:22:34.000Z",
+      "size": "334052",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "MATERIALES GENERADOS"
+    },
+    {
+      "id": "1IA_BFheWRrFqY95dbDpIJ43eIU4KQ7qB",
+      "name": "Mensajes_Clave_Nuvoil.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:22:27.000Z",
+      "size": "20390",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "MATERIALES GENERADOS"
+    },
+    {
+      "id": "1IxcEmR7baEwmXw5pKr6x0dH3kk4S52yd",
+      "name": "Empresas de Grupo Nuvoil, entre las Mejores Empresas Mexicanas en la era de la IA y la transición energética_VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:21:59.894Z",
+      "size": "17366",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "BOLETINES"
+    },
+    {
+      "id": "1Ko-_Q5m7u3VFncMudCGBqe2SVpptrTnI",
+      "name": "Nuvoil lanza el Proyecto GEN-IA para integrar inteligencia artificial generativa en la operación de gas natural.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:21:51.232Z",
+      "size": "17130",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "BOLETINES"
+    },
+    {
+      "id": "1XMzIRTodbScX_5u73R5IJ028Tj5KdV3i",
+      "name": "Nuvoil se coloca entre el top global en sostenibilidad con reconocimiento de EcoVadis VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:21:36.382Z",
+      "size": "16443",
+      "subfolder": "02",
+      "subfolderName": "02.NUVOIL_Entregables",
+      "nestedPath": "BOLETINES"
+    },
+    {
+      "id": "1R4_eMVTheCY8e14HJLvJIozJpToFzkxRK-_s0D44ITk",
+      "name": "Actividades 23 al 27 de marzo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T16:50:42.284Z",
+      "size": "1336",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1sKitwsGvWegPvY-7xTs9Yn8By2gRVCphORp5O5GytbQ",
+      "name": "Actividades 30 de marzo al 1 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T16:48:38.355Z",
+      "size": "1511",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1tqfsJakb6xpbig2Js4y42I0D6XHwQc0IzEcpuGey3K4",
+      "name": "Actividades 6 al 10 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T16:46:57.076Z",
+      "size": "1890",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1G28qDRvsKELm3Sy-YRMmfUX5TIOA9bNdbM-uzj_fiHY",
+      "name": "ACTIVIDADES DEL 20 AL  24 de ABRIL",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T16:44:56.856Z",
+      "size": "1791",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "11Ars730HoOEMgRD8RCyDHBysyboRXAL-azCmW6vjDaI",
+      "name": "ACTIVIDADES 13 AL 17 DE ABRIL",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T16:44:30.968Z",
+      "size": "1893",
+      "subfolder": "06",
+      "subfolderName": "06.NUVOIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1jG8GBeiv-fo9XZwd98VoDleq5-fFywcL",
+      "name": "00003447-Agenda Media Training Nuvoil.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-28T19:15:54.000Z",
+      "size": "62026",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1bvUsZC7tFupRZ2ERwf4v_18BvnyC16h3",
+      "name": "200226_Blackwell_Nuvoil (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-27T15:30:34.000Z",
+      "size": "1711267",
+      "subfolder": "01",
+      "subfolderName": "01.NUVOIL_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1AwW4cSk_xjXURDs_IMdmKFcznFmsEIiuiBH2rzoVNFA",
+      "name": "Copia de Estatus Nuvoil - BWS: 2026/04/24 10:00 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-27T15:25:44.566Z",
+      "size": "28435",
+      "subfolder": "05",
+      "subfolderName": "05.NUVOIL_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "17KvEy8-_fRjIhSnU72R23FO-PDyckwIC",
+      "name": "00003384-PHOTO-2026-04-23-15-10-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-23T21:10:44.000Z",
+      "size": "93043",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1nGNICzOoHPIV_aCPFAg8LdCtjtwLjUWa",
+      "name": "00003318-PHOTO-2026-04-20-17-58-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-20T23:58:42.000Z",
+      "size": "374527",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1eWSr4q3qj372Q-rla9gtR291xcNNstIx",
+      "name": "00003317-PHOTO-2026-04-20-17-58-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-20T18:21:10.000Z",
+      "size": "494125",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "14ocL9tw2q5gy9xz5c6NQ2F1hBzQJMkh9",
+      "name": "00003308-PHOTO-2026-04-20-12-21-10.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-20T18:21:10.000Z",
+      "size": "494125",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1BIcHri6cfbw908Bbh3sLpbEXHG_kJsHF",
+      "name": "00003265-Reforma_17042026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-17T12:44:16.000Z",
+      "size": "24847585",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1OY72fLALsMqO1fdLr1TFh6xTgSdng_Ya",
+      "name": "00003252-Reforma_16042026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-16T12:44:50.000Z",
+      "size": "1044897",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "18dazBudBce5adVyFRnGeq5fZ1AgaOmvI",
+      "name": "00003253-carpeta Blackwell-2026-04-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-16T11:27:02.000Z",
+      "size": "54488976",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1GRb-BT10hy2k-68Cokg0pJ3UzPHDm0fh",
+      "name": "00003239-carpeta Blackwell-2026-04-15.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-15T11:55:34.000Z",
+      "size": "55228610",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1xeM6zWnQehtKli2lbggMJeTlrWG14QXQ",
+      "name": "00003237-PHOTO-2026-04-14-06-49-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-14T12:37:54.000Z",
+      "size": "187107",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1cl0Wt6lpN9ZSl3jXx2E6t3dw8dbM-bDu",
+      "name": "00003196-carpeta Blackwell-2026-04-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T11:26:00.000Z",
+      "size": "49612229",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1sxncJPcsOZx0-gy8mvnquzLxklZvejcC",
+      "name": "00003174-Reforma-negocios- 2026-04-08-36.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-08T12:51:30.000Z",
+      "size": "25031178",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "11xBvWPFj1yYQnfhuIgpCQ2nO9GJl94Mw",
+      "name": "00003137-PHOTO-2026-04-01-06-37-09.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-01T12:38:26.000Z",
+      "size": "304073",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1Fxgms3qkQGOjOSaTXM0ypNsz0g9F87Pk",
+      "name": "00003115-PHOTO-2026-03-31-10-37-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-31T16:37:44.000Z",
+      "size": "370811",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1uYChDDEiHgj5rdJSioy5cqmIxidbG86r",
+      "name": "00003104-carpeta Blackwell-2026-03-31.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-31T11:31:30.000Z",
+      "size": "48183987",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1hTP2nDfkv5NJYrIDTeS92Zh3tqGi1F7C",
+      "name": "00003100-PHOTO-2026-03-30-20-33-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-31T02:35:42.000Z",
+      "size": "173785",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1XHf4XT3CjbCuoJ-TclR03uZIQErF9lax",
+      "name": "00003101-PHOTO-2026-03-30-20-33-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-31T02:35:42.000Z",
+      "size": "265455",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "18H7NnRNWpe5QZCRlaGWhE2gBvhVQ6gn1",
+      "name": "00003091-carpeta Blackwell-2026-03-30.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-30T12:41:20.000Z",
+      "size": "45885220",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1tK_zC-tg8E-sATWj-4k3OtuLm7vSv26J",
+      "name": "00003094-2f16f478728599edc0c185d59491d39f.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-30T12:41:18.000Z",
+      "size": "696919",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1sFBpl-E7mjE7ctVCCWEk8hIZiOeLx_UQ",
+      "name": "00003087-Carpeta Blackwell 2026-03-28.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-28T11:42:52.000Z",
+      "size": "23351819",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1_3DnDh55OXZCh_sqxxpgFzm5MIW_79Jz",
+      "name": "00003061-carpeta Blackwell-2026-03-25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-25T11:21:22.000Z",
+      "size": "59483797",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1CCrlarlRywN-nP2iYr-6EWDgpLWfX3G7",
+      "name": "00003052-Reforma_-2026-03-24-36 (1).pdf .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-24T12:39:38.000Z",
+      "size": "24949219",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "14rDdOZpcUCfGXvjTLv8D4i9HPC-DGOiC",
+      "name": "00003040-PHOTO-2026-03-14-08-48-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-14T14:48:50.000Z",
+      "size": "101045",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1nSYRMAEuOJ2sLoCFvuOVPSMOkjRmSal9",
+      "name": "00003041-PHOTO-2026-03-14-08-48-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-14T14:48:50.000Z",
+      "size": "374629",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    },
+    {
+      "id": "1Yl-2JVikmCBY0LDA0sl4nGmq945uJovn",
+      "name": "00003032-PHOTO-2026-03-12-09-03-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-12T15:06:20.000Z",
+      "size": "69246",
+      "subfolder": "04",
+      "subfolderName": "04.NUVOIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Nuvoil-Blackwell_08052026"
+    }
+  ]
+}

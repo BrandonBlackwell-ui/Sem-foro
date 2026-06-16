@@ -1,0 +1,504 @@
+{
+  "number": "05",
+  "account_id": "05",
+  "account_name": "CREDIX",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "13HL5GyMPt7lp8I-zmiC8xalQGh7uuHDO",
+      "title": "RE_ Inicio de proyecto Credix + Blackwell.eml",
+      "subfolder": "01",
+      "subfolderName": "01. CREDIX_Contrato_OC",
+      "modifiedTime": "2026-04-20T23:49:14.006Z",
+      "kind": "correo/mhtml→texto"
+    },
+    {
+      "id": "1bFIRqcbxvH7PZWaP9P0O_6tJRK97vXXX",
+      "title": "Credix Nota 1 (VF).docx",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "modifiedTime": "2026-05-13T00:27:23.275Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1_1d0nFQYQOu3yfXIkVujPfaLlp5cDi2L",
+      "title": "Credix lanza Club Credix, la primera plataforma de una SOFOM para brokers en México (2).docx",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "modifiedTime": "2026-05-13T00:25:39.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1aWfgWXlEcxEfhp0RCLnRw8QtJJ8BlOMy",
+      "title": "Stock-Credix-1.jpg.jpeg",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "modifiedTime": "2026-02-09T16:33:54.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1zLfiSzQz2YNTFfSrn8ne6-z2CUE4hQau",
+      "title": "Stock-Credix.jpg.jpeg",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "modifiedTime": "2026-02-09T16:24:58.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1KNjsuAu2NKnindC64lv_sSUAQoMrkuQd",
+      "title": "Captura de pantalla 2026-02-09 a las 12.24.38 p. m..png",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "modifiedTime": "2026-02-09T16:24:42.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "12_aa98L0hkJMb2odhwQZBfHDbeYJWRDr",
+      "title": "Captura de pantalla 2026-02-09 a las 12.24.23 p. m..png",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "modifiedTime": "2026-02-09T16:24:28.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1nSuxnYQlWacTQe11bkD-cZq869lrUPj1",
+      "title": "PROPUESTA ESTRATEGIA CREDIX 2026.docx",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "modifiedTime": "2026-02-09T14:56:40.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "14th15AAhqnY42f2_8V0QIBXx0gp18XRe4nkG1mb5wAA",
+      "title": "Reporte de Avance CREDIX",
+      "subfolder": "03",
+      "subfolderName": "03. CREDIX_Reportes_Avance",
+      "modifiedTime": "2026-05-13T18:12:32.369Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1mNxUfUE8WnIWMh84kSi0PVDIq1goE8ZA",
+      "title": "Captura de pantalla 2026-06-03 a las 7.16.43 a. m..png",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-06-03T13:16:48.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "122dje-wUieYdcA5VYJ8ghWCYc_7kQww_",
+      "title": "Captura de pantalla 2026-06-03 a las 7.16.34 a. m..png",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-06-03T13:16:39.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1asqx0uRnB-NetsrFuCDrw_F92O0BHqDg",
+      "title": "Captura de pantalla 2026-06-03 a las 7.15.26 a. m..png",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-06-03T13:15:32.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1pa-LdFCCAnxRjPLaMWOl8LGfnAKYlAcr",
+      "title": "WhatsApp Image 2026-06-02 at 4.55.26 PM.jpeg",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-06-03T13:15:08.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1hXoD3se-Vgn9cLxOQbG3W5-L1NaNUu_S",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-04-20T23:46:16.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1rt8YXFqS5lZH1o8tV7ffW-PRWMGZiVI5",
+      "title": "00000395-Credix lanza Club Credix, la primera plataforma de una SOFOM para brokers en México.docx",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-03-31T01:57:20.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1aEC8fReMSEDKeV6XwRF7MMotNxGWE-MA",
+      "title": "00000391-Broker-PNG1.png",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-03-30T18:50:34.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "12zyqJ-hcoZqaqqpKGNtpCIKOVk9fQEkK",
+      "title": "00000377-CredixN2.docx",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-03-17T18:36:42.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1xaG8TomYIqYJacqUdFgSO6U8z5uViXLpvWZEaajCLPE",
+      "title": "Actividades 23 al 27 de marzo",
+      "subfolder": "06",
+      "subfolderName": "06. CREDIX_Agenda_Trabajos",
+      "modifiedTime": "2026-05-13T00:29:01.715Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1WZqNbCV5svQBA7ltzGeuFOjvndUMdqVwCZOiZLCyYlU",
+      "title": "Actividades 30marzo-3abril",
+      "subfolder": "06",
+      "subfolderName": "06. CREDIX_Agenda_Trabajos",
+      "modifiedTime": "2026-04-29T22:47:23.821Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1JxtrXTOL02YtDSL--DjrulgTaQFdgyGx",
+      "title": "00000362-Credix Nota 2 VF.docx",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-03-13T19:31:00.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1Xf1rDM7MPp-IqQzKNich2KqL1S3IhViI",
+      "title": "00000340-Credix Nota 1 (VF).docx",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-02-26T01:29:30.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1KFL0KRR8FBhNfnq1vlpw-JoXO2816TBo",
+      "title": "00000324-PHOTO-2026-02-24-19-15-01.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-02-25T01:17:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1_iM0Y-3PECeUM7LATzQOl2qodxweiMY8",
+      "title": "00000322-PHOTO-2026-02-24-19-14-28.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-02-25T01:17:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1Rd8MsjxWuqR4apwJotrZ7S0eb1WgS5B8",
+      "title": "00000301-Credix Nota 1.docx",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-02-17T20:21:18.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "19wDd4NtzuhTsLqXdL-A5UI_hZdHW5uCK",
+      "title": "00000288-Credix Nota 1.docx",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-02-17T19:24:58.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1v-CHGbn22M1YPzCLe9b20wzMmhW6KJoZ",
+      "title": "00000271-Credix Nota 1.docx",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-02-09T17:45:58.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "14QmGMdmH3KfH_Tb1E2GI863cqy7J4IaO",
+      "title": "00000253-Credix Nota 1.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-01-19T15:25:40.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1MREpVNx9_NlaXu2Q-p3fPzLDXSCeSP3G",
+      "title": "00000252-PROPUESTA ESTRATEGIA CREDIX 2026.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-01-19T15:25:40.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "15hfE37rQ6EIMK3mvbqm7HZdIROJfLwaY",
+      "title": "00000231-PHOTO-2026-01-15-12-24-35.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-01-15T18:24:40.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1MD63Ue5sgCPaDPCFh5uVMmJ7muL1YtwO",
+      "title": "00000224-Nota 2 Blackwell.docx",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "modifiedTime": "2026-01-15T17:40:24.000Z",
+      "kind": "Word→texto"
+    }
+  ],
+  "files_read_count": 30,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Ejecutar estrategia de comunicación 2026 para Credix mediante 5 fases progresivas que construyan narrativa de estabilidad institucional, disciplina financiera y liderazgo en crédito especializado con garantía inmobiliaria, posicionando a la SOFOM como aliado estratégico de pymes mexicanas.",
+    "content_summary": "Tras 6 meses de ejecución (enero-junio 2026), Credix ha publicado 1 de 5 notas programadas (Fase 1: Heraldo de México, 5 marzo 2026). Las 4 notas restantes permanecen bloqueadas por aprobaciones intermitentes del cliente, acumulando 85+ días de retraso. Nota 2 (Desempeño) está completamente redactada pero jamás aprobada; Nota 2 Trayectoria enviada 13 marzo sin cierre formal; Fase 5 no iniciada. Club Credix obtuvo aprobación verbal 3 junio pero lanzamiento está condicionado a activación de plataforma del lado del cliente. El obstáculo no es editorial sino de intermitencia en decisiones y cadencia formal de contacto.",
+    "current_status": "Proyecto en riesgo operativo: 1 publicación de 5 prometidas (20% cumplimiento a fecha 3 junio 2026), 3 notas redactadas pero sin publicar desde marzo, 1 nota completamente redactada jamás aprobada. Sin reporte de alcances/impacto de Nota 1. Club Credix esperando activación de plataforma del cliente. Contacto fragmentado sin interlocutor único definido.",
+    "scope_of_service": [
+      "Estrategia editorial de 5 fases para posicionamiento Credix 2026: contexto mercado crédito, trayectoria 20 años, solidez financiera AAA, desempeño 2025, cierre narrativo",
+      "Desarrollo y redacción de 5 notas con control de cambios, borradores y versiones finales validadas",
+      "Pitch y gestión de colocación en medios Tier 1 nacionales (Heraldo de México, Excelsior, El Financiero)",
+      "Validación de datos con fuentes oficiales: ENIF 2024 INEGI, ENAFIN 2024 CNBV-INEGI, INEGI Secretaría Economía",
+      "Gestión proactiva de aprobaciones y retroalimentación semanal a cliente",
+      "Estrategia Club Credix integrada a narrativa general",
+      "Asesoría posicionamiento SEO para marca Credix"
+    ],
+    "client_promises": [
+      {
+        "promise": "Publicar 5 notas en fases sucesivas de 1-2 semanas cada una durante 2026 (8 semanas total cobertura)",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Fase 1: Nota apertura rol financieras especializadas en contexto crédito mexicano (Semana 1)",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Fase 2: Nota trayectoria 20 años operación, continuidad institucional (Semana 2)",
+        "cadence": "evento",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Fase 3: Nota solidez financiera, modelo riesgo, calificación AAA (Semanas 3-4)",
+        "cadence": "evento",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Fase 4: Nota desempeño 2025 con resultados históricos colocación (Semanas 5-6)",
+        "cadence": "evento",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Fase 5: Cierre narrativo estabilidad y visión largo plazo (Semanas 7-8)",
+        "cadence": "evento",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Colocación en medios Tier 1 nacionales (Heraldo, Excelsior, El Financiero)",
+        "cadence": "evento",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Gestión proactiva aprobaciones y retroalimentación rápida a cliente (semanal)",
+        "cadence": "semanal",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Nota Club Credix integrada a estrategia, publicable abril-mayo 2026",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Asesoría posicionamiento SEO para marca Credix",
+        "cadence": "continuo",
+        "status": "pendiente"
+      }
+    ],
+    "fulfilled": [
+      "Fase 1 publicada: 'Credix y la evolución del crédito especializado en México', Heraldo de México, 5 marzo 2026, URL: https://heraldodemexico.com.mx/edicion-impresa/2026/3/5/credix-la-evolucion-del-credito-especializado-en-mexico-775990.html (confirmada chat 05/03 7:49 am)",
+      "Estrategia 5 fases documentada: PROPUESTA ESTRATEGIA CREDIX 2026.pdf, 16 enero 2026, con 5 ejes editoriales, narrativa marco, mensajes clave y objetivos por fase",
+      "Nota 1 aprobada versión final: 25 febrero 2026, 6 iteraciones control cambios, datos ENIF validados (00000271-Credix Nota 1.docx y 00000253-Credix Nota 1.pdf)",
+      "Nota 2 Desempeño completamente redactada: 00000224-Nota 2 Blackwell.docx, 3,500M MXN colocación 2025, 600+ empresas beneficiadas, rango 1M-100M pesos, plazos 6 años, visión 5,000M anual 2027, referencias ENIF/ENAFIN verificadas",
+      "Nota 2 Trayectoria desarrollada: 00000253-Credix Nota 1.pdf contiene versión completa con focus 20 años operación, calificación AAA Moodys, contexto ciclos económicos, 2006-2026",
+      "Datos verificados de fuentes oficiales: ENIF 2024 INEGI (37.3% crédito formal, 20.7% sin acceso rechazo requisitos), ENAFIN 2024 (14% pymes acceso banca tradicional), INEGI Secretaría Economía (99% unidades económicas son pymes, 72% empleo formal)",
+      "Vocero confirmado: José Miguel Nájera, Director Ejecutivo Comercial Credix, citado en estrategia y notas",
+      "Club Credix versión final desarrollada: aprobación verbal Miguel Nájera 3 junio 2026 (evidencia visual chat WhatsApp, imagen 00000231-PHOTO-2026-01-15-12-24-35.jpg)",
+      "Plan de colocación Tier 1 documentado: Heraldo de México ejecutado; Excelsior y El Financiero como targets pendientes de pitch/ejecución"
+    ],
+    "pending": [
+      "Fase 2 Nota Trayectoria: enviada 13 marzo 2026, 85+ días SIN APROBACIÓN formal (corte 3 junio), cliente indicó 'brevedad' sin feedback específico o cierre",
+      "Fase 3 Nota Solidez AAA: no iniciada, bloqueo total por pendencia aprobación Fase 2",
+      "Fase 5 Cierre narrativo: no iniciada, dependencia desbloqueo Fases 2 y 3 previas",
+      "Nota 2 Desempeño (00000224): completamente redactada desde 13 marzo pero NUNCA APROBADA, 85+ días pendiente sin respuesta cliente",
+      "Club Credix lanzamiento: autorizado verbalmente 3 junio pero pospuesto indefinidamente hasta activación plataforma de Credix (fecha no confirmada)",
+      "Reporte de alcances/impacto Nota 1: no documentado (impresiones, clicks, shares, difusión orgánica sin medir)",
+      "Cadencia formal de aprobaciones: no establecida, contacto fragmentado sin interlocutor único",
+      "Plan SEO: cliente mencionó necesidad 13 enero, sin estrategia documentada o implementada"
+    ],
+    "per_file_notes": [
+      {
+        "file": "00000271-Credix Nota 1.docx",
+        "folder": "02. CREDIX_Entregables",
+        "finding": "Versión final de Nota 1 (Fase 1): 'Credix y la evolución del crédito especializado en México', estructura completa con contexto ENIF 37.3% crédito formal, modelos activos reales, SOFOM como alternativa complementaria, rol Credix como institución institucionalizada; lista para publicación."
+      },
+      {
+        "file": "00000253-Credix Nota 1.pdf",
+        "folder": "02. CREDIX_Entregables",
+        "finding": "Doble propósito: contiene versión final Nota 1 (PDF) más versión extendida Nota 2 Trayectoria ('Credix: veinte años de disciplina financiera'), con datos 2006-2026, calificación AAA Moodys, discurso directivo sobre disciplina vs crecimiento acelerado, mejor desempeño histórico 2025."
+      },
+      {
+        "file": "00000252-PROPUESTA ESTRATEGIA CREDIX 2026.pdf",
+        "folder": "02. CREDIX_Entregables",
+        "finding": "Plan de 5 fases aprobado (16 enero 2026): Fase 1 contexto, Fase 2 trayectoria, Fase 3 solidez/AAA, Fase 4 desempeño 2025, Fase 5 cierre narrativo; cada fase con eje editorial, objetivos y rol estratégico dentro de narrativa acumulativa."
+      },
+      {
+        "file": "00000231-PHOTO-2026-01-15-12-24-35.jpg",
+        "folder": "04. CREDIX_Conversaciones_WA",
+        "finding": "Captura visual/screenshot de aprobación o revisión cliente mostrando titular tentativo 'Credix detonará más de 3,500 millones de pesos en financiamiento para pymes mexicanas en 2026', con resaltes verdes de párrafo clave sobre 600 empresas beneficiadas; evidencia de iteración de feedback."
+      },
+      {
+        "file": "00000224-Nota 2 Blackwell.docx",
+        "folder": "02. CREDIX_Entregables",
+        "finding": "Nota 2 (Fase 4 Desempeño): 'Credix detonará más de 3,500 millones de pesos...', versión final redactada con datos 2025 (3,500M colocado, 600+ empresas, rango 1M-100M, plazos 6 años), visión 5,000M 2027, diferenciadores velocidad <7 días, estructura inteligente, cero penalización prepago; lista para envío pero jamás aprobada desde 13 marzo."
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Bloqueo de aprobaciones: 4 de 5 notas pendientes desde marzo sin retroalimentación formal del cliente, generando 85+ días de retraso acumulado",
+        "severity": "alta"
+      },
+      {
+        "risk": "Cadencia de contacto fracturada: sin interlocutor único ni canales de decisión establecidos, retroalimentación inconstante e impredecible",
+        "severity": "alta"
+      },
+      {
+        "risk": "Pérdida de momentum narrativo: intervalo excesivo entre Nota 1 (5 marzo) y potencial Nota 2 (aún no publicada) debilita secuencia estratégica de 5 fases",
+        "severity": "media"
+      },
+      {
+        "risk": "Club Credix en limbo: aprobado verbalmente el 3 junio pero lanzamiento condicionado a activación de plataforma sin fecha comprometida",
+        "severity": "media"
+      },
+      {
+        "risk": "Sin métricas de desempeño Nota 1: alcances, impacto, difusión orgánica no documentados, imposibilita evaluación de ROI editorial",
+        "severity": "media"
+      },
+      {
+        "risk": "SEO incompleto: cliente solicitó asesoría 13 enero, nunca documentada ni implementada",
+        "severity": "baja"
+      }
+    ],
+    "opportunities": [
+      "Activar sprint de aprobaciones: contactar directamente José Miguel Nájera para desbloquear Nota 2 Desempeño + Trayectoria en 48-72 horas y recuperar momentum Fase 1-2",
+      "Proponer cadencia formal de aprobaciones: reunion ejecutiva semanal fija con cliente para resolver pendientes y alinear expectativas de timing",
+      "Lanzar Club Credix sin dependencia de plataforma: publicar contenido Club Credix en medios antes de activación interna si cliente autoriza",
+      "Medir e informar Nota 1: compilar métricas Heraldo (impresiones sitio, URL clicks, redes) + pitch a Excelsior/El Financiero con data de desempeño",
+      "Ejecutar SEO strategy documental: desarrollo de hoja de ruta keywords Credix + nutrición contenidos en blog/owned channels",
+      "Oportunidad de expansión: si Fase 4 desempeño genera tracción, proponer cobertura semestral o anual de resultados como cadencia de prensa"
+    ],
+    "opportunity": "Desbloquear aprobación Nota 2 Desempeño (lista desde 13 marzo) mediante contacto directo con José Miguel Nájera para ejecutar Fases 2-4 en 6 semanas, recuperar narrativa y demostrar capacidad de entrega antes de fin 2026.",
+    "business_risk": "Intermitencia de aprobaciones cliente ha reducido cumplimiento a 20% en 6 meses, riesgo de cancelación/no renovación si no se establece cadencia formal de decisiones antes de julio 2026.",
+    "recommended_action": "Convoca reunión ejecutiva esta semana con José Miguel Nájera (Director Ejecutivo) para resolver aprobación Nota 2 Desempeño, establecer interlocutor único y calendario de lanzamientos Fases 2-5 antes del 15 julio.",
+    "urgent_actions": [
+      {
+        "action": "Contactar José Miguel Nájera (Director Ejecutivo Comercial) para desbloquear aprobación Nota 2 Desempeño + confirmar feedback Nota 2 Trayectoria",
+        "owner": "Account Manager CREDIX",
+        "due": "2026-06-05"
+      },
+      {
+        "action": "Proponer reunión ejecutiva semanal fija con cliente para resolver aprobaciones y alinear calendario Fases 2-5",
+        "owner": "Account Manager CREDIX",
+        "due": "2026-06-06"
+      },
+      {
+        "action": "Compilar métricas Nota 1 (Heraldo 5 marzo): alcances, impresiones, clicks, difusión orgánica + preparar pitch Excelsior/El Financiero con data",
+        "owner": "Equipo Editorial/Medios",
+        "due": "2026-06-10"
+      },
+      {
+        "action": "Enviar a aprobación Nota 2 Desempeño (00000224) + Nota 2 Trayectoria con solicitud de respuesta máximo 5 días hábiles",
+        "owner": "Account Manager CREDIX",
+        "due": "2026-06-05"
+      },
+      {
+        "action": "Documentar plan SEO strategy para Credix (keywords, content roadmap, métricas) y presentar a cliente para feedback",
+        "owner": "Equipo Editorial",
+        "due": "2026-06-12"
+      }
+    ],
+    "strategic_recommendations": [
+      "Establecer cadencia formal de aprobaciones: sesiones semanales de 30 min con cliente (mismo día/hora) para resolver feedback y mantener momentum narrativo",
+      "Desacoplar Club Credix de plataforma interna: ejecutar lanzamiento en medios independientemente de activación Credix si es necesario, capturar ventana mayo-junio",
+      "Crear dashboard de progreso: compartir con cliente tabla visual Phases 1-5 con % completeness, fechas target y blockers actuales, accountability compartida",
+      "Implementar SLA de aprobación: establecer máximo 5 días hábiles para feedback cliente en documentos, después de los cuales se considera 'aprobación tácita'",
+      "Medir ROI editorial Nota 1: compilar clicks, impresiones, menciones orgánicas y usar como base para pitch siguiente medios",
+      "Desarrollar estrategia SEO integrada: hoja de ruta keywords (credito pymes, sofom, garantia inmobiliaria) + blogging cadence mensual antes de cierre año"
+    ],
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "approval",
+        "source": "José Miguel Nájera (Director Ejecutivo)",
+        "date": "2026-06-03",
+        "note": "Aprobación verbal Club Credix para lanzamiento (evidencia WhatsApp visual)"
+      },
+      {
+        "type": "positive",
+        "signal": "approval",
+        "source": "Cliente Credix",
+        "date": "2026-03-05",
+        "note": "Confirmación publicación exitosa Nota 1 Heraldo de México, positivo"
+      },
+      {
+        "type": "negative",
+        "signal": "no_response",
+        "source": "Cliente Credix",
+        "date": "2026-03-13",
+        "note": "Nota 2 Trayectoria enviada sin aprobación formal posterior (85+ días)"
+      },
+      {
+        "type": "negative",
+        "signal": "no_response",
+        "source": "Cliente Credix",
+        "date": "2026-03-13",
+        "note": "Nota 2 Desempeño redactada pero jamás aprobada (85+ días bloqueo)"
+      },
+      {
+        "type": "negative",
+        "signal": "complaint",
+        "source": "Interno Blackwell (Dossier)",
+        "date": "2026-06-09",
+        "note": "Cliente indicó 'brevedad' en Nota 2 Trayectoria sin cierre específico, sintoma de falta de cadencia"
+      }
+    ],
+    "co_assessment": {
+      "committed": 5,
+      "delivered": 1,
+      "on_time": 1,
+      "late": 0,
+      "missed": 4,
+      "note": "20% tasa cumplimiento en 6 meses: 1 de 5 fases publicadas (Nota 1, 5 marzo en tiempo). 4 fases bloqueadas en aprobación desde marzo. Club Credix aprobado verbalmente pero no lanzado. Causa: intermitencia cliente, no capacidad editorial."
+    },
+    "pq_assessment": {
+      "placements": 1,
+      "tier_mix": "T1 (100%): Heraldo de México",
+      "quality_narrative": "Nota 1 ejecutada con excelencia editorial: narrativa coherente contexto macrofinanciamiento, datos ENIF validados, posicionamiento Credix como institución institucionalizada sin auto-promoción; tono profesional, largo 800+ palabras, indexable.",
+      "score_estimate": 8,
+      "result_vs_objective": "Nota 1 cumple 100% objetivos estratégicos Fase 1: abre conversación sin protagonismo prematura, instala tema liquidez activos reales, posiciona Credix como entendedor mercado. Pero sin cobertura Fases 2-5 el impacto es incompleto; necesita momentum con Nota 2 en 2-3 semanas."
+    },
+    "media_reconciliation": {
+      "placements": 1,
+      "reports": 1,
+      "gap": "Nota 1 publicada (Heraldo 5 marzo) pero sin reporte de alcances/impacto documentado. Nota 2 Desempeño lista desde 13 marzo pero no enviada a medios (bloqueo aprobación). Excelsior y El Financiero (targets T1 Fase 1) aún sin pitch. Brecha: 4 de 5 notas programadas no en pauta (80% cumplimiento de colocación pendiente)."
+    },
+    "monday_ticket": {
+      "tipo": "urgente",
+      "trigger": "Bloqueo de aprobaciones cliente por 85+ días acumulados, 4 de 5 notas pendientes, riesgo de no cumplimiento contrato antes de julio 2026."
+    },
+    "score_adjustment_recommendation": {
+      "co_delta": -2,
+      "pq_delta": 0,
+      "sc_delta": 0,
+      "reason": "CO: penalizar retraso 85+ días en aprobaciones y 20% cumplimiento (1 de 5 entregables publicados). PQ: mantener calificación (Nota 1 es de buena calidad, problema no es editorial sino de cliente). SC: mantener (signals reflejan realidad: aprobación Club Credix pero bloqueo general)."
+    }
+  },
+  "analyzed_at": "2026-06-11T02:22:29Z"
+}

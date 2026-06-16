@@ -1,0 +1,97 @@
+{
+  "number": "04",
+  "folderTitle": "04. IDLAYR /proyecto concluido",
+  "folderId": "1Wj2iDbkGYoRciVy81ZqEycydeZibhimn",
+  "folderModifiedTime": "2026-04-20T23:46:00.479Z",
+  "derivedStatus": "concluded",
+  "statusSuffix": "CONCLUIDO",
+  "latestDeliverable": null,
+  "deliverableSource": "keyword",
+  "lastActivity": null,
+  "subfolderActivity": {
+    "01.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:44:47Z",
+      "last_verified_at": "2026-06-05T19:44:47Z"
+    },
+    "02.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:44:47Z",
+      "last_verified_at": "2026-06-05T19:44:47Z"
+    },
+    "03.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:44:47Z",
+      "last_verified_at": "2026-06-05T19:44:47Z"
+    },
+    "04.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:44:47Z",
+      "last_verified_at": "2026-06-05T19:44:47Z"
+    },
+    "05.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:44:47Z",
+      "last_verified_at": "2026-06-05T19:44:47Z"
+    },
+    "06.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:44:47Z",
+      "last_verified_at": "2026-06-05T19:44:47Z"
+    }
+  },
+  "pqProxy": {
+    "suggestion": "Archivar formalmente y documentar lecciones aprendidas",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "source": "coherence-sync",
+    "text": "Archivar formalmente y documentar lecciones aprendidas"
+  },
+  "lastAnalyzedAt": "2026-05-11T20:30:00Z",
+  "analysisConfidence": "baja",
+  "playbookViolations": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+  ],
+  "isActive": false,
+  "lastCrawledAt": "2026-06-05T19:44:47Z",
+  "driveFiles": []
+}

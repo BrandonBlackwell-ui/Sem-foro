@@ -1,0 +1,97 @@
+{
+  "number": "10",
+  "folderTitle": "10. JACK LEVI/ Detenido",
+  "folderId": "1oimFCpNhlfIubwv2Z5h5lBiLPWJ1b4vX",
+  "folderModifiedTime": "2026-04-21T16:56:36.366Z",
+  "derivedStatus": "paused",
+  "statusSuffix": "PAUSA",
+  "latestDeliverable": null,
+  "deliverableSource": "none",
+  "lastActivity": null,
+  "subfolderActivity": {
+    "01.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:45:00Z",
+      "last_verified_at": "2026-06-05T19:45:00Z"
+    },
+    "02.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:45:00Z",
+      "last_verified_at": "2026-06-05T19:45:00Z"
+    },
+    "03.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:45:00Z",
+      "last_verified_at": "2026-06-05T19:45:00Z"
+    },
+    "04.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:45:00Z",
+      "last_verified_at": "2026-06-05T19:45:00Z"
+    },
+    "05.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:45:00Z",
+      "last_verified_at": "2026-06-05T19:45:00Z"
+    },
+    "06.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-05T19:45:00Z",
+      "last_verified_at": "2026-06-05T19:45:00Z"
+    }
+  },
+  "pqProxy": {
+    "suggestion": "Confirmar estatus contractual: ¿sigue activo y facturando? ¿Pausado con o sin cargo mensual?",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "source": "coherence-sync",
+    "text": "Confirmar estatus contractual: ¿sigue activo y facturando? ¿Pausado con o sin cargo mensual?"
+  },
+  "lastAnalyzedAt": "2026-05-11T20:30:00Z",
+  "analysisConfidence": "baja",
+  "playbookViolations": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+  ],
+  "isActive": false,
+  "lastCrawledAt": "2026-06-05T19:45:00Z",
+  "driveFiles": []
+}

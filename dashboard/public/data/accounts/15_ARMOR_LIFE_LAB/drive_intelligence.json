@@ -1,0 +1,49 @@
+{
+  "number": "15",
+  "account_id": "15",
+  "account_name": "ARMOR LIFE LAB",
+  "cadenceType": null,
+  "files": [],
+  "files_read_count": 0,
+  "files_skipped": [],
+  "account_summary": {
+    "content_summary": null,
+    "key_facts": [],
+    "dated_deltas": [],
+    "pq_assessment": {
+      "placements": null,
+      "tier_mix": null,
+      "quality_narrative": null,
+      "result_vs_objective": null,
+      "score_estimate": null
+    },
+    "sc_signals": [],
+    "co_assessment": {
+      "committed": null,
+      "delivered": null,
+      "on_time": null,
+      "late": null,
+      "missed": null,
+      "note": "No hay contenido de archivos disponible para análisis de cumplimiento operativo"
+    },
+    "media_reconciliation": {
+      "placements": null,
+      "reports": null,
+      "gap": null
+    },
+    "business_risk": "Imposibilidad de validar estado de la cuenta terminada anticipadamente (terminated_early) sin acceso a archivos que documenten causa de terminación, entregables pendientes o disputas",
+    "opportunity": null,
+    "recommended_action": "Solicitar acceso a carpetas 01-06 (actualmente missing) y documentación de cierre: contrato final, last invoice, comunicación de terminación anticipada y razones. Validar si hay riesgos reputacionales o financieros pendientes de Armor Life Lab",
+    "score_adjustment_recommendation": {
+      "co_delta": 0,
+      "pq_delta": 0,
+      "sc_delta": 0,
+      "reason": "Sin contenido de archivos no es posible calcular deltas. El estatus terminated_early requiere revisión de documentación de cierre antes de cualquier ajuste retrospectivo"
+    },
+    "monday_ticket": {
+      "tipo": "urgente",
+      "trigger": "ARMOR LIFE LAB #15 (terminated_early) — Recuperar carpetas 01-06 y documentación de cierre. Validar causa de terminación anticipada, entregables pendientes, disputas y riesgos reputacionales/financieros"
+    }
+  },
+  "analyzed_at": "2026-06-04T10:29:27Z"
+}

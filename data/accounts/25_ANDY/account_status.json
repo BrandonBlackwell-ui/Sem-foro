@@ -1,0 +1,387 @@
+{
+  "number": "25",
+  "folderTitle": "25. Andy",
+  "folderId": "1H_b0LEb9Jk52sOh6ldRawIoYPQhZyh8x",
+  "folderModifiedTime": "2026-05-04T18:10:53.711Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "Andy_Landa_Reporte_Actividades_Resultados.pptx",
+    "modifiedTime": "2026-06-10T16:55:59.611000Z",
+    "source": "03. ANDY_REPORTES_AVANCES"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-14T20:54:22.457Z",
+    "source": "02. ANDY_ENTREGABLES",
+    "file": "Columna_Alto_Nivel_Andrea_Landa_VF.docx",
+    "fileId": "1ag4kshYLVX_7kJhHejxLnw-Ca1ogp6aT"
+  },
+  "subfolderActivity": {
+    "01. ANDY_CONTRATO_OC": {
+      "subfolderId": "1XmJ53eVfXhQYxf5JnYvmVSMc_39Hoi6Z",
+      "fileCount": 3,
+      "latestModified": "2026-05-12T22:50:32Z",
+      "latestFile": "Contrato_Andycoach_completo_.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:11Z_verify",
+      "last_verified_at": "2026-06-12T14:09:11Z"
+    },
+    "02. ANDY_ENTREGABLES": {
+      "subfolderId": "1oxxypI04JH5OFF0X-M4JSp5s90dMcbu5",
+      "fileCount": 7,
+      "latestModified": "2026-06-08T22:48:43.178000Z",
+      "latestFile": "Columna_Alto_Nivel_Andrea_Landa_VF.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T00:29:58Z_verify",
+      "last_verified_at": "2026-06-11T00:29:58Z"
+    },
+    "03. ANDY_REPORTES_AVANCES": {
+      "subfolderId": "1xQhjjUCxOCd-_ogZvhp9eqKChi-2aCqN",
+      "fileCount": 4,
+      "latestModified": "2026-06-10T16:55:59.611000Z",
+      "latestFile": "Andy_Landa_Reporte_Actividades_Resultados.pptx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T00:29:58Z_verify",
+      "last_verified_at": "2026-06-11T00:29:58Z"
+    },
+    "04. ANDY_CONVERSACIONES_WA": {
+      "subfolderId": "1iGbU9yP3zoD8_4kjmRQxVW3iHpBls8iY",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T00:29:58Z_verify",
+      "last_verified_at": "2026-06-11T00:29:58Z"
+    },
+    "05. ANDY_ TRANSCRIPCIONES_LLAMADAS": {
+      "subfolderId": "1tNvEBcyc571rbY9RqrFocM8yWabfm-K0",
+      "fileCount": 6,
+      "latestModified": "2026-05-14T20:01:21.984000Z",
+      "latestFile": "Touchpoint Andy x BWS: 2026/05/14 ",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T00:29:59Z_verify",
+      "last_verified_at": "2026-06-11T00:29:59Z"
+    },
+    "06. ANDY_AGENDAS_TRABAJOS": {
+      "subfolderId": "12lDkLC4loND2aWwre30Yqs-nkQNmZRos",
+      "fileCount": 7,
+      "latestModified": "2026-05-29T19:26:12.103000Z",
+      "latestFile": "ACTIVIDADES DEL 25-29 MAYO",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T00:29:59Z_verify",
+      "last_verified_at": "2026-06-11T00:29:59Z"
+    }
+  },
+  "pqProxy": {
+    "score": 89,
+    "tierMix": {
+      "tier1": 4,
+      "tier2": 1,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": "alta",
+    "hasMetrics": true,
+    "evidence": "Reporte mensual ABRIL 2026 (versión preliminar): 18 medios impactados, 32 menciones (12 portales + 3 impresas + 9 FB + 5 X + 3 podcast/YT). Tier 1 dominante: Forbes México, Expansión, El Financiero, Milenio Negocios, Entrepreneur, Mundo Ejecutivo, Reporte Indigo, Animal MX. 3 podcasts top México: Sinergéticos, Cracks, High Level. Tesis 'creator economy +23% anual' bien posicionada. Contrato Andy AHORA FIRMADO (22:58 por finance@blackwell) — cierra gap CO + resuelve discrepancia scope/duración. | DELTA 2026-05-11T18:30:00Z: REPORTE FINAL marzo-abril .pptx cargado 8-may 20:38 — 5 menciones / +8.9M impactos / $512K EPV / 4 T1 confirmados (Milenio Negocios videoentrevista, Merca 2.0, Alto Nivel, MSN). Master Class ejecutada. Sinergéticos pactado. | DELTA 2026-05-15T14:00:00Z: Columna Alto Nivel pasa a VF (versión final post-SEO). Pendiente OK cliente; touchpoint 14-may reconfirmó interés del medio.",
+    "suggestion": "Confirmar aprobación final de Andy/Paulina a Columna_Alto_Nivel_Andrea_Landa_VF.docx para envío inmediato a Alto Nivel (medio interesado >2 semanas). Cuadrar agenda podcast Sinergéticos esta quincena; iniciar nuevo contenido editorial de mayo.",
+    "fileEvaluated": "Columna_Alto_Nivel_Andrea_Landa_VF.docx",
+    "evaluatedAt": "2026-05-15T14:00:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 1,
+    "label": "Cerrar reporte abril + validar contrato firmado",
+    "text": "Confirmar aprobación final de Andy/Paulina a Columna_Alto_Nivel_Andrea_Landa_VF.docx para envío inmediato a Alto Nivel (medio interesado >2 semanas). Cuadrar agenda podcast Sinergéticos esta quincena; iniciar nuevo contenido editorial de mayo.",
+    "source": "delta-2026-05-15"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T00:28:19Z",
+  "driveFiles": [
+    {
+      "id": "13_M37q0cT3STCN6bXVQQzuYrgwFxQ822",
+      "name": "Andy_Landa_Reporte_Actividades_Resultados.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-10T16:55:59.611Z",
+      "size": "7534106",
+      "subfolder": "03",
+      "subfolderName": "03. ANDY_REPORTES_AVANCES",
+      "nestedPath": null
+    },
+    {
+      "id": "1sQ96eOkzXCM8gPh9ByEtG_JMj22cx0ia",
+      "name": "Andy_Landa_Reporte_FINAL.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-08T23:04:55.683Z",
+      "size": "6368812",
+      "subfolder": "03",
+      "subfolderName": "03. ANDY_REPORTES_AVANCES",
+      "nestedPath": null
+    },
+    {
+      "id": "1ag4kshYLVX_7kJhHejxLnw-Ca1ogp6aT",
+      "name": "Columna_Alto_Nivel_Andrea_Landa_VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-08T22:48:43.178Z",
+      "size": "14550",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1iYxEJ00m20m-49ow4_9PjnTZcX8F2bi6",
+      "name": "2026 - Andy Landa - Creator economy crece 23% al año y revive el déjà vu que marcó al e-commerce en 2010.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-08T22:47:50.411Z",
+      "size": "10205",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1BKwpfs-wEXy1HN_mo1fn0M9wDRUGANpYPHRCDJWCM6U",
+      "name": "ACTIVIDADES DEL 25-29 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T19:26:12.103Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. ANDY_AGENDAS_TRABAJOS",
+      "nestedPath": null
+    },
+    {
+      "id": "1Ocrw73ASHBr5qgA3uvxkwxXNPzTIFGEUnOhihjmMqkc",
+      "name": "Actividades del 18-22 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T20:23:41.637Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. ANDY_AGENDAS_TRABAJOS",
+      "nestedPath": null
+    },
+    {
+      "id": "1RcaD_FrLZIlmZcgPHnu9m4nBz6CH6ROG_Z9XRx5OvS4",
+      "name": "ANDY ACTIVIDADES DEL 11-15 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-18T15:12:43.288Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. ANDY_AGENDAS_TRABAJOS",
+      "nestedPath": null
+    },
+    {
+      "id": "1p2F8F4KyRTq1eenZfFsNXEQnS8u5NW2he5gzDL9jfDA",
+      "name": "Touchpoint Andy x BWS: 2026/05/14 ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-14T20:01:21.984Z",
+      "size": "8947",
+      "subfolder": "05",
+      "subfolderName": "05. ANDY_ TRANSCRIPCIONES_LLAMADAS",
+      "nestedPath": null
+    },
+    {
+      "id": "1Nguozq9cI6sv3cgOf1rZbnna2mUC2cVr",
+      "name": "Copia de Andy Landa - Checklist .xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-05-14T17:09:44.212Z",
+      "size": "18933",
+      "subfolder": "03",
+      "subfolderName": "03. ANDY_REPORTES_AVANCES",
+      "nestedPath": null
+    },
+    {
+      "id": "1Z3GDDTE3M_tAuOUk8PZsUOZ1ThV3xAOw",
+      "name": "Contrato_Andycoach_completo_.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T22:50:32.000Z",
+      "size": "354892",
+      "subfolder": "01",
+      "subfolderName": "01. ANDY_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1kS6Flos1JionRjC5inbm_b98Hx_0SfgK",
+      "name": "ANDY_Reporte mensual ABRIL 2026.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-08T20:38:29.904Z",
+      "size": "8367093",
+      "subfolder": "03",
+      "subfolderName": "03. ANDY_REPORTES_AVANCES",
+      "nestedPath": null
+    },
+    {
+      "id": "1qxaZWMJAI5mXfLhLQyHZFC7CR2Yd_t_2",
+      "name": "Blackwell x InstaCoachAndy.(Firmado)docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T22:58:35.645Z",
+      "size": "655126",
+      "subfolder": "01",
+      "subfolderName": "01. ANDY_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "12XEv8T_gFb1mkaZ6lpmYKpdOeHvcnwcH",
+      "name": "Contrato Andycoach (SIN FIRMAR).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T20:10:23.740Z",
+      "size": "155978",
+      "subfolder": "01",
+      "subfolderName": "01. ANDY_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "10ckYHBW2lE6OfMll88f3XYFCDmyO4mUO4p0QejEqg6Q",
+      "name": "Minuta 07/05/26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-07T18:12:39.019Z",
+      "size": "1024",
+      "subfolder": "05",
+      "subfolderName": "05. ANDY_ TRANSCRIPCIONES_LLAMADAS",
+      "nestedPath": null
+    },
+    {
+      "id": "1UCM1xvHeFnnF0ifKGeNjBgDoP_J5HCmmjB9CvZBSf10",
+      "name": "Touchpoint Andy x BWS: 2026/05/07 ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-07T17:55:53.300Z",
+      "size": "9863",
+      "subfolder": "05",
+      "subfolderName": "05. ANDY_ TRANSCRIPCIONES_LLAMADAS",
+      "nestedPath": null
+    },
+    {
+      "id": "1qlTUhXkJYO3WkBP0IR1wrsjKNZEYOQBhFXCM354owtM",
+      "name": "Actividades 27-30 abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-30T20:45:37.467Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. ANDY_AGENDAS_TRABAJOS",
+      "nestedPath": null
+    },
+    {
+      "id": "1zmlyhZIxSLa-wbObj9_wRFKLoQN8uBJB",
+      "name": "Minuta 30_04_26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-30T18:19:12.000Z",
+      "size": "51124",
+      "subfolder": "05",
+      "subfolderName": "05. ANDY_ TRANSCRIPCIONES_LLAMADAS",
+      "nestedPath": null
+    },
+    {
+      "id": "19_r4XIdgq21U0JnEIoA8m8JguRXlot10XkWsKAmhFbo",
+      "name": " 2026/04/30 Andy x BWS ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-30T17:54:09.364Z",
+      "size": "12536",
+      "subfolder": "05",
+      "subfolderName": "05. ANDY_ TRANSCRIPCIONES_LLAMADAS",
+      "nestedPath": null
+    },
+    {
+      "id": "1l0NQ3ZkNDgrzhx9ypgQAeZSwipy9PNA9",
+      "name": "Andrea_Landa_OnePager_Sinergeticos.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-30T17:48:56.954Z",
+      "size": "9786119",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "19bYE1p9HZmCUlBH3_95EeK1xe9B3hSmpW3RTukXHFbc",
+      "name": "Actividades del 6 al 10 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T22:10:40.792Z",
+      "size": "1157",
+      "subfolder": "06",
+      "subfolderName": "06. ANDY_AGENDAS_TRABAJOS",
+      "nestedPath": null
+    },
+    {
+      "id": "1ASA4N6JTPWiLGCTv3Z3obyN1kC0Ljfa6WMoCznmo5hc",
+      "name": "Actividades del 20 al 24 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T22:08:42.947Z",
+      "size": "1167",
+      "subfolder": "06",
+      "subfolderName": "06. ANDY_AGENDAS_TRABAJOS",
+      "nestedPath": null
+    },
+    {
+      "id": "1LNeY1u_FhR0sTpO5oGGigSks9DhfRUG9-Zv8U-Hzl_Y",
+      "name": "Actividades del 13 al 17 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T22:07:08.990Z",
+      "size": "1318",
+      "subfolder": "06",
+      "subfolderName": "06. ANDY_AGENDAS_TRABAJOS",
+      "nestedPath": null
+    },
+    {
+      "id": "1yS_mZGGXjWME_rBzBvdpQ2BR_9ozXoZmf1hmZvyDnUM",
+      "name": "Master Class AndyCoach: 2026/04/22 10:27 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T20:20:16.953Z",
+      "size": "36755",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1OCHQUhcP5a4x9RYRt3OQzP-8khlhMQKCRb4zQf_lnLc",
+      "name": "Touchpoint Andy x BWS - 2026/04/16 11:24 CST - Transcript",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T20:18:46.972Z",
+      "size": "9178",
+      "subfolder": "05",
+      "subfolderName": "05. ANDY_ TRANSCRIPCIONES_LLAMADAS",
+      "nestedPath": null
+    },
+    {
+      "id": "1imDVHBN7bf4LEk4oGcQubkJeKCfrFk2d",
+      "name": "Andy - Perfil Sinergéticos Podcas.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T20:33:16.000Z",
+      "size": "861661",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1Qh8QdK3oXN2m4ZwcVfjer6D5Y7rP3Xve",
+      "name": "Guía para columnas ediotirales en Alto Nivel.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-15T18:29:07.000Z",
+      "size": "63343",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1U_JZovx-Cl08K4wU__kgSEw7L130fKGm",
+      "name": "2026 Andy L.- Perfil Alto Nivel.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-09T15:54:42.000Z",
+      "size": "77154",
+      "subfolder": "02",
+      "subfolderName": "02. ANDY_ENTREGABLES",
+      "nestedPath": null
+    }
+  ]
+}

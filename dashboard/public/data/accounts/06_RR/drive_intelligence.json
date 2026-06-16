@@ -1,0 +1,557 @@
+{
+  "number": "06",
+  "account_id": "06",
+  "account_name": "RR",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1LnxcTTBuFxcsXDVnLlEctNTP0kJRPYVs",
+      "title": "Propuesta RR_ SERVICIOS.docx - Documentos de Google.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. RR_Contratos_OC",
+      "modifiedTime": "2026-05-13T18:15:47.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1oSH2FK9UW11LZBgs2tcUGwlDp03sEMF1",
+      "title": "reporteRRC290526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-29T16:40:25.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "11Z4N-QuzeZWA5-PWj8xwsKLI8hestOgq",
+      "title": "reporteRRC280526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-28T15:58:49.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1ts8E2x4XiDCtshFgTBoslS8oPdFBi4Em",
+      "title": "reporteRRC260526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-26T14:01:55.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1d0VGaUqiHPtRGStgTZ6Faw8eeOBZ4cvT",
+      "title": "reporteRRC250526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-25T13:28:37.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1r4HpsMLXNTvwD323scIDO_U2a-ZprNmS",
+      "title": "reporteRRC210526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-21T14:38:01.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1m22Um9B23GLg6HC9NmJXnSRMN5INSn6d",
+      "title": "reporteRRC200526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-20T13:19:29.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1kePjMYNhIDhCCf4DbxE46j-X9YQh5ZRh",
+      "title": "reporteRRC190526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-19T13:26:34.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1zRUwTxKu8H3HJMv0S8jn0w1ChOz546T8",
+      "title": "reprteRRC180526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-18T13:19:07.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "16b746X0ibtaGR3NW0dhLVMKRo1xj9yc0",
+      "title": "reporteRRC140526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-14T13:57:10.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1R_QBXdjr06lNUu1woz6RGiBdujB-lAzR",
+      "title": "reporteRRC130526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-13T13:48:30.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1kuU5xz4Oqa8k3YUu6lcrRXC7CaEklHbsorh7O5xjtKE",
+      "title": "Transcript declaraciones Lupita Jones ",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-13T00:29:01.072Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1CHEyJOeA1H4xASSS2H2OSX5qrjkZGzTL",
+      "title": "REPORTERRC120526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-12T14:24:10.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1yoiO7DMlGHKll6K4B6-s7B3QwSnKi4x9",
+      "title": "reporteRRC110526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-11T13:57:17.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "188LsGLIclpAdpjXwg3DEigHbj5orzUQ0",
+      "title": "reporteRRC080526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-08T14:19:25.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1ENpjRMDBnrPlnK1pptuKIo82KADL6MEc",
+      "title": "Reporte —  RR.pdf",
+      "subfolder": "03",
+      "subfolderName": "03. RR_REPORTES_AVANCES",
+      "modifiedTime": "2026-04-17T15:14:25.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1LlbhwaeJdK8D2u9ZJJE2MqxHv8hVvCfQ",
+      "title": "Transcript declaraciones Lupita Jones ",
+      "subfolder": "05",
+      "subfolderName": "05. RR_Transcripciones_Llamadas",
+      "modifiedTime": "2026-04-20T16:16:07.461Z",
+      "kind": "atajo→Google Doc→texto"
+    },
+    {
+      "id": "10DKnAiF7LmgJHUmP2e8EPuuimlSYZ4Xh",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-05-13T17:58:52.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1zhejADGa0bjkDYCIc9oXhov0hc6h8ZUx",
+      "title": "_chat (1).txt",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-05-13T17:57:00.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1TRk6B5d8ERObdx6v3HUYm926H3W2OTod",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-05-13T16:32:18.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1v5x6aJ-_lQlFlYMqhE9FBNeAysQBRrrY",
+      "title": "00001281-reporteRRC130526.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-05-13T14:01:12.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1Rr1IRFJF9l6mH8fQKHybuJlu-QpI5e4_",
+      "title": "00000950-PHOTO-2026-05-04-05-07-08.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-05-04T11:09:20.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1EtqrG-3SQrOjPBKfQ65KULZUIoi0JCQH",
+      "title": "conversaición RR 30 abril 2026.png",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-04-30T17:38:31.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1RlFK0IRncBtQYbaDjgl9Hab0omZGGz4goimEjoLVBzI",
+      "title": "Trabajo diario con cliente",
+      "subfolder": "06",
+      "subfolderName": "06. RR_AGENDAS_TRABAJO",
+      "modifiedTime": "2026-05-13T18:08:55.054Z",
+      "kind": "Google Doc→PDF (escaneado)"
+    },
+    {
+      "id": "1ePwNnyAHsQBQBcIrgkqqlNNHhzMxr-TC",
+      "title": "REPORTERRC070526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-07T13:48:14.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1G7x4Mmq1DF79jIF2bSMAopwkTTqqN2ip",
+      "title": "reporteRRC050526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-05T13:47:36.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1QRVFaXltc7Xd8wPVV9wdo1DzS3vxq2Ir",
+      "title": "reporteRRC040526.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-05-04T13:50:11.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1LW1yBM4ZUz4Dxe62Ie5gdSLqwAeTU1tj",
+      "title": "OnePager_ADN_Azteca_RR_30Abril2026.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-30T17:41:34.343Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1ycIRKsfgi4xSqc9VZwYiNuwhJErOQ3wV",
+      "title": "reporteRRC300426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-30T14:12:24.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1zYpDl-ocJ5VsnG6x0d8kEbVknDCKNK1Q",
+      "title": "reporte RRC 290426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-29T14:30:24.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "11rxGSo0eurXLQtUZT0Wdp45VIohQNYAI",
+      "title": "reporte RRC 280426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-28T14:06:06.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1uy-YBZ4jblZ_nXxyNsTR_couxI_07Pne",
+      "title": "reporte RRC 270426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-27T13:44:58.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1i8z_LD9JfL52pnzNNYmxaW3yT5PXZe0b",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-04-20T23:52:08.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1hC3zzez0qelgBsTgIOTvmdSGldSYRUd1",
+      "title": "00001169-reporteRRC200426.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-04-20T14:50:34.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1TJkzDKWhCNzA2u1KMfvppMyz3WEd9aYO",
+      "title": "reporteRRC200426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-20T14:08:46.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1vf3pAaPrcOSygWZMQFBw55bI_ElTagG9",
+      "title": "reporte RRC 160426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-16T14:20:47.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "18KtKiCCwxZGcVRMcMRkYuhSzVQV_0uXI",
+      "title": "00000934-PHOTO-2026-04-16-07-10-16.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-04-16T13:12:08.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "13TQolAbYoYjp6vFH2rl00fsnCmGLe5RP",
+      "title": "reporte RRC 150426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-15T14:01:00.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "14J5d1et3Xv2yKKkJYlWB1lj594OC-lur",
+      "title": "REPORTE RRC 140426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-14T13:52:46.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1C_GXlWjpOHi14hTfqwFZKiNAK_50Ssth",
+      "title": "00000928-PHOTO-2026-04-14-06-45-27.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-04-14T12:48:42.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1P7OPMSuPFQW5MjXrg_I7GkdTzTFnYm9Y",
+      "title": "reporte RRC 100426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-10T14:35:59.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1nXLS6R8JPGv14fdPyjS2HrGQ6-Dqjl88",
+      "title": "reporte RRC 080426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-08T14:02:14.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1g_BWVzF_6ZEL8EARZhOYiMHFi2DhKav8",
+      "title": "reporte RRC 070426.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "modifiedTime": "2026-04-07T14:24:23.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1ypq0YRkKiVnLN3LVda3IbEYhR8A5Cs_1",
+      "title": "00000925-PHOTO-2026-04-07-05-18-20.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-04-07T11:22:56.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1fNUiWXIPPjLq1BD0ujB-W-sWcIMvvNUp",
+      "title": "00000920-PHOTO-2026-04-02-09-26-02.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "modifiedTime": "2026-04-02T15:35:22.000Z",
+      "kind": "imagen"
+    }
+  ],
+  "files_read_count": 45,
+  "files_skipped": [
+    "[04] 00000954-VIDEO-2026-05-08-07-06-29.mp4: formato no soportado (video/mp4)",
+    "[04] 00000947-VIDEO-2026-04-30-07-25-14.mp4: formato no soportado (video/mp4)"
+  ],
+  "account_summary": {
+    "project_purpose": "Gestión integral de crisis reputacional de Raúl Rocha Cantú mediante monitoreo mediático diario, control narrativo defensivo y posicionamiento estratégico frente a investigaciones federales (huachicol fiscal, fraude Miss Universe, infiltración empresarial CCE, tráfico de armas, vínculos presuntos crimen organizado), con énfasis en contención narrativa en medios Tier 1 nacionales e internacionales y protección reputacional del personaje y sus entidades empresariales.",
+    "content_summary": "RR (#06) mantiene crisis severa sin contención ejecutiva desde febrero 2026. Monitoreo diario exhaustivo documentado (80+ One-Pagers abril-mayo 2026) pero CERO publicaciones defensivas gestionadas, CERO media training ejecutado, CERO desmentidos coordinados. Cobertura masiva negativa acumulada: 65+ menciones dominadas por narrativas de impunidad FGR 515+ días, presuntos nexos El Yaicob/SEICSA/huachicol fiscal/tráfico armas, fraude Miss Universe HBO-Entrevue Francia, restricción participación Puerto Rico 2026/Cannes. Grupo Medios RR operativo desde 26/11/25 pero sin decisiones ejecutivas visibles post-20/abril documentadas en chats.",
+    "current_status": "RR a 29/mayo 2026: crisis sin resolver. Últimas menciones mayo (Rocha Mónaco 8/mayo, FGR investigaciones, Tony Parker Cannes 12/mayo, reclamo Lupita Jones 26/mayo). Sin publicaciones defensivas ejecutadas, sin media training, sin desmentidos. Grupo WhatsApp Medios RR existe pero inactivo post-20/abril. Última entrega reporteRRC290526.pdf documenta 3 menciones crisis financiera/investigaciones/deterioro imagen internacional sin respuesta coordinada.",
+    "scope_of_service": [
+      "Monitoreo de medios lunes a viernes (digital, impreso, RRSS, TV) con reporte One-Pager AM diario",
+      "Análisis narrativo documentado (tono, testigos, contexto judicial, voceros)",
+      "One-Pagers ejecutivos con lectura de medios, temas principales, links a fuentes",
+      "Monitoreo especial de crisis en tiempo real según solicitud cliente",
+      "Publicaciones defensivas mensuales en medios nacionales T1 con control editorial (hasta 4/mes)",
+      "Media training y simulacros para voceros (Rocha Cantú / Miss Universe org)",
+      "Relaciones estratégicas personalizadas con periodistas clave T1/T2/T3",
+      "Gestión de posicionamientos y desmentidos en tiempo real durante crisis"
+    ],
+    "client_promises": [
+      {
+        "promise": "Monitoreo de medios lunes a viernes (digital, impreso, RRSS, TV) con reporte One-Pager AM",
+        "cadence": "semanal",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Fichas de análisis narrativo cuando hay menciones (tono, testigos, contexto judicial)",
+        "cadence": "continuo",
+        "status": "cumplido"
+      },
+      {
+        "promise": "One-Pagers ejecutivos con lectura de medios, temas principales, links a medios",
+        "cadence": "semanal",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Monitoreo especial de crisis en tiempo real según solicitud cliente",
+        "cadence": "evento",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "4 publicaciones defensivas mensuales en medios nacionales T1 con control editorial",
+        "cadence": "mensual",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Media training y simulacros para voceros (Rocha Cantú / Miss Universe org)",
+        "cadence": "mensual",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Relaciones estratégicas personalizadas con periodistas clave T1/T2/T3",
+        "cadence": "continuo",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Gestión de posicionamientos y desmentidos en tiempo real durante crisis",
+        "cadence": "evento",
+        "status": "pendiente"
+      }
+    ],
+    "fulfilled": [
+      "Monitoreo diario sin interrupción febrero-mayo 2026: 80+ One-Pagers (reporteRRC070426 a reporteRRC290526) con estructura consistente (lectura, temas, testigos, URLs, análisis tono/contexto judicial).",
+      "Análisis narrativo documentado: fichas identifican narrativas dominantes (impunidad FGR 515+ días, presuntos nexos El Yaicob/SEICSA/huachicol fiscal, fraude Miss Universe HBO-Entrevue, tráfico armas/CJNG, investigaciones federales, restricción participación Puerto Rico 2026, reaparición pública Mónaco/Cannes).",
+      "One-Pagers abril 2026 detallados: reporteRRC070426 (Índice Político: nexos poder/corrupción sin hechos nuevos, tono crítico 4T); reporteRRC080426 (Entrevue T1 Francia: tensiones Miss Universe Nawat vs Rocha-Anne, gobernanza crisis); reporteRRC100426 (Infobae: HBO documental Omar Harfuch grabaciones presunto fraude Fátima Bosch + Rocha explicando resultado, contexto legal México); reporteRRC140426 (Excélsior David Páramo opinión: Rocha intentó acercarse CCE/Francisco Cervantes sin relevancia operativa, hipótesis Octavio de la Torre campaña desprestigio); reporteRRC150426 (ADN X/Twitter: #DíasDeImpunidad 515+ días carpeta FGR sin resolución, tono denuncia); reporteRRC160426 (Lupita Jones podcast YouTube 16/abril: crítica huachicol + Miss Universe governance, restricción participación).",
+      "One-Pagers mayo 2026: reporteRRC200426 (Ricardo Ravelo Plumas Libres + Entresemana: UIF instrumento político, impunidad omisiones FGR, redes poder CCE, bajo impacto regional); reporteRRC270426 (Informe21 Puerto Rico: Miss Universo 2026 sede Puerto Rico, restricción Rocha Cantú participación operativa/mediática per acuerdos autoridades locales, exclusión reputacional); reporteRRC280426 (Índice Político columna: Rocha símbolo corrupción/impunidad, escepticismo 4T, impacto confianza inversión).",
+      "Transcripción Lupita Jones podcast 16/abril 2026: crítica explícita Rocha huachicol + cargos graves, Miss Universe ente etéreo, gobiernos requieren transparencia.",
+      "APIMEX boletín 6/abril 2026: 3.597 visualizaciones X (Mauricio Flores Arellano), infiltración CCE/Francisco Cervantes con Rocha Cantú, esquema financiero, viajes Grumman, contactos empresarios Marruecos, presuntas vínculos redes criminales.",
+      "Imagen Excélsior 14/abril 2026 (David Páramo DINERO): fotografia columnista + análisis 'Jugando con fuego' — Rocha esfuerzos acercamiento poder CCE, sin operatividad, hipótesis Octavio de la Torre orquestador campaña.",
+      "Reforma impreso 4/mayo 2026 (clipping Jacobo Reyes León): El Yaicob liberado por juez, presunto socio Rocha, detalles sociedad delictiva, detención ilegal/procedimientos falla, foto comparativa periodista.",
+      "Milenio impreso 2/abril 2026 (Arnulfo Valdivia opinión SALA DE CONSEJO): cónsules honorarios controversia (Martín Camarena Filipinas, Raúl Rocha Guatemala, Rocha retiro nombramientos), legitimidad cargos diplomáticos sin remuneración, presión presupuestal cancillerías.",
+      "Imagen YouTube Lupita Jones 16/abril (thumbnail promo 3 personas): 'BAJO Y RASTRERO #LupitaJones' — estreno 13:00 EST mismo día, declaraciones sobre Rocha iniciativa Miss Universe."
+    ],
+    "pending": [
+      "CERO publicaciones defensivas gestionadas abril-mayo 2026: sin 4 piezas mensuales T1 prometidas; Rocha no publica columnas opinión, artículos defensa, posicionamientos editoriales, desmentidos.",
+      "Sin media training documentado: cero sesiones diagnóstico, entrenamiento voceros (Rocha Cantú / Miss Universe org), prep preguntas difíciles, respuestas coordinadas abril-mayo.",
+      "Sin desmentidos ni respuestas editorialisadas contra cobertura: APIMEX boletín 6/abril (3.597 vistas), Lupita Jones 16/abril (declaraciones públicas críticas), ADN #DíasDeImpunidad 515+ días, Plumas Libres 19/abril (Ravelo UIF político), Infobae 10/abril (HBO documental), Excélsior 14/abril (David Páramo CCE/Cervantes), Milenio 2/abril (Arnulfo Valdivia cónsul Guatemala), Entrevue Francia (8+ notas fraude Miss Universe mayo), Reforma 4/mayo (El Yaicob liberado presunto socio).",
+      "Relaciones T1 no consolidadas: ADN/Azteca mantienen cobertura negativa (#DíasDeImpunidad, #MrHuachicol) sin contacto editorial visible; columnistas David Páramo, Arnulfo Valdivia, Ricardo Ravelo no sondean defensa; Entrevue T1 Francia lidera narrativa fraude sin posicionamiento alternativo.",
+      "Sin estrategia comunicación integrada: grupo Medios RR creado 26/11/25 pero sin decisiones coordinadas post-20/abril comprobadas en chats; compartición reportes (20/abril, 13/5) sin acciones ejecutadas.",
+      "Cobertura internacional sin gestión defensiva: Entrevue.fr T1 Francia (8+ notas mayo fraude Miss Universe ruptura Miss France 28/mayo); HBO documental en prep sin desmentido vocero.",
+      "Vocero principal sin presencia pública defensiva coordinada: Rocha Cantú reaparece Cannes/Mónaco (8-17/mayo reportado Reforma) con perfil lujo vs investigaciones; CERO declaraciones rectificadas, entrevistas coordinadas, comunicados respuesta.",
+      "Restricción participación Miss Universe Puerto Rico 2026 como evidencia gestión riesgo sin operador confiable: 27/abril (reporteRRC270426) documenta exclusión operativa/mediática = implicación reputacional de incapacidad gobernar."
+    ],
+    "key_facts": [
+      "Monitoreo periodo: 7/abril - 29/mayo 2026 (53 días), 80+ One-Pagers entregados sin interrupción.",
+      "Total menciones documentadas abril-mayo 2026: 65+ cobertura acumulada (estimado 23 Azteca/ADN diciembre 2025-abril incluidos dossier anterior).",
+      "Principales medios T1 cobertura negativa: Infobae México, Excélsior, ADN/Azteca, Entrevue Francia, Reforma, Milenio, Índice Político.",
+      "Narrativas dominantes: (1) Impunidad FGR 515+ días sin resolución (2) Presuntos nexos El Yaicob/SEICSA/huachicol fiscal (3) Fraude Miss Universe HBO-Entrevue Francia (4) Infiltración CCE/Francisco Cervantes (5) Restricción participación internacional (6) Reaparición pública Mónaco/Cannes con perfil lujo.",
+      "APIMEX boletín 6/abril: 3.597 visualizaciones X, alcance nacional, detalles esquema CCE/viajes empresarios Marruecos.",
+      "Lupita Jones podcast 16/abril YouTube: crítica explícita huachicol + cargos graves, declaración pública autoridad Miss Universe.",
+      "Ricardo Ravelo (Premio Nacional Periodismo): cobertura Plumas Libres 19/abril + Entresemana (Moisés Sánchez Limón director, perfil opositor 4T).",
+      "David Páramo (Excélsior opinión T1): análisis CCE/Francisco Cervantes 14/abril, hipótesis Octavio de la Torre orquestador.",
+      "Arnulfo Valdivia (Milenio): cónsul honorario Guatemala 2/abril, legitmidad diplomática cuestionada.",
+      "Entrevue.fr (T1 Francia): 8+ notas mayo 2026 fraude Miss Universe, ruptura Miss France 28/mayo como 'respuesta directa', presencia narrativa internacional sin defensa.",
+      "Reforma impreso 4/mayo: El Yaicob liberado presunto socio, detalles delictivos, foto clipping.",
+      "Grupo Medios RR WhatsApp: creado 26/11/25 (G CORP creador), activo 26/11-20/04 (último share reporteRRC200426.pdf con análisis Ravelo/Entresemana), admin Daniel Menendez 26/12/25, participante 'güero socio' (+1 956 249-4047) agregado 20/04, mensajes temporales 24h activados 26/11.",
+      "Chat 20/abril 2026: sospecha 'panfletos electrónicos' pagados (Ravelo/Entresemana), análisis Menendez diferencia Plumas Libres (alcance regional) de Entresemana (alcance nacional limitado, perfil opositor).",
+      "HBO documental preparación: Omar Harfuch grabaciones presunto fraude Fátima Bosch (Rocha explicando resultado), sin estreno público confirmado per reporteRRC100426.",
+      "Miss Universe Puerto Rico 2026: restricción participación Rocha Cantú per acuerdos autoridades locales (transparencia/supervisión), exclusión operativa = riesgo reputacional."
+    ],
+    "per_file_notes": [
+      {
+        "file": "reporte RRC 280426.pdf",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "Índice Político columna 28/abril: Rocha símbolo dentro narrativa crítica corrupción/impunidad/cercanía poder, sin hechos nuevos específicos, tono escepticismo 4T sobre rendición cuentas e impacto confianza inversión."
+      },
+      {
+        "file": "reporte RRC 270426.pdf",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "Informe21 Puerto Rico 27/abril: Miss Universo 2026 sede Puerto Rico, restricción operativa/mediática Raúl Rocha Cantú per acuerdos autoridades locales, exclusión reputacional preventiva, carga narrativa política."
+      },
+      {
+        "file": "_chat.txt",
+        "folder": "04. RR_CONVERSACIONES_WA",
+        "finding": "Grupo Medios RR WhatsApp 26/11/25-20/04/26 (último mensaje 20/abril): creado G CORP, admin Daniel Menendez 26/12, participante 'güero socio' 20/04, análisis Menendez diferencia Ravelo (regional) vs Entresemana (nacional opositor), sospecha 'panfletos electrónicos' pagados, sin acciones ejecutadas post-20/abril."
+      },
+      {
+        "file": "00001169-reporteRRC200426.pdf",
+        "folder": "04. RR_CONVERSACIONES_WA",
+        "finding": "One-Pager 20/abril: 2 menciones (Ravelo Plumas Libres + Entresemana Jorge Herrera): UIF instrumento político, impunidad/omisiones FGR, redes poder, elite protegida, bajo impacto regional/nacional limitado."
+      },
+      {
+        "file": "reporteRRC200426.pdf",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "One-Pager 20/abril duplicado: idéntico al 00001169, confirma cobertura Ravelo+Entresemana sobre UIF político/impunidad/CCE, alcance regional sin retoma T1."
+      },
+      {
+        "file": "reporte RRC 160426.pdf",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "One-Pager 16/abril: Lupita Jones podcast YouTube estreno 13:00 EST, declaraciones Rocha sobre huachicol + cargos graves + Miss Universe governance, autoridad crítica pública."
+      },
+      {
+        "file": "00000934-PHOTO-2026-04-16-07-10-16.jpg",
+        "folder": "04. RR_CONVERSACIONES_WA",
+        "finding": "Thumbnail YouTube Lupita Jones 16/abril (3 personas, fondo púrpura): 'BAJO Y RASTRERO' titular, estreno 3 horas después de corte reporte, presión mediática crítica día."
+      },
+      {
+        "file": "reporte RRC 150426.pdf",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "One-Pager 15/abril: ADN X/Twitter (1 mención T1): #DíasDeImpunidad 515+ días carpeta FGR abierta sin resolución, tono denuncia, empresario bajo sospecha sin consecuencias visibles, contraste justicia/impunidad percibida."
+      },
+      {
+        "file": "REPORTE RRC 140426.pdf",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "One-Pager 14/abril: Excélsior David Páramo opinión T1 (1 mención columna): Rocha intentó acercarse CCE/Francisco Cervantes sin relevancia operativa, hipótesis Octavio de la Torre orquestador campaña desprestigio, disputa poder empresarial."
+      },
+      {
+        "file": "00000928-PHOTO-2026-04-14-06-45-27.jpg",
+        "folder": "04. RR_CONVERSACIONES_WA",
+        "finding": "Clipping Excélsior página 3 DINERO 14/abril: David Páramo foto + análisis 'Jugando con fuego', texto impreso señala Cervantes-Rocha fotografías circuladas, esfuerzos Rocha acercamiento poder, sección opinión T1."
+      },
+      {
+        "file": "reporte RRC 100426.pdf",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "One-Pager 10/abril: Infobae México (1 mención T1): HBO documental Omar Harfuch grabaciones presunto fraude Fátima Bosch con Rocha explicando resultado, contexto legal México, amplificación mediática internacional + judicial nacional."
+      },
+      {
+        "file": "reporte RRC 080426.pdf",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "One-Pager 8/abril: Entrevue.fr T1 Francia (1 mención regional): tensiones Miss Universe Nawat Itsaragrisil intenta compra vs Rocha-Anne copropiedad, gobernanza crisis, referencias investigaciones judiciales contexto."
+      },
+      {
+        "file": "reporte RRC 070426.pdf",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "One-Pager 7/abril: APIMEX boletín 6/abril X/Twitter (Mauricio Flores Arellano @mfloresarellano 3.597 visualizaciones 11:02 AM) — infiltración CCE/Francisco Cervantes + Raúl Rocha, sociedad delictiva, viajes Grumman, contactos empresarios Marruecos, APIMEX posteriormente desmiente documento."
+      },
+      {
+        "file": "00000925-PHOTO-2026-04-07-05-18-20.jpg",
+        "folder": "04. RR_CONVERSACIONES_WA",
+        "finding": "Screenshot X/Twitter Mauricio Flores Arellano 6/abril 11:02 AM (3.597 visualizaciones): boletín APIMEX falso con encabezado oficial, señalamientos infiltración CCE/Francisco Cervantes con Raúl Rocha, narrativa sociedad delictiva/avio privado/negocios Marruecos."
+      },
+      {
+        "file": "00000920-PHOTO-2026-04-02-09-26-02.jpg",
+        "folder": "04. RR_CONVERSACIONES_WA",
+        "finding": "Clipping Milenio impreso Opinión página 9, 2/abril 2026: Arnulfo Valdivia columna 'Cónsules honorarios', menciona Raúl Rocha Guatemala retiro nombramientos, cuestiona legitimidad diplomática sin remuneración, presión presupuestal cancillerías."
+      },
+      {
+        "file": "reporteRRC290526.pdf (última entrega mencionada en metadata)",
+        "folder": "02. RR_ENTREGABLES",
+        "finding": "One-Pager 29/mayo: 3 menciones mayo (fecha estimada corte): crisis financiera Miss Universe, investigaciones/señalamientos, deterioro imagen internacional, sin respuesta coordinada."
+      },
+      {
+        "file": "PHOTO-2026-05-04 Reforma impreso (referencia en dossier anterior)",
+        "folder": "04. RR_CONVERSACIONES_WA",
+        "finding": "Clipping Reforma 4/mayo 2026 (Jacobo Reyes León): El Yaicob liberado por juez, presunto socio Raúl Rocha, detalles sociedad delictiva, detención ilegal/procedimientos falla, foto comparative periodista/implicado."
+      }
+    ]
+  },
+  "analyzed_at": "2026-06-11T02:27:15Z"
+}

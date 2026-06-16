@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "asOf": "2026-05-14",
+  "source": "ESTATUS PROYECTOS.xlsx (color de celda en col A)",
+  "comment": "Cuentas marcadas como 'top' en la hoja interna de proyectos. Tipos: top_ingresos = verde (#38761D), top_estrategica = naranja (#BF9000). El dashboard usa este tag para (a) ordenar la master table con las top arriba y (b) filtrar la sección de Decisiones requeridas a top con color red/orange.",
+  "tags": {
+    "07": "top_ingresos",
+    "09": "top_ingresos",
+    "11": "top_ingresos",
+    "12": "top_ingresos",
+    "13": "top_ingresos",
+    "17": "top_estrategica",
+    "18": "top_ingresos",
+    "20": "top_ingresos",
+    "21": "top_ingresos",
+    "26": "top_ingresos",
+    "27": "top_estrategica",
+    "28": "top_estrategica",
+    "29": "top_ingresos",
+    "33": "top_estrategica",
+    "35": "top_ingresos",
+    "38": "top_ingresos"
+  },
+  "labels": {
+    "top_ingresos": "Top ingresos",
+    "top_estrategica": "Estratégica"
+  }
+}

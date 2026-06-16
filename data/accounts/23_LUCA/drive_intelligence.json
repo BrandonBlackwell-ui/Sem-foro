@@ -1,0 +1,239 @@
+{
+  "number": "23",
+  "account_id": "23",
+  "account_name": "LUCA",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1JEVEr_RblMF8fUZRYnxnIxhuTIbArDTl",
+      "title": "Orden_de_Compra_Blackwell_Luca_200426.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. LUCA_CONTRATO_OC",
+      "modifiedTime": "2026-05-07T18:17:54.714Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1nZOjw-Bqk9bR3BTkoWVTXAhSjEBm1NuR",
+      "title": "Blackwell_Template NDA 200426.docx",
+      "subfolder": "01",
+      "subfolderName": "01. LUCA_CONTRATO_OC",
+      "modifiedTime": "2026-04-23T04:20:17.279Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1l7FCpt06-QbDdlSuILByP-pBGkvJLnwwa8OAsyY3N1o",
+      "title": "LUCA NOTA REPORTE INDIGO 28  DE ABRIL 26",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "modifiedTime": "2026-05-05T19:51:39.551Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1lsqihiXAluVZEScZdQ1CBBKuqUn1BRxQ4pC85hKa5JE",
+      "title": "LUCA NOTA CRÓNICA 22 DE ABRIL 26",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "modifiedTime": "2026-05-05T19:48:48.602Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1V2sLFyYBF64nB2bZ26C1s0UZHjkwHHk2u_pD90cy-cM",
+      "title": "LUCA NOTA EXCÉLSIOR 22 DE ABRIL 26",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "modifiedTime": "2026-05-05T19:46:58.845Z",
+      "kind": "Google Doc→PDF (escaneado)"
+    },
+    {
+      "id": "1-iXrqpLEG9dp1dEoF5yZNkRGiM-iRBlqA7I4g7kmBi0",
+      "title": "Estrategia_Luca_v260421",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "modifiedTime": "2026-05-05T19:39:58.189Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1hWjzjGoGbPTR8UuznZ0fwdqO_Xk3KJWm",
+      "title": "CamScanner 14-11-25 14.46.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "modifiedTime": "2026-04-23T04:18:37.000Z",
+      "kind": "PDF escaneado→nativo"
+    },
+    {
+      "id": "1KfEMPJom6Yi_4l_V5HXwsT-D01BnUVQ_",
+      "title": "CamScanner 14-11-25 14.43.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "modifiedTime": "2026-04-23T04:18:35.000Z",
+      "kind": "PDF escaneado→nativo"
+    }
+  ],
+  "files_read_count": 8,
+  "files_skipped": [
+    "[04] 00003167-AUDIO-2026-05-08-09-02-54.opus: formato no soportado (audio/ogg)",
+    "[04] 00000691-AUDIO-2026-04-29-20-30-48.opus: formato no soportado (audio/ogg)"
+  ],
+  "account_summary": {
+    "project_purpose": "Ejecutar estrategia de comunicación defensiva para LUCA (edtech mexicana) durante investigación penal por robo de secretos comerciales contra EMMI TEC, posicionando narrativa defensiva en medios nacionales antes de imputación formal.",
+    "content_summary": "LUCA fue una cuenta de relaciones públicas de defensa reputacional en contexto de litigio penal. Blackwell ejecutó 3 de 4 notas prometidas en medios T1 (Excélsior, Crónica, Reporte Índigo) durante abril-mayo 2026, con estrategia de blindaje jurídico sin nombrar directamente a Luca como denunciante. La cuenta fue terminada anticipadamente sin completar segundo mes ni implementar plan de contingencia para imputación formal.",
+    "current_status": "La cuenta LUCA (#23) está inactiva desde el 08 de mayo de 2026 (última comunicación en WhatsApp). No hubo renovación de contrato para mayo-junio y los movimientos 3, 4 y contingencia quedaron sin ejecución. El contrato fue cancelado/no renovado antes de completar el plan anual.",
+    "key_facts": "\n- Contrato: MXN $200,000 mensuales (abril-mayo 2026)\n- Carpeta penal: CI-FIEAE/C/UI-1 C/D/00231/10-2025, abierta 21-oct-2025\n- 3 notas publicadas: Excélsior (22 abr, T1), Crónica (22 abr, T1), Reporte Índigo (28 abr, T2)\n- Requerimiento notarial de EMMI (Sañudo Conesa): 14-nov-2025, con declaración falsa de que no existía investigación\n- Daño patrimonial documentado: multimillonario\n- Clientes objetivo: 30,000 alumnos, Serie A 8M USD levantada\n- Asesor legal: Efraín Cárdenas Reyes (Cárdenas Reyes Abogados)\n- Vocero: Federico de Lima Mayer Belo (Luca)\n- Última comunicación: 08-05-2026 (WhatsApp)\n",
+    "fulfilled": "\n- ✓ Nota ancla Excélsior (22 abr 2026): \"Fiscalía de CDMX investiga EMMI TEC por presunta revelación de secretos en sector edtech\" — publicada con carpeta verificable, sin mencionar Luca directamente\n- ✓ Nota Crónica (22 abr 2026): cobertura sectorial del mismo ángulo\n- ✓ Nota Reporte Índigo (28 abr 2026): cobertura complementaria\n- ✓ Estrategia documentada (Estrategia_Luca_v260421): FODA, tácticas, timeline, textos base validados con Cárdenas Reyes\n- ✓ Blindaje jurídico inicial: narrativa sin atribución de voceros identificables, imputados anonimizados (Ahmer N., Dominic N.), sin citas de despacho legal\n- ✓ Respuesta preparada a requerimiento Sañudo Conesa: redactada, no enviada (guardada para contingencia)\n- ✓ Monitoreo de medios ejecutado durante ventana crítica (22-28 abr, Foro CNEP)\n- ✓ NDA firmado entre Blackwell y cliente\n",
+    "pending": "\n- ✗ Nota 2 (semana 2, ~30 abr): análisis sectorial sobre PI en edtech — NO redactada ni publicada\n- ✗ Nota 3 (semana 3, mediados mayo): ángulo procesal nuevo según avances del caso — NO definida ni publicada\n- ✗ Nota 4 (semana 4, ~20 may): posicionamiento proactivo Luca con hito de éxito (Serie A 8M) — NO redactada ni publicada\n- ✗ MOVIMIENTO 2 completo: blindaje simultáneo del vocero (silencio activo 10 días) + respuesta formal a Sañudo Conesa — preparado pero NO activado\n- ✗ MOVIMIENTO 4: plan de contingencia para imputación formal (jun-ago 2026) — NO documentado ni preparado\n- ✗ Segundo mes de trabajo (mayo-junio 2026) — NO contratado\n- ✗ Transcripciones de llamadas — 0 archivos\n- ✗ Reportes de avance operativo — 0 archivos\n- ✗ Agendas de trabajo — 0 archivos\n",
+    "pq_assessment": "\n<parameter name=\"score_estimate\">72",
+    "quality_narrative": "Las 3 notas ejecutadas fueron de calidad editorial sólida, con narrativa periodística creíble (sin atribuciones directas al cliente), datos verificables (carpeta real, tipo penal, daño documentado) y posicionamiento defensivo sin exponer a Luca a contraataque jurídico inmediato. La estrategia fue documentada exhaustivamente con análisis FODA, riesgos anticipados y validación legal. Sin embargo, el plan fue interrumpido a mitad de ejecución (50% completado), perdiendo el impacto acumulativo de las 4 piezas y la narrativa de largo plazo para imputación formal.",
+    "tier_mix": "T1 (Excélsior), T1 (Crónica), T2 (Reporte Índigo): 67% T1, 33% T2. Cobertura nacional de referencia alcanzada. Búsquedas de debido diligence internacional impactadas positivamente.",
+    "result_vs_objective": "Parcialmente cumplido. Objetivo era instalar narrativa defensiva antes de imputación formal y saturar búsquedas online sobre EMMI TEC con cobertura sobre la investigación penal. Las 3 notas lograron el primer objetivo (narrativa in situ antes del Foro CNEP 23-25 abr). El segundo objetivo (saturación pre-imputación) quedó incompleto: solo 3 de 4 piezas ejecutadas, sin posicionamiento proactivo de Luca, sin contingencia para escalada procesal.",
+    "co_assessment": "\n<parameter name=\"committed\">4",
+    "delivered": 3,
+    "on_time": 3,
+    "late": 0,
+    "missed": 1,
+    "note": "De 4 notas mensuales prometidas, se completaron 3 en el mes 1 (abril 2026, todas on-time: 22, 22, 28 abr). Mes 2 (mayo-junio) no fue contratado, por lo que 1 nota quedó suspendida y 3 movimientos estratégicos no iniciados. Entregables operativos (reportes, transcripciones, agendas) no documentados.",
+    "scope_of_service": "\n- Consultoría estratégica de comunicación con equipo senior multidisciplinario\n- Gestión de relaciones con medios nacionales (T1/T2)\n- Redacción y colocación de notas de prensa (4 mensuales comprometidas)\n- Monitoreo de medios\n- Control editorial en publicaciones\n- Asesoramiento legal de narrativa (validación con Cárdenas Reyes)\n- Preparación de respuestas a requerimientos notariales\n",
+    "client_promises": [
+      {
+        "promise": "Cuatro (4) publicaciones mensuales en medios nacionales de prestigio (T1/T2)",
+        "cadence": "mensual",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Consultoría estratégica de comunicación integral con equipo senior multidisciplinario",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Monitoreo de medios",
+        "cadence": "continuo",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Control editorial en publicaciones",
+        "cadence": "evento",
+        "status": "cumplido"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Requerimiento notarial de EMMI (Sañudo Conesa) activado post-imputación formal sin contingencia operativa preparada",
+        "severity": "alta"
+      },
+      {
+        "risk": "Narrativa de defensa de LUCA incompleta al cierre: falta posicionamiento proactivo y plan de escalada para imputación",
+        "severity": "alta"
+      },
+      {
+        "risk": "Carpeta penal avanza hacia imputación formal (jun-ago 2026) sin cobertura mediática estratégica de Blackwell después de mayo",
+        "severity": "media"
+      },
+      {
+        "risk": "EMMI TEC ya tiene 3 notas de investigación penal en Google; falta saturación con narrativa proactiva de Luca para neutralizar réplicas",
+        "severity": "media"
+      },
+      {
+        "risk": "Fondos internacionales en due diligence encontrarán la investigación penal sin contexto de defensa empresarial posterior a 28 abr",
+        "severity": "media"
+      }
+    ],
+    "business_risk": "Sin cobertura mediática estratégica post-mayo 2026, la imputación formal de EMMI TEC (jun-ago 2026) ocurrirá sin que Luca tenga narrativa defensiva saturada en búsquedas online, exponiendo la empresa a impacto reputacional no mitigado ante inversores y clientes internacionales.",
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "approval",
+        "source": "Federico de Lima Mayer Belo (vocero Luca)",
+        "date": "21-04-2026",
+        "note": "Aprobación de nota ancla y estrategia global con equipo legal (Cárdenas Reyes)"
+      },
+      {
+        "type": "positive",
+        "signal": "praise",
+        "source": "Equipo legal Cárdenas Reyes",
+        "date": "20-04-2026",
+        "note": "Validación de tácticas de anonimización de imputados y blindaje jurídico sin atribuciones directas"
+      },
+      {
+        "type": "negative",
+        "signal": "no_response",
+        "source": "Cliente Luca",
+        "date": "05-05-2026",
+        "note": "Última comunicación WhatsApp (08-05-2026); sin renovación de contrato para mayo-junio"
+      },
+      {
+        "type": "negative",
+        "signal": "scope_expand",
+        "source": "Sañudo Conesa (EMMI TEC)",
+        "date": "14-11-2025",
+        "note": "Requerimiento notarial escalado: amenaza de demanda civil, IMPI, Comisión Antimonopolio y denuncia penal"
+      }
+    ],
+    "opportunities": [
+      "Reactivación post-imputación formal (jun-ago 2026) con plan de contingencia documentado y listo para lanzar",
+      "Ampliación de cobertura internacional con notas de análisis sobre precedentes de IP en edtech latinoamericano",
+      "Posicionamiento de Luca como actor de seriedad institucional: defensa legal transparente + crecimiento comercial simultaneado",
+      "Saturación de búsquedas EMMI TEC en múltiples medios antes de que la contraparte instale narrativa de defensa"
+    ],
+    "opportunity": "Reacticar cuenta con plan de contingencia pre-imputación formal (jun-ago 2026) para convertir escala de proceso penal en narrativa de seriedad empresarial e institucionalidad de Luca ante inversores y mercado.",
+    "strategic_recommendations": [
+      "Documentar plan de contingencia MOVIMIENTO 4 inmediatamente: mensajes, medios calibrados, vocero training, materiales de apoyo para imputación formal (jun-ago 2026)",
+      "Preparar nota 4 de posicionamiento proactivo en stand-by, lista para lanzar si hay cierre de diligencias o avance procesal antes de imputación",
+      "Mantener monitoreo activo de movimientos de Sañudo Conesa y respuesta pública de EMMI; respuesta preparada al requerimiento debe estar activable en 24h",
+      "Explorar reactivación de contrato para mayo-junio 2026 con enfoque en imputación formal como hito narrativo de máximo impacto",
+      "Construir narrativa de largo plazo: de defensa reactiva (abril-mayo) a liderazgo institucional (jun-ago) con Luca como autoridad en seriedad y protección de IP en edtech"
+    ],
+    "per_file_notes": [
+      {
+        "file": "Orden_de_Compra_Blackwell_Luca_200426.pdf",
+        "folder": "01. LUCA_CONTRATO_OC",
+        "finding": "Contrato abril 2026 por MXN $200,000 mensuales; incluye 4 notas mensuales en T1/T2, consultoría estratégica, monitoreo y control editorial."
+      },
+      {
+        "file": "Blackwell_Template NDA 200426.docx",
+        "folder": "01. LUCA_CONTRATO_OC",
+        "finding": "NDA estándar Blackwell-LUCA con cláusulas de confidencialidad, non-compete 24 meses, y resguardo de información; data: fecha sin completar pero referencia 200426."
+      },
+      {
+        "file": "LUCA NOTA EXCÉLSIOR 22 DE ABRIL 26",
+        "folder": "02. LUCA_ENTREGABLES",
+        "finding": "Publicada 22-abr-2026 en Excélsior (T1, digital): titular 'Fiscalía de CDMX investiga EMMI TEC por presunta revelación de secretos en sector edtech'; por Porfirio Escandón; incluye carpeta CI-FIEAE, daño multimillonario, Ahmer N. y Dominic N. anonimizados, sin mencionar Luca."
+      },
+      {
+        "file": "LUCA NOTA CRÓNICA 22 DE ABRIL 26",
+        "folder": "02. LUCA_ENTREGABLES",
+        "finding": "Publicada 22-abr-2026 en Crónica (T1, digital): cobertura complementaria del mismo ángulo penal; URL verificable."
+      },
+      {
+        "file": "LUCA NOTA REPORTE INDIGO 28 DE ABRIL 26",
+        "folder": "02. LUCA_ENTREGABLES",
+        "finding": "Publicada 28-abr-2026 en Reporte Índigo (T2, digital): 'Fiscalía de la CDMX rechaza cerrar investigación contra EMMI TEC'; cierre de semana 1 del plan."
+      },
+      {
+        "file": "Estrategia_Luca_v260421",
+        "folder": "02. LUCA_ENTREGABLES",
+        "finding": "Documento estratégico completo (8 páginas): FODA exhaustivo, 4 movimientos previstos, textos base redactados, MOVIMIENTO 1 ejecutado (nota ancla), MOVIMIENTO 2-4 no ejecutados; validación legal con Cárdenas Reyes; timeline abril-mayo."
+      },
+      {
+        "file": "CamScanner 14-11-25 14.46.pdf",
+        "folder": "02. LUCA_ENTREGABLES",
+        "finding": "Requerimiento notarial de Sañudo Conesa (14-nov-2025) dirigido a Federico de Lima Mayer Belo (vocero Luca): exige cese inmediato, retractación pública, preservación de evidencia; amenaza IMPI, Antimonopolio, demanda civil, denuncia penal."
+      },
+      {
+        "file": "CamScanner 14-11-25 14.43.pdf",
+        "folder": "02. LUCA_ENTREGABLES",
+        "finding": "Instructivo notarial complementario (Notarías 21*132 CDMX): requerimiento formal de Dominic Sando Tucker (representante EMMI) a Federico de Lima Mayer Belo; declara que tras 'investigación exhaustiva' no existe investigación alguna (falsedad: carpeta abierta 21-oct-2025, antes de 14-nov); amenaza con procedimientos IMPI, antimonopolio, denuncia penal."
+      },
+      {
+        "file": "_chat.txt (WhatsApp Chat - Interno Luca 08052026)",
+        "folder": "04. LUCA_CONVERSACIONES_WA",
+        "finding": "Última comunicación interna 08-05-2026; sin detalles disponibles en el inventario, pero marca fin de actividad operativa de la cuenta."
+      },
+      {
+        "file": "64 archivos en LUCA_CONVERSACIONES_WA (no leídos)",
+        "folder": "04. LUCA_CONVERSACIONES_WA",
+        "finding": "Carpeta contiene conversaciones internas de WhatsApp con cliente y equipo; 2 archivos de audio (OPUS) no legibles (00003167-AUDIO-2026-05-08 y 00000691-AUDIO-2026-04-29); resto sin detalles en inventario."
+      }
+    ],
+    "notes": "Cuenta terminada anticipadamente sin completar plan de 2 meses. El cliente no renovó contrato después de abril 2026, abandonando los movimientos 2-4 de la estrategia. La respuesta preparada al requerimiento de Sañudo Conesa nunca fue enviada (guardada en contingencia). No hay documentación de avances operativos ni reportes de impacto SEO/alcance post-publicación. El plan de contingencia para imputación formal (jun-ago 2026) nunca fue documentado. Única evidencia de cierre es comunicación WhatsApp del 08-05-2026 sin detalles visibles."
+  },
+  "analyzed_at": "2026-06-11T03:08:20Z"
+}

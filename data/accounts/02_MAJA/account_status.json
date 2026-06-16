@@ -1,0 +1,1615 @@
+{
+  "number": "02",
+  "folderTitle": "02. MAJA",
+  "folderId": "1HZCfwd8wUeavAWS4j82ppIn5CMbAzbMq",
+  "folderModifiedTime": "2026-04-30T18:36:44.956Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "MAJA_ENTREVISTA CON MERCA 2.0.docx (en Briefs )",
+    "modifiedTime": "2026-06-12T00:03:25.413000Z",
+    "source": "02. MAJA_Entregables"
+  },
+  "deliverableSource": "05.MAJA_Transcripciones_Llamadas",
+  "lastActivity": {
+    "time": "2026-05-12T18:46:41Z",
+    "source": "05.MAJA_Transcripciones_Llamadas",
+    "file": "MINUTA: 2026/05/12",
+    "fileId": "1E4YTvkDPrloviaKUI6nBv_Cbo45BXriE"
+  },
+  "subfolderActivity": {
+    "01.MAJA_Contrato_OC": {
+      "subfolderId": "1LF4ljPFeQk9yWMpeUTJfTFKXYLNp95_z",
+      "fileCount": 3,
+      "latestModified": "2026-05-25T16:56:12.050000Z",
+      "latestFile": "Maja_Sportswear_ContratoModificaciones220526.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:06Z_verify",
+      "last_verified_at": "2026-06-12T14:09:06Z"
+    },
+    "02. MAJA_Entregables": {
+      "subfolderId": "1e5a0iRBCoeaIMRBh2lEPXopEq1aJC6_L",
+      "fileCount": 32,
+      "latestModified": "2026-06-12T00:03:25.413000Z",
+      "latestFile": "MAJA_ENTREVISTA CON MERCA 2.0.docx (en Briefs )",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:16Z_verify",
+      "last_verified_at": "2026-06-12T14:09:16Z",
+      "nestedNote": "Contiene subcarpetas: Briefs , Boletines / Contenidos, DOCUMENTOS RECTORES MAJA BLACKWELL, POSTURAS SOCIOS Y CHECO"
+    },
+    "03.MAJA_Reportes_Avance": {
+      "subfolderId": "1AkXDf0vhFKojb6AUYycmtObakMSafNMN",
+      "fileCount": 3,
+      "latestModified": "2026-06-09T01:27:02.054000Z",
+      "latestFile": "MAJA_Reporte mensual MAYO 26.pptx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:17Z_verify",
+      "last_verified_at": "2026-06-12T14:09:17Z"
+    },
+    "04. MAJA_Conversaciones_WA": {
+      "subfolderId": "1aVZWhAREnr2My37dBtJx5RmYXBKgJv76",
+      "fileCount": 171,
+      "latestModified": "2026-05-18T16:31:56Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - Interno Maja_18052026)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:18Z_verify",
+      "last_verified_at": "2026-06-12T14:09:18Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - MAJA A+ Blackwell_18052026, WhatsApp Chat - Interno Maja_18052026, WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    "05.MAJA_Transcripciones_Llamadas": {
+      "subfolderId": "1xz9uBLHPUFPnHxzEMfxvLycSj9_Dyugt",
+      "fileCount": 16,
+      "latestModified": "2026-06-09T18:37:52Z",
+      "latestFile": "Maja + BWS_ 2026_06_09.docx",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:18Z_verify",
+      "last_verified_at": "2026-06-12T14:09:18Z",
+      "nestedNote": "Contiene subcarpetas: TOUCHPOINTS"
+    },
+    "06.MAJA_Agenda_Trabajos": {
+      "subfolderId": "1us8CFHhtPdT7VsUnVIHtiqqQuqo69jLL",
+      "fileCount": 10,
+      "latestModified": "2026-06-09T17:56:57.066000Z",
+      "latestFile": "Copia de Maja - Checklist.xlsx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:19Z_verify",
+      "last_verified_at": "2026-06-12T14:09:19Z"
+    }
+  },
+  "pqProxy": {
+    "score": 56,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable es un perfil de periodista (Perfil_ReginaReyesHeroles/MilenioEmprende), no un reporte de resultados PR. No contiene métricas de placements. Reporte de marzo en 03.Reportes muestra 20 pubs, 50% T1 (+84M) — score estimado ~87 si se evalúa ese archivo. | DELTA 2026-05-07: Plan trimestral mayo-julio v.refinada al 7-may con 3 pilares y 2 press trips. ESR 19-may como hito inmediato. | DELTA 2026-05-07T23:55: Plan trimestral v.final 23:01 listo para envío al cliente. | DELTA 2026-05-11T18:30:00Z: Plan trimestral v.refinada 11-may 00:47 (3ra iteración). Nuevo subfolder 03.Reportes_Avance creado 9-may, aún vacío.",
+    "suggestion": "Confirmar invitación de medios al evento Distintivo ESR (19-may) antes del 12-may. Definir cuál de las dos opciones de press trip junio (BCS pesca o Valle de Bravo) se ejecuta y comenzar convocatoria. Llenar subfolder 03.Reportes_Avance con reporte mensual abril (a más tardar 20-may) para cerrar gap PQ.",
+    "fileEvaluated": "MAJA_Plan de comunicación_Mayo-Julio.pptx",
+    "evaluatedAt": "2026-05-11T18:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Confirmar invitación de medios al evento Distintivo ESR (19-may) antes del 12-may. Definir cuál de las dos opciones de press trip junio (BCS pesca o Valle de Bravo) se ejecuta y comenzar convocatoria. Llenar subfolder 03.Reportes_Avance con reporte mensual abril (a más tardar 20-may) para cerrar gap PQ.",
+    "source": "delta-2026-05-11"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-12T14:08:59Z",
+  "driveFiles": [
+    {
+      "id": "1r1Fh9xIpS8sVP6VeA-QmlQ88Z_bqRG9k",
+      "name": "MAJA_ENTREVISTA CON MERCA 2.0.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-12T00:03:25.413Z",
+      "size": "356630",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": "Briefs "
+    },
+    {
+      "id": "10e69-c9EiE-WoE4hwwas4E3mRN4YvWCU",
+      "name": "Maja + BWS_ 2026_06_09.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-09T18:37:52.000Z",
+      "size": "948707",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1GfLfWOnh1A_Ovt-eNi7cw8oXk_Ae5JdB",
+      "name": "Copia de Maja - Checklist.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-06-09T17:56:57.066Z",
+      "size": "58935",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1nKk38Nrwx-172Q2yc-3BANr_Pg-fHZpn",
+      "name": "MAJA_Reporte mensual MAYO 26.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-09T01:27:02.054Z",
+      "size": "13166821",
+      "subfolder": "03",
+      "subfolderName": "03.MAJA_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1xcjVQhxiXPXuBA1Ap2rqEqWdHrKXsKJvqAcRn-PaWeM",
+      "name": "ACTIVIDADES DEL 1-5 JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-05T20:39:42.968Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1fTNw1kDBNmdafExPkAyWDPNr1cvvik1R",
+      "name": "MAJA_GerardoOrduno 040626.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-04T18:25:29.000Z",
+      "size": "2913662",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": "Boletines / Contenidos"
+    },
+    {
+      "id": "19qZ2XSFKN8epxN2iBYOTlff8q8Vjpry3",
+      "name": "Teamback MAJA + BWS: 2026/06/02",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-06-02T18:41:28.178Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1SQHUaFMAwd9NtHtgdNRAuT1h41cphXQeDNcZ7QpmRQo",
+      "name": "ACTIVIDADES DEL 25-29 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T20:05:49.779Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1DBjgW4wwefeL6xVvkMZVuajI0FJDdA-X",
+      "name": "MAJA_GKA_Kite_PlanPR_slide.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-25T16:58:08.028Z",
+      "size": "3577326",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1_Zcp3vjm8joUJxh-9QRkAEiLXAhPVxkH",
+      "name": "Maja_Sportswear_ContratoModificaciones220526.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-25T16:56:12.050Z",
+      "size": "1912127",
+      "subfolder": "01",
+      "subfolderName": "01.MAJA_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1TDST2JnJjNftjZ9XBsbtoSPBffzVVGIMAU7TMzPj_Hk",
+      "name": "Actividades 18-22 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T20:19:19.396Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1LAuZbkRYnv2Rkd1W1kaUDo9umVPIOQax",
+      "name": "_MAJA + BWS_ 2026_05_19 .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T18:31:46.000Z",
+      "size": "94291",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1CX9COpcyb_RkVy2DwbbZ_M1ItDcnr2cX",
+      "name": "MAJA_Estrategia_Respuesta_Reactiva_18 may2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-18T19:51:45.515Z",
+      "size": "733269",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1OVkjdHXTnMY99E2lbZCH5Y9la-w9llNv",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-18T16:31:56.000Z",
+      "size": "43703",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1QUfiW185yBS5NVKL_1-mv_MUUl0BPa38",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-18T16:31:44.000Z",
+      "size": "294739",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1ttYR9iHbXqf4NsE6Oxiqxs5haulkq8Gs",
+      "name": "00002207-MAJA_Estrategia_Respuesta_Reactiva_04may2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-18T16:20:04.000Z",
+      "size": "11218",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1I4YZ3ZzBlXvwxOkcRp3uAYL2MsDeYFDG",
+      "name": "MAJA_Estrategia_Respuesta_Reactiva_EMEEQUIS.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-18T16:00:50.172Z",
+      "size": "199020",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": "POSTURAS SOCIOS Y CHECO"
+    },
+    {
+      "id": "1lt9b69GvTbFHjxbvZgba0rSDiu18PMy3h6Sxd3Mc-m8",
+      "name": "ACTIVIDADES DEL 11-15 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T21:09:07.943Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1THLB0PeCIxN4RmL5Q9PQorZri_6BulJH",
+      "name": "MINUTA: 2026/05/12 ",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-05-12T18:48:56.451Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1E4YTvkDPrloviaKUI6nBv_Cbo45BXriE",
+      "name": "MINUTA: 2026/05/12 ",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-05-12T18:46:41.982Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1uZuW2_LLfW7A1vMGgobt9ZFs1G3xcIIv",
+      "name": "MAJA_Plan de comunicación_Mayo-Julio.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-11T22:13:04.363Z",
+      "size": "25454923",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "12PIb7a6Yh4KRFgWNZJN8sJhgYmTz3g8y",
+      "name": "MAJA_Ags_boletin_v2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-11T21:22:57.000Z",
+      "size": "55275",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": "Boletines / Contenidos"
+    },
+    {
+      "id": "18SMgx9PiHgQ1ZIJa2I1Hg9ZqXZaJhFHk",
+      "name": "00002181-PHOTO-2026-05-08-20-44-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-09T02:47:54.000Z",
+      "size": "103229",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1OPqzMAOKq2-HVjJgkrLKtJDBT5JWjwTfYHYBMabFWiU",
+      "name": "Presentación Plan Trimestral: 2026/05/08",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-08T21:10:15.121Z",
+      "size": "30359",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1JDCAN6SfLyM3HRq87a9bSdbXfFt2R5dajh5lST3wn_A",
+      "name": "Actividades 4-8 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-08T19:40:54.045Z",
+      "size": "2088",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1AaicELyMKCMfHT_awpt5W8HNIIhWLaDQ",
+      "name": "Presentación Plan Trimestral: 2026/05/08 12:00 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-05-08T19:24:27.104Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "189xuZ5U6DZGmSYU1nQIS90xv91qimHeS",
+      "name": "MAJA_Reporte mensual ABRIL 26.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-06T18:57:23.507Z",
+      "size": "17783486",
+      "subfolder": "03",
+      "subfolderName": "03.MAJA_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1EovziTVoaSCRT0EJJF3g62DNxRTEqGC87g4vbx7btaw",
+      "name": "Maja + BWS: 2026/05/05",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-05T19:05:09.241Z",
+      "size": "2587",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1-9apWzpSDLqdLFZTrXH_IqET-4nZnugM",
+      "name": "00002163-PHOTO-2026-05-04-22-01-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T04:02:08.000Z",
+      "size": "127072",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1BuOQh3LKHkBcl_fN6fH0ElpxxXoPDu6w",
+      "name": "00002161-SEGUIMIENTO MAJA SPORTSWEAR- Jorge Antonio Cano Félix_04052026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-05T02:42:50.000Z",
+      "size": "162712",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1l1lJlXE0LQCXxOKFLlK0f2BgVkqvHZDy",
+      "name": "MAJA_Colima_Zentralia_boletin.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T01:31:48.574Z",
+      "size": "93529",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": "Boletines / Contenidos"
+    },
+    {
+      "id": "18sNru1juNckD9aoLUYVLuzIm9lAst967",
+      "name": "2026 MAJA - 4 ACTIVIDADES AL AIRE LIBRE PARA FESTEJAR (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T01:30:58.055Z",
+      "size": "411898",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": "Boletines / Contenidos"
+    },
+    {
+      "id": "1LgVip6hwMKaJuTj71Y5EL1nDJgOWazVb",
+      "name": "00002158-AUDIO-2026-05-04-18-08-00.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-05-05T00:47:50.000Z",
+      "size": "66436",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1Ig-18rmKQNfTlUt89xst6o4ZWIq4Aqlr",
+      "name": "00002151-MAJA_Estrategia_Respuesta_Reactiva_04may2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T22:45:20.000Z",
+      "size": "72441",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1YQsJhQmWGFMUXq8pshw-ewMwJD9GIMSb",
+      "name": "00002124-PHOTO-2026-05-04-10-11-16.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T16:11:16.000Z",
+      "size": "153568",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1Mur9WZrcqW859P3t_CKeCfVZUcdakmHY",
+      "name": "00002115-PHOTO-2026-05-04-10-01-26.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T16:01:26.000Z",
+      "size": "111302",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1ngXOcZbBM5UlKD869USGoxxfbUFNtGVI",
+      "name": "00002110-Expansion Mayo-90-106.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T15:55:28.000Z",
+      "size": "560974",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1SIOSxAE4raqbxQUwF6VviRL6AO-Mc1LR",
+      "name": "00002087-VIDEO-2026-04-30-19-59-49.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-01T02:00:38.000Z",
+      "size": "6968078",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "15R7fXZOyRLvAsulVcWyCRgr7LJuSrbXM",
+      "name": "00000336-STICKER-2026-04-30-19-54-38.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-01T02:00:38.000Z",
+      "size": "6712",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "14rP6Xf5vQQfEK8K2TiqpZf-sNbYersDz",
+      "name": "00000332-VIDEO-2026-04-30-19-52-06.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-01T02:00:38.000Z",
+      "size": "6968078",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1S6R_T44WxSbHH6uRr1CYB8oTTapwB4uzGGsn-P16ob0",
+      "name": "Actividades del 27-30 abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-30T20:40:45.736Z",
+      "size": "2121",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1HLKHubKfzBbJ0H6Wn-YdVFFxeVcUMnrF",
+      "name": "Copia de Perfil_ReginaReyesHeroles_MilenioEmprende.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:53:19.655Z",
+      "size": "338172",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "10IiPN8NA0RmnksfWqiT1Oo1djAHTplno",
+      "name": "Copia de Maja - Kits - Cotización mensajería.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-04-29T20:52:17.491Z",
+      "size": "13775",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1V6VDwenq80uJ18sjQyJuNARXodBlWeGm",
+      "name": "Copia de Maja - De Jefes.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:51:05.155Z",
+      "size": "15448",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": "Boletines / Contenidos"
+    },
+    {
+      "id": "1AbhVEF6Mpg9LyxVCAnZ6AfcVHG2YHSXamVcMxCMA7ag",
+      "name": " MAJAxBWS: 2026/04/22 16:00 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T20:13:22.081Z",
+      "size": "6846",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1H_01EdkQ1zCZWSotnCD7IORCmY9y7jUA52dwl1zoxtY",
+      "name": "MAJA x BWS: 2026/04/15 13:00 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T20:13:06.515Z",
+      "size": "31393",
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1Eb0-9utMRCzMKkVzozXwccdqYYTKDtKkq6p6-aaAHIk",
+      "name": "Actividades del 6 al 10 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T17:52:19.207Z",
+      "size": "1452",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1GQT4r1M0bvTHe4Msx6PyWhFpgtnjipxhsBBIsNd1i80",
+      "name": "Actividades del 13 al 17 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T17:50:26.427Z",
+      "size": "1510",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1Q7glRFW7KJy4bDbdg2cEF_QAp201cfPgR01B2WVf8ik",
+      "name": "Actividades del 20 al 24 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T17:48:46.734Z",
+      "size": "1503",
+      "subfolder": "06",
+      "subfolderName": "06.MAJA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1iEQZ1ZXklTR1T5rFJinIFqjKjVMQgC4J",
+      "name": "Teamback Maja + BWS: 2026/04/28 12:00 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-04-28T19:37:30.019Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05.MAJA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1vgteXUiUgW_M6P2pqw8uwgY7BJwqHy3W",
+      "name": "00002075-PHOTO-2026-04-28-09-44-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T15:44:56.000Z",
+      "size": "188113",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1Dk1tzQQHszeKdVjblzivMhS2cR_dGPXp",
+      "name": "00002037-PHOTO-2026-04-24-14-28-15.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T20:28:16.000Z",
+      "size": "166501",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1cctUqQrtBnIvl3iffv88TL0tpvgCjdTM",
+      "name": "MAJA_ Reporte de actividades marzo_VF 100426 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T03:36:03.000Z",
+      "size": "2135661",
+      "subfolder": "03",
+      "subfolderName": "03.MAJA_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1uL6VWv2Y5t--qXtH2BM253t2eeYhl47a",
+      "name": "00002013-VIDEO-2026-04-22-20-19-52.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-04-23T02:08:50.000Z",
+      "size": "4381795",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1QDom-1fi6sn4zuHCKuyZp-ewzNAA5OG0",
+      "name": "00000273-VIDEO-2026-04-22-20-05-14.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-04-23T02:08:50.000Z",
+      "size": "4381795",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1M8IvCfJ1K7d8OGKSHrnA5PCGqFKSeUQA",
+      "name": "Blackwell_MAJA_SISTEMA INTEGRAL DE GESTIÓN REPUTACIONAL.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T23:39:54.000Z",
+      "size": "342746",
+      "subfolder": "01",
+      "subfolderName": "01.MAJA_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1TIZZnf0BPSXqzIC0zvsA8yBYk_j-TpZC",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-04-20T23:34:30.000Z",
+      "size": "274811",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1PtXfmXfyGfnB4Br-ZR1MioU_XgPR9dst",
+      "name": "00001044-Jose Ignacio De Nicolas Gutierrez.vcf",
+      "mimeType": "text/x-vcard",
+      "modifiedTime": "2026-04-20T23:34:28.000Z",
+      "size": "6264",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1h5T6t4AzGl3STQ5UlVEX8ph42jZ170sp",
+      "name": "2026 MAJA - MAJA Kids 200426.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-20T19:26:00.000Z",
+      "size": "108464",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": "Boletines / Contenidos"
+    },
+    {
+      "id": "1hbjc88q_ZTIusb-uc9SLyuaj9YuDM00Z",
+      "name": "00001993-AUDIO-2026-04-16-20-29-02.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-04-17T02:29:08.000Z",
+      "size": "192490",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1--kpsDgpa2HynsYUwHQxRvE8GJIpszMi",
+      "name": "00001993-AUDIO-2026-04-16-20-29-02.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-04-17T02:29:08.000Z",
+      "size": "192490",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1cWGfslZmfrIN5a9aix6Ss8pPmdihOdki",
+      "name": "2026 - Entrevista EL CEO - MAJA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-06T16:05:13.000Z",
+      "size": "2994177",
+      "subfolder": "02",
+      "subfolderName": "02. MAJA_Entregables",
+      "nestedPath": "Briefs "
+    },
+    {
+      "id": "1IAgyAV9pX8rJ_-BLvwK83WAWxe-ptLrQ",
+      "name": "00001930-Maja - Corte de notas .xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-03-30T22:09:16.000Z",
+      "size": "23679",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1WiJawQS9WCdNBMEwBtsFDYIrPHq64I55",
+      "name": "00001930-Maja - Corte de notas .xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-03-30T22:09:16.000Z",
+      "size": "23679",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1nhua-e1vacmxmMBO7gby99oWuJKLuKzm",
+      "name": "00000337-STICKER-2026-04-30-19-54-43.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-26T22:25:12.000Z",
+      "size": "204116",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1LWoNwVAU1Di1a7Jhew7hyYbsjBsa3P80",
+      "name": "00001851-2026 Maja Sportwear - Brief - El CEO.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T20:42:42.000Z",
+      "size": "69698",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1VnjiZq8xAQL3ojckbfrRG6xyiPXwvNg6",
+      "name": "00001849-2026 Maja Sportware - Brief - El Cronista.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T20:42:42.000Z",
+      "size": "66710",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1PbJlgi4gZ-muK_zvsaIm9tdqH30yEHph",
+      "name": "00001850-2026 Maja Sportware - Brief - Expansión.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T20:42:42.000Z",
+      "size": "67284",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1ClnEjJmAndy_r-1pR1ZbO4-VpCXywCbP",
+      "name": "00001851-2026 Maja Sportwear - Brief - El CEO.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T20:42:42.000Z",
+      "size": "69698",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1YyXE4T5ALsnoDcAb7zHhEGrvmaBLOcNc",
+      "name": "00001849-2026 Maja Sportware - Brief - El Cronista.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T20:42:42.000Z",
+      "size": "66710",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1PXvpZaG8He6gdeYvj7ufeZ7qY3TeLE1K",
+      "name": "00001850-2026 Maja Sportware - Brief - Expansión.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T20:42:42.000Z",
+      "size": "67284",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "11kdguKfS7nTTNSzDPIyoQd_q3ick04dd",
+      "name": "00001833-PHOTO-2026-03-24-06-58-45.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-24T13:01:44.000Z",
+      "size": "311084",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1s-Qd-4-ffeObXsVVdUwAdZAEEghpUicJ",
+      "name": "00001832-PHOTO-2026-03-24-06-58-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-24T13:01:44.000Z",
+      "size": "294142",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1UM6qKIInGUFqzigaWKdzHd4UtDl3uM6b",
+      "name": "00001832-PHOTO-2026-03-24-06-58-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-24T13:01:44.000Z",
+      "size": "294142",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1I95fFda1uBKirB-PzPlr4laMp1KPvPr7",
+      "name": "00001833-PHOTO-2026-03-24-06-58-45.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-24T13:01:44.000Z",
+      "size": "311084",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1Hf-7ECIbqCOmTlua6rVArkLGVCr9R79w",
+      "name": "00000263-PHOTO-2026-03-20-19-14-32.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-21T01:15:48.000Z",
+      "size": "247289",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1Gvcq4WJF-L1IPtMQ5L9P5EetHE6R0Gmf",
+      "name": "00001797-PHOTO-2026-03-14-13-32-07.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-14T19:34:02.000Z",
+      "size": "134723",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "19jqMr8Wfielw_U2wlOXQIgsZjTbsMGNY",
+      "name": "00001797-PHOTO-2026-03-14-13-32-07.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-14T19:34:02.000Z",
+      "size": "134723",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "16PcjoBuzyWzc_gFJyYE9NBuN3ngy9wLb",
+      "name": "00000237-PHOTO-2026-03-13-13-53-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-13T19:53:40.000Z",
+      "size": "219764",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1vEKiP_V9uBBzpCuYpYo2TM-zfOlmjntD",
+      "name": "00000236-PHOTO-2026-03-13-13-53-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-13T19:53:40.000Z",
+      "size": "177587",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1ip78dPbXKiPsRiPMeLNgLZDT43U1HIdC",
+      "name": "00000232-maja_polaris_collab.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-13T19:38:00.000Z",
+      "size": "82657861",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1scaPI6GSEufehlElmN5HjPXu_DG1ddQk",
+      "name": "00001772-VIDEO-2026-03-06-20-20-16.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-07T02:20:16.000Z",
+      "size": "8959734",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1oniKKVrZ35KRtkfI9QwFtRyb5nbwBFXv",
+      "name": "00001772-VIDEO-2026-03-06-20-20-16.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-07T02:20:16.000Z",
+      "size": "8959734",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1jC2fbJz4j4kREY-YyZJhiNRY6jTTILbM",
+      "name": "00001770-STICKER-2026-03-06-18-52-15.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-07T00:52:14.000Z",
+      "size": "3446",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "10BRd0K5Z7TDdc1A7ZwUg5vm0URnQxebu",
+      "name": "00001770-STICKER-2026-03-06-18-52-15.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-07T00:52:14.000Z",
+      "size": "3446",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1Qpci_M-X7x4smIB3otIvFwo6P-jPAcH1",
+      "name": "00001768-STICKER-2026-03-06-18-51-35.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-07T00:51:36.000Z",
+      "size": "32026",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1oCE_G5zUQkIIgbsyuAaoU6VCHnHWmDAK",
+      "name": "00001768-STICKER-2026-03-06-18-51-35.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-07T00:51:36.000Z",
+      "size": "32026",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1rfXFUZhQCLlYX2dve6lDpLdzeYR3Gi3x",
+      "name": "00001764-PHOTO-2026-03-06-18-39-01.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-07T00:39:02.000Z",
+      "size": "241560",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "12Vo3Wc95lFV6xGd28SBREj1aFZlpYiFl",
+      "name": "00001764-PHOTO-2026-03-06-18-39-01.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-07T00:39:02.000Z",
+      "size": "241560",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1aB-7LoHGaTrfbyuX2uCcH6BtcfZexnpm",
+      "name": "00001758-VIDEO-2026-03-05-20-31-53.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-06T02:36:38.000Z",
+      "size": "7652839",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1Fv4iwAjnP_wsaB-TeFwR_yq2U4u9ZRB7",
+      "name": "00001758-VIDEO-2026-03-05-20-31-53.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-06T02:36:38.000Z",
+      "size": "7652839",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "18jacuMaNB-T0hMmVetXyJ-RpFxRpDrlI",
+      "name": "00001719-Segundo_Corte_Reporte_Maja 2.0.2_25022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-26T02:21:38.000Z",
+      "size": "59704",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1dw2Eo-bQb_dAE0IMmuJMN8EdF92iI_1f",
+      "name": "00001719-Segundo_Corte_Reporte_Maja 2.0.2_25022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-26T02:21:38.000Z",
+      "size": "59704",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1r5xafXTOB45rFCUVs5gsXA7-gK351b0M",
+      "name": "00001715-GUÍA DE VOCERÍA_250226 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-25T21:46:50.000Z",
+      "size": "155579",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1A1BfoiA-F3T1W-WALr1sjRXB6ndYK9eu",
+      "name": "00001715-GUÍA DE VOCERÍA_250226 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-25T21:46:50.000Z",
+      "size": "155579",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "18bhKDNYpNziJvZjDC_UcosFyqixorlym",
+      "name": "00001708-AUDIO-2026-02-25-14-58-03.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-02-25T20:58:02.000Z",
+      "size": "231878",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1OR-oyZv5Q9w6Ty5MezzzEh_QgK5ODXpY",
+      "name": "00001708-AUDIO-2026-02-25-14-58-03.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-02-25T20:58:02.000Z",
+      "size": "231878",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1MF7xJncmBJUGRcfCE9zrA8Mf_Fvc3Ax2",
+      "name": "00000178-STICKER-2026-02-26-14-19-14.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-02-25T18:47:02.000Z",
+      "size": "15438",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1xL79wwz8x20Z5C2v7P5KeRWvyrnONrQY",
+      "name": "00000161-STICKER-2026-02-25-11-48-46.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-02-25T17:48:46.000Z",
+      "size": "301812",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Maja_18052026"
+    },
+    {
+      "id": "1u-tfzHqrbOxU9t4ffOeQTr0DIe31vdv_",
+      "name": "00001684-Segundo_Corte_Reporte_Maja 2.0.2_23022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-24T02:31:18.000Z",
+      "size": "58907",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1TWSxunsxHZugmCs0p8zFaBByCFuOvOHv",
+      "name": "00001684-Segundo_Corte_Reporte_Maja 2.0.2_23022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-24T02:31:18.000Z",
+      "size": "58907",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1vCeYVK1Jfp0RgmMbXKzC5lax5UTHn_3_",
+      "name": "00001679-Primer_Corte_Reporte_Maja 2.0.2_23022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-23T14:59:20.000Z",
+      "size": "57750",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1T0210ZKNKq9P9MpKQsZr42STFSAmLlIU",
+      "name": "00001679-Primer_Corte_Reporte_Maja 2.0.2_23022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-23T14:59:20.000Z",
+      "size": "57750",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1cGqlFWeD_pBgdOghIuD0M5-LahD3vQiw",
+      "name": "00001670-PHOTO-2026-02-22-21-51-06.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-23T04:03:58.000Z",
+      "size": "208630",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "17Meb5qL2U-7aK2Yx0a5qOOvLzGFGNDq1",
+      "name": "00001670-PHOTO-2026-02-22-21-51-06.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-23T04:03:58.000Z",
+      "size": "208630",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1RYe9AQOHY33sFyrJOgVlfa1RcqFwoVqa",
+      "name": "00001668-Segundo_Corte_Reporte_Maja 2.0.2_22022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-23T01:50:34.000Z",
+      "size": "158218",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1bA7QAQ7otw4xkn7eIIuY8D-T8GvwzE2N",
+      "name": "00001668-Segundo_Corte_Reporte_Maja 2.0.2_22022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-23T01:50:34.000Z",
+      "size": "158218",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1OAmTN1ALylkzL-34HAfa98Aurti2YDRp",
+      "name": "00001665-Primer_Corte_Reporte_Maja 2.0.2_22022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-22T20:04:26.000Z",
+      "size": "876747",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1gwFmk027fwEt4MzPIE56TtPo4S4yk2Pq",
+      "name": "00001665-Primer_Corte_Reporte_Maja 2.0.2_22022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-22T20:04:26.000Z",
+      "size": "876747",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1XcV8D9wtpciqJe0OagHgkck4DT7S9JHG",
+      "name": "00001652-PHOTO-2026-02-22-09-57-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-22T15:59:42.000Z",
+      "size": "112383",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1Lt3g_GonSGCgKaHCBRtZpig-monkVokm",
+      "name": "00001653-PHOTO-2026-02-22-09-57-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-22T15:59:42.000Z",
+      "size": "115793",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "14PhYEZvgHh3xe_NrXbah0OzrQ-njz_4J",
+      "name": "00001652-PHOTO-2026-02-22-09-57-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-22T15:59:42.000Z",
+      "size": "112383",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1l5IG2PGT-uLu1EdtNX-YnL7JkGmGUKZ1",
+      "name": "00001653-PHOTO-2026-02-22-09-57-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-22T15:59:42.000Z",
+      "size": "115793",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1Ipm1u-xDWXAL0CRjHMk7l1nbrM7hOL9r",
+      "name": "00001641-PHOTO-2026-02-21-19-09-09.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-22T01:17:56.000Z",
+      "size": "185160",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1H7MS8DWuJp6CErxCRlkdytpl3NnQP0c5",
+      "name": "00001641-PHOTO-2026-02-21-19-09-09.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-22T01:17:56.000Z",
+      "size": "185160",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "17nfgrR_xxh-knjNJ1b3hxKjSN9-baX_c",
+      "name": "00001633-Segundo_Corte_Reporte_Maja 2.0.2_21022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-22T01:07:38.000Z",
+      "size": "60906",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1Qo1sAehClad92LuFxBewQhMWECZQ2FDI",
+      "name": "00001633-Segundo_Corte_Reporte_Maja 2.0.2_21022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-22T01:07:38.000Z",
+      "size": "60906",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1mkDJjP59Noy-iIcqSU5GMbdq2nOxvoFw",
+      "name": "00001624-Primer_Corte_Reporte_Maja 2.0_21022026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-21T18:31:30.000Z",
+      "size": "26124",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1ozOLTGsZewmd8vw6Mh7352-f0OMeA8vP",
+      "name": "00001624-Primer_Corte_Reporte_Maja 2.0_21022026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-21T18:31:30.000Z",
+      "size": "26124",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1VAiYrPVdrgDjvuEbwlw-n7NIUzJ534Qb",
+      "name": "00001607-PHOTO-2026-02-20-17-55-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T23:57:14.000Z",
+      "size": "271620",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1kwkJgjvDk-hQzAK6TC2YpFeygL8IQ3s4",
+      "name": "00001607-PHOTO-2026-02-20-17-55-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T23:57:14.000Z",
+      "size": "271620",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1uLIQDY-A05n2tjVdLicKLCOYVuRT-2vP",
+      "name": "00001602-PHOTO-2026-02-20-17-39-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T23:44:02.000Z",
+      "size": "217619",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1-mHnjUAjMDbGlox9jXXPV1zEtIALQC4C",
+      "name": "00001602-PHOTO-2026-02-20-17-39-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T23:44:02.000Z",
+      "size": "217619",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1BSIwPePhMLIwkjdAUZOREL5joL-48sOU",
+      "name": "00001584-PHOTO-2026-02-20-16-15-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T22:17:24.000Z",
+      "size": "219024",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1St--DBd1M5MLIa5vJR4-MMpeSvS0QvdG",
+      "name": "00001584-PHOTO-2026-02-20-16-15-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T22:17:24.000Z",
+      "size": "219024",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1PnQ_hwpO024PtO3VsF3ZN5c0EsCP41PF",
+      "name": "00001501-PHOTO-2026-02-20-13-55-58.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T19:57:00.000Z",
+      "size": "7735",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1B4ajG8JDmwhC4zdDMw_lPtmFZYT2-cbE",
+      "name": "00001498-PHOTO-2026-02-20-13-52-34.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T19:57:00.000Z",
+      "size": "209980",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1HkTAN9btS9f77446LhLDNkgO4hzWpEcE",
+      "name": "00001501-PHOTO-2026-02-20-13-55-58.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T19:57:00.000Z",
+      "size": "7735",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "12qHnQ_rPJpOY3-UgibuvnDga0ktK7B7I",
+      "name": "00001498-PHOTO-2026-02-20-13-52-34.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T19:57:00.000Z",
+      "size": "209980",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1sn6RvsAt-uEzgHuUnL6mcXovtlT3nHDw",
+      "name": "00001497-STICKER-2026-02-20-13-46-34.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-02-20T19:51:30.000Z",
+      "size": "114890",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1GPat0gB2loSSw0d8XpURowgaBOrbOWPY",
+      "name": "00001497-STICKER-2026-02-20-13-46-34.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-02-20T19:51:30.000Z",
+      "size": "114890",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1r7Fsn7uasTzE1zwUD6ZwWBrwedn8epH_",
+      "name": "00001485-PHOTO-2026-02-20-13-14-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T19:18:28.000Z",
+      "size": "133251",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1jJOYlqne_LNjgp4H4ReQfJr82djwOxRA",
+      "name": "00001485-PHOTO-2026-02-20-13-14-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T19:18:28.000Z",
+      "size": "133251",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "105MSAePbpyg-iTRWv_Gx2BKk-4A5jxiq",
+      "name": "00001481-PHOTO-2026-02-20-12-58-04.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T19:02:10.000Z",
+      "size": "113018",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1HdZYL2HZZrYaR2IdBzgFnND5L7eVuO7h",
+      "name": "00001481-PHOTO-2026-02-20-12-58-04.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T19:02:10.000Z",
+      "size": "113018",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1RQ1UN1RbEUsO9xEgWFbfRNCF7SWrXlZo",
+      "name": "00001477-PHOTO-2026-02-20-12-42-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T18:45:42.000Z",
+      "size": "156626",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "19x2jrAj4GglvDPnxM5RZs_H-MZg7CtJX",
+      "name": "00001477-PHOTO-2026-02-20-12-42-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T18:45:42.000Z",
+      "size": "156626",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1gVCFYRlkoCo6jALhWxFE-uuFR6x7jSmJ",
+      "name": "00001473-PHOTO-2026-02-20-10-57-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T16:57:52.000Z",
+      "size": "101635",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1kBj1doV-do_OwtNTUJs-3yqG0MIVLKGq",
+      "name": "00001473-PHOTO-2026-02-20-10-57-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T16:57:52.000Z",
+      "size": "101635",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1s8alijKDXHV7Gm_0OC1ds_aZ9W4AH5dl",
+      "name": "00001405-PHOTO-2026-02-19-19-43-47.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T01:47:06.000Z",
+      "size": "131936",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1XIqF-S5Jj_VtWHCJUQ2n0eSvGnRxxYWA",
+      "name": "00001405-PHOTO-2026-02-19-19-43-47.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T01:47:06.000Z",
+      "size": "131936",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1ueXpqGv4c9-d8l47PEireT6todkLg73Q",
+      "name": "00001391-PHOTO-2026-02-19-18-13-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T00:13:52.000Z",
+      "size": "117604",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1dU7S5xygKrTs3kcbuzMaS6XqhskzFe8O",
+      "name": "00001391-PHOTO-2026-02-19-18-13-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T00:13:52.000Z",
+      "size": "117604",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "12SoiWv_mNWyhqtjguQGEKyCvABmTWFUt",
+      "name": "00001384-PHOTO-2026-02-19-15-22-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-19T21:24:24.000Z",
+      "size": "175511",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1GNAQ_fJDOyLydZoZWuDFVwjKHGBFac14",
+      "name": "00001382-PHOTO-2026-02-19-15-21-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-19T21:24:24.000Z",
+      "size": "139939",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "15F1mCwrqL0s7Mo4tErLOr7djHNJ8J1Ua",
+      "name": "00001382-PHOTO-2026-02-19-15-21-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-19T21:24:24.000Z",
+      "size": "139939",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1Nam3i3jLbY6tBYp8vpGboGqnQc2mGyCl",
+      "name": "00001384-PHOTO-2026-02-19-15-22-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-19T21:24:24.000Z",
+      "size": "175511",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    },
+    {
+      "id": "1Mh-YpEB0ek_L09DGjaNAXiz0lJ8OotrJ",
+      "name": "00001370-PHOTO-2026-02-19-09-52-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-19T19:37:40.000Z",
+      "size": "140711",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1BB64Rlk5a3Yqm_g0ZITnEKI-GHKBavk7",
+      "name": "00001366-PHOTO-2026-02-19-09-39-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-19T19:37:40.000Z",
+      "size": "101312",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell_18052026"
+    },
+    {
+      "id": "1CP1PtxotD5SbAId3sNun5Ty2VIAkVGNJ",
+      "name": "00001370-PHOTO-2026-02-19-09-52-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-19T19:37:40.000Z",
+      "size": "140711",
+      "subfolder": "04",
+      "subfolderName": "04. MAJA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - MAJA A+ Blackwell"
+    }
+  ]
+}

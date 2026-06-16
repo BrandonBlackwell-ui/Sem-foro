@@ -1,0 +1,256 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "blackwell/accounts_status/v4.1",
+  "title": "Blackwell accounts_status",
+  "description": "Schema del snapshot principal del Proyecto Blackwell (v4.1). Cualquier sync que no pase esta validación NO debe publicar el dashboard.",
+  "type": "object",
+  "required": ["syncedAt", "accountCount", "accounts"],
+  "additionalProperties": true,
+
+  "properties": {
+
+    "schemaVersion": {
+      "type": "string",
+      "description": "Versión del schema. Valor esperado: '4.1'",
+      "pattern": "^4\\."
+    },
+
+    "syncedAt": {
+      "type": "string",
+      "description": "ISO 8601 del momento del sync. Requerido.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}"
+    },
+
+    "previousSyncAt": {
+      "type": ["string", "null"],
+      "description": "ISO 8601 del sync anterior."
+    },
+
+    "type": {
+      "type": "string",
+      "enum": ["delta", "delta+hotfix", "baseline", "structural_refresh"],
+      "description": "Tipo de sync que generó este snapshot."
+    },
+
+    "rootFolderId": {
+      "type": ["string", "null"]
+    },
+
+    "accountCount": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Debe coincidir con la longitud del array accounts."
+    },
+
+    "staleFixesApplied": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+
+    "accounts": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Lista de cuentas. Debe tener al menos 1 elemento.",
+      "items": { "$ref": "#/definitions/account" }
+    },
+
+    "cross_account_findings": {
+      "type": "array",
+      "description": "DEBE ser array de objetos, NO strings.",
+      "items": { "$ref": "#/definitions/finding" }
+    },
+
+    "deltas": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/delta" }
+    }
+  },
+
+  "definitions": {
+
+    "account": {
+      "type": "object",
+      "required": ["number", "folderTitle", "folderId", "derivedStatus", "subfolderActivity"],
+      "additionalProperties": true,
+      "properties": {
+
+        "number": {
+          "type": "string",
+          "pattern": "^\\d{2}$",
+          "description": "Número de cuenta de dos dígitos. Ej: '01', '37'."
+        },
+
+        "folderTitle": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Nombre completo de la carpeta en Drive. Ej: '01. TURBOFIN'."
+        },
+
+        "folderId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "ID de la carpeta en Google Drive."
+        },
+
+        "derivedStatus": {
+          "type": "string",
+          "enum": [
+            "active",
+            "onboarding",
+            "active_litigation",
+            "active_new",
+            "active_crisis_high",
+            "concluded",
+            "terminated_early",
+            "paused",
+            "historical"
+          ],
+          "description": "Status derivado del sufijo del nombre de la carpeta."
+        },
+
+        "statusSuffix": {
+          "type": ["string", "null"]
+        },
+
+        "analysisConfidence": {
+          "type": ["string", "null"],
+          "enum": ["alta", "media", "baja", null]
+        },
+
+        "playbookViolations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+
+        "subfolderActivity": {
+          "type": "object",
+          "description": "Claves = nombres reales de subfolders en Drive (NO normalizados).",
+          "minProperties": 1,
+          "additionalProperties": { "$ref": "#/definitions/subfolder_entry" }
+        },
+
+        "lastAnalyzedAt": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+
+    "subfolder_entry": {
+      "type": "object",
+      "required": ["subfolderMissing"],
+      "additionalProperties": true,
+      "properties": {
+
+        "subfolderId": {
+          "type": ["string", "null"]
+        },
+
+        "fileCount": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Entero >= 0, o null si no pudo contarse. NUNCA string."
+        },
+
+        "latestModified": {
+          "type": ["string", "null"],
+          "description": "ISO 8601 del archivo más reciente dentro del subfolder. NO del folder."
+        },
+
+        "latestFile": {
+          "type": ["string", "null"]
+        },
+
+        "hasNestedFolders": {
+          "type": ["boolean", "null"]
+        },
+
+        "nestedFilesPresent": {
+          "type": ["boolean", "null"]
+        },
+
+        "subfolderMissing": {
+          "type": "boolean",
+          "description": "true SOLO si el subfolder no existe en Drive. Requerido."
+        },
+
+        "source": {
+          "type": ["string", "null"],
+          "description": "Tag del crawl que produjo estos datos. Ej: 'drive_crawl_2026-05-18T13:25:00Z_verify'."
+        },
+
+        "last_verified_at": {
+          "type": ["string", "null"],
+          "description": "ISO 8601 del último re-crawl directo a Drive para este subfolder."
+        },
+
+        "permissionsIssue": {
+          "type": ["boolean", "null"]
+        },
+
+        "nestedNote": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+
+    "finding": {
+      "type": "object",
+      "required": ["id", "finding", "severity"],
+      "additionalProperties": true,
+      "description": "DEBE ser objeto. El cron anterior a veces emitía strings — eso rompe el dashboard.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Ej: 'F-DELTA-2026-05-18-01'"
+        },
+        "title": {
+          "type": ["string", "null"]
+        },
+        "finding": {
+          "type": "string",
+          "minLength": 1
+        },
+        "detail": {
+          "type": ["string", "null"]
+        },
+        "accounts_involved": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["high", "medium", "low", "info"]
+        }
+      }
+    },
+
+    "delta": {
+      "type": "object",
+      "required": ["type", "account", "timestamp"],
+      "additionalProperties": true,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "new_account",
+            "status_change",
+            "stale_fix",
+            "file_count_change",
+            "folder_modified",
+            "subfolder_new",
+            "subfolder_missing",
+            "subfolder_appeared",
+            "new_deliverable",
+            "file_deleted"
+          ]
+        },
+        "account": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

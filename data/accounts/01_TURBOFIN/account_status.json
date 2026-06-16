@@ -1,0 +1,1620 @@
+{
+  "number": "01",
+  "folderTitle": "01. TURBOFIN",
+  "folderId": "1ucuicTgidB6V_wA3vlusTn6TlvhQ-4MK",
+  "folderModifiedTime": "2026-04-30T18:31:55.830Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "ESTATUS 8 DE JUNIO",
+    "modifiedTime": "2026-06-10T01:14:11.887000Z",
+    "source": "06.Turbofin_Agenda_Trabajos"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-05T00:00:00Z",
+    "source": "02.Turbofin_Entregables",
+    "file": "Fundación Turbofin.docx",
+    "fileId": "1vBAlKc-cq5Y9znO6Qo8xPD-9TR4QxPFa"
+  },
+  "subfolderActivity": {
+    "01. Turbofin_Contratos_OC": {
+      "subfolderId": "1wbS7p-yQWmFtSVq_sHc4JvWC2dGvOhtR",
+      "fileCount": 4,
+      "latestModified": "2026-04-20T22:20:47Z",
+      "latestFile": "Contrato turbofin V Firmada 030925.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:06Z_verify",
+      "last_verified_at": "2026-06-12T14:09:06Z"
+    },
+    "02.Turbofin_Entregables": {
+      "subfolderId": "1Fci54J3knk-fhJnVgUwSFO_u7nVahvzn",
+      "fileCount": 45,
+      "latestModified": "2026-05-22T18:14:51.038000Z",
+      "latestFile": "TURBOFIN_NEWSWEEK_DIFHUIXQUILUCAN (en MAYO 2026) (en TURBOFIN 2026)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:20Z_verify",
+      "last_verified_at": "2026-06-11T01:57:20Z",
+      "nestedNote": "Contiene subcarpetas: TURBOFIN 2026, TURBOFIN 2025"
+    },
+    "03.Turbofin_Reportes_Avance": {
+      "subfolderId": "1mSYl356Y5wgx7Yv77Avl06toPPPL-TmZ",
+      "fileCount": 7,
+      "latestModified": "2026-05-08T14:54:12Z",
+      "latestFile": "Turbofin_ Reporte de actividades_Abril.pptx",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:26Z_verify",
+      "last_verified_at": "2026-06-11T01:57:26Z",
+      "nestedNote": "Contiene subcarpetas: REPORTE SEP OCT"
+    },
+    "04. Turbofin_Conversaciones_WA": {
+      "subfolderId": "1qCq9piO4C-HomwYkpyhtF5kIx7PfcjYu",
+      "fileCount": 152,
+      "latestModified": "2026-05-18T16:29:50Z",
+      "latestFile": "Turbofin+Blackwell_chat 18052026.txt",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:27Z_verify",
+      "last_verified_at": "2026-06-11T01:57:27Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Turbofin + Blackwell_18052026, WhatsApp Chat - Turbofin + Blackwell"
+    },
+    "05.Turbofin_Transcripciones_Llamadas": {
+      "subfolderId": "1oftBnb5GEfRkF_eOc5yXWjIIqN56n8Mx",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:28Z_verify",
+      "last_verified_at": "2026-06-11T01:57:28Z"
+    },
+    "06.Turbofin_Agenda_Trabajos": {
+      "subfolderId": "1TP5j1JjRgn8ReiRiOegeRb4fcxe9OXX1",
+      "fileCount": 12,
+      "latestModified": "2026-06-10T01:14:11.887000Z",
+      "latestFile": "ESTATUS 8 DE JUNIO",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:28Z_verify",
+      "last_verified_at": "2026-06-11T01:57:28Z"
+    }
+  },
+  "pqProxy": {
+    "score": 87,
+    "tierMix": {
+      "tier1": 3,
+      "tier2": 0,
+      "tier3": 1,
+      "none": 0
+    },
+    "narrativaQuality": "alta",
+    "hasMetrics": true,
+    "evidence": "Q1 2026: 4 notas Tier 1 incluyendo Reforma ×2 e Infobae. Alcance +74M (Meltwater). Estructura ejecutiva clara: actividades, logros cuantitativos, cobertura con links. | DELTA 2026-05-06: PQ: nuevo entregable institucional (Fundación) amplía pipeline narrativo Q2; pendiente medir placements para ratificar.",
+    "suggestion": "Lanzar boletín Fundación Turbofin antes del 15 de mayo y medir cobertura T1 para integrar a próximo reporte mensual.",
+    "fileEvaluated": "Fundación Turbofin.docx",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Lanzar boletín Fundación Turbofin antes del 15 de mayo y medir cobertura T1 para integrar a próximo reporte mensual.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:56:18Z",
+  "driveFiles": [
+    {
+      "id": "1fQ8Q4lwcvmR-2QHjTYvV3SK-ANrXVA5jOKI5UQMsN6Q",
+      "name": "ESTATUS 8 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T01:14:11.887Z",
+      "size": "1280",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1Pr45segamDwhH91ft29HPAfRJHBYEKZ5TOoO0fkT9SA",
+      "name": "ESTATUS 9 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T01:13:30.832Z",
+      "size": "1358",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1WjJ4YHb3vBZ7INpgAXi-3PLMmSr8rRymKgsPyoXSof4",
+      "name": "ACTIVIDADES DEL 1-5 JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-05T19:54:51.492Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1C13cztQTwAK6AarrPx-TbH8tW965hqNSsZ_TpnVXRLM",
+      "name": "ACTIVIDADES DEL 25- 29 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T19:06:39.166Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1FWkMFpcdsAdTJFucknnNPp4itCRH8lkdlx0wygT1Kvg",
+      "name": "TURBOFIN_NEWSWEEK_DIFHUIXQUILUCAN",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T18:14:51.038Z",
+      "size": "580486",
+      "subfolder": "02",
+      "subfolderName": "02.Turbofin_Entregables",
+      "nestedPath": "MAYO 2026"
+    },
+    {
+      "id": "1yFooBSWNZpNP4GoNV2u_zEOcYdLK_1-r0fLWyKRvI3s",
+      "name": "TURBOFIN_DINEROENIMAGEN_FOROALCALDES",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T18:12:00.965Z",
+      "size": "743103",
+      "subfolder": "02",
+      "subfolderName": "02.Turbofin_Entregables",
+      "nestedPath": "MAYO 2026"
+    },
+    {
+      "id": "150rFhxq6c-lWlLjgm2rgasbxlSFAJUIRQ2jew_PbL7Y",
+      "name": "ACTIVIDADES 18-22 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T18:04:33.919Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1s1y6JmUjSCqySRUv414gFzNYh60g0yTd",
+      "name": "Turbofin+Blackwell_chat 18052026.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-18T16:29:50.000Z",
+      "size": "1450",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "13opPSB2z2I5IYn058hg6hcV1ekUISTsN",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-18T16:29:22.000Z",
+      "size": "223722",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "10GzvdYtnuTImWAW-7U9sN2nUaS7S_dVy",
+      "name": "00001263-PHOTO-2026-05-18-10-28-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-18T16:23:38.000Z",
+      "size": "103038",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "17AY-Oh5xH1oVfzGOcbs7HyzO4p93XGIo",
+      "name": "00001258-carpeta Blackwell-2026-05-18.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-18T11:30:46.000Z",
+      "size": "56874325",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "14d6M6meHti3bF1Nou10x1Pll-KgpuifpQfGUdg6k7pk",
+      "name": "ACTIVIDADES DEL 11-15 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T19:49:15.755Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1TYUzLdNW1RgemSuU-EtfevWoUA6pWQp-",
+      "name": "00001254-Turbofin_DIF_HUIXQUILUCAN.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T18:04:08.000Z",
+      "size": "8323",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1PkpkpiwAHf__UdsAGckX1RaUW3VmYZEX",
+      "name": "00001251-Nota Alcaldes.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-15T17:43:22.000Z",
+      "size": "65094",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1nQ7ZBHMDs64Uv-YR7VOuh8onzgqD8-8N",
+      "name": "FORO ALCALDES TURBOFIN.jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-15T17:13:15.000Z",
+      "size": "112273",
+      "subfolder": "02",
+      "subfolderName": "02.Turbofin_Entregables",
+      "nestedPath": "MAYO 2026"
+    },
+    {
+      "id": "1egWKnXkXEzKGsDk2RAQLN8JcCn8fOQb0",
+      "name": "Nota Alcaldes.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-15T17:08:43.000Z",
+      "size": "65094",
+      "subfolder": "02",
+      "subfolderName": "02.Turbofin_Entregables",
+      "nestedPath": "MAYO 2026"
+    },
+    {
+      "id": "1qXuDjaZl9RhE7wF1uOXFstrBm-Gt7CJA",
+      "name": "Nota Alcaldes.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T17:08:25.000Z",
+      "size": "15264",
+      "subfolder": "02",
+      "subfolderName": "02.Turbofin_Entregables",
+      "nestedPath": "MAYO 2026"
+    },
+    {
+      "id": "1C0rrGlLLS0HOhaP5lkCw-uLnXhBVt6wP",
+      "name": "00001248-carpeta Blackwell-2026-05-15.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-15T11:15:36.000Z",
+      "size": "55039890",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "19kV8n4msKjqoqIzHmUb1jv2LoaHaGBi0",
+      "name": "00001243-carpeta Blackwell-2026-05-14.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-14T11:16:38.000Z",
+      "size": "54908748",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1wiwhx8Nsu38fzW18kV2r9dzRXaPUbWyz",
+      "name": "00001239-carpeta Blackwell -2026-05-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T11:22:02.000Z",
+      "size": "55270386",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1wQ1Fozv_6DKLuGh4D9RRt5p19gYczydb",
+      "name": "00001235-carpeta Blackwell-2026-05-12.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T11:02:52.000Z",
+      "size": "58070825",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1hMLrC7Kd-j4IlHR4Ria3brBFbSXbv2vy",
+      "name": "00001232-Nota_ForoAlcaldes.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-11T18:27:36.000Z",
+      "size": "60673",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1zYZaOb4EPPqDgB-N0T9C4HY6O7V9MV_H",
+      "name": "00001229-Carpeta Blackwell 2026-05-11.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-11T15:35:20.000Z",
+      "size": "57952511",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "193Gd7X0GBVeFw0peANykzuc0b_iWI5P1BQUudMquxQs",
+      "name": "Actividades 4-8 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-08T19:16:36.818Z",
+      "size": "2721",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1ih9OymMObQyTfvF-BLw-RVwC2ghN2T51",
+      "name": "Turbofin_ Reporte de actividades_Abril.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-08T14:54:12.000Z",
+      "size": "3474026",
+      "subfolder": "03",
+      "subfolderName": "03.Turbofin_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1_oMAzgzytM4XMxdhcNgaP17qViSnAvCM",
+      "name": "00001227-Carpeta Blackwell 2026-05-08.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T11:49:00.000Z",
+      "size": "56442637",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1idDDbwGks8EyISX3lPqbNe75rAgyeOmY",
+      "name": "00001221-carpeta Blackwell-2026-05-07.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T11:30:24.000Z",
+      "size": "59011621",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1Xyxw-pdGSUcF-KtOFJUh9lbkbBiol5kM",
+      "name": "00001217-PHOTO-2026-05-06-20-36-24.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T02:33:44.000Z",
+      "size": "86954",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1bzyQuuERfduVJne8FxpcuB6H2AI_vyzI",
+      "name": "00001212-carpeta Blackwell-2026-05-06.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-06T11:12:34.000Z",
+      "size": "54866538",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1vBAlKc-cq5Y9znO6Qo8xPD-9TR4QxPFa",
+      "name": "Fundación Turbofin.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T19:18:17.186Z",
+      "size": "2484114",
+      "subfolder": "02",
+      "subfolderName": "02.Turbofin_Entregables",
+      "nestedPath": "ABRIL 2026"
+    },
+    {
+      "id": "11n37aG4Qz3kOYS5vJHv5DZo5VzmRGqNJ",
+      "name": "00001208-carpeta Blackwell-2026-05-05.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-05T11:22:08.000Z",
+      "size": "58756084",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1uRGZJh0Y3utZOAqKehDoYCSLbBvjt8hQ",
+      "name": "00001203-Turbofin-SpeedFest (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T00:47:52.000Z",
+      "size": "8312",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1Li2C_nphVyvfTaQOkFtFqCl5748elpTM",
+      "name": "00001197-carpeta Blackwell -2026-05-04.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T12:00:36.000Z",
+      "size": "54383642",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1Xf2m0NkbqOMhnk5MOi78mv55bzNxJ-9K",
+      "name": "00001195-carpeta Blackwell-2026-05-01.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-01T11:55:40.000Z",
+      "size": "30313045",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1kOyE1nuUVVN-UDrv7daM8yQyUqlcZQ5Hl_Mrw2H0i0c",
+      "name": "Actividades del 27-30 abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-01T01:10:57.850Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1lLsVVljRi7TUdd9GygIVWOsu-ddzKtGA",
+      "name": "00001189-carpeta Blackwell -2026-04-30.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-30T12:45:18.000Z",
+      "size": "55820118",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "15SVCyZA_WGqe7myNWS3oeV84JqlKTKZ3",
+      "name": "Turbofin Foro Mujeres AMAVe 2026 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:20:23.000Z",
+      "size": "7992",
+      "subfolder": "02",
+      "subfolderName": "02.Turbofin_Entregables",
+      "nestedPath": "MARZO 2026"
+    },
+    {
+      "id": "1jendJRWdriY-rszATHdT-r8LlTIhTLeV",
+      "name": "Turbofin_Marzo.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:33:47.298Z",
+      "size": "3117824",
+      "subfolder": "02",
+      "subfolderName": "02.Turbofin_Entregables",
+      "nestedPath": "TURBOFIN 2026"
+    },
+    {
+      "id": "1hPgtkvZ21dUQPcsdbmsl8b8Igz4fOows",
+      "name": "00001172-PHOTO-2026-04-29-13-52-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T19:52:12.000Z",
+      "size": "39880",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1rgA8RVYctOh-uAtaAQWN9wqaLTgWeYjb",
+      "name": "00001173-PHOTO-2026-04-29-13-52-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T19:52:12.000Z",
+      "size": "313233",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1m848sfseuh4SDdt0UzYUy6vqduzvdNDa",
+      "name": "00001171-Fundación Turbofin 1_VF (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T19:52:12.000Z",
+      "size": "1674781",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1-jQI5CrlYfIPobAvOg9xrUJ0N_aizdDuYea0A5XI0R8",
+      "name": "Actividades del 23 al 27 de marzo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T18:36:39.451Z",
+      "size": "1362",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1egcSpNkjKm7y3mNDtNiC7B1DDKLSzqZWDLij1jeFX34",
+      "name": "Actividades 30 de marzo al 1 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T18:35:48.456Z",
+      "size": "1135",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "13_A1cYR22KUUm6JM3kPwoRdSzrqOVc60tJ1ErwrB_IM",
+      "name": "Actividades 13 al 17 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T18:34:27.989Z",
+      "size": "1159",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1lLYFP-sKDx2g-VULLj8qNZ6V6PyN0GAVYJ22koN72tM",
+      "name": "Actividades 20 al 24 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T18:33:49.486Z",
+      "size": "1233",
+      "subfolder": "06",
+      "subfolderName": "06.Turbofin_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "17JViisXe_edaSeuFa0aRLG9VYlQ9NywC",
+      "name": "00001164-carpeta Blackwell-2026-04-29.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T11:11:54.000Z",
+      "size": "58684060",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1q5mgN3pEdBq7xfnKmoHz4SigMVcEURHv",
+      "name": "00001159-carpeta Blackwell-2026-04-28.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-28T11:53:50.000Z",
+      "size": "60391700",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1P5tIHztSd43rljQFBO-b0ONN2nIP8DJO",
+      "name": "00001156-carpeta Blackwell-2026-04-27.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-27T11:47:20.000Z",
+      "size": "57337592",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1HdlR15s4tyl61eepijarGmJ4aMqNvKJO",
+      "name": "00001152-carpeta Blackwell -2026-04-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-24T11:38:14.000Z",
+      "size": "54143065",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1G5fJ6s1YGnMwmI68PXAsRTO4hdnFrUk3",
+      "name": "00001148-carpeta Blackwell-2026-04-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T11:55:38.000Z",
+      "size": "51340677",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1pAiGQDFiNU5q9dJSB904Y8dpr8Stn__V",
+      "name": "Turbofin_ Reporte de actividades_Q1 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T03:33:56.000Z",
+      "size": "1445568",
+      "subfolder": "03",
+      "subfolderName": "03.Turbofin_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1awhveNQoJ3YkClWtp9vjZhQRlNOvx3xn",
+      "name": "00001144-carpeta Blackwell -2026-04-22.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-22T12:07:16.000Z",
+      "size": "57125225",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1skCNXbzfZVS4i8dVTZWwD66sG2w9KWG-",
+      "name": "00001139-carpeta Blackwell-2026-04-21.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T11:59:58.000Z",
+      "size": "62253874",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "10JP_N81SzTlhrXK7ctt1c1mbThxX1mrp",
+      "name": "00001136-Fundación Turbofin 1_VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T00:08:38.000Z",
+      "size": "10552",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1pHqUQ7FTNBJjy6RgYWtyfZsijA7_FtgN",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-04-20T22:22:24.000Z",
+      "size": "204591",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1izUF8qJm9wAilK3xxFbTnGiVGSZnzD2C",
+      "name": "Contrato turbofin V Firmada 030925.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T22:20:47.000Z",
+      "size": "14752734",
+      "subfolder": "01",
+      "subfolderName": "01. Turbofin_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1K1iN3c1GqthdrUtZm5t1BUK_xpS6riTh",
+      "name": "00001132-carpeta Blackwell-2026-04-20.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T14:33:28.000Z",
+      "size": "56854712",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1rpY1_3acPuMSyyz4pMkrSIB1Mx5PMjvL",
+      "name": "00001132-carpeta Blackwell-2026-04-20.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T14:33:28.000Z",
+      "size": "56854712",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1W0GsIMSEMA07WSVSHoE2hQ_ro7L2CjUR",
+      "name": "00001128-carpeta Blackwell -2026-04-17.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-17T11:44:02.000Z",
+      "size": "52524537",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1C6FG6auS-PuE8X9xdKcuEKKR5THag2Zz",
+      "name": "00001128-carpeta Blackwell -2026-04-17.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-17T11:44:02.000Z",
+      "size": "52524537",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1qDSl1yozvTbxBLGgWZ7tMLT2gbEqGj1X",
+      "name": "00001124-carpeta Blackwell-2026-04-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-16T11:27:02.000Z",
+      "size": "54488976",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1njFz1qEl9H7dcEghj5zKvJkXG0OPn1-Y",
+      "name": "00001124-carpeta Blackwell-2026-04-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-16T11:27:02.000Z",
+      "size": "54488976",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1ydXI8HQDa6zP30PpQtTvYHC83RgEFUu-",
+      "name": "00001120-carpeta Blackwell-2026-04-15.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-15T11:55:34.000Z",
+      "size": "55228610",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1FVDuG1hbz32_fShSj3OB1t805TCDrebK",
+      "name": "00001120-carpeta Blackwell-2026-04-15.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-15T11:55:34.000Z",
+      "size": "55228610",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1fQsimhGITe6sLb0KaXWI7mnBpLYL82A7",
+      "name": "00001116-carpeta Blackwell-2026-04-14.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-14T11:25:56.000Z",
+      "size": "53768841",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1k1nTbp7TZPo8Gh6QfxuQWQgwTjfJZYIW",
+      "name": "00001116-carpeta Blackwell-2026-04-14.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-14T11:25:56.000Z",
+      "size": "53768841",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "12ANaAtO9gN76dkUhUiyI46ZVNbDNQdGy",
+      "name": "00001112-carpeta Blackwell-2026-04-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-13T11:37:18.000Z",
+      "size": "55062752",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1EqlzK49RwQmNJpjEv9LpxqnE2yEjHsgP",
+      "name": "00001112-carpeta Blackwell-2026-04-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-13T11:37:18.000Z",
+      "size": "55062752",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1ks5GVOB_TS5W2ChQHasKaaQ--ATcLJy3",
+      "name": "00001107-Turbofin_ Reporte de actividades_Q1 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-11T01:22:24.000Z",
+      "size": "1445568",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1S8DfAU75-NZG2OKTU_DBcrSAgqQdb0at",
+      "name": "00001107-Turbofin_ Reporte de actividades_Q1 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-11T01:22:24.000Z",
+      "size": "1445568",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1l2O5krgP5L5NXIpH-VnRRkWh6UHRYU3K",
+      "name": "00001059-carpeta Blackwell-2026-03-27.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T14:55:14.000Z",
+      "size": "53793376",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1hVQBtMhqHs-2s2vWpNJP4JnxocI4Opgm",
+      "name": "00001059-carpeta Blackwell-2026-03-27.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T14:55:14.000Z",
+      "size": "53793376",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1UomOltinxph-SFQWsYkM1tWGHbMhLyBo",
+      "name": "00001103-carpeta Blackwell-2026-04-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T11:26:00.000Z",
+      "size": "49612229",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1iMILMJuihJK07ZzUMR7mC2k7aLaX9wRU",
+      "name": "00001103-carpeta Blackwell-2026-04-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T11:26:00.000Z",
+      "size": "49612229",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1hBNJbn7AXpvFlFozg8sIhFplRc5BhKvY",
+      "name": "00001099-carpeta Blackwell-2026-04-09.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-09T11:41:14.000Z",
+      "size": "48208580",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1WCNscGWdBlLloQGagBYV2WjltaKduUvS",
+      "name": "00001099-carpeta Blackwell-2026-04-09.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-09T11:41:14.000Z",
+      "size": "48208580",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "17h8NDpXgvET0-sWiXo2zaCcXd1rXvVJc",
+      "name": "00001094-carpeta Blackwell-2026-04-08.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-08T12:51:30.000Z",
+      "size": "50771376",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "17CMmoJ_RxyIMSF6R0unSpQ9h0amcn1RY",
+      "name": "00001094-carpeta Blackwell-2026-04-08.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-08T12:51:30.000Z",
+      "size": "50771376",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1dd8Pe7XddxxNuhL-dbjONbUxHt1KmL4l",
+      "name": "00001089-PHOTO-2026-04-07-08-55-09.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T14:55:10.000Z",
+      "size": "180980",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1HSVbsozYKvSeX0JsvYGGgNhNIqm8iAaM",
+      "name": "00001089-PHOTO-2026-04-07-08-55-09.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T14:55:10.000Z",
+      "size": "180980",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1CmFGJZ_YhJ65-c5yimZWtkeOf-SyCCCx",
+      "name": "00001091-carpeta Blackwell-2026-04-07.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-07T11:17:28.000Z",
+      "size": "49878363",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1aqlRFxQ3hMMtF-RdO_0oBMDb87ka0zMO",
+      "name": "00001091-carpeta Blackwell-2026-04-07.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-07T11:17:28.000Z",
+      "size": "49878363",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1tztPIgjptbhhOHZWN0fg8iyvsUDc4mga",
+      "name": "00001084-carpeta Blackwell-2026-04-06 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-06T15:38:18.000Z",
+      "size": "49217442",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1cRYaYLr-q8dLXMGa21wwor9Ke3XDeKGP",
+      "name": "00001084-carpeta Blackwell-2026-04-06 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-06T15:38:18.000Z",
+      "size": "49217442",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1s44sYiXQZ4Gzmnzv71lujywVzDfyC-ew",
+      "name": "00001081-carpeta Blackwell -2026-04-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-03T11:44:12.000Z",
+      "size": "22891216",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1VKG12KLWxfDXl9_TVDmeLUTgvjsgAtIy",
+      "name": "00001081-carpeta Blackwell -2026-04-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-03T11:44:12.000Z",
+      "size": "22891216",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "17gNxitAlGyPvjI2ub5t3SspFtXXmKR7R",
+      "name": "00001075-carpeta Blackwell-2026-04-02.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-02T11:32:20.000Z",
+      "size": "28296434",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1mjxm-GHIXld5HuujulyK68P0i5_Wnffb",
+      "name": "00001075-carpeta Blackwell-2026-04-02.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-02T11:32:20.000Z",
+      "size": "28296434",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1KFPT4B-3jr0MtupXkiuM6MfX8mjjueik",
+      "name": "00001072-carpeta Blackwell-2026-04-01.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-01T12:38:28.000Z",
+      "size": "46363788",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1m-_o-oo0hxhpK_MURK_-lboX131dcWYm",
+      "name": "00001072-carpeta Blackwell-2026-04-01.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-01T12:38:28.000Z",
+      "size": "46363788",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "13hM6eRBbwVa7gUkhQo8N5kC5mmS3nSVu",
+      "name": "00001068-carpeta Blackwell-2026-03-31.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-31T11:31:30.000Z",
+      "size": "48183987",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1QLzpkZzMNqG3kFY_THzTxGUhZQrUrzf1",
+      "name": "00001068-carpeta Blackwell-2026-03-31.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-31T11:31:30.000Z",
+      "size": "48183987",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1TaZIc0UkviKd7CsjFRpwskGF474FZYAv",
+      "name": "00001064-carpeta Blackwell-2026-03-30.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-30T12:41:20.000Z",
+      "size": "45885220",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "15peQxa7sEM3j3RyR1l-EpLvCrFRd33_D",
+      "name": "00001064-carpeta Blackwell-2026-03-30.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-30T12:41:20.000Z",
+      "size": "45885220",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1VhLqY-N-cgVivqIf6_DN7BUCNbZ4kvE8",
+      "name": "00001054-carpeta Blackwell-2026-03-26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T11:15:34.000Z",
+      "size": "53222389",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1rlgsKePQf_47-YA4RlzDpjr55KmK4GVI",
+      "name": "00001054-carpeta Blackwell-2026-03-26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T11:15:34.000Z",
+      "size": "53222389",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1HBr4N4FzBdVoKE0CuChj9J5dFO7MTt_z",
+      "name": "00001049-carpeta Blackwell-2026-03-25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-25T11:21:22.000Z",
+      "size": "59483797",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1Vr9O2mSxmKlBgoVLOxm6gtMc4zLU5tXd",
+      "name": "00001049-carpeta Blackwell-2026-03-25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-25T11:21:22.000Z",
+      "size": "59483797",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1z-9tt7wHm9LID8cuOYor1WLeGmiGvg-U",
+      "name": "00001045-Turbofin y Dr Sonrisas (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-25T00:40:46.000Z",
+      "size": "7820",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1QzeO7VpKnNE8IBVBI9fhWtVrfiSpQwbV",
+      "name": "00001045-Turbofin y Dr Sonrisas (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-25T00:40:46.000Z",
+      "size": "7820",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1XCtVojGPb9MdR7GpwWBPKMf-6wXvN7Zi",
+      "name": "00001040-carpeta Blackwell -2026-03-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-24T10:27:56.000Z",
+      "size": "55196756",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1hIMnJuXV-v9fGB_eM48DnXDhNUXva59z",
+      "name": "00001040-carpeta Blackwell -2026-03-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-24T10:27:56.000Z",
+      "size": "55196756",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1Zb9F1tBhASpgPSOOzyylBTgH02TZOslb",
+      "name": "00001035-carpeta Blackwell-2026-03-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-23T15:41:14.000Z",
+      "size": "55613053",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1-nslmgsLYO8bLbHlQWy5Pq6huAsYF1Ww",
+      "name": "00001035-carpeta Blackwell-2026-03-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-23T15:41:14.000Z",
+      "size": "55613053",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1_1dahb3p2JKF_QmtYXvdcVlDAgXGGHR9",
+      "name": "00001030-carpeta Blackwell-2026-03-20.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-20T12:34:36.000Z",
+      "size": "54060641",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1nG8xhcut0DirvjkX8jmkyP0FSWx-II8C",
+      "name": "00001030-carpeta Blackwell-2026-03-20.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-20T12:34:36.000Z",
+      "size": "54060641",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1EofyHMyu2Y5ViRVfH6Dhn16P10TtXG5W",
+      "name": "00001025-carpeta Blackwell-2026-03-19.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-19T12:41:12.000Z",
+      "size": "54234583",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1IvndKbV1uiB1rVrP5CaYZ46d90Jg40x2",
+      "name": "00001025-carpeta Blackwell-2026-03-19.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-19T12:41:12.000Z",
+      "size": "54234583",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1i3tYr_E7ZLXlm9T4G_T057hlYFlK1yQX",
+      "name": "00001018-carpeta Blackwell-2026-03-18.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-18T11:18:06.000Z",
+      "size": "58635605",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1I0WrYuf7ZA63LSsfzH-qo00gDUwiB8Bq",
+      "name": "00001018-carpeta Blackwell-2026-03-18.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-18T11:18:06.000Z",
+      "size": "58635605",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1WgdeLwOsq_TlGOSamM93csM4IxjFSF8x",
+      "name": "00001015-carpeta Blackwell-2026-03-17.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-17T12:41:34.000Z",
+      "size": "57856728",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1fTApEzTnUSpT59XeGWyxA-HdYu-5gSE5",
+      "name": "00001015-carpeta Blackwell-2026-03-17.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-17T12:41:34.000Z",
+      "size": "57856728",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1sn6Q2MEDOtmJy7hP-IX22q1wIhaLn5px",
+      "name": "00001011-carpeta Blackwell-2026-03-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-16T11:30:26.000Z",
+      "size": "35915838",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1nnJv97a_p1MCvSMrRuhKNW8DRqO0sch9",
+      "name": "00001011-carpeta Blackwell-2026-03-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-16T11:30:26.000Z",
+      "size": "35915838",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1cT-bwua5RNf3hjmisUABYFHZvR5BqYWS",
+      "name": "00001004-carpeta-Blackwell-2026-03-14.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-14T11:56:16.000Z",
+      "size": "24565232",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1IY_zPJgA4Dl70eNFLiFO6sNI_ghkrzsj",
+      "name": "00001004-carpeta-Blackwell-2026-03-14.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-14T11:56:16.000Z",
+      "size": "24565232",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1Ke9v55TDPFEqCGreO0cEjKaOxjtWKG1y",
+      "name": "00000999-Turbofin Foro Mujeres AMAVe 2026-3.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-13T17:03:48.000Z",
+      "size": "1672292",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1AnlMBVqX9G2X22Wy95msowsqw4U5CaCY",
+      "name": "00000999-Turbofin Foro Mujeres AMAVe 2026-3.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-13T17:03:48.000Z",
+      "size": "1672292",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1dneAWjz6yLrrfQbDh74s6JlI343GSJjz",
+      "name": "00000992-carpeta Blackwell-2026-03-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-13T11:25:36.000Z",
+      "size": "53396210",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1NCdv5HfI6zIN7GVWtL0Numo7Y2Qz9naX",
+      "name": "00000992-carpeta Blackwell-2026-03-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-13T11:25:36.000Z",
+      "size": "53396210",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "13L4En9lcrTp7CcpZYl0W8NrdIIuiE3Ke",
+      "name": "00000986-Turbofin Foro Mujeres AMAVe 2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-12T20:30:52.000Z",
+      "size": "7992",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1ftVCXTGwn-IDQem2thDc2sfJU3NykDOx",
+      "name": "00000986-Turbofin Foro Mujeres AMAVe 2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-12T20:30:52.000Z",
+      "size": "7992",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1OqFsuwS0uWj0o6QUrtCH5gh2lkeP4zNJ",
+      "name": "00000982-carpeta Blackwell-2026-03-12.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-12T12:24:00.000Z",
+      "size": "54165719",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1Ay0skc-p6Qjr3csYyD5laWaOghs5v1mI",
+      "name": "00000982-carpeta Blackwell-2026-03-12.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-12T12:24:00.000Z",
+      "size": "54165719",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "15JXkYtpzq7ugbRSoJkgrwDwB2SdGF_X_",
+      "name": "00000978-carpeta Blackwell-2026-03-11.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-11T10:42:30.000Z",
+      "size": "58924340",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "13xu4fxHJ8ZgGqlRhpI4s6Cod369ODY54",
+      "name": "00000978-carpeta Blackwell-2026-03-11.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-11T10:42:30.000Z",
+      "size": "58924340",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "14PRWBGikCJsE8X7YzHFha36WlOs461HV",
+      "name": "00000974-carpeta Blackwell-2026-03-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T12:34:14.000Z",
+      "size": "59061477",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1z4SFmUnrdwn2sK1QTI_1QZXY1rO_T7CO",
+      "name": "00000974-carpeta Blackwell-2026-03-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T12:34:14.000Z",
+      "size": "59061477",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1qgOdZs17Yp1jGZJSnuZcvP9WU0U8rTQQ",
+      "name": "00000970-carpeta Blackwell-2026-03-09.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-09T15:29:06.000Z",
+      "size": "53639018",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "133sHAiyjA0Dkp7aQhtc0BE7b2oN7byqA",
+      "name": "00000970-carpeta Blackwell-2026-03-09.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-09T15:29:06.000Z",
+      "size": "53639018",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1V9U7D9kBUDFOUXb1lpfOM6TJuVADZyXp",
+      "name": "00000963-Carpeta Blackwell 2026-03-06.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-06T12:16:08.000Z",
+      "size": "54925501",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "114rywBsLgNnKx-MA2NZH1mdN9TUmtLnN",
+      "name": "00000963-Carpeta Blackwell 2026-03-06.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-06T12:16:08.000Z",
+      "size": "54925501",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1MC3jUhEiNjIYXDMpHlVo7VkU8DPXAyNU",
+      "name": "00000958-Carpeta Blackwell 2026-03-05.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-05T12:36:36.000Z",
+      "size": "53163780",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1Da1mWzqjfPGkTPCMLkOW6cvtxHkPkIYn",
+      "name": "00000958-Carpeta Blackwell 2026-03-05.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-05T12:36:36.000Z",
+      "size": "53163780",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1w1zOVMTxBev0sQuQgd34Jcc7uS54XBJH",
+      "name": "00000954-carpeta Blackwell-2026-03-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-03T11:58:20.000Z",
+      "size": "55533589",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1yh1A8-AMncwJHs7NxSfR8fnB6o2g5hAu",
+      "name": "00000945-carpeta Blackwell-2026-03-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-03T11:58:20.000Z",
+      "size": "55533589",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "17SSB5MfjpH8mCf7uQ0gEWokn7QrKZ42t",
+      "name": "00000945-carpeta Blackwell-2026-03-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-03T11:58:20.000Z",
+      "size": "55533589",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1cAM1UE3wiLVamW3gl3er7WKuis-GFlxn",
+      "name": "00000954-carpeta Blackwell-2026-03-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-03T11:58:20.000Z",
+      "size": "55533589",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1a4g5UxsKCq_kQaj1xkUK_njLmY2Py5Px",
+      "name": "00000941-carpeta Blackwell-2026-03-02.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-02T12:28:38.000Z",
+      "size": "55636616",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1vTFeqSDJALkeGlSGiJgbsyRsbIcWgQcf",
+      "name": "00000941-carpeta Blackwell-2026-03-02.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-02T12:28:38.000Z",
+      "size": "55636616",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1h0DhqyP8vf8yhqtWIImXt2_OBxsQWA6t",
+      "name": "00000934-carpeta Blackwell-2026-02-27.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-27T15:22:18.000Z",
+      "size": "51613471",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1fqnMJ8tGFwkQvKr8CXDjCF3O1_i361Aa",
+      "name": "00000934-carpeta Blackwell-2026-02-27.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-27T15:22:18.000Z",
+      "size": "51613471",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1TVJxWqviONk9_SjSMNbnPomLMi1S4Tbf",
+      "name": "00000929-carpeta Blackwell-2026-02-26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-26T11:58:28.000Z",
+      "size": "53470311",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1cyAHxQhKdZ3Ouk_5HIpZ4PtaBU7o3ZUA",
+      "name": "00000929-carpeta Blackwell-2026-02-26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-26T11:58:28.000Z",
+      "size": "53470311",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1s-yAkwejI2_8skX4Zkhy-8K3Pm2V9UHd",
+      "name": "00000924-carpeta Blackwell-2026-02-25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-25T11:14:58.000Z",
+      "size": "55915909",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1_jKTSImQ9TTRHw2j93Fyb0GMCg2kP_x5",
+      "name": "00000924-carpeta Blackwell-2026-02-25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-25T11:14:58.000Z",
+      "size": "55915909",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1y3kpHzfLcAWRTzq48bl1Is9jBICfV_0k",
+      "name": "00000920-carpeta Blackwell-2026-02-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-24T10:40:54.000Z",
+      "size": "56019104",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1f89YxBi_hp_g4uoT-oLTaKqqB9u63AaX",
+      "name": "00000920-carpeta Blackwell-2026-02-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-24T10:40:54.000Z",
+      "size": "56019104",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    },
+    {
+      "id": "1mRB26oL3O3o6a28V6VvxDVfDiElY91bZ",
+      "name": "00000916-carpeta Blackwell-2026-02-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-23T11:41:48.000Z",
+      "size": "51641006",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell_18052026"
+    },
+    {
+      "id": "1_AKpYG393hvskSi_GxjbywElQugXOufF",
+      "name": "00000916-carpeta Blackwell-2026-02-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-23T11:41:48.000Z",
+      "size": "51641006",
+      "subfolder": "04",
+      "subfolderName": "04. Turbofin_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Turbofin + Blackwell"
+    }
+  ]
+}

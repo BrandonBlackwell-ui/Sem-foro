@@ -1,0 +1,131 @@
+{
+  "number": "16",
+  "folderTitle": "16. MAPELLY/proyecto concluido",
+  "folderId": "1p_5FI22tmHR_Mzzu7kk0AH3Kb10NecNe",
+  "folderModifiedTime": "2026-04-30T01:32:28.679Z",
+  "derivedStatus": "concluded",
+  "statusSuffix": "CONCLUIDO",
+  "latestDeliverable": {
+    "title": "Link_BG_Mexico.pdf",
+    "modifiedTime": "2026-04-22T17:44:11Z",
+    "source": "01.Contrato_OC"
+  },
+  "deliverableSource": "none",
+  "lastActivity": null,
+  "subfolderActivity": {
+    "01.Contrato_OC": {
+      "subfolderId": "1F1b6bJWMrG0X7kam_J55MxuuVk2S-i69",
+      "fileCount": 1,
+      "latestModified": "2026-04-22T17:44:11Z",
+      "latestFile": "Link_BG_Mexico.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:09Z_verify",
+      "last_verified_at": "2026-06-12T14:09:09Z"
+    },
+    "02.Entregables": {
+      "subfolderId": "1A4okcmyA2WslbidHDbTbqd668Ipo1Hqh",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:08Z",
+      "last_verified_at": "2026-06-05T19:45:08Z"
+    },
+    "03.Reportes_Avance": {
+      "subfolderId": "1Nk3gfpLHe5Nsr8uuWuQT_gv1faTcGBG8",
+      "fileCount": 1,
+      "latestModified": "2026-02-05T17:25:39Z",
+      "latestFile": "REPORTE GENERAL SafeLink .pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:08Z",
+      "last_verified_at": "2026-06-05T19:45:08Z"
+    },
+    "04.Conversaciones_WA": {
+      "subfolderId": "1SVTWUjxgJ-lbxTMkmgIDQaXb4j9xC2zH",
+      "fileCount": 1,
+      "latestModified": "2026-04-22T17:40:36Z",
+      "latestFile": "WhatsApp Chat - Mapelli - Blackwell.zip",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:08Z",
+      "last_verified_at": "2026-06-05T19:45:08Z"
+    },
+    "05.Transcripciones_Llamadas": {
+      "subfolderId": "1BLPG1Q_FPgMP2ekrkvWCNLss5R241efn",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:08Z",
+      "last_verified_at": "2026-06-05T19:45:08Z"
+    },
+    "06.Agenda_Trabajos": {
+      "subfolderId": "1hkJ5fXQid8I7n1ps6JvgFC0xPhgmbpYS",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:08Z",
+      "last_verified_at": "2026-06-05T19:45:08Z"
+    }
+  },
+  "pqProxy": {
+    "suggestion": "Archivar",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "source": "coherence-sync",
+    "text": "Archivar"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "baja",
+  "playbookViolations": [],
+  "isActive": false,
+  "lastCrawledAt": "2026-06-05T19:45:08Z",
+  "driveFiles": [
+    {
+      "id": "1AEOlxWuX5nA76yKohSRFmBoJUxrgFGOR",
+      "name": "Link_BG_Mexico.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-22T17:44:11.000Z",
+      "size": "291073",
+      "subfolder": "01",
+      "subfolderName": "01.Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1CaCjUzuUdvCO1SVw_QSI1jFoKVVOQmYM",
+      "name": "WhatsApp Chat - Mapelli - Blackwell.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-22T17:40:36.000Z",
+      "size": "10048936",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1RgUze7wLOmYu8Q058wqAMWa1rqy9n07Z",
+      "name": "REPORTE GENERAL SafeLink .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-05T17:25:39.000Z",
+      "size": "944099",
+      "subfolder": "03",
+      "subfolderName": "03.Reportes_Avance",
+      "nestedPath": null
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "number": "40",
+  "folderTitle": "40. AUSTRIA",
+  "folderId": "10ikJk7knk0WVlw07OXmnqphdQe96AcC8",
+  "folderModifiedTime": "2026-05-22T02:43:06.778Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "isActive": true,
+  "subfolderActivity": {
+    "01.  Austria_Contratos_OC": {
+      "subfolderId": "1pfouVIrVIj5RHptBX1tXRP9yJKfVQ3cO",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:15Z_verify",
+      "last_verified_at": "2026-06-12T14:09:15Z"
+    },
+    "02. Austria_Entregables": {
+      "subfolderId": "1tscjTlMbkSdlcty8S7tPyXtZ4_Yu8o4e",
+      "fileCount": 1,
+      "latestModified": "2026-05-26T00:20:20Z",
+      "latestFile": "Testigo_trabajo_realizado.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:37Z_verify",
+      "last_verified_at": "2026-06-10T16:02:37Z"
+    },
+    "03. Austria_Reportes_Avance": {
+      "subfolderId": "1QXK7Nu7bCcLQAoCP-NknhJXiovdqhyC2",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:37Z_verify",
+      "last_verified_at": "2026-06-10T16:02:37Z"
+    },
+    "04. Austria_Conversaciones_WA": {
+      "subfolderId": "1tHknp_H3TBoxBZCbATw8CUbEbOnn1uYJ",
+      "fileCount": 27,
+      "latestModified": "2026-05-22T02:44:16Z",
+      "latestFile": "_chat.txt (en 15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:37Z_verify",
+      "last_verified_at": "2026-06-10T16:02:37Z",
+      "nestedNote": "Contiene subcarpetas: 15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    "05. Austria_Transcripciones_llamadas": {
+      "subfolderId": "1_1gfVAyZnvaUC22F9W0cGZP5BfQiiZ5W",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:37Z_verify",
+      "last_verified_at": "2026-06-10T16:02:37Z"
+    },
+    "06. Austria_Agenda_Trabajos": {
+      "subfolderId": "10KeTzo9Z45Acx7JNUNYSAMJfWqnDQGlg",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:38Z_verify",
+      "last_verified_at": "2026-06-10T16:02:38Z"
+    }
+  },
+  "latestDeliverable": {
+    "title": "Testigo_trabajo_realizado.pdf",
+    "modifiedTime": "2026-05-26T00:20:20Z",
+    "source": "02. Austria_Entregables"
+  },
+  "lastCrawledAt": "2026-06-10T16:02:21Z",
+  "driveFiles": [
+    {
+      "id": "1WhqF_a0RQK0uYy4H55ScLSOZQZI7PVQq",
+      "name": "Testigo_trabajo_realizado.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T00:20:20.000Z",
+      "size": "116007",
+      "subfolder": "02",
+      "subfolderName": "02. Austria_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "153_3o1KEtu69soxCRv754Z88-Vfvw69d",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-22T02:44:16.000Z",
+      "size": "55078",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1vnIbdGuNL01K86nVrRHAyUZ-ydDxZDIW",
+      "name": "00003346-PHOTO-2026-05-11-18-51-15.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-12T00:53:02.000Z",
+      "size": "154352",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1NooZz6guCIJbSVGiIBAUfVnW3yGJVQoO",
+      "name": "00003331-PHOTO-2026-05-06-21-45-58.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T03:46:12.000Z",
+      "size": "116336",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1okSaZ8hpaazEb2DhnZFGncVklbcPT1S7",
+      "name": "00003332-PHOTO-2026-05-06-21-45-58.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T03:46:12.000Z",
+      "size": "335499",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1x8YLffUk721EFa_wkBiyYBxDCPFR9J7h",
+      "name": "00003301-PHOTO-2026-05-05-21-14-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T04:40:36.000Z",
+      "size": "71048",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1hJCZgVCvnYz-GzaVHS4yRfUAsmOm9idk",
+      "name": "00003266-VIDEO-2026-05-05-14-21-15.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-05T20:28:20.000Z",
+      "size": "21623420",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1d5xrS5pWtHOfNI981y_CAecZcaMzTzUR",
+      "name": "00003259-AUDIO-2026-05-05-14-01-09.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-05T20:01:10.000Z",
+      "size": "24497",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1MPHIW1lsxA8dBmG3Ez8htq8U51E0b7Ik",
+      "name": "00003260-VIDEO-2026-05-05-14-01-37.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-05T20:00:10.000Z",
+      "size": "21620224",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1oFo9NtuHa86AreyVX4FW9mBj9sjgPP1U",
+      "name": "00003261-VIDEO-2026-05-05-14-01-37.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-05T20:00:10.000Z",
+      "size": "17292777",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1tTUPlEjMsv4QeWwD4HI5iWLYl9NOsZAp",
+      "name": "00003256-VIDEO-2026-05-05-13-57-52.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-05T20:00:10.000Z",
+      "size": "21620224",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1fNnI-Z0a6Ws-q5KkI7z9hDStZxccCtyJ",
+      "name": "00003257-VIDEO-2026-05-05-13-57-52.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-05T20:00:10.000Z",
+      "size": "17292777",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1d54lIlEAasnDfwdvsWyZUVakiOyUcdC5",
+      "name": "00003253-VIDEO-2026-05-05-13-49-48.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-05T19:53:14.000Z",
+      "size": "19271131",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1qIv9yASkRAkSfuQssyCTXqIRdnrA5i8z",
+      "name": "00003244-AUDIO-2026-05-05-09-27-29.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-05T18:13:12.000Z",
+      "size": "54801",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1ctpWPzztKqmC8kYAJ28QWIOzecqyegoV",
+      "name": "00003241-STICKER-2026-05-04-20-31-36.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-05T02:39:32.000Z",
+      "size": "63222",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1QfS14IyMB8jHx1TaGUwObTBOm-KjQC3F",
+      "name": "00003189-AUDIO-2026-05-04-18-41-53.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-05T00:43:40.000Z",
+      "size": "142505",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1s4Zk_BVe77lbNZNMUlVIIHBak1UF2Wga",
+      "name": "00003123-PHOTO-2026-05-04-17-50-49.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T23:55:52.000Z",
+      "size": "138712",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1tfuiN0HiOeNPA6CHbBEHj97lUiJxIhIn",
+      "name": "00003116-PHOTO-2026-05-04-17-44-10.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T23:46:58.000Z",
+      "size": "29282",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "17R5GcMfrDShE3fIg93sO_7qh2jLzRvfr",
+      "name": "00003115-PHOTO-2026-05-04-17-44-10.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T23:46:58.000Z",
+      "size": "208178",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1UTqyQoEVhHfMae0J48pwkF3BM8VfbI5g",
+      "name": "00003089-NOTA A (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-30T06:03:46.000Z",
+      "size": "70132",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1N0uoGCejF4mpY-iU2CwglWQLz1GnmrZO",
+      "name": "00003103-PHOTO-2026-04-29-15-03-03.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "size": "68925",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "18ewJn78Xf-HANmgi7Vcv3BPqBP3acy00",
+      "name": "00003104-PHOTO-2026-04-29-15-03-03.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "size": "65295",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "181jiFWGS2ePXfKDCB4UIEkAPGruvu1Nv",
+      "name": "00003106-PHOTO-2026-04-29-15-03-03.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "size": "176392",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1rl9BoxtjHIlab-za88RiA0O_pGlqIwDC",
+      "name": "00003097-PHOTO-2026-04-29-15-03-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "size": "209389",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1G4nI7B-yuOBtwP6wYCAC8CEF-EyOEIO9",
+      "name": "00003105-PHOTO-2026-04-29-15-03-03.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T21:05:48.000Z",
+      "size": "202858",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "161u9VjVCWFdemFSq79xYyHjX2bOK3EFc",
+      "name": "00003045-CamScanner 10-04-26 16.31.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T16:30:54.000Z",
+      "size": "12358480",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1bAWNIhE6itRcQ6Iu1xoyHqdK-SHPKoUR",
+      "name": "00003037-PHOTO-2026-04-29-09-16-47.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T15:17:36.000Z",
+      "size": "204907",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    },
+    {
+      "id": "1c2exgktorDh51oT932knQ_LnZkWLzxKa",
+      "name": "00003008-GUION AUSTRIA SUSPENSION PROVISIONAL.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-28T20:14:42.000Z",
+      "size": "19263",
+      "subfolder": "04",
+      "subfolderName": "04. Austria_Conversaciones_WA",
+      "nestedPath": "15Abr al 21 Mayo 2026 WhatsApp Chat - Medios-Operación Aust"
+    }
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "number": "14",
+  "folderTitle": "14. DALINDE",
+  "folderId": "1t4pAx1O2reClhoi_ZxLetF8owaYzrEX6",
+  "folderModifiedTime": "2026-02-11T18:23:21.938Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "SITUACION_Mafer_Jun2026.pdf",
+    "modifiedTime": "2026-06-10T00:09:32Z",
+    "source": "02. DALINDE_Entregables"
+  },
+  "deliverableSource": "02. DALINDE_Entregables",
+  "lastActivity": {
+    "time": "2026-05-13T00:39:10.275Z",
+    "source": "02. DALINDE_Entregables",
+    "file": "DALINDE_HERALDO_11MAYO2026",
+    "fileId": "18thQ-9NRYK0l5bwNXJ508IOTcQzbw2innUKMnLNrD44"
+  },
+  "subfolderActivity": {
+    "01.DALINDE_Contrato_OC": {
+      "subfolderId": "1wkrUy2lWDUdlprr8WprIQNQVJFM--ghe",
+      "fileCount": 5,
+      "latestModified": "2026-06-09T21:59:42.206000Z",
+      "latestFile": "Anexo_Grupo DSAI Dalinde_San Angel Inn_posicionamiento JUN - DIC 2026VF .docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:09Z_verify",
+      "last_verified_at": "2026-06-12T14:09:09Z"
+    },
+    "02. DALINDE_Entregables": {
+      "subfolderId": "11xs6pOyxegx60HVLqgC5xbqtLAf_q__S",
+      "fileCount": 7,
+      "latestModified": "2026-06-10T00:09:32Z",
+      "latestFile": "SITUACION_Mafer_Jun2026.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:15Z_verify",
+      "last_verified_at": "2026-06-11T03:40:15Z"
+    },
+    "03.DALINDE_Reportes_Avance": {
+      "subfolderId": "1d7iup2kP09WeQKkmfbESxDJzUPoyExzs",
+      "fileCount": 2,
+      "latestModified": "2026-05-26T16:36:15.856000Z",
+      "latestFile": "DSAI_Reporte_Actividades_Feb_Abr2026",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:15Z_verify",
+      "last_verified_at": "2026-06-11T03:40:15Z"
+    },
+    "04. DALINDE_Conversaciones_WA": {
+      "subfolderId": "1glurnA58QIIq1_hbc726lzgYxJKGP9k9",
+      "fileCount": 1,
+      "latestModified": "2026-04-21T18:12:50Z",
+      "latestFile": "WhatsApp Chat - Dalinde + Blackwell.zip",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:15Z_verify",
+      "last_verified_at": "2026-06-11T03:40:15Z"
+    },
+    "05. DALINDE_Transcripciones_Llamadas": {
+      "subfolderId": "1b3ZyD_cEddrFLpK-kHMjEPt3m2OjZxkD",
+      "fileCount": 2,
+      "latestModified": "2026-05-19T18:23:26.529000Z",
+      "latestFile": "Transcript: PLAN DE COMUNICACIÓN DSAI: 2026/05/19 ",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:15Z_verify",
+      "last_verified_at": "2026-06-11T03:40:15Z"
+    },
+    "06.DALINDE_Agenda_Trabajos": {
+      "subfolderId": "1EUNFVjYM3oU4Xc1Oqx6-NSY8KBJH1Rpx",
+      "fileCount": 6,
+      "latestModified": "2026-06-05T20:33:31.738000Z",
+      "latestFile": "ACTIVIDADES DEL 1-5 JUNIO",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:16Z_verify",
+      "last_verified_at": "2026-06-11T03:40:16Z"
+    }
+  },
+  "pqProxy": {
+    "score": null,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable más reciente es una propuesta de trabajo May-Ago 2025. Reporte Feb-Abr 2026 en 03.Reportes (no latestDeliverable) documenta: Excélsior Frentes Políticos T1 (columna política nacional, primera mención explícita como candidato 2027), Milenio (T1), Heraldo ×2 (T2), radio MVS y W Radio — score estimado ~84 sobre ese archivo.",
+    "suggestion": "Entregar estructura del plan a Lore + grupo el miércoles 13-may. Pedir a DPI los calendarios anuales Dalinde y mapear gap SA Inn. Construir catálogo de respuestas pre-establecidas para crisis. Asegurar mínimo 1 impacto T1 en mayo.",
+    "fileEvaluated": "DSAI_Propuesta_Mayo_Agosto_2025_VF (latestDeliverable); DSAI_Reporte_Actividades_Feb_Abr2026 como referencia de contexto",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Entregar estructura del plan a Lore + grupo el miércoles 13-may. Pedir a DPI los calendarios anuales Dalinde y mapear gap SA Inn. Construir catálogo de respuestas pre-establecidas para crisis. Asegurar mínimo 1 impacto T1 en mayo.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T03:39:50Z",
+  "driveFiles": [
+    {
+      "id": "1uy1rwj8L0QfR9r8VIg6C7bjUDxKd63OF",
+      "name": "SITUACION_Mafer_Jun2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-10T00:09:32.000Z",
+      "size": "134389",
+      "subfolder": "02",
+      "subfolderName": "02. DALINDE_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "15WLekwoH5o3gk-fMK9tqxsr3cyMLAPLj",
+      "name": "SITUACION_Mafer_Jun2026",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-06-10T00:09:02.825Z",
+      "size": null,
+      "subfolder": "02",
+      "subfolderName": "02. DALINDE_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1S7ku8IcYPh0ZYaKjoiM-50HGYGkNncCB",
+      "name": "Anexo_Grupo DSAI Dalinde_San Angel Inn_posicionamiento JUN - DIC 2026VF .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-09T21:59:42.206Z",
+      "size": "17839",
+      "subfolder": "01",
+      "subfolderName": "01.DALINDE_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1WSLaUJv_CbHOEBgmQAlY5mxHQGT0pvbln9e4LKpoHS0",
+      "name": "Anexo_Grupo DSAI Dalinde_San Angel Inn_posicionamiento JUN - DIC 2026VF ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-09T21:58:19.223Z",
+      "size": "10642",
+      "subfolder": "01",
+      "subfolderName": "01.DALINDE_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "11FLQwLcMyaJwjtbMSAcEcS6tBFyB23PqlF_7Kt_rpuo",
+      "name": "DSAI_Propuesta_Mayo_Agosto_2025_VF",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-06-05T21:30:15.293Z",
+      "size": "609218",
+      "subfolder": "02",
+      "subfolderName": "02. DALINDE_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1kBB3grZc5qJo4WXaqxVNMj9dt0AubyqsBTNXMoc9tPE",
+      "name": "ACTIVIDADES DEL 1-5 JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-05T20:33:31.738Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.DALINDE_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1sTi6ewO_2_wsJN5mVq2MNvM0ANOy-hrWboUz6uhyeZA",
+      "name": "ACTIVIDADES DEL 25-29 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T22:31:39.726Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.DALINDE_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1xhVWwg-vO3x6ua6KhHHp_fTowS3VS0Diy4XX8EXR6uI",
+      "name": "DSAI_Reporte_Actividades_Feb_Abr2026",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-05-26T16:36:15.856Z",
+      "size": "4306078",
+      "subfolder": "03",
+      "subfolderName": "03.DALINDE_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1V0Kju7Q-T83IgNrOWK9751_dXue72xJYBwDhyHLasuQ",
+      "name": "Actividades del 18-22 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-23T02:48:40.763Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.DALINDE_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1nAlY3RAH1qv8ucJ7mB38jKqQFSafHXAkQT5JcvTuh-g",
+      "name": "Transcript: PLAN DE COMUNICACIÓN DSAI: 2026/05/19 ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-19T18:23:26.529Z",
+      "size": "28614",
+      "subfolder": "05",
+      "subfolderName": "05. DALINDE_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1mko1dZKfdW0ootOZmkCvmd2ZWN-DvrsrbSS8PDYgb6M",
+      "name": "ACTIVIDADES DEL 11-15 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T21:10:07.404Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.DALINDE_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "18thQ-9NRYK0l5bwNXJ508IOTcQzbw2innUKMnLNrD44",
+      "name": "DALINDE_HERALDO_11MAYO2026",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T00:39:10.275Z",
+      "size": "502186",
+      "subfolder": "02",
+      "subfolderName": "02. DALINDE_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1-bCHZMCYvm4gk_Nq4As5ywTKhZuzWzOwfgr4aHXKSf0",
+      "name": "Actividades del 4-8 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-11T13:58:28.697Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.DALINDE_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1h7cS8hHhj5g-1aFNz5PC4hClfmx9zVCdK6YxzzQN4Jk",
+      "name": "2026/05/06: Sesión con equipo RRSS para DSAI ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-06T22:51:27.475Z",
+      "size": "20057",
+      "subfolder": "05",
+      "subfolderName": "05. DALINDE_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1Z97PltfVVL3QrSeRlYQVOExL7gajyuAOlCgEH0ltosE",
+      "name": "Actividades del 27-30 abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-30T23:30:51.887Z",
+      "size": "2080",
+      "subfolder": "06",
+      "subfolderName": "06.DALINDE_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1Dm4gOLAD-pgnHAn3Oz8ONRp_bjKGmZV4",
+      "name": "INTER HOSP, S.A DE C.V..pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T17:46:13.000Z",
+      "size": "82351",
+      "subfolder": "01",
+      "subfolderName": "01.DALINDE_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1nVGSsZVR9WnnxwuXfCsz_Z2yJ27Bif1g",
+      "name": "Contrato.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T17:46:01.000Z",
+      "size": "2444895",
+      "subfolder": "01",
+      "subfolderName": "01.DALINDE_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1OGMnOFKnv9MEbnDTnFo9-A8aMJST0FH9",
+      "name": "Recap Dalinde .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T17:45:59.000Z",
+      "size": "6711021",
+      "subfolder": "01",
+      "subfolderName": "01.DALINDE_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1Q4zVhP_4dg1emCkDXcBjDvcAinD73EqQ0BBmuyLNv2s",
+      "name": "Plan DSAI 260309",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-04-23T03:59:03.696Z",
+      "size": "5107907",
+      "subfolder": "02",
+      "subfolderName": "02. DALINDE_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1mF5ek6oGYFoPaLRzh9hAmay0upvSLtOe",
+      "name": "WhatsApp Chat - Dalinde + Blackwell.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-21T18:12:50.000Z",
+      "size": "31369472",
+      "subfolder": "04",
+      "subfolderName": "04. DALINDE_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1O1mIO14uHFToQFQore6dmi0-HtRpPjm-",
+      "name": "DSAI-BRIEF DE LA CUENTA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-16T19:09:55.000Z",
+      "size": "687842",
+      "subfolder": "02",
+      "subfolderName": "02. DALINDE_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1RY59bkSso3TcGa_TsZKyseqY5xLwu5EZ",
+      "name": "REPORTE GENERAL DSAI.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-13T16:39:58.000Z",
+      "size": "3001145",
+      "subfolder": "03",
+      "subfolderName": "03.DALINDE_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1Opov78XAt0AbSYaYhbBb9UQG_NV4RALu",
+      "name": "Estrategia de Comunicación DSAI 2026 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2025-11-19T21:40:33.000Z",
+      "size": "1214791",
+      "subfolder": "02",
+      "subfolderName": "02. DALINDE_Entregables",
+      "nestedPath": null
+    }
+  ]
+}

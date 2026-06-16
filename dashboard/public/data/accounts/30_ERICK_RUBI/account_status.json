@@ -1,0 +1,177 @@
+{
+  "number": "30",
+  "folderTitle": "30. ERICK RUBI",
+  "folderId": "1pIFoWICw1EU4ySz9JgrsjdWrOjvLIxm1",
+  "folderModifiedTime": "2026-05-18T14:40:47.461Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "00003024-fraude_inversion_v2_azul_RYSM_1_Erick_Rubi.docx",
+    "modifiedTime": "2026-05-18T14:38:43.110000Z",
+    "source": "02. ERICK_RUBI_Entregables"
+  },
+  "deliverableSource": "drive:1i7sbFuJGQpP9CE0TQIfc_8mBLIigbj5Q",
+  "lastActivity": "2026-05-18T14:38:43.110Z",
+  "subfolderActivity": {
+    "01. ERICK_RUBI_Contratos_OC": {
+      "subfolderId": "1-wSjludc8xLs2G0ItYeNKf7xWzLsEsjz",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:13Z_verify",
+      "last_verified_at": "2026-06-12T14:09:13Z"
+    },
+    "02. ERICK_RUBI_Entregables": {
+      "subfolderId": "1i7sbFuJGQpP9CE0TQIfc_8mBLIigbj5Q",
+      "fileCount": 1,
+      "latestModified": "2026-05-18T14:38:43.110000Z",
+      "latestFile": "00003024-fraude_inversion_v2_azul_RYSM_1_Erick_Rubi.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:34Z_verify",
+      "last_verified_at": "2026-06-10T16:02:34Z"
+    },
+    "03. ERICK_RUBI_Reportes_Avance": {
+      "subfolderId": "1AULD8zjXByoVTNAbyJW7etFgtJaDjXRR",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:34Z_verify",
+      "last_verified_at": "2026-06-10T16:02:34Z"
+    },
+    "04. ERICK_RUBI_Conversaciones_WA": {
+      "subfolderId": "1WOhRl4X-Z8Tfr7jVmLGrhkadUH8pNYD-",
+      "fileCount": 6,
+      "latestModified": "2026-05-04T18:18:22Z",
+      "latestFile": "ERICK RUBI al 4MAY2026_chat.txt",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:34Z_verify",
+      "last_verified_at": "2026-06-10T16:02:34Z"
+    },
+    "05. ERICK_RUBI_Transcripciones llamadas": {
+      "subfolderId": "1zb_IjJvkvqgwv0w0P0cuIiZeJFvtJdy0",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:34Z_verify",
+      "last_verified_at": "2026-06-10T16:02:34Z"
+    },
+    "06. ERICK_RUBI_Agenda_Trabajos": {
+      "subfolderId": "1xP1FrVQ4BCKzOgh1HE0-gDqWQdasX6Rl",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-10T16:02:34Z_verify",
+      "last_verified_at": "2026-06-10T16:02:34Z"
+    }
+  },
+  "pqProxy": {
+    "score": null,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Cuenta pre-existente (creada 2026-05-04) detectada por primera vez en delta 2026-05-12 — todas las 6 subcarpetas tocadas 12-may 03:26-03:27. Faltaba en snapshot baseline previo.",
+    "suggestion": "Pendiente análisis profundo en próximo baseline.",
+    "fileEvaluated": null,
+    "evaluatedAt": "2026-05-12T19:00:00Z"
+  },
+  "nextAction": {
+    "type": "onboarding",
+    "priority": 2,
+    "label": "Onboarding nueva cuenta",
+    "text": "Documentar contrato/OC y completar análisis baseline.",
+    "source": "delta-2026-05-12"
+  },
+  "lastAnalyzedAt": "2026-05-18T15:05:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-10T16:02:16Z",
+  "driveFiles": [
+    {
+      "id": "18ZmU1Kpf8roz_yp3Lk3HcF8pbjtdvvqw",
+      "name": "00003024-fraude_inversion_v2_azul_RYSM_1_Erick_Rubi.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-18T14:38:43.110Z",
+      "size": "24693",
+      "subfolder": "02",
+      "subfolderName": "02. ERICK_RUBI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1hrmlR3njh7IypynwQOzczifuQDObJa0X",
+      "name": "ERICK RUBI al 4MAY2026_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-04T18:18:22.000Z",
+      "size": "9168",
+      "subfolder": "04",
+      "subfolderName": "04. ERICK_RUBI_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1ocCKOy5IBhmGbWW3yt4Ot-o4KUIjqyQR",
+      "name": "00003081-fraude_inversion_v4_unbranded_RYSM.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-24T02:45:44.000Z",
+      "size": "24480",
+      "subfolder": "04",
+      "subfolderName": "04. ERICK_RUBI_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1Jhc8uOG0Z_yZZZHMGQqcCQKeFuGAXqGq",
+      "name": "00003077-fraude_inversion_v4_unbranded_RYSM.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-24T01:47:02.000Z",
+      "size": "24068",
+      "subfolder": "04",
+      "subfolderName": "04. ERICK_RUBI_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1DleSViqWDdzJv4rbXJYA7DWOX0O80k3L",
+      "name": "00003082-AUDIO-2026-03-23-19-03-04.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-03-24T01:47:02.000Z",
+      "size": "78880",
+      "subfolder": "04",
+      "subfolderName": "04. ERICK_RUBI_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "17AeaZQJOHVBysaTW1IRRWhV8S66c392_",
+      "name": "00003050-fraude_inversion_v3_azul_RYSM.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-19T03:44:42.000Z",
+      "size": "25923",
+      "subfolder": "04",
+      "subfolderName": "04. ERICK_RUBI_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1uE8ESJktMcbpC0j3LsmPMs3NyY3xS0nL",
+      "name": "00003029-fraude_inversion_v2_azul_RYSM_1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-18T19:22:30.000Z",
+      "size": "26309",
+      "subfolder": "04",
+      "subfolderName": "04. ERICK_RUBI_Conversaciones_WA",
+      "nestedPath": null
+    }
+  ]
+}

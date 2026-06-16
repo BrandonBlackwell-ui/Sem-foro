@@ -1,0 +1,188 @@
+{
+  "number": "28",
+  "folderTitle": "28. QUERETARO",
+  "folderId": "1eVo9dBJyEo3mV75eMgNcnvBoewLcWaQp",
+  "folderModifiedTime": "2026-04-23T04:26:53.818Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "QUERETARO_chat_consolidado.txt",
+    "modifiedTime": "2026-05-14T01:10:56Z",
+    "source": "04.QUERETARO_Conversaciones_WA"
+  },
+  "deliverableSource": "none",
+  "lastActivity": {
+    "time": "2026-05-14T01:10:56Z",
+    "source": "04.QUERETARO_Conversaciones_WA",
+    "file": "QUERETARO_chat_consolidado.txt",
+    "fileId": "1OImh-onVdQnASTdILCesEI-sLmz0hICV"
+  },
+  "subfolderActivity": {
+    "01. QUERETARO_Contratos_OC": {
+      "subfolderId": "1YC7PbZ1wF7Lwxv2SpgaRAD0VCv9DLtYA",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:12Z_verify",
+      "last_verified_at": "2026-06-12T14:09:12Z"
+    },
+    "02. QUERETARO_Entregables": {
+      "subfolderId": "1G5TQZngkbyPW0P8cIESj-CjZ-rKHaw8t",
+      "fileCount": 3,
+      "latestModified": "2026-05-02T02:07:46Z",
+      "latestFile": "Plan_Vinculacion_Medios_QRO_2026_1MAY.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:05Z_verify",
+      "last_verified_at": "2026-06-11T01:58:05Z"
+    },
+    "03. QUERETARO_Reportes_avance": {
+      "subfolderId": "1bDaSg7j_yLnDkHCMkyZU-mCB8GkSfP03",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:05Z_verify",
+      "last_verified_at": "2026-06-11T01:58:05Z"
+    },
+    "04.QUERETARO_Conversaciones_WA": {
+      "subfolderId": "1nemp2xIawQAeY0UJUf_NGLprNITBjUF6",
+      "fileCount": 3,
+      "latestModified": "2026-05-14T01:10:56Z",
+      "latestFile": "QUERETARO_chat_consolidado.txt",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:05Z_verify",
+      "last_verified_at": "2026-06-11T01:58:05Z"
+    },
+    "05. QUERETARO_Transcripciones_llamadas": {
+      "subfolderId": "1RDXH3Yi6d5FgLgHzKW6tKIaVEB3q1lu3",
+      "fileCount": 1,
+      "latestModified": "2026-05-04T17:09:03Z",
+      "latestFile": "Transcript llamada 28ABR2026 QRO.mhtml",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:06Z_verify",
+      "last_verified_at": "2026-06-11T01:58:06Z"
+    },
+    "06. QUERETARO_Agenda_Trabajos": {
+      "subfolderId": "1Dr2ZWqaPxZpxmJ_I3mo7NbAhheGpsy38",
+      "fileCount": 1,
+      "latestModified": "2026-05-04T17:07:33Z",
+      "latestFile": "Minuta llamada Queretaro.mhtml",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:06Z_verify",
+      "last_verified_at": "2026-06-11T01:58:06Z"
+    }
+  },
+  "pqProxy": {
+    "suggestion": "Arrancar colocación en círculo rojo esta semana con el ángulo IMPI. Prioridad: Forbes México, El Financiero (T-MEC impacto QRO), Expansión Política.",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "no_deliverable",
+    "priority": 2,
+    "label": "Producir entregable formal",
+    "text": "Arrancar colocación en círculo rojo esta semana con el ángulo IMPI. Prioridad: Forbes México, El Financiero (T-MEC impacto QRO), Expansión Política.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [
+    "contrato_OC_vacio_en_01"
+  ],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:57:05Z",
+  "driveFiles": [
+    {
+      "id": "1OImh-onVdQnASTdILCesEI-sLmz0hICV",
+      "name": "QUERETARO_chat_consolidado.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-14T01:10:56.000Z",
+      "size": "8531",
+      "subfolder": "04",
+      "subfolderName": "04.QUERETARO_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1I_7SlX3pS85MXYtrZ3QNV67laHHOo6Ka",
+      "name": "QRO CHAT EQUIPO COMPLETO ANIMALAB_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-04T17:56:26.000Z",
+      "size": "46813",
+      "subfolder": "04",
+      "subfolderName": "04.QUERETARO_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1ZICEp_l8bGukHMWV2S-QVDY5Dp625kHj",
+      "name": "QRO 27Abr2MAy2026_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-04T17:39:49.000Z",
+      "size": "4588",
+      "subfolder": "04",
+      "subfolderName": "04.QUERETARO_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "13uDE11Kw2CLf-tTy9PqMieYV9KAy8k30",
+      "name": "Transcript llamada 28ABR2026 QRO.mhtml",
+      "mimeType": "multipart/related",
+      "modifiedTime": "2026-05-04T17:09:03.000Z",
+      "size": "1850871",
+      "subfolder": "05",
+      "subfolderName": "05. QUERETARO_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1rEsxjs4KVgvME-z5aIaqGAW2yQJBj2aH",
+      "name": "Minuta llamada Queretaro.mhtml",
+      "mimeType": "multipart/related",
+      "modifiedTime": "2026-05-04T17:07:33.000Z",
+      "size": "1848779",
+      "subfolder": "06",
+      "subfolderName": "06. QUERETARO_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "14frqA5fbL1IDMXzYnS5Y2ubs8Nzk9PHQ",
+      "name": "Plan_Vinculacion_Medios_QRO_2026_1MAY.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-02T02:07:46.000Z",
+      "size": "36590",
+      "subfolder": "02",
+      "subfolderName": "02. QUERETARO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "16rOR2l_RpHkiVUnoxZp3PlXLRrYoHOUf",
+      "name": "One_pager_operativo_vinculacion_medios.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-24T20:50:58.000Z",
+      "size": "34651",
+      "subfolder": "02",
+      "subfolderName": "02. QUERETARO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1RjZmvAhj1u9HEUvx7l7lOPDCf-oIfaLg",
+      "name": "Querétaro - Propuesta de comunicación estratégica.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-22T00:57:43.000Z",
+      "size": "2497376",
+      "subfolder": "02",
+      "subfolderName": "02. QUERETARO_Entregables",
+      "nestedPath": null
+    }
+  ]
+}

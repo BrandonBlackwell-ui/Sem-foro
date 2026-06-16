@@ -1,0 +1,879 @@
+{
+  "number": "23",
+  "folderTitle": "23. LUCA/Terminación Anticipada",
+  "folderId": "129CNvNumWQd_46sp8tuBmJ9KNZWMjPHV",
+  "folderModifiedTime": "2026-05-12T03:38:39.307Z",
+  "derivedStatus": "terminated_early",
+  "statusSuffix": "TERMINACIÓN ANTICIPADA",
+  "latestDeliverable": {
+    "title": "_chat.txt (en WhatsApp Chat - Interno Luca 08052026)",
+    "modifiedTime": "2026-05-08T16:36:38Z",
+    "source": "04. LUCA_CONVERSACIONES_WA"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-08T16:39:57Z",
+    "source": "04.LUCA_CONVERSACIONES_WA",
+    "file": "WhatsApp Chat - Blackwell x Luca 08052026",
+    "fileId": "1Q-4cJb_q9-8RoooBQQUPv_5maI_ZEV7Z"
+  },
+  "subfolderActivity": {
+    "01. LUCA_CONTRATO_OC": {
+      "subfolderId": "1tELDsFloOWywhjYyh9E7AQ_X_KBAc5Bd",
+      "fileCount": 2,
+      "latestModified": "2026-05-07T18:17:54.714000Z",
+      "latestFile": "Orden_de_Compra_Blackwell_Luca_200426.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:11Z_verify",
+      "last_verified_at": "2026-06-12T14:09:11Z"
+    },
+    "02. LUCA_ENTREGABLES": {
+      "subfolderId": "1vpEO1RfXykMWkwarkkFxGoGUh29LEPiQ",
+      "fileCount": 10,
+      "latestModified": "2026-05-05T19:51:39.551000Z",
+      "latestFile": "LUCA NOTA REPORTE INDIGO 28  DE ABRIL 26",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:01Z_verify",
+      "last_verified_at": "2026-06-11T01:58:01Z",
+      "nestedNote": "Contiene subcarpetas: DOCUMENTOS COMPARTIDOS POR EL CLIENTE"
+    },
+    "03. LUCA_REPORTES_AVANCES": {
+      "subfolderId": "1Mrnyuae6azaCWG6jeayzBSO4fph2tUln",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:02Z_verify",
+      "last_verified_at": "2026-06-11T01:58:02Z"
+    },
+    "04. LUCA_CONVERSACIONES_WA": {
+      "subfolderId": "1xWUFrUCSegBOkCn9RLARJ9Rz2HUTBg2k",
+      "fileCount": 64,
+      "latestModified": "2026-05-08T16:36:38Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - Interno Luca 08052026)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:03Z_verify",
+      "last_verified_at": "2026-06-11T01:58:03Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Interno Luca 08052026, WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    "05. LUCA_TRANSCRIPCIONES_LLAMADAS": {
+      "subfolderId": "19s5PrQGx-98QQmRvaysK5e4GfTqJvETT",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:04Z_verify",
+      "last_verified_at": "2026-06-11T01:58:04Z"
+    },
+    "06. LUCA_AGENDAS_TRABAJO": {
+      "subfolderId": "15uY6LqAYxOrsvOljUqTFZQ-IYlc7NyHR",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:04Z_verify",
+      "last_verified_at": "2026-06-11T01:58:04Z"
+    }
+  },
+  "pqProxy": {
+    "score": 65,
+    "tierMix": {
+      "tier1": 0,
+      "tier2": 0,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": null,
+    "hasMetrics": false,
+    "evidence": " | DELTA 2026-05-07: OC Luca formalizada en Drive ($200K, 4 publicaciones T1/T2/mes). Primer WA registrado.",
+    "suggestion": "Cerrar revisión Frede de la Nota 4 EMMI Amparo (4 puntos: irrefutabilidad con screenshot, contexto del caso, uso de nombre Dominic, titular sin ambigüedad). Subir contrato/OC firmado a 01.CONTRATO. Lanzar primer impacto del pipeline 'positivo' (3/mes) antes del 31-may para reducir dependencia de la narrativa de litigio. Tener lista respuesta formal al requerimiento Sañudo Conesa.",
+    "fileEvaluated": "Estrategia_Luca_v260421",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 2,
+    "label": "Acción sobre delta del día",
+    "text": "Cerrar revisión Frede de la Nota 4 EMMI Amparo (4 puntos: irrefutabilidad con screenshot, contexto del caso, uso de nombre Dominic, titular sin ambigüedad). Subir contrato/OC firmado a 01.CONTRATO. Lanzar primer impacto del pipeline 'positivo' (3/mes) antes del 31-may para reducir dependencia de la narrativa de litigio. Tener lista respuesta formal al requerimiento Sañudo Conesa.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "baja",
+  "playbookViolations": [],
+  "isActive": false,
+  "lastCrawledAt": "2026-06-11T01:57:02Z",
+  "driveFiles": [
+    {
+      "id": "16Mpw3gTLMLeBJYHQVr3tZWDRnAtafT1j",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:36:38.000Z",
+      "size": "18925",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Luca 08052026"
+    },
+    {
+      "id": "1MpOsdoL7lG_LCk0Zgaso5ot9xzMIcboK",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:36:22.000Z",
+      "size": "102811",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1yiobe7QKB1m5jBLnU5wSuQjBrOkh_GyR",
+      "name": "00003167-AUDIO-2026-05-08-09-02-54.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-05-08T15:06:52.000Z",
+      "size": "35644",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Luca 08052026"
+    },
+    {
+      "id": "1SOM6JcDunbZ37vXXanD6fYeJ7SR0_hUN",
+      "name": "00000827-PHOTO-2026-05-07-14-33-58.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:33:58.000Z",
+      "size": "84483",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1JEVEr_RblMF8fUZRYnxnIxhuTIbArDTl",
+      "name": "Orden_de_Compra_Blackwell_Luca_200426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T18:17:54.714Z",
+      "size": "590341",
+      "subfolder": "01",
+      "subfolderName": "01. LUCA_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1mOTaS5YgU6qfXWnAf1Sv_dtdF2xx1T7Q",
+      "name": "00003111-_NOTA_EMMI_AMPARO_ (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T18:17:32.000Z",
+      "size": "8014",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Luca 08052026"
+    },
+    {
+      "id": "1Wc466N4-sNJR_FZ2oml9zWsMqmgrdJEO",
+      "name": "00000818-_NOTA_EMMI_AMPARO_ (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T18:17:32.000Z",
+      "size": "8014",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1AIlwL_MSIOVEezUcJKU4L8lylp9DawiU",
+      "name": "00003097-Nota_EMMI_Amparo.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T00:19:46.000Z",
+      "size": "2658846",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Luca 08052026"
+    },
+    {
+      "id": "15P71SnUTctbdLY1FoHue_EpOwcsma8fv",
+      "name": "00000811-Nota_EMMI_Amparo.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T00:19:46.000Z",
+      "size": "2658846",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1b2kl1QpLa0zE6EQ2C4qT1FRGkbgvQDzs",
+      "name": "00000791-PHOTO-2026-05-06-10-11-24.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T16:19:20.000Z",
+      "size": "90175",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1SARiktDeWc-r2hhDWKae7JDpIR-gR79P",
+      "name": "00000793-PHOTO-2026-05-06-10-11-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T16:19:20.000Z",
+      "size": "27294",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1Bq7Kht98IcB2ucM7AUIY1X5NCzG1nUk6",
+      "name": "00000792-PHOTO-2026-05-06-10-11-34.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T16:19:20.000Z",
+      "size": "94074",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1Vq_QsyeK4sqNm04a7eCu9rhuDoAILdA-",
+      "name": "00003074-Nota_EMMI_Amparo.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T20:10:32.000Z",
+      "size": "8045",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Luca 08052026"
+    },
+    {
+      "id": "13ihBF8aUxmzNrU6vOdJy6sI0zUEp4FlB",
+      "name": "00000795-Nota_EMMI_Amparo.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T20:10:32.000Z",
+      "size": "8045",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1l7FCpt06-QbDdlSuILByP-pBGkvJLnwwa8OAsyY3N1o",
+      "name": "LUCA NOTA REPORTE INDIGO 28  DE ABRIL 26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-05T19:51:39.551Z",
+      "size": "796497",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1lsqihiXAluVZEScZdQ1CBBKuqUn1BRxQ4pC85hKa5JE",
+      "name": "LUCA NOTA CRÓNICA 22 DE ABRIL 26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-05T19:48:48.602Z",
+      "size": "540717",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1V2sLFyYBF64nB2bZ26C1s0UZHjkwHHk2u_pD90cy-cM",
+      "name": "LUCA NOTA EXCÉLSIOR 22 DE ABRIL 26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-05T19:46:58.845Z",
+      "size": "595357",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1-iXrqpLEG9dp1dEoF5yZNkRGiM-iRBlqA7I4g7kmBi0",
+      "name": "Estrategia_Luca_v260421",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-05T19:39:58.189Z",
+      "size": "20471",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": "DOCUMENTOS COMPARTIDOS POR EL CLIENTE"
+    },
+    {
+      "id": "1rzh_08kwH3tVtKyn21eGpMFS_WQPAkp4",
+      "name": "00000786-PHOTO-2026-05-04-17-02-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T23:02:14.000Z",
+      "size": "78629",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1_Ab38Dn5jgBxRiw-27liF7gv1vuw-4-K",
+      "name": "00000750-PHOTO-2026-04-30-19-29-26.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-01T01:29:26.000Z",
+      "size": "189368",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1arX860jr54hvZ703g6WW-P-YtvDokB4c",
+      "name": "00000743-PHOTO-2026-04-30-15-14-06.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T21:20:02.000Z",
+      "size": "153594",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1kOzpXp8Kxf-2cdZpXQhLiOxv2lCZU0BV",
+      "name": "00000728-PHOTO-2026-04-29-23-10-03.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T05:13:00.000Z",
+      "size": "78690",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1Xzryf_nC6Luc2sPZmh1LvctSuO78VGAv",
+      "name": "00000700-PHOTO-2026-04-29-20-53-46.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T02:55:26.000Z",
+      "size": "74712",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1dEj1wS8aCHEA-fQqGw4CSXN0C6BXxhRb",
+      "name": "00000691-AUDIO-2026-04-29-20-30-48.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-04-30T02:33:28.000Z",
+      "size": "237834",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1KdD6BL_eWGXSxRfJOH3MAHtLANO_0wLC",
+      "name": "00000636-PHOTO-2026-04-28-09-56-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T15:56:56.000Z",
+      "size": "92373",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "19m4aWoCbuQxld3Xac7g6hU1BlEnbl2Hh",
+      "name": "00000604-Nota_EMMI_Final.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-27T19:31:48.000Z",
+      "size": "9906",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1sE0aKbzctU2MQ3u_jy-9a91AOCrOouIp",
+      "name": "00000588-Nota_EMMI_Final.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-27T16:55:48.000Z",
+      "size": "9867",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1bDEMid8sPWn3iIqrimGLbT2ceJ9M_NrA",
+      "name": "00000576-Nota EMMI Final.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-27T16:08:48.000Z",
+      "size": "9874",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1KdeURiiov_8ZLqENFDNRSCwN2_Zt3pD6",
+      "name": "00000578-PHOTO-2026-04-27-09-12-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T16:08:48.000Z",
+      "size": "55965",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1hwqwHBrnqiBRdJT-5GFyntq7qANDFS9h",
+      "name": "00000563-PHOTO-2026-04-25-13-54-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-25T19:58:06.000Z",
+      "size": "87774",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1eqcHNy3OekShUEqgZ_4OQbeouFrWMF6s",
+      "name": "00000555-Nota EMMI Final.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-25T16:12:40.000Z",
+      "size": "9852",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "12bXZns1Xh_XBm89aCIlxUrHw0OywraNU",
+      "name": "00000549-Nota EMMI Final.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-25T15:42:38.000Z",
+      "size": "9874",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1AFnAd3Ki3i8z__qqeo8yGvFNyo-6KZuk",
+      "name": "00000524-Nota_EMMI_Resolucion_.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-25T15:00:34.000Z",
+      "size": "8221",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1jiiqcUYDpyhN2pPVqTPARnIT7-C9qumK",
+      "name": "00000518-Copias Luca- Fojas 852 a 1065.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-24T01:06:28.000Z",
+      "size": "21257692",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1nZOjw-Bqk9bR3BTkoWVTXAhSjEBm1NuR",
+      "name": "Blackwell_Template NDA 200426.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T04:20:17.279Z",
+      "size": "41890",
+      "subfolder": "01",
+      "subfolderName": "01. LUCA_CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1hWjzjGoGbPTR8UuznZ0fwdqO_Xk3KJWm",
+      "name": "CamScanner 14-11-25 14.46.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T04:18:37.000Z",
+      "size": "3056137",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": "DOCUMENTOS COMPARTIDOS POR EL CLIENTE"
+    },
+    {
+      "id": "1KfEMPJom6Yi_4l_V5HXwsT-D01BnUVQ_",
+      "name": "CamScanner 14-11-25 14.43.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T04:18:35.000Z",
+      "size": "2817516",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": "DOCUMENTOS COMPARTIDOS POR EL CLIENTE"
+    },
+    {
+      "id": "1wP102oADs5FzphPg3DPnVBi1yEd6_2-P",
+      "name": "PA_Morena_Dip_Viedma_Delitos_Fiscales.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T04:18:29.000Z",
+      "size": "485277",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": "DOCUMENTOS COMPARTIDOS POR EL CLIENTE"
+    },
+    {
+      "id": "1FVUw7BRh4WQLGsV161SN1P_SX9zBGUXX",
+      "name": "LUCA DENUNCIA REVELACION DE SECRETOS DEFINITIVA (1) (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T04:18:26.000Z",
+      "size": "35376",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": "DOCUMENTOS COMPARTIDOS POR EL CLIENTE"
+    },
+    {
+      "id": "1qW88J_R3W4OeWRUt2GwggKBZxrkTy-06",
+      "name": "LUCA DENUNCIA REVELACION DE SECRETOS DEFINITIVA (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T04:18:23.000Z",
+      "size": "35376",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": "DOCUMENTOS COMPARTIDOS POR EL CLIENTE"
+    },
+    {
+      "id": "1ASXsnKHUjYi29qCNhag6WfO5IbWhywCf",
+      "name": "Blackwell_LUCA_Propuesta amplificacioìn narrativa  (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T04:18:18.000Z",
+      "size": "201535",
+      "subfolder": "02",
+      "subfolderName": "02. LUCA_ENTREGABLES",
+      "nestedPath": "DOCUMENTOS COMPARTIDOS POR EL CLIENTE"
+    },
+    {
+      "id": "1PQnfrvqyUFpQJxs_8FZ2vHzj2b5TVGZC",
+      "name": "00000511-PHOTO-2026-04-22-20-56-27.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-23T02:58:00.000Z",
+      "size": "173651",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "18M2GIzqZS0ZjYSqjK4zzD40loGd-OXgs",
+      "name": "00000491-Emmi Tec - NY.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T01:08:12.000Z",
+      "size": "619478",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1RLwmZU8cEqvo72KvbWQngWYFnvQgksNE",
+      "name": "00000478-PHOTO-2026-04-22-18-04-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-23T00:05:08.000Z",
+      "size": "90601",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1KxqhAnNu0sraHXwNrgxS3LiNqEzEPYCF",
+      "name": "00000474-PHOTO-2026-04-22-18-03-21.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-23T00:05:08.000Z",
+      "size": "126281",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1YDuWGV2Ozfb0mygMblziI_sVIiru1bhX",
+      "name": "00000469-PHOTO-2026-04-22-16-57-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T23:39:12.000Z",
+      "size": "169283",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1r2sEzdINzaMwK5skUSp0P5SbxNF6U4ab",
+      "name": "00000462-PHOTO-2026-04-22-16-42-05.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T22:42:06.000Z",
+      "size": "153983",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1INJIQH22XRHy7DGkgJSiA6XtgVKMCtVt",
+      "name": "00000442-Nota 2 Cronica.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-22T21:49:40.000Z",
+      "size": "68666",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1JTHzBlBpJt6MDncmh0PwC_YlyCfsm2kp",
+      "name": "00000415-Nota 2 Cronica (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-22T20:58:02.000Z",
+      "size": "68613",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1-6_SAGQwhyKNc0831muw1Jv-jTdpjD8g",
+      "name": "00000407-Nota 2 Cronica (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-22T20:43:20.000Z",
+      "size": "69823",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1rPPqKrB6_GHzhylFsTKcltujbjkewzJH",
+      "name": "00000384-Nota 2 Cronica.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-22T19:38:48.000Z",
+      "size": "67987",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1uRvxWL_sgqLLuJNwKFU3pbp7GrcdYDv4",
+      "name": "00000353-Nota 2 Cronica.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-22T19:00:44.000Z",
+      "size": "7559",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1xlGXSx2G18z2qMqssRB9O4M47NYA73Uh",
+      "name": "00000342-PHOTO-2026-04-22-12-38-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T18:38:24.000Z",
+      "size": "84674",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1WPtqs59XxkdN1ZwXj_U2mijKqyiljMMI",
+      "name": "00000333-PHOTO-2026-04-21-17-04-32.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-21T23:04:34.000Z",
+      "size": "44354",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1KSh4T5-bzR_sxCHWnZ5SzEyG_ME-QerG",
+      "name": "00000310-PHOTO-2026-04-21-15-50-10.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-21T21:50:10.000Z",
+      "size": "32998",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1DoZlY4Ds4_zDr2eBZ1LrIJIwVGY81Y_t",
+      "name": "00000300-NOTA 1 - Proceso penal como noticia (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T21:49:22.000Z",
+      "size": "8249",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1vCw0I_-oqPVtZiSjHEOWn-SLItHRvsz6",
+      "name": "00000298-STICKER-2026-04-21-15-41-43.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-04-21T21:49:22.000Z",
+      "size": "277990",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1odMHbBmmasN-jDsP6dpZdHhJ8zJL1oCl",
+      "name": "00000272-Estrategia_Luca_v260421 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T19:46:42.000Z",
+      "size": "224863",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1zx5HXqc38VgHx8dPOM_VFCzyWKPkSkZ9",
+      "name": "00000273-NOTA 1 - Proceso penal como noticia.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T19:46:38.000Z",
+      "size": "8252",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1K5zX9epRp1FI0c0_AwHaPKvYKkORLYym",
+      "name": "00000249-Estrategia_Luca_v260421.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T18:27:24.000Z",
+      "size": "224454",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1RCwPE-d_1RHCZDSPDnGXXnGEZ4o8tIdx",
+      "name": "00000228-PHOTO-2026-04-21-10-04-16.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-21T16:16:14.000Z",
+      "size": "230629",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1S3rOT_0kSg1S1L_vucqYd5ejkxZ6HnRn",
+      "name": "00000227-Estrategia_Luca_v260420.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T14:47:08.000Z",
+      "size": "226487",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1BYvCzcm2hTYcy9k1Q0qNGYxQo-Hq6vbb",
+      "name": "00000222-Estrategia_Luca_v260420.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T14:47:08.000Z",
+      "size": "226487",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1OJxuHyjNKNzBobfMx0MmGIARkXzVq8fl",
+      "name": "00000185-CamScanner 14-11-25 14.46.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T16:57:46.000Z",
+      "size": "3056137",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1iHfbse8yTR5UrFKZIvfqQHWnPb7uUS00",
+      "name": "00000184-CamScanner 14-11-25 14.43.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T16:57:28.000Z",
+      "size": "2817516",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "13JFT_xa7DPcoRAJHKR-8zR1YGRRA2_n3",
+      "name": "00000182-Complemento Carpeta LUCA-3 Marzo 2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T16:34:54.000Z",
+      "size": "278114231",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1nZPI8sRny2_jYhu8FAkx47nbHP-GXkP_",
+      "name": "00000176-26.4 Expansión 1337 Las 30 promesas de los negocios.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-19T03:35:08.000Z",
+      "size": "85935574",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1aA0OaRZFoyvj50nTwCqq9_BC_BdmSLdA",
+      "name": "00000162-PA_Morena_Dip_Viedma_Delitos_Fiscales.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-19T03:18:38.000Z",
+      "size": "485277",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1mIQwiIPnv02BRt8W3axdqpkQvDVTKzcu",
+      "name": "00000866-LUCA DENUNCIA REVELACION DE SECRETOS DEFINITIVA (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-18T19:32:14.000Z",
+      "size": "35376",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "15xjqnl97PMQPlaNG9voZA1toF047qYA4",
+      "name": "00000119-LUCA DENUNCIA REVELACION DE SECRETOS DEFINITIVA (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-18T19:32:14.000Z",
+      "size": "35376",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1_JFhduaH3X5oHJyHPXgRhJMeRfEDvYlt",
+      "name": "00000092-Blackwell_LUCA_Propuesta amplificacioìn narrativa  (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-18T19:27:04.000Z",
+      "size": "201535",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1CuBeipIP4crgLrV79elfegCih2T_JlI9",
+      "name": "00000083-AUDIO-2026-04-18-12-20-16.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-04-18T18:20:48.000Z",
+      "size": "20501",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1tr0txV2TikjqFaUMVaZaeY6cT1aRxk3v",
+      "name": "00003173-STICKER-2026-05-08-09-25-22.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-26T01:11:54.000Z",
+      "size": "233618",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Luca 08052026"
+    },
+    {
+      "id": "1wiw1bG-bycX3i2kZJF3e6BsUOEEO20Bf",
+      "name": "00003058-STICKER-2026-05-04-17-24-30.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-26T01:11:54.000Z",
+      "size": "233618",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Luca 08052026"
+    },
+    {
+      "id": "1QHMSwJsg6YuT1HSG9nvxfditRRZgTLbe",
+      "name": "00000048-Pull de Medios de Comunicación (Luca).xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-02-16T19:20:10.000Z",
+      "size": "15394",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    },
+    {
+      "id": "1Wli0R1Yi-D7UznIsThnzLY-WA1cnjN-p",
+      "name": "00000030-AUDIO-2025-12-09-18-32-48.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2025-12-10T00:37:12.000Z",
+      "size": "22359",
+      "subfolder": "04",
+      "subfolderName": "04. LUCA_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell x Luca 08052026"
+    }
+  ]
+}

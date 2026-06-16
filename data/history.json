@@ -1,0 +1,70 @@
+{
+  "generated": "2026-04-22",
+  "lastCleaned": "2026-04-30",
+  "note": "Snapshot 21-abr (v1.2) usa metodología subjetiva sobre copia desktop. Snapshot 22-abr (v1.3) usa checklist determinístico sobre carpeta Drive. Cleaned 30-abr: cuentas con 0/0/0/0 en v1.3 (sin evidencia evaluable) reescritas a null para evitar el artefacto de sparkline 'caer a cero'. Estas no son deterioros reales — son cuentas que el checklist no podía evaluar por falta de workspace Drive o entregables registrados.",
+  "snapshots": [
+    {
+      "date": "2026-04-21",
+      "label": "v1.2 · Desktop",
+      "methodology": "subjective",
+      "scores": {
+        "aduanas":  {"co":85,"sf":80,"pq":90,"sc":88},
+        "rocha":    {"co":85,"sf":75,"pq":90,"sc":80},
+        "dalinde":  {"co":80,"sf":85,"pq":80,"sc":75},
+        "turbofin": {"co":78,"sf":85,"pq":72,"sc":80},
+        "azvi":     {"co":78,"sf":85,"pq":72,"sc":80},
+        "apollo":   {"co":82,"sf":55,"pq":68,"sc":76},
+        "cima":     {"co":70,"sf":65,"pq":75,"sc":60},
+        "maja":     {"co":72,"sf":50,"pq":40,"sc":75},
+        "tello":    {"co":65,"sf":60,"pq":65,"sc":55},
+        "irugami":  {"co":60,"sf":50,"pq":55,"sc":50},
+        "futbol":   {"co":55,"sf":45,"pq":50,"sc":60},
+        "veracruz": {"co":50,"sf":55,"pq":60,"sc":45},
+        "credix":   {"co":45,"sf":50,"pq":30,"sc":70},
+        "uldis":    {"co":50,"sf":40,"pq":0, "sc":55},
+        "jack":     {"co":null,"sf":null,"pq":null,"sc":null},
+        "idlayr":   {"co":null,"sf":null,"pq":null,"sc":null},
+        "armor":    {"co":null,"sf":null,"pq":null,"sc":null},
+        "mapelly":  {"co":null,"sf":null,"pq":null,"sc":null},
+        "stprm":    {"co":null,"sf":null,"pq":null,"sc":null},
+        "pujol":    {"co":null,"sf":null,"pq":null,"sc":null}
+      }
+    },
+    {
+      "date": "2026-04-22",
+      "label": "v1.3 · Drive + checklist (cleaned 30-abr)",
+      "methodology": "checklist",
+      "cleanedRule": "Cuentas con 0/0/0/0 reescritas a null. Eran artefacto de checklist sobre cuentas sin workspace Drive o sin entregables registrados — no representaban evaluación real.",
+      "scores": {
+        "stprm":     {"co":63,"sf":0,  "pq":20, "sc":70},
+        "ipc":       {"co":null,"sf":null,"pq":null,"sc":null},
+        "azvi":      {"co":93,"sf":60, "pq":100,"sc":55},
+        "tello":     {"co":43,"sf":60, "pq":50, "sc":20},
+        "nuvoil":    {"co":null,"sf":null,"pq":null,"sc":null},
+        "cima":      {"co":80,"sf":60, "pq":100,"sc":55},
+        "apollo":    {"co":75,"sf":60, "pq":60, "sc":70},
+        "armor":     {"co":null,"sf":null,"pq":null,"sc":null},
+        "jack":      {"co":50,"sf":null,"pq":50,"sc":null},
+        "maja":      {"co":75,"sf":60, "pq":90, "sc":35},
+        "turbofin":  {"co":93,"sf":60, "pq":100,"sc":55},
+        "pujol":     {"co":25,"sf":60, "pq":40, "sc":0},
+        "rocha":     {"co":85,"sf":60, "pq":60, "sc":40},
+        "futbol":    {"co":43,"sf":60, "pq":10, "sc":20},
+        "dalinde":   {"co":100,"sf":60,"pq":100,"sc":70},
+        "andy":      {"co":null,"sf":null,"pq":null,"sc":null},
+        "veracruz":  {"co":50,"sf":100,"pq":50, "sc":65},
+        "luca":      {"co":null,"sf":null,"pq":null,"sc":null},
+        "bernardo":  {"co":null,"sf":null,"pq":null,"sc":null},
+        "uldis":     {"co":null,"sf":null,"pq":null,"sc":null},
+        "credix":    {"co":33,"sf":60, "pq":40, "sc":15},
+        "erikrubi":  {"co":null,"sf":null,"pq":null,"sc":null},
+        "totalplay": {"co":null,"sf":null,"pq":null,"sc":null},
+        "gicsa":     {"co":null,"sf":null,"pq":null,"sc":null},
+        "aduanas":   {"co":85,"sf":60, "pq":20, "sc":40},
+        "mapelly":   {"co":43,"sf":60, "pq":10, "sc":20},
+        "irugami":   {"co":null,"sf":null,"pq":null,"sc":null},
+        "idlayr":    {"co":null,"sf":null,"pq":null,"sc":null}
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "number": "10",
+  "account_id": "10",
+  "account_name": "JACK LEVI",
+  "cadenceType": null,
+  "files": [],
+  "files_read_count": 0,
+  "files_skipped": [],
+  "account_summary": {
+    "content_summary": null,
+    "key_facts": [],
+    "dated_deltas": [],
+    "pq_assessment": {
+      "placements": null,
+      "tier_mix": null,
+      "quality_narrative": null,
+      "result_vs_objective": null,
+      "score_estimate": null
+    },
+    "sc_signals": [],
+    "co_assessment": {
+      "committed": null,
+      "delivered": null,
+      "on_time": null,
+      "late": null,
+      "missed": null,
+      "note": "No hay documentación disponible para análisis."
+    },
+    "media_reconciliation": {
+      "placements": null,
+      "reports": null,
+      "gap": null
+    },
+    "business_risk": "Imposibilidad de evaluar riesgo: cuenta pausada sin documentación accesible. Estado y fecha de pausa desconocidos.",
+    "opportunity": null,
+    "recommended_action": "Reactivar acceso a carpetas de la cuenta JACK LEVI (#10) y revisar documentación de entregables, reportes, conversaciones y transcripciones para análisis operativo completo.",
+    "score_adjustment_recommendation": {
+      "co_delta": null,
+      "pq_delta": null,
+      "sc_delta": null,
+      "reason": "Sin contenido de archivos disponible, no hay base para ajuste de métricas."
+    },
+    "monday_ticket": {
+      "tipo": "urgente",
+      "trigger": "Acceso fallido a documentación de JACK LEVI (#10). Verificar estructura de carpetas (01-06) y permisos. Cuenta marcada como 'paused' sin última actividad registrada. Coordinar con administrador de portafolio para reactivación e ingesta de archivos."
+    }
+  },
+  "analyzed_at": "2026-06-04T10:14:31Z"
+}

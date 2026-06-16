@@ -1,0 +1,57 @@
+{
+  "account_number": "27",
+  "account_name": "CUERNAVACA",
+  "schema": {
+    "items": {
+      "contrato": {
+        "label": "Contrato u OC",
+        "w_pq": 0.0,
+        "w_co": 0.1,
+        "w_sc": 0.0,
+        "w_sf": 0.0
+      },
+      "entregables": {
+        "label": "Entregables semanales",
+        "w_pq": 0.5,
+        "w_co": 0.4,
+        "w_sc": 0.2,
+        "w_sf": 0.0
+      },
+      "reporte": {
+        "label": "Reporte de avance",
+        "w_pq": 0.4,
+        "w_co": 0.2,
+        "w_sc": 0.2,
+        "w_sf": 0.0
+      },
+      "whatsapp": {
+        "label": "WhatsApp actualizado",
+        "w_pq": 0.0,
+        "w_co": 0.1,
+        "w_sc": 0.3,
+        "w_sf": 0.6
+      },
+      "transcripciones": {
+        "label": "Transcripciones llamadas",
+        "w_pq": 0.0,
+        "w_co": 0.05,
+        "w_sc": 0.3,
+        "w_sf": 0.4
+      },
+      "agenda": {
+        "label": "Agenda de trabajos",
+        "w_pq": 0.1,
+        "w_co": 0.15,
+        "w_sc": 0.0,
+        "w_sf": 0.0
+      }
+    },
+    "statusScore": {
+      "ok": 100,
+      "partial": 50,
+      "missing": 0,
+      "na": null
+    }
+  },
+  "scores": {}
+}

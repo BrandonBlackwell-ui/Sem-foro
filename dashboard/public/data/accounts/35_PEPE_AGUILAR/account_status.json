@@ -1,0 +1,1252 @@
+{
+  "number": "35",
+  "folderTitle": "35. PEPE AGUILAR",
+  "folderId": "1jgIDdmpybRN2aljDZ6b5nGCNxiDHHa8T",
+  "folderModifiedTime": "2026-05-07T19:23:35.181Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "Plan-Comunicacion-PPA.pptx",
+    "modifiedTime": "2026-06-12T01:26:39.677000Z",
+    "source": "02. PEPE_AGUILAR_Entregables"
+  },
+  "deliverableSource": "02. PEPE_AGUILAR_Entregables",
+  "lastActivity": {
+    "time": "2026-05-15T01:31:50.953Z",
+    "source": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+    "file": "Llamada equipo interno PPA - BWS 14-05-26",
+    "fileId": "10lZSJ7LjDpH-h_HAgDNULV3PTYdT6fWpq4obyMMiip8"
+  },
+  "subfolderActivity": {
+    "01. PEPE_AGUILAR _CONTRATO_OC": {
+      "subfolderId": "1e0AVpCg86NlsT_kN9h90Rn1NOhMPcw5j",
+      "fileCount": 16,
+      "latestModified": "2026-05-21T14:44:56Z",
+      "latestFile": "ODC_EQUINOCCIO.pdf",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:14Z_verify",
+      "last_verified_at": "2026-06-12T14:09:14Z",
+      "nestedNote": "Contiene subcarpetas: PEPE_AGUILAR_EXPEDIENTE"
+    },
+    "02. PEPE_AGUILAR_Entregables": {
+      "subfolderId": "1xMJCQmxMGShZ2ayuNXx_2Zm4t-JvDcaT",
+      "fileCount": 14,
+      "latestModified": "2026-06-12T01:26:39.677000Z",
+      "latestFile": "Plan-Comunicacion-PPA.pptx",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:19Z_verify",
+      "last_verified_at": "2026-06-12T14:09:19Z",
+      "nestedNote": "Contiene subcarpetas: Brief - Press Junket"
+    },
+    "03. PEPE_AGUILAR_Reportes_avance": {
+      "subfolderId": "1UD9cvBJFojlFvPZsgT6_PwaAEKmzSNjN",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:19Z_verify",
+      "last_verified_at": "2026-06-12T14:09:19Z"
+    },
+    "04. PEPE_AGUILAR_CONVERSACIONES_WA": {
+      "subfolderId": "1eloFreuoPsYpUOU6cn2_xdY-Juob24un",
+      "fileCount": 63,
+      "latestModified": "2026-05-18T16:22:40Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - ESTRATEGIA CRISIS PPA_18052026)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:19Z_verify",
+      "last_verified_at": "2026-06-12T14:09:19Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - ESTRATEGIA CRISIS PPA_18052026, WhatsApp Chat - PPA COMMS_18052026, WhatsApp Chat - Interno Pepe Aguilar_18052026, WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    "05. PEPE_AGUILAR_Transcripciones_llamadas": {
+      "subfolderId": "1NY-V6nLVonCV2GbOSWTPKQpHmo-Qv5Lh",
+      "fileCount": 20,
+      "latestModified": "2026-06-10T19:18:58.545000Z",
+      "latestFile": "Pepe Debrief QVAA",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:20Z_verify",
+      "last_verified_at": "2026-06-12T14:09:20Z"
+    },
+    "06. PEPE_AGUILAR_Agenda_Trabajos": {
+      "subfolderId": "1pfmtjEOErZZK_S9JnOH9oGUhqVH32pl1",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:21Z_verify",
+      "last_verified_at": "2026-06-12T14:09:21Z"
+    }
+  },
+  "pqProxy": {
+    "score": 60,
+    "tierMix": {
+      "tier1": 0,
+      "tier2": 0,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": "media",
+    "hasMetrics": false,
+    "evidence": "DELTA 2026-05-07: cuenta nueva creada hoy. Onboarding con 2 archivos formales (ver delta_note en drive_intelligence). | DELTA 2026-05-11T18:30:00Z: Subfolder PEPE_AGUILAR_EXPEDIENTE creado 8-may 17:30 con 6 documentos KYC completos (razón social Equinoccio Records, rep. legal Daniela Quezada).",
+    "suggestion": "KYC completo permite cerrar contrato esta semana. Enviar propuesta + contrato a Daniela Quezada para firma electrónica antes del 15-may. Definir scope inicial Pepe Aguilar (ya el equipo entiende razón social Equinoccio Records). Activar fase de entregables iniciales: lineamientos voz Pepe + plan comunicación post-firma.",
+    "fileEvaluated": "PEPE_AGUILAR_EXPEDIENTE (KYC)",
+    "evaluatedAt": "2026-05-11T18:30:00Z"
+  },
+  "nextAction": {
+    "type": "new_account",
+    "priority": 2,
+    "label": "Onboarding cuenta nueva",
+    "text": "Cuarta llamada interna BWS sobre PPA registrada (14-may), reforzando cadencia de pre-firma. Acelerar envío propuesta + contrato Daniela Quezada para firma electrónica antes del 15-may (KYC completo). Definir scope y precio antes de cerrar.",
+    "source": "delta-2026-05-15"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "playbookViolations": [
+    "missing_slot_04."
+  ],
+  "analysisConfidence": "alta",
+  "isActive": true,
+  "lastCrawledAt": "2026-06-12T14:09:03Z",
+  "driveFiles": [
+    {
+      "id": "1jabvVomlRQoTx7Ay6dTQ5uCu010_2hX0",
+      "name": "Plan-Comunicacion-PPA.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-12T01:26:39.677Z",
+      "size": "95034",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1dc560pWeIU-RCEMdPIbdjBonrHJdVkgM",
+      "name": "Plan_Pepe_Blackwell_v1.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-11T22:37:24.529Z",
+      "size": "39896",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1wgnP2moyswrokqkA2KWlJ6gykKGdTGj4dbUKhnJKnUg",
+      "name": "OnePager_QVAA_PepeAguilar",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-06-11T19:27:41.630Z",
+      "size": "10346",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1irCvu--tFRRdhoEPqOlUCFAKMxVRPnby",
+      "name": "PPA_Entrevistas QVDA.docx (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-11T15:52:31.000Z",
+      "size": "224270",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1VU06eK3ZDg6PFck9p6Yzma75UEJQksGR",
+      "name": "PPA_Entrevistas QVDA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-11T01:50:10.425Z",
+      "size": "162361",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1x38iP0jPHvcVp0DgUeC2k0J5o0eN2FYI",
+      "name": "BW-07-PERC-0613.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-11T00:10:39.345Z",
+      "size": "161380",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1cf5R_NW7ihJZDLZFgrE3We68omDTH_5ukBHackxfTLQ",
+      "name": "Pepe Debrief QVAA",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T19:18:58.545Z",
+      "size": "37369",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1C6aTjpYYS6hNlswg7EY3fJK488-gFE9AQzeetPEF1sM",
+      "name": "8 JUN | Encuentros creadores JUNKET - PPA",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-08T04:55:11.462Z",
+      "size": "3519762",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": "Brief - Press Junket"
+    },
+    {
+      "id": "1QaHoZI3PE_ZtA69felbPy_OnPr7crw_M8G07f9xzB4w",
+      "name": "FINAL | PRESS JUNKET - PPA",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-05T20:08:36.781Z",
+      "size": "5089971",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": "Brief - Press Junket"
+    },
+    {
+      "id": "1xHzMLCD0wZMFzQTOFA95gmy-7llsYZA5v2Hi2eTvVlg",
+      "name": "PPA_MediaTraining_1jun2026_transcript_reconstruido",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-02T17:22:07.003Z",
+      "size": "18343",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1B-nPOJE6By8FDvjtf43f44_uRlp5Ac67",
+      "name": "PPA_MediaTraining_1jun2026_transcript_reconstruido.md",
+      "mimeType": "text/x-markdown",
+      "modifiedTime": "2026-06-02T14:21:13.000Z",
+      "size": "32312",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1v31v9G5HUZm5o8DukG9EtmFzjiPo9ZpPEBpVg80FZJU",
+      "name": "Media Training PP 1 jun 2026",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-02T13:52:03.096Z",
+      "size": "24046",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1R5DqLccGMLueJUJeiMTDVuiv7GGrqZUj",
+      "name": "Alineacion medios press junket: 2026/05/29 17:30 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-05-30T00:11:50.585Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "15LTrQZ30Aro5s454zxpWBqdxBp-Hwacn",
+      "name": "BW + PP Interno presentación reportes y app- 2026_05_29 16_29 CST - Transcript.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-29T23:37:08.000Z",
+      "size": "51457",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1eBz51xP0xYwhboydgtDClDOdP5VMDsqI",
+      "name": "Touch point PPA-BWS : 2026/05/28 14:27 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-05-29T19:29:50.870Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1cO4r3vCQknhMS_3j2PqoWW3AuKeVFocAvg8c_f0T0Ac",
+      "name": "Plan_Lanzamiento_AlbumTributo_PepeAguilar _260520",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T18:05:18.771Z",
+      "size": "13783",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1TpEODnrQDnC6ChetfEp9g3IvJMkIaNNywdd4pR12TjU",
+      "name": "Documento sin título",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-28T23:51:42.066Z",
+      "size": "30979",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1f9KuiNtDIj17Jjx4wxHDlmmiB5tFts6isjD8jyxKvfA",
+      "name": "PLAN COMUNICACIÓN QUÉ VIVA DON ANTONIO: 2026/05/22 11:00 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T18:53:28.066Z",
+      "size": "55897",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1t7ZAmY7GLAJTGHfom11Q6Aec6LL3yGfrOy0kmzt6MAs",
+      "name": "Seguimiento llamada TEAMBACK PPA 210526",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-21T19:51:10.753Z",
+      "size": "42709",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1aoPv44xkP79E7VPGuPtky7pmESyCgZZOZpKGxxEni8U",
+      "name": "TEAMBACK PPA: 2026/05/21 10:00 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-21T17:19:27.513Z",
+      "size": "39406",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1heFJLsbPFdDcnPE3r83jK806gvk1IOeh",
+      "name": "ODC_EQUINOCCIO.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-21T14:44:56.000Z",
+      "size": "105135",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1X1gmsxvzJ3P2UqaTipS8Xb-XT6A4P2Qg",
+      "name": "Contrato_Equinoccio_vf_1779318190781 FIRMADO.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-21T13:57:18.447Z",
+      "size": "184382",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1NQgnxpB7junUeCrPAoyDUVyME590KmF-",
+      "name": "NDA_Equinoccio_1779312092860 FIRMADO.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-21T13:53:47.386Z",
+      "size": "205280",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1jwRq9jkqd0M9quBCoE8UObsydRxF4ztLqB1V-r6GpOg",
+      "name": "teamback pp - 2026/05/20 19:18 CST - Transcript",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-21T04:55:20.228Z",
+      "size": "8727",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1rOjkU4AGz0_cVb3ILLAL_CCDnrI2TmTP297WvkWcDU8",
+      "name": "Plan_Concierto_Colombia_PepeAguilar_260520",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-21T04:29:54.172Z",
+      "size": "16031",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Jlr77b3-oEvHBu3AyqUxj5Sr_aeOPTFC-FxjVgMwkNE",
+      "name": "Plan_Estrategico_PepeAguilar_ 260520",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-21T04:28:58.700Z",
+      "size": "43180",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Nq3sh6cPkezhy4ktr6Lf8wjdhMm1xPJhR5sdrXbw8ro",
+      "name": "PRESENTACIÓN ESTRATEGIA DE COMUNICACIÓN PEPE: 2026/05/20 16:58 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-21T04:26:43.554Z",
+      "size": "42534",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1cFgvWJXsex3S3Lo9kMpbo9ePpBvOnn0N",
+      "name": "Blackwell_Template NDA req_080526 (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-20T19:56:59.285Z",
+      "size": "44734",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1h7ONdfA-8mVR7FC7K5Jnq1uvNkM_2gC2",
+      "name": "Contrato marco Blackwell_Equinoccio_200526 v2 (Sin Firmar).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-20T19:14:07.829Z",
+      "size": "42444",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "15L8spDEYfqeRbpi_7Wjwcmp9-gRMl-Mt",
+      "name": "Contrato marco Blackwell_Equinoccio_190526 (Sin Firmar).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-20T19:10:43.298Z",
+      "size": "42457",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1dWfCovzDjLZYqDBo0nUlC0nFGfXcdUKl",
+      "name": "Contrato marco Blackwell_Equinoccio_200526 (Sin Firmar).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-20T18:02:55.486Z",
+      "size": "42176",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1kLUdc2m3bUDbHpQnPeeRhDRGL_mg1ozY",
+      "name": "ANEXO  A CONVENIO ESPECÍFICO con CTRL 200526.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-20T17:34:37.538Z",
+      "size": "19547",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1WpRytX0PYbfVS6l7Q5I4TISR4uwgZc7w",
+      "name": "ANEXO  A CONVENIO ESPECÍFICO con CTRL 190526.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-19T15:27:24.473Z",
+      "size": "19333",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1_QJGdQ2D73u6EsGFQ9vbXd579QUkSOTmrDcPcPc0vAU",
+      "name": "LLAMADA LAURA Y SOL, COMENTARIOS DE PRIMER SAQUE DEL PLAN DE COMUNICACIÓN",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-19T04:36:10.289Z",
+      "size": "6536",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1VlGw5NJW9khWLkvSWRtprARQ0Mk9UyZc",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-18T16:22:40.000Z",
+      "size": "5579",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - ESTRATEGIA CRISIS PPA_18052026"
+    },
+    {
+      "id": "1COq_o1VYkh7xKOxpO_K8YbSi265vDNXP",
+      "name": "00003620-Ramon Ruiz.vcf",
+      "mimeType": "text/vcard",
+      "modifiedTime": "2026-05-18T16:22:16.000Z",
+      "size": "125",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1gugDY-YhTa1LsLqvI0y24EM7EcsyUbQJ",
+      "name": "00003424-Laura Alvarez (particular Pepe Aguilar).vcf",
+      "mimeType": "text/vcard",
+      "modifiedTime": "2026-05-18T16:22:16.000Z",
+      "size": "155",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1h3wN5iLv_3c-A2NRyx59LfzXuQkwBRvG",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-18T16:22:16.000Z",
+      "size": "83554",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1wWmCxbpdqrKlzy9_QS_3YJMitvhAsUVm",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-18T16:21:58.000Z",
+      "size": "9156",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - PPA COMMS_18052026"
+    },
+    {
+      "id": "1gCdnS21rppJDeVwkQcT9nlt4ahIQDdog",
+      "name": "PPA - Mapeo eventos .xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-05-18T15:09:10.703Z",
+      "size": "9166",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "119sfz7XS6ji6hOKl_xyhbWd2dxPP3o4Q",
+      "name": "00003667-Casos a estudiar para Single Brainv2.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-15T21:46:28.000Z",
+      "size": "112084",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1qf9sIV0DSjCcwCD7HTTpo4rb9VMRJe8S",
+      "name": "00003661-Casos a estudiar para Single Brain.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-15T21:11:26.000Z",
+      "size": "75508",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1R4PNsNfJ1Bnjny7V34ueNdPBHtuqT85k",
+      "name": "00003658-PHOTO-2026-05-15-14-44-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-15T20:44:14.000Z",
+      "size": "216261",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1U4c2JEuWrbkdmLlJpFCt0ET8J11yEdKnHMaEDvDEDlk",
+      "name": "Revisión herramientas de monitoreo : 2026/05/15",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T20:28:08.649Z",
+      "size": "38341",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1ITdJV3h-XrPdFL7J7Npv2Hms8y6J46Ox",
+      "name": "00003642-STICKER-2026-05-15-14-26-49.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-15T20:26:50.000Z",
+      "size": "475610",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1hDdBoHKZl6DLt2ZQCBs16PFgs4eVdJNP",
+      "name": "00003627-Resumen ejecutivo — Junta revisión herramientas de monitoreo.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-15T20:16:44.000Z",
+      "size": "102571",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1nYfLIPz0ndtgSgdJbdqAJCwve_RAdekSlv1bpV-pNMo",
+      "name": "Reunión | PRs - BWS 15-05-26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T18:22:55.006Z",
+      "size": "55244",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "10lZSJ7LjDpH-h_HAgDNULV3PTYdT6fWpq4obyMMiip8",
+      "name": "Llamada equipo interno PPA - BWS 14-05-26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T01:31:50.953Z",
+      "size": "33808",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1ur3jnSIfgFgUqU4sa6T8xneYUCUegyM0",
+      "name": "00003586-Plan_Estrategico_PepeAguilar_260514.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-14T18:50:06.000Z",
+      "size": "304660",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1w-gEcudBqE43o9YREfy2vtr3cCd8D-Ty",
+      "name": "00003569-PHOTO-2026-05-13-15-52-25.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-13T21:52:24.000Z",
+      "size": "80756",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1cqx65rW-ubaHNV9hAXgl4lg_1JbrW6ERTVZkmzc7LUA",
+      "name": "Llamada interna BWS 13 de mayo 2026",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T20:43:56.147Z",
+      "size": "4206",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1hDuclV2xZWR7AcVfml0GSaoscpzvw3oA",
+      "name": "00003557-PHOTO-2026-05-13-14-39-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-13T20:39:56.000Z",
+      "size": "74143",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1bD_6T4v43UGMRoKdDhpncmIC-bgGbhve",
+      "name": "00003551-Brief Estrategico Comunicacion.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T20:23:24.000Z",
+      "size": "27049",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1YiyqBZNUQ_EAD27Tvql_TqugwPz8KxLi",
+      "name": "00003547-estrategia_comunicacion_pepe_aguilar_2026_1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T20:10:26.000Z",
+      "size": "21097",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1RYZGmhmvRv-AvDxHkyq-kIrAMLipxpC_",
+      "name": "00003023-AUDIO-2026-05-13-11-16-58.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-13T17:16:58.000Z",
+      "size": "245163",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - ESTRATEGIA CRISIS PPA_18052026"
+    },
+    {
+      "id": "1j8HRCQ34qTGi6M_jaQN7yg_OC9SNh2dg",
+      "name": "00003005-PHOTO-2026-05-13-10-53-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-13T16:53:22.000Z",
+      "size": "103833",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - ESTRATEGIA CRISIS PPA_18052026"
+    },
+    {
+      "id": "1YsCR1MEmFaH4X1PZUV8Ef4g11JQUkHJRNzaKbIKrZMI",
+      "name": "PEPE AGUILAR NAMED TO BILLBOARD’S INDIE POWER PLAYERS LIST",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T01:17:21.377Z",
+      "size": "4803",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "13xLhi10K-GPx92hV54Jv1K0TuFomzq0A",
+      "name": "Blackwell_Strategy_PepeAguilar_BW-26-05-PA-001_v2 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T01:13:08.000Z",
+      "size": "270138",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1q4wKahyLIYdHh5WI-6NTG31cyYUGBj0QoM71VbfC5nE",
+      "name": "Teamback PPA 11-05-26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T01:05:34.955Z",
+      "size": "22453",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1PsVsFbhlRaR9X38yyaZJKYDdD24sIq6aMaxTuV-vGlQ",
+      "name": "Teamback PPA 07-05-26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T01:03:47.960Z",
+      "size": "10661",
+      "subfolder": "05",
+      "subfolderName": "05. PEPE_AGUILAR_Transcripciones_llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1j54ZnWVTSr5i6olcnf-gXt2JESsa4dgu",
+      "name": "32D Opinion de cumplimiento mayo 2026 EQUINOCCIO.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T17:34:16.000Z",
+      "size": "80442",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": "PEPE_AGUILAR_EXPEDIENTE"
+    },
+    {
+      "id": "1ANfk4yyF0-OQ0IK3vRALukp0BGkYJ6fx",
+      "name": "Comprobante de domicilio Equinoccio Records.png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-05-08T17:34:16.000Z",
+      "size": "306497",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": "PEPE_AGUILAR_EXPEDIENTE"
+    },
+    {
+      "id": "1OauJ11_8D5xpIuM1qpWdVRAjIm99DGiM",
+      "name": "Poder Equinoccio - Daniela Quezada.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T17:34:16.000Z",
+      "size": "1888079",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": "PEPE_AGUILAR_EXPEDIENTE"
+    },
+    {
+      "id": "1rYFDqlzOSBLGYaK5rXeCEnt10HMRr56Z",
+      "name": "INE Daniela Quezada.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T17:34:16.000Z",
+      "size": "179739",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": "PEPE_AGUILAR_EXPEDIENTE"
+    },
+    {
+      "id": "1K3WzmjqHuojT1Ect7uSr9SuXxBMKf5Jd",
+      "name": "Acta Constitutiva Equinoccio Records.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T17:34:16.000Z",
+      "size": "9557258",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": "PEPE_AGUILAR_EXPEDIENTE"
+    },
+    {
+      "id": "10vzI42ANqJA6gVnaJI3eHmoQJXIqR3qS",
+      "name": "CSF mayo 2026 EQUINOCCIO.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T17:34:16.000Z",
+      "size": "138965",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": "PEPE_AGUILAR_EXPEDIENTE"
+    },
+    {
+      "id": "1Tfk6_m_T3cmMFFYRvsGIv1rZ8eL3l8-g",
+      "name": "00003015-Blackwell_Strategy_PepeAguilar_BW-26-05-PA-001_v2 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T13:22:36.000Z",
+      "size": "270138",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - PPA COMMS_18052026"
+    },
+    {
+      "id": "106vhGhBcfHSuJF_yTwSxHIYCoqUxG3qL",
+      "name": "00003400-Blackwell_Strategy_PepeAguilar_BW-26-05-PA-001_v2 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T13:22:36.000Z",
+      "size": "270138",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1Tf92lPl-OqwwQyuL-KhtyyFhtv69MiAU",
+      "name": "00003398-PHOTO-2026-05-07-21-22-00.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-08T03:26:20.000Z",
+      "size": "78582",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1niWJKucTAvk_J7K7UW2a-hwD0pykuZDk",
+      "name": "00003394-Blackwell_Strategy_PepeAguilar_BW-26-05-PA-001  .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T03:20:54.000Z",
+      "size": "336886",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "12KTTW7lDQQ_mTAf1CcHoHPnhhpOIF4Xt",
+      "name": "00003387-PHOTO-2026-05-07-20-59-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-08T03:04:16.000Z",
+      "size": "106491",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "16Gfh6lzdbjPKAjCqffP3ClsGlqYTE-dL",
+      "name": "00003384-Blackwell_Strategy_PepeAguilar_BW-26-05-PA-001  .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T02:47:56.000Z",
+      "size": "271076",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1q8iECXPVYRW3ank4LGf0Hg1llT-QsyN9",
+      "name": "00003377-AUDIO-2026-05-07-18-29-23.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-08T00:51:32.000Z",
+      "size": "103157",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1sCbpOEZJjolmRWi8kA6O8CpJpJSFA4CV",
+      "name": "Propuesta Blackwell_Pepe_Aguilar_25 abril 2026 (SIN FIRMAR).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T20:11:54.305Z",
+      "size": "189437",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1YwCxZGrz4UoR-LBnvDjN-RA0-r5LnL5B",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-07T19:37:30.000Z",
+      "size": "51093",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1Pf4Y6SDPOqJtYXqfPLPHwQmWvGk0NlUv",
+      "name": "00003344-AUDIO-2026-05-06-21-42-34.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-07T03:44:32.000Z",
+      "size": "205565",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1nxFA5CLqC25JtAKkP6I5tpxXP0Y9dMMV",
+      "name": "00003344-AUDIO-2026-05-06-21-42-34.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-05-07T03:44:32.000Z",
+      "size": "205565",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1w1cnh6qzAWW5mKaiwQZzdqDVaOag1XB_",
+      "name": "00003041-Pepe_Aguilar_Comunicado.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T00:35:26.000Z",
+      "size": "8256",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - PPA COMMS_18052026"
+    },
+    {
+      "id": "1i_C7Pq0yr1xia2-8kn2w2kAhf3SGdVmp",
+      "name": "00003013-Pepe_Aguilar_Comunicado.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T00:35:26.000Z",
+      "size": "8256",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - PPA COMMS_18052026"
+    },
+    {
+      "id": "1d9uHd6o2OtKUQLu46ub-E4Bjk_auD-BL",
+      "name": "00003334-Pepe_Aguilar_Comunicado.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T00:35:26.000Z",
+      "size": "8256",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1oGiQk9HES6FFy-bB9yQ7SZkYQKS0dL5P",
+      "name": "00003334-Pepe_Aguilar_Comunicado.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T00:35:26.000Z",
+      "size": "8256",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1K_r8PmAU8r-EH-moIW2gA5Mw739HkIbT",
+      "name": "00003314-Pepe_Aguilar_Comunicado_Speech.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T00:19:46.000Z",
+      "size": "10392",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1dqQbDr56cewLjSVN5F1j_CGKGqNcLI6K",
+      "name": "00003314-Pepe_Aguilar_Comunicado_Speech.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T00:19:46.000Z",
+      "size": "10392",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1r368JhcRSnjqnFdqyAC8zRzfybaODvG4",
+      "name": "00003264-Analisis_PepeAguilar_Mayo2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-06T22:38:34.000Z",
+      "size": "11616",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "12WE1nZw9mgj5wJEd96BPPjy9cmOZBEOg",
+      "name": "00003264-Analisis_PepeAguilar_Mayo2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-06T22:38:34.000Z",
+      "size": "11616",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1WrxsuiRz4K1jPWC1aMFdNXXHxS0ik9Uu",
+      "name": "00003189-PHOTO-2026-05-06-15-09-19.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T21:12:22.000Z",
+      "size": "179547",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1KKOlR_szKKzjdoh3oyIRy-Q9Bv3rxKjm",
+      "name": "00003188-PHOTO-2026-05-06-15-08-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T21:12:22.000Z",
+      "size": "180133",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1N_u_w3oRUHCNP8rAI6RXIVhNT22Bn-Na",
+      "name": "00003189-PHOTO-2026-05-06-15-09-19.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T21:12:22.000Z",
+      "size": "179547",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "11Gw7J_bYqlXWdSYp93LI2rTqcOoeIDAy",
+      "name": "00003188-PHOTO-2026-05-06-15-08-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T21:12:22.000Z",
+      "size": "180133",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "15xl6wlA1Zb0dKAF-kIDbmKZG6ekP-B9h",
+      "name": "00003162-PHOTO-2026-05-06-14-51-36.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T20:52:54.000Z",
+      "size": "136446",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1YMZC_RyVkaG3cbjiJsTUbNcwPCRTXikg",
+      "name": "00003162-PHOTO-2026-05-06-14-51-36.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T20:52:54.000Z",
+      "size": "136446",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1iLYfK1imOtFZ-1_PT-azrkiI47-lMfwU",
+      "name": "00003140-PHOTO-2026-05-06-14-07-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T20:07:54.000Z",
+      "size": "200673",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1TNF4nvG963uDzWwE7LtQSvQInJKqJdtR",
+      "name": "00003139-PHOTO-2026-05-06-14-07-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T20:07:54.000Z",
+      "size": "197338",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1VF3QqPawXV6mMp6CSP9JQB87GxzXaQBJ",
+      "name": "00003141-PHOTO-2026-05-06-14-07-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T20:07:54.000Z",
+      "size": "71905",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1OZSbPg-wTRIIbduBE2KyCUFqBH2rLXmZ",
+      "name": "00003139-PHOTO-2026-05-06-14-07-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T20:07:54.000Z",
+      "size": "197338",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1fQdDXgPC_UBqVc98yjnGKdCkXvMHTxUj",
+      "name": "00003141-PHOTO-2026-05-06-14-07-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T20:07:54.000Z",
+      "size": "71905",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1mS-6DYkYYoWZEjWXalUL_CNwkDcoEiYN",
+      "name": "00003140-PHOTO-2026-05-06-14-07-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T20:07:54.000Z",
+      "size": "200673",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1K8wrSGmqigVFS2Y4daF-h_d-S7qF4o0Y",
+      "name": "00003097-PHOTO-2026-05-06-13-39-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T19:39:52.000Z",
+      "size": "184057",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1Kxf5dieDCwJ_FneCULGKDpCFsAhbFDwZ",
+      "name": "00003097-PHOTO-2026-05-06-13-39-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T19:39:52.000Z",
+      "size": "184057",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1nX9QJFP0XE9y330-YjgRl9TnwKGwfand",
+      "name": "00003096-PHOTO-2026-05-06-13-39-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T19:39:50.000Z",
+      "size": "222265",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1cH7gdZ_7EmGyfWMyPz-Rsdt9hmYhfjIE",
+      "name": "00003096-PHOTO-2026-05-06-13-39-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T19:39:50.000Z",
+      "size": "222265",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "15xkrQWzbIDUFTYTQIxJfk5JRh8R9FnV4",
+      "name": "00003095-PHOTO-2026-05-06-13-39-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T19:39:14.000Z",
+      "size": "75642",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1F63yqCdqnepKwo_KN-O1h52jPje873k3",
+      "name": "00003095-PHOTO-2026-05-06-13-39-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T19:39:14.000Z",
+      "size": "75642",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1kNid9RR3EOjygiI_43cu5V6JPkwkxyJn",
+      "name": "00003094-PHOTO-2026-05-06-13-38-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T19:38:54.000Z",
+      "size": "80659",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "17g31nhXBTjrAlJfvTLIfnM8F2pstfQZv",
+      "name": "00003094-PHOTO-2026-05-06-13-38-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T19:38:54.000Z",
+      "size": "80659",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1KJPbWVfCtnoGz7zVasjK8ZIeBTxM909R",
+      "name": "00003031-GIF-2026-05-05-20-32-23.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-06T02:32:36.000Z",
+      "size": "210736",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1maKppH1NYKoarMWWEwpb0cen99Bo3ELl",
+      "name": "00003031-GIF-2026-05-05-20-32-23.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-06T02:32:36.000Z",
+      "size": "210736",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "15mPAS2lzxXHudZ0PSXQVI0PlI-pTFyr3",
+      "name": "00003275-STICKER-2026-05-06-16-55-14.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-26T01:11:54.000Z",
+      "size": "233618",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "126W4KZ5mEIJEx8y4qGp2ihYvUWjQhGoq",
+      "name": "00003275-STICKER-2026-05-06-16-55-14.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-26T01:11:54.000Z",
+      "size": "233618",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1fEr7TgpZySIpoKCPso37ILWLt22q9GGH",
+      "name": "00003346-STICKER-2026-05-06-21-43-07.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-02-24T14:33:28.000Z",
+      "size": "75666",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1tshbw9FL1kqMvyFlR-vNlG4rfBLRvcqK",
+      "name": "00003346-STICKER-2026-05-06-21-43-07.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-02-24T14:33:28.000Z",
+      "size": "75666",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    },
+    {
+      "id": "1izrylLeNeFlh4F6fWgs4We4-wVhtjEU6",
+      "name": "00003046-STICKER-2026-05-05-20-43-56.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2025-11-04T15:18:00.000Z",
+      "size": "438290",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar_18052026"
+    },
+    {
+      "id": "1bpRT0UMuzwzhTdY8IJEsbhlf1E7ULORJ",
+      "name": "00003046-STICKER-2026-05-05-20-43-56.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2025-11-04T15:18:00.000Z",
+      "size": "438290",
+      "subfolder": "04",
+      "subfolderName": "04. PEPE_AGUILAR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Interno Pepe Aguilar _07052026"
+    }
+  ]
+}

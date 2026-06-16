@@ -1,0 +1,292 @@
+{
+  "number": "29",
+  "account_id": "29",
+  "account_name": "COAST OIL",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1TLtE1kbJj5s7pU84jlEdTdxGri-Iy8Se",
+      "title": "Contrato BWS Coastoil FIRMADO 220626.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "modifiedTime": "2026-05-27T15:18:47.322Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "13wsnBaT50c8bkF78T-iJLK-rLO6fmjXE",
+      "title": "NDA BWS Coastoil firmado 260526.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "modifiedTime": "2026-05-27T15:14:50.189Z",
+      "kind": "PDF escaneado→nativo"
+    },
+    {
+      "id": "11e-9X0VtODSO9P7pepVf4MHLmFDMtYqx",
+      "title": "Comprobante de domicilio Coastoil.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "modifiedTime": "2026-05-26T17:30:55.700Z",
+      "kind": "PDF escaneado→nativo"
+    },
+    {
+      "id": "1U5eP-hemJHm66KbKOsdGm2cazrK5Oy7O",
+      "title": "Constancia de situacion fiscal Coastoil Mayo 2026.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "modifiedTime": "2026-05-26T17:30:39.843Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1_BuBk8In5xa_jVCWyL7N9L59mdhAqWAg",
+      "title": "Opinion de cumplimiento Coastoil.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "modifiedTime": "2026-05-26T17:30:16.574Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1HhCtb5tlzBRPgVY3LiRwUx2T1f9ynT_c",
+      "title": "INE Carlos Andres Botas Machado (Apoderado Coastoil).pdf",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "modifiedTime": "2026-05-26T17:29:54.923Z",
+      "kind": "PDF escaneado→nativo"
+    },
+    {
+      "id": "19bgWWPW22nQJmzY-CEMjbJ0PYSsGF66O",
+      "title": "Constitutiva 27,340 Coastoil Dynamic SA de CV.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "modifiedTime": "2026-05-23T00:51:44.552Z",
+      "kind": "PDF escaneado→imágenes (6 págs)"
+    },
+    {
+      "id": "1_6l5wK7vYD5PMhLvDZeoGNSYsZ6vLx6m",
+      "title": "(2,748) Poder General CD Carlos Andrés (Lim. 25 mil dlls).pdf",
+      "subfolder": "01",
+      "subfolderName": "01. COAST_OIL_CONTRATO_OC",
+      "modifiedTime": "2026-05-23T00:51:09.674Z",
+      "kind": "PDF escaneado→nativo"
+    },
+    {
+      "id": "1BBQ2wCIpQdVtCalNX5EUuWVkSsdpB2un",
+      "title": "Coastoil_Coastoil Dynamic reafirma su presencia en el Congreso Mexicano del Petróleo 2026  .docx",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-06-10T18:15:27.481Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1tacGbQvUZLS0IA-E14qkFTKJe2QSueS1",
+      "title": "CoastoilDynamic_Plan_Comms_v2 (1).pptx",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-06-05T19:07:44.380Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "180p-BX9HhiCKWCJpCLL-NG2bz1CwF0UM",
+      "title": "QA_Coastoil_v1.docx",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-06-05T19:02:48.359Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1ZjN2zswNOIYTZdPEpCCfZAuss8P1SYG7",
+      "title": "Mensajes_Clave_Coastoil_v1.docx",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-06-05T16:31:16.461Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1S_CpkcaQDnuvZjm4kOuFNdO1VNxg2__ZSgQTnqgDNFA",
+      "title": "BDD - Fuente de energía",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-06-04T19:55:35.457Z",
+      "kind": "Google Sheet→CSV"
+    },
+    {
+      "id": "1Br9aBZtDbvVrqyBn1Agyqa0c524VCh2J",
+      "title": "CoastoilDynamic_Acciones para hacer .pptx",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-06-04T17:22:09.394Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1YeTN8WBDbBKKwDWSVidR1bQ60K3EKVSj",
+      "title": "Coastoil_BriefCoyuntura_030626.docx",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-06-03T15:52:16.358Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1r5BHFOka-hcrLE7lCC1xOFFOZBa6a38l",
+      "title": "CoastoilDynamic_Primer borrador de plan de comms.pptx",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-05-31T18:03:07.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1Ff5avYVKh7c1VD3JzQtyCww44JJB9y3B",
+      "title": "Medios_Energia_Mexico_2026.pptx",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-05-28T17:53:11.266Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "18pGSwj2skvWRsVdLYYViCvZcW0vpxYO-",
+      "title": "CoastoilDynamic_BriefingBook_CMP2026.docx",
+      "subfolder": "02",
+      "subfolderName": "02. COAST_OIL_ENTREGABLES",
+      "modifiedTime": "2026-05-26T19:18:00.473Z",
+      "kind": "Word→texto"
+    }
+  ],
+  "files_read_count": 18,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Prestar servicios de asesoría de reputación en línea y comunicación estratégica a COASTOIL DYNAMIC S.A. de C.V., operadora privada de infraestructura de procesamiento de gas natural en el campo Ixachi (Veracruz), con enfoque en diagnóstico de posicionamiento mediático, arquitectura narrativa de 4 pilares, relaciones con medios, media training de voceros, y despliegue de cobertura T1/T2 energético nacional durante 8 meses (12-03-2026 a 12-11-2026) conforme contrato FIRMADO 22-05-2026.",
+    "content_summary": "Contrato prestación de servicios FIRMADO 22-05-2026 entre COASTOIL DYNAMIC (Carlos Andrés Botas Machuca) y Blackwell, vigente 12-03-2026 a 12-11-2026. Fase 1 completada: arquitectura narrativa 4 pilares, casa de mensajes 5 ejes, Q&A 25 preguntas, participación exitosa CMP 2026 (3-6 junio) con nota de prensa publicada 10-06-2026. Fase 2 en desarrollo: base de datos medios nacional 22+ contactos mapeada, brief de coyuntura 5 escenarios actualizado al 3 de junio, briefing book CMP 126 págs completado. Pendientes críticos: reportes mensuales formales post-CMP documentados, designación oficial y media training de voceros, pitches sistemáticos mensuales a T1/T2, verificación de cobertura publicada post-evento.",
+    "current_status": "Contrato Fase 1 completada (arquitectura narrativa, participación CMP exitosa); Fase 2 parcialmente en desarrollo. Última actividad documentada 10-06-2026 (transcripción status call + entregable CMP). Actividad en curso: construcción de plan de acciones por pilar estratégico, mapeo de medios energía México 22+ reporteros, brief de coyuntura sector energético actualizado 03-06-2026. Pendientes sin cierre: reportes mensuales POST-evento formales, vocería designada y media training, ofensiva de pitches mensuales sistemáticos a El Financiero, Reforma, Expansión, medios especializados.",
+    "scope_of_service": [
+      "Diagnóstico posicionamiento mediático nacional: línea base escucha digital 12 meses, mapeo narrativo T1/T2, assessment visibilidad nacional energía",
+      "Arquitectura narrativa: posicionamiento central 'operador privado mexicano que hace posible el aprovechamiento del gas de Ixachi' + 4 pilares operativos (confianza operativa, capacidad técnica, contribución sectorial, sostenibilidad)",
+      "Casa de mensajes: 5 categorías temáticas con respuestas claras sin ambigüedad operativa",
+      "Q&A ejecutivo: 25 preguntas validadas en 4 categorías (operación, sostenibilidad, cumplimiento, coyuntura + preguntas difíciles)",
+      "Identificación formal portavoces designados y media training certificado con protocolos de vocería",
+      "Mapeo T1/T2 nacional: 22+ medios, base de datos reporteros con contactos directos (La Jornada, El Financiero, El Universal, Reforma, Expansión, Energía a Debate, Petroquimex, etc.)",
+      "Despliegue ofensivo relaciones con medios: pitches mensuales, coordinación entrevistas, amplificación contenido editorial",
+      "Participación evento CMP 2026 (3-6 junio Boca del Río) con stand independiente, voceros preparados, nota prensa, amplificación mediática",
+      "Reportes mensuales avance: cobertura mediática ganada, alcance, impacto, análisis sentimiento, recomendaciones de ajuste estratégico",
+      "Entrega contenido editorial (notas prensa, columnas opinión, contenido técnico) con aprobación cliente máximo 5 días hábiles"
+    ],
+    "client_promises": [
+      {
+        "promise": "Diagnóstico posicionamiento mediático nacional: línea base escucha digital 12 meses, mapeo riesgos narrativos, assessment visibilidad T1/T2",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Arquitectura narrativa completa: posicionamiento central + 4 pilares operativos + proof points con presentación ejecutiva validada por cliente",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Casa de mensajes (5 categorías temáticas) + Q&A ejecutivo (25 preguntas validadas en 4 categorías)",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Identificación formal de portavoces designados, media training certificado y protocolos de vocería publicados",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Mapeo T1/T2 nacional completo (22+ medios), base de datos reporteros clave con contactos y fuentes identificadas",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Despliegue ofensivo relaciones con medios: pitches mensuales a T1/T2, coordinación entrevistas, amplificación contenido",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Participación en CMP 2026 (3-6 junio) con stand independiente, voceros, nota de prensa y amplificación",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Reportes mensuales avance documentando cobertura mediática ganada, alcance, impacto, análisis sentimiento, recomendaciones",
+        "cadence": "mensual",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Entrega contenido editorial (notas prensa, opinión, técnico) con aprobación cliente en plazo máximo 5 días hábiles",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      }
+    ],
+    "fulfilled": [
+      "Contrato prestación de servicios FIRMADO 22-05-2026 (plataforma weetrust.mx; 3 firmas Blackwell + 1 firma cliente; vigencia 12-03-2026 a 12-11-2026).",
+      "NDA confidencialidad FIRMADO 25-05-2026 entre COASTOIL DYNAMIC (Carlos Andrés Botas Machuca) y Blackwell (Humberto Herrera Rincón Gallardo); 3 años post-término.",
+      "Validación legal/fiscal completa: RFC CDY190222IZ9 activo; Constitutiva 27-01-2021 (notaría 100 CDMX); opinión cumplimiento POSITIVA folio 26NC9084681 (05-05-2026).",
+      "Poder notarial Carlos Andrés Botas Machuca verificado: 17-12-2021 (notaría 12 Coatepec Veracruz).",
+      "Plan Estratégico Comunicación 2026 VALIDADO: arquitectura 4 pilares (confianza operativa, capacidad técnica, contribución sectorial, sostenibilidad); hoja de ruta 8 meses.",
+      "Posicionamiento central VALIDADO: 'operador privado mexicano que hace posible el aprovechamiento del gas natural de Ixachi'.",
+      "Diagnóstico posicionamiento mediático completado mayo 2026: Coastoil T1 nacional 2/10, T2 especializado 2/10, narrativa propia 5/10, relevancia operativa 8/10.",
+      "Casa de mensajes ENTREGADA: 5 ejes narrativos operativos (compromiso, confiabilidad, expertiz técnico, institucionalidad).",
+      "Q&A ejecutivo ENTREGADO: 25 preguntas validadas en 4 categorías (operación, sostenibilidad, cumplimiento, coyuntura).",
+      "Briefing Book CMP 2026 COMPLETADO (mayo 2026): 9 escenarios de coyuntura con respuestas sugeridas, protocolos contención, contexto sectorial Pemex/SENER.",
+      "Participación CMP 2026 (3-6 junio Boca del Río) ejecutada: stand independiente, nota de prensa publicada 10-06-2026, voceros presentes, brief de coyuntura actualizado 03-06-2026.",
+      "Base de datos medios nacional MAPEADA: 22+ contactos identificados (La Jornada/Alejandro Alegría, El Financiero/Héctor Usla, El Universal/Everardo Martínez, Energía a Debate/Ulises Juárez, Petroquimex/Trinidad Correa, etc.).",
+      "Plan de acciones por pilar estratégico CONSTRUIDO: líneas de acción claras por eje (confianza operativa, capacidad técnica, contribución sectorial, sostenibilidad)."
+    ],
+    "pending": [
+      "Reportes mensuales formales POST-CMP documentados: junio 2026 debe incluir cobertura verificada post-evento, clippings, alcance, análisis sentimiento, recomendaciones ajuste.",
+      "Designación oficial y media training de voceros: formalización de portavoces (candidatos: Admin Manager, Marketing Analyst), certificación media training, protocolos de vocería publicados.",
+      "Ofensiva de pitches mensuales sistemáticos: despliegue a Héctor Usla (El Financiero), Mario López (Reforma), Diana Gante (Expansión), Ulises Juárez (Energía a Debate), Trinidad Correa (Petroquimex), con ángulos derivados de Ixachi 2025 e hitos operativos.",
+      "Entrevistas coordinadas verificadas: sin evidencia de publicación de entrevistas en prensa nacional T1/T2 post-mayo 2026.",
+      "Columnas de opinión mensuales: plan menciona opinión firmada por vocero ejecutivo en Energía a Debate, Petroquimex; aún sin publicación documentada.",
+      "Cobertura sostenida en medios T1 nacional: objetivo 'primera mención editorial en Reforma, El Financiero o Expansión sobre liderazgo técnico Ixachi' aún sin registro.",
+      "Diversificación historias editoriales: relatos derivados de Ixachi 2025 (impacto económico regional, seguridad energética, soberanía gasífera) sin desarrollo editorial verificado.",
+      "Reporte ESG/Sostenibilidad formal: brief coyuntura recomienda publicación primer reporte GRI/Pacto Global UN; aún no ejecutado."
+    ],
+    "key_facts": [
+      "Contrato FIRMADO 22-05-2026; vigencia 8 meses: 12-03-2026 a 12-11-2026.",
+      "CMP 2026 celebrado 3-6 junio Boca del Río Veracruz; Coastoil stand independiente, 8,000+ asistentes, programa técnico 11 disciplinas.",
+      "Nota de prensa CMP publicada 10-06-2026.",
+      "Capacidad operativa Coastoil: Papan (PAGHA) 345 MMscfd, Perdiz (PEGHA) 180 MMscfd, confiabilidad 99.54%, cero paros en Perdiz.",
+      "Contratos activos Coastoil: +$1.19B USD (PAGHA $1,000M+, PEGHA $190M, Ixachi 2025 $1.14B); Ixachi contrato diciembre 2025.",
+      "Pemex meta 2026: 4,500 MMcfd producción gas natural, inversión $34 mil mdp; Ixachi $19 mil mdp (campo gasero prioritario).",
+      "Nuevo Director General Pemex: Juan Carlos Carpio Fragoso desde 15-05-2026 (reemplaza Víctor Rodríguez Padilla).",
+      "Inversión anunciada Carlos Slim 27-05-2026: $2 mil millones dólares para 32 pozos Ixachi (Carso); total inversión México 2026 $5 mil millones dólares.",
+      "Plan Nacional de Gasoductos (SENER 7-05-2026): inversión sexenal 140,905 millones pesos; CFE 53 mil mdp (9 gasoductos estratégicos); CENAGAS 87 mil mdp.",
+      "Derrame Golfo México: Greenpeace denuncia 27-05-2026; inicialmente febrero 2026 (oleoducto submarino Abkatún); 1,100 km costa afectada Tabasco, Veracruz, Tamaulipas.",
+      "Base de datos medios: 10+ reporteros identificados con correo/celular (T1: Reforma, El Financiero, El Universal, Expansión, La Jornada, Milenio; T2: Energía a Debate, Petroquimex, Petróleo & Energía, Industry & Energy Mag).",
+      "Riesgos identificados en diagnóstico: dependencia crítica PEMEX (~80% ingresos), riesgo contractual/operativo plantas, opacidad financiera (empresa privada México), vocería sin definir, riesgo nacionalismo energético.",
+      "Narrativa central VALIDADA: 'El operador privado mexicano que hace posible el aprovechamiento del gas natural de Ixachi'.",
+      "RFC Coastoil: CDY190222IZ9 activo."
+    ],
+    "per_file_notes": [
+      {
+        "file": "BDD - Fuente de energía (Google Sheet→CSV)",
+        "folder": "02. COAST_OIL_ENTREGABLES",
+        "finding": "Base de datos 10 medios T1/T2 con 10+ reporteros identificados (Alejandro Alegría La Jornada, Héctor Usla El Financiero, Everardo Martínez El Universal, Ulises Juárez Energía a Debate, Trinidad Correa Petroquimex); contactos directos correo/celular; propuesta outreach de Blackwell a Trinidad Correa documentada al pie."
+      },
+      {
+        "file": "CoastoilDynamic_Acciones para hacer.pptx",
+        "folder": "02. COAST_OIL_ENTREGABLES",
+        "finding": "Plan de ejecución estratégica por 4 pilares (confianza operativa, capacidad técnica, contribución sectorial, sostenibilidad) con líneas de acción, formatos y resultados esperados; evidencia de transición de Fase 1 (diagnóstico/blindaje) a Fase 2 (activación/legitimidad)."
+      },
+      {
+        "file": "Coastoil_BriefCoyuntura_030626.docx",
+        "folder": "02. COAST_OIL_ENTREGABLES",
+        "finding": "Brief coyuntura sector energético actualizado 03-06-2026 con 6 temas prioritarios: Pemex inversión Ixachi $19 mil mdp, nuevo director Carpio Fragoso (15-05-2026), inversión Slim $2 mil mdp Ixachi (27-05-2026), derrame Golfo (27-05-2026), Plan Nacional de Gasoductos ($140,905 mdp), impacto Pemex para Coastoil; mensajes sugeridos y protocolos de respuesta por tema."
+      },
+      {
+        "file": "CoastoilDynamic_Primer borrador de plan de comms.pptx",
+        "folder": "02. COAST_OIL_ENTREGABLES",
+        "finding": "Documento posicionamiento mediático 11 slides (mayo 2026): diagnóstico Coastoil T1 2/10, T2 2/10, narrativa propia 5/10, relevancia operativa 8/10; arquitectura narrativa validada (posicionamiento central + 3 ejes); hoja de ruta Fase 1-2; 9 riesgos identificados (dependencia PEMEX, vocería sin definir, opacidad financiera, nacionalismo energético)."
+      },
+      {
+        "file": "Medios_Energia_Mexico_2026.pptx",
+        "folder": "02. COAST_OIL_ENTREGABLES",
+        "finding": "Mapeo nacional completo medios energía México: prensa general 6 medios (Reforma/Mario López, El Financiero/Héctor Usla, El Universal/Everardo Martínez, Milenio/Gaspar Vela, La Jornada/Jessika Becerra, Expansión/Diana Gante); especializados 8 medios (Energía a Debate/Ulises Juárez, Petroquimex/Trinidad Correa, Energía Hoy, Industry & Energy Mag, etc.); internacionales (Bloomberg Línea, Reuters, Animal Político, La Silla Rota)."
+      },
+      {
+        "file": "CoastoilDynamic_BriefingBook_CMP2026.docx",
+        "folder": "02. COAST_OIL_ENTREGABLES",
+        "finding": "Briefing book CMP 2026 126 págs (mayo 2026): descripción evento 8,000+ asistentes (3-6 junio WTC Boca del Río), audiencia stakeholders, 5 mensajes clave para voceros Coastoil, 9 escenarios de coyuntura (Lino Zentella/SIC, fracking, relación Pemex/Carpio, gas transición, metano, IA, gas importado, derrames, transparencia) con respuestas sugeridas y protocolos de contención temas sensibles."
+      }
+    ]
+  },
+  "analyzed_at": "2026-06-11T04:05:16Z"
+}

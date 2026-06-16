@@ -1,0 +1,219 @@
+{
+  "number": "33",
+  "folderTitle": "33. NEZA",
+  "folderId": "1VAKJj5185oQm4nbOPWumdL0x75pNE7LS",
+  "folderModifiedTime": "2026-05-07T17:57:23.643Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "NEZA_chat_consolidado.txt",
+    "modifiedTime": "2026-05-14T01:10:56Z",
+    "source": "04. NEZA_Conversaciones_WA"
+  },
+  "deliverableSource": "05. NEZA_Transcripciones_Llamadas",
+  "lastActivity": {
+    "time": "2026-05-14T01:10:56Z",
+    "source": "04. NEZA_Conversaciones_WA",
+    "file": "NEZA_chat_consolidado.txt",
+    "fileId": "1IavDlpJREPzyKAVC7oist1l5ss2l4v1D"
+  },
+  "subfolderActivity": {
+    "01. NEZA_Contratos_OC": {
+      "subfolderId": "1eu5rM2uoqtTuyF1SQyzeRlc0hHIqCaHx",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:14Z_verify",
+      "last_verified_at": "2026-06-12T14:09:14Z"
+    },
+    "02. NEZA_Entregables": {
+      "subfolderId": "1J_i7kIeX4DpCfyhuyVMLQV0Na2lAf2Tb",
+      "fileCount": 7,
+      "latestModified": "2026-05-13T09:55:28Z",
+      "latestFile": "Manual_Brigadista_Ulloa.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:56Z_verify",
+      "last_verified_at": "2026-06-09T19:41:56Z"
+    },
+    "03. NEZA_Reportes_Avance": {
+      "subfolderId": "1n8Hx5WN1H6LNEQkS6ivRz9JGjrhwje7H",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:57Z_verify",
+      "last_verified_at": "2026-06-09T19:41:57Z"
+    },
+    "04. NEZA_Conversaciones_WA": {
+      "subfolderId": "1-ogjy8_UpEyKXE52ihmw2QgvAKUdG7c-",
+      "fileCount": 1,
+      "latestModified": "2026-05-14T01:10:56Z",
+      "latestFile": "NEZA_chat_consolidado.txt",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:57Z_verify",
+      "last_verified_at": "2026-06-09T19:41:57Z"
+    },
+    "05. NEZA_Transcripciones_Llamadas": {
+      "subfolderId": "18QXYQj3Gqs8CutSrCDopDqTx5mNUfjBB",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T14:29:50Z",
+      "latestFile": "Transcripcion reunion NEZA Estrategia Territorial y Digital_ Rumbo a la Encuesta en Neza.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:57Z_verify",
+      "last_verified_at": "2026-06-09T19:41:57Z"
+    },
+    "06. NEZA_Agenda_Trabajos": {
+      "subfolderId": "1Y7VRmm_SDrGvp_NhFAFVa44SUGtZTzPf",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T10:06:58.231000Z",
+      "latestFile": "Lo que hicimos esta semana:",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:57Z_verify",
+      "last_verified_at": "2026-06-09T19:41:57Z"
+    }
+  },
+  "pqProxy": {
+    "score": 50,
+    "tierMix": {
+      "tier1": 0,
+      "tier2": 0,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": "n/a",
+    "hasMetrics": false,
+    "evidence": "DELTA 2026-05-07: cuenta nueva creada hoy. Cascarón sin archivos cargados aún.",
+    "suggestion": "Coordinar onboarding: contrato/OC, kickoff, plan editorial.",
+    "fileEvaluated": null,
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "new_account",
+    "priority": 2,
+    "label": "Onboarding cuenta nueva",
+    "text": "Coordinar onboarding: contrato/OC, kickoff, plan editorial.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "playbookViolations": [
+    "contrato_OC_vacio_en_01"
+  ],
+  "analysisConfidence": "alta",
+  "isActive": true,
+  "lastCrawledAt": "2026-06-09T19:41:39Z",
+  "driveFiles": [
+    {
+      "id": "1IavDlpJREPzyKAVC7oist1l5ss2l4v1D",
+      "name": "NEZA_chat_consolidado.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-14T01:10:56.000Z",
+      "size": "5171",
+      "subfolder": "04",
+      "subfolderName": "04. NEZA_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1HkkDmAzxaGRQL9OP5Ac4MHy2ah8fSGRv",
+      "name": "Transcripcion reunion NEZA Estrategia Territorial y Digital_ Rumbo a la Encuesta en Neza.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T14:29:50.000Z",
+      "size": "34036",
+      "subfolder": "05",
+      "subfolderName": "05. NEZA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1-o5AufN1o9PqQvYKAgXSeM9J2nh2uHtLCKcHHn1Lf-Y",
+      "name": "Lo que hicimos esta semana:",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T10:06:58.231Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. NEZA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1tH6Nagg2AC0EXPdPU_Qn1qqnD6aj4TP3",
+      "name": "Manual_Brigadista_Ulloa.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T09:55:28.000Z",
+      "size": "17240",
+      "subfolder": "02",
+      "subfolderName": "02. NEZA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1w-f8KZURyXXbgIMCcEFiQKkiQTBqa27t",
+      "name": "Playbook_Brigadistas_Ulloa.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T09:55:13.000Z",
+      "size": "33756",
+      "subfolder": "02",
+      "subfolderName": "02. NEZA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1oWhMdVsZ9-rXhvsZu_Ncp5U0wxf9zblt",
+      "name": "PRO_TIPS_2026.png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-05-13T09:54:55.000Z",
+      "size": "2083710",
+      "subfolder": "02",
+      "subfolderName": "02. NEZA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1-HCM5WVcVT7NxYTJ_BBEsPxrwkaytLuz",
+      "name": "Guía del brigadista.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T09:54:48.000Z",
+      "size": "21623",
+      "subfolder": "02",
+      "subfolderName": "02. NEZA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Wd4zhuItM7UBdIixOLN9k6COuRCLN_De",
+      "name": "ProTips_Digitales_Brigadistas_Ulloa.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T09:54:41.000Z",
+      "size": "14935",
+      "subfolder": "02",
+      "subfolderName": "02. NEZA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1G2fZwiVdo-4tWTl_PQOsJvFv3kwO3iAR",
+      "name": "Validación nacional y cascada narrativa.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T09:54:32.000Z",
+      "size": "13736",
+      "subfolder": "02",
+      "subfolderName": "02. NEZA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1h6kRPt5HbnEvHCY9-T45r8Qnpqt-bK92",
+      "name": "Manual_Brigadistas_Ulloa.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-13T09:54:20.000Z",
+      "size": "142390",
+      "subfolder": "02",
+      "subfolderName": "02. NEZA_Entregables",
+      "nestedPath": null
+    }
+  ]
+}

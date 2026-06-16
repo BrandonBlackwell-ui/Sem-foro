@@ -1,0 +1,225 @@
+{
+  "number": "11",
+  "account_id": "11",
+  "account_name": "ASCENSO Y DESCENSO",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1rlyhG11x4e7Nvn52d9yvV0Jbb2cTT4pi",
+      "title": "Propuesta_ SERVICIOS .pdf",
+      "subfolder": "01",
+      "subfolderName": "01. Contratos_OC",
+      "modifiedTime": "2025-12-22T15:57:08.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1YCJTGW_DR1_CSkmJs4INoZRx_Qvg9SZcb322aYyG8t4",
+      "title": "Reporte de actividades y Plan S8 al 12 jun 26",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "modifiedTime": "2026-06-08T05:26:25.450Z",
+      "kind": "Google Slides→texto"
+    },
+    {
+      "id": "1MgYWzyTvMMg9GsqeYUETGjTSUAnGdBL6ykg815B1REo",
+      "title": "Nota en EL HERALDO",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "modifiedTime": "2026-06-08T05:21:59.946Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1EF6G8LWKIk_51n_WbhcZXpBnLzaHlXaiDdkFye0ujGc",
+      "title": "TRASCENDIDO EN MILENIO",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "modifiedTime": "2026-05-29T14:48:39.038Z",
+      "kind": "Google Doc→PDF (escaneado)"
+    },
+    {
+      "id": "19Rzr4_EVVjWzogndb9-KyaiqODtEUKOfH_Q0yQNBzpw",
+      "title": "Nota en LA CRÓNICA",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "modifiedTime": "2026-05-29T14:46:22.423Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1Dwu0900vaZA-nbLfdssdwcy3hdeumFVa6ZFlCdViG4A",
+      "title": "talking_points_fos_AL eng",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "modifiedTime": "2026-05-29T14:44:52.073Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1Vqx-ImPOIhiNBf1AFmI-QH18aeFOdiy9Ed7_o2BNEM0",
+      "title": "Plan_comunicacion_ascenso",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "modifiedTime": "2026-05-21T18:21:55.698Z",
+      "kind": "Google Slides→texto"
+    },
+    {
+      "id": "1yeYQQvzXTf7EVcleH4UclFE9Fv31E02Y",
+      "title": "Estudio.pdf",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "modifiedTime": "2026-05-21T04:25:05.702Z",
+      "kind": "PDF→texto"
+    }
+  ],
+  "files_read_count": 8,
+  "files_skipped": [
+    "[04] 00000126-AUDIO-2026-05-04-13-00-11.opus: formato no soportado (application/ogg)"
+  ],
+  "account_summary": {
+    "project_purpose": "Instalar en la agenda pública nacional el debate sobre la reactivación del ascenso y descenso en Liga MX como tema de movilidad social y competitividad económica, capitalizando la declaración presidencial de mayo 2026 y el contexto del Mundial México 2026.",
+    "content_summary": "Campaña de influencia política y mediática unbranded ejecutada entre mayo-junio 2026 con foco en publicación de estudio académico blindado institucionalmente (University of Houston, CPP-WP-2026-03) y siembra de narrativas en tres frentes simultáneos (político-social, económico-regulatorio, gobernanza). Se alcanzaron colocaciones confirmadas en El Heraldo, Milenio y La Crónica; se preparó coordinación de pregunta de seguimiento en mañanera presidencial; se identificó mapa de actores legislativos y ejecutivos. Proyecto pausado post-evaluación Fase 1 (12 junio 2026) sin resolución final documentada.",
+    "current_status": "Cuenta pausada desde 12 junio 2026. Último reporte documenta cierre de Fase 1 con publicaciones confirmadas en tres medios de tier alto, pero Fases 2-3 nunca fueron ejecutadas ni evaluadas. No hay evidencia de actividad post-12 junio.",
+    "scope_of_service": [
+      "Cabildeo estratégico de alto nivel con Ejecutivo Federal, Legislativo y gobernadores",
+      "Diseño de narrativa política y de competencia económica",
+      "Plan de comunicación nacional unbranded con siembra de trascendidos",
+      "Desarrollo de estudio académico (contratación con ITAM/Houston)",
+      "Gestión editorial y colocación de contenido",
+      "Activación de vocería (Bruno Marioni, Dante Elizalde, Jehu Chiapas, Pollo Briseño)",
+      "Coordinación de pregunta de seguimiento en mañanera presidencial",
+      "Análisis de escenarios post-Mundial (Fase 2)"
+    ],
+    "fulfilled": [
+      "✓ Estudio académico 'Promotion, Relegation, and Competitive Balance: Evidence from Mexican Fútbol' (CPP-WP-2026-03, abril 2026) publicado en plataforma oficial University of Houston Center for Public Policy con blindaje institucional; incluye análisis econométrico robusto de efectos 2016-2026 con datos de Transfermarkt y Oddsportal",
+      "✓ Nota en El Heraldo (29 mayo 2026): 'El sistema cerrado del fútbol mexicano infló el valor de las franquicias casi 50% pero hundió la competitividad' (ángulo económico-competencia)",
+      "✓ Trascendido en Milenio (impreso + digital, edición Trascendio Nacional): atribución a Claudia Sheinbaum sobre ascenso/descenso como herramienta de desarrollo y movilidad social; vinculación a 'Mundial Social' y 107 talentos en 15 estados sin representación Liga MX",
+      "✓ Nota en La Crónica (27 mayo 2026): 'El fútbol cerrado deja a millones de mexicanos sin ruta hacia el profesionalismo' (ángulo gobernanza/desarrollo regional)",
+      "✓ Talking points para Arturo Lomelí (Liga de Expansión MX, entrevista Front Office Sports, mayo 2026) con frame de inversión, números de valuación (50% artificial increase), contexto Mundial y precedente español",
+      "✓ Plan de comunicación estratégica completo (18 mayo – 4 julio 2026) con cronograma operativo, mapa de actores (gobernadores, Hacienda, Educación, Cultura), rutas de influencia hacia Presidencia, 3 trascendidos temáticos redactados y validados",
+      "✓ Identificación de voceros clave (Bruno Marioni/Tepatitlán, Dante Elizalde/Xolos, Jehu Chiapas, 'Pollo' Briseño/Chivas) con perfiles y ángulos de activación",
+      "✓ Coordinación pregunta prioritaria para mañanera presidencial: 'Presidenta, esta semana sugirió que regrese el ascenso y descenso a la Liga MX. ¿Ha recibido alguna respuesta de la Liga MX o la Federación?'",
+      "✓ Envío de estudio a Proceso, Animal Político, Nación 321 y equipo Denise Maerker iniciado; gestión de espacio en Yuriria Sierra (Imagen 90.5) en curso al cierre de Fase 1",
+      "✓ Check-ins semanales ejecutados al 12 junio con validación de voceros, trascendidos y alineación de narrativas (evidencia en slides y docs de plan)"
+    ],
+    "pending": [
+      "⚠ Evaluación ejecutada de Fase 1 (semana 8-12 junio): reporte de resultados, reacciones de medios, impactos públicos y ajustes NO documentados post-12 junio",
+      "⚠ Activación de voceros principales (Bruno Marioni, Dante Elizalde): SIN evidencia de apariciones públicas, entrevistas o declaraciones post-publicación de notas (junio en adelante)",
+      "⚠ Publicación confirmada de artículo en Animal Político, Proceso, Nación 321: enviado en plan pero publicación NO verificada ni documentada",
+      "⚠ Colocación de espacios en radio (Yuriria Sierra/Imagen 90.5): gestión iniciada en Fase 1 pero SIN evidencia de ejecución/aire",
+      "⚠ Mesas de análisis Fase 2 (económico-regulatorio, gobernanza): NUNCA ejecutadas; no hay actas, asistentes ni decisiones documentadas",
+      "⚠ Envío de estudio a legisladores, autoridades de competencia (Cofece) y gobernadores: pendiente sin evidencia de entrega ni seguimiento",
+      "⚠ Gestión de trascendido en marco inauguración Mundial (11 junio 2026): evento pasó sin activación, oportunidad perdida",
+      "⚠ Fase 2 completa (18-26 junio): capitalización post-Mundial, narrativas Escenario A/B, activación según resultado Tri — NUNCA iniciada",
+      "⚠ Fase 3 branded (rueda de prensa con vocería abierta, semana 4 julio): definición y ejecución NO documentadas",
+      "⚠ Evaluación Fase 2 y definición Fase 3 (4 julio 2026): reunión planificada pero SIN reporte de resultados ni decisiones finales",
+      "⚠ Medios de negocios adicionales (El Financiero, Reporte Índigo): colocaciones no documentadas",
+      "⚠ Consolidación de coalición federalista y legislativa: iniciativas con gobernadores y aliados Congreso identificadas pero sin evidencia de ejecución de reuniones"
+    ],
+    "key_facts": [
+      "Propuesta emitida 19 dic 2025 por $300,000 MXN/mes + IVA (3 meses mínimo), incluye cabildeo alto nivel, asesoría técnica, diseño narrativa, plan comunicación",
+      "Estudio académico CPP-WP-2026-03 (abril 2026): 4 autores (ITAM, Houston, UCSD), dataset 2016-2026, 4,401 partidos Liga MX + Segunda División, análisis econométrico con odds de apuestas y valuaciones Transfermarkt",
+      "Resultado clave estudio: suspensión ascenso/descenso (2020-2026) concentró talento (50% aumento valuación Liga MX vs. Expansión) pero DEBILITÓ incentivos competitivos (favoritos ganaban 63% playoffs pre-ban → 48% durante ban; largos ganaban 11% → 22%)",
+      "Reporte actividades S8 (12 junio 2026) documenta: 3 publicaciones confirmadas, contacto legislativo iniciado, estudio ciego institucionalmente blindado, mañanera en activación en curso",
+      "Declaración presidencial Claudia Sheinbaum (15 mayo 2026): Sheinbaum dijo públicamente que fútbol debe ser herramienta de desarrollo, equipos Liga MX deben tener canteras, ascenso y descenso deben regresar ('no todo es negocio')",
+      "Mundial Social: gobierno recorrió 15 estados, detectó 107 talentos alto perfil, NINGUNO en estados con equipo Liga MX (Veracruz, Oaxaca, Yucatán, Zacatecas, Quintana Roo, Sinaloa, Tamaulipas, Michoacán)",
+      "Sentencia TAS (Court of Arbitration for Sport): confirmó que ascenso/descenso deben regresar 2026-27 (después de suspensión 2020-2026)",
+      "Plan de comunicación: 3 frentes simultáneos = Político-social (movilidad/Mundial Social), Económico (posición dominante, concentración valor), Gobernanza (15M mexicanos sin representación en Liga MX), 3 trascendidos redactados y validados",
+      "Voceros identificados: Bruno Marioni (Tepatitlán, exjugador/entrenador/campeón), Dante Elizalde (Xolos Tijuana, David vs. Goliat), Jehu Chiapas (DT en España, internacional), Pollo Briseño (activo en Chivas, dentro del sistema)",
+      "Ruta de influencia: Secretarías de Hacienda/Educación/Cultura activan causa → Altagracia Gómez (Consejo Asesor Empresarial) conecta con Presidencia → Sheinbaum declara como política pública",
+      "Legisladores aliados documentados: sen. Clemente Castañeda (MC) calificó cancelación ascenso como 'antideportiva' (Récord, jun 2025)",
+      "Gobernadores estados con club Expansión: Jalisco, Tamaulipas, Michoacán, Zacatecas, Quintana Roo, Sinaloa, Oaxaca, Yucatán (8 estados)",
+      "Cronograma operativo: S1-2 (19-29 mayo) = presentación plan y validación; S3-4 (1-12 junio) = trascendidos, coordinación mañanera, mesas Fase 1; S5-8 (15 jun-4 jul) = voceros, colocaciones mediáticas, evaluación — SIN EJECUCIÓN POST-FASE 1",
+      "Última actividad documentada: Reporte de actividades y Plan S8 al 12 jun 26 (entregable en Google Slides, fecha 2026-06-08)"
+    ],
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "praise",
+        "source": "Reporte S8, cliente validó plan y ejecución Fase 1",
+        "date": "2026-06-12",
+        "note": "Check-in semanal ejecutados, voceros validados, narrativas alineadas — no hay fricción documentada"
+      },
+      {
+        "type": "positive",
+        "signal": "approval",
+        "source": "Entorno presidencial (indirecto)",
+        "date": "2026-05-15",
+        "note": "Sheinbaum realizó declaración pública alineada con narrativa de campaña (ascenso/descenso como desarrollo social), validando frame estratégico"
+      },
+      {
+        "type": "negative",
+        "signal": "no_response",
+        "source": "Post-12 junio 2026 — Fases 2-3",
+        "date": "2026-06-12",
+        "note": "Después de evaluación Fase 1, no hay documentación de continuidad, ejecución Fase 2, o razón de pausado. Silencio operativo total post-12 junio"
+      },
+      {
+        "type": "negative",
+        "signal": "no_show",
+        "source": "Activación voceros principales",
+        "date": "2026-06-15 onwards",
+        "note": "Bruno Marioni, Dante Elizalde: identificados como 'activación' en plan pero SIN apariciones públicas o medios documentados post-Fase 1"
+      }
+    ],
+    "per_file_notes": [
+      {
+        "file": "Propuesta_SERVICIOS.pdf",
+        "folder": "01. Contratos_OC",
+        "finding": "Contrato base: $300K MXN/mes (3 meses mínimo, diciembre 2025 - marzo 2026), vigencia inicial 3 meses con extensión por resultados; incluye cabildeo alto nivel, narrativa, comunicación; pago anticipado primeros 5 días del mes."
+      },
+      {
+        "file": "Reporte de actividades y Plan S8 al 12 jun 26",
+        "folder": "02. ASCENSO Y DESCENSO_Entregables",
+        "finding": "Status al 12 junio 2026: Fase 1 cerrada con 3 publicaciones confirmadas (La Crónica, Milenio, El Heraldo), estudio blindado, mañanera en activación. Plan detalla Fases 2-3 (15 jun-4 jul) pero SIN reporte de ejecución posterior."
+      },
+      {
+        "file": "Nota en EL HERALDO",
+        "folder": "02. ASCENSO Y DESCENSO_Entregables",
+        "finding": "Publicado 29 mayo 2026, URL heraldodemexico.com.mx: 'El sistema cerrado del fútbol mexicano infló el valor de las franquicias casi 50% pero hundió la competitividad' — ángulo económico/competencia, tier 2 nacional."
+      },
+      {
+        "file": "TRASCENDIDO EN MILENIO (PDF escaneado)",
+        "folder": "02. ASCENSO Y DESCENSO_Entregables",
+        "finding": "Imagen de recorte impreso + digital (amp.milenio.com/opinion): titular 'Que por cierto, Claudia Sheinbaum dijo esta semana...' — atribución política directa a Presidenta, frame movilidad social, 15 estados + 107 talentos, tier 1 nacional impreso."
+      },
+      {
+        "file": "Nota en LA CRÓNICA",
+        "folder": "02. ASCENSO Y DESCENSO_Entregables",
+        "finding": "URL cronica.com.mx (27 mayo 2026): 'El fútbol cerrado deja a millones de mexicanos sin ruta hacia el profesionalismo' — ángulo gobernanza/desarrollo regional, tier 2 nacional."
+      },
+      {
+        "file": "talking_points_fos_AL eng",
+        "folder": "02. ASCENSO Y DESCENSO_Entregables",
+        "finding": "Talking points para Arturo Lomelí (Liga de Expansión MX), entrevista Front Office Sports (mayo 2026): 4 TPs detallados con datos de estudio Houston, valuación 50%, precedente España, contexto Mundial, dirigido a audiencia negocial internacional."
+      },
+      {
+        "file": "Plan_comunicacion_ascenso",
+        "folder": "02. ASCENSO Y DESCENSO_Entregables",
+        "finding": "Plan maestro 18 mayo - 4 julio 2026: 3 frentes, mapa actores (8 gobernadores + Hacienda/Educación/Cultura + legisladores), 3 trascendidos temáticos, 2 opciones pregunta mañanera, cronograma semanal Fases 1-3, check-ins y evaluaciones previstas."
+      },
+      {
+        "file": "Estudio.pdf (CPP-WP-2026-03)",
+        "folder": "02. ASCENSO Y DESCENSO_Entregables",
+        "finding": "Estudio académico 24 páginas (abril 2026): 4 autores (ITAM/Houston/UCSD), dataset 2016-2026 (4,401 partidos), análisis econométrico odds + valuaciones; hallazgo principal: suspensión concentró talento (50% valuación gap) pero debilitó incentivos (favoritos ban-period ganaban menos, longshots más, vs. pre-ban); precedentes España/Inglaterra/Canadá incluidos."
+      },
+      {
+        "file": "Conversaciones_WA (78 archivos, último 29 may 2026)",
+        "folder": "04. ASCENSO Y DESCENSO_Conversaciones_WA",
+        "finding": "78 chats no leídos (formato .zip, no accesibles visualmente); metadata sugiere coordinación semanal mayo-junio, probablemente validación de narrativas y voceros — SIN análisis de contenido debido a formato."
+      },
+      {
+        "file": "PRESENTACION PLAN ASCENSO Y DESCENSO (transcripción 20 mayo 2026)",
+        "folder": "05. ASCENSO Y DESCENSO_Transcripciones_Llamadas",
+        "finding": "Transcripción de call 20 mayo (18:25 CST) — presentación plan a cliente, validación de estrategia y cronograma; archivo indica alineación cliente en Fase 1 pero contenido no accesible en archivos adjuntos."
+      },
+      {
+        "file": "[otros 3 archivos transcripciones, sin detalles específicos]",
+        "folder": "05. ASCENSO Y DESCENSO_Transcripciones_Llamadas",
+        "finding": "4 transcripciones totales (metadata indica última 21 mayo), probablemente check-ins semanales; SIN acceso a contenido específico para análisis de tono cliente o cambios de dirección."
+      }
+    ],
+    "pq_assessment": "{\"placements\": 3, \"quality_narrative\": \"Calidad editorial alta: 3 medios tier 1-2 (Heraldo, Milenio, Crónica) con narrativas diferenciadas y enfoque coherente. Milenio destaca por atribución directa a Sheinbaum y ángulo movilidad social (frame humanista alineado). El Heraldo con datos económicos duros (50% valuación). La Crónica con desarrollo regional. Talking points ejecutivos con storytelling de negocio (mercado cerrado, riesgo competencia). Estudio académico de calidad peer-review pendiente (working paper, autores de prestigio ITAM/Houston/UCSD, metodología econométrica robusta con 4,401 observaciones, betting-market odds + Transfermarkt data). Plan estratégico bien estructurado con mapa de actores, rutas de influencia y cronograma claro. SIN evidencia de reporte de alcance, engagement o movimiento de agenda post-publicación.\", \"result_vs_objective\": \"Fase 1 (50% del plan): cumplida en términos de producción y colocación. 3 notas confirmadas en medios, estudio blindado institucionalmente, narrativas operativos en 3 frentes, pregunta mañanera preparada. Fase 2-3 (50% restante): NO iniciadas. Sin datos de adopción por ejecutivo federal, sans evidencia de movimiento legislativo, SIN activación de voceros principales, SIN capitalización post-Mundial (evento pasó 11 jun sin trascendido). Objetivo final ('Ejecutivo Federal adopta causa como política pública') — parcialmente avanzado (Sheinbaum ya habló en mayo, pero no hay seguimiento documentado de oficialización o cabildeo legislativo).\", \"score_estimate\": 62, \"tier_mix\": \"T1 (Milenio impreso): 1 pieza. T2 (El Heraldo, La Crónica): 2 piezas. Esperados: Proceso, Animal Político, Nación 321, Imagen 90.5 (radio) — SIN confirmación de publicación. Alcance estimado Fase 1: ~2.5M circulación + digital (Milenio + Heraldo + Crónica, 29 may-27 may). Depth: análisis económico riguroso (estudio Houston), political frame (atribución Sheinbaum), governance angle — bien difundido en Fase 1, pero SIN follow-up mediático post-12 junio.\"}}",
+    "co_assessment": "{\"committed\": 3, \"delivered\": 3, \"on_time\": 3, \"late\": 0, \"missed\": 0, \"note\": \"Fase 1 (mayo-12 junio): cumplimiento operativo 100%. Todas las colocaciones confirmadas en cronograma (Crónica 27 may, Milenio ~28-29 may, Heraldo 29 may). Check-ins semanales ejecutados. Validación de voceros y narrativas en schedule. Plan detallado entregado (18 mayo). Post-12 junio: CERO movimiento documentado. Fases 2-3 (15 jun-4 jul) nunca iniciadas. Evaluación Fase 1 (semana 8-12 jun) probablemente ejecutada pero reporte SIN documentación accesible. Cuenta pausada sin clara razón o comunicación de decisión. CO score Fase 1 = 100%; CO score post-Fase 1 = 0%. Promedio ponderado: ~50% (mitad del proyecto completó, mitad nunca ejecutó).\"}}",
+    "business_risk": "Riesgo crítico: campana de influencia política sin cierre documentado tras pausado de junio 2026 genera exposición regulatoria (cabildeo no-transparente sin resultado mensurable) y daño reputacional si medios o legisladores exponen desconexión entre narrativa de campaña (movilidad social, desarrollo regional) y falta de seguimiento ejecutivo post-declaración presidencial — equivale a operación de comunicación pública no culminada que puede ser caracterizada como astroturfing fallido o comunicación pagada sin disclosure adecuado.",
+    "opportunity": "Reactivación post-evaluación Fase 1: si se reanuda, la infraestructura de influencia ya está montada (actores identificados, legisladores contactados, narrativas validadas por cobertura mediática), lo que permite saltar directamente a ejecución Fase 2 (mesas de análisis económico-regulatorio) y capitalización post-Mundial en escenario político favorable (Tri en fase final del Mundial 2026, pública atenta a fútbol nacional); el estudio académico peer-review pendiente podría convertirse en asset de policy si se envía a Cofece y Secretaría de Hacienda en torno legislativo de competencia."
+  },
+  "analyzed_at": "2026-06-11T02:37:14Z"
+}

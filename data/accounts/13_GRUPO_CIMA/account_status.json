@@ -1,0 +1,1619 @@
+{
+  "number": "13",
+  "folderTitle": "13. GRUPO CIMA",
+  "folderId": "1kgGhIMgLVCBtk3ewzGEBUtdgSl_2Dg4u",
+  "folderModifiedTime": "2026-02-11T18:22:27.824Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "ESTATUS 8 DE JUNIO",
+    "modifiedTime": "2026-06-10T01:22:03.189000Z",
+    "source": "06.CIMA_Agenda_Trabajos"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-08T20:39:55Z",
+    "source": "06.CIMA_Agenda_Trabajos",
+    "file": "8 de mayo_CIMA.docx",
+    "fileId": "1uCCoo5F53UYw85rCDzXW14AHHKtquypz"
+  },
+  "subfolderActivity": {
+    "01.CIMA_Contrato_OC": {
+      "subfolderId": "1Zr8lzOCvy8txpiN3zbm40AigeD8_7b6T",
+      "fileCount": 1,
+      "latestModified": "2026-04-21T18:11:38Z",
+      "latestFile": "Contrato 2026 Cima firma autografa LS.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:09Z_verify",
+      "last_verified_at": "2026-06-12T14:09:09Z"
+    },
+    "02. CIMA_Entregables": {
+      "subfolderId": "15MRV6RfJTN_CIScQnekAlfKMLk0SzZBu",
+      "fileCount": 17,
+      "latestModified": "2026-06-03T18:56:50Z",
+      "latestFile": "Ficha-Alejandro Aristi-Licon.pdf (en ALEJANDRO ARISTI FICHA DE ANÁLISIS)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:50Z_verify",
+      "last_verified_at": "2026-06-11T01:57:50Z",
+      "nestedNote": "Contiene subcarpetas: ALEJANDRO ARISTI FICHA DE ANÁLISIS, Notas"
+    },
+    "03. CIMA_Reportes_Avance": {
+      "subfolderId": "1wlUWTT116-Gojzig_20z9ATVkjwOZtoI",
+      "fileCount": 3,
+      "latestModified": "2026-05-08T14:53:34Z",
+      "latestFile": "CIMA_Reporte mensual Abril 2026.pptx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:52Z_verify",
+      "last_verified_at": "2026-06-11T01:57:52Z"
+    },
+    "04.CIMA_Conversaciones_WA": {
+      "subfolderId": "13iI-aMW8RSMgnhxmKtQoXSAl_BmQTIe9",
+      "fileCount": 154,
+      "latestModified": "2026-05-07T23:06:42Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - Monitoreo CIMA) (en Semana del 04 al 08 de mayo)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:52Z_verify",
+      "last_verified_at": "2026-06-11T01:57:52Z",
+      "nestedNote": "Contiene subcarpetas: Semana del 04 al 08 de mayo"
+    },
+    "05.CIMA_Transcripciones_Llamadas": {
+      "subfolderId": "1ra_34r1AZnLZY3iCXu1L9ZcePVtOZ4U5",
+      "fileCount": 6,
+      "latestModified": "2026-06-03T19:27:23Z",
+      "latestFile": "Seguimiento CIMA - BW_ 2026_06_03 10_59 CST - Notas de Gemini.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:53Z_verify",
+      "last_verified_at": "2026-06-11T01:57:53Z"
+    },
+    "06.CIMA_Agenda_Trabajos": {
+      "subfolderId": "1savzipT3CDje7GDEQSq8qRu5xMSYVbFV",
+      "fileCount": 11,
+      "latestModified": "2026-06-10T01:22:03.189000Z",
+      "latestFile": "ESTATUS 8 DE JUNIO",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:53Z_verify",
+      "last_verified_at": "2026-06-11T01:57:53Z"
+    }
+  },
+  "pqProxy": {
+    "score": 89,
+    "tierMix": {
+      "tier1": 5,
+      "tier2": 1,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": "alta",
+    "hasMetrics": true,
+    "evidence": "Entregable es una propuesta de estrategia para Don Cacahuato (gestión de crisis), no un reporte de resultados. Reporte Q1 en 03.Reportes (no evaluado como latestDeliverable) muestra: 10 impactos, Crónica (T2), Milenio (T1), Reforma (T1), +24M alcance, 1 columna — score estimado ~80 sobre ese archivo. | DELTA 2026-05-06: SC: aparecen exports semanales WA (cliente + monitoreo interno) — primer registro periódico SC para CIMA. | DELTA 2026-05-07T23:55: +2 re-exports WA (cliente+monitoreo) en estructura mejorada. | DELTA 2026-05-11T18:30:00Z: Resultados abril CONFIRMADOS: 6 publicaciones T1 / 15.6M reach / calificación cliente 9.0-9.1. 2 iniciativas nuevas: Oaxaca/Zacatecas reputación, Eduardo Nájera colaboración.",
+    "suggestion": "Cerrar verificación metodológica Meltwater (alcance de nota vs portal vs imagen) y enviar a Ximena Hernández antes del 13-may. Iniciar análisis reputacional Oaxaca+Zacatecas en próxima semana — entregable: plan de comunicación regional. Capitalizar colaboración Eduardo Nájera con nota en Heraldo/TV Azteca antes de la clínica. Apoyar Ximena/Alberto con argumentario contención de crisis pendiente.",
+    "fileEvaluated": "Seguimiento CIMA + BWS_ 2026_05_08 - Notas de Gemini.docx",
+    "evaluatedAt": "2026-05-11T18:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Cerrar verificación metodológica Meltwater (alcance de nota vs portal vs imagen) y enviar a Ximena Hernández antes del 13-may. Iniciar análisis reputacional Oaxaca+Zacatecas en próxima semana — entregable: plan de comunicación regional. Capitalizar colaboración Eduardo Nájera con nota en Heraldo/TV Azteca antes de la clínica. Apoyar Ximena/Alberto con argumentario contención de crisis pendiente.",
+    "source": "delta-2026-05-11"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:56:50Z",
+  "driveFiles": [
+    {
+      "id": "16ikY8jGoWImcFcw35coKLRaxHSD2AChLTVG7Qie4m2w",
+      "name": "ESTATUS 8 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T01:22:03.189Z",
+      "size": "1154",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1G0bGm2Od_FRSjV1ILI9zGGXsZ9GMBcuJYz5OZOU0gT8",
+      "name": "ESTATUS 9 DE JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T01:21:25.617Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1sJgzZ3JfuHbiByHnDuM87k5PSwyeAXiCnrBbLhl6RbU",
+      "name": "Actividades 1 al 5 de junio",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-05T19:44:06.703Z",
+      "size": "1480",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1nSNPEeBd51T6j9V-_l-UhWPX78xr6fnB",
+      "name": "Seguimiento CIMA - BW_ 2026_06_03 10_59 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-03T19:27:23.000Z",
+      "size": "954484",
+      "subfolder": "05",
+      "subfolderName": "05.CIMA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "10wBXl6XOlhoMrIVqdG0ZUOvFG3ftn03P",
+      "name": "Ficha-Alejandro Aristi-Licon.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-03T18:56:50.000Z",
+      "size": "172127",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "ALEJANDRO ARISTI FICHA DE ANÁLISIS"
+    },
+    {
+      "id": "12pXkPln-JFLIGvSgyCPjFSHf0Invr8iD",
+      "name": "Ficha-Aristi-Licon (3).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-03T18:24:46.000Z",
+      "size": "21248",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "ALEJANDRO ARISTI FICHA DE ANÁLISIS"
+    },
+    {
+      "id": "1Gc6kXPaLPfEtciMn3NaF3qjne-iAnziG",
+      "name": "LA-920043987-E3-2018-Recepcion-y-Apertura-de-Proposiciones.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-03T17:29:56.000Z",
+      "size": "139238",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "ALEJANDRO ARISTI FICHA DE ANÁLISIS"
+    },
+    {
+      "id": "1GhUoBMD9Vequ2vlk7idgX22_aJc2b3WT",
+      "name": "Formato_unico_para_los_bienes_adquiridos-2018-DIF.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-03T17:29:46.000Z",
+      "size": "539925",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "ALEJANDRO ARISTI FICHA DE ANÁLISIS"
+    },
+    {
+      "id": "1CXCa8X6rKERgwP3G2X2bBpWbdcbV5Qq6",
+      "name": "015-24_PROYECTOS_AIGOKEROS_1750798946006.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-06-03T17:29:35.000Z",
+      "size": "13070729",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "ALEJANDRO ARISTI FICHA DE ANÁLISIS"
+    },
+    {
+      "id": "1Ybwxld8PciKLoXZFRZevGjLZEsGS3Urh0dtmDb6C1uQ",
+      "name": "Documento sin título",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T18:30:13.256Z",
+      "size": "1618",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1sJb80_0EgxCR47fc5QPgn5gDAk1W4zCyYhLUB0HddoI",
+      "name": "22 de mayo_CIMA",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-23T19:44:27.688Z",
+      "size": "1692",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "11W7I2RPO0niBoD8cIpXo-R7Fk-R2Eec4",
+      "name": "15 de mayo_CIMA",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-05-15T19:11:11.984Z",
+      "size": null,
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1GhnjAQiBQ3AY1l728JWHz1IyoWMiTZjK",
+      "name": "Seguimiento CIMA + BWS - 2026/05/15 10:59 CST - Transcript",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-05-15T17:53:21.343Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05.CIMA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1uCCoo5F53UYw85rCDzXW14AHHKtquypz",
+      "name": "8 de mayo_CIMA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T20:39:55.000Z",
+      "size": "14203",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1zKgXi5vYMI8an-M1n2uc-koKLZMTof3H",
+      "name": "Seguimiento CIMA + BWS_ 2026_05_08 10_59 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T19:55:30.000Z",
+      "size": "947079",
+      "subfolder": "05",
+      "subfolderName": "05.CIMA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "12lM2mQAS-KCYszViSmH2kiy_Jizroywz",
+      "name": "Seguimiento CIMA + BWS: 2026/05/08 10:59 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-05-08T18:03:10.986Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05.CIMA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1RaFO6zZu_CudlWj4TiVrHEPGlGm6Tsom",
+      "name": "CIMA_Reporte mensual Abril 2026.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-08T14:53:34.000Z",
+      "size": "9821402",
+      "subfolder": "03",
+      "subfolderName": "03. CIMA_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1owG5ax9mW6DC-HU_qIy8HbRhe8_k6nPx",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-07T23:06:42.000Z",
+      "size": "46201",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "101nROAMeaVG0bYOwCJwM45OS6V_VDACa",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-07T23:03:30.000Z",
+      "size": "150468",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1eVH9-6hvSGQsX2BfapVgWO6kSNcUyB7k",
+      "name": "00001117-CIMA.jpg.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T19:07:00.000Z",
+      "size": "9650689",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "18AxxX8UmivcuqCF5O2qkTlAS0eDbX1YO",
+      "name": "00001104-IMG_7012.JPG.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T14:50:52.000Z",
+      "size": "1022201",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1lZWMjvOA7cZRcA0XhYzRQmFPGamdvF5D",
+      "name": "00001103-IMG_7007.JPG.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T14:50:52.000Z",
+      "size": "941154",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1ygrONIzWj7nXJEnu-udnbMFj3p5T4Je-",
+      "name": "00001105-IMG_7002.JPG.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T14:50:52.000Z",
+      "size": "923587",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1t1QJjRP-4YLxlZkhwvYMX6ClQtTua9Rw",
+      "name": "00001102-IMG_7013.JPG.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T14:50:52.000Z",
+      "size": "1118891",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1lYkJxEVil8SRkd6wmyZrJLH5nhso-wQ5",
+      "name": "00000250-CIMA_Reporte de síntesis_07052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T14:23:30.000Z",
+      "size": "17538",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1DjXyQ2UMuvVLMH05M4SBdRomZiao7PyZ",
+      "name": "00000247-CIMA_Reporte de síntesis_06052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-06T16:19:20.000Z",
+      "size": "17323",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1WUr24ghr60jK-ywEwST3RBV0mzSdk4Vt",
+      "name": "00001068-PHOTO-2026-05-05-19-05-49.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T01:05:50.000Z",
+      "size": "179283",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1xeBF8RxRlgyI4r5h-rZJakfz5GnQXy9o",
+      "name": "00001058-PHOTO-2026-05-05-16-16-32.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T22:16:32.000Z",
+      "size": "209575",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1hNFxswVsDH3cMSeJLzIphKcdJ_9qKMw4",
+      "name": "00001052-inauguración DSC08458 copia.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T21:31:18.000Z",
+      "size": "3660061",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1pNzxJAheUpgROXmfwH3YTpKgT0alztBT",
+      "name": "00001037-PHOTO-2026-05-05-13-21-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T19:21:14.000Z",
+      "size": "136194",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1NDIXoBl3JEH4LVBgwt3xNmGkPF3ZvEfU",
+      "name": "00000245-CIMA_Reporte de síntesis_05052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T15:22:10.000Z",
+      "size": "16694",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1ErpAiT8efO8N3ytNQLxBr9zGyGBWfuk3",
+      "name": "00001023-CIMA_Reporte de síntesis_05052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T15:22:10.000Z",
+      "size": "16694",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1z46JsnAo8aIz_3KXRl1McPEA4EgASa69",
+      "name": "00001027-LINEA DE DENUNCIA EN CIMA (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-05T15:22:10.000Z",
+      "size": "82880",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1s5L8PNNzC1GW4XvHImfWBJ15AQZOuzGL",
+      "name": "00000233-CIMA_Reporte de síntesis_01052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-01T14:43:56.000Z",
+      "size": "17238",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "189sWrN7OnKEVy9ogh5I67cpJXznhBZ5o",
+      "name": "00001006-CIMA_Reporte de síntesis_01052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-01T14:43:56.000Z",
+      "size": "17238",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1c1D1oHvGmA871kGOktzo2KS_vDmNLEd5",
+      "name": "00001001-PHOTO-2026-04-30-17-39-27.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T23:39:52.000Z",
+      "size": "58227",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1vqjBZ94MOIlcDVK41yN8PzbL1WEmKgYT",
+      "name": "00000993-PHOTO-2026-04-30-15-43-19.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T21:57:02.000Z",
+      "size": "78230",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1b8jNRxXw7LLPBLz5f67egdfe13MnPflx",
+      "name": "00000990-PHOTO-2026-04-30-10-56-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T16:56:40.000Z",
+      "size": "173349",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1vF29vKQKz0Ye0af8y7nM-VESYDYmFut0",
+      "name": "CIMA-BW_ 2026_04_28 12_51 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:35:05.000Z",
+      "size": "946338",
+      "subfolder": "05",
+      "subfolderName": "05.CIMA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1Lm2nL47Md1XWA1iTJtvBKLwNWevM8FHu",
+      "name": "Argumentario_CIMA.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T20:32:06.000Z",
+      "size": "101084",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "Notas"
+    },
+    {
+      "id": "1_U4_SB8xg7KNXU7zpWhRjydKFWVXIyiv",
+      "name": "Columnas Teddy Martínez.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:31:28.000Z",
+      "size": "8930",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "Notas"
+    },
+    {
+      "id": "1lH-OqVRqldsbJWxsH9QUA_lEIwYgLHnm",
+      "name": "CIMA-DIA DEL NIÑO.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:31:14.612Z",
+      "size": "8058",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "Notas"
+    },
+    {
+      "id": "1OAfTK_7uR5qlU2dLbO-tXwrfD3QvnLmi",
+      "name": "BorreGo! - Distrito 1 (20/04/26).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:30:22.515Z",
+      "size": "842303",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "Notas"
+    },
+    {
+      "id": "1TUl3IwNEkj_vRszUiUxyMPg4zpMkfhwl",
+      "name": "FUNDACION CIMA X TI (16/04/26).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:29:02.918Z",
+      "size": "857771",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "Notas"
+    },
+    {
+      "id": "1JhzEObdjXJvZFeiGDmrutgjnRGX9isVX",
+      "name": "CIMA-FUNDACIÓN 2A NOTA (15/04/26).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:28:11.950Z",
+      "size": "538977",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "Notas"
+    },
+    {
+      "id": "1bOgjyyvNpywVqesGjLUWHRdP8nSk2fhG",
+      "name": "CIMA-FUNDACIÓN (09/04/26).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:27:11.369Z",
+      "size": "687041",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "Notas"
+    },
+    {
+      "id": "17MJAe5jNl50weWz4mnspOwXcChwsbfnp",
+      "name": "CIMA-SEGURIDAD INTEGRAL (08/04/26).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:26:25.806Z",
+      "size": "392464",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "Notas"
+    },
+    {
+      "id": "19bmamdMcxesBZ5xl7T81IwosGk1baQZw",
+      "name": "Calendario_CIMA.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T19:43:23.000Z",
+      "size": "63626",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": "Notas"
+    },
+    {
+      "id": "1ndbNbnGzOSVnWe3HUr5FeZJhd0zMHO5W",
+      "name": "Propuesta_Don Cacahuato_ (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T19:42:23.000Z",
+      "size": "1190250",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1pzY9A7UDrTZRezSrbK0tm5p6XwVfs3NU",
+      "name": "24 de abril_CIMA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T18:07:45.000Z",
+      "size": "14125",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1EecmpYp7lAH4HzO5e9geMrPShi9sfIgq",
+      "name": "17 de abril_CIMA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T18:07:17.000Z",
+      "size": "14117",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1_FcAwNkjwCrNpQ7koeQh8TmtR1vjBPCg",
+      "name": "10 de abril_CIMA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T18:06:49.000Z",
+      "size": "14093",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1NxYgzr4TGWSa4koxQUlmA_TgULAjlQLj",
+      "name": "27 de marzo_CIMA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T18:04:28.000Z",
+      "size": "14003",
+      "subfolder": "06",
+      "subfolderName": "06.CIMA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1dJzvI2ErJ7p5i9x7GEb7z2t0LVLHO3JF",
+      "name": "00000227-STICKER-2026-04-28-20-41-25.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-04-29T02:42:58.000Z",
+      "size": "166490",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1TMAHlt8fB45hhVcZRUS7-lHDEJa4Owoh",
+      "name": "00000960-Analisis_Riesgos_Reputacionales_Ingeborg_DonCacahuato.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T19:10:26.000Z",
+      "size": "20010",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1P4KxIDPeHhMYVqEhwRgqtJT3mPzYtBjs",
+      "name": "00000213-CIMA_Reporte de síntesis_28042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T14:47:18.000Z",
+      "size": "17631",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1eQKQihjtwYGuWDxAnfp_ZcpUGofqUEVz",
+      "name": "00000933-CIMA_Reporte de síntesis_28042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T14:47:18.000Z",
+      "size": "17631",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1ua-JSqw9-WcUsuhpmUVc8R2mhP_0ujXS",
+      "name": "00000923-Fachada-Don-cacahuato_1.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T19:24:00.000Z",
+      "size": "2798030",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1Vn_x0tbY_Yan2A91VbHi393NMfMQczdw",
+      "name": "00000924-Don Cacahuato_PanelesSolares.png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-04-27T19:24:00.000Z",
+      "size": "1532889",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1MaQiFgVqZOwc-x7rubl4S1dcM2WtbRb0",
+      "name": "00000906-VSR32391.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T16:46:32.000Z",
+      "size": "1682111",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1uMJCG2i3DzTFFoRFCFVcxY-TDn1pSxmm",
+      "name": "00000905-VSR32360 (1).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T16:46:30.000Z",
+      "size": "1639764",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1fKTr8jKeCwPNsQgaJE0y1j0w42TM53f8",
+      "name": "00000900-Calendario_CIMA.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-24T18:03:54.000Z",
+      "size": "63626",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1Wj6CLIhrctGWFwoe9OuZ_MbgN6DWrCEm",
+      "name": "00000206-CIMA_Reporte de síntesis_24042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T14:50:28.000Z",
+      "size": "17319",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1xAJgtwmRvwSewkbNCzOGQ1BNseugKlBR",
+      "name": "00000894-CIMA_Reporte de síntesis_24042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T14:50:28.000Z",
+      "size": "17319",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1wIqFP8sHvpMqb0cyYZjawq_UJgtq0bov",
+      "name": "Seguimiento CIMA + BWS: 2026/04/17 11:00 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-04-23T03:55:45.149Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05.CIMA_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1AFzwNojFBNPQlhE4x0EXnhVt9zu3i-XS",
+      "name": "Reporte de actividades  CIMA__.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T03:54:28.000Z",
+      "size": "1493683",
+      "subfolder": "03",
+      "subfolderName": "03. CIMA_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1Vgvts091eT7RpvOfzMF4O0PAWsEFgSqM",
+      "name": "00000888-PHOTO-2026-04-22-14-13-16.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T20:13:16.000Z",
+      "size": "173963",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1VDaQTPSp2mWZoPnSPHE-IUr9v71Ul19F",
+      "name": "00000883-IMG_8232.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T19:14:34.000Z",
+      "size": "1261047",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1b1k-C62HyijoxLIJBxwM9qfoPp4HMlmG",
+      "name": "00000882-IMG_8140.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T19:12:30.000Z",
+      "size": "1105042",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1RwgMjAxMBNNMGWizy5ve6TBADyZNyD_X",
+      "name": "00000879-IMG_8288.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T19:11:28.000Z",
+      "size": "1217713",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1_B04c9lvx7hAq0L14157JRwc3xqeWshP",
+      "name": "00000878-IMG_8317.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T19:11:28.000Z",
+      "size": "744432",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "16CKtvpByf7zISvCVuv5lvGBUdt8nSbxo",
+      "name": "00000880-IMG_8285.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T19:11:28.000Z",
+      "size": "1302135",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1vLhrygAv4cIeHP3LHD3z2ktb1XQ7uJBi",
+      "name": "00000869-PHOTO-2026-04-22-13-01-58.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T19:01:58.000Z",
+      "size": "178726",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "12jMMFxm2w_lwNVWndd_uAIPlNE93i3it",
+      "name": "00000868-PHOTO-2026-04-22-13-01-46.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T19:01:46.000Z",
+      "size": "177439",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1ZcKf-0a9oxkvilSdcNa0FwRIuD49KkFu",
+      "name": "00000866-IMG_8228.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T18:54:02.000Z",
+      "size": "1016751",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1mF1GwbDinvTJgHOCOjnaVkbXtz_4IE6q",
+      "name": "00000863-IMG_8444.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-22T18:48:04.000Z",
+      "size": "607775",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1jYm-uS6HPZj1HLDfmYZb4zdQChbojfQ0",
+      "name": "00000842-Reporte de actividades  CIMA__.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T20:44:00.000Z",
+      "size": "1493683",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1l-4Yr7o2r15LQrlvurQvEgrV3V4suajZ",
+      "name": "Contrato 2026 Cima firma autografa LS.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T18:11:38.000Z",
+      "size": "3804066",
+      "subfolder": "01",
+      "subfolderName": "01.CIMA_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1bV0bXAEQH4OI4l4DALdXdPVBQrxl2G1e",
+      "name": "00000840-PHOTO-2026-04-21-11-41-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-21T17:41:28.000Z",
+      "size": "195873",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1YCQdAaFgF_yUL_pSHot19K19D4kRh2Jz",
+      "name": "00000194-CIMA_Reporte de síntesis_17042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-17T14:30:18.000Z",
+      "size": "17186",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "17UNXS8xkO--XZNtY5RCj3eISwYEMDSyp",
+      "name": "00000825-CIMA_Reporte de síntesis_17042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-17T14:30:18.000Z",
+      "size": "17186",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1sWsrFB-lcx0Ks8TDHsJG7H2QfWZkBjlW",
+      "name": "00000822-PHOTO-2026-04-16-18-43-19.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-17T00:43:18.000Z",
+      "size": "159135",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1eg4Aiwmq2tuOeGciHKXpi8tFOxwrOJ6X",
+      "name": "00000794-Propuesta_Don Cacahuato_.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-16T17:00:00.000Z",
+      "size": "1190250",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "19DRTI6C7tI2mnbxjULBo379WBEvQDLTC",
+      "name": "00000189-PHOTO-2026-04-16-08-35-18.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-16T14:35:18.000Z",
+      "size": "158533",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "16sfN_RPbeshuHq2g66RRbCkcYqpBHglo",
+      "name": "00000788-PHOTO-2026-04-16-08-47-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-16T14:35:18.000Z",
+      "size": "158533",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "13ndF9KiFy2ZboEgXDavDPs0qLkgUSfWx",
+      "name": "00000187-CIMA_Reporte de síntesis_16042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-16T14:34:26.000Z",
+      "size": "17691",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1WKvJSnUxdZmC4uF0arA9WC0Y-ErplBVl",
+      "name": "00000787-CIMA_Reporte de síntesis_16042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-16T14:34:26.000Z",
+      "size": "17691",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1f9o4mqEbZIwZRxiNUdgzHoVe3qB2bg52",
+      "name": "00000781-PHOTO-2026-04-15-20-08-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-16T01:58:20.000Z",
+      "size": "98831",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "15-pCENk28L-PlymJTSMCXfMH62YZgmsk",
+      "name": "00000776-IMG_8311.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-15T16:08:40.000Z",
+      "size": "680601",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1BGnNPd8xSdPMmNskZWNkRMBTTgNKQEv8",
+      "name": "00000860-IMG_8469.jpg.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-15T16:08:40.000Z",
+      "size": "767555",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1m60KbOjlnIsdXSgA79qRVJia44W_MXnQ",
+      "name": "00000775-IMG_8469.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-15T16:08:40.000Z",
+      "size": "767555",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "11I55x1JR4FDiipu0RV_O990H0hqik-Xw",
+      "name": "00000859-IMG_8311.jpg.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-15T16:08:40.000Z",
+      "size": "680601",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "10VjKO2wrdSgmjTIsBwxeF9SYSaeCwfEi",
+      "name": "00000762-linkedin 2.jpg.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-15T14:27:30.000Z",
+      "size": "765850",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1QXyBykiDDiqrzQoOa6Iq_JWaSJWQ6rmn",
+      "name": "00000761-1 linkedin.jpg.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-15T14:27:30.000Z",
+      "size": "805502",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1OyvXCqYSHxHEzGQTnEYVrJfHL3umK7q6",
+      "name": "00000763-linkedin 3.jpg.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-15T14:27:30.000Z",
+      "size": "857425",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "16de_mogOKBMkZgai3yeNLSZhOKE2jWcx",
+      "name": "00000753-PHOTO-2026-04-14-14-57-04.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-14T20:58:36.000Z",
+      "size": "57347",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1grG6HdoDKkezL7tn50BFeS5ZOa_R_klp",
+      "name": "00000727-Donativo entrega de camión (18).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-13T15:30:50.000Z",
+      "size": "421436",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "13p51t4gNOoUw4o_ak50OSq6OrN1i9P9N",
+      "name": "00000729-Donativo entrega de camión (4).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-13T15:30:50.000Z",
+      "size": "418575",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1LoJeObldzpvdH0J6OX4Difzv35NzxaSe",
+      "name": "00000728-Donativo entrega de camión (9).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-13T15:30:50.000Z",
+      "size": "430237",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1VGjvDEacrxiQyRLUKKsxjQR3f_KjznFU",
+      "name": "00000726-Boletín entrega de camión.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-13T15:30:50.000Z",
+      "size": "199598",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1DQ44xHCmDB0cdRPAGTOqjFpELhkubP51",
+      "name": "00000721-Reporte de actividades  CIMA.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-11T00:21:44.000Z",
+      "size": "1490234",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1qSiFqavz0YUDd2t6gFwACyMuRgxgJv1a",
+      "name": "00000177-CIMA_Reporte de síntesis_10042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-10T14:31:52.000Z",
+      "size": "16402",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1b6ZXI-OfJeLzETW-Hz_5iDW_PAFwu_cQ",
+      "name": "00000715-CIMA_Reporte de síntesis_10042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-10T14:31:52.000Z",
+      "size": "16402",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1BQdjLlUQkbB5Ajr2or_f09m83Jt7dRPV",
+      "name": "00000710-PHOTO-2026-04-09-09-23-27.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-09T16:07:38.000Z",
+      "size": "131195",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1Haze3wW4G7qXiafeeeKtrPrpyErPM8D5",
+      "name": "00000708-PHOTO-2026-04-09-09-22-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-09T16:07:38.000Z",
+      "size": "95519",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1J44diFGGI4Q8TY3TCnEsgufi2Pdq2uj4",
+      "name": "00000175-CIMA_Reporte de síntesis_09042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-09T14:42:54.000Z",
+      "size": "16497",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1KmjhMOpeWeQPschLGe70-0DNOvQasZnJ",
+      "name": "00000704-CIMA_Reporte de síntesis_09042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-09T14:42:54.000Z",
+      "size": "16497",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1NcPpExKeMK65vJVlZQUgIZOaFKnLlPR0",
+      "name": "00000697-PHOTO-2026-04-08-16-05-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-08T22:05:28.000Z",
+      "size": "166067",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1OB_kM2ZPGs61MyD3I1d83Z7DRuzEMltW",
+      "name": "00000693-PHOTO-2026-04-08-16-04-53.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-08T22:04:52.000Z",
+      "size": "168965",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1IfoyJ3aSqAWj9I6bpXlDMHXDZdD2NU57",
+      "name": "00000691-PHOTO-2026-04-08-16-04-33.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-08T22:04:32.000Z",
+      "size": "137238",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1fRUy8WK52thbG86VVkdYOPyxToyZA-qj",
+      "name": "00000670-PHOTO-2026-04-08-12-06-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-08T17:57:22.000Z",
+      "size": "92831",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "10KEXVwEkRpbIL24gsAyJ07UGVvYoLNnV",
+      "name": "00000698-Salud Preventiva 2.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-08T13:57:18.000Z",
+      "size": "135838",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1S5B_Nji8s6c1KbNkVN91QAahe7HdFJW7",
+      "name": "00000656-Salud Preventiva 1.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-08T13:57:18.000Z",
+      "size": "78278",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1fVDmtqfrzJmI9fxmdOkwyRP5iBo4XLae",
+      "name": "00000657-Salud Preventiva 2.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-08T13:57:18.000Z",
+      "size": "135838",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "13QpIwI8xNpz-Ni5oh_m0lrJX_Gm5h66T",
+      "name": "00000649-VSR32767.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T23:48:24.000Z",
+      "size": "2324757",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1GTkGO1zwNITh6iz1H8zasqZ-ydZjNww0",
+      "name": "00000172-CIMA_Reporte de síntesis_07042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-07T14:35:04.000Z",
+      "size": "16333",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "13fh2SwxiUdCHL6O6jIfJkJLD3RFoBWy6",
+      "name": "00000634-CIMA_Reporte de síntesis_07042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-07T14:35:04.000Z",
+      "size": "16333",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1KUesVPtCiiKwGE1Iq2MZN3Ts8qoFmnuu",
+      "name": "00000750-IMG_7976.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:36:44.000Z",
+      "size": "429323",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1rn3zEH_gz1sqkYlNxFQ-40UVwYyATadf",
+      "name": "00000631-IMG_7976.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:36:44.000Z",
+      "size": "429323",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1CHZwe197VNcDXD6yZT8UrK-uxNcdLEQi",
+      "name": "00000749-IMG_7916.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:35:22.000Z",
+      "size": "741973",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "10Jny7JcT76SXSgehZP6KJ9NVw3a87UMh",
+      "name": "00000628-IMG_7916.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:35:22.000Z",
+      "size": "741973",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1r0_Z_mEPglE705kbXMPEDNv26qitKhbQ",
+      "name": "00000626-IMG_7884.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:35:22.000Z",
+      "size": "703627",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "17IoXVjltAFuvqkxnAG6FLL6hvGqK2jXD",
+      "name": "00000627-IMG_7950.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:35:22.000Z",
+      "size": "1028317",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1PFp_ITeLgOxuutiNgT26lf4tjXfVsYf4",
+      "name": "00000747-IMG_7884.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:35:22.000Z",
+      "size": "703627",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1e3t4co_OdHLRV-EWYU9kxf_btUTJffKa",
+      "name": "00000748-IMG_7950.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:35:22.000Z",
+      "size": "1028317",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1aLJH_B5uvWaA3UHBXdj67p4hJjAnK5p0",
+      "name": "00000625-IMG_8000.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:35:20.000Z",
+      "size": "454486",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1xQfSBos2SdcGR-rfMEDRAmV7qUWxMmAD",
+      "name": "00000168-CIMA_Reporte de síntesis_03042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-03T14:53:00.000Z",
+      "size": "16731",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1TtD9m2hPDb7XALiRPiX2XtsGgtmQGvHx",
+      "name": "00000610-PHOTO-2026-04-01-14-06-19.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-01T20:06:20.000Z",
+      "size": "145606",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1J4P7RG0CbTYzsY-5f5gP6OI8WO-FZ99z",
+      "name": "00000166-CIMA_Reporte de síntesis_01042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-01T14:55:36.000Z",
+      "size": "16569",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1jDRoLFgq9oSbA42ugVTfXATJprsRhxOl",
+      "name": "00000602-CIMA_Reporte de síntesis_01042026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-01T14:55:36.000Z",
+      "size": "16569",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "12-FrOqGCoLtDBs-Whh0pQKqlfDEOWUJT",
+      "name": "00000592-IMG_1116.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-31T22:45:24.000Z",
+      "size": "843568",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "17lHkmXkkVDqG1BdbYGnCoGCaZbNTUR5z",
+      "name": "00000590-IMG_1113.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-31T22:45:22.000Z",
+      "size": "1352731",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1oHOlT6ImHjgQn1NRVjcxEe0yF7N_k35W",
+      "name": "00000591-IMG_1115.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-31T22:45:22.000Z",
+      "size": "1089872",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "18_8uLM_DednXAG0Q81xdudahbKbXgBDW",
+      "name": "00000161-CIMA_Reporte de síntesis_31032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-31T14:58:42.000Z",
+      "size": "17267",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1z1jW_Sr7CxxDXs2ltSJ1Ib24WaKXGF2a",
+      "name": "00000552-CIMA_Reporte de síntesis_31032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-31T14:58:42.000Z",
+      "size": "17267",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1w_lmxOZuANoeVMgQaoIS0OAHR_sfE5VE",
+      "name": "00000158-CIMA_Reporte de síntesis_30032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-30T14:23:04.000Z",
+      "size": "16895",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1PG6J1Nos__YsSPbWjK1REeZWJx3JK-d2",
+      "name": "00000547-CIMA_Reporte de síntesis_30032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-30T14:23:04.000Z",
+      "size": "16895",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1_C4c6RF9QPjQWmOR5kJkPjbXb4a-wn_f",
+      "name": "00000541-Nota_ Despensas para las familias vulnerables .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-27T18:28:48.000Z",
+      "size": "8898",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1z-782pjir5u_CHWjzhR4ASScOV8rPGyR",
+      "name": "00000154-CIMA_Reporte de síntesis_27032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-27T15:44:36.000Z",
+      "size": "16557",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "19tfygn4nKhd9QWkWUdkNY3Z2U_IAiXGD",
+      "name": "00000531-CIMA_Reporte de síntesis_27032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-27T15:44:36.000Z",
+      "size": "16557",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1MaOtnl5BHX_K_5cTe0hr-KdcZmaYG3fM",
+      "name": "00000133-CIMA_Reporte de síntesis_26032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-26T14:48:38.000Z",
+      "size": "16819",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1Pg-PKJFsD6SxjvzAhjXSGZm9EMpS-IqG",
+      "name": "00000521-CIMA_Reporte de síntesis_26032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-26T14:48:38.000Z",
+      "size": "16819",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1ppFvHHA882NBCpAEtWnjHpqpsEUUHa6C",
+      "name": "00000123-CIMA_Reporte de síntesis_25032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-25T14:47:14.000Z",
+      "size": "16605",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1TjM4GgYfGr1WEwLptp9-PW9agxiq1Hpl",
+      "name": "00000518-CIMA_Reporte de síntesis_25032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-25T14:47:14.000Z",
+      "size": "16605",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1TlZpf6TC-HDeW_7qbBf-7AB-piOAxykc",
+      "name": "00000512-PHOTO-2026-03-23-16-53-18.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-23T22:21:02.000Z",
+      "size": "70027",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "12Bq0GzMBeJEXWoxvVsbl_8RRZ2F7k7TO",
+      "name": "00000105-CIMA_Reporte de síntesis_19032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-19T14:37:42.000Z",
+      "size": "17523",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1eqspf51hcdWdi3IwfEQTLIpWeZyRMd78",
+      "name": "00000483-CIMA_Reporte de síntesis_19032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-19T14:37:42.000Z",
+      "size": "17523",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1T3oakXf-TlfTK_BD_6TPxbAnczlbrubD",
+      "name": "00000102-CIMA_Segundo Reporte de síntesis_18032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-19T01:40:58.000Z",
+      "size": "17357",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    },
+    {
+      "id": "1--X7pn0ccvX8fv8GX5m9rR_-7CEJDPm7",
+      "name": "00000479-CIMA_Segundo Reporte de síntesis_18032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-19T01:40:58.000Z",
+      "size": "17357",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - CIMA + Blackwell"
+    },
+    {
+      "id": "1sl8hXkkNTnsMMLZut08bW7djkseh4TXT",
+      "name": "00000100-CIMA_Reporte de síntesis_18032026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-18T14:36:14.000Z",
+      "size": "18606",
+      "subfolder": "04",
+      "subfolderName": "04.CIMA_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo CIMA"
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "number": "27",
+  "folderTitle": "27. CUERNAVACA",
+  "folderId": "1UDAMJ1PUhv4z6MDj3BzAyzVkQjPy8RbM",
+  "folderModifiedTime": "2026-04-23T04:26:39.198Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "2026_Nota4_IrugamiDestaca_",
+    "modifiedTime": "2026-05-18T15:44:11.625000Z",
+    "source": "02. CUERNAVACA_Entregables"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-14T01:10:56Z",
+    "source": "04. CUERNAVACA_Conversaciones_WA",
+    "file": "CUERNAVACA_chat_consolidado.txt",
+    "fileId": "1xSweO2ZIEv569EdacnGlReY8XVT1GbEn"
+  },
+  "subfolderActivity": {
+    "01. CUERNAVACA_Contratos_OC": {
+      "subfolderId": "1KaGP6JIqImhKMe0geMIAOlWORQInlzaL",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:12Z_verify",
+      "last_verified_at": "2026-06-12T14:09:12Z"
+    },
+    "02. CUERNAVACA_Entregables": {
+      "subfolderId": "1IOHx8OmsR_dRxogSOYmp37dxQpN2sPCQ",
+      "fileCount": 17,
+      "latestModified": "2026-05-18T15:44:11.625000Z",
+      "latestFile": "2026_Nota4_IrugamiDestaca_",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:25Z",
+      "last_verified_at": "2026-06-05T19:45:25Z"
+    },
+    "03. CUERNAVACA_Reportes_avance": {
+      "subfolderId": "1f-HvTWsljjmOhy4z5G4z1BkKxPpw6LJr",
+      "fileCount": 2,
+      "latestModified": "2026-05-13T04:07:53Z",
+      "latestFile": "Reporte_Avance_Cuernavaca_5al12Mayo2026.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:25Z",
+      "last_verified_at": "2026-06-05T19:45:25Z"
+    },
+    "04. CUERNAVACA_Conversaciones_WA": {
+      "subfolderId": "1A5sTROvmm-etWbP0Lfcu3FH8sbBte6w8",
+      "fileCount": 2,
+      "latestModified": "2026-05-14T01:10:56Z",
+      "latestFile": "CUERNAVACA_chat_consolidado.txt",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:25Z",
+      "last_verified_at": "2026-06-05T19:45:25Z"
+    },
+    "05. CUERNAVACA_Transcripciones llamadas": {
+      "subfolderId": "1Cb2eqe7uvjjRS-9E6JyoaNVm-xAzMLoB",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:25Z",
+      "last_verified_at": "2026-06-05T19:45:25Z"
+    },
+    "06. CUERNAVACA_Agenda_Trabajos": {
+      "subfolderId": "1LPPRbcnVnbBcZt73FWbsWgttvzuBYA0X",
+      "fileCount": 2,
+      "latestModified": "2026-05-13T03:45:47.562000Z",
+      "latestFile": "Estatus al 12MAY2026_Activacion_Plan_Medios_Cuernavaca_Mayo2026.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:25Z",
+      "last_verified_at": "2026-06-05T19:45:25Z"
+    }
+  },
+  "pqProxy": {
+    "evidence": " | DELTA 2026-05-07: Reporte intel Bolaños 6-7 may entregado (691 ítems / 62+ medios). Riesgo alto: encuadre 'por fin electoral'. | DELTA 2026-05-07T23:55: Reporte intel actualizado (modifiedTime → 22:44h). Contenido vigente.",
+    "suggestion": "PRIMARIO 48-72h: Diseñar plan de respuesta narrativa al encuadre 'por fin electoral' (El Regional) — amplificar respaldo de Gobernadora González Saravia (post 403K vistas) como cierre de ciclo CEAGUA + apertura proyecto Cuernavaca 2027. SECUNDARIO: Monitoreo activo TV Azteca Morelos y columnistas (Yesenia Meraz 14.9K, Raymundo Jiménez Al Calor Político). TERCIARIO: Capitalizar entrevistas positivas Radio Fórmula+La 99 FM con réplica en círculo rojo (Político.mx, Animal Político).",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 2,
+    "label": "Acción sobre delta del día",
+    "text": "PRIMARIO 48-72h: Diseñar plan de respuesta narrativa al encuadre 'por fin electoral' (El Regional) — amplificar respaldo de Gobernadora González Saravia (post 403K vistas) como cierre de ciclo CEAGUA + apertura proyecto Cuernavaca 2027. SECUNDARIO: Monitoreo activo TV Azteca Morelos y columnistas (Yesenia Meraz 14.9K, Raymundo Jiménez Al Calor Político). TERCIARIO: Capitalizar entrevistas positivas Radio Fórmula+La 99 FM con réplica en círculo rojo (Político.mx, Animal Político).",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [
+    "contrato_OC_vacio_en_01"
+  ],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-05T19:45:25Z",
+  "driveFiles": [
+    {
+      "id": "1WveCagvto7DQ_38YC0BoGm2rxFPVkpEBDUX9wSrtqaU",
+      "name": "2026_Nota4_IrugamiDestaca_",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-18T15:44:11.625Z",
+      "size": "3054",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1xSweO2ZIEv569EdacnGlReY8XVT1GbEn",
+      "name": "CUERNAVACA_chat_consolidado.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-14T01:10:56.000Z",
+      "size": "15459",
+      "subfolder": "04",
+      "subfolderName": "04. CUERNAVACA_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1VxvK2NMv_b33ekbn8v3dOQueuB16sRX5",
+      "name": "Ruta_BolañosV2.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-13T10:13:40.000Z",
+      "size": "3035705",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1zEoXP_cFc00T_8MwzXMeHCG9qi9Ik78H",
+      "name": "vinculacion-morena.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-13T10:13:02.000Z",
+      "size": "18301",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1XHjXLONl9WVhdUYNHTf1KtTOONoKKyeV",
+      "name": "Validación nacional y cascada narrativa-2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T10:12:32.000Z",
+      "size": "13736",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1m9a10hr-MNjSARzOY1OadOZmZc00cBbO",
+      "name": "Semana2_Volver_al_Territorio.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T10:12:11.000Z",
+      "size": "23269",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1-y0kJaZp5qsl34yT_fsXgQ0GVaZBBlgz",
+      "name": "Semana1_Movimiento_como_Unidad.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T10:12:00.000Z",
+      "size": "21165",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1thn7pKk6KJ7kE61jupFB7d1W_nedfRaU",
+      "name": "Estrategia_Bolanos_Mayo_Junio_2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T10:11:40.000Z",
+      "size": "23217",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1zdM2jC0S6E2uTCOb3LCCcVfwX_DY9jwR",
+      "name": "Validación nacional y cascada narrativa.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T09:54:32.000Z",
+      "size": "13736",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1QlTG3HNGy0MUyLJBQpluVS8VXhgkG-Kp",
+      "name": "Reporte_Avance_Cuernavaca_5al12Mayo2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T04:07:53.000Z",
+      "size": "16543",
+      "subfolder": "03",
+      "subfolderName": "03. CUERNAVACA_Reportes_avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1aZkg5oLkHGSppKQ9Olwp2Q2o5ah_9U1I",
+      "name": "Estatus al 12MAY2026_Activacion_Plan_Medios_Cuernavaca_Mayo2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T03:45:47.562Z",
+      "size": "13876",
+      "subfolder": "06",
+      "subfolderName": "06. CUERNAVACA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1oqfQrT-9xNidMFSVclf6njlzUIeXySsM",
+      "name": "00000416-Columnas y propuesta de mensaje_JB.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T00:29:14.000Z",
+      "size": "2053874",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1euX5A3go0UVjPCZtXOdY5DAOV8QwA-dO",
+      "name": "Validacion_nacional_y_cascada_narrativa_v2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-12T23:34:32.000Z",
+      "size": "3232138",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "107j3I82_QAeQiMkL2coAWAiASmexavtz",
+      "name": "00000339-Mensajes Bolaños.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T18:06:20.000Z",
+      "size": "50253",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1m8THCb7JIXKHz93dywiPx_nI1u8M3GvI",
+      "name": "00000230-Comunicado_Javier_Bolanos_DiaDeLasMadres_2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-10T23:53:18.000Z",
+      "size": "8834",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "11FTVBzn-4XKk8KsN_RGC7nZbwFfCvM0B",
+      "name": "Blackwell_Bolanos_CUERNAVACA-Reporte_de_alcance_renuncia.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T16:24:43.368Z",
+      "size": "34322",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "15FXZB-DYk27YhgfdgYqFHaPoxkAYeXwO",
+      "name": "00000096-Blackwell_Bolanos_BW-26-05-JB-001 (3).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T18:19:18.000Z",
+      "size": "54674",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1gavXjH81Gpo3UP-4nvQ8FkkCXu2w_NH3",
+      "name": "00000017-JAVIER BOLANOS PROPUESTA_DRAFT1.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-06T23:51:38.000Z",
+      "size": "812306",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1NDNcBo-kgJNOXxx2jx8RED60RgtpJ4M3",
+      "name": "Estatus al 4MAY2026_Vinculacion_Medios_Cuernavaca_Mayo2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-04T18:13:05.000Z",
+      "size": "11852",
+      "subfolder": "06",
+      "subfolderName": "06. CUERNAVACA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "19BemxhiFYcnnJNmTzqALiYMacFNwc2PF",
+      "name": "CUERNAVACA HASTA 3 MAY2026_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-04T18:03:36.000Z",
+      "size": "11678",
+      "subfolder": "04",
+      "subfolderName": "04. CUERNAVACA_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1-YYfQrbFgAv97Ect9BhFKitGapKBXQMT",
+      "name": "Plan de Vinculación con Medios- CUERNAVACA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T23:05:06.000Z",
+      "size": "40771",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1FeLbRGSGfsNDgAlHrY6IUvhY12OYHp0t",
+      "name": "Cuernavaca - Propuesta de comunicación estratégica.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-22T00:57:38.000Z",
+      "size": "2498602",
+      "subfolder": "02",
+      "subfolderName": "02. CUERNAVACA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1rO98tWEiMJG9r7MZAowo377QWuvJ2WxV",
+      "name": "02_Javier_Bolanos_Cuernavaca.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-22T00:49:38.000Z",
+      "size": "21182",
+      "subfolder": "03",
+      "subfolderName": "03. CUERNAVACA_Reportes_avance",
+      "nestedPath": null
+    }
+  ]
+}

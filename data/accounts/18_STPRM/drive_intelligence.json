@@ -1,0 +1,522 @@
+{
+  "number": "18",
+  "account_id": "18",
+  "account_name": "STPRM",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1fZzPz1eeS1giqBvtNi_SMdraxLcSgMFu",
+      "title": "Propuesta Vinculación y Consultoría SINPEMEX_ V1.pdf",
+      "subfolder": "01",
+      "subfolderName": "01.STPRM_Contrato_OC",
+      "modifiedTime": "2026-02-05T20:57:23.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1SEqaMzijZU9295x8LllUeCfHHfWCnxOJETEKkDrdhso",
+      "title": "NOTA_STPRM_HERALDO",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-06-10T21:12:15.491Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1ZnE5c5D-qcg6i2fENSECqSj0jxoVRhY10L505vQ5Qzk",
+      "title": "Control de publicaciones STPRM ",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-06-09T20:30:16.806Z",
+      "kind": "Google Sheet→CSV"
+    },
+    {
+      "id": "1a7KyOglK0gkBUrX6A1L6vtlWSX6xpWfR5n-WwsuE1E8",
+      "title": "STPRM_15/05/26_HERALDO",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-05-15T22:44:54.185Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1rjlk04NtW5SLuLgnoT0o4cwjd68CxQQWWBDU4yptfSY",
+      "title": "Diálogo, transparencia y visión de largo plazo: así construye el STPRM su relación con la empresa",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-05-14T18:28:53.711Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1_f2p_o16JSmB5lGwsYRAi6RgKnkoTNFP1iVCBzLICsU",
+      "title": "STPRM_EXCELSIOR_130526",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-05-13T21:52:24.820Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1p78F9vv-uI_5r3OjyjwQOWEculwzKnvY",
+      "title": "Stprm sinoonimo de sesarrollo regional y nacional 12 mayo 26.docx",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-05-13T10:20:51.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "14g_7N-WDNKzxfbAHrjqnhUb3zpTwYGrw",
+      "title": "Propuesta de temas mayo 2025_.docx",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-05-13T10:19:27.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1LKmYtKcbjTUTKEY3xE9ruN6AONtf0-bT",
+      "title": "Propuesta_reuniones.docx",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-05-13T10:18:49.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1hRE7UwjQxK03GYZZCKao_dqFhtg15h48nocdBjUG5FE",
+      "title": "Comms Lider STPRM",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-05-05T21:37:42.635Z",
+      "kind": "Google Slides→texto"
+    },
+    {
+      "id": "1H2_f3qawXcFV9o3bIrSE8bIwJTmwYHDv",
+      "title": "Columna_1mayo_ RA.docx",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "modifiedTime": "2026-04-29T15:44:13.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1eosftQYYQMsn3MIpJvwGJ0Dd-RfmUkqn",
+      "title": "STPRM_Reporte de actividades_abril-mayo.pdf",
+      "subfolder": "03",
+      "subfolderName": "03. STPRM_Reportes_Avance",
+      "modifiedTime": "2026-05-19T14:37:08.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "14cA8Kzlkeu0ApjEIvekFkCBaMwFT6_iXTY2FAjSE3Uc",
+      "title": "Reporte de actividades M1 y siguientes pasos M2",
+      "subfolder": "03",
+      "subfolderName": "03. STPRM_Reportes_Avance",
+      "modifiedTime": "2026-05-18T15:18:09.021Z",
+      "kind": "Google Slides→texto"
+    },
+    {
+      "id": "1vp__8bYeJ4t0aTLt4axEm0eYvX39_ppV",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T00:26:40.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1sZQqmRcj7syejuHPcwKqWa1f6zKbOWXK",
+      "title": "ABRIL2026 WhatsApp Chat - Comms Líder.zip",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T00:24:05.000Z",
+      "kind": "WhatsApp/ZIP→texto"
+    },
+    {
+      "id": "1pmkLbx3sizVwdQXj6eUSmMuoAXjKXsRI",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-30T00:23:18.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1XE6_Cx-RcZfFtt6NtlAl8lBbfqJlrh4j",
+      "title": "00003439-Publicacion_10mayo_RRSS.pdf",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T21:42:52.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1XmzsybXZgvoxhTmI3AqM4iQlIsGfofH_",
+      "title": "00003438-Publicacion_30abril_RRSS.pdf",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T21:42:52.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1aqTz7xqtAl-TQBpdjly9Im2V6TVXLiCE",
+      "title": "00003428-STPRM_Nota_1Mayo2026_v2.docx",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T15:58:12.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1KbUco6-EXUeMSM4MSmm09Ojv9i6fc6s_",
+      "title": "00000013-Columna_1mayo_ RA.docx",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-29T15:52:14.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1-z2aX1ibEEW32y8JJaX7MBF5oQeo2QXh",
+      "title": "00003425-STPRM_30ABRILVF.pdf",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-28T19:33:06.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1Ok2VA2CgC7M0Obb5nnyAFK8SMD18qjKeoxWLHnLZmdY",
+      "title": "ACTIVIDADES DEL 1-5 JUNIO",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "modifiedTime": "2026-06-05T20:48:56.634Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1TOP3XG5amAVqw5ozb6BRVKDWWGM492z3Kg5Jw9w210s",
+      "title": "ACTIVIDADES DEL 25-29 DE MAYO",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "modifiedTime": "2026-05-29T21:30:07.584Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1A81WmWMbhH289jwnvSCO6aKIBrlsAIy4mXmPZUZr3DI",
+      "title": "Actividades 18-22 mayo",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "modifiedTime": "2026-05-22T21:39:19.742Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1pvgics8COj7JPVSa7jyKOJzdK3UYdK6h61X2VnZGys4",
+      "title": "ACTIVIDADES DEL 11-15 MAYO",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "modifiedTime": "2026-05-16T03:54:00.016Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1Qj_PMxcuMxmSVHGfIJiLWhDZT2kL2-ZADqse-biS3l8",
+      "title": "Actividades del 4-8 mayo",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "modifiedTime": "2026-05-11T13:59:22.637Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1t-MawwL8Xgja2JoO-eFRGWSgaDrX1jgNGKnizUgSx5A",
+      "title": "Actividades del 27-30abril",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "modifiedTime": "2026-05-01T01:34:40.939Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1Cg6FYYYvZpdewJzrGG4jynlyK_LdBM4s",
+      "title": "00003416-PHOTO-2026-04-28-11-30-54.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-28T17:34:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1QuHFWWQXC8dIhSI49EhRRM3lu85hI4c_",
+      "title": "00003378-PHOTO-2026-04-27-12-48-40.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1cgEXIk8Vx1ADwN_40ynTQpxkvbudG2YE",
+      "title": "00003373-PHOTO-2026-04-27-12-48-40.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1cJ65ALGWyk1W9nX1PS6Nfaf5C02fVBls",
+      "title": "00003374-PHOTO-2026-04-27-12-48-40.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1GCBJsNADlHy7WFxAqo9439lkiUJzutPU",
+      "title": "00003375-PHOTO-2026-04-27-12-48-40.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1vKZOK_JCdoMxhB7SdxQh2YVY0UpZ3GUR",
+      "title": "00003377-PHOTO-2026-04-27-12-48-40.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1gxKUHH_nb6rA70nCy9NJCSuyQesVXbb3",
+      "title": "00003376-PHOTO-2026-04-27-12-48-40.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1sreQwq6HlwWVWjnGAQvXhQLrNw7EVdRe",
+      "title": "00003371-PHOTO-2026-04-27-12-48-39.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1Iu27jxw7W6aL2cI5n0Pg_L16ztQlGq0W",
+      "title": "00003396-PHOTO-2026-04-27-12-48-43.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1ZEvZ63gUcyA6jUXzuDv3EXss57agFbYb",
+      "title": "00003389-PHOTO-2026-04-27-12-48-42.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1hjkKHzRv6ukdUNyBpz9f-_-9Af-zwJ3k",
+      "title": "00003393-PHOTO-2026-04-27-12-48-42.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "13GR3iLQVaj_J_HZ5lcG0tHtGWES1CFCL",
+      "title": "00003383-PHOTO-2026-04-27-12-48-41.jpg",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "kind": "imagen"
+    }
+  ],
+  "files_read_count": 39,
+  "files_skipped": [
+    "[03] Reporte de actividades M2 STPRM: error de lectura (HttpError)"
+  ],
+  "account_summary": {
+    "project_purpose": "Posicionar al STPRM y su Secretario General Luis Ricardo Aldana Prieto como referentes de modernidad sindical, capital humano estratégico y soberanía energética mediante cobertura T1 en narrativas alineadas con política federal de Sheinbaum, con entrega mensual de 5+ notas publicadas, encuentros 1:1 con líderes de opinión y gestión integral de crisis reputacional.",
+    "content_summary": "STPRM avanza en mes 5-6 (abril-junio 2026) con 30+ publicaciones T1 cumplidas consolidando narrativas de bienestar integral, capital humano y soberanía energética. Evento Día del Niño (27 abr, Sección 48) ejecutado con cobertura fotográfica documentada. Columna Aldana Milenio 1° mayo publicada. Contrato V1 (250k/mes, 12 meses) sin firma final del cliente. RIESGO CRÍTICO: Post viral Joaquín Hernández (28 abr, Facebook) acusando a 36 secretarios STPRM de corrupción y venta de plazas sin contrarnarrativa documentada ni protocolo de crisis activado.",
+    "current_status": "Campaña activa en mes 5-6 con monitoreo diario operativo (Mariana Zamudio, Sol Guerrero), evento Día del Niño documentado 27-28 abr, columna Milenio publicada, pero contrato cliente sin firma confirmada, propuesta libro Milenio pendiente desde 13 abr, y protocolo de crisis reputacional no documentado. Riesgo abierto: acusaciones de corrupción Joaquín Hernández en redes sin respuesta sistémica desde 28 abr.",
+    "scope_of_service": [
+      "5+ publicaciones web mensuales en medios T1 nacionales con control editorial",
+      "Encuentros 1:1 (1 por mes) con directores de medios y líderes de opinión",
+      "Desarrollo de propuestas narrativas estratégicas validadas con cliente",
+      "Gestión y coordinación de eventos sindicales para cobertura mediática",
+      "Monitoreo permanente de menciones en medios y redes sociales con alertas diarias",
+      "Protocolo de respuesta a crisis reputacional y acusaciones de corrupción",
+      "Propuesta de proyectos especiales (libro, columnas exclusivas, investigaciones)"
+    ],
+    "client_promises": [
+      {
+        "promise": "5 notas de prensa mes 1 (feb-mar 2026) publicadas en T1",
+        "cadence": "mensual",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Propuesta de enfoque narrativo validada con cliente",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Pool de líderes de opinión identificados para encuentros 1:1 con Aldana",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Protocolo de atención para redes sociales elaborado",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Monitoreo permanente de publicaciones y alertas reputacionales",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Notas para marco 18 marzo (Expropiación) desarrolladas y gestionadas",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Columna exclusiva Aldana para 1° mayo en Milenio",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Cobertura mes 2-3 (mar-abr) con 5+ notas publicadas",
+        "cadence": "mensual",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Cobertura mes 4-5 (abr-may) con 5+ notas publicadas",
+        "cadence": "mensual",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Encuentro 1:1 con Ángel Cong (Milenio) para vinculación estratégica",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Validación de propuesta de temas para Q2 (mayo-junio)",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Propuesta de libro con Milenio desarrollada y presentada",
+        "cadence": "único",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Gestión de vinculaciones confirmadas según agenda Aldana",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Contrato vinculación y consultoría validado y firmado",
+        "cadence": "único",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Protocolo de manejo de crisis reputacional y acusaciones de corrupción",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Gestión reactiva de acusaciones Joaquín Hernández (28 abr) con contrarnarrativa",
+        "cadence": "evento",
+        "status": "pendiente"
+      }
+    ],
+    "fulfilled": [
+      "5 notas mes 1 (feb-mar 2026) T1: Heraldo 3 mar (90 años, capital humano 94k trabajadores), Milenio 3 mar (jornadas 4k+ petroleros Tampico), Excélsior 4 mar (liderazgo Aldana), Quadratín 5 mar (bienestar Veracruz), Crónica 12 mar (agenda sindical).",
+      "Encuentro 1:1 Jorge Carrasco, Director Editorial Milenio (11 mar 2026) — vinculación establecida, fotos compartidas.",
+      "Notas expropiación 18 mar: Heraldo 17 mar (vida sindical bajo Aldana), Reforma 18 mar (soberanía energética, mención nacional).",
+      "Columna exclusiva Aldana 1° mayo Milenio (1 may 2026, digital e impresa) — trabajo decente, justicia laboral, soberanía; 5 pilares; verificable en hemeroteca.",
+      "5+ notas mes 2-3 (mar-abr): Heraldo 15 may, Mundo Ejecutivo 15 may, Universal ~1 may, SDP Noticias Salamanca 30 abr, Excélsior 15 abr.",
+      "Propuesta narrativa enfoque 4 pilares — completada, validada, socializada.",
+      "Protocolo redes sociales — recomendaciones 8M, Día Madres, Día Niño con guías visuales.",
+      "Monitoreo diario continuo (Mariana Zamudio) — menciones T1/T2/T3 registradas desde 5 mar.",
+      "Encuentro Ángel Cong Milenio (13 abr 2026) — columna 1° mayo entregada, propuesta libro presentada.",
+      "Evento Día del Niño Sección 48 (27 abr, Complejo Deportivo Unidad y Compromiso) — cobertura fotográfica 10+ fotos, actividades documentadas: cine, alimentos, juegos mecánicos, inflables, asistencia masiva.",
+      "Recomendaciones RRSS 30 abr y 10 mayo (semana 27-30 abr) — publicadas en Google Doc.",
+      "Desarrollo nota Día del Niño para RRSS (27-30 abr) — adaptada de formato original."
+    ],
+    "pending": [
+      "Validación cliente de 3 propuestas temáticas Q2 (narrativa 'gente detrás barril', agenda bienestar integral, visión largo plazo Aldana) — sin retro confirmada desde 29 abr; VENCIDO.",
+      "Propuesta de libro con Milenio — sin avance documentado desde 13 abr; cliente no ha validado ni respondido términos de publicación; VENCIDO 2+ semanas.",
+      "Contrarnarrativa reactiva a post viral Joaquín Hernández (28 abr, Facebook) acusando corrupción de Aldana y 36 secretarios STPRM — NO DOCUMENTADA; riesgo reputacional abierto sin respuesta sistémica; CRÍTICO.",
+      "Estrategia de manejo de crisis reputacional (acusaciones venta de plazas, colaboración liderazgo en prácticas corruptas) — no incluida en protocolo original; VENCIDO.",
+      "Validación final y firma de propuesta de vindicación y consultoría (contrato V1, 5 feb 2026) — estado desconocido; 4+ meses sin firma confirmada; CRÍTICO.",
+      "Redacción de nota por evento Día del Trabajo (pendiente de la semana 27-30 abr) — sin publicación documentada en reportes ulteriores."
+    ],
+    "per_file_notes": [
+      {
+        "folder": "06. STPRM_Agenda_Trabajos",
+        "file": "Actividades del 27-30abril (Google Doc)",
+        "finding": "Desarrollo nota Día del Niño (para RRSS, modificada de original), recomendaciones RRSS 30 abr y 10 mayo, publicación columna Aldana 1° mayo Milenio, monitoreo diario continuo; pendiente: redacción nota Día del Trabajo."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003416-PHOTO-2026-04-28-11-30-54.jpg",
+        "finding": "Post viral Joaquín Hernández Facebook (28 abr, ~90 caracteres, 1 día antigüedad): 'LOS 36 SECRETARIOS CORRUPTOS DEL STPRM SUBASTAN PLAZAS EN EL AIRE Y PEMEX EN LA LONA' + acusación directa 'Ricardo Aldana Prieto y sus #cómplices' mercantilización expectativa, venta de plazas, cinismo absoluto, erosión paraestatal; SIN CONTRARNARRATIVA DOCUMENTADA; RIESGO CRÍTICO."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003378-PHOTO-2026-04-27-12-48-40.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr): distribución alimentos niños (pizza/alimentos adultos), personal sindicato en uniforme rojo/blanco con accesorios temáticos, múltiples menores y trabajadores, actividad de bienestar familiar masiva, evidencia ejecutión evento."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003373-PHOTO-2026-04-27-12-48-40.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr): toma de datos/registro asistentes en mesa de control con laptops, cientos de participantes en fila, organización logística completa, cobertura operativa integral de jornada."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003374-PHOTO-2026-04-27-12-48-40.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr): módulo 'Cinema Taquilla' con entrada de cine temática, 5 personal sindicato en uniforme azul/STPRM, globos amarillos/popcorn temático, función entretenimiento infantil documentada."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003375-PHOTO-2026-04-27-12-48-40.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr noche): función cine al aire libre con familias en sillas, noche temática con estrellas decorativas doradas fondo, alcance: 50+ personas en asistencia directa fotografiada."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003377-PHOTO-2026-04-27-12-48-40.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr): módulo 'Alimentos Adultos' con distribución comida a trabajadores/familias, logística señalética clara, conversación bilateral con asistentes, bienestar tangible documentado."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003376-PHOTO-2026-04-27-12-48-40.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr): carrusel/juego mecánico con menores y adultos, contexto parque temático, actividades lúdicas integral, alcance familias completas visible."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003371-PHOTO-2026-04-27-12-48-39.jpg",
+        "finding": "Afiche promocional evento 'Día del Niño 48' (27 abr 2026, Complejo Deportivo Unidad y Compromiso, 9:00 am) firmado por Ricardo Hernández García (Secretario General Sección 48, no Aldana): 12+ actividades (tirolesa, dulceros, palomitas, hidratación, inflables, cine, juegos mecánicos, manualidades, trenecito, paseos caballos/cuatrimotos), alimentos desde 11 am, lema 'UNIDOS VENCEREMOS', documento de distribución masiva."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003396-PHOTO-2026-04-27-12-48-43.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr): módulo distribución premios/material con personal COMALCO (ropa roja uniformada), niñas participantes recibiendo premios, artículos promocionales STPRM, cumplimiento de promesas de evento tangible."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003389-PHOTO-2026-04-27-12-48-42.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr): juego inflable acuático masivo con decenas menores deslizándose, competencia lúdica, logística de entretenimiento integral, alcance visible 100+ participantes en área."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003393-PHOTO-2026-04-27-12-48-42.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr): módulo exhibición serpientes con 5 jóvenes/adultos sosteniendo culebra amarilla grande (boa constrictor), módulos educativos temáticos fauna, participación directa, actividad STEM documentada."
+      },
+      {
+        "folder": "04.STPRM_Conversaciones_WA",
+        "file": "00003383-PHOTO-2026-04-27-12-48-41.jpg",
+        "finding": "Fotografía evento Sección 48 (27 abr): souvenirs/vasos de plástico personalizados 'Día del Niño 48' 2026 con lema 'UNIDOS VENCEREMOS' + nombre 'Ricardo Hernández García' Secretario General Sección 48, colores STPRM naranja/escudo, evidencia merchandising distribuido masivo."
+      }
+    ],
+    "key_facts": [
+      "Contrato V1 (Propuesta Vinculación y Consultoría SINPEMEX) fechado 5 feb 2026, 250k/mes, 12 meses ($3M total); sin firma confirmada del cliente a junio 2026.",
+      "30+ publicaciones T1 acumuladas feb-jun 2026 (Heraldo, Milenio, Excélsior, Reforma, Universal, Crónica, SDP, Mundo Ejecutivo, Quadratín).",
+      "Post viral Joaquín Hernández Facebook 28 abr 2026 acusando 'LOS 36 SECRETARIOS CORRUPTOS DEL STPRM' y directamente a 'Ricardo Aldana Prieto' de venta de plazas; 87 reacciones+comentarios visibles.",
+      "Evento Día del Niño Sección 48: 27 abr 2026, Complejo Deportivo Unidad y Compromiso, 12+ actividades, 100+ asistentes menores, personal STPRM uniformado, merchandise personalizado distribuido.",
+      "Columna Aldana Milenio: 1° mayo 2026, digital e impresa, 'trabajo decente, justicia laboral, soberanía energética', 5 pilares estructura, fuentes OIT/CEMEES/CCT.",
+      "Encuentro 1:1 Ángel Cong Milenio: 13 abr 2026, abiertos temas: columna 1° mayo, contenido casas sindicales/jornadas deportivas, propuesta libro impresa.",
+      "Monitoreo diario: Mariana Zamudio (responsable principal), Sol Guerrero (apoyo), menciones T1/T2/T3 registradas desde 5 mar, protocolo de alertas operativo.",
+      "Propuestas temáticas Q2 (validación pendiente): narrativa 'gente detrás barril', agenda bienestar integral, visión largo plazo Aldana — sin retro cliente desde 29 abr.",
+      "Propuesta libro con Milenio: presentada 13 abr 2026, términos no validados por Aldana, sin follow-up documentado posterior.",
+      "Actividades semana 27-30 abr: desarrollo nota Día del Niño (RRSS), recomendaciones RRSS 30 abr y 10 mayo, publicación columna Aldana 1° mayo, monitoreo continuo; pendiente nota Día del Trabajo."
+    ]
+  },
+  "analyzed_at": "2026-06-11T02:59:45Z"
+}

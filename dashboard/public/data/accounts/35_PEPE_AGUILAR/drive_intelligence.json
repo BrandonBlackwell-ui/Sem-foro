@@ -1,0 +1,269 @@
+{
+  "number": "35",
+  "account_id": "35",
+  "account_name": "PEPE AGUILAR",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1heFJLsbPFdDcnPE3r83jK806gvk1IOeh",
+      "title": "ODC_EQUINOCCIO.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "modifiedTime": "2026-05-21T14:44:56.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1X1gmsxvzJ3P2UqaTipS8Xb-XT6A4P2Qg",
+      "title": "Contrato_Equinoccio_vf_1779318190781 FIRMADO.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "modifiedTime": "2026-05-21T13:57:18.447Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1NQgnxpB7junUeCrPAoyDUVyME590KmF-",
+      "title": "NDA_Equinoccio_1779312092860 FIRMADO.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "modifiedTime": "2026-05-21T13:53:47.386Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1cFgvWJXsex3S3Lo9kMpbo9ePpBvOnn0N",
+      "title": "Blackwell_Template NDA req_080526 (2).docx",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "modifiedTime": "2026-05-20T19:56:59.285Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1h7ONdfA-8mVR7FC7K5Jnq1uvNkM_2gC2",
+      "title": "Contrato marco Blackwell_Equinoccio_200526 v2 (Sin Firmar).docx",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "modifiedTime": "2026-05-20T19:14:07.829Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "15L8spDEYfqeRbpi_7Wjwcmp9-gRMl-Mt",
+      "title": "Contrato marco Blackwell_Equinoccio_190526 (Sin Firmar).docx",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "modifiedTime": "2026-05-20T19:10:43.298Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1dWfCovzDjLZYqDBo0nUlC0nFGfXcdUKl",
+      "title": "Contrato marco Blackwell_Equinoccio_200526 (Sin Firmar).docx",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "modifiedTime": "2026-05-20T18:02:55.486Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1kLUdc2m3bUDbHpQnPeeRhDRGL_mg1ozY",
+      "title": "ANEXO  A CONVENIO ESPECÍFICO con CTRL 200526.docx",
+      "subfolder": "01",
+      "subfolderName": "01. PEPE_AGUILAR _CONTRATO_OC",
+      "modifiedTime": "2026-05-20T17:34:37.538Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1VU06eK3ZDg6PFck9p6Yzma75UEJQksGR",
+      "title": "PPA_Entrevistas QVDA.docx",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "modifiedTime": "2026-06-11T01:50:10.425Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1x38iP0jPHvcVp0DgUeC2k0J5o0eN2FYI",
+      "title": "BW-07-PERC-0613.docx",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "modifiedTime": "2026-06-11T00:10:39.345Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1jabvVomlRQoTx7Ay6dTQ5uCu010_2hX0",
+      "title": "Plan-Comunicacion-PPA.pptx",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "modifiedTime": "2026-06-10T17:25:44.652Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1C6aTjpYYS6hNlswg7EY3fJK488-gFE9AQzeetPEF1sM",
+      "title": "8 JUN | Encuentros creadores JUNKET - PPA",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "modifiedTime": "2026-06-08T04:55:11.462Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1QaHoZI3PE_ZtA69felbPy_OnPr7crw_M8G07f9xzB4w",
+      "title": "FINAL | PRESS JUNKET - PPA",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "modifiedTime": "2026-06-05T20:08:36.781Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1cO4r3vCQknhMS_3j2PqoWW3AuKeVFocAvg8c_f0T0Ac",
+      "title": "Plan_Lanzamiento_AlbumTributo_PepeAguilar _260520",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "modifiedTime": "2026-05-29T18:05:18.771Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1rOjkU4AGz0_cVb3ILLAL_CCDnrI2TmTP297WvkWcDU8",
+      "title": "Plan_Concierto_Colombia_PepeAguilar_260520",
+      "subfolder": "02",
+      "subfolderName": "02. PEPE_AGUILAR_Entregables",
+      "modifiedTime": "2026-05-21T04:29:54.172Z",
+      "kind": "Google Doc→texto"
+    }
+  ],
+  "files_read_count": 15,
+  "files_skipped": [
+    "[05] Alineacion medios press junket: 2026/05/29 17:30 CST - Notas de Gemini: error de lectura (HttpError)",
+    "[05] Touch point PPA-BWS : 2026/05/28 14:27 CST - Notas de Gemini: error de lectura (HttpError)"
+  ],
+  "account_summary": {
+    "project_purpose": "Gestión integral de reputación y comunicación de crisis para Pepe Aguilar mediante método Blackwell de aprendizaje iterativo asistido por IA, posicionando al artista como CEO independiente, empresario tech y guardián del patrimonio cultural mexicano durante crisis sostenida de 18 meses por dinámicas familiares públicas (Ángela-Nodal-Cazzu) y cancelaciones de gira en EE.UU., ejecutando reset narrativo con lanzamiento del álbum tributo a don Antonio Aguilar (junio 2026) y activación de tres pilares empresariales (CEO musical, adopción IA, propiedad El Soyate campeón nacional).",
+    "content_summary": "Blackwell ejecuta contrato vigente (04.05–04.09.2026, $235K MXN/mes) con documentación legal completa: marco bilateral, NDA, Anexo A firmados 20.05.2026 y certificados blockchain. Entregables sustantivos completados: Plan Estratégico 90 días (tres pilares empresariales + cuatro ejes narrativos), Reporte de Percepción Inicial (10.06.2026, 227 redes + 196 medios, 100.9M/56.3M alcance ponderado, 76% sentimiento positivo en tema homenaje), junkets prensa (03.06, 8 medios círculo 1-2) y creadores (08.06, 6 influencers TikTok/YT/radio 1.1M–1.9M alcance), lanzamiento álbum tributo ejecutado (03.06.2026, 18 canciones), planes operacionales de concierto Colombia (27.06) y Virginia (12.07) diseñados. Mes 2 en ejecución: sustancia estratégica avanzada, déficit crítico en formalización administrativa (reunión kickoff aún pendiente, vencida 14.06; documentación método Blackwell no entregada, vencía 18.06; dashboard operativo de monitoreo diario faltante). Riesgo operativo medio-alto por brechas estructurales en SLA documentado.",
+    "current_status": "Contrato activo en semana 8 de 16 (mes 2 de 4 inicial). Lanzamiento álbum tributo ejecutado 03.06.2026 con cobertura completada en 8 medios prensa + 6 creadores contenido (junkets). Plan estratégico de tres pilares empresariales (CEO independiente, tech adopter, guardián patrimonio) formalizado y en activación progresiva Q2-Q4 2026. Concierto Colombia 27.06 en pre-ejecución (briefs pendientes 24h antes). Ángela Aguilar y Pepe Aguilar operan bajo redireccionamiento de narrativa hacia obra pura, sin cobertura sostenida de polémicas familiares en últimas 2 semanas (sentimiento positivo 76% en tema patrimonio). Falta administrativa: kickoff formal con director de cuenta + consultores vencida (14.06), documentación flujo operativo Blackwell (18.06), dashboard operativo continuo.",
+    "scope_of_service": [
+      "Consultoría estratégica reputación y comunicación de crisis: acompañamiento continuo director de cuenta + consultores senior, análisis escenarios, diseño narrativas, orientación ante eventos emergentes.",
+      "Método Blackwell iterativo asistido por IA: social listening, análisis sentimiento, formulación hipótesis narrativas, ejecución controlada, medición sistemática, identificación patrones progresivos.",
+      "Monitoreo continuo digital: medición sentimiento diario, análisis narrativas críticas, detección riesgos emergentes, reportes periódicos estructurados con insights accionables.",
+      "Coordinación estratégica prensa y vocería: diseño narrativas comunicación pública, mensajes clave, preparación vocería, recomendación espacios/formatos, acompañamiento momentos mediáticos, briefs 24-48h previo a apariciones.",
+      "Planes operacionales eventos clave: lanzamiento álbum tributo, junkets prensa y creadores, concierto Colombia (27.06), concierto Virginia (12.07), actividades humanización, activación medios aliados.",
+      "Relacionamiento con medios tier-1-2: pitch personalizado, kits de prensa empresariales, cenas privadas editores negocios/tech/deportes, invitaciones exclusivas acceso VIP.",
+      "Producción contenido y assets: press kits premium, biografía ejecutiva, infografías holding empresarial, briefs por periodista con Q&A, recomendaciones framing narrativo, protocolos redireccionamiento preguntas sensibles."
+    ],
+    "key_facts": [
+      "Contrato marco bilateral firmado 20.05.2026: MÉTODOS Y FUNDAMENTOS DE COMUNICACIÓN S.A. de C.V. (Humberto Herrera, RFC MFC190205UE1) vs. Equinoccio Records (Daniela Quezada Ruiz, RFC ERE020506B18), testigos Blanca Johanna Palacio Illingworth y Alonso Palafox Baldenebro, certificado blockchain weetrust.mx.",
+      "Vigencia: 04.05–04.09.2026 (4 meses iniciales), contraprestación $235,000 MXN/mes + IVA, pago anticipado dentro 8 días hábiles inicio mes.",
+      "NDA bilateral ejecutado 20.05.2026: non-solicitation 36 meses, non-compete 24 meses, confidencialidad 3 años post-término.",
+      "Plan Estratégico 90 días (mayo-agosto 2026): tres pilares (CEO independiente Equinoxio/Machine Records, empresario tech adopción IA, guardián patrimonio El Soyate campeón nacional), cuatro ejes narrativos (estándares, independencia, historia, obra), 10 fases timeline, KPIs: 3+ medios negocios T1 Q3, 1 foro tech, LinkedIn 10K+, 2+ medios deportivos, NPS post-campaña.",
+      "Reporte Percepción Inicial BW-07-PERC-0613.docx (10.06.2026): 227 publicaciones redes + 196 medios monitoreados, alcance ponderado 100.9M redes / 56.3M medios, 76% sentimiento positivo en tema homenaje Antonio Aguilar, segmentación por audiencia (femenina 60%, edad 30-55, urbana clase media-alta).",
+      "Junket prensa 03.06.2026: EFE (agencia, distribución hemisférica), Imagen Noticias (Paola Rojas, nacional broadcast), N+ (Danielle Dithurbide, periodismo duro), ADN 40 (Lucy Bravo, política internacional), Rolling Stone/THR (Pablo Monroy, crítica musical), Univision (Alex Rodríguez, prensa rosa EE.UU.), JAVIBI (918.9K TikTok, melómano), La Mejor FM (El Topo, 30 años radio regional), La Ke Buena (El Pollo, 30+ años director artístico). Total: 8 medios/periodistas, mix T1 nacional + sectoriales.",
+      "Junket creadores 08.06.2026: Christian Mart (1.1M TikTok, series informativas regional mexicano), David Peralta (1.9M TikTok 'El Trukutru', locutor Puebla), JAVIBI (918.9K, reseñas musicales), Pablo Monroy (Rolling Stone, periodismo musical), Diego Plaza (CEO BYMA Media, medios corporativos), Luis Maquillista (influencer). Total: 6 creadores, alcance combinado 5.9M+ TikTok/YT.",
+      "Álbum tributo '¡Que Viva Don Antonio Aguilar!': lanzamiento 03.06.2026, 18 canciones, producción 2 años, artistas múltiples generaciones, narrativa 'deuda del corazón' vs 'proyecto carrera', 76% sentimiento positivo pre-lanzamiento.",
+      "Plan concierto Colombia 27.06.2026: Movistar Arena Bogotá contexto 2024, medios aliados (Caracol TV, City Noticias, Los 40, El Tiempo), cancionero romántico 1996-2005 (376M reproducciones 'Prometiste', 334M 'Por Mujeres Como Tú'), homenaje Yeison Jiménez confirmado, protocolo riesgo Infobae réplica crítica.",
+      "Plan concierto Virginia 12.07.2026: framing 'show íntimo exclusivo', activación pre-show diseñada, ejecución operativa pendiente.",
+      "Actividades humanización planificadas: visita restaurante Zacatecas conexión don Antonio (orgánica, sin cameras visibles), serenata rancho con medio aliado (entrevista obra), coordinación con Yenny (French Toast MX) y Sarah Duru (French Toast EE.UU.).",
+      "Mensajes clave unificados junkets: (1) 'Una sueño cumplido. Homenaje. Para que su música siga viva.' (2) 'Mi propósito es poner en alto a México.' (3) 'Cada quien habla por sí mismo. Yo hablo por mi obra.' — aplicados uniformemente 8 medios + 6 creadores.",
+      "Plan narrativo empresarial Q2-Q4 2026: entrevistas Forbes/Expansión/El Financiero (Q3), foro tech Mentes en Acción, serie LinkedIn IA 4 artículos bimensuales, mini-doc El Soyate, viaje prensa Zacatecas 5-8 medios deportivos, kit prensa empresarial enviado círculo 1-2, cena privada editores negocios, propuesta columna mensual Alto Nivel.",
+      "Vocero único designado: Pepe Aguilar. Redireccionamiento preguntas sensibles (Emiliano, Ángela-Nodal, gira EE.UU.) hacia obra pura y álbum tributo establecido en Q&A por periodista.",
+      "Línea base sentimiento: 76% positivo en tema homenaje, crítica colombiana importada con 24-72h desfase de Infobae MX, audiencia patrimonial (bodas, serenatas, radio romántica), capital de simpatía intacto post-Yeison Jiménez (enero 2026).",
+      "Responsables coordinación: Blackwell (estrategia, briefs, Q&A), Yenny French Toast MX (PR círculo 1-2, comunicado), Sarah Duru French Toast EE.UU. (PR internacional, Billboard), Equinoxio Records (redes, contenido), Aneliz Aguilar (supervisora estratégica, aprobación final)."
+    ],
+    "client_promises": [
+      {
+        "promise": "Reunión de kickoff formal con director de cuenta + consultores senior + equipo Pepe previo a inicio de servicios",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Documentación escrita del flujo operativo del método Blackwell: herramientas, SLA, ciclos iterativos, plantillas reportes",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Línea base de sentimiento reputacional e índices iniciales de monitoreo establecidos y documentados con dashboard operativo diario",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Primer plan estratégico de comunicación con pilares, narrativas, medios target y hoja de ruta trimestral (90 días)",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Reporte de percepción inicial analizando conversación digital, temas dominantes, tono y segmentación de audiencia",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Planes operacionales específicos para eventos clave: lanzamiento álbum tributo, junkets prensa y creadores, concierto Colombia",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Brief por periodista 24-48h previo a cada aparición con Q&A, redireccionamiento de preguntas sensibles y framing narrativo",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Junket de prensa (3 jun) coordinado con 8 medios círculo 1-2 (EFE, Imagen, N+, ADN 40, Rolling Stone/THR, Univision, JAVIBI, radios)",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Junket de creadores de contenido (8 jun) coordinado con 6 influencers TikTok/YT/radio con alcance 5.9M+ audiencia combinada",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Lanzamiento álbum tributo a don Antonio Aguilar (3 jun) posicionado como reset narrativo de obra pura, 18 canciones, narrativa 'deuda del corazón'",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Plan comunicación concierto Colombia (27 jun) con activación medios aliados (Caracol TV, El Tiempo, Los 40) y gestión de riesgos, cancionero romántico 1996-2005, homenaje Yeison Jiménez",
+        "cadence": "evento",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Plan relacionamiento empresarial Q3-Q4: entrevistas Forbes/Expansión (negocios), foro tech, serie LinkedIn IA, mini-doc El Soyate, viaje prensa Zacatecas medios deportivos",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Actividades humanización (Juixxe + migrantes, Dr. Sonrisas, restaurante Zacatecas): diseño y ejecución coordinada fase 2 junio 2026",
+        "cadence": "evento",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Playbooks de 5 escenarios de crisis con posición lista en 90 minutos para situaciones emergentes",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      }
+    ],
+    "fulfilled": [
+      "Contrato marco bilateral firmado 20.05.2026 con testigos certificados blockchain (weetrust.mx).",
+      "NDA bilateral ejecutado 20.05.2026 (non-solicitation 36m, non-compete 24m, confidencialidad 3 años).",
+      "Anexo A (Convenio Específico) ejecutado 20.05.2026 detallando servicios, metodología, KPIs, contraprestación $235K MXN/mes.",
+      "Plan Estratégico de Comunicación 90 días (mayo-agosto 2026) completado: tres pilares (CEO independiente, empresario tech, guardián patrimonio), cuatro ejes narrativos, 10 fases timeline, KPIs verificables.",
+      "Reporte de Percepción Inicial BW-07-PERC-0613.docx (10.06.2026): 227-196 publicaciones, 100.9-56.3M alcance ponderado, 76% sentimiento positivo homenaje, segmentación audiencia.",
+      "Junket de prensa 03.06.2026 completado: 8 medios círculo 1-2 (EFE, Imagen Noticias, N+, ADN 40, Rolling Stone/THR, Univision, JAVIBI, La Mejor FM, La Ke Buena), agendas, contexto periodista, Q&A preparado.",
+      "Junket de creadores 08.06.2026 completado: 6 influencers (Christian Mart 1.1M, David Peralta 1.9M, JAVIBI 918.9K, Pablo Monroy Rolling Stone, Diego Plaza BYMA, Luis Maquillista), alcance 5.9M+ combinado, mensajes clave unificados.",
+      "Plan de Lanzamiento Álbum Tributo (26.05.2026) ejecutado 03.06.2026: narrativa 'deuda del corazón', 18 canciones, activación redes + medios círculo 1-2, cobertura prensa rosa verificada.",
+      "Mensajes clave unificados diseñados y aplicados: (1) 'Un sueño cumplido. Homenaje. Para que su música siga viva.' (2) 'Mi propósito es poner en alto a México.' (3) 'Cada quien habla por sí mismo. Yo hablo por mi obra.'",
+      "Plan de Concierto Colombia 27.06.2026 diseñado: medios aliados (Caracol TV, El Tiempo, Los 40), cancionero romántico 1996-2005 identificado, homenaje Yeison Jiménez, protocolo riesgos latentes (Infobae, Emiliano, baja asistencia).",
+      "Plan de Concierto Virginia 12.07.2026 diseñado: framing 'show íntimo exclusivo', activación pre-show estructurada.",
+      "Briefs por periodista 24-48h antes entrevistas: Q&A preparado, redireccionamiento preguntas sensibles documentado (Emiliano, Ángela-Nodal, gira EE.UU. → obra pura, álbum tributo).",
+      "Plan relacionamiento empresarial: kits prensa premium empresarial diseñados, entrevistas Forbes/Expansión recomendadas, foro tech Mentes en Acción identificado, serie LinkedIn IA 4 artículos bimensuales planificada."
+    ],
+    "pending": [
+      "Reunión formal de kickoff con director de cuenta + consultores senior + equipo Pepe — VENCIDA (fechaba 14.06.2026 según dossier previo).",
+      "Documentación escrita 'Flujo Operativo del Método Blackwell' (herramientas, SLA, ciclos iterativos, plantillas reportes) — NO ENTREGADO (vencería 18.06.2026).",
+      "Dashboard de monitoreo continuo operativo diario con índices de sentimiento verificables — PARCIAL (hay reporte estático, falta herramienta en vivo).",
+      "Confirmación formal de asistencia de Pepe a junkets 03.06 y 08.06 con media training completado — VERIFICABLE EN BRIEFS PERO NO DOCUMENTADA FORMALMENTE.",
+      "Activación de primera actividad humanización (Juixxe + migrantes EN RANCHO, Dr. Sonrisas, restaurante Zacatecas) — PLANIFICADA PERO NO EJECUTADA (corresponde fase 2 junio).",
+      "Briefs específicos por periodista para concierto Colombia 27.06 — FALTA 24-48h antes del evento (próxima semana crítica).",
+      "Coordinación formal de medios aliados Colombia (Caracol TV, El Tiempo, Los 40): pitches personalizados, confirmación apariciones — DISEÑADO PERO EJECUCIÓN PENDIENTE.",
+      "Playbooks formalizados de 5 escenarios de crisis (Emiliano, divisiones familiares, cancelación de show, ataque de fans, incidente de seguridad) — DISEÑADOS EN PLAN PERO NO COMO DOCUMENTOS INDEPENDIENTES.",
+      "Acceso exclusivo a medio mexicano para cobertura completa viaje Colombia 27.06 (desde preparación México hasta post-show) — COORDINACIÓN PENDIENTE CON YENNY.",
+      "Media training formalizado para Pepe previo a junkets, briefing por periodista, gestión situaciones incómodas — INTRA-BRIEFS PERO NO SESIÓN SEPARADA DOCUMENTADA.",
+      "Reporte de impacto post-lanzamiento álbum tributo (03.06): medición cobertura, alcance, sentimiento post-evento — NO PUBLICADO.",
+      "Confirmación de participación Pipe Bueno o artista colombiano en concierto 27.06 para potenciar impacto mediático — RECOMENDACIÓN PENDING DE COORDINACIÓN.",
+      "Distribución completa kit prensa empresarial (press kit premium, bio ejecutiva, ficha Equinoxio/Machine, cronología hitos, fotos, infografía) a círculo 1-2 negocios — DISEÑADO PERO ENVÍO NO VERIFICADO.",
+      "Entrevistas confirmadas Forbes/Expansión/El Financiero para Q3 (ago–sep 2026) — EN PIPELINE PERO SIN CONFIRMACIÓN FORMAL."
+    ]
+  },
+  "analyzed_at": "2026-06-11T03:34:15Z"
+}

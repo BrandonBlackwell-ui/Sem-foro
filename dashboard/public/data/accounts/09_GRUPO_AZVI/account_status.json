@@ -1,0 +1,1620 @@
+{
+  "number": "09",
+  "folderTitle": "09. GRUPO AZVI",
+  "folderId": "1PZiWTG1DjaZXToqHye1NXyiDjRBlVIic",
+  "folderModifiedTime": "2026-04-30T05:31:27.044Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "_chat.txt (en WhatsApp Chat - Interno Azvi_18052026)",
+    "modifiedTime": "2026-05-18T16:26:18Z",
+    "source": "04.AZVI_Conversaciones_WA"
+  },
+  "deliverableSource": "06.AZVI_Agenda_Trabajos",
+  "lastActivity": {
+    "time": "2026-05-13T00:11:04.450Z",
+    "source": "06.AZVI_Agenda_Trabajos",
+    "file": "Actividades del 27 de marzo al 30 de abril",
+    "fileId": "1DP-FJqOIx2atdZIm0ZSnmwB0q20q7wOhC9BVmDfXs4M"
+  },
+  "subfolderActivity": {
+    "01. AZVI_Contratos_OC": {
+      "subfolderId": "1VfxEXbDcblAiZWC5-RM3CZ0-nyrhHZNg",
+      "fileCount": 4,
+      "latestModified": "2026-05-18T15:28:48.556000Z",
+      "latestFile": "Respaldo_seguimiento_renovación_contrato_Grupo_AZVI.jpeg",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:07Z_verify",
+      "last_verified_at": "2026-06-12T14:09:07Z"
+    },
+    "02. AZVI_Entregables": {
+      "subfolderId": "1SOIV_5aNGlkJTVp3hY42Cb9XdpbxKumH",
+      "fileCount": 16,
+      "latestModified": "2026-05-13T00:16:16Z",
+      "latestFile": "Viaticos MTY AZVI - Hoja 1 (4).pdf (en VINCULACIONES MAYO 2026)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:10Z_verify",
+      "last_verified_at": "2026-06-11T03:40:10Z",
+      "nestedNote": "Contiene subcarpetas: VINCULACIONES MAYO 2026, ESTATUS, HISTORIA AZVI FORBES, CARTAS ACLARATORIAS"
+    },
+    "03. AZVI_Reportes_Avance": {
+      "subfolderId": "19QRPN6vyOYlEzWc8hFAshrGRrCVG-vjO",
+      "fileCount": 7,
+      "latestModified": "2026-05-08T14:20:36Z",
+      "latestFile": "AZVI_Abril (1).pptx",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:12Z_verify",
+      "last_verified_at": "2026-06-11T03:40:12Z",
+      "nestedNote": "Contiene subcarpetas: Azvi 2025 BWS "
+    },
+    "04.AZVI_Conversaciones_WA": {
+      "subfolderId": "1Yii39sEhl2-XsCZmq_qcsVMZnQugGjor",
+      "fileCount": 697,
+      "latestModified": "2026-05-18T16:26:18Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - Interno Azvi_18052026)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:13Z_verify",
+      "last_verified_at": "2026-06-11T03:40:13Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Azvi + Blackwell_18052026, WhatsApp Chat - Interno Azvi_18052026, WhatsApp Chat - Monitoreo AZVI y Dalinde_08052026, WhatsApp Chat - Interno Azvi_08052026"
+    },
+    "05. AZVI_Transcripciones_Llamadas": {
+      "subfolderId": "1SyPIVvvZ61ltDYF3Oe9oCftL7qlK5bnG",
+      "fileCount": 4,
+      "latestModified": "2026-05-12T15:08:18Z",
+      "latestFile": "ESTATUS AZVI_BLACKWELL_ 2026_05_12 08_27 CST - Notas de Gemini.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:14Z_verify",
+      "last_verified_at": "2026-06-11T03:40:14Z"
+    },
+    "06.AZVI_Agenda_Trabajos": {
+      "subfolderId": "1FYgDA7I0SzW8CAi8iq7QReT2F1dGtXpe",
+      "fileCount": 5,
+      "latestModified": "2026-05-15T18:21:01.114000Z",
+      "latestFile": "Actividades del 11 al 15 de mayo",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:14Z_verify",
+      "last_verified_at": "2026-06-11T03:40:14Z"
+    }
+  },
+  "pqProxy": {
+    "score": 78,
+    "tierMix": {
+      "tier1": 5,
+      "tier2": 0,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": "alta",
+    "hasMetrics": true,
+    "evidence": "Q1 2026: 3 impactos en medios nacionales + 5 encuentros 1:1 con periodistas T1 (La Jornada, El Heraldo, Grupo Fórmula, Reforma, Animal Político). Alcance 6.2M (Meltwater). Estructura muy detallada con relatoría de cada encuentro. Evaluado desde AZVI_Reporte Q1.pdf en 03.Reportes. | DELTA 2026-05-11T18:30:00Z: Minuta 7-may: agenda MTY-Saltillo 12-13 may definida (Multimedios, Silvia, Horizonte, Vanguardia). Testigo de trabajo PDF distribuido 8-may. Folder 01 modificado.",
+    "suggestion": "Ejecutar viaje Monterrey-Saltillo martes-miércoles 12-13 may con briefing book + perfiles + clima preparado. Cerrar artículo Forbes pendiente con ángulo tramos nuevos. Actualizar contrato con cláusula de viáticos cliente y enviar a Elena Crespo. Capitalizar relación con Eser Herrera (desayuno 12-may) para próxima ola de Reforma columna directiva.",
+    "fileEvaluated": "Testigo de trabajo Blackwell_Grupo Azvi.pdf",
+    "evaluatedAt": "2026-05-11T18:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Ejecutar viaje Monterrey-Saltillo martes-miércoles 12-13 may con briefing book + perfiles + clima preparado. Cerrar artículo Forbes pendiente con ángulo tramos nuevos. Actualizar contrato con cláusula de viáticos cliente y enviar a Elena Crespo. Capitalizar relación con Eser Herrera (desayuno 12-may) para próxima ola de Reforma columna directiva.",
+    "source": "delta-2026-05-11"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T03:39:43Z",
+  "driveFiles": [
+    {
+      "id": "1EBOxfpPggRD9JPi4nLvmV0ElpMY7EI0r",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-18T16:26:18.000Z",
+      "size": "20750",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_18052026"
+    },
+    {
+      "id": "1dRUbrfJGUFF_LuwVit6qAqxKMxSrAbXg",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-18T16:26:06.000Z",
+      "size": "242246",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "14GTLPqR9Bk_p7eLaVG1zq7t5NPn_3bJj",
+      "name": "Respaldo_seguimiento_renovación_contrato_Grupo_AZVI.jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-18T15:28:48.556Z",
+      "size": "43131",
+      "subfolder": "01",
+      "subfolderName": "01. AZVI_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1be3nFXCcipbRMhfXf8q4WWkHq3-ZJouc",
+      "name": "00002981-Itinerario_MTY_Mayo_2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-16T00:44:46.000Z",
+      "size": "38963",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "14YKKs7ZTZCRcjh0ofhRpw2v3Py1O5sOAdEMd7_mjEXI",
+      "name": "Actividades del 11 al 15 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T18:21:01.114Z",
+      "size": "1529",
+      "subfolder": "06",
+      "subfolderName": "06.AZVI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1Kh0FnAq8Jv8hN91GPCMsnrRO5ipxQZe6",
+      "name": "Viaticos MTY AZVI - Hoja 1 (4).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T00:16:16.000Z",
+      "size": "64826",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "VINCULACIONES MAYO 2026"
+    },
+    {
+      "id": "1DP-FJqOIx2atdZIm0ZSnmwB0q20q7wOhC9BVmDfXs4M",
+      "name": "Actividades del 27 de marzo al 30 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T00:11:04.450Z",
+      "size": "1659",
+      "subfolder": "06",
+      "subfolderName": "06.AZVI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1QMN_Aug_8ATTYAAECZyf11JYtc6ecaKA",
+      "name": "00002948-Viaticos MTY AZVI - Hoja 1 (4).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T23:01:18.000Z",
+      "size": "64826",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1Q7Z2UboVIHTMFDSw4_DvejjaumGhw37R",
+      "name": "ESTATUS AZVI_BLACKWELL_ 2026_05_12 08_27 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-12T15:08:18.000Z",
+      "size": "946619",
+      "subfolder": "05",
+      "subfolderName": "05. AZVI_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1bH3_1Hn0uhxoy9NtNL5lJ9UESxw7nmgp",
+      "name": "Briefing_Book_Vinculaciones_Mayo2026_VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-12T14:58:36.000Z",
+      "size": "5416280",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "VINCULACIONES MAYO 2026"
+    },
+    {
+      "id": "1ESDXjiHz1zn3OZyJOLW_XHe2ZWuE9Ii5",
+      "name": "Seguimiento vinculación medios MTY_ 2026_05_07 10_00 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T19:51:48.000Z",
+      "size": "946914",
+      "subfolder": "05",
+      "subfolderName": "05. AZVI_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1OewtIjiC4EjOr_c2KDrERWjbOIDmZXap",
+      "name": "Testigo de trabajo Blackwell_Grupo Azvi.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T18:08:30.000Z",
+      "size": "29394",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "16Ejo79cIqLNctBGwswtheL4eVBAoSrWU",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:45:52.000Z",
+      "size": "282757",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo AZVI y Dalinde_08052026"
+    },
+    {
+      "id": "1ITN0QQlLqIaaWG85x0dQabiK0rEcoaSW",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:45:16.000Z",
+      "size": "20675",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_08052026"
+    },
+    {
+      "id": "1EPAjbkgxa69aXLQDIBHTOG1vIa6UijVu",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:45:02.000Z",
+      "size": "223527",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1gZmmqVP23NsPB8K7-DQrFhB9ZPK8r8Xl",
+      "name": "AZVI_Abril (1).pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-08T14:20:36.000Z",
+      "size": "9796548",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1TPqEFwsmRVWw3hs0Xty3y7XxMbII4uHBkKyu4400KFc",
+      "name": "Actividades del 4 al 8 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-08T14:20:18.925Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.AZVI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1ma3YSBbVXctmPcRD6ImrJM3hAUHKd9I8",
+      "name": "00002871-AZVI_Presupuesto Viaje vinculacion MTY.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T12:33:40.000Z",
+      "size": "345222",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1ug1H93pSv_w-xIqlF2DRs9WKAuPhjJsr",
+      "name": "00002871-AZVI_Presupuesto Viaje vinculacion MTY.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T12:33:40.000Z",
+      "size": "345222",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1gtm3Cg0yAsvZc8ne1iHI3-oyCS-Gbde04eVP8UOphWY",
+      "name": "AZVI_Presupuesto Viaje vinculacion MTY",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-05-07T04:44:55.122Z",
+      "size": "1426915",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "VINCULACIONES MAYO 2026"
+    },
+    {
+      "id": "1CLUADp8m-UhtjrmaacYo2JVPtLSTgEFl",
+      "name": "AZVI_140426.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-29T22:18:12.000Z",
+      "size": "27823",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "ESTATUS"
+    },
+    {
+      "id": "1RMn7NA14iOWxB62XHISrrcxlU89BWQGp",
+      "name": "AZVI_Forbes_Mexico (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:17:25.000Z",
+      "size": "12807",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "HISTORIA AZVI FORBES"
+    },
+    {
+      "id": "1S4u0uioAItNE4EQWQJURO2eWGXozzzLG",
+      "name": "Excelsior_270426 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:15:51.247Z",
+      "size": "9128",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "NOTAS DE MEDIOS"
+    },
+    {
+      "id": "1iE7X718uJ9p_L6__-XLDjQvfupRT5VJO",
+      "name": "Milenio_270426 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:15:27.423Z",
+      "size": "9178",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "NOTAS DE MEDIOS"
+    },
+    {
+      "id": "1kUcFj7VCLiXlchN2BzF7n0bD5lLoE9eS",
+      "name": "WhatsApp Image 2026-04-10 at 5.55.52 PM.jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T22:12:31.000Z",
+      "size": "163393",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "REPLICAS"
+    },
+    {
+      "id": "1SSzR7k1OOHfIr7TQqMPvN6WfNjBa8hAN",
+      "name": "WhatsApp Image 2026-04-10 at 2.29.37 PM.jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T22:12:19.000Z",
+      "size": "339500",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "REPLICAS"
+    },
+    {
+      "id": "1RnnDW1AiKU87be7lwZB9wcNlLRAY2ClZ",
+      "name": "WhatsApp Image 2026-04-10 at 1.56.01 PM (1).jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T22:12:07.000Z",
+      "size": "185188",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "REPLICAS"
+    },
+    {
+      "id": "1-8WvzxHZfehqk5y2YlTNQ984gA8utjCQ",
+      "name": "WhatsApp Image 2026-04-10 at 1.56.01 PM.jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T22:12:04.000Z",
+      "size": "171784",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "REPLICAS"
+    },
+    {
+      "id": "116KAFAoZ9SosPaPzYFCk1ZprlymK4URn",
+      "name": "20250304 Postura para Mario Maldonado_v1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:11:46.000Z",
+      "size": "9288",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "CARTAS ACLARATORIAS"
+    },
+    {
+      "id": "1InqdfcwvnggGm7NBH7Q5oD8q2hPjdyye",
+      "name": "20260410 Carta_Francisco_Ortiz_Reforma_EC_2 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:11:44.000Z",
+      "size": "1768896",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": "CARTAS ACLARATORIAS"
+    },
+    {
+      "id": "1Yev_gYvcJ3Bjge-TZnN32kM9RcF3dxiO",
+      "name": "20251031 Informe de Vinculación Grupo Azvi México_V3 (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:09:55.000Z",
+      "size": "2050216",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1GZabhZFL4Hia7swFqFWmIHdKXrGFLG8fNlixuJFzYQU",
+      "name": "Actividades 13 al 17 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T18:31:12.260Z",
+      "size": "1292",
+      "subfolder": "06",
+      "subfolderName": "06.AZVI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1WN8zd-8xfdR4P9H3JmD_qvON7DvySQZ_y0ew61-qVd0",
+      "name": "Actividades del 20 al 24 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T18:29:42.497Z",
+      "size": "1395",
+      "subfolder": "06",
+      "subfolderName": "06.AZVI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1_Sv1lsZc9PzzYmOtVi8bxk3WpNb0uwE1",
+      "name": "Estatus_ 2026_04_28 10_00 CST - Notas de Gemini.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T16:19:06.000Z",
+      "size": "946013",
+      "subfolder": "05",
+      "subfolderName": "05. AZVI_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1KER6urtorEGi8YBndsMX3vXaviIIY_y6",
+      "name": "00002822-PHOTO-2026-04-27-18-45-05.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T03:34:46.000Z",
+      "size": "101848",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1aUOVFaqSjTi9fsMLgC09yvZH8ASGqMgt",
+      "name": "00002822-PHOTO-2026-04-27-18-45-05.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T03:34:46.000Z",
+      "size": "101848",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1VOjBhlOUo2dF4NcFqly_H0atK0ELJ-Wb",
+      "name": "00002815-PHOTO-2026-04-27-15-25-04.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:36:08.000Z",
+      "size": "93216",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1NHoEx6fg1dHxLK9V0CAsuZAQScPzrCS6",
+      "name": "00002815-PHOTO-2026-04-27-15-25-04.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:36:08.000Z",
+      "size": "93216",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1usreltIy7jQbCP9mRW_85Wje83k8nsts",
+      "name": "00002787-PHOTO-2026-04-25-08-44-47.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-25T14:49:38.000Z",
+      "size": "254193",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1XqJnT286vuL-RW08Vlk5FHMOgfzaxjro",
+      "name": "00002788-PHOTO-2026-04-25-08-44-48.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-25T14:49:38.000Z",
+      "size": "194081",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1cfrH0FQZvF2rJkKqkmFpTt0JwACgLqLq",
+      "name": "00002788-PHOTO-2026-04-25-08-44-48.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-25T14:49:38.000Z",
+      "size": "194081",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1ymDpzDA0KL6Hhcdx6l1NmV9Msl9m8wgQ",
+      "name": "00002787-PHOTO-2026-04-25-08-44-47.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-25T14:49:38.000Z",
+      "size": "254193",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1WQLkgfoFsIJLtt3ZVoKY9moWcgpjwzfP",
+      "name": "00002760-AZVI_Notas_Milenio_Excelsior_EXC.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T14:57:48.000Z",
+      "size": "2065622",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1FsYk4kSaWHmrRyHfhZbigWvkLBCw2WVv",
+      "name": "00002751-AZVI_Notas_Milenio_Excelsior.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T01:34:04.000Z",
+      "size": "8516",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1wTU1BLzyXe4Vtx3uRX4sl1_gwUP7F7ed",
+      "name": "00002751-AZVI_Notas_Milenio_Excelsior.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T01:34:04.000Z",
+      "size": "8516",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1Y9DxecILSUMgR7geoNHQkNbUylu6GShmZVcAxdHthVo",
+      "name": "Touchpoint AZVI + BWS: 2026/04/15 09:58 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-23T03:44:33.311Z",
+      "size": "26100",
+      "subfolder": "05",
+      "subfolderName": "05. AZVI_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1ceguJHVpqyFsY__U3c2b9KG_-WhEP54a",
+      "name": "AZVI_Reporte Q1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T03:43:43.000Z",
+      "size": "1715224",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1R-U0awVEZbueWH-7Or8gq2YSO_bM0463",
+      "name": "Correo renovación contrato .jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-21T00:06:10.000Z",
+      "size": "217821",
+      "subfolder": "01",
+      "subfolderName": "01. AZVI_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1PQhUdisfTlOa22-JqWSQUJUAE6e2D9qO",
+      "name": "CONTRATO_AZVI.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T00:06:06.000Z",
+      "size": "1154611",
+      "subfolder": "01",
+      "subfolderName": "01. AZVI_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1SDi4H7fkQ5hodBqMGJLP05tXBYndbbEJ",
+      "name": "Adendum_AZVI_011125_1763495405627.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T00:06:01.000Z",
+      "size": "1036694",
+      "subfolder": "01",
+      "subfolderName": "01. AZVI_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1HiDuzHsHz1NR5YaxEOOz59JyLzNCQIy8",
+      "name": "00002724-AZVI_Forbes_Mexico.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-20T21:32:28.000Z",
+      "size": "12770",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1GiVjo97OpM4zC6OTmQ17TfUwWtQy_eBk",
+      "name": "00002724-AZVI_Forbes_Mexico.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-20T21:32:28.000Z",
+      "size": "12770",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1_fExhHZ5V5hjwb-0VgkZeyvL5pn6yFiE",
+      "name": "00002678-PHOTO-2026-04-11-09-53-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-11T15:54:28.000Z",
+      "size": "162571",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1zV2yUnmofPlYB5m0i9HT9KkoeF80Q1Z3",
+      "name": "00002678-PHOTO-2026-04-11-09-53-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-11T15:54:28.000Z",
+      "size": "162571",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1Yq_IyGR5NekI4rOk0ppHB7RFKg6mDdw2",
+      "name": "00002664-PHOTO-2026-04-10-21-46-15.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-11T03:51:06.000Z",
+      "size": "288144",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1YAZtwLK-9O096-ZMss6OGS0RlIlFMcC-",
+      "name": "00002664-PHOTO-2026-04-10-21-46-15.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-11T03:51:06.000Z",
+      "size": "288144",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1N5mFFLAIGQ4TMBIAFc8WeJ-Whry6P_RA",
+      "name": "00002661-AZVI_Reporte Q1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-11T02:55:40.000Z",
+      "size": "1715224",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1-F2HAlC7iZvsWujRZ-G-XbV2ksG3dS5t",
+      "name": "00002661-AZVI_Reporte Q1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-11T02:55:40.000Z",
+      "size": "1715224",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1Aiq1tMlU6mZivBv10JeNMJ5-4EERn6Jf",
+      "name": "00002656-PHOTO-2026-04-10-17-55-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T23:59:40.000Z",
+      "size": "163393",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1SUVZmOXwRGOvKbRJRKCV3bjn-fgcQMeg",
+      "name": "00002656-PHOTO-2026-04-10-17-55-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T23:59:40.000Z",
+      "size": "163393",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1lIzX3ngQJeSfbY_D_bTCHPH82JQgKxzr",
+      "name": "00002657-PHOTO-2026-04-10-17-55-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T23:59:38.000Z",
+      "size": "226388",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1BnlLQzMNXsdRLS1oTPN_IaTQ2C8UnXKl",
+      "name": "00002657-PHOTO-2026-04-10-17-55-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T23:59:38.000Z",
+      "size": "226388",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1K9mdESb6yqktatjtuqiAUWn6Bf9Y99KR",
+      "name": "00002646-PHOTO-2026-04-10-14-29-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T20:30:42.000Z",
+      "size": "339500",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "18HnjXTv6jzMxhaVaCdhxkL0u5CKn_tEx",
+      "name": "00002646-PHOTO-2026-04-10-14-29-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T20:30:42.000Z",
+      "size": "339500",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1CgPi6_VHVS3SNfLuNVv6DaTodqf31tEM",
+      "name": "00002642-PHOTO-2026-04-10-13-56-01.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T20:30:40.000Z",
+      "size": "185188",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1lK_XlbUO3h8C3Owx9e6E5MVmA1Gm3RGV",
+      "name": "00002641-PHOTO-2026-04-10-13-56-01.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T20:30:40.000Z",
+      "size": "171784",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1jjzL_74TCA_7dagm0jSzgjt1CJg4wt_s",
+      "name": "00002642-PHOTO-2026-04-10-13-56-01.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T20:30:40.000Z",
+      "size": "185188",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1KepnLr8hun0nQJHycAu6pkeoA_7fHwlk",
+      "name": "00002641-PHOTO-2026-04-10-13-56-01.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T20:30:40.000Z",
+      "size": "171784",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1Q-ym1D8NSuZZj4mNhCbrvwaco8wQlhLl",
+      "name": "00002634-AUDIO-2026-04-10-06-52-50.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-04-10T12:53:44.000Z",
+      "size": "117618",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1v7DAlfBlNRRqlZhPsZLDogJaCKDdqdGz",
+      "name": "00002634-AUDIO-2026-04-10-06-52-50.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-04-10T12:53:44.000Z",
+      "size": "117618",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "13zXfzuYYKENtQ52E1DnaXMYwftvcnVqP",
+      "name": "00002626-PHOTO-2026-04-10-06-09-39.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T12:09:48.000Z",
+      "size": "296008",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1s8NYmBb4cJQfFUdP2iX20o4R31qpqCKg",
+      "name": "00002626-PHOTO-2026-04-10-06-09-39.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T12:09:48.000Z",
+      "size": "296008",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1q4-8EvzqxPoobG6wT1Lp7Z8LEcmYXnMm",
+      "name": "00002621-PHOTO-2026-04-10-00-49-51.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T06:50:42.000Z",
+      "size": "30599",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1GNR-1hWLPYgkR9iI9YsxF79CY37EMl_4",
+      "name": "00002621-PHOTO-2026-04-10-00-49-51.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T06:50:42.000Z",
+      "size": "30599",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1f9mVHhIqISqFQIJYFfdJJJJsfLYCOvbq",
+      "name": "00002616-20260410 Carta_Francisco_Ortiz_Reforma_EC_2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-10T06:29:00.000Z",
+      "size": "1768896",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1V6LX9Fbjq_pZmKg8gg_NSz6CmnWaxeIr",
+      "name": "00002614-carta_Francisco_Ortiz_Reforma (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-10T05:22:34.000Z",
+      "size": "197972",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1hWRj3dovUUB3gUm01iu4r_mSKPuCUCqg",
+      "name": "00002614-carta_Francisco_Ortiz_Reforma (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-10T05:22:34.000Z",
+      "size": "197972",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "19sJdh4ta5yDAEGMfuJfBbo6ubMPw9Tv2",
+      "name": "00002589-carpeta Blackwell-2026-04-07.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-07T11:17:28.000Z",
+      "size": "49878363",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1qh0cLwKYizowmy4lAFyZSXkADyL_OlJH",
+      "name": "00002589-carpeta Blackwell-2026-04-07.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-07T11:17:28.000Z",
+      "size": "49878363",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1st1IzNF9sCh-5C62E8MrObWL__cOSncS",
+      "name": "00002584-carpeta Blackwell-2026-04-06.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-06T15:38:18.000Z",
+      "size": "49217442",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1yYBv_K_xH28yCiTFxu-whKsRMAOm2sR4",
+      "name": "00002579-carpeta Blackwell -2026-04-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-03T11:44:12.000Z",
+      "size": "22891216",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1LnAmhhPSAxsOy6kb_pw3DsiX5WhEdlQ7",
+      "name": "00002573-carpeta Blackwell-2026-04-02.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-02T11:32:20.000Z",
+      "size": "28296434",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1Vp0ufGf6RC0JXX_FvsuiM20o2SR5KNlm",
+      "name": "00002569-carpeta Blackwell-2026-04-01.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-01T11:21:42.000Z",
+      "size": "46331486",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1gh22XOBlgTnTAxcOzkBKSYUUBprfb_oA",
+      "name": "00002564-carpeta Blackwell-2026-03-31.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-31T11:31:30.000Z",
+      "size": "48183987",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1532j7ib7PoMaN0SvB3CMb11fS9VV9HWP",
+      "name": "00002559-carpeta Blackwell-2026-03-30.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-30T10:41:28.000Z",
+      "size": "45862921",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1tZUsanOiZvAvv80zTiAs6uf7Ya_yIsLz",
+      "name": "00002559-carpeta Blackwell-2026-03-30.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-30T10:41:28.000Z",
+      "size": "45862921",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "13e454xiFeXkLMbMBX_IhZLct9cLqBoCD",
+      "name": "00002526-carpeta Blackwell -2026-03-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-24T10:27:56.000Z",
+      "size": "55196756",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1aveO3u4JF_fhiorBLl0lU75hP2tITheU",
+      "name": "00002517-carpeta Blackwell-2026-03-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-23T15:41:14.000Z",
+      "size": "55613053",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1G4-Zpcr3Otx_oz10bGKmXug23Zov02JI",
+      "name": "00002517-carpeta Blackwell-2026-03-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-23T15:41:14.000Z",
+      "size": "55613053",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1pojHLqvKDDQat1jt1qnmm1F36C2cw3FI",
+      "name": "00000650-PHOTO-2026-03-20-08-03-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-20T14:08:18.000Z",
+      "size": "77133",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_18052026"
+    },
+    {
+      "id": "10_RU1psqrI51x25lPGdjsurBjdyzfkpt",
+      "name": "00000648-PHOTO-2026-03-20-08-03-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-20T14:08:18.000Z",
+      "size": "77089",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_18052026"
+    },
+    {
+      "id": "1WCUxJMUNkEssB7wobiyXmNCl3I0Ior_u",
+      "name": "00000649-PHOTO-2026-03-20-08-03-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-20T14:08:18.000Z",
+      "size": "273589",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_18052026"
+    },
+    {
+      "id": "1CSsVjCPYVgpfsdm-zdU8lKI9BJAOP5VU",
+      "name": "00000648-PHOTO-2026-03-20-08-03-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-20T14:08:18.000Z",
+      "size": "77089",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_08052026"
+    },
+    {
+      "id": "13gXLqmUUsec5IaGn29kYs246hCs4NZNa",
+      "name": "00000650-PHOTO-2026-03-20-08-03-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-20T14:08:18.000Z",
+      "size": "77133",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_08052026"
+    },
+    {
+      "id": "112mxPoy1dnnQGJFJI7D9XcPYos1x9NZC",
+      "name": "00000649-PHOTO-2026-03-20-08-03-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-20T14:08:18.000Z",
+      "size": "273589",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_08052026"
+    },
+    {
+      "id": "1Xc3HaIKbbmfYjFgU0uNKLNK9dYSalDW4",
+      "name": "00002498-Comunicado - Construcciones Urales gana nuevo tramo ferroviario en Monterrey.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-19T21:11:40.000Z",
+      "size": "245589",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1CUyjpFU8fXTd201xaz2RIOsrbopIAYcA",
+      "name": "00002498-Comunicado - Construcciones Urales gana nuevo tramo ferroviario en Monterrey.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-19T21:11:40.000Z",
+      "size": "245589",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1uC2gAYF73zQJdg0bKf_5tO7Sgax_1Q6n",
+      "name": "00002485-PHOTO-2026-03-19-11-48-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-19T18:05:08.000Z",
+      "size": "639704",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "18cZ-PVtC4mUtAnyviaSEA969bfAKPkaI",
+      "name": "00002483-20260319 Adjudicación_Monterrey_Segmento15A1_MX.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-19T18:05:08.000Z",
+      "size": "14818",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1EhoHp01wfq8r4hxUCYhcz0SYWwn4O4Z1",
+      "name": "00002484-PHOTO-2026-03-19-11-48-05.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-19T18:05:08.000Z",
+      "size": "160453",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1dCzWNDe9K0TwNmA2ItADMxayPEmrdAwv",
+      "name": "00002483-20260319 Adjudicación_Monterrey_Segmento15A1_MX.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-19T18:05:08.000Z",
+      "size": "14818",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "15W-vOYhqX0awCJuKWkYVFzbwJkWzuw95",
+      "name": "00002484-PHOTO-2026-03-19-11-48-05.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-19T18:05:08.000Z",
+      "size": "160453",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1vOL9wwBzlAU3QbZ6OLM7QCrFoZniBPfe",
+      "name": "00002485-PHOTO-2026-03-19-11-48-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-19T18:05:08.000Z",
+      "size": "639704",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1fJgpL9yG6YQyu4hIC8tR_wdtGPzTs8qM",
+      "name": "00002464-PHOTO-2026-03-18-23-43-46.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-19T05:43:52.000Z",
+      "size": "130663",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1KMjWOQygCkqn6STHdumk6a8BSElUJzfM",
+      "name": "00002464-PHOTO-2026-03-18-23-43-46.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-19T05:43:52.000Z",
+      "size": "130663",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1hcDbzgYzzWU6OIa4v-we64BdchBWP9tN",
+      "name": "00002457-carpeta Blackwell-2026-03-18.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-18T11:18:06.000Z",
+      "size": "58635605",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1WeDizP_TWJUWLVEzSpH63FLqdWC9QXwT",
+      "name": "00002452-carpeta Blackwell-2026-03-17.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-17T12:41:34.000Z",
+      "size": "57856728",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1S57IOcvtHtZoNlEblu57ViZsDyD526Ii",
+      "name": "00002446-carpeta Blackwell-2026-03-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-16T11:30:26.000Z",
+      "size": "35915838",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1cHqqAnFsLdksFbT6F415eh7XCQ-EUZ7R",
+      "name": "00002445-carpeta Blackwell-2026-03-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-13T11:25:36.000Z",
+      "size": "53396210",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1qXMec7yzYriwpy3N9h_1FJ2iDM7bq_rF",
+      "name": "00002429-carpeta Blackwell-2026-03-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T10:49:02.000Z",
+      "size": "59030932",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1AYYHe2XYXvYCIHuohPRTdPAKIZT9TyKL",
+      "name": "00002429-carpeta Blackwell-2026-03-10.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T10:49:02.000Z",
+      "size": "59030932",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1t7qIPH-Egg3FYbthWMSRnuxNAzSZQAXX",
+      "name": "00000587-AUDIO-2026-03-09-11-19-52.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-03-09T17:19:52.000Z",
+      "size": "127536",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_18052026"
+    },
+    {
+      "id": "1VgAqlE9v37Df4XHbix9U1kXOZQKE4vEc",
+      "name": "00000587-AUDIO-2026-03-09-11-19-52.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-03-09T17:19:52.000Z",
+      "size": "127536",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_08052026"
+    },
+    {
+      "id": "1xTfslPy5KwukPBtfqMMfBt0LAgSJQXSA",
+      "name": "00002426-carpeta Blackwell-2026-03-09.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-09T15:29:06.000Z",
+      "size": "53639018",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1dNUeDJKV8NXE-KhL6ts-WuKxs7S0myiM",
+      "name": "00002421-Carpeta Blackwell 2026-03-06.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-06T12:16:08.000Z",
+      "size": "54925501",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1ztyXiTW_1v3nmbuARQiXpNuR_fduV_x8",
+      "name": "00002375-Carpeta Blackwell 2026-03-05.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-05T12:36:36.000Z",
+      "size": "53163780",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1w7jZwR5D9QKZnI5zcpjfFtr1zLAOhZq1",
+      "name": "00002362-20250304 Postura para Mario Maldonado.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-04T20:08:04.000Z",
+      "size": "4184908",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1ofz_ME7BBPlsP_1ErjqWc9RHDgY5PFbz",
+      "name": "00002349-AUDIO-2026-03-04-11-27-35.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-03-04T17:27:34.000Z",
+      "size": "89363",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "16ktF2yYeRrsKFDVNuaEF4TTrFwgbj4GY",
+      "name": "00002349-AUDIO-2026-03-04-11-27-35.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-03-04T17:27:34.000Z",
+      "size": "89363",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1hBBVzHQNnQeh4QbzlsgVeJytsCtspHNR",
+      "name": "00002336-20250304 Postura para Mario Maldonado_v2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-04T17:10:54.000Z",
+      "size": "1675169",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1uRmJwOJ_yMv-vGP8d3pGtOCRJGo3j3vg",
+      "name": "00000545-20250304 Perfil Mario Maldonado - El Universal.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-04T16:19:12.000Z",
+      "size": "3561069",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_08052026"
+    },
+    {
+      "id": "1bN6SD97y5tyX9s-IBDQzG_Bmahc4KiMX",
+      "name": "00002329-20250304 Perfil Mario Maldonado - El Universal.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-04T16:19:12.000Z",
+      "size": "3561069",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "10yxpIOxy14xP41KiEMolmV8N3w8nPd33",
+      "name": "00002330-20250304 Postura para Mario Maldonado_v1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-04T16:19:10.000Z",
+      "size": "9288",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1UFiItNdapbsXlyTamP8BfTJLV2_qqNgx",
+      "name": "00000546-20250304 Postura para Mario Maldonado_v1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-04T16:19:10.000Z",
+      "size": "9288",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_18052026"
+    },
+    {
+      "id": "1Z9U7oxabkF7nSfkpqqgHrffU7X93DM_n",
+      "name": "00000546-20250304 Postura para Mario Maldonado_v1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-04T16:19:10.000Z",
+      "size": "9288",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_08052026"
+    },
+    {
+      "id": "1eWbHdRWT9UenvLa77re29y7-kDsXABYc",
+      "name": "00002330-20250304 Postura para Mario Maldonado_v1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-04T16:19:10.000Z",
+      "size": "9288",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1g77ON5UlwZlncxx8QzF34yA0pKFTWhQQ",
+      "name": "00002322-Morena y el Verde_ entre la traición y la ruptura, escribe Mario Maldonado.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-04T14:01:30.000Z",
+      "size": "1321557",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1_SNQCIGQd2GBvqfJNsWfDL6IdWftzFsz",
+      "name": "00002311-carpeta Blackwell-2026-03-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-03T11:58:20.000Z",
+      "size": "55533589",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1-7u189PYjEp9mslk1qMlPwCcNLYh3mF7",
+      "name": "00002311-carpeta Blackwell-2026-03-03.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-03T11:58:20.000Z",
+      "size": "55533589",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1mBjIVzEzRkPi0jwyQsCLUgqwaVDbwp9m",
+      "name": "00002308-carpeta Blackwell-2026-03-02.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-02T12:20:32.000Z",
+      "size": "55610800",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1oltXBbs0cJjPIKt_5F0B5wHK0mp-4pS9",
+      "name": "00002301-carpeta Blackwell-2026-02-27.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-27T15:22:18.000Z",
+      "size": "51584042",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1qj7323EaqHDtlCd8hYlloYjXjTOQlsiw",
+      "name": "00002301-carpeta Blackwell-2026-02-27.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-27T15:22:18.000Z",
+      "size": "51584042",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1F3lumiAQUDAuMize4ANuCvEQjGFj-bkx",
+      "name": "00002297-carpeta Blackwell-2026-02-26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-26T11:58:28.000Z",
+      "size": "53470311",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "11fuLQwDD1dVSR4WIk-mFI3xOeCx4jwxi",
+      "name": "00002290-carpeta Blackwell-2026-02-25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-25T11:14:58.000Z",
+      "size": "55915909",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1PQlz0xkkDaJFbSvu4EwnPXSXrwOZYAXA",
+      "name": "00002290-carpeta Blackwell-2026-02-25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-25T11:14:58.000Z",
+      "size": "55915909",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1PFG6pravIgPPqlOWs0HdGnfwRDqnH5-m",
+      "name": "00002284-carpeta Blackwell-2026-02-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-24T10:40:54.000Z",
+      "size": "56019104",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1enX4ocuk7rjV1e5r0cfDZREISmCdjIBz",
+      "name": "00002284-carpeta Blackwell-2026-02-24.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-24T10:40:54.000Z",
+      "size": "56019104",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1D-8-5BNr8_W2W5EqciHBCaKO7gpQYW53",
+      "name": "00002274-carpeta Blackwell-2026-02-23.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-23T11:41:48.000Z",
+      "size": "51641006",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1My1sQPWqwo1Wb_Nyo2DsiBc4iGUcHwI0",
+      "name": "00000538-20260220 Informe de vinculación de Grupo Azvi con medios mexicanos.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-20T19:57:00.000Z",
+      "size": "2497819",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Azvi_08052026"
+    },
+    {
+      "id": "1IocwKxj9jFZ_GgWfs2UyxnHw0MXvZibW",
+      "name": "00002264-carpeta Blackwell-2026-02-20.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-20T11:37:00.000Z",
+      "size": "49995391",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_18052026"
+    },
+    {
+      "id": "1yEdoweY_bKwLwwLkVvk0OQNJAitqGUlC",
+      "name": "00002264-carpeta Blackwell-2026-02-20.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-20T11:37:00.000Z",
+      "size": "49995391",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1qBxZ7KrqGaTdQkd1FDWz8hcyDrJDT_H6",
+      "name": "00002256-carpeta Blackwell-2026-02-19.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T11:43:56.000Z",
+      "size": "51767588",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1D95Eeg_o7bAM3sXQ1-3DxjDAN4E-e0Gq",
+      "name": "00002247-carpeta Blackwell-2026-02-18.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-18T11:40:50.000Z",
+      "size": "59055094",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1Gw4OFiNkvMRyhYH3V9P82WfWSmN6tBII",
+      "name": "00002222-carpeta Blackwell-2026-02-17.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-17T11:37:24.000Z",
+      "size": "56809274",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1_GDFCJNZbBCIb9J1ABPIppKmTIeuhzP0",
+      "name": "00002208-reforma.com_apuesta-alstom-a-tren-integral_ar3153236_impresion=1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-16T14:00:46.000Z",
+      "size": "80266",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1taaImXEiuJztIlnw1j4UVFR_RjMzVuLb",
+      "name": "00002205-carpeta Blackwell-2026-02-16.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-16T11:57:56.000Z",
+      "size": "53538937",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    },
+    {
+      "id": "1sEWKwV9b52wST-k2Wijcf-cSbiiuvrOo",
+      "name": "Reporte de actividades Grupo Azvi + BWS octubre (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-13T19:37:25.000Z",
+      "size": "5752475",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "nestedPath": "Azvi 2025 BWS "
+    },
+    {
+      "id": "10iZC3jybKNq_BqigU_2klDg9vICcv-pQ",
+      "name": "Reporte de actividades Azvi + BWS septiembre (3).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-13T19:36:59.000Z",
+      "size": "6961937",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "nestedPath": "Azvi 2025 BWS "
+    },
+    {
+      "id": "1nsd0EpZq49Mbc9OEWeolsQoRi7jn23y_",
+      "name": "Reporte de actividades Grupo Azvi + BWS noviembre 2025 (3).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-13T19:36:15.000Z",
+      "size": "10767956",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "nestedPath": "Azvi 2025 BWS "
+    },
+    {
+      "id": "1Kzc7Cfkmj1TMbAxCbHfqJs96a1adjDAj",
+      "name": "00002180-carpeta Blackwell-2026-02-13.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-13T11:40:32.000Z",
+      "size": "54848006",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Azvi + Blackwell_08052026"
+    }
+  ]
+}

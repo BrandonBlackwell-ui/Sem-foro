@@ -1,0 +1,1618 @@
+{
+  "number": "20",
+  "folderTitle": "20. VERACRUZ",
+  "folderId": "1G0vS2u4TrlCDuuWmpkNuFs1rv-jROoiV",
+  "folderModifiedTime": "2026-05-21T02:01:04.995Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "Pendientes Humberto.docx",
+    "modifiedTime": "2026-06-09T04:01:30.002000Z",
+    "source": "05. VERACRUZ_AH_Transcripciones_Llamadas"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-11T17:38:34.125Z",
+    "source": "01. VERACRUZ_AH_Contrato_OC",
+    "file": "Contrato_Grupo_Haddad_firmas completas.pdf",
+    "fileId": null
+  },
+  "subfolderActivity": {
+    "01. VERACRUZ_AH_Contrato_OC": {
+      "subfolderId": "1sjUxUMhkNt1acDL4OzTMf0Hh4LX5k98Q",
+      "fileCount": 3,
+      "latestModified": "2026-05-11T17:38:34.125000Z",
+      "latestFile": "NDA Haddad Firmado.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:10Z_verify",
+      "last_verified_at": "2026-06-12T14:09:10Z"
+    },
+    "02. VERACRUZ_AH_Entregables": {
+      "subfolderId": "1zQCodtpM2PH5XKyFDu_uEEdXmw_bEA8T",
+      "fileCount": 16,
+      "latestModified": "2026-05-23T03:00:41.733000Z",
+      "latestFile": "Veracruz- 22 MAyo Nota Apagones.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:17Z_verify",
+      "last_verified_at": "2026-06-11T03:40:17Z"
+    },
+    "03. VERACRUZ_AH_Reportes_Avance": {
+      "subfolderId": "1aKEBY9Y8bFPTSK1YMORVFX4rSTWVXp4s",
+      "fileCount": 3,
+      "latestModified": "2026-05-20T14:44:39.970000Z",
+      "latestFile": "19Mayo2026_MInuta_Estrategia de Cobro y Crisis Operativa: Plan de Acción Mensual",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:17Z_verify",
+      "last_verified_at": "2026-06-11T03:40:17Z"
+    },
+    "04. VERACRUZ_AH_Conversaciones_WA": {
+      "subfolderId": "1b4lnOsZM3QtrNChuLE_8OR8qrRQNHo5_",
+      "fileCount": 193,
+      "latestModified": "2026-06-01T15:29:27.375000Z",
+      "latestFile": "Mayo 2026 WhatsApp Chat - Veracruz Medios.zip",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:17Z_verify",
+      "last_verified_at": "2026-06-11T03:40:17Z",
+      "nestedNote": "Contiene subcarpetas: Mayo 2026 WhatsApp Chat - Veracruz Medios, Mayo 2026 WhatsApp Chat - Ulisses Hermida Veracruz, Mayo 2026 WhatsApp Chat - Toño Servin, Mayo 2026 WhatsApp Chat - Interno Veracruz"
+    },
+    "05. VERACRUZ_AH_Transcripciones_Llamadas": {
+      "subfolderId": "1a2d0CqNXE844tAb0QkhGNo-TgGJmqjoo",
+      "fileCount": 5,
+      "latestModified": "2026-06-09T04:01:30.002000Z",
+      "latestFile": "Pendientes Humberto.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:19Z_verify",
+      "last_verified_at": "2026-06-11T03:40:19Z"
+    },
+    "06. VERACRUZ_AH_Agenda_Trabajos": {
+      "subfolderId": "1tWewgDp8WhG35Y5Yws60Mbq1ZzoeboZS",
+      "fileCount": 2,
+      "latestModified": "2026-04-30T00:21:18Z",
+      "latestFile": "Plan_Trabajo_Mayo_1q_Wardenclyffe.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T03:40:19Z_verify",
+      "last_verified_at": "2026-06-11T03:40:19Z"
+    }
+  },
+  "pqProxy": {
+    "score": null,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Lectura no posible: latestDeliverable es un xlsx (hoja de evidencias). Contenido tabular sin narrativa evaluable según rúbrica PQ. | DELTA 2026-05-07: Contrato Haddad FIRMADO 19:49. Crisis_medium → revaluable a active normal si entregables fluyen. | DELTA 2026-05-11T18:30:00Z: HITO DOBLE 11-may: Contrato Wardenclyffe Energy + NDA firmados (17:35/17:38). 2 reportes intel (Flash 9-may + Seguimiento 9-11 may) confirman 7mo día cero cobertura y blindaje CFE consolidado. RIESGO NUEVO: plazo amparo posiblemente vencido.",
+    "suggestion": "URGENTE: verificar lista de acuerdos PJF para confirmar si el plazo de amparo (~40 días desde requisa 1-abr) está vencido. Si vencido: documentar consolidación jurídica de la posición del Ayuntamiento. Mantener vigilancia 'blindaje CFE' como argumento defensivo (4 fuentes independientes). Capitalizar ventana de silencio (7+ días) para negociación privada municipio-empresa. Activar P.M./307/2026 en Congreso aprovechando bajo ruido mediático.",
+    "fileEvaluated": "NDA Haddad Firmado.pdf + Contrato_Grupo_Haddad_firmas completas.pdf",
+    "evaluatedAt": "2026-05-11T18:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 2,
+    "label": "Acción sobre delta del día",
+    "text": "URGENTE: verificar lista de acuerdos PJF para confirmar si el plazo de amparo (~40 días desde requisa 1-abr) está vencido. Si vencido: documentar consolidación jurídica de la posición del Ayuntamiento. Mantener vigilancia 'blindaje CFE' como argumento defensivo (4 fuentes independientes). Capitalizar ventana de silencio (7+ días) para negociación privada municipio-empresa. Activar P.M./307/2026 en Congreso aprovechando bajo ruido mediático.",
+    "source": "delta-2026-05-11"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "folderRename": {
+    "from": "20. Veracruz",
+    "to": "20. Veracruz / Haddad",
+    "detected_at": "2026-05-13T18:34:56Z"
+  },
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T03:39:54Z",
+  "driveFiles": [
+    {
+      "id": "126Qx9mCimbIgGpmy-V_nEpHluE_mYrmv",
+      "name": "Pendientes Humberto.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-09T04:01:30.002Z",
+      "size": "15591",
+      "subfolder": "05",
+      "subfolderName": "05. VERACRUZ_AH_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1IMx8u0NruJz46-GjjZD2Bv3jTpnpUIgS",
+      "name": "Minuta 5junio_ Veracruz.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-05T19:31:26.320Z",
+      "size": "19665",
+      "subfolder": "05",
+      "subfolderName": "05. VERACRUZ_AH_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "18g5Xk4dwzDAuMROeXnjGjnVOn1wo-uK9",
+      "name": "Mayo 2026 WhatsApp Chat - Veracruz Medios.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-06-01T15:29:27.375Z",
+      "size": "48615627",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1mCGuRwq9QK9nM9nZ9giaO_9IPBkGKRs2",
+      "name": "Mayo 2026 WhatsApp Chat - Interno Veracruz.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-06-01T15:29:24.747Z",
+      "size": "2175735",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1MpDaAWiQdLOnplxxQzAAXCoLTwo0JU6h",
+      "name": "Mayo 2026 WhatsApp Chat - Ulisses Hermida Veracruz.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-06-01T15:29:22.131Z",
+      "size": "16304",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1zfXX46zwuqrPfxmc0RiuHdkXzmjCjIKW",
+      "name": "Mayo 2026 WhatsApp Chat - Toño Servin.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-06-01T15:29:20.659Z",
+      "size": "734782",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1tg1T0kLMX0X6v8tuzEwBkq_2WrIpF3x5",
+      "name": "Mayo 2026 WhatsApp Chat - Erick.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-06-01T15:29:19.506Z",
+      "size": "281516",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1XMKcE0SPXKdtZdxHWFuSGi6cJQz_siRw",
+      "name": "Mayo 2026 WhatsApp Chat - Circle of Trust.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-06-01T15:29:17.247Z",
+      "size": "261031",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1jSOASAyjLtrooC5qzNL_V9Kod_HsxnDo",
+      "name": "Mayo 2026 WhatsApp Chat - Arthur H..zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-06-01T15:29:14.033Z",
+      "size": "200120",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1UV_qDzbnuCr_ujWwl3T9Qx0t-6dqSgSq",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-06-01T15:23:08.000Z",
+      "size": "73103",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1c7ZNcKq6DT8WvOSIollrI_RC-CJZGV0u",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-06-01T15:22:26.000Z",
+      "size": "28157",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Interno Veracruz"
+    },
+    {
+      "id": "1NTOltrwHVBrw7bVi4zhiGbMjArIrP80N",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-06-01T15:21:54.000Z",
+      "size": "4479",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Ulisses Hermida Veracruz"
+    },
+    {
+      "id": "15-ZTmlHl7g_ck9KulDcInGC7ar1Goq1f",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-06-01T15:21:26.000Z",
+      "size": "6651",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "1BUiGgPiIoYP1--xgB0ddmvjenxc7X1uo",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-06-01T15:20:54.000Z",
+      "size": "5440",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Erick"
+    },
+    {
+      "id": "1ddbisAzFMUDgHjPp1VKNLVwirPnKXqVh",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-06-01T15:20:10.000Z",
+      "size": "9538",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Circle of Trust"
+    },
+    {
+      "id": "1S_fSUQK5Jlpn1emyuw5CxFx8srCCMvX-",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-06-01T15:19:22.000Z",
+      "size": "2640",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Arthur H."
+    },
+    {
+      "id": "18eLNPnSMdvJ64YyGxAjfJj3krOkbylC1",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-06-01T15:19:22.000Z",
+      "size": "2640",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Arthur H."
+    },
+    {
+      "id": "1PXaFEdBPQfib49hRYxzxB00odCfNQ6Ux",
+      "name": "00000312-PHOTO-2026-05-29-06-58-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-29T14:01:18.000Z",
+      "size": "103921",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Arthur H."
+    },
+    {
+      "id": "1lfjHh1onc2fWQFpmMSOMHLxI2fgbdKke",
+      "name": "00000313-PHOTO-2026-05-29-07-16-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-29T14:01:18.000Z",
+      "size": "103998",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Arthur H."
+    },
+    {
+      "id": "1wI9Ryk9YtUmi2-kXxNWygtrAkYNCYfWg",
+      "name": "00000313-PHOTO-2026-05-29-07-16-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-29T14:01:18.000Z",
+      "size": "103998",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Arthur H."
+    },
+    {
+      "id": "16p6tnCBKgCY3Zqw9-JCA2yZ37ZZb9MNf",
+      "name": "00000312-PHOTO-2026-05-29-06-58-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-29T14:01:18.000Z",
+      "size": "103921",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Arthur H."
+    },
+    {
+      "id": "1yvEEwvMyBbk6IM0ojq_Xw-SZbBxg7WrO",
+      "name": "00003193-PHOTO-2026-05-25-09-30-30.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-24T23:43:20.000Z",
+      "size": "93480",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Circle of Trust"
+    },
+    {
+      "id": "15J8-H53ww8-fKbRwVj2GiwpSm7Gj3ixd",
+      "name": "Veracruz- 22 MAyo Nota Apagones.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-23T03:00:41.733Z",
+      "size": "17727",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1N1X5uBkKitseqzYsr-2Su__4hy4qgRQp",
+      "name": "Veracruz APP-Nota.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-23T02:14:39.228Z",
+      "size": "16667",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1z2gW8sDNOwCt0dXfnV1BR_QUnYpn9btn",
+      "name": "00000008-Veracruz- 22 MAyo Nota Apagones.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-23T00:19:36.000Z",
+      "size": "17157",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Ulisses Hermida Veracruz"
+    },
+    {
+      "id": "1he0tCct1uRI45qRMHbA7pPiaxc1nrUxg",
+      "name": "Veracruz- APP columna.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-22T02:14:53.017Z",
+      "size": "16458",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1DWaJ_gZmqaMJBVa7nqjVme0984u3XIrm",
+      "name": "Veracruz- APP Trascendidos.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-22T01:55:15.749Z",
+      "size": "15439",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1yw55qQQR9LDvHhcozN018n2-vCHGnsdK",
+      "name": "Entregables_Angulo_Duarte_21-23mayo.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-21T17:40:04.645Z",
+      "size": "34821",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1E0iW__06qhu9vzSOOSxnesjQ7K3LRqsI",
+      "name": "00003486-BW-26-05-WC-020.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-21T14:29:44.000Z",
+      "size": "10648",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1uAvJrdRsh7bbplNZGICyTQxV4WOHGDUB",
+      "name": "Columna 1- 21mayo2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-21T02:34:55.700Z",
+      "size": "17495",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "11KunAWbaYNMtVhALKkcBEVa4-xcAshO0",
+      "name": "00000058-PHOTO-2026-05-20-17-57-25.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-20T23:57:24.000Z",
+      "size": "147363",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "1vX1vDuK378J_lzlC-teUcnSvBdr5WBIi",
+      "name": "00000056-PHOTO-2026-05-20-17-43-29.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-20T23:43:28.000Z",
+      "size": "48548",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "18B13EZz1hnY9mEnQC0StUfcGKbVQZeMe",
+      "name": "00000055-PHOTO-2026-05-20-17-42-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-20T23:42:56.000Z",
+      "size": "91664",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "1AD7ipRgqXfg9RBJv_rl6Su0o6e7zKylP",
+      "name": "00000051-PHOTO-2026-05-20-17-41-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-20T23:41:54.000Z",
+      "size": "126969",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "1xOZ07We2ho2uph-4fcHg70cm-Wj0t8dU",
+      "name": "00000052-PHOTO-2026-05-20-17-41-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-20T23:41:54.000Z",
+      "size": "129948",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "1HNXriRrWP83iICI0RFVKf62MX2CinZ3V",
+      "name": "Estrategia_Veracruz_20-31_mayo_Resumen.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-20T23:01:10.486Z",
+      "size": "25059",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "13oLkkaawQGjPsrFy3VBPC15obqwZLWqa",
+      "name": "Estrategia_Veracruz_20-31_mayo_Resumen.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-20T23:01:02.911Z",
+      "size": "79729",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1p-u9qxpP7cqH4ZoaTTS226dcdsGYbOgd",
+      "name": "Resumen_Visual_Wardenclyffe_20-31_mayo_1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-20T22:48:45.876Z",
+      "size": "24623",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1pu9O5SYmN_miF3MQyTG4O6n9QVdKAf_Q",
+      "name": "Estrategia_Wardenclyffe_20-31_mayo_2026_v2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-20T19:14:42.170Z",
+      "size": "59301",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1IondRP-H3pDX37u92_lNN3P_rpUwPK5twXIkSOlBe2A",
+      "name": "Estrategia Mediática y Legal para la Recuperación de Pagos Municipales",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-20T14:54:13.413Z",
+      "size": "17982",
+      "subfolder": "05",
+      "subfolderName": "05. VERACRUZ_AH_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1FvdXWSnAXavvGcwxWsVx4jzPwyqe8WVG2UKlw_lJzEk",
+      "name": "19Mayo2026_MInuta_Estrategia de Cobro y Crisis Operativa: Plan de Acción Mensual",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-20T14:44:39.970Z",
+      "size": "5229",
+      "subfolder": "03",
+      "subfolderName": "03. VERACRUZ_AH_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1Yf3VCYvmqWmVAYPMF-bk-EafXYCPgpZ7",
+      "name": "00003484-BW-26-05-WC-019.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-20T14:03:14.000Z",
+      "size": "9654",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1OqocCVYc-jd8NdpJD32is6enJtMB4Gvn",
+      "name": "00003482-BW-26-05-WC-017.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T15:17:22.000Z",
+      "size": "10235",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Gu0itrrMuAo2CExC-4g21WQo6puul7R3",
+      "name": "00003480-BW-26-05-WC-016 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T01:05:02.000Z",
+      "size": "9798",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Oad0ExwX3aZS3JlA5LsMgavr1uRZ2IvL",
+      "name": "00000045-PHOTO-2026-05-20-17-18-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-16T20:54:42.000Z",
+      "size": "168824",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "1bsoW86GhVdhGG2oqtJBiVTgcYwhOIQIU",
+      "name": "00003008-PHOTO-2026-05-19-20-52-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-16T20:54:42.000Z",
+      "size": "168824",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Circle of Trust"
+    },
+    {
+      "id": "18Iw5G6SvPYcPjoHwMoEMn9eNv9z3vmBV",
+      "name": "00003128-PHOTO-2026-05-15-12-58-49.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-15T18:57:58.000Z",
+      "size": "103258",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Interno Veracruz"
+    },
+    {
+      "id": "13Mz5oOC3yjxr2QJkyFwoObLofTF2ZRSb",
+      "name": "00000034-PHOTO-2026-05-14-17-48-39.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-14T23:48:44.000Z",
+      "size": "62366",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Erick"
+    },
+    {
+      "id": "1G7l40jJ77QMMNVaP5zKs1O21ZEgMqfIn",
+      "name": "00000026-PHOTO-2026-05-14-16-58-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-14T22:58:00.000Z",
+      "size": "157869",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Erick"
+    },
+    {
+      "id": "1IyPMEffVatRYiV3JosZsP1nz2IhFzem2",
+      "name": "00003105-AUDIO-2026-05-13-12-39-25.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-13T18:39:24.000Z",
+      "size": "160460",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Interno Veracruz"
+    },
+    {
+      "id": "1qgu2au7ju25WiswRZNewUQ8sSld1rRsX",
+      "name": "00003477-Blackwell_Wardenclyffe_BW-26-05-WC-014_13may_0700.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T13:17:34.000Z",
+      "size": "8997",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1WUNV8pxmybgcrOYODUDnrvuZGjuGavpU",
+      "name": "00003475-Blackwell_Wardenclyffe_BW-26-05-WC-013_12may_1900.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T01:53:26.000Z",
+      "size": "11718",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1L7wplS4SLCaZ8dUdMpiNkCG8awxrJpQc",
+      "name": "00003472-Blackwell_Wardenclyffe_BW-26-05-WC-012_12may_0700.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T13:09:22.000Z",
+      "size": "16266",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1y-viD_Ptuitgl-UIl18HQu_ovuHhHjzW",
+      "name": "00003469-Blackwell_Wardenclyffe_BW-26-05-WC-011_11may_1915.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T01:29:08.000Z",
+      "size": "16189",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Q9yi5zCBOtoZHg0aVDVkRvjcnFJjgp76",
+      "name": "00000016-articulo_alvarez_lopez_v3_2pags.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-11T20:12:06.000Z",
+      "size": "12733",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Erick"
+    },
+    {
+      "id": "1n7cKIiubZ6PHnvbSyvze65JmxA5UvCHX",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-11T18:22:02.000Z",
+      "size": "69774",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Nw2320HG0nApL1IUBlKFtPCz55ZybNWp",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-11T18:21:48.000Z",
+      "size": "18804",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Veracruz"
+    },
+    {
+      "id": "1cju_hNoHmzqcdJksoj5UK842HUBuQoqy",
+      "name": "NDA Haddad Firmado.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-11T17:38:34.125Z",
+      "size": "194432",
+      "subfolder": "01",
+      "subfolderName": "01. VERACRUZ_AH_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1uK3OAnHkMJ54wjVtWqJg85xvX6BGK1uX",
+      "name": "Contrato_Grupo_Haddad_firmas completas.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-11T17:35:47.000Z",
+      "size": "389021",
+      "subfolder": "01",
+      "subfolderName": "01. VERACRUZ_AH_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1pjAJec-mPqxPUovLYGKj7CSfUvQVTc27",
+      "name": "00003465-Blackwell_Wardenclyffe_BW-26-05-WC-010_9may-11may_0700.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-11T15:35:20.000Z",
+      "size": "20438",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1j1rnmsRPB9w9eRzCCxwEeDHNqqQF8t0h",
+      "name": "00003467-Blackwell_Wardenclyffe_BW-26-05-WC-010_9may-11may_0700.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-11T13:23:58.000Z",
+      "size": "20438",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1g2AMwoHi-QXgCGATRxAis1Rp7TnlmaZN",
+      "name": "00003465-Blackwell_Wardenclyffe_BW-26-05-WC-009_Flash_9may_0900.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-09T15:37:36.000Z",
+      "size": "11868",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "15B7V5kRgmzKlaJAl4ZJcy4MF2mjLNJ_p",
+      "name": "00003463-Blackwell_Wardenclyffe_BW-26-05-WC-009_Flash_9may_0900.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-09T15:17:24.000Z",
+      "size": "11868",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1ip3HOZ8pTQMmkeQ3927bMVsAFNJFfrzo",
+      "name": "00003462-PHOTO-2026-05-08-18-55-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-09T01:39:54.000Z",
+      "size": "110536",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1JrGiZPpc2WL6mcRAKB4R-MUIM-uOKaLs",
+      "name": "00003460-PHOTO-2026-05-08-18-55-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-09T01:00:32.000Z",
+      "size": "110536",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "14J43i1ds6wCXNDebcMZHz-o2bxZbw0k-",
+      "name": "00003452-Blackwell_Wardenclyffe_BW-26-05-WC-007_7mayo_completo.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T13:19:26.000Z",
+      "size": "29624",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1UKwCV552IYZULrkrh-0-8jfuwxlt0jtc",
+      "name": "00003450-Blackwell_Wardenclyffe_BW-26-05-WC-007_7mayo_completo.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T01:46:42.000Z",
+      "size": "29624",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1wOsZT36o42bviWiu5hocWOoyTmdxZY85",
+      "name": "00000014-articulo_alvarez_lopez.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T01:13:44.000Z",
+      "size": "20019",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Erick"
+    },
+    {
+      "id": "11EGl3DQTpYqOCOdrjkG3yUhbXNh2bAgz",
+      "name": "00003446-Blackwell_Wardenclyffe_BW-26-05-WC-006_Continuacion_6may-7may.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T13:11:58.000Z",
+      "size": "29433",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1ce8BvLTAiqfXnzaeeJ1zCmlTxcK2rUAH",
+      "name": "00003448-Blackwell_Wardenclyffe_BW-26-05-WC-006_Continuacion_6may-7may.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T13:07:14.000Z",
+      "size": "29433",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1e4O25MRoETCOWYmPir_76LKg58SP3Etf",
+      "name": "00003445-BW-26-05-WC-005_v3.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T04:06:22.000Z",
+      "size": "202383",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1oMys28FvJtS2SUSvb64jGtptpIxVJWdt",
+      "name": "00003447-BW-26-05-WC-005_v3.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T04:04:08.000Z",
+      "size": "202383",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "16cRPzqnG6nzOg94a98xhxjlzUg3sF8g_",
+      "name": "00003445-Blackwell_Wardenclyffe_BW-26-05-WC-005_Continuacion_5may-6may.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-06T14:39:14.000Z",
+      "size": "263240",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "13vTuY0TGXg6yuRKtYtjFIeh4a3XJrEB2",
+      "name": "00003443-Blackwell_Wardenclyffe_BW-26-05-WC-005_Continuacion_5may-6may.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-06T14:35:34.000Z",
+      "size": "263240",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1BgAHvMpI_jGk-4TqVX2VShVbXH20v8uL",
+      "name": "00003433-PHOTO-2026-05-05-14-30-20.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T20:36:48.000Z",
+      "size": "201305",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1mM3c64BQw19Iq3rkFq_rlazdcJqHYek-",
+      "name": "00003431-PHOTO-2026-05-05-14-30-20.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T20:30:20.000Z",
+      "size": "201305",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "16WZ4EfKA1-vyYEGZorb6luGfJCO3bz_n",
+      "name": "00003430-PHOTO-2026-05-05-13-44-08.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T19:44:24.000Z",
+      "size": "196313",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "16ErEKVkAlQqOMVv9BeL1M_0pj-WJHB3L",
+      "name": "00003428-PHOTO-2026-05-05-13-44-08.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T19:44:08.000Z",
+      "size": "196313",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1LoT8t-_6q5x7HCzlBcrgca8kkzpZj8dh",
+      "name": "00003415-PHOTO-2026-05-05-08-31-11.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T15:22:10.000Z",
+      "size": "112975",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Rz2ThHnfME-RVLEkFKnuUiR2_Lq8ak9b",
+      "name": "00003417-PHOTO-2026-05-05-08-31-11.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T14:32:24.000Z",
+      "size": "112975",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1W9m33AEyNgXN0TOAZyLmZSuOI-qktyLR",
+      "name": "00003395-Blackwell_Wardenclyffe_BW-26-05-WC-004_Continuacion_4may-5may.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-05T13:12:14.000Z",
+      "size": "23732",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1V8WT9Mn-9h_tT1UKUHuVmfttGFzlgd0P",
+      "name": "00003397-Blackwell_Wardenclyffe_BW-26-05-WC-004_Continuacion_4may-5may.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-05T13:08:20.000Z",
+      "size": "23732",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "101Rm5XMTjYDUQ2bZfRDo1JrCB8WlKC9w",
+      "name": "00003372-nota_avannoticias_ajustada v.3.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T01:35:12.000Z",
+      "size": "27131",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1fdJFcM-M0NJbFiVcmDnCT5fcGrItzQJT",
+      "name": "00003374-nota_avannoticias_ajustada v.3.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T01:34:28.000Z",
+      "size": "27131",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1cKqyc4UGooNJjs6jCpZgwI_yMtJL05-m",
+      "name": "00003371-PHOTO-2026-05-04-17-43-16.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T23:46:58.000Z",
+      "size": "100558",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1pf5hkjtbcQFv-OR84oYM9n555NhZSHGy",
+      "name": "00003369-PHOTO-2026-05-04-17-43-16.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T23:43:16.000Z",
+      "size": "100558",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1qHxDjlkRLs-XvF6dZGJIVW5YQ-YOyH_4",
+      "name": "00003367-Blackwell_Wardenclyffe_BW-26-05-WC-003_Continuacion_29abr-4may (6).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T21:21:04.000Z",
+      "size": "29144",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1yFZNw9L_q9ZKyr3sTUcv5mqyD2yRbTtZ",
+      "name": "00003365-Blackwell_Wardenclyffe_BW-26-05-WC-003_Continuacion_29abr-4may (6).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T21:20:58.000Z",
+      "size": "29144",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1OI_qn6rnu4nGaw6vo7vHAF57LJaMchGf",
+      "name": "00003344-nota_avannoticias_ajustada.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-04T19:52:32.000Z",
+      "size": "25560",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1POOoFzRhx3CKbMhjmZTw1B3XHgdIDrOT",
+      "name": "00003343-nota_avannoticias_ajustada.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-04T19:50:32.000Z",
+      "size": "25560",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1buZEG2_-BbjM6X9dplkFsJL676Zre2hT",
+      "name": "00003328-PHOTO-2026-05-04-07-04-33.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T13:01:22.000Z",
+      "size": "348654",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1YKMj9iUCwZhhSNIhQniawgGS6OXQPqxs",
+      "name": "00003327-PHOTO-2026-05-04-07-04-34.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T10:41:58.000Z",
+      "size": "348654",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1paOCh-9ZtPsrXmqTk8uRDU3vPcJzUuwP",
+      "name": "00000022-Columna_Mauricio_Flores_v5_2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T22:19:24.000Z",
+      "size": "17402",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "1ubx4reiJIDEZsfI6atLE5cpdIun6BL-5",
+      "name": "00000005-Columna_Mauricio_Flores_v5_2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T22:19:24.000Z",
+      "size": "17402",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Erick"
+    },
+    {
+      "id": "1d0Al-f8-7E2Xkp6YV-AuDsWBI16LhHWl",
+      "name": "00003021-wred 2.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-30T20:22:12.000Z",
+      "size": "2188747",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Interno Veracruz"
+    },
+    {
+      "id": "1ZDNvqa0EZ8A9qQimcGazUeCefjIpkHuH",
+      "name": "00003020-wred 2.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-30T20:16:54.000Z",
+      "size": "2188747",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Veracruz"
+    },
+    {
+      "id": "13r-cP1PUuzkIsJZRVYB90e7uX5J0z0hw",
+      "name": "00000014-Columna_Mauricio_Flores_v5.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T18:44:42.000Z",
+      "size": "18443",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "1i1xKwZvZUXMrqnngYD7c-tp25_0hZcpu",
+      "name": "Plan_Trabajo_Mayo_1q_Wardenclyffe.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T00:21:18.000Z",
+      "size": "23634",
+      "subfolder": "06",
+      "subfolderName": "06. VERACRUZ_AH_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "13AYm4MGUpasK4WWVJjyIIBxj5Y0JuqKA",
+      "name": "Abril2026_Evidencia_GrupoHaddad_Veracruz.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-04-30T00:12:57.000Z",
+      "size": "10423",
+      "subfolder": "02",
+      "subfolderName": "02. VERACRUZ_AH_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1CstthayDoOv2_vCFzw5tYCrI1erinh6Q",
+      "name": "00000020-Nota_Excelsior_Veracruz_PlanMexico.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:28:56.000Z",
+      "size": "18378",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Toño Servin"
+    },
+    {
+      "id": "1Vo1IAC_7cV3bNPmjkHS9tLJgcbz8Ua_E",
+      "name": "00000003-Nota_Excelsior_Veracruz_PlanMexico.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:28:56.000Z",
+      "size": "18378",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Erick"
+    },
+    {
+      "id": "1wy0SDtJbYdT4r4Esm4CFL4oXTk9zOSp_",
+      "name": "00003311-PHOTO-2026-04-29-13-52-17.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T19:53:56.000Z",
+      "size": "121074",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "17c1HI_giSc-uIFheRD0r6w0xCN1UB5ix",
+      "name": "00003310-PHOTO-2026-04-29-13-52-17.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-29T19:52:18.000Z",
+      "size": "121074",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Z3HrpwMX_9Ui1ej5tGQcxz28z_B-xMIv",
+      "name": "00003281-PHOTO-2026-04-28-11-40-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T17:43:02.000Z",
+      "size": "129202",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1hGwtFmnraTmP24CsK5frNzDDqsMpsap_",
+      "name": "00003282-PHOTO-2026-04-28-11-40-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T17:41:54.000Z",
+      "size": "129202",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1HGcqUMoaeJi_IPp6osluAEcVStbfcJRe",
+      "name": "00003276-PHOTO-2026-04-28-09-20-00.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T15:24:06.000Z",
+      "size": "205362",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Y3nv7YEVzJJI5q1RX-Elf6_2cjlJ1S5d",
+      "name": "00003275-PHOTO-2026-04-28-09-20-00.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T15:22:48.000Z",
+      "size": "205362",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1DqcWqLGVGTmWe69yHR6uzrFlWYW0UXPm",
+      "name": "00003274-PHOTO-2026-04-28-09-04-15.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T15:09:14.000Z",
+      "size": "193101",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1HJgXi0WRiMTjne4FvbBl7Mkm9Is-9_5q",
+      "name": "00003275-PHOTO-2026-04-28-09-04-15.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T15:04:48.000Z",
+      "size": "193101",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1A0enzOfF_ttmyOSdYwuBuospK8ZOKPwz",
+      "name": "00003273-PHOTO-2026-04-28-08-42-24.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T14:47:18.000Z",
+      "size": "198486",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1JHh2V2XNgXrVBJdsxXneXAczOQZamSu2",
+      "name": "00003274-PHOTO-2026-04-28-08-42-24.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T14:42:26.000Z",
+      "size": "198486",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1XnqW-m567Q5DRUS09SFFvGNgxfvenLJ8",
+      "name": "00003252-PHOTO-2026-04-27-11-57-35.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:00:30.000Z",
+      "size": "201357",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1sJi91xIc33kzYB-_T5qlGd8CnTbRIg-7",
+      "name": "00003251-PHOTO-2026-04-27-11-57-35.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T17:57:34.000Z",
+      "size": "201357",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Ag2Z5n04SS_G-MQlnRZTD0SKqZuPCBY2",
+      "name": "00003242-PHOTO-2026-04-26-16-34-05.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-26T22:40:48.000Z",
+      "size": "112090",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1U_nZKGN2Z9KI1y_SbVmWNG48TT02GEGW",
+      "name": "00003241-PHOTO-2026-04-26-16-33-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-26T22:40:48.000Z",
+      "size": "199423",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "10pT-Fe5oCRVxiiiTDqnqeQOLnzvkT_AS",
+      "name": "00003243-PHOTO-2026-04-26-16-34-05.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-26T22:35:06.000Z",
+      "size": "112090",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1274SO_fE94nr8W0hFGsZbS4fNtyXcFdY",
+      "name": "00003242-PHOTO-2026-04-26-16-33-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-26T22:35:06.000Z",
+      "size": "199423",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1e9VmbjHfbJd4mKOQzi0MT_f0eT4LNlyA",
+      "name": "00003007-PHOTO-2026-04-25-22-02-26.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-26T04:06:30.000Z",
+      "size": "84426",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Veracruz"
+    },
+    {
+      "id": "1M-efIFyhUyYEDJ6ND65RjOlZfvQZhHce",
+      "name": "00003008-PHOTO-2026-04-25-22-02-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-26T04:02:22.000Z",
+      "size": "84426",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Interno Veracruz"
+    },
+    {
+      "id": "1r43pjGxDW4R_UjvPcB_j-HY3w2AV7V6t",
+      "name": "00003231-PHOTO-2026-04-25-17-11-34.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-26T00:56:40.000Z",
+      "size": "127460",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1to7cDF4ZmSU-Rc50DVvnwLmWoYMQpEU7",
+      "name": "00003230-PHOTO-2026-04-25-17-11-34.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-25T23:15:20.000Z",
+      "size": "127460",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1SNWmP3TpfjII5nKAcaoIpD5Ehkytq2Eg",
+      "name": "00003224-PHOTO-2026-04-24-21-28-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-25T04:29:10.000Z",
+      "size": "103460",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1ygVVSf1mrNLB4Ol0kw01RDkCqGqdMxws",
+      "name": "00003223-PHOTO-2026-04-24-21-28-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-25T03:33:48.000Z",
+      "size": "103460",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1-Vp0tj9rJaBauaghV_PKNANu7wEwrUAz",
+      "name": "00003219-2 nota- Veracruz.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T17:15:04.000Z",
+      "size": "16666",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "12zrt2nEXNjyQKwX51lOnE4kZ4hEV_4V7",
+      "name": "00003220-2 nota- Veracruz.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T17:11:18.000Z",
+      "size": "16666",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1SC6vmqmkfPBAQKZNxM0gXtYlyY_MllL5",
+      "name": "00003208-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "213538",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1uuzFYGpqpSuTYLcG1bTjR26Wsin-5j6W",
+      "name": "00003216-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "69029",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1OUUbled2EGqMKjZDJy2Hx26ZwJSpL7yD",
+      "name": "00003213-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "155005",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1IworDDRD-8RJSz-ywBQYMTUL3hDhGrbi",
+      "name": "00003210-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "100130",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1m8nK9OVbG0JgH-vvvpSQu93v9PwA-rzZ",
+      "name": "00003209-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "147749",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1VOEEjLnS5IahlUj8krrawG_kWknwXN5s",
+      "name": "00003214-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "180798",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1oaacp0sM-SjliP_5yHjnprCEUtvFnRWO",
+      "name": "00003211-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "123672",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1hVz_LbGKXlta7lgbE8d9rsKEa_a4q-A8",
+      "name": "00003212-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "205126",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1N1e8iWwOR8DIXolEhshC_28FuhsIrPNj",
+      "name": "00003206-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "242423",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Np6tTWdg0Qj2PO2OzOsODhKfMFxCf-B4",
+      "name": "00003207-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:33:18.000Z",
+      "size": "148015",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "15tFFDVkQxk_OLQeIunXt7pFZw9lQyNPS",
+      "name": "00003206-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "148015",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1Nd52OMPluDnCetcwh_qam6WnByJ9FXF8",
+      "name": "00003209-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "100130",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1ty4bYEvfroewZLCPumd2cJJxjJAg-_6h",
+      "name": "00003215-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "69029",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "13VKln6rR6nGAm5gGJ8aHJTXpet3bBxFU",
+      "name": "00003213-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "180798",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1I1soqWPjrUcXgJ_K1snwqoFOyqi7xeDf",
+      "name": "00003207-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "213538",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1QlDYd3WGmndIq2yyb5GW5DuacLROEhtW",
+      "name": "00003208-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "147749",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1wbZhTt4ezNK4Hqqy3wtB8O0wc-CZ6BWW",
+      "name": "00003212-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "155005",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1x0gs4hXqofMKi0619Vo3qgsTYVs1rsQC",
+      "name": "00003205-PHOTO-2026-04-24-09-27-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "242423",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1YAqFD8PR9Us0CylDbZs1gm0sOjlpC6or",
+      "name": "00003210-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "123672",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1YyqASotxDZ6ml7z853AdFtgVYNTUVdDN",
+      "name": "00003211-PHOTO-2026-04-24-09-27-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-24T15:27:56.000Z",
+      "size": "205126",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1x6zvjwMtpzwHTE7Z53i1jom3qKgw6a8G",
+      "name": "00003199-PHOTO-2026-04-23-15-28-10.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-23T21:28:10.000Z",
+      "size": "146287",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1HsRWUsRvK28YvrUAc93JhjYMhIHE5oPf",
+      "name": "00003198-PHOTO-2026-04-23-15-28-10.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-23T21:28:10.000Z",
+      "size": "146287",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1bAUlsUnUDxxaUL7NH9JGGD1NP9VKNvAi",
+      "name": "00003195-PHOTO-2026-04-23-12-55-11.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-23T18:57:50.000Z",
+      "size": "210457",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1rYc_9b4dr2dbJ7C_CgUQ0RzX-GAUxVe2",
+      "name": "00003194-PHOTO-2026-04-23-12-55-11.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-23T18:55:10.000Z",
+      "size": "210457",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Veracruz Medios"
+    },
+    {
+      "id": "1WcJ4H8lsfAmKm8a0jitb34eDdCFEJ014",
+      "name": "00003185-PHOTO-2026-04-23-10-10-46.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-23T16:10:48.000Z",
+      "size": "117648",
+      "subfolder": "04",
+      "subfolderName": "04. VERACRUZ_AH_Conversaciones_WA",
+      "nestedPath": "Mayo 2026 WhatsApp Chat - Veracruz Medios"
+    }
+  ]
+}

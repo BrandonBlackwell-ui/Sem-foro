@@ -1,0 +1,1443 @@
+{
+  "number": "18",
+  "folderTitle": "18. STPRM",
+  "folderId": "1yyAXFcIcCavSIN5qjcsUiVwW7sQ-aqkR",
+  "folderModifiedTime": "2026-03-11T00:09:20.866Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "NOTA_STPRM_HERALDO",
+    "modifiedTime": "2026-06-10T21:12:15.491000Z",
+    "source": "02. STPRM_Entregables"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-14T18:28:53.711Z",
+    "source": "02. STPRM_Entregables",
+    "file": "Diálogo, transparencia y visión de largo plazo: así construye el STPRM su relación con la empresa",
+    "fileId": "1rjlk04NtW5SLuLgnoT0o4cwjd68CxQQWWBDU4yptfSY"
+  },
+  "subfolderActivity": {
+    "01.STPRM_Contrato_OC": {
+      "subfolderId": "1Xak0W_vJnX3TRMHd0sKwVQkJWw9vAgge",
+      "fileCount": 1,
+      "latestModified": "2026-02-05T20:57:23Z",
+      "latestFile": "Propuesta Vinculación y Consultoría SINPEMEX_ V1.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:10Z_verify",
+      "last_verified_at": "2026-06-12T14:09:10Z"
+    },
+    "02. STPRM_Entregables": {
+      "subfolderId": "1-khPnYL2UYgRGzrqtkD1yxuTYhBab-Zz",
+      "fileCount": 10,
+      "latestModified": "2026-06-10T21:12:15.491000Z",
+      "latestFile": "NOTA_STPRM_HERALDO",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:56Z_verify",
+      "last_verified_at": "2026-06-11T01:57:56Z"
+    },
+    "03. STPRM_Reportes_Avance": {
+      "subfolderId": "10Nks-xfz4eTvJq0PAoh4qI9AQD7E9Kgb",
+      "fileCount": 3,
+      "latestModified": "2026-05-19T14:37:08Z",
+      "latestFile": "STPRM_Reporte de actividades_abril-mayo.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:56Z_verify",
+      "last_verified_at": "2026-06-11T01:57:56Z"
+    },
+    "04.STPRM_Conversaciones_WA": {
+      "subfolderId": "1co8SDJSZbL4AoD2kX6RGI75BR5VEE4DZ",
+      "fileCount": 113,
+      "latestModified": "2026-04-30T00:26:40Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - Angel Cong Milenio)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:56Z_verify",
+      "last_verified_at": "2026-06-11T01:57:56Z",
+      "nestedNote": "Contiene subcarpetas: ABRIL2026 WhatsApp Chat - Comms Líder, WhatsApp Chat - Angel Cong Milenio"
+    },
+    "05.STPRM_Transcripciones_Llamadas": {
+      "subfolderId": "1ChCFTf4Yw1g7CBj-oQFBnDwr1RNdjPsw",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:57Z_verify",
+      "last_verified_at": "2026-06-11T01:57:57Z"
+    },
+    "06. STPRM_Agenda_Trabajos": {
+      "subfolderId": "1WEEpbShVbYAXVVbuojyerJbKmPhvq-dN",
+      "fileCount": 6,
+      "latestModified": "2026-06-05T20:48:56.634000Z",
+      "latestFile": "ACTIVIDADES DEL 1-5 JUNIO",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:57Z_verify",
+      "last_verified_at": "2026-06-11T01:57:57Z"
+    }
+  },
+  "pqProxy": {
+    "score": 56,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable es una columna editorial (Columna_1mayo_ para el Día del Trabajo), no un reporte de resultados. Reporte M1-M2 en 03 (GSlides) documenta: Reforma (T1), Proceso (T1), Milenio (T1), Excélsior (T1), El Heraldo (T2), Quadratin (T2), Crónica (T2) — fuerte mix T1/T2, score estimado ~82 sobre ese archivo. | DELTA 2026-05-07: Spreadsheet 'Control de publicaciones STPRM' actualizado; falta reporte mensual STPRM. | DELTA 2026-05-15T14:00:00Z: segundo perfil narrativo del Ing. Aldana en 7 días (Excélsior 13-may + Diálogo 14-may). Sostiene cadencia editorial mensual.",
+    "suggestion": "Confirmar medio target para 'Diálogo, transparencia y visión...' (perfil Ricardo Aldana Prieto) — vía complementaria a STPRM_EXCELSIOR_130526. Llenar Mes 3 del tracker (publicaciones entre 15-abr y 15-may) en los próximos 7 días con ambas piezas integradas.",
+    "fileEvaluated": "Diálogo, transparencia y visión de largo plazo (STPRM)",
+    "evaluatedAt": "2026-05-15T14:00:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 2,
+    "label": "Acción sobre delta del día",
+    "text": "Confirmar medio target para 'Diálogo, transparencia y visión...' (perfil Ricardo Aldana Prieto) — vía complementaria a STPRM_EXCELSIOR_130526. Llenar Mes 3 del tracker (publicaciones entre 15-abr y 15-may) en los próximos 7 días con ambas piezas integradas.",
+    "source": "delta-2026-05-15"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:56:55Z",
+  "driveFiles": [
+    {
+      "id": "1SEqaMzijZU9295x8LllUeCfHHfWCnxOJETEKkDrdhso",
+      "name": "NOTA_STPRM_HERALDO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-10T21:12:15.491Z",
+      "size": "378645",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1ZnE5c5D-qcg6i2fENSECqSj0jxoVRhY10L505vQ5Qzk",
+      "name": "Control de publicaciones STPRM ",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "modifiedTime": "2026-06-09T20:30:16.806Z",
+      "size": "3403",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Ok2VA2CgC7M0Obb5nnyAFK8SMD18qjKeoxWLHnLZmdY",
+      "name": "ACTIVIDADES DEL 1-5 JUNIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-05T20:48:56.634Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1TOP3XG5amAVqw5ozb6BRVKDWWGM492z3Kg5Jw9w210s",
+      "name": "ACTIVIDADES DEL 25-29 DE MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T21:30:07.584Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1A81WmWMbhH289jwnvSCO6aKIBrlsAIy4mXmPZUZr3DI",
+      "name": "Actividades 18-22 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T21:39:19.742Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1eosftQYYQMsn3MIpJvwGJ0Dd-RfmUkqn",
+      "name": "STPRM_Reporte de actividades_abril-mayo.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T14:37:08.000Z",
+      "size": "1425063",
+      "subfolder": "03",
+      "subfolderName": "03. STPRM_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "14cA8Kzlkeu0ApjEIvekFkCBaMwFT6_iXTY2FAjSE3Uc",
+      "name": "Reporte de actividades M1 y siguientes pasos M2",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-05-18T15:18:09.021Z",
+      "size": "8708164",
+      "subfolder": "03",
+      "subfolderName": "03. STPRM_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1pvgics8COj7JPVSa7jyKOJzdK3UYdK6h61X2VnZGys4",
+      "name": "ACTIVIDADES DEL 11-15 MAYO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-16T03:54:00.016Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1a7KyOglK0gkBUrX6A1L6vtlWSX6xpWfR5n-WwsuE1E8",
+      "name": "STPRM_15/05/26_HERALDO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T22:44:54.185Z",
+      "size": "614316",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1rjlk04NtW5SLuLgnoT0o4cwjd68CxQQWWBDU4yptfSY",
+      "name": "Diálogo, transparencia y visión de largo plazo: así construye el STPRM su relación con la empresa",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-14T18:28:53.711Z",
+      "size": "2837",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1_f2p_o16JSmB5lGwsYRAi6RgKnkoTNFP1iVCBzLICsU",
+      "name": "STPRM_EXCELSIOR_130526",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T21:52:24.820Z",
+      "size": "495764",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1p78F9vv-uI_5r3OjyjwQOWEculwzKnvY",
+      "name": "Stprm sinoonimo de sesarrollo regional y nacional 12 mayo 26.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T10:20:51.000Z",
+      "size": "1806048",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "14g_7N-WDNKzxfbAHrjqnhUb3zpTwYGrw",
+      "name": "Propuesta de temas mayo 2025_.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T10:19:27.000Z",
+      "size": "7180",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1LKmYtKcbjTUTKEY3xE9ruN6AONtf0-bT",
+      "name": "Propuesta_reuniones.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T10:18:49.000Z",
+      "size": "750588",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Qj_PMxcuMxmSVHGfIJiLWhDZT2kL2-ZADqse-biS3l8",
+      "name": "Actividades del 4-8 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-11T13:59:22.637Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1hRE7UwjQxK03GYZZCKao_dqFhtg15h48nocdBjUG5FE",
+      "name": "Comms Lider STPRM",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-05-05T21:37:42.635Z",
+      "size": "1395254",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1t-MawwL8Xgja2JoO-eFRGWSgaDrX1jgNGKnizUgSx5A",
+      "name": "Actividades del 27-30abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-01T01:34:40.939Z",
+      "size": "2060",
+      "subfolder": "06",
+      "subfolderName": "06. STPRM_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1vp__8bYeJ4t0aTLt4axEm0eYvX39_ppV",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-04-30T00:26:40.000Z",
+      "size": "2388",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Angel Cong Milenio"
+    },
+    {
+      "id": "1sZQqmRcj7syejuHPcwKqWa1f6zKbOWXK",
+      "name": "ABRIL2026 WhatsApp Chat - Comms Líder.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-30T00:24:05.000Z",
+      "size": "190344762",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1pmkLbx3sizVwdQXj6eUSmMuoAXjKXsRI",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-04-30T00:23:18.000Z",
+      "size": "86243",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1XE6_Cx-RcZfFtt6NtlAl8lBbfqJlrh4j",
+      "name": "00003439-Publicacion_10mayo_RRSS.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T21:42:52.000Z",
+      "size": "99285",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1XmzsybXZgvoxhTmI3AqM4iQlIsGfofH_",
+      "name": "00003438-Publicacion_30abril_RRSS.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T21:42:52.000Z",
+      "size": "100867",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1aqTz7xqtAl-TQBpdjly9Im2V6TVXLiCE",
+      "name": "00003428-STPRM_Nota_1Mayo2026_v2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T15:58:12.000Z",
+      "size": "9894",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1KbUco6-EXUeMSM4MSmm09Ojv9i6fc6s_",
+      "name": "00000013-Columna_1mayo_ RA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T15:52:14.000Z",
+      "size": "2831150",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Angel Cong Milenio"
+    },
+    {
+      "id": "1H2_f3qawXcFV9o3bIrSE8bIwJTmwYHDv",
+      "name": "Columna_1mayo_ RA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T15:44:13.000Z",
+      "size": "2831150",
+      "subfolder": "02",
+      "subfolderName": "02. STPRM_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1-z2aX1ibEEW32y8JJaX7MBF5oQeo2QXh",
+      "name": "00003425-STPRM_30ABRILVF.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-28T19:33:06.000Z",
+      "size": "58804",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1Cg6FYYYvZpdewJzrGG4jynlyK_LdBM4s",
+      "name": "00003416-PHOTO-2026-04-28-11-30-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T17:34:10.000Z",
+      "size": "266467",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1QuHFWWQXC8dIhSI49EhRRM3lu85hI4c_",
+      "name": "00003378-PHOTO-2026-04-27-12-48-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "size": "148261",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1cgEXIk8Vx1ADwN_40ynTQpxkvbudG2YE",
+      "name": "00003373-PHOTO-2026-04-27-12-48-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "size": "114142",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1cJ65ALGWyk1W9nX1PS6Nfaf5C02fVBls",
+      "name": "00003374-PHOTO-2026-04-27-12-48-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "size": "117826",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1GCBJsNADlHy7WFxAqo9439lkiUJzutPU",
+      "name": "00003375-PHOTO-2026-04-27-12-48-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "size": "145789",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1vKZOK_JCdoMxhB7SdxQh2YVY0UpZ3GUR",
+      "name": "00003377-PHOTO-2026-04-27-12-48-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "size": "308166",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1gxKUHH_nb6rA70nCy9NJCSuyQesVXbb3",
+      "name": "00003376-PHOTO-2026-04-27-12-48-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "size": "319121",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1sreQwq6HlwWVWjnGAQvXhQLrNw7EVdRe",
+      "name": "00003371-PHOTO-2026-04-27-12-48-39.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T19:02:10.000Z",
+      "size": "329398",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1Iu27jxw7W6aL2cI5n0Pg_L16ztQlGq0W",
+      "name": "00003396-PHOTO-2026-04-27-12-48-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "156534",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1ZEvZ63gUcyA6jUXzuDv3EXss57agFbYb",
+      "name": "00003389-PHOTO-2026-04-27-12-48-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "657568",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1hjkKHzRv6ukdUNyBpz9f-_-9Af-zwJ3k",
+      "name": "00003393-PHOTO-2026-04-27-12-48-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "202307",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "13GR3iLQVaj_J_HZ5lcG0tHtGWES1CFCL",
+      "name": "00003383-PHOTO-2026-04-27-12-48-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "173930",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1p7zukvUGmTBLHXaZNxqNJUnYA5bjV9cS",
+      "name": "00003391-PHOTO-2026-04-27-12-48-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "218428",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1bqERld9S8ARyDS7vALVtsA_O55UPgdAj",
+      "name": "00003397-PHOTO-2026-04-27-12-48-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "249945",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1r83q6-tG0Bu-m1JQP2OllF0eSt7tnlLO",
+      "name": "00003398-PHOTO-2026-04-27-12-48-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "173300",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1jcyHJosb3RcsDCvvlz1cLcBWujXF9orQ",
+      "name": "00003382-PHOTO-2026-04-27-12-48-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "203558",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1wzbai9WG_FddpwzAVoEaq8TSC7B4znAs",
+      "name": "00003392-PHOTO-2026-04-27-12-48-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "367604",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1ModpakVycQK0_kuXm8IaD8g1wPEIC62T",
+      "name": "00003387-PHOTO-2026-04-27-12-48-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "960822",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1-cgJW7H2rZJAinA6rT_tlgYZMbYjwobT",
+      "name": "00003380-PHOTO-2026-04-27-12-48-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "730063",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "15qHMXWoOLmym9ysVu-TUlekNkrujjKW4",
+      "name": "00003381-PHOTO-2026-04-27-12-48-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "173753",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1MoivpsuIUiCgpqy0kIQe6XNYwZ6bm7Um",
+      "name": "00003386-PHOTO-2026-04-27-12-48-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "1300685",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1a-vlrRaUFHa5LeFZ5pzzXDDU9XqJYISJ",
+      "name": "00003402-PHOTO-2026-04-27-12-48-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "1107470",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1KOBrbIGncen-x8uuY2UMBru3Qka1PJ0B",
+      "name": "00003390-PHOTO-2026-04-27-12-48-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "324928",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1_4bOhkyATWproQszfeHTL_CrnGX-CNnW",
+      "name": "00003395-PHOTO-2026-04-27-12-48-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "245602",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1bWJ9QDSzDS9JkViwe5BixNfDvOUBkzO0",
+      "name": "00003388-PHOTO-2026-04-27-12-48-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "326173",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1xJEFoRdbJtzDmBBfZh1W2PcLglvJe8wM",
+      "name": "00003385-PHOTO-2026-04-27-12-48-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "124934",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1HuoQD_TWyC3cQn1OYgmTAJH4kuwqaBIu",
+      "name": "00003394-PHOTO-2026-04-27-12-48-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "243911",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "192SkvZvtSDExD8J-zHZo9KQ9wni_zU3T",
+      "name": "00003384-PHOTO-2026-04-27-12-48-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "188575",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1QQnfLo4wkZkxsvUHLrUbXNRiHO7f_OA8",
+      "name": "00003379-PHOTO-2026-04-27-12-48-40.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:10.000Z",
+      "size": "139427",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1MsKrsmyKYyNc-P70OqDqPjpCazhGxKAK",
+      "name": "00003399-PHOTO-2026-04-27-12-48-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:08.000Z",
+      "size": "250188",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "158oel21vX8js6wKTqTs5VU5EgLlNLQlL",
+      "name": "00003400-PHOTO-2026-04-27-12-48-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:08.000Z",
+      "size": "247406",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1wClzzO5-sbGyFArmYBRCyusFLSpHp8kO",
+      "name": "00003407-PHOTO-2026-04-27-12-48-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:08.000Z",
+      "size": "265137",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "19DiN8dEU9J2Dz5H4yN0pY0OArYLUyAbe",
+      "name": "00003403-PHOTO-2026-04-27-12-48-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:08.000Z",
+      "size": "221899",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1j2qhON-rVnbPRrU8Od-ZeAvmaw5YrZqT",
+      "name": "00003406-PHOTO-2026-04-27-12-48-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:08.000Z",
+      "size": "157904",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "14dbmii0L61W1hkkHggEZJQyhxW6eIMt_",
+      "name": "00003404-PHOTO-2026-04-27-12-48-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:08.000Z",
+      "size": "238658",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1wWWT7uUt4LtoXQ0IA3LazW09CgNjR5QJ",
+      "name": "00003401-PHOTO-2026-04-27-12-48-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:08.000Z",
+      "size": "367858",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1r58Dc98LMOEVe934-FmfPepfM9i1XrP2",
+      "name": "00003405-PHOTO-2026-04-27-12-48-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:52:08.000Z",
+      "size": "120509",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1ZXgyVfllMrIjaE1v6iBsTb0d__uCIB4i",
+      "name": "Reporte de actividades M2 STPRM",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-04-23T04:11:55.813Z",
+      "size": null,
+      "subfolder": "03",
+      "subfolderName": "03. STPRM_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "12BhmeIwOTAWF7A7bFXxIAG-ZKkTPKR_K",
+      "name": "00003351-Reporte de actividades M2 STPRM.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T19:00:54.000Z",
+      "size": "1221445",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1Gi_a9gc8IPEwlESKUg90moeLhrv5Wgir",
+      "name": "00003345-PHOTO-2026-04-21-08-54-03.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-21T15:13:24.000Z",
+      "size": "138909",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1ODPXycPX1eL3VWdMSKHr9n_PTm-jjbSU",
+      "name": "00003332-LO QUE CONSTRUYEN.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T21:34:00.000Z",
+      "size": "87065",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1Db4rh1xSbPVivnQuCtKZnsx6nSc_Ek2J",
+      "name": "00003338-STPRM IMPULSA AGENDA DE BIENESTAR INTEGRAL BAJO LIDERAZGO DE.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-20T21:34:00.000Z",
+      "size": "16305",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1XifNKlGRaZfEtOqA1Dmr_oHdJGamqhGL",
+      "name": "00003334-STPRM IMPULSA.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T21:34:00.000Z",
+      "size": "47571",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1dYjOq_bFqENrQ75oEGyc-iEzKzu6RdLc",
+      "name": "00003340-STPRM IMPULSA AGENDA DE BIENESTAR INTEGRAL BAJO LIDERAZGO DE (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-20T21:34:00.000Z",
+      "size": "16508",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1XpTmtUJoaZROXV_WTAZImXmwO2i2wswb",
+      "name": "00003330-PHOTO-2026-04-20-12-25-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-20T18:40:04.000Z",
+      "size": "216026",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1EK8Lfik3n2mCEZ-Q_pr1E7Aoippcl-1w",
+      "name": "00003323-Cruz Roja.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-17T21:37:40.000Z",
+      "size": "4038910",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1XHB92ajtvs4yiEPkOGtRaFQogAhzQBm1",
+      "name": "00003317-Columna_1mayo_ RA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-16T19:53:00.000Z",
+      "size": "12062",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1rqiQLkr0ZPtIu4q2QbtSpf7KWlcoHAYQ",
+      "name": "00003307-STPRM IMPULSA AGENDA DE BIENESTAR INTEGRAL BAJO LIDERAZGO DE.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-15T19:54:06.000Z",
+      "size": "16057",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1liH_tOfeBS6rtOlNoN_ZhySJn39grFe8",
+      "name": "00003306-N5_ STPRM (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-15T19:54:06.000Z",
+      "size": "86116",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1kOnO06a236JKx1KBskTwSnZPPHA6u9dp",
+      "name": "00003295-1 de mayo.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-13T20:06:54.000Z",
+      "size": "16184",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1K5gQ7e8dSeAJdUJjW8xGYxk9eJxseio9",
+      "name": "00003270-ÁNGEL CONG (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-08T22:57:22.000Z",
+      "size": "263358",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1f7Bjo6QJJhIBEt5QkJ6MNsWv-a7Zp79j",
+      "name": "00003249-PHOTO-2026-04-06-16-45-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T22:47:58.000Z",
+      "size": "162698",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1dAqyk22xOScKfqAZwEe5nAXDQh58d97O",
+      "name": "00003246-Nota_Salon_STPRM_Salamanca.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-06T21:16:02.000Z",
+      "size": "56238",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1-iZNCVdNmk-2M0RZ6XSSMZW7TMb2iiUo",
+      "name": "00003244-PHOTO-2026-04-06-10-50-07.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T16:52:12.000Z",
+      "size": "289873",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "14BdRYG5gEPVzZZc6xnrBkq4xc37tA-tq",
+      "name": "00003243-PHOTO-2026-04-06-10-49-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T16:52:12.000Z",
+      "size": "364184",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "19z7s5lAp4iOdImKkRcjcNb-FYpX6Q3my",
+      "name": "00003245-PHOTO-2026-04-06-10-50-25.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-06T16:52:12.000Z",
+      "size": "229345",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1mY42Gx2d3-sKBWCMZN3NmmdFlFgjopOa",
+      "name": "00003238-Pal Salamanca 27 mzo 26.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-06T15:57:38.000Z",
+      "size": "19828",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1Vb69WaNpvLtEBuanWPquJ7DUq2LCqBOU",
+      "name": "00003224-PHOTO-2026-03-29-11-22-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:24.000Z",
+      "size": "187401",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1bqFk8v9-EZwLJKBTIoC2HtvPCBdg9qG_",
+      "name": "00003222-PHOTO-2026-03-29-11-22-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:24.000Z",
+      "size": "240717",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1SgHg4XQcluFhchugFr2oyo2l3O5WXJos",
+      "name": "00003218-PHOTO-2026-03-29-11-22-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:24.000Z",
+      "size": "157566",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "14KocK4ezvlWm_RV3JYymaZmKjc64XUxT",
+      "name": "00003221-PHOTO-2026-03-29-11-22-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:24.000Z",
+      "size": "109008",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1hntGzp8jY4_RzI-hbPapx3uy67ihufKh",
+      "name": "00003216-PHOTO-2026-03-29-11-22-12.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:24.000Z",
+      "size": "235493",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "11GLz1-MwV5hr7-Tt0aV9DrGrbJPorY8O",
+      "name": "00003225-PHOTO-2026-03-29-11-22-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:24.000Z",
+      "size": "180263",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "12yIq-7IaiBm7Mj-lJNxy-cWpZ3gDc7Yc",
+      "name": "00003217-PHOTO-2026-03-29-11-22-12.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:24.000Z",
+      "size": "254168",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1R1sDpeLw138MK1QZPrK4uzMn9Zau1CdU",
+      "name": "00003219-PHOTO-2026-03-29-11-22-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:24.000Z",
+      "size": "172146",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "13WwkYHlLYCow2CWJoz0uMw6Y5HGd4Q-f",
+      "name": "00003220-PHOTO-2026-03-29-11-22-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:24.000Z",
+      "size": "136821",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1cC90LFBXzV0o2aQPJ5WfayxRFToR0agw",
+      "name": "00003223-PHOTO-2026-03-29-11-22-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-29T17:28:22.000Z",
+      "size": "66350",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1BKrv6hOShnxd9Jpskbc9CN_v8-HTF84m",
+      "name": "00003214-INAUGURACION CLUB DE PLAYA SECCION 48 28-03-2026.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-03-29T17:19:52.000Z",
+      "size": "68249103",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1V0WzUFjprE9JA0iwLk-FokE1As7VqKYc",
+      "name": "00003215-REINAGURACION DEL DUOMO SECCION 24.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-03-29T17:19:50.000Z",
+      "size": "32088629",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1svVMDXe0LrcqwMpUaB23BMl-d-CQCmEE",
+      "name": "00003213-PHOTO-2026-03-27-20-28-50.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:51:14.000Z",
+      "size": "983409",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1PgdR4_LkRti6Xm3ZhoSmxFqJnc4-j1-7",
+      "name": "00003212-PHOTO-2026-03-27-20-26-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:42.000Z",
+      "size": "129842",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1Dl0-Ww9nFapl8UYcUoyTANuHQj4-Vodh",
+      "name": "00003211-PHOTO-2026-03-27-20-26-42.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:42.000Z",
+      "size": "118637",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1RguyuFtF5ALC334Dl_ImPWRTvvTRzy-4",
+      "name": "00003210-PHOTO-2026-03-27-20-26-15.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "181799",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1zJQm80B71ff_eoNufttiaaYaqOskogbz",
+      "name": "00003201-PHOTO-2026-03-27-20-26-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "161496",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "130JLmRZecnVM-K7AOKlyl_ddZEiRyDPv",
+      "name": "00003200-PHOTO-2026-03-27-20-26-11.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "122900",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "12nEeYLkRs3ngfu--sGGOtN282dE-tuGl",
+      "name": "00003207-PHOTO-2026-03-27-20-26-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "125801",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1BHAoksgP072niPIj8Ma7Dw0lt4K_mBoU",
+      "name": "00003202-PHOTO-2026-03-27-20-26-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "151262",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1_brVuqZS5Py8XkJridD6zJrWEWg_es2c",
+      "name": "00003203-PHOTO-2026-03-27-20-26-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "140317",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1tbdL469is0KIH5R-0aYG3Er0RNi5gmwh",
+      "name": "00003204-PHOTO-2026-03-27-20-26-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "160884",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "103ngFuupAoXYdWnaanJ7pdSZ3K4xIgDq",
+      "name": "00003199-PHOTO-2026-03-27-20-26-11.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "157687",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1kGTiPCqBrsYaH7vZISmf8kvweRZwnsqV",
+      "name": "00003209-PHOTO-2026-03-27-20-26-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "178703",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "11YBuWDmc6eo9QtPtH1dW5FC91gm2n37H",
+      "name": "00003206-PHOTO-2026-03-27-20-26-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "57283",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1d-eBBR1tYHS-rTr-TlaPjNwd99VXnYxj",
+      "name": "00003208-PHOTO-2026-03-27-20-26-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "117057",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "12RulJVhRyQCmnyzWTGIR6MMlzbSTPHnK",
+      "name": "00003205-PHOTO-2026-03-27-20-26-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-28T02:26:30.000Z",
+      "size": "168762",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1Ng0tIeX7yPpWmZgN5tNVdYwkvto5D69C",
+      "name": "00003181-PHOTO-2026-03-24-12-43-07.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-24T20:16:22.000Z",
+      "size": "201962",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1ogmIM-B8gPjk0Swgw1EK40yI39FUDpFS",
+      "name": "00003170-PHOTO-2026-03-19-08-01-29.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-19T12:34:34.000Z",
+      "size": "242769",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1OPt_1Tlp6BzfyFGSmn8mbo7nnbop6KFu",
+      "name": "00003169-PHOTO-2026-03-19-08-01-29.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-19T12:34:34.000Z",
+      "size": "166661",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1wPJX8unuMcHkPUcang9_idedjxzc_72M",
+      "name": "00003164-PHOTO-2026-03-18-19-38-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-19T03:41:08.000Z",
+      "size": "212535",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1KCfQP9X36Q3HrYO6Z8xQTkdGVuIWWpEj",
+      "name": "00003158-VIDEO-2026-03-18-15-18-23.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-18T21:49:06.000Z",
+      "size": "35573999",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "18xfgFO8A5EQOL3l5OimmtwV1JYejU09a",
+      "name": "00003146-Inaguración Sección 40 .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-17T18:54:54.000Z",
+      "size": "69067",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1ZggOpQie5UL2GhF7j9KEoo7m7K1dzC3k",
+      "name": "00003141-Inaguración Sección 40 .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-17T18:46:38.000Z",
+      "size": "7830",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "12QCltMbE2H5RMeCRp_TvpO4S18ro9RRE",
+      "name": "00003126-comunicado.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-17T16:36:50.000Z",
+      "size": "42868",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1pLuYUHKDGlnn6gHzPayndYN4mmz6XVZd",
+      "name": "00003118-PHOTO-2026-03-14-09-08-59.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-14T15:21:40.000Z",
+      "size": "107290",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1k-wyYSg26tDxtYxv1PQ2Put_rx151Jv0",
+      "name": "00003115-PHOTO-2026-03-14-09-08-59.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-14T15:21:40.000Z",
+      "size": "129069",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "13bm9d5ZIhutJHkFdvcaFE-aw9O8zHY5k",
+      "name": "00003117-PHOTO-2026-03-14-09-08-59.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-14T15:21:38.000Z",
+      "size": "51353",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1oaYilruRb7pGizfoyt5XdJOd2dmhJ_kq",
+      "name": "00003116-PHOTO-2026-03-14-09-08-59.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-14T15:21:38.000Z",
+      "size": "184318",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1OPh4Dj8ejE2A3zktQIXPbYa8-svWgelt",
+      "name": "00003093-Ricardo Aldana impulsa una agenda sindical centrada en comunidad y desarrollo de los trabajadores.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-12T19:56:18.000Z",
+      "size": "8040",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1NODh4JFcSOAoo0FfxGeyP_Cna3Zwkm8C",
+      "name": "00003096-Nota jueves 12 .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-12T17:06:56.000Z",
+      "size": "2481225",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1G1ORFvaFNP9hhcasti9r3W2817Hz5o53",
+      "name": "00003066-PHOTO-2026-03-10-11-43-09.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-10T17:48:30.000Z",
+      "size": "154638",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1qGxz3JG2ZWkYY6eEZSh7l2dd59q9B9N4",
+      "name": "00003052-NOTIFICACION DE  JUBILACION DE R.H..pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T16:54:10.000Z",
+      "size": "411081",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "199Bkm0ioYMHASKEvLcjRijmi58TYdFDU",
+      "name": "00003047-PHOTO-2026-03-10-09-01-09.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-10T13:15:36.000Z",
+      "size": "282885",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1luj9I6pyg0Ongg7r8P-GL7OCPTa-wf-m",
+      "name": "00003043-VIDEO-2026-03-09-17-55-42.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-10T02:42:26.000Z",
+      "size": "22795427",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1gxyxxRqAJ5q9Xe5hbQCRyBKET94TwoBQ",
+      "name": "00003040-PHOTO-2026-03-09-09-06-58.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-09T13:58:00.000Z",
+      "size": "629415",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1n5vUDI8Shd1Ykh_zdpG2LYZ_u5cb_jo8",
+      "name": "00003026-Publicación para redes sociales 8M (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-07T02:08:48.000Z",
+      "size": "2482376",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1Yu9x7lLrSOg1rI28hAKGrWYu6XeAkT2O",
+      "name": "00003031-PHOTO-2026-03-06-16-22-21.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-06T22:23:10.000Z",
+      "size": "129463",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "185OSeMifXhrKcbyTGoshS3Cb77pOdUXU",
+      "name": "00003008-Impacto Reputacional RRSS .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-05T22:21:08.000Z",
+      "size": "1071525",
+      "subfolder": "04",
+      "subfolderName": "04.STPRM_Conversaciones_WA",
+      "nestedPath": "ABRIL2026 WhatsApp Chat - Comms Líder"
+    },
+    {
+      "id": "1fZzPz1eeS1giqBvtNi_SMdraxLcSgMFu",
+      "name": "Propuesta Vinculación y Consultoría SINPEMEX_ V1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-05T20:57:23.000Z",
+      "size": "57162",
+      "subfolder": "01",
+      "subfolderName": "01.STPRM_Contrato_OC",
+      "nestedPath": null
+    }
+  ]
+}

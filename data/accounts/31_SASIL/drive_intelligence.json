@@ -1,0 +1,341 @@
+{
+  "number": "31",
+  "account_id": "31",
+  "account_name": "SASIL",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "12QSG76_CDELprFxiIFaDK1WRCCaB3Y1Q",
+      "title": "00003063-PHOTO-2026-05-07-16-40-13.jpg",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-07T22:40:16.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1c393ZLGi7jLewIp-dzjaQnjDZP-qm8Uf",
+      "title": "00003059-PHOTO-2026-05-07-12-27-54.jpg",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-07T19:19:50.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "188h02OWX1LZnXzyVrK8IIPo6wUqGVMuK",
+      "title": "00003058-PHOTO-2026-05-07-12-27-54.jpg",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-07T19:19:50.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1yW8bU9J-S4pcxdHahEMGUqE8GEHyTLsY",
+      "title": "00003053-PHOTO-2026-05-07-12-18-43.jpg",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-07T18:19:18.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1vGLIDKQMLBudNzyZlF6MbEd0v-0VS4za",
+      "title": "00003049-PHOTO-2026-05-07-07-59-27.jpg",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-07T13:59:28.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1HhxP6rGrifQzPYjH2XbxZq06JJ3W-aJb",
+      "title": "00003045-PHOTO-2026-05-07-07-54-52.jpg",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-07T13:51:36.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1GfmmAuoE3tUzlmxwKXdLicqjwSI7OGVj",
+      "title": "00003040-PHOTO-2026-05-06-11-38-24.jpg",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-06T17:35:08.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1JjRPN-9uadWqQuQ_uV2pcRcf3Mo-EaPI",
+      "title": "00003034-Nota - Sasil de León, el perfil que suma argumentos para encabezar la Secretaría de las Mujeres.docx",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-05T20:28:18.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1roooxAbEH571iUf4dcQzQJ4aGkgWh7MO",
+      "title": "00003035-Nota - Secretaría de las Mujeres permanece sin titular; perfil de Sasil de León gana terreno.docx",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-05T20:28:18.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1cktXyGJlJaMY5wMyqjkisPudOr7wbmd4",
+      "title": "00003029-Trascendido.docx",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-05T20:00:10.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1u8le5JLgaACgWO8ACg1qyFptOgiqxxt2",
+      "title": "00003027-PHOTO-2026-05-04-17-51-45.jpg",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "modifiedTime": "2026-05-04T23:55:52.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1WNLxBJPecZYHVgDqQyCz3FlGVwVTS4Km",
+      "title": "FlashReport_Sasil_Mayo2026 (1).pdf",
+      "subfolder": "03",
+      "subfolderName": "03. SASIL_Reportes_Avance",
+      "modifiedTime": "2026-05-13T20:27:16.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1UNknIYofEHqabZf14ryMk7gBLDBKNQC5",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. SASIL_Conversaciones_WA",
+      "modifiedTime": "2026-05-13T04:58:08.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "188DgWIinuYja9qOohFj0YCAq3as9tlvKwa97u8svx2M",
+      "title": "Lo que hicimos esta semana:",
+      "subfolder": "06",
+      "subfolderName": "06. SASIL_Agenda_Trabajos",
+      "modifiedTime": "2026-05-13T10:09:58.187Z",
+      "kind": "Google Doc→texto"
+    }
+  ],
+  "files_read_count": 14,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Campaña de posicionamiento mediático para Senadora Sasil de León dirigida a la Secretaría de las Mujeres del Gobierno Federal, buscando instalar su candidatura en la narrativa pública nacional (4-12 mayo 2026).",
+    "content_summary": "Campaña ejecutada exitosamente en 9 días con 4 impactos mediáticos en medios nacionales T1/T2 (Excélsior nota + columna, Reporte Índigo, Quadratín) más 1 derivado orgánico (La Política Online). Posicionamiento de perfil legislativo, credencial indígena maya ch'ol y trayectoria territorial chiapaneca como ventajas competitivas únícas para la vacante. Cliente satisfecho, plan superado (3 publicaciones comprometidas, 4 entregadas).",
+    "current_status": "Cuenta concluida. Últimas actividades: testigo de clipping en Quadratín el 07 mayo 16:40 hrs; cierre operativo reportado el 12 mayo con entrega de resultados y validación de cliente. Sin actividad posterior registrada desde mayo 2026.",
+    "scope_of_service": [
+      "Estrategia de posicionamiento mediático",
+      "Redacción de notas y columnas de opinión",
+      "Gestión de medios nacionales (print/digital)",
+      "Colocación de contenido editorial",
+      "Monitoreo y clipping de cobertura",
+      "Reportería y seguimiento de resultados"
+    ],
+    "key_facts": [
+      "Período: 4-12 mayo 2026",
+      "4 impactos totales logrados vs. 3 comprometidos",
+      "Medios T1/T2: Excélsior (nota 06 may + columna Frentes Políticos 07 may), Reporte Índigo (perfil 07 may), Quadratín (nota 07 may)",
+      "1 impacto derivado orgánico: La Política Online (07 may)",
+      "Sentimiento: 100% positivo",
+      "Focal: Senadora Sasil de León de Chiapas, perfil indígena maya ch'ol",
+      "Cliente directo identificado como 'Bernardo' (contacto político/operador)",
+      "Equipo Blackwell: Atenas Lizárraga (gestión operativa), Marisol Guerrero/Sol Guerrero (columnas), Johanna Palacio (coordinación cierre)"
+    ],
+    "fulfilled": [
+      "Redacción y aprobación de 2 notas + 1 trascendido (05 mayo): notas diferenciadas por enfoque (trayectoria legislativa vs. vacancia institucional); trascendido tipo 'Frentes Políticos' con análisis político (archivo 00003029-Trascendido.docx) ✓",
+      "Publicación nota Excélsior impresa + digital (06 mayo 06:58 hrs): 'Secretaría de las Mujeres permanence sin titular; perfil de Sasil de León gana terreno' (testigo 00003040-PHOTO-2026-05-06-11-38-24.jpg) ✓",
+      "Publicación columna Frentes Políticos Excélsior impresa (07 mayo): Sección 4 'Relevo' con análisis político (testigos 00003045 + 00003049-PHOTO 07:54 y 07:59) ✓",
+      "Publicación perfil Reporte Índigo digital (07 mayo 04:00 hrs): 'Sasil de León podría llegar a la Secretaría de las Mujeres' Nacional/Gobierno México (testigo 00003053-PHOTO-2026-05-07-12-18-43.jpg) ✓",
+      "Publicación nota Quadratín web (07 mayo 16:34 hrs): 'Sasil de León se perfila para la Secretaría de las Mujeres' (testigo 00003063-PHOTO-2026-05-07-16-40-13.jpg) ✓",
+      "Impacto orgánico derivado La Política Online (07 mayo): 'En un guiño para el Verde, Velasco promueve a Sasil de León para la Secretaría de las Mujeres' sin gestión directa (testigos 00003058 + 00003059-PHOTO 12:27) ✓",
+      "Mensajes posicionados instalados: (1) perfil con expediente legislativo década+, (2) credencial territorial Chiapas como ventaja, (3) capacidad articulación política Morena ✓",
+      "Reportería Flash Report completo (FlashReport_Sasil_Mayo2026 (1).pdf 13 mayo) con narrativa de resultados, testigos digitales/impresos y recomendaciones junio ✓",
+      "Validación cliente vía WhatsApp (12 mayo 11:18 - 3:12 hrs): confirmación satisfacción, gratitud explícita, apertura a ampliar plan ✓"
+    ],
+    "pending": [
+      "Ejecución de próximas acciones sugeridas en Flash Report (junio 2026): (1) nota perfil ampliado Milenio/El Universal, (2) activación redes sociales video vertical TikTok/Reels/Shorts, (3) expansión a medios mayor circulación (Proceso, Animal Político, Aristegui Noticias) — SIN EVIDENCIA de implementación",
+      "Validación sobre desenlace real de la designación a Secretaría de las Mujeres — el reporte deja abierto 'la decisión aún se encuentra en análisis' (05 mayo) sin cierre sobre si Sasil fue nombrada efectivamente"
+    ],
+    "client_promises": [
+      {
+        "promise": "Colocación mínima 3 notas/columnas en medios nacionales T1/T2 (mayo 2026)",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Posicionamiento de perfil legislativo y credencial indígena como diferenciadores vs. otros candidatos",
+        "cadence": "continuo",
+        "status": "cumplido"
+      },
+      {
+        "promise": "100% cobertura positiva sin controversia narrativa o regulatoria",
+        "cadence": "continuo",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Gestión de medios nacionales print + digital con testigos de cobertura",
+        "cadence": "evento",
+        "status": "cumplido"
+      }
+    ],
+    "pq_assessment": {
+      "score_estimate": 9,
+      "placements": 4,
+      "tier_mix": "T1/T2 nacional (Excélsior, Reporte Índigo, Quadratín) + derivado orgánico",
+      "quality_narrative": "Narrativa coherente, bien estratificada: notas de contexto (vacancia + trayectoria), columna de análisis político (Frentes Políticos), perfil legislativo (Índigo). Redacción política sofisticada, uso efectivo de fuentes académicas (Marcela Lagarde) y datos INEGI/Índice de Paz México para anclar argumentos. Mensajes se refuerzan mutuamente. Géneros diversificados (nota + columna + perfil). Lenguaje neutral-positivo sin exageración. Derivado orgánico evidencia efecto cascada.",
+      "result_vs_objective": "SUPERADO: 4 impactos vs. 3 comprometidos. Cobertura en medios solicitados + extra (La Política Online). Todos positivos, sin riesgos narrativos. Cliente validó directamente como 'extraordinario'."
+    },
+    "co_assessment": {
+      "committed": 3,
+      "delivered": 4,
+      "on_time": 4,
+      "late": 0,
+      "missed": 0,
+      "note": "Plan ejecutado en 9 días calendario (04-12 mayo). Todas las publicaciones dentro de cronograma. Kickoff 04 mayo 14:30 hrs; notas aprobadas cliente 05 mayo 14:34-14:35 hrs; publicaciones escalonadas 06-07 mayo. Reportería final 12 mayo. Cumplimiento operativo 100%, sin retrasos. Equipo coordinado (Atenas = gestión, Sol/Marisol = redacción, Johanna = cierre)."
+    },
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "approval",
+        "date": "2026-05-05",
+        "source": "Bernardo (contacto cliente vía WhatsApp)",
+        "note": "Aprobación explícita de 2 notas + trascendido: 'Perfectas las dos 🆗 👍'"
+      },
+      {
+        "type": "positive",
+        "signal": "praise",
+        "date": "2026-05-07",
+        "source": "Bernardo",
+        "note": "Validación postpublicación: 'Buenísima' (Índigo), 'Extraordinario' (Quadratín)"
+      },
+      {
+        "type": "positive",
+        "signal": "approval",
+        "date": "2026-05-12",
+        "source": "Bernardo",
+        "note": "Cierre satisfactorio: 'Gracias chicas!! Mil gracias 🙏' a reporte final"
+      },
+      {
+        "type": "positive",
+        "signal": "scope_expand",
+        "date": "2026-05-12",
+        "source": "Johanna Palacio (Blackwell)",
+        "note": "Cliente abre puerta a ampliar plan: 'Quedamos al pendiente y a tus órdenes en caso de que quieran ampliar el plan'"
+      },
+      {
+        "type": "positive",
+        "signal": "referral",
+        "date": "2026-05-12",
+        "source": "Johanna Palacio",
+        "note": "Mención de trabajo paralelo con otro cliente ('Geovanna') sugiere múltiples frentes operando con mismo equipo"
+      }
+    ],
+    "strategic_recommendations": [
+      "Documentar desenlace real de candidatura Sasil (fue o no designada a Secretaría de las Mujeres en junio+ 2026) para validar ROI de colocación y credibilidad de futuros trabajos similares",
+      "Si Sasil fue nominada/designada, capitalizar como case study de éxito mediático e impacto político real en portafolio de servicios",
+      "Redes sociales (TikTok/Reels) sugeridas en Flash Report no fueron ejecutadas — evaluar viabilidad y completarlas si cliente sigue activo para ampliar alcance orgánico",
+      "Medios de mayor circulación (Proceso, Animal Político) quedaron pendientes — si posición de Sasil se consolida, replantear fase 2 con mayor escala de cobertura"
+    ],
+    "per_file_notes": [
+      {
+        "file": "00003063-PHOTO-2026-05-07-16-40-13.jpg",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Testigo visual nota Quadratín publicada 07 mayo 16:34 hrs con foto de Sasil de León y titular 'se perfila para la Secretaría de las Mujeres'; confirma colocación exitosa en portal web"
+      },
+      {
+        "file": "00003059-PHOTO-2026-05-07-12-27-54.jpg",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Screenshot La Política Online nota derivada 'En un guiño para el Verde, Velasco promueve a Sasil de León para la Secretaría de las Mujeres'; evidencia impacto orgánico sin gestión directa, efecto cascada narrativo exitoso"
+      },
+      {
+        "file": "00003058-PHOTO-2026-05-07-12-27-54.jpg",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Duplicado/confirmación misma nota La Política Online con diferente timestamp; impacto relevante de medios digitales políticos"
+      },
+      {
+        "file": "00003053-PHOTO-2026-05-07-12-18-43.jpg",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Testigo Reporte Índigo perfil 07 mayo 04:00 hrs sección Nacional/Gobierno; nota tipo perfil refuerza trayectoria legislativa y legitimidad identitaria indígena"
+      },
+      {
+        "file": "00003049-PHOTO-2026-05-07-07-59-27.jpg",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Recorte columna Frentes Políticos Excélsior 07 mayo; punto 4 'Relevo' destaca a Sasil entre candidatas; nota politológica sofisticada sobre designación secretariales"
+      },
+      {
+        "file": "00003045-PHOTO-2026-05-07-07-54-52.jpg",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Texto columna Frentes Políticos Excélsior 07 mayo; análisis político sobre Citlalli Hernández reemplaza, perfil Sasil 'se consolida porque combina representación, estructura y oficio político'"
+      },
+      {
+        "file": "00003040-PHOTO-2026-05-06-11-38-24.jpg",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Testigo Excélsior digital + impreso 06 mayo 06:58 hrs nota 'Secretaría de las Mujeres permanece sin titular; perfil de Sasil de León gana terreno'; contexto institucional y tracción narrativa iniciales"
+      },
+      {
+        "file": "00003034-Nota - Sasil de León, el perfil que suma argumentos para encabezar la Secretaría de las Mujeres.docx",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Redacción nota enfoque legislativo: 10+ años servicio público, comisiones Relaciones Exteriores/Trabajo, identidad indígena maya ch'ol, trayectoria chiapaneca; argumento académico Marcela Lagarde legitimidad identitaria"
+      },
+      {
+        "file": "00003035-Nota - Secretaría de las Mujeres permanece sin titular; perfil de Sasil de León gana terreno.docx",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Redacción nota enfoque institucional: vacancia 2+ semanas post-Citlalli, compromisos CEDAW, reformas Sheinbaum oct 2024; posiciona Sasil como candidata en análisis pero con tracción narrativa ya activa"
+      },
+      {
+        "file": "00003029-Trascendido.docx",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Pieza 'Frentes Políticos' tipo columna: tono insider, énfasis en construcción de nombramientos Morena no se anuncian sino se construyen, Sasil como nombre que se 'instala' en circulación política; sofisticación politológica alta"
+      },
+      {
+        "file": "00003027-PHOTO-2026-05-04-17-51-45.jpg",
+        "folder": "02. SASIL_Entregables",
+        "finding": "Clipping Financial México 04 mayo: contexto competitivo 'Tres candidatas para Sheinbaum' incluye Sasil, Ingrid Gómez, Anaís Burgos; validación de narrativa competencia antes kickoff"
+      },
+      {
+        "file": "FlashReport_Sasil_Mayo2026 (1).pdf",
+        "folder": "03. SASIL_Reportes_Avance",
+        "finding": "Reportería integral 13 mayo: 4 impactos totales, 3+ medios nacionales, 100% sentimiento positivo; testigos digitales/impresos; mensajes posicionados documentados; recomendaciones junio (perfil Milenio, redes sociales, medios escala)"
+      },
+      {
+        "file": "_chat.txt",
+        "folder": "04. SASIL_Conversaciones_WA",
+        "finding": "Cadena WhatsApp 04-12 mayo: kickoff 04 mayo 14:30 hrs con Bernardo (operador político), redacciones 05 mayo aprobadas explícitamente cliente ('Perfectas las dos'), publicaciones confirmadas 06-07 mayo con testigos, cierre 12 mayo con satisfacción cliente y apertura ampliar plan; equipo Blackwell: Atenas, Sol/Marisol, Johanna"
+      },
+      {
+        "file": "Lo que hicimos esta semana:",
+        "folder": "06. SASIL_Agenda_Trabajos",
+        "finding": "Resumen operativo: reunión cliente, redacción 2 notas + 1 trascendido, publicación 3 notas (Índigo, Excélsior, Quadratín) + 1 trascendido (Frentes Políticos); tareas core completadas sin desviaciones"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Desconocimiento de desenlace real: no hay evidencia en archivos de si Sasil fue efectivamente designada o no a Secretaría de las Mujeres post-mayo 2026, lo que impacta validación ROI de campaña",
+        "severity": "media"
+      },
+      {
+        "risk": "Plan de amplificación junio (redes sociales, medios mayores) recomendado en Flash Report sin evidencia de ejecución; si Sasil era candidata activa, pausa repentina en operaciones sugiere cierre intempestivo o cambio de prioridades cliente",
+        "severity": "media"
+      },
+      {
+        "risk": "Contacto cliente identificado solo como 'Bernardo' (operador político anónimo); ausencia de contrato/OC/documentación formal visible en carpeta Contratos sugiere operación informal o de rápida gestión política sin formalización",
+        "severity": "baja"
+      }
+    ],
+    "business_risk": "Falta evidencia de designación real de Sasil a Secretaría de las Mujeres posterior a mayo 2026, lo que deja incierto si el posicionamiento mediático impactó decisión final de gobierno o quedó en posicionamiento narrativo sin consolidación política.\"",
+    "opportunity": "Documentar y canalizar caso Sasil como case study de colocación mediática de alto impacto T1/T2 (4 impactos en 9 días, 100% positivo, supera compromiso) para venta futura a clientes con agendas de posicionamiento ejecutivo público y político.\"",
+    "recommended_action": "Validar con Bernardo/cliente si Sasil fue designada a la Secretaría de las Mujeres en junio+ 2026 para cerrar loop de efectividad y capitalizar como case study; si sí fue designada, escalabilidad de modelo a otras cuentas políticas de alto perfil.\"",
+    "monday_ticket": {
+      "tipo": "normal",
+      "trigger": "Cuenta concluida sin actividad 2+ meses; documentación de follow-up con cliente sobre desenlace de candidatura Sasil de León (designación sí/no Secretaría Mujeres) para validar ROI y casos de estudio."
+    },
+    "score_adjustment_recommendation": {
+      "pq_delta": 0,
+      "co_delta": 0,
+      "sc_delta": 0,
+      "reason": "Calidad, cumplimiento operativo y señales de cliente se mantienen en línea base: ejecución limpia 9 días, 4/4 publicaciones on-time, cliente satisfecho y abierto a ampliar. Sin desviaciones ni mérito de ajuste negativo; sin sobrecumplimiento extraordinario que justifique delta positivo. Punt aje se sostiene en 9/10 PQ, 100% CO, 5/5 SC signals."
+    },
+    "notes": "Cuenta operada con fluidez editorial y política sofisticada. Equipo Blackwell (Atenas Lizárraga = operativa, Sol Guerrero/Marisol = columnas, Johanna Palacio = cierre) ejecutó en formato agresivo condensado: kickoff lunes 4 mayo, aprobaciones martes 5, publicaciones 6-7 mayo escalonadas, reporte viernes 12. Contacto cliente ('Bernardo') mostró patrones de operador político experimentado (URLs compartidas pre-emptivas, aprobaciones rápidas, apertura a ampliar scope). Narrativa instalada: Sasil como candidata única en intersección identidad indígena + experiencia legislativa + territorio chiapaneco. Sin riesgos narrativos o regulatorios detectados. Piezas redactadas con lenguaje neutral-político sofisticado, no promocional sino contextual.\""
+  },
+  "analyzed_at": "2026-06-05T21:23:58Z"
+}

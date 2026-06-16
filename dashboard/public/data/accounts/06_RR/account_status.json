@@ -1,0 +1,1614 @@
+{
+  "number": "06",
+  "folderTitle": "06. RR",
+  "folderId": "19Njk3SU3JZbX5MXoZW7Gg3SUK0pwAlY_",
+  "folderModifiedTime": "2026-04-30T18:37:52.964Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "reporteRRC290526.pdf (en SINTESIS RAUL ROCHA)",
+    "modifiedTime": "2026-05-29T16:40:25Z",
+    "source": "02. RR_ENTREGABLES"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-13T18:15:47Z",
+    "source": "01. RR_Contratos_OC",
+    "file": "Propuesta RR_ SERVICIOS.docx - Documentos de Google.pdf",
+    "fileId": null
+  },
+  "subfolderActivity": {
+    "01. RR_Contratos_OC": {
+      "subfolderId": "12KShiqkZvgHzttyGF4CwPEIVqnrLxUKb",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T18:15:47Z",
+      "latestFile": "Propuesta RR_ SERVICIOS.docx - Documentos de Google.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:07Z_verify",
+      "last_verified_at": "2026-06-12T14:09:07Z"
+    },
+    "02. RR_ENTREGABLES": {
+      "subfolderId": "1PtklPJaoG5N6YCmCWATvU268sPnAjake",
+      "fileCount": 80,
+      "latestModified": "2026-05-29T16:40:25Z",
+      "latestFile": "reporteRRC290526.pdf (en SINTESIS RAUL ROCHA)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:34Z_verify",
+      "last_verified_at": "2026-06-11T01:57:34Z",
+      "nestedNote": "Contiene subcarpetas: SINTESIS RAUL ROCHA"
+    },
+    "03. RR_REPORTES_AVANCES": {
+      "subfolderId": "1FsGwwkn0ZIZeyaRBpzUrG1fW5tYR2nZr",
+      "fileCount": 1,
+      "latestModified": "2026-04-17T15:14:25Z",
+      "latestFile": "Reporte —  RR.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:35Z_verify",
+      "last_verified_at": "2026-06-11T01:57:35Z"
+    },
+    "04. RR_CONVERSACIONES_WA": {
+      "subfolderId": "1ovmY88CllLwLrSBqzSiDnagfnmBZSoTq",
+      "fileCount": 422,
+      "latestModified": "2026-05-13T17:58:52Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - Monitoreo RR)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:35Z_verify",
+      "last_verified_at": "2026-06-11T01:57:35Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Monitoreo RR, WhatsApp Chat - Medios RR 13 Mayo 2026, WhatsApp Chat - Medios RR"
+    },
+    "05. RR_Transcripciones_Llamadas": {
+      "subfolderId": "1nj6Z8JP-pqVu_RG44uRn79vUEIlFka0d",
+      "fileCount": 1,
+      "latestModified": "2026-04-20T16:16:07.461000Z",
+      "latestFile": "Transcript declaraciones Lupita Jones ",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:36Z_verify",
+      "last_verified_at": "2026-06-11T01:57:36Z"
+    },
+    "06. RR_AGENDAS_TRABAJO": {
+      "subfolderId": "1WYQ68F4f9hr8_4nxwKnAzONzNeq4DyAD",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T18:08:55.054000Z",
+      "latestFile": "Trabajo diario con cliente",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:36Z_verify",
+      "last_verified_at": "2026-06-11T01:57:36Z"
+    }
+  },
+  "pqProxy": {
+    "score": null,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable es un análisis de monitoreo de riesgo reputacional (ADN/Azteca vs Raúl Rocha Cantú), no un reporte de placements generados por Blackwell. Para contexto: Reporte histórico en 03 documenta 23 ejecuciones con Radio Fórmula (T1), Proceso ×2 (T1), Newsweek (T1), Heraldo columna (T2).",
+    "suggestion": "Mantener monitoreo diario de ADN/Azteca. Actualizar nota aclaratoria con datos del amparo NL. Preparar protocolo de respuesta para escenario de captura o regreso voluntario del cliente.",
+    "fileEvaluated": "OnePager_ADN_Azteca_RR_30Abril2026.pdf",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Mantener monitoreo diario de ADN/Azteca. Actualizar nota aclaratoria con datos del amparo NL. Preparar protocolo de respuesta para escenario de captura o regreso voluntario del cliente.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:56:36Z",
+  "driveFiles": [
+    {
+      "id": "1oSH2FK9UW11LZBgs2tcUGwlDp03sEMF1",
+      "name": "reporteRRC290526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-29T16:40:25.000Z",
+      "size": "1109084",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "11Z4N-QuzeZWA5-PWj8xwsKLI8hestOgq",
+      "name": "reporteRRC280526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-28T15:58:49.000Z",
+      "size": "1375492",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1ts8E2x4XiDCtshFgTBoslS8oPdFBi4Em",
+      "name": "reporteRRC260526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T14:01:55.000Z",
+      "size": "1163237",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1d0VGaUqiHPtRGStgTZ6Faw8eeOBZ4cvT",
+      "name": "reporteRRC250526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-25T13:28:37.000Z",
+      "size": "530494",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1r4HpsMLXNTvwD323scIDO_U2a-ZprNmS",
+      "name": "reporteRRC210526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-21T14:38:01.000Z",
+      "size": "480557",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1m22Um9B23GLg6HC9NmJXnSRMN5INSn6d",
+      "name": "reporteRRC200526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-20T13:19:29.000Z",
+      "size": "639217",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1kePjMYNhIDhCCf4DbxE46j-X9YQh5ZRh",
+      "name": "reporteRRC190526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T13:26:34.000Z",
+      "size": "638591",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1zRUwTxKu8H3HJMv0S8jn0w1ChOz546T8",
+      "name": "reprteRRC180526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-18T13:19:07.000Z",
+      "size": "753666",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "16b746X0ibtaGR3NW0dhLVMKRo1xj9yc0",
+      "name": "reporteRRC140526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-14T13:57:10.000Z",
+      "size": "898780",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1LnxcTTBuFxcsXDVnLlEctNTP0kJRPYVs",
+      "name": "Propuesta RR_ SERVICIOS.docx - Documentos de Google.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T18:15:47.000Z",
+      "size": "120090",
+      "subfolder": "01",
+      "subfolderName": "01. RR_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1RlFK0IRncBtQYbaDjgl9Hab0omZGGz4goimEjoLVBzI",
+      "name": "Trabajo diario con cliente",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T18:08:55.054Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. RR_AGENDAS_TRABAJO",
+      "nestedPath": null
+    },
+    {
+      "id": "10DKnAiF7LmgJHUmP2e8EPuuimlSYZ4Xh",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T17:58:52.000Z",
+      "size": "289091",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1zhejADGa0bjkDYCIc9oXhov0hc6h8ZUx",
+      "name": "_chat (1).txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T17:57:00.000Z",
+      "size": "1888",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Medios RR 13 Mayo 2026"
+    },
+    {
+      "id": "1TRk6B5d8ERObdx6v3HUYm926H3W2OTod",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T16:32:18.000Z",
+      "size": "23530",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1v5x6aJ-_lQlFlYMqhE9FBNeAysQBRrrY",
+      "name": "00001281-reporteRRC130526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T14:01:12.000Z",
+      "size": "688668",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Medios RR 13 Mayo 2026"
+    },
+    {
+      "id": "1R_QBXdjr06lNUu1woz6RGiBdujB-lAzR",
+      "name": "reporteRRC130526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T13:48:30.000Z",
+      "size": "688668",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1kuU5xz4Oqa8k3YUu6lcrRXC7CaEklHbsorh7O5xjtKE",
+      "name": "Transcript declaraciones Lupita Jones ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T00:29:01.072Z",
+      "size": "3431",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1CHEyJOeA1H4xASSS2H2OSX5qrjkZGzTL",
+      "name": "REPORTERRC120526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T14:24:10.000Z",
+      "size": "537183",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1yoiO7DMlGHKll6K4B6-s7B3QwSnKi4x9",
+      "name": "reporteRRC110526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-11T13:57:17.000Z",
+      "size": "548375",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "188LsGLIclpAdpjXwg3DEigHbj5orzUQ0",
+      "name": "reporteRRC080526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T14:19:25.000Z",
+      "size": "506555",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1h4gd9MpsuIL7idg_C-Qz4XdWIboDi5Xa",
+      "name": "00000954-VIDEO-2026-05-08-07-06-29.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-05-08T13:06:30.000Z",
+      "size": "10005937",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1ePwNnyAHsQBQBcIrgkqqlNNHhzMxr-TC",
+      "name": "REPORTERRC070526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T13:48:14.000Z",
+      "size": "767420",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1G7x4Mmq1DF79jIF2bSMAopwkTTqqN2ip",
+      "name": "reporteRRC050526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-05T13:47:36.000Z",
+      "size": "490103",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1QRVFaXltc7Xd8wPVV9wdo1DzS3vxq2Ir",
+      "name": "reporteRRC040526.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T13:50:11.000Z",
+      "size": "502927",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1Rr1IRFJF9l6mH8fQKHybuJlu-QpI5e4_",
+      "name": "00000950-PHOTO-2026-05-04-05-07-08.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T11:09:20.000Z",
+      "size": "248780",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1LW1yBM4ZUz4Dxe62Ie5gdSLqwAeTU1tj",
+      "name": "OnePager_ADN_Azteca_RR_30Abril2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-30T17:41:34.343Z",
+      "size": "48306",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1EtqrG-3SQrOjPBKfQ65KULZUIoi0JCQH",
+      "name": "conversaición RR 30 abril 2026.png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-04-30T17:38:31.000Z",
+      "size": "1384108",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1ycIRKsfgi4xSqc9VZwYiNuwhJErOQ3wV",
+      "name": "reporteRRC300426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-30T14:12:24.000Z",
+      "size": "211680",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1fnzwEtt3ttqguf9uceX1Id2nkQWNRkR7",
+      "name": "00000947-VIDEO-2026-04-30-07-25-14.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-04-30T13:29:10.000Z",
+      "size": "28879746",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1zYpDl-ocJ5VsnG6x0d8kEbVknDCKNK1Q",
+      "name": "reporte RRC 290426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T14:30:24.000Z",
+      "size": "632221",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "11rxGSo0eurXLQtUZT0Wdp45VIohQNYAI",
+      "name": "reporte RRC 280426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-28T14:06:06.000Z",
+      "size": "494372",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1uy-YBZ4jblZ_nXxyNsTR_couxI_07Pne",
+      "name": "reporte RRC 270426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-27T13:44:58.000Z",
+      "size": "328525",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1i8z_LD9JfL52pnzNNYmxaW3yT5PXZe0b",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-04-20T23:52:08.000Z",
+      "size": "3834",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Medios RR"
+    },
+    {
+      "id": "1LlbhwaeJdK8D2u9ZJJE2MqxHv8hVvCfQ",
+      "name": "Transcript declaraciones Lupita Jones ",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "modifiedTime": "2026-04-20T16:16:07.461Z",
+      "size": null,
+      "subfolder": "05",
+      "subfolderName": "05. RR_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1hC3zzez0qelgBsTgIOTvmdSGldSYRUd1",
+      "name": "00001169-reporteRRC200426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T14:50:34.000Z",
+      "size": "890950",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Medios RR"
+    },
+    {
+      "id": "1TJkzDKWhCNzA2u1KMfvppMyz3WEd9aYO",
+      "name": "reporteRRC200426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-20T14:08:46.000Z",
+      "size": "890950",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1ENpjRMDBnrPlnK1pptuKIo82KADL6MEc",
+      "name": "Reporte —  RR.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-17T15:14:25.000Z",
+      "size": "55391",
+      "subfolder": "03",
+      "subfolderName": "03. RR_REPORTES_AVANCES",
+      "nestedPath": null
+    },
+    {
+      "id": "1vf3pAaPrcOSygWZMQFBw55bI_ElTagG9",
+      "name": "reporte RRC 160426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-16T14:20:47.000Z",
+      "size": "193807",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "18KtKiCCwxZGcVRMcMRkYuhSzVQV_0uXI",
+      "name": "00000934-PHOTO-2026-04-16-07-10-16.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-16T13:12:08.000Z",
+      "size": "93609",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "13TQolAbYoYjp6vFH2rl00fsnCmGLe5RP",
+      "name": "reporte RRC 150426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-15T14:01:00.000Z",
+      "size": "253109",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "14J5d1et3Xv2yKKkJYlWB1lj594OC-lur",
+      "name": "REPORTE RRC 140426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-14T13:52:46.000Z",
+      "size": "470095",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1C_GXlWjpOHi14hTfqwFZKiNAK_50Ssth",
+      "name": "00000928-PHOTO-2026-04-14-06-45-27.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-14T12:48:42.000Z",
+      "size": "427055",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1P7OPMSuPFQW5MjXrg_I7GkdTzTFnYm9Y",
+      "name": "reporte RRC 100426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T14:35:59.000Z",
+      "size": "276795",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1nXLS6R8JPGv14fdPyjS2HrGQ6-Dqjl88",
+      "name": "reporte RRC 080426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-08T14:02:14.000Z",
+      "size": "337566",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1g_BWVzF_6ZEL8EARZhOYiMHFi2DhKav8",
+      "name": "reporte RRC 070426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-07T14:24:23.000Z",
+      "size": "692360",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1ypq0YRkKiVnLN3LVda3IbEYhR8A5Cs_1",
+      "name": "00000925-PHOTO-2026-04-07-05-18-20.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T11:22:56.000Z",
+      "size": "267825",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1fNUiWXIPPjLq1BD0ujB-W-sWcIMvvNUp",
+      "name": "00000920-PHOTO-2026-04-02-09-26-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-02T15:35:22.000Z",
+      "size": "580077",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1qAVHDp35iyBBCEa_OC_BrEqguXckj2FJ",
+      "name": "reporte RRC 020426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-02T14:18:40.000Z",
+      "size": "575302",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "15UtihK2aHvvS0c8iQCj6Vtz8dTkiV1ET",
+      "name": "reporte RRC 010426.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-01T14:12:27.000Z",
+      "size": "384491",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1te3V-3JckcnOCnE0NCYYueeoWjEOcqtz",
+      "name": "reporteRRC260326.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-26T15:22:50.000Z",
+      "size": "1458190",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1xIA41NYFLFEiGM7ZGTtgitQ3LVALX4U9",
+      "name": "00000913-PHOTO-2026-03-26-05-09-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-26T11:10:02.000Z",
+      "size": "328940",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1ulJeouLOTNI5XX1WPtOC9ve4e-mMfG7z",
+      "name": "reporteRRC250326.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-25T14:14:25.000Z",
+      "size": "356727",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1Ace7-ltePfgBaicUA14EH70jTyvqJj2O",
+      "name": "reporte RRC 24032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-24T14:10:41.000Z",
+      "size": "1060137",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1YSu6mVWkh-N6Je8SB634zXMzeFymiQwC",
+      "name": "00000910-PHOTO-2026-03-24-05-06-26.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-24T11:06:26.000Z",
+      "size": "84473",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1MnERadIAGKdYPPCFjdDINcjKVZcqwddf",
+      "name": "00000909-PHOTO-2026-03-24-04-59-20.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-24T11:00:44.000Z",
+      "size": "340951",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "16zG9yIt2l_deGbBbb6Ed8gILNra0D9ib",
+      "name": "reporte RRC 190326.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-19T14:17:59.000Z",
+      "size": "246917",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1IloQTNPAKN_Sl5XmXC-atvmfg6ujGXIY",
+      "name": "00000906-VIDEO-2026-03-19-04-53-05.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-19T10:57:48.000Z",
+      "size": "13530204",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1WNOydmOUBCWD1sIKlf5g6DZ0Kuynq1NU",
+      "name": "00000904-VIDEO-2026-03-19-04-47-33.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-19T10:52:24.000Z",
+      "size": "14130338",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1Q27OAlnZZOhsdzaHoEEdDveHHCAj_hyY",
+      "name": "00000903-VIDEO-2026-03-19-04-44-13.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-19T10:46:56.000Z",
+      "size": "44889466",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1mWiyAHrSGt_oo0WlkPOQXE56vJ4kiYZ1",
+      "name": "reporte RRC 15032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-15T17:30:04.000Z",
+      "size": "593934",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1_pOdMkgqx-p974K7wUnm-7tPziWUTRLL",
+      "name": "00000898-PHOTO-2026-03-15-08-56-10.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-15T14:59:36.000Z",
+      "size": "206108",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1j9MEXmT4C9w4rRm47F_2i26B7hnYDrec",
+      "name": "reporte RRC 140326.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-14T14:11:56.000Z",
+      "size": "275362",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1QKR9sIcvXpg8ssVJFZbb59GdEjB-5PV-",
+      "name": "reporte RRC 130326.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-13T14:08:13.000Z",
+      "size": "968645",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1_lIhlbX2v6WJ-lQNLl8Cb3fZsA6uhw8a",
+      "name": "reporte RRC 12032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-12T14:02:49.000Z",
+      "size": "1414647",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1W18D4gc8m7LhZ_H1c6QR3QssY4NbpVFB",
+      "name": "reporte RRC 110326.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-11T14:07:18.000Z",
+      "size": "908709",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "10i6bp6iB_Z62k_PoxK3dZRlzooTbdzgZ",
+      "name": "00000894-PHOTO-2026-03-11-05-24-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-11T11:26:28.000Z",
+      "size": "870183",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1V7ybwXQ4Ci3rmmhYD_em3xzddcKa2ZG0",
+      "name": "00000893-VIDEO-2026-03-10-14-00-47.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-10T20:00:56.000Z",
+      "size": "27627163",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1lnHxHu9Kn2pin3HyeMoA-Cw-67xz6Tsx",
+      "name": "00000892-VIDEO-2026-03-10-13-58-43.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-10T19:58:50.000Z",
+      "size": "18832482",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1m3ICEfgvLFGD3szajprMRqcLd4GZsb8S",
+      "name": "REPORTE DIARIO RRC 10032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T13:56:27.000Z",
+      "size": "1617479",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "157Vzy2hp5ocdsdEnTvlEiSo7Qfl1Idf4",
+      "name": "00000891-PHOTO-2026-03-10-07-41-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-10T13:45:28.000Z",
+      "size": "28806",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1lWHrVyE3FiyfXL6a17eqmIMmSkqLIPPw",
+      "name": "00000888-PHOTO-2026-03-10-05-26-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-10T11:27:46.000Z",
+      "size": "491470",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "11wDRnCTZkdR5gc4N_P--h1BX9CcoIQ2O",
+      "name": "00000887-PHOTO-2026-03-10-04-43-35.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-10T10:43:34.000Z",
+      "size": "438200",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "170DtJ70k__O6Q3FopbnmMl3BdYy4JZxi",
+      "name": "00000886-VIDEO-2026-03-10-04-12-40.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-10T10:16:02.000Z",
+      "size": "25665840",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1f4il1ns9LZzxfYnLZ73zLJ92PuxzH61i",
+      "name": "00000885-VIDEO-2026-03-10-03-57-16.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-10T09:59:24.000Z",
+      "size": "19091889",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1V1xweQXRU1ElwHD5D5vVRqYWMAHli8lR",
+      "name": "00000884-VIDEO-2026-03-09-08-19-52.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-09T15:29:08.000Z",
+      "size": "24293229",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1PH-Fdv0aujNx_xk_Qe9avDrYh9PskrE3",
+      "name": "00000883-PHOTO-2026-03-09-08-01-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-09T14:13:50.000Z",
+      "size": "601349",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1BeTYQfWUJgNRBj52nr-wtxs1YozjaBRV",
+      "name": "00000882-VIDEO-2026-03-09-07-41-02.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-09T13:58:02.000Z",
+      "size": "15378813",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "17JEAMFU9M2o9SN3acITlbqG5LQhagBou",
+      "name": "reporte RRC 9032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-09T13:57:55.000Z",
+      "size": "1470066",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1v72TRaUFHE7ygbJf_l-HvT1cW6o5wpP9",
+      "name": "00000878-PHOTO-2026-03-09-05-59-30.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-09T12:13:02.000Z",
+      "size": "273976",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1AXEK3K6MBUBzXKk3_6BuYyg5mM3KLWCZ",
+      "name": "00000879-PHOTO-2026-03-09-06-07-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-09T12:13:02.000Z",
+      "size": "82763",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1Bu9T8e-3-mjxgc-5GAnDTAECJnjibwRX",
+      "name": "reporte diario 8032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-08T17:12:39.000Z",
+      "size": "229267",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1rhSZoiXSisQCjCwQvxRQKFg2GTbiCVxY",
+      "name": "00000869-VIDEO-2026-03-08-07-21-25.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-08T13:23:04.000Z",
+      "size": "11561577",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1nhzUB3HM_9xbM0VdJVTFW6XcxuUelDXf",
+      "name": "00000868-VIDEO-2026-03-08-07-15-49.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-08T13:17:32.000Z",
+      "size": "18103342",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1FxiJDXYbtlTzB-YSUGW8CSc82-s7w9Ks",
+      "name": "00000866-PHOTO-2026-03-08-06-52-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-03-08T12:55:32.000Z",
+      "size": "137408",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1SbwZDoq_83TWp6aH2c78XaUzCqmPo-SB",
+      "name": "00000864-VIDEO-2026-03-07-07-48-37.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-03-07T13:51:12.000Z",
+      "size": "19855972",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1stiGCWrVMLL2wuVhqyXY271FKas_SILj",
+      "name": "REPORTE diario RRC06032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-06T14:05:58.000Z",
+      "size": "562632",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1SVBTqJJRqyRng5p7NuyxG7hAX8EV1Xxp",
+      "name": "reporte diario RRC 5032026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-05T13:56:39.000Z",
+      "size": "400608",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1pEMjXEGzWVhxVJ_R3vlNsgUu0Ct6w2yq",
+      "name": "reporte RRC 4032026 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-04T15:28:10.000Z",
+      "size": "3446147",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "19J2BpJjLuTxx1cpVtIhnPftpy21w7FWi",
+      "name": "reporte RRC 260226.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-26T14:03:35.000Z",
+      "size": "1156544",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1yx6HojOnrlX72BWEJfPiuMElY1us3G0R",
+      "name": "reporte RRC 250226.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-25T13:50:52.000Z",
+      "size": "370315",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1cbDrqaHU85NnUbOz2aw43K-Qq8rdKmQI",
+      "name": "reporte RRC 24022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-24T13:58:45.000Z",
+      "size": "368880",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1AMmQQcWqWFhKjJuV7K8M-JTMZeounDyi",
+      "name": "REPORTE RRC 200226.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-20T14:38:11.000Z",
+      "size": "977275",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1Ph7Uo4eue0NNwgKrloyCkOFln2y4PFXF",
+      "name": "00000847-PHOTO-2026-02-20-04-38-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-20T10:42:06.000Z",
+      "size": "277388",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1Gc8gfake94iv8jurEW1PszJ_l7-pIcm9",
+      "name": "REPORTE RRC 19022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T13:57:24.000Z",
+      "size": "992508",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "16D4gZjnEcsHyS9fTMh2mKG3h8_aTAZyT",
+      "name": "REPORTE RRC 18022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-18T14:09:35.000Z",
+      "size": "380820",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1UoYC16iOxuuObtOVKLqDRXnNaHxj_whz",
+      "name": "00000842-PHOTO-2026-02-17-13-14-07.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-17T19:14:52.000Z",
+      "size": "79046",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "12utjXx3ns2SDCBesQe-xhK66bPdLCCuv",
+      "name": "00000841-PHOTO-2026-02-17-08-09-00.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-17T14:10:42.000Z",
+      "size": "96041",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1H2F0Yj36KdaHW36B6pM_bZOrORFPHm0x",
+      "name": "REPORTE RRC16022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-16T13:55:26.000Z",
+      "size": "417944",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1mri8ogyqG9XZrVGKuNldqmC_6iPAZHj9",
+      "name": "00000836-PHOTO-2026-02-14-08-17-18.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-14T14:33:40.000Z",
+      "size": "52081",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1jt9v2X_oBS3lCiwaLrlioF9namRU-2T1",
+      "name": "00000834-PHOTO-2026-02-13-09-56-38.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T15:56:38.000Z",
+      "size": "86718",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1-5DhWNfiKLeXUttVi-oaPwC9sZrhXeKp",
+      "name": "00000831-PHOTO-2026-02-13-09-53-41.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T15:53:42.000Z",
+      "size": "81650",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "16Ax0oBFs9hPSV4czgv8YK_iarMJB_Ghp",
+      "name": "00000827-PHOTO-2026-02-13-09-51-51.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T15:51:50.000Z",
+      "size": "109757",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1hVcnNs1cmb5FEjijAL04GA8tEyqshFOD",
+      "name": "00000824-PHOTO-2026-02-13-09-48-36.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T15:48:36.000Z",
+      "size": "94185",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1xahhJk8qlSr16gKIoZRAZxpV1WIQW21w",
+      "name": "00000823-PHOTO-2026-02-13-09-47-58.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T15:47:58.000Z",
+      "size": "94412",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1aWJSgntwnlGjbjhhXGx6QeDPyflqL4st",
+      "name": "00000821-PHOTO-2026-02-13-09-47-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T15:47:38.000Z",
+      "size": "121569",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1KPGuXJM3yPC7W0hlnXIzqkW26xY8n4Ai",
+      "name": "00000817-PHOTO-2026-02-13-09-43-48.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T15:43:48.000Z",
+      "size": "56306",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1ypcpUJxbxbGpxJi4m4LgfchNe1O7-uIT",
+      "name": "00000807-PHOTO-2026-02-13-06-40-03.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T12:47:36.000Z",
+      "size": "281496",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1px1oIgmlceHyZWjYaxXHvk5hK569c2IY",
+      "name": "00000808-PHOTO-2026-02-13-06-40-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T12:47:36.000Z",
+      "size": "266009",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1LN0m-g5wJVdertlrlqnwslpwuOGcVkZR",
+      "name": "00000809-PHOTO-2026-02-13-06-41-18.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-13T12:47:36.000Z",
+      "size": "620665",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1QwEhRpIDSJjwMf2qo-FnzEwUrFHLOCrq",
+      "name": "00000806-PHOTO-2026-02-12-08-27-30.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-12T14:30:58.000Z",
+      "size": "230319",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "16CvhIp9_9QQ5n1h09hMZW7f_URqdVl_V",
+      "name": "00000804-PHOTO-2026-02-12-08-23-15.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-12T14:25:40.000Z",
+      "size": "513958",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1q8v789xeKV2_5gfQWFum4HoYBFH_stHE",
+      "name": "00000803-PHOTO-2026-02-12-08-21-36.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-12T14:21:36.000Z",
+      "size": "180474",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "13Rgd6HQj0SEXqmLd35dnXFdGR6hdVuqA",
+      "name": "REPORTE DIARIO RRC 12022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-12T13:47:17.000Z",
+      "size": "471544",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1ix_SmzXt1icdOVUB_vH9CLGlDBksgWlQ",
+      "name": "REPORTE RRC 11022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-11T13:47:52.000Z",
+      "size": "401295",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1xJ3rgjaOcFGs0QNevu9BWI2c0oZj-soT",
+      "name": " REPORTE RRC 10022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-10T14:07:28.000Z",
+      "size": "303242",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "14wY5cnfn-t2BRYbSmJ2aEwL-_3BZ2XDz",
+      "name": "00000801-PHOTO-2026-02-10-07-35-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-10T13:38:46.000Z",
+      "size": "465315",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1rftWP9545jlXvtVYwCD8crVD5NWL-xUz",
+      "name": "Cronología de notas RR.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-02-09T17:10:28.000Z",
+      "size": "22422",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1nnEObEqeX_vHa7bqAT0XYbiM7a472pAI",
+      "name": "REPORTE RRC 06022026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-06T13:51:17.000Z",
+      "size": "1465063",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1DX_ovTDOIIaixqypd3vjgy0XZWGouF5-",
+      "name": "00000795-PHOTO-2026-02-05-06-36-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-05T12:36:54.000Z",
+      "size": "870253",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "19YzEZNZYiFYuHxzZqk4u8U5BBhcx9Cpw",
+      "name": "00000794-EL PAIS.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-04T15:07:14.000Z",
+      "size": "1427316",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1SybaQ-PurJuq-NGSf-KnWkChBUGuXn4o",
+      "name": "RR CONTEXTO.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-01-29T20:07:54.000Z",
+      "size": "311372",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1wYW0x8L0FAGLYNK9LDFxVthd1-iCTCUK",
+      "name": "Cronología caso RRC.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-29T15:28:14.000Z",
+      "size": "68200",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1R8AgaAx9wHjDKDgbYZdPoQUqaJTA9WuQ",
+      "name": "REPORTE RRC280126.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-28T11:52:34.000Z",
+      "size": "336476",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1m810oEl9vvF96k5m6DT2x3lL9kzSGHye",
+      "name": "00000787-PHOTO-2026-01-27-06-55-36.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-27T12:55:36.000Z",
+      "size": "537106",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1DeTp1WtFIetLjzBYlcdo8RYPkxw08gSe",
+      "name": "REPORTE RRC 270126.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-27T11:57:34.000Z",
+      "size": "672543",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1A_DIdQGEageJn_R2HtduQQG3vbcl0p8A",
+      "name": "00000779-PHOTO-2026-01-23-07-22-00.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-23T13:22:00.000Z",
+      "size": "119593",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1cW5lPXjM7_yTSxnl9htQ1ffYnarG62ps",
+      "name": "00000778-PHOTO-2026-01-23-07-20-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-23T13:20:56.000Z",
+      "size": "480521",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1uy29z7pjVn4LsxYjMFW5jQm2N604XSbj",
+      "name": "REPORTE RRC 231225.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-22T17:38:48.000Z",
+      "size": "7695756",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1nMlB4l8q_zjZ9_q43fn4YSFALqIyZIQY",
+      "name": "00000776-PHOTO-2026-01-22-04-28-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-22T10:32:24.000Z",
+      "size": "82420",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "14mv-8epkaNnAFi5woJr-HqSlf3k20SC8",
+      "name": "FICHAS MEDIOS REPLICA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-01-21T21:27:14.000Z",
+      "size": "23336",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "136YzsDnnm7h5AKdZA05yZgoZN_fjD71a",
+      "name": "REPORTE RRC 210126.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-21T12:11:38.000Z",
+      "size": "249454",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "10WAxMTOlpOr_PiEd8O_DBk_jyT0PzPmC",
+      "name": "REPORTE RRC 200106.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-20T12:00:16.000Z",
+      "size": "124586",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1-71bxGhx56_9nQ_Mg4TjrZ849Bt7Fs47",
+      "name": "00000773-PHOTO-2026-01-19-04-22-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-19T15:26:28.000Z",
+      "size": "170567",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1tQnXHK6gZgNYX6Gl6xV9SwYfFWgnWI9U",
+      "name": "00000774-PHOTO-2026-01-19-05-19-20.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-19T15:26:28.000Z",
+      "size": "303766",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "10KlUQ4OlPKvWASeLp1CNLkG2HAgJ3CD5",
+      "name": "Juez federal ordena frenar acciones contra Raúl Rocha Cantú por irregularidades.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-01-15T15:43:22.000Z",
+      "size": "7824",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": null
+    },
+    {
+      "id": "1vGNhq6eFMHmHp5FpjSbd5_NB-yzWN6ZJ",
+      "name": "00000765-VIDEO-2026-01-14-07-16-35.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-01-14T13:16:38.000Z",
+      "size": "24405357",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1y9ZzlOGC7V3CY-HRMAQkyemu1s6BGRlu",
+      "name": "00000762-VIDEO-2026-01-13-07-43-15.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-01-13T13:44:28.000Z",
+      "size": "25528959",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1i8r-RDZHTUptf2pWRmyyOBNtxT6HasZZ",
+      "name": "00000760-VIDEO-2026-01-13-07-42-11.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-01-13T13:44:28.000Z",
+      "size": "22857893",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1jiuprxvLD1USq09IAbjUqFp-ZQS3Lttm",
+      "name": "REPORTE RRC 130126.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-13T11:42:56.000Z",
+      "size": "323929",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    },
+    {
+      "id": "1q-VYplTmWr5FknPZ60hA17E_qCfFbDEB",
+      "name": "00000755-AUDIO-2026-01-12-07-57-24.mp3",
+      "mimeType": "audio/mpeg",
+      "modifiedTime": "2026-01-12T14:01:00.000Z",
+      "size": "1020491",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1FJ2GQ4bHqz5ItQv1BVSb8M97s-Hp4qVu",
+      "name": "00000752-PHOTO-2026-01-12-04-43-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-12T10:43:56.000Z",
+      "size": "39356",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1992Em35X61Yp6T68-08Rno2slSu51ndx",
+      "name": "00000751-PHOTO-2026-01-12-04-43-18.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-12T10:43:18.000Z",
+      "size": "164190",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1St7kLFhzm6WY1gqHrPeDUQHJAB4joZNd",
+      "name": "00000749-PHOTO-2026-01-11-06-24-59.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-11T12:29:38.000Z",
+      "size": "715380",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1b0j6_zJpXm1A9an9M6kqrCOvxQ4cAqGs",
+      "name": "00000748-PHOTO-2026-01-11-06-24-33.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-11T12:24:34.000Z",
+      "size": "99508",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1j4akB3ZtI5-AofKe09CCfZshIrfP0BZh",
+      "name": "00000745-PHOTO-2026-01-10-06-26-25.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-10T12:40:12.000Z",
+      "size": "136975",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1Gv3kweOcez-taANpNvssVVMxVrSlYCxk",
+      "name": "00000744-PHOTO-2026-01-10-06-26-04.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-10T12:40:12.000Z",
+      "size": "22563",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1qjYFInvMdkdQaeUvCc3opD8tNqYbiHCm",
+      "name": "00000747-PHOTO-2026-01-10-06-27-12.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-10T12:40:12.000Z",
+      "size": "129779",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1-mgZ4kLVmPxB-CU0o_QVIFPw5Z89c9zF",
+      "name": "00000746-PHOTO-2026-01-10-06-26-46.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-10T12:40:12.000Z",
+      "size": "234418",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1IfzrxdBDs_uLPqIT87b9tV9lDwkgYQpO",
+      "name": "00000734-PHOTO-2026-01-07-06-43-10.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-07T12:45:46.000Z",
+      "size": "328245",
+      "subfolder": "04",
+      "subfolderName": "04. RR_CONVERSACIONES_WA",
+      "nestedPath": "WhatsApp Chat - Monitoreo RR"
+    },
+    {
+      "id": "1-jV7vGDlRoG1fN_7yZXTncu_o_LYR4fk",
+      "name": "REPORTE RRC 070126.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-07T11:54:06.000Z",
+      "size": "275144",
+      "subfolder": "02",
+      "subfolderName": "02. RR_ENTREGABLES",
+      "nestedPath": "SINTESIS RAUL ROCHA"
+    }
+  ]
+}

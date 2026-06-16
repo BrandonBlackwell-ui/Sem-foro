@@ -1,0 +1,266 @@
+{
+  "number": "28",
+  "account_id": "28",
+  "account_name": "QUERETARO",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "14frqA5fbL1IDMXzYnS5Y2ubs8Nzk9PHQ",
+      "title": "Plan_Vinculacion_Medios_QRO_2026_1MAY.docx",
+      "subfolder": "02",
+      "subfolderName": "02. QUERETARO_Entregables",
+      "modifiedTime": "2026-05-02T02:07:46.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "16rOR2l_RpHkiVUnoxZp3PlXLRrYoHOUf",
+      "title": "One_pager_operativo_vinculacion_medios.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. QUERETARO_Entregables",
+      "modifiedTime": "2026-04-24T20:50:58.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1RjZmvAhj1u9HEUvx7l7lOPDCf-oIfaLg",
+      "title": "Querétaro - Propuesta de comunicación estratégica.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. QUERETARO_Entregables",
+      "modifiedTime": "2026-04-22T00:57:43.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "13uDE11Kw2CLf-tTy9PqMieYV9KAy8k30",
+      "title": "Transcript llamada 28ABR2026 QRO.mhtml",
+      "subfolder": "05",
+      "subfolderName": "05. QUERETARO_Transcripciones_llamadas",
+      "modifiedTime": "2026-05-04T17:09:03.000Z",
+      "kind": "correo/mhtml→texto"
+    },
+    {
+      "id": "1OImh-onVdQnASTdILCesEI-sLmz0hICV",
+      "title": "QUERETARO_chat_consolidado.txt",
+      "subfolder": "04",
+      "subfolderName": "04.QUERETARO_Conversaciones_WA",
+      "modifiedTime": "2026-05-14T01:10:56.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1I_7SlX3pS85MXYtrZ3QNV67laHHOo6Ka",
+      "title": "QRO CHAT EQUIPO COMPLETO ANIMALAB_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.QUERETARO_Conversaciones_WA",
+      "modifiedTime": "2026-05-04T17:56:26.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1ZICEp_l8bGukHMWV2S-QVDY5Dp625kHj",
+      "title": "QRO 27Abr2MAy2026_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.QUERETARO_Conversaciones_WA",
+      "modifiedTime": "2026-05-04T17:39:49.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1rEsxjs4KVgvME-z5aIaqGAW2yQJBj2aH",
+      "title": "Minuta llamada Queretaro.mhtml",
+      "subfolder": "06",
+      "subfolderName": "06. QUERETARO_Agenda_Trabajos",
+      "modifiedTime": "2026-05-04T17:07:33.000Z",
+      "kind": "correo/mhtml→texto"
+    }
+  ],
+  "files_read_count": 8,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Ejecutar plan integral de vinculación editorial con medios (mayo-junio 2026) para posicionar a Santiago Nieto Castillo como candidato a gubernatura de Querétaro 2027 por Morena, mediante colocaciones estratificadas en tres círculos (Rojo T1 nacional, Café T2 regional, Verde T3 local) con narrativa \"Cambio con dirección. Transformación con resultados\", previo a su renuncia del IMPI efectiva 31-mayo.",
+    "content_summary": "Plan de medios completamente estructurado (entregado 1-may): 3 círculos, timelines, KPIs. Operación digital 100% activa desde 17-abr con 8+ contenidos y programa semanal \"Santiago de Querétaro\" (2 emisiones confirmadas, 21-28 abr). CRÍTICO: cero colocaciones editoriales confirmadas en ningún círculo pese a estar en semana 4 de 6; contrato sin cargar; reporte semanal urgente (solicitado 6-may) sin entrega verificada. Riesgo mediático: columna Reforma (9-may) denuncia uso de recursos IMPI para campaña anticipada. Equipo completamente alineado (Johana/Andrea/Xanath/Rodrigo/Victoria); chat de equipo demuestra operación paralela sin contratiempos en digital/redes/contenido. Transición IMPI (31-may) requiere ofensiva mediática inmediata antes de fin de junio para encuesta.",
+    "current_status": "Proyecto en ejecución avanzada en frente digital (parrilla + redes + programa semanal confirmado operativo), pero editorial completamente rezagado: sin pitches confirmados a medios T1/T2/T3, sin colocaciones, sin reporte de baseline para cliente. Renuncia confirmada 31-mayo; ventana editorial crítica: mayo completo (22 días hábiles) y primeros 15 de junio para cierre de visibilidad pre-encuesta.",
+    "scope_of_service": [
+      "Vinculación estratégica con medios T1/T2/T3: pitches, columnas, entrevistas, mesas de análisis, ensayos doctrinales",
+      "Gestión de contactos medios nacional-regional-local: mapeo, activación frío→tibia→caliente",
+      "Producción de contenidos digitales: carruseles, videos, reels, posts para redes propias candidato (8+ entregados, confirmado)",
+      "Monitoreo semanal de colocaciones y amplificación post-publicación (pauta 48h)",
+      "Clipping quincenal con análisis de pick-up y sentimiento (pendiente)",
+      "Cumplimiento normativo Consejo Nacional Morena: check-list previo a cada pieza",
+      "Coordinación con equipos digital (Xanath: contenidos/redes), pauta (Rodrigo), territorio (Victoria)",
+      "Reporte semanal con tablero vivo: colocaciones acumuladas, distribución círculos, SOV, sentimiento"
+    ],
+    "key_facts": [
+      "Plan de Vinculación de Medios QRO entregado 1-mayo: estructura 3 círculos (Rojo T1: 3 colocaciones, Café T2: 3, Verde T3: 4), timelines mayo-15junio, KPIs, checklist normativo",
+      "Parrilla digital operativa 17-abril: 8+ contenidos confirmados entregados (carruseles LFPPI, videos Morenista, reels asambleas, posts IMPI) — evidencia chat 04-mayo",
+      "Programa 'Santiago de Querétaro' (Radio Numancia, YouTube) monitoreado: 2 emisiones confirmadas 21-abr ('Alerta inmobiliaria en Querétaro') y 28-abr ('Herencia y Origen: Denominaciones de Origen')",
+      "Operativos IMPI anti-piratería documentados fotográficamente: 25+ imágenes alta resolución (mencionadas chat como sustento para pitches de coyuntura)",
+      "Comunicado oficial IMPI 30-abril: México fuera lista vigilancia prioritaria USTR 2026 — pitch de difusión generado con novedad institucional (El Universal, David Ramos, 30-abr, colocación confirmada)",
+      "Reunión estrategia 28-abr (Minuta llamada Queretaro.mhtml): equipo Johana/Andrea/Xanath/Rodrigo/Victoria + Santiago; definición de 3 pilares (editorial/digital/pauta); rol Johana: ganar narrativa antes de renuncia; temas coyuntura: T-MEC + Mundial + piratería",
+      "Renuncia prevista 31-mayo (domingo): entrega carta aún sin fecha exacta confirmada; evento masivo de anuncio a definirse (28-may o 1-junio probable)",
+      "Contrato/OC: carpeta 01 VACÍA — CRÍTICO para registro oficial y auditoría",
+      "Reporte semanal urgente solicitado 6-mayo para reunión 7-mayo con Santiago: estado de entrega desconocido (no visible en Drive)",
+      "Encuesta interna Morena: fecha de levantamiento aún sin confirmar (hito de cierre: 9-15 junio pre-encuesta)"
+    ],
+    "client_promises": [
+      {
+        "promise": "Mínimo 10 colocaciones editoriales en período mayo-15 junio (3 T1 nacional, 3 T2 regional, 4 T3 local)",
+        "cadence": "evento",
+        "status": "pendiente"
+      },
+      {
+        "promise": "70% de lista de contactos activados (frío→tibia→caliente) antes 31-mayo",
+        "cadence": "único",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "100% de colocaciones con pauta de amplificación digital en 48h post-publicación",
+        "cadence": "continuo",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Reporte semanal cada lunes con tablero vivo (colocaciones acumuladas, distribución círculos, SOV, sentimiento)",
+        "cadence": "semanal",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Check-list previo a cada pieza (validación narrativa + cumplimiento normativo CN)",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Pitch de coyuntura (piratería/Mundial/T-MEC) con activación en 24h",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Clipping quincenal con análisis de pick-up y sentimiento",
+        "cadence": "quincenal",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Hito de cierre: visibilidad coordinada en 3 círculos (9-15 junio) pre-encuesta",
+        "cadence": "evento",
+        "status": "pendiente"
+      }
+    ],
+    "fulfilled": [
+      "Plan de Vinculación de Medios QRO completo entregado 1-mayo: 3 círculos, timelines, KPIs, modelo operativo (Plan_Vinculacion_Medios_QRO_2026_1MAY.docx)",
+      "One-pager operativo entregado 24-abril: flujo semanal, 5 frentes paralelos, tablero vivo como entregable",
+      "Propuesta estratégica integral entregada 21-abril con narrativa 'Cambio con dirección. Transformación con resultados.'",
+      "Parrilla digital 100% operativa desde 17-abril: 8+ contenidos entregados en altas (carruseles LFPPI, videos Morenista, reels asambleas, posts IMPI, contenido Día Propiedad Intelectual) — confirmado chat 04-05.26",
+      "Programa semanal 'Santiago de Querétaro' (Radio Numancia, YouTube): 2 emisiones confirmadas con altas (21-abr: 'Alerta inmobiliaria Querétaro', 28-abr: 'Herencia y Origen'), links compartidos y amplificados en redes propias",
+      "Resumen semanal RRSS entregado 3 semanas (20, 27 abril, 04 mayo): engagement, alcance, sentimiento, top posts con análisis — Resumen semanal RRSS_SNC_20.04.26.pdf, 27.04.26.pdf, 04.05.26.pdf",
+      "Operativos IMPI anti-piratería documentados fotográficamente: 25+ imágenes alta resolución disponibles para sustento de pitches de coyuntura",
+      "Comunicado oficial IMPI (30-abril) México fuera lista vigilancia USTR 2026: pitch de difusión generado y colocación confirmada (El Universal, David Ramos, 30-abr)",
+      "Minuta reunión estrategia 28-abril: alineación equipo completo (Johana/Andrea/Xanath/Rodrigo/Victoria), roles definidos, 3 pilares establecidos (editorial/digital/pauta), narrativa 'transición honorable' consensuada",
+      "Parrilla semanal integrada con copy, links, fechas y horarios: entregada en Google Sheet 29-abril (acceso completo a Victoria) para publicación automatizada",
+      "Contacto IMPI para provisión de datos/hitos de gestión: confirmado en Minuta 28-abr (solicitud formal a Victoria de informe técnico para traducción política)"
+    ],
+    "pending": [
+      "Colocaciones editoriales círculo Rojo (T1 nacional): 0 de 3 confirmadas — pitches El Financiero/Sin Embargo (T-MEC+IMPI) aún sin envío a Johana confirmado",
+      "Colocaciones círculo Café (T2 regional): 0 de 3 confirmadas — pitch Diario de Querétaro 'IMPI+industria local' aún sin ejecutar",
+      "Colocaciones círculo Verde (T3 local): 0 de 4 confirmadas — pitches medios locales (prensa estatal, digitales regionales) sin confirmación de envío",
+      "Reporte semanal formal para presentación a Santiago: solicitado urgente 6-mayo para reunión 7-mayo — confirmación de entrega desconocida (no aparece en Drive)",
+      "Contrato/OC cargado en Drive carpeta 01: VACÍO — CRÍTICO para registro oficial, auditoría y facturación",
+      "Clipping y análisis de sentimiento quincenal: 0 entregas — solo reportes internos de redes propias (no monitoreo de terceros, pick-up editorial, cobertura)",
+      "Base de contactos activados (CRM frío/tibio/caliente): estado de carga desconocido — meta 70% antes 31-mayo sin tracker visible ni reportería",
+      "Boletín del programa semanal 'Santiago de Querétaro': propuesta aún en revisión — no enviado a medios como comunicado oficial",
+      "Confirmación de fechas exactas para eventos de renuncia y masivo: pendiente de coordinación con equipo territorial/Morena estatal (28-may o 1-junio aún sin definir)",
+      "Pitch de coyuntura ejecutado (piratería/Mundial/T-MEC): operativos documentados fotográficamente, pero sin confirmación de envío a medios T1 nacionales",
+      "Integración de propuesta de pauta en alternas: propuesta económica ('caminar seguros') aún sin presentación formal a cliente (mencionada en Minuta 28-abr como pendiente)"
+    ],
+    "urgent_actions": [
+      {
+        "action": "Enviar pitches T1 a El Financiero y Sin Embargo (T-MEC + IMPI + Mundial): articulos, columnas, entrevistas con 300-400 palabras cada uno + contact sheet de Santiago + disponibilidad fotográfica operativos piratería",
+        "owner": "Johana",
+        "due": "2026-05-06"
+      },
+      {
+        "action": "Enviar pitches T2 a Diario de Querétaro, medios sectoriales (negocios, industria): foco IMPI + economía local + denominaciones de origen; copy alineado con narrativa renuncia",
+        "owner": "Johana",
+        "due": "2026-05-06"
+      },
+      {
+        "action": "Enviar pitches T3 a prensa estatal/digital local (Querétaro en Línea, Cambio, Vanguardia): cobertura de operativos, declaraciones sobre gestión, apertura para entrevistas exclusivas",
+        "owner": "Johana",
+        "due": "2026-05-07"
+      },
+      {
+        "action": "Generar reporte semanal formal para Santiago: colocaciones acumuladas (línea base: 0 confirmadas), KPIs de digital (rrss + programa radio), avance territorial, estado de pitches en medio",
+        "owner": "Andrea",
+        "due": "2026-05-05"
+      },
+      {
+        "action": "Cargar contrato/OC en carpeta 01 Drive para auditoría y registro oficial (si existe con cliente, obtener; si no, generar SOW formal signado)",
+        "owner": "Andrea",
+        "due": "2026-05-05"
+      },
+      {
+        "action": "Confirmar con Victoria fecha exacta de entrega de carta de renuncia (28-may, 30-may o 31-may) para ajustar timing de eventos masivos y estrategia de cobertura",
+        "owner": "Johana + Andrea",
+        "due": "2026-05-05"
+      },
+      {
+        "action": "Solicitar a Victoria informe técnico de IMPI (registros, marcas, indicaciones geográficas, operativos, datos duros) para traducción a narrativa política y piezas editoriales",
+        "owner": "Andrea",
+        "due": "2026-05-06"
+      },
+      {
+        "action": "Activar monitoreo/clipping de medios: solicitar acceso a herramienta de monitoring (si no existe, activar Brandwatch o similar) para capturar pick-up post-publicación y análisis de sentimiento",
+        "owner": "Johana + Andrea",
+        "due": "2026-05-05"
+      }
+    ],
+    "strategic_recommendations": [
+      "Anticipar narrativa de renuncia mediante colocación de 2-3 notas de cierre de gestión IMPI (antes 15-mayo) para instalar tema de 'transición honorable' y 'misión cumplida' antes de que oposición instale 'sale por la puerta de atrás'",
+      "Vincular coyuntura T-MEC (Chihuahua/negociaciones): posicionar a Santiago como experto en propiedad industrial crítico para tratado; columna de análisis en Sin Embargo o El Financiero max. 10-mayo",
+      "Operativos piratería pre-Mundial (junio): generar serie de 3-4 notas en círculos T1/T2 sobre trabajo anti-falsificación; aprovechar foto de alta calidad disponible (25+ imágenes operativos)",
+      "Crear boletín/newsletter oficial del programa 'Santiago de Querétaro': distribuir a bases de contactos periodistas, influencers, cámaras empresariales (T2/T3) como medio de difusión paralelo",
+      "Descentralizar pitch: enviar versiones adaptadas a cada círculo (T1: análisis político-económico; T2: impacto sectorial/local; T3: acción territorial) — no copiar-pegar mismo pitch a todos",
+      "Monitoreo proactivo: desde hoy, alertas en redes sobre menciones de Santiago, críticas oposición, temas de oportunidad (gobernanza, seguridad, economía) para respuesta rápida en alternas + redes propias",
+      "Integrar brigadistas como voceros locales: capacitación de 120 brigadistas en manejo de redes + replicación de narrativa; asegurar que repliquen T3 digital con su propia voz (no copiado)",
+      "Evento de renuncia como hito mediático: coordinar con IMPI comunicación social para anuncio oficial + rueda de prensa virtual (27-28 mayo) → genera cobertura nacional automática",
+      "Segmentar pauta digital por zona: emparejar estrategia territorial (pequeños eventos zona metropolitana) con pauta geolocal en Facebook/Instagram (distritos/secciones), no nacional",
+      "Calibrar tono post-renuncia (1-junio): cambiar narrativa de 'funcionario público' a 'militante Morena'; requiere aprobación CN Morena pero abre margen para mensajería más agresiva contra PAN"
+    ],
+    "risks": [
+      {
+        "risk": "Cero colocaciones T1/T2/T3 confirmadas a 22 días para cierre (15-junio): riesgo de no cumplir meta de 10 colocaciones y perder ventana pre-encuesta interna Morena",
+        "severity": "alta"
+      },
+      {
+        "risk": "Narrativa de renuncia controlada por oposición si no colocamos notas de cierre IMPI antes 20-mayo: antecedentes muestran patrón de crítica 'puerta de atrás' (FEPADE, UIF, Procuraduría)",
+        "severity": "alta"
+      },
+      {
+        "risk": "Denuncias de campaña anticipada ilegal (columnista Reforma 9-may) pueden activar reacción regulatoria CN Morena o fiscalía electoral si no dosificamos narrativa post-renuncia",
+        "severity": "alta"
+      },
+      {
+        "risk": "Contrato/OC vacío en Drive: imposibilidad de auditar horas/costos, facturación bloqueada, responsabilidad legal indefinida",
+        "severity": "alta"
+      },
+      {
+        "risk": "Reporte semanal no entregado 7-mayo: Santiago recibe información incompleta; desconfianza en equipo si percibe avance lento en editorial",
+        "severity": "media"
+      },
+      {
+        "risk": "Medios regionales/locales (T2/T3) no activados: si Solo colocamos T1 nacional, pierde autenticidad territorial; el PAN tiene hegemonía en prensa local",
+        "severity": "media"
+      },
+      {
+        "risk": "Clipping y monitoring no activado: sin medición de pick-up real, desconocemos qué medios replican, qué resonancia tiene mensaje, dónde hay crítica",
+        "severity": "media"
+      },
+      {
+        "risk": "Alternativas (páginas de Puebla para difusión) no vetting ni coordinación: riesgo de asociación con operaciones 'sucias' o actividades fuera de línea normativa",
+        "severity": "media"
+      },
+      {
+        "risk": "Evento de renuncia sin coordinación mediática previa: si no hay rueda de prensa/comunicado oficial IMPI, Santiago anuncia solo en redes → cobertura residual",
+        "severity": "media"
+      },
+      {
+        "risk": "Ausencia de voceros alternativos (diputados, líderes sectoriales): mensajería depende 100% de Santiago; entre semana se pierde presencia (ya identificado en Minuta 28-abr)",
+        "severity": "baja"
+      }
+    ]
+  },
+  "analyzed_at": "2026-06-11T03:18:23Z"
+}

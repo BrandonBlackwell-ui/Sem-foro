@@ -1,0 +1,555 @@
+{
+  "number": "17",
+  "folderTitle": "17. IRUGAMI",
+  "folderId": "1WR6Pwy2t7srvzDoEHeSMvjOUUxEYEnno",
+  "folderModifiedTime": "2026-04-30T01:32:47.946Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "2026 - Entrevista Enfoque Noticias 100.1 FM - Diputado Irugami Perea Cruz .docx (en Briefs entrevistas)",
+    "modifiedTime": "2026-05-25T18:20:31.189000Z",
+    "source": "02.IRUGAMI_Entregables"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-14T15:41:08.047Z",
+    "source": "02.IRUGAMI_Entregables",
+    "file": "Recomendacion_ElSur_IPC.docx",
+    "fileId": "1ChcCnABlidXLQAU0269jmm-IvBjueEBG"
+  },
+  "subfolderActivity": {
+    "01. IRUGAMI_Contrato_OC": {
+      "subfolderId": "1LL8F0J_lTWPx90g2lq1TjX_5itOcMPFj",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:09Z_verify",
+      "last_verified_at": "2026-06-12T14:09:09Z"
+    },
+    "02.IRUGAMI_Entregables": {
+      "subfolderId": "1so8seF6SGm5XEzLteDGeb0RJoDmh2_yk",
+      "fileCount": 33,
+      "latestModified": "2026-05-25T18:20:31.189000Z",
+      "latestFile": "2026 - Entrevista Enfoque Noticias 100.1 FM - Diputado Irugami Perea Cruz .docx (en Briefs entrevistas)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:54Z_verify",
+      "last_verified_at": "2026-06-11T01:57:54Z",
+      "nestedNote": "Contiene subcarpetas: Fotos_Dip_Irugami, Briefs entrevistas, Contenidos / Columnas "
+    },
+    "03.IRUGAMI_Reportes_Avance": {
+      "subfolderId": "1W0xW4ZZXZh-cz03qVb_7I8xxuMsRT_De",
+      "fileCount": 3,
+      "latestModified": "2026-05-20T19:01:01.758000Z",
+      "latestFile": "Estatus 19 de mayo Irugami",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:55Z_verify",
+      "last_verified_at": "2026-06-11T01:57:55Z"
+    },
+    "04.IRUGAMI_Conversaciones_WA": {
+      "subfolderId": "17XsjnUz30600ZcQAzRRVUXygP_gz33i0",
+      "fileCount": 1,
+      "latestModified": "2026-05-14T01:10:56Z",
+      "latestFile": "IRUGAMI_chat_consolidado.txt",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:55Z_verify",
+      "last_verified_at": "2026-06-11T01:57:55Z"
+    },
+    "05.IRUGAMI_Transcripciones_Llamadas": {
+      "subfolderId": "15v0qek-TKJ-u3BkJ8A_olLzZOhYY0_gb",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:55Z_verify",
+      "last_verified_at": "2026-06-11T01:57:55Z"
+    },
+    "06.IRUGAMI_Agenda_Trabajos": {
+      "subfolderId": "1xUdm4SOZm85p3JW5Avbms-ql1jiumOI1",
+      "fileCount": 7,
+      "latestModified": "2026-05-22T23:08:14.802000Z",
+      "latestFile": "Actividades del 18 al 22 de mayo",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:56Z_verify",
+      "last_verified_at": "2026-06-11T01:57:56Z"
+    }
+  },
+  "pqProxy": {
+    "score": 58,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable es un plan de comunicación (Jóvenes Unen al Barrio), no un reporte de resultados. Reporte en 03 (Reporte_Actividades_IPC_260409.docx) documenta: 11 ejecuciones, Excélsior Frentes Políticos (T1), Milenio (T1), Heraldo ×2 (T2), Excélsior notas ×2 (T1), Crónica (T2), 3 entrevistas radio — score estimado ~84 sobre ese archivo. | DELTA 2026-05-07: 12 fotos JPG cargadas en 02.Entregables (Fotos_Dip_Irugami) sin nota acompañante. | DELTA 2026-05-15T14:00:00Z: tarifa y mix decididos para columna mensual con El Sur (Acapulco). Convierte el insumo de la reunión con Magda Cisneros en oferta accionable.",
+    "suggestion": "Recomendación El Sur entregada (paquete principal $25.5K MXN/mes). Cerrar approval con cliente esta semana sobre nivel de inversión y arrancar mes 1 (jun) con 1/4 plana + nota digital + boletín FB. Negociar descuento por trimestre.",
+    "fileEvaluated": "Recomendacion_ElSur_IPC.docx",
+    "evaluatedAt": "2026-05-15T14:00:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 2,
+    "label": "Acción sobre delta del día",
+    "text": "Recomendación El Sur entregada (paquete principal $25.5K MXN/mes). Cerrar approval con cliente esta semana sobre nivel de inversión y arrancar mes 1 (jun) con 1/4 plana + nota digital + boletín FB. Negociar descuento por trimestre.",
+    "source": "delta-2026-05-15"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [
+    "contrato_OC_vacio_en_01"
+  ],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:56:53Z",
+  "driveFiles": [
+    {
+      "id": "1sileDsB0fFoeMJb8dn9iE7OfV_vIBzvw",
+      "name": "2026 - Entrevista Enfoque Noticias 100.1 FM - Diputado Irugami Perea Cruz .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-25T18:20:31.189Z",
+      "size": "474796",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Briefs entrevistas"
+    },
+    {
+      "id": "1FefqZ6BYQm0Si6fZzQPc8xvIWC0icjjzujKWdVSqtGE",
+      "name": "Actividades del 18 al 22 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-22T23:08:14.802Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1CU42GIJUngZ3Xxms3nEhAe8igEaWEVEmU2EwcivhQiw",
+      "name": "Estatus 19 de mayo Irugami",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-05-20T19:01:01.758Z",
+      "size": "10249479",
+      "subfolder": "03",
+      "subfolderName": "03.IRUGAMI_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1SiZIa_OKpT_B8S_CxObBE-aO5vl3QUA-",
+      "name": "Columna_Opinion_Jovenes_Unen_al_Barrio_Acapulco_IRUGAMI.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-19T15:23:53.310Z",
+      "size": "10508",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Contenidos / Columnas "
+    },
+    {
+      "id": "1lY7WmKVCyB-bAqa6gCG9-qtr_tgcfCXD",
+      "name": "2026_Nota3_DiputadoAcapulqueño_EDITADAvf.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-19T15:22:09.960Z",
+      "size": "199610",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Contenidos / Columnas "
+    },
+    {
+      "id": "1RTv1BUfbOVA9yHG-Qlu9perq4n-ZCbTp",
+      "name": "2026_Nota2_DiputadosMorenaPT_ElSur (1) (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-19T15:21:06.301Z",
+      "size": "199611",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Contenidos / Columnas "
+    },
+    {
+      "id": "1_vbaRkqla2viugaN7mxnRKRzbxFCu9aRNx_IFCzmRSg",
+      "name": "Actividades del 11 - 15 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T22:02:46.829Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1ChcCnABlidXLQAU0269jmm-IvBjueEBG",
+      "name": "Recomendacion_ElSur_IPC.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T15:41:08.047Z",
+      "size": "12525",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1PRgTzY9v1UM3SwChyzlbmVKt5CN7mH6E",
+      "name": "IRUGAMI_chat_consolidado.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-14T01:10:56.000Z",
+      "size": "8957",
+      "subfolder": "04",
+      "subfolderName": "04.IRUGAMI_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1VyGAq6q3uOPJBRxBLZgk2AGCGrdi38nF",
+      "name": "2026_Nota4_IrugamiDestaca_.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T10:00:09.000Z",
+      "size": "9165",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Contenidos / Columnas "
+    },
+    {
+      "id": "1txHQL9W5b0N7YfUzrVjQmuajelnV3p7aMxllyV5Jsg4",
+      "name": "Actividades 4-8 mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-11T13:59:46.723Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1uLqelDVVMHZjWIjDytNZHTRQNSNU9La3",
+      "name": "e7dc2093-5e52-4277-a0a5-3c098f773f77.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.834Z",
+      "size": "151742",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "1N4rTvYBwbwbmW1iYk_WBS5Bus-dmrDgf",
+      "name": "244803c6-b447-4aab-a03b-5f63077648f0.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.712Z",
+      "size": "270378",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "1olJGZCghz_TmoD8CKwmn3ReCGpvYh7R9",
+      "name": "1c559dea-5323-4389-9096-d8928a516055.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.699Z",
+      "size": "131582",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "16_l8R7_SfQO8CH7xOZosPTOkXzZcMtWr",
+      "name": "51a07793-7b97-4912-8c85-91df788b5668.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.689Z",
+      "size": "89468",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "1z9Ja1UVs0tAw_68mzKk19NZbxirDuSpf",
+      "name": "65cd28be-8812-4897-af3c-eed43cb78d2f.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.685Z",
+      "size": "123175",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "1rdawWOfuy8i-f7HkB9OASeVt34ADoWx8",
+      "name": "dcb43d9c-8d6e-4e26-89d2-620177b17805.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.667Z",
+      "size": "82029",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "1lyACClD-NQ2WqOYz7IoAPFxS_lcz6b2f",
+      "name": "10cb5361-3fbd-4acf-b434-ec77e50dd07f.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.651Z",
+      "size": "136380",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "1Ee6YAVbRgJHnZzBrutklQh_gIQL_pyEL",
+      "name": "f2faaa29-57b3-487d-95f9-14b07c7deb91.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.648Z",
+      "size": "142008",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "1hyi6v3pmEo9SgwV-DVUbD3f_l8ZM6Xg_",
+      "name": "c1304c85-931b-43e0-b14d-3720dc61e1ac.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.575Z",
+      "size": "176614",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "1xNdZ4urrdyYkfdmcmTEME9UyEp-FEjGG",
+      "name": "d76524ef-0cba-499b-9c10-a429b9003d79.JPG",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T20:27:34.540Z",
+      "size": "148696",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Fotos_Dip_Irugami"
+    },
+    {
+      "id": "18PdfUxJokF_4IHiY9sgim12KromuW_pp",
+      "name": "IPC_Reporte mensual ABRIL 26.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-06T20:23:06.565Z",
+      "size": "14483604",
+      "subfolder": "03",
+      "subfolderName": "03.IRUGAMI_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1B1FPSadeT6vEii7uWiFTqJCrIohcT-c7",
+      "name": "2026 - Entrevista Irugami Perea, en El Weso.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-06T02:33:13.870Z",
+      "size": "200753",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Briefs entrevistas"
+    },
+    {
+      "id": "19lvrSEBov-xBOFqYa4LWLZIt5aWNVvRb",
+      "name": "2026 - Acercamiento Magda Cisneros_IRUGAMI.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-06T02:22:53.078Z",
+      "size": "141762",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Briefs entrevistas"
+    },
+    {
+      "id": "11D85B_64vnnkT0eHyVQK0hXz7WbDpBwf",
+      "name": "2026_Nota2_DiputadosMorenaPT_EDITADAvf.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-04T23:02:34.000Z",
+      "size": "20569",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Contenidos / Columnas "
+    },
+    {
+      "id": "1Po1CbHD-MIwM2vYzSF7SmAB8nDhwHgcR",
+      "name": "2026_Nota1_LaIniciativa_Otis_EDITADAvf.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-04T23:02:32.000Z",
+      "size": "20625",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Contenidos / Columnas "
+    },
+    {
+      "id": "1yChBfasSdbF7SY0xglLLW-G_IzQz0XTO",
+      "name": "2026 Acapulco - TalkPoints_Imaginar_Acapulco_Distinto_3pag.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T23:30:31.000Z",
+      "size": "23867",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Briefs entrevistas"
+    },
+    {
+      "id": "1CJWHt9yRv2wkWf3CaUgxxrgeytAjlIw7FamQR5Vkq7I",
+      "name": "Actividades del 27 al 30 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-30T20:54:05.205Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1lWCv54SQmrAgvqKf7AGg87_aMS026iVX",
+      "name": "Tianguis_Turistico_Acapulco_2026_Inversion_Historica_IRUGAMI.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T17:23:27.398Z",
+      "size": "19898",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Contenidos / Columnas "
+    },
+    {
+      "id": "1z9BPo0TKO1_IZBorDlc1KS4-nkGm_K2A",
+      "name": "Contenido_Editorial_Jovenes_Unen_al_Barrio_Acapulco_IRUGAMI.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T17:23:11.465Z",
+      "size": "19932",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Contenidos / Columnas "
+    },
+    {
+      "id": "1H21-ae7D_x40ZGgWNR6bqAzjipnUEnfE",
+      "name": "2026 Acapulco - Dos años y medio después de Otis_IRUGAMI.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T17:22:41.290Z",
+      "size": "19349",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Contenidos / Columnas "
+    },
+    {
+      "id": "1t5rc5AsQbst6rexambtEenLew7zSRYkK",
+      "name": "PROPUESTA DE ENTREVISTA CON EL SUR 170426_IRUGAMI.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T17:21:38.527Z",
+      "size": "23890",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": "Briefs entrevistas"
+    },
+    {
+      "id": "1xcAyE_sfJPPA93do__8A9mtw12vAG82FC9r3iGrHCs4",
+      "name": "Actividades del 6 al 10 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T20:48:03.227Z",
+      "size": "1436",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1Dap8vNx172kyPDklmg0CRZ0mMhe5vWeO",
+      "name": "Plan de Comunicación_Jovenes_Unen_Al_Barrio.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T19:55:30.140Z",
+      "size": "23160",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1GDCuvEvDn8GfFvVx6v8nDUP5ZVBf9thHbn-6u4AVuuo",
+      "name": "Actividades del 13 al 17 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T19:50:23.120Z",
+      "size": "1367",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1hTz6yIp5rWyEmuM45bB7rOr-PdR0YkXmdAbyJMOBUrk",
+      "name": "Actividades del 20 al 24 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T19:48:26.762Z",
+      "size": "1200",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "17dAU1NHfzSqdEtoOjiO-sWdadwe9ny2c",
+      "name": "Propuesta_Difusion_Final_Irugami_Abril2026_1 cliente.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T04:10:30.103Z",
+      "size": "37891",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1QOBeXC65Gaa_hrqRS_cBv6FHiSIUdbkj",
+      "name": "OnePager_Irugami_MensajesClave.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T04:09:01.366Z",
+      "size": "12973",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1BmqLaq5JDHXkz8DHEyFzr9MUd3ExVYnO",
+      "name": "Reporte_Actividades_IPC_260409 .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T04:08:07.780Z",
+      "size": "209422",
+      "subfolder": "03",
+      "subfolderName": "03.IRUGAMI_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1BLR89Xc_1cUWd21K3dxpF1G0JTacgu8Yp_d2xTO7nWs",
+      "name": "Proyecto Aca. v2",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-03-25T04:42:24.011Z",
+      "size": "9409",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "13NCka94GE_ZTpMXTZSGmJ3JL9i8SPw0SidhrNUigRqU",
+      "name": "Proyecto Aca. ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-02-25T18:12:28.385Z",
+      "size": "9058",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1PqBqnG32C1KmmE3vzSZ3KSj0r5XLud3aJMOcI0hm1Xc",
+      "name": " Mapeo KOLs Aca",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-02-24T07:25:18.546Z",
+      "size": "8115",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1YDa9dZ6O7_nSKjQ5evK8vD0nA64hSxIz",
+      "name": "VOCEROS ACAPULCO.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-02-24T06:05:46.793Z",
+      "size": "15214",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1jE0bjNW0f_KtevDgglj3sXgMPemZePCO2sgYudDWWgc",
+      "name": "Plan IPC 60 días",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-02-20T02:17:16.006Z",
+      "size": "3078308",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "nestedPath": null
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "number": "19",
+  "account_id": "19",
+  "account_name": "Casa Mata",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1NHlRb3VnADkk489eGGwn6gT4790Bnq5g",
+      "title": "ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO_FIRMADO.pdf",
+      "subfolder": "01",
+      "subfolderName": "01.CASA_MATA_Contrato_OC",
+      "modifiedTime": "2026-05-07T22:50:46.051Z",
+      "kind": "PDF escaneado→nativo"
+    },
+    {
+      "id": "1DLbDl4NbXe0Y4Seb9zlLUmrdaWgDPNGi",
+      "title": "ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO.docx",
+      "subfolder": "01",
+      "subfolderName": "01.CASA_MATA_Contrato_OC",
+      "modifiedTime": "2026-05-07T22:50:40.739Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1pNLXAmrCJXHTIbGhlXVyImFnRDqNEqjz",
+      "title": "pujol_birkenstock.docx",
+      "subfolder": "02",
+      "subfolderName": "02. CASA_MATA_Entregables",
+      "modifiedTime": "2026-03-25T22:32:09.039Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1n3MmUInvRLA7G5FTxQcm7MiiZJSLYUYI",
+      "title": "Taller manejo clientes complejos.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. CASA_MATA_Entregables",
+      "modifiedTime": "2026-02-10T21:50:56.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1HKMbYdKqENUirnvpK-7k3gPg3rzD_5d5",
+      "title": "WhatsApp Chat - Maya del Olmo.zip",
+      "subfolder": "04",
+      "subfolderName": "04.CASA_MATA_Conversaciones_WA",
+      "modifiedTime": "2026-04-23T19:16:58.000Z",
+      "kind": "WhatsApp/ZIP→texto"
+    },
+    {
+      "id": "1n1fmet822pjPY2AJ5aKHBh-h5w6j1J91",
+      "title": "WhatsApp Chat - Crisis Pujol + Blackwell.zip",
+      "subfolder": "04",
+      "subfolderName": "04.CASA_MATA_Conversaciones_WA",
+      "modifiedTime": "2026-04-23T19:16:42.000Z",
+      "kind": "WhatsApp/ZIP→texto"
+    },
+    {
+      "id": "1jWq4YBiz-i7oeznpunfoRUeiPB29lYB3",
+      "title": "WhatsApp Chat - Nat (Pujol).zip",
+      "subfolder": "04",
+      "subfolderName": "04.CASA_MATA_Conversaciones_WA",
+      "modifiedTime": "2026-04-23T19:16:31.000Z",
+      "kind": "WhatsApp/ZIP→texto"
+    }
+  ],
+  "files_read_count": 7,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Gestión integral de reputación y comunicación estratégica para Pujol/Enrique Olvera: mitigación de riesgos reputacionales laborales, validación y lanzamiento de colaboración Birkenstock (línea profesional de alta gastronomía), expansión del grupo Casamata y protocolos operativos de atención a clientes complejos.",
+    "content_summary": "Casa Mata (#19) mantiene contrato 2026 firmado y vigente (ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO_FIRMADO.pdf, 05/05/26), con esquema de pago alterno (factura vs crédito restaurante). Enero-Marzo facturados; febrero-diciembre pendientes de documentación de ejecución. Protocolos clave entregados (FODA Birkenstock, protocolo clientes complejos) y sesión Birkenstock realizada (29/01/26), pero faltan reportes mensuales de progreso, documentación post-firma y roadmap 2026 detallado. Sin activación mediática visible ni métricas de alcance Birkenstock.",
+    "current_status": "Contrato activo y firmado hasta 31/12/26 con modalidad de retención mensual ($45K factura + IVA / $45K crédito restaurante alternados). Entregables estratégicos cumplidos (análisis FODA Birkenstock 25/03/26, protocolo clientes complejos 10/02/26). Sesión interna Birkenstock completada 29/01/26 con Luis Pacheco, Uriel y Maya del Olmo. Pendiente: reportes mensuales de avance, documentación de facturación mayo-diciembre 2026 y activación mediática de colaboración Birkenstock.",
+    "client_promises": [
+      {
+        "promise": "Retención mensual permanente: monitoreo reputacional y plan de respuesta ante crisis laboral",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Asesoría continua en comunicación estratégica: gestión colaboraciones, expansión Casamata, protocolos",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Análisis estratégico completo y validación de riesgos para colaboración Pujol × Birkenstock",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Protocolo operativo de atención a clientes complejos para equipo Pujol",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Apoyo a gestión de situaciones reputacionales y mediáticas (reportero, fake website, etc.)",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Facturación mensual alternada con crédito restaurante según calendario 2026 ($45,000 MXN c/mes)",
+        "cadence": "mensual",
+        "status": "en_riesgo"
+      }
+    ],
+    "fulfilled": [
+      "Análisis estratégico Pujol × Birkenstock: pujol_birkenstock.docx (25/03/26) — FODA completo, matriz de riesgo con 7 oportunidades y 8 riesgos categorizados, semáforo de atención.",
+      "Protocolo manejo clientes complejos: Taller_manejo_clientes_complejos.pdf (10/02/26, entregado a Nat Pujol) — clasificación verde/amarillo/naranja/rojo, guiones base anti-reactividad, reglas escalamiento.",
+      "Gestión crisis mediática (reportero + fake website): atención 12/09/25-29/10/25 con canalización press@casamata.com, asesoría legal Alibaba Cloud, documentado en WhatsApp Maya del Olmo.",
+      "Contrato 2026 firmado: ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO_FIRMADO.pdf (05/05/26, firmado por Alfonso Olver y Alonso Palafox) — vigencia 1 ene - 31 dic 2026, esquema alterno pago/crédito.",
+      "Facturación enero-marzo 2026: enero $52,200 (Facturado), marzo $52,200 (Facturado) — status visible en calendario contrato.",
+      "Sesión alineación interna Birkenstock: 29/01/26 (11:30-12:30) con Luis Pacheco, Uriel y Maya del Olmo — enfoque sustentabilidad laboral integrada, documento 'estructura' compartido para pre-lectura.",
+      "Monitoreo activo Casa Mata: conversaciones WhatsApp con Maya del Olmo (12/09/25 - 28/01/26) — respuesta oportuna a crisis mediática, compartición de información expansión grupo Casamata (30/10/25)."
+    ],
+    "pending": [
+      "Febrero 2026 ($45,000 crédito restaurante): status 'Pendiente por aplicar' — sin evidencia de consumo en restaurante ni liquidación documentada.",
+      "Abril 2026 ($45,000 crédito restaurante): status 'Pendiente por aplicar' — sin evidencia de acuerdos de compensación con proveedor.",
+      "Mayo-diciembre 2026 (8 meses): sin facturación visible posterior a marzo — calendario del contrato marca 'Pendiente' pero sin comprobantes de emisión CFDI ni consumos restaurante.",
+      "Reportes mensuales de avance 2026: carpeta 03 VACÍA — sin documentación de KPIs de retención, crisis monitoreadas, medios trackeados, assessment Pujol a gestión Blackwell.",
+      "Transcripciones de llamadas post-firma: carpeta 05 VACÍA — sin documentación de sesiones con equipo Pujol posterior a 29/01/26.",
+      "Roadmap 2026 detallado: carpeta 06 VACÍA — sin plan de activaciones Birkenstock, timeline de lanzamiento, hitos de campaña, métricas de éxito.",
+      "Validación de implementación protocolo: sin evidencia de que Pujol haya usado guión base con clientes complejos ni aplicado clasificación operativa en cocina.",
+      "Activación mediática Birkenstock: sesión 29/01/26 fue de alineación interna; sin evidencia de cobertura prensa, lanzamiento público, métricas de alcance (T1/T2/T3).",
+      "Carnet de intercambio (Alonso Palafox): ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO_FIRMADO.pdf, página 4 — carnet $270,000 MXN autorizado, pero sin evidencia de uso/consumo documentado."
+    ],
+    "key_facts": [
+      "Contrato firmado 06 de abril 2026 (documento ORDEN_DE_COMPRA_CONVENIO_INTERCAMBIO.docx) — anexo de esquema de pago alterno.",
+      "Esquema: alternancia mes pago ($45K + IVA = $52,200) / mes crédito restaurante ($45K sin IVA) durante 12 meses 2026.",
+      "Enero facturado ($52,200, estado: Facturado); febrero-diciembre: pendientes de aplicar / pendientes.",
+      "FODA Birkenstock: 7 oportunidades identificadas (first-mover LATAM, narrativa bienestar, ESG, etc.) y 8 riesgos (reputacional 'lavado imagen', autenticidad producto, elitismo, dilución marca, etc.).",
+      "Sesión 29/01/26: Luis Pacheco, Uriel, Maya del Olmo, Blackwell. Tema: sustentabilidad laboral integrada en colaboración Birkenstock. Documento 'estructura' compartido previamente.",
+      "Crisis mediática: reportero + fake website Alibaba Cloud, gestionada 12/09/25-29/10/25, canalización press@casamata.com, asesoría legal sobre reporte a plataforma.",
+      "Carnet intercambio: Alonso Palafox (Socio Director Grupo Olvera) autorizado $270,000 MXN por 12 meses a partir 05/05/26, consumible en Restaurante Pujol.",
+      "Contrato permite activación de crisis con recursos extraordinarios cotizados por separado con aprobación previa Pujol.",
+      "Contacto directo: Maya del Olmo (maya@casamata.com, antes cambió de teléfono 27/01/26), responsable de comunicación interna Pujol/Birkenstock."
+    ],
+    "scope_of_service": [
+      "Servicio de retención mensual (seguro de activación de crisis): monitoreo permanente, plan de respuesta ante crisis reputacional, activación inmediata ante contingencia.",
+      "Asesoría continua en comunicación estratégica según aplique (colaboraciones, expansión Casamata, protocolos operativos).",
+      "Análisis estratégico y validación de riesgos para colaboraciones (Pujol × Birkenstock).",
+      "Protocolo operativo de atención a clientes complejos con clasificación verde/amarillo/naranja/rojo y guiones base.",
+      "Gestión de situaciones reputacionales y mediáticas (seguimiento prensa, fake content, crisis laboral).",
+      "Asesoría en lanzamiento y activación de colaboraciones de marca."
+    ],
+    "risks": [
+      {
+        "risk": "Reactivación de críticas laborales en redes sociales ante activación mediática Birkenstock: archivo pujol_birkenstock.docx identifica 'historial de controversias laborales no resueltas' (denuncias 2021, demanda NY 2019) indexadas digitalmente con memoria larga.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Brecha de ejecución facturación mayo-diciembre 2026: calendario contrato marca 'Pendiente' pero sin CFDI emitidos ni comprobantes de crédito restaurante consumido — riesgo de litigio sobre deuda o acreencia.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Falta de documentación de retención mensual (reportes KPI): sin evidencia de monitoreo reputacional activo, crisis identificadas o planes de respuesta ejecutados — no acredita cumplimiento de promesa clave.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Colaboración Birkenstock en fase de alineación interna sin activación mediática: sesión 29/01/26 fue de diagnóstico, no de lanzamiento — riesgo de que proyecto se estanque o pierda momentum.",
+        "severity": "media"
+      },
+      {
+        "risk": "Percepción de 'lavado de imagen': riesgo explicítamente listado en matriz FODA Birkenstock (pujol_birkenstock.docx) si colaboración no acompañada de acciones concretas de bienestar laboral documentadas.",
+        "severity": "media"
+      },
+      {
+        "risk": "Comunicación fragmentada con Pujol: último contacto WhatsApp Maya del Olmo 28/01/26 — sin registro de sesiones mensuales post-firma, ni escalamiento de cambios en estrategia Birkenstock.",
+        "severity": "media"
+      },
+      {
+        "risk": "Dependencia de Enrique Olvera: contrato y firma solo de Alfonso Olver (socio director), no de Enrique Olvera directamente — posible desalineación con decisiones operativas del chef.",
+        "severity": "baja"
+      }
+    ],
+    "opportunities": [
+      "Lanzamiento mediático Birkenstock como narrativa de bienestar laboral: convertir riesgo de 'lavado imagen' en oportunidad de liderazgo sectorial en SST gastronómica — cobertura en medios T1 gastronómicos/ESG (México, EE.UU., Europa).",
+      "Documentación de uso real de calzado Birkenstock en cocina Pujol: crear serie de contenido auténtico (detrás de cámaras, testimonios equipo, performance laboral) — potencial viral en TikTok (antecedente Tom Sellers: 462K likes).",
+      "Programa de becas de bienestar para chefs emergentes: anclar colaboración en RSE pública con medición de impacto — diferenciador estratégico vs competencia Quintonil.",
+      "Activación en NYC (Cosme) y LA (Damian): leverage de restaurantes hermanos para cobertura simultánea en prensa norteamericana de gastronomía y lifestyle.",
+      "Alineación temporal con 25 aniversario Pujol (2025, retrospectivo en 2026): gancho editorial para lanzamiento de colaboración en medios globales.",
+      "Integración sostenibilidad: narrativa 'México le enseña al mundo': soft power gastronómico — framing anti-arancelario con fabricación local de elementos complementarios.",
+      "Validación de protocolo clientes complejos: documentar implementación operativa con métricas de reducción de conflictos — caso de estudio para venta a otras cuentas Blackwell.",
+      "Monitoreo proactivo de archivo digital Pujol: crear estrategia de 'curation de narrativa' en búsquedas — push de nuevas historias sobre Birkenstock para desplazar controversias laborales de 2019-2021."
+    ],
+    "strategic_recommendations": [
+      "Establecer cadencia mensual de reportes de retención: KPIs de crisis monitoreadas, medios trackeados (T1/T2/T3), narrativas detectadas, plan de respuesta ejecutado — genera accountability y acredita valor mensual.",
+      "Definir roadmap ejecutivo Birkenstock 2026 con hitos: alineación interna (✓ hecho 29/01/26), validación de producto en cocina (febrero-marzo), soft launch (abril-mayo), lanzamiento mediático (junio), activación en NY/LA (julio-agosto).",
+      "Crear protocolo de sesiones post-firma: mínimo una sesión mensual con equipo Pujol (Maya del Olmo + Nat + Enrique si aplica) — documentar cambios de estrategia, riesgos emergentes, avance de Birkenstock.",
+      "Desarrollar estrategia anti-reactivación laboral: monitoreo predictivo de narrativas críticas; pre-briefs para Enrique Olvera sobre cómo responder a preguntas sobre SST; identificar medios amigos para cobertura positiva.",
+      "Reconciliar facturación mayo-diciembre: contactar a Pujol para confirmar consumo real de crédito restaurante (auditar carnet de Alonso Palafox); emitir CFDI pendientes; aclarar si debe facturarse acreencia o sigue esquema alterno.",
+      "Transformar FODA Birkenstock en plan de activación: priorizar 3 riesgos altos (reputacional, autenticidad, dilución Birkenstock) — mapear acciones concretas, responsables, fechas.",
+      "Documentar adopción protocolo clientes complejos: solicitar a Nat/Pujol evidencia de uso de guiones base (casos resueltos, clasificaciones aplicadas) — validar ROI del taller 10/02/26.",
+      "Evaluar escalamiento de retainer: si Birkenstock requiere recursos extraordinarios (campaña mediática, gestión de crisis reputacional), cotizar por separado antes de ejecutar — aplicar cláusula de activación de crisis del contrato."
+    ],
+    "urgent_actions": [
+      {
+        "action": "Confirmar con Pujol (Maya del Olmo / Nat) consumo real de crédito restaurante (febrero-abril 2026): auditar carnet Alonso Palafox, solicitar comprobantes de consumo, resolver estatus de facturación mayo-diciembre 2026.",
+        "owner": "PM Blackwell / Luis Pacheco",
+        "due": "2026-06-20"
+      },
+      {
+        "action": "Emitir reporte mensual de retención 2026 (enero-mayo acumulado): KPIs de crisis monitoreadas, medios trackeados, narrativas detectadas, planes de respuesta ejecutados, assessment de riesgos reputacionales.",
+        "owner": "Equipo de Retención / Luis Pacheco",
+        "due": "2026-06-17"
+      },
+      {
+        "action": "Agendar sesión con equipo Pujol (Maya + Nat + Enrique si disponible) para presentar roadmap Birkenstock 2026: hitos, activación mediática, riesgos a mitigar, roles y responsables.",
+        "owner": "Luis Pacheco / PM",
+        "due": "2026-06-18"
+      },
+      {
+        "action": "Compartir protocolo clientes complejos: solicitar evidencia de implementación a Nat (casos de uso, guiones aplicados, clasificaciones verde/amarillo/naranja/rojo utilizadas).",
+        "owner": "Uriel / Equipo Operativa",
+        "due": "2026-06-22"
+      },
+      {
+        "action": "Desarrollar briefing anti-reactivación laboral: mapear narrativas críticas de 2019-2021, identificar gatillos mediáticos, preparar talking points para Enrique Olvera, listar medios amigos para amplificación.",
+        "owner": "Luis Pacheco / Equipo Crisis",
+        "due": "2026-06-25"
+      }
+    ]
+  },
+  "analyzed_at": "2026-06-11T03:51:33Z"
+}

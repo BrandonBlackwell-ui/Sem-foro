@@ -1,0 +1,288 @@
+{
+  "number": "32",
+  "folderTitle": "32. COJAB / proyecto concluido",
+  "folderId": "1a2_I-G9JISui38RDzoJWVnHYytzldEW2",
+  "folderModifiedTime": "2026-06-02T21:11:48.716Z",
+  "derivedStatus": "concluded",
+  "statusSuffix": "CONCLUIDO",
+  "latestDeliverable": {
+    "title": "_chat.txt",
+    "modifiedTime": "2026-05-13T19:11:28Z",
+    "source": "04. COJAB_Conversaciones_WA"
+  },
+  "deliverableSource": "02. COJAB_Entregables",
+  "lastActivity": {
+    "time": "2026-05-13T01:38:46.514Z",
+    "source": "02. COJAB_Entregables",
+    "file": "NOTA_EXCELSIOR_30ABRIL26",
+    "fileId": "1oowzozc65caAAZ24d7W3bwUfRwaSq_HlOMWBANquAvU"
+  },
+  "subfolderActivity": {
+    "01. COJAB_Contrato": {
+      "subfolderId": "1hVn30nPKKx4Bw6hFvN_R_tDoorK0UemP",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:13Z_verify",
+      "last_verified_at": "2026-06-12T14:09:13Z"
+    },
+    "02. COJAB_Entregables": {
+      "subfolderId": "1PuGnIsfkyZOEfcod9wSyCmYkePlajsIq",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T01:38:46.514000Z",
+      "latestFile": "NOTA_EXCELSIOR_30ABRIL26",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:31Z",
+      "last_verified_at": "2026-06-05T19:45:31Z"
+    },
+    "03. COJAB_Reportes_Avances": {
+      "subfolderId": "1eEZ6XE57A4wL1i4WmUQE-2w2C4b1K08k",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:31Z",
+      "last_verified_at": "2026-06-05T19:45:31Z"
+    },
+    "04. COJAB_Conversaciones_WA": {
+      "subfolderId": "1Wjcom8U9PTRozkBgIF-rOkFNDbfa4fNc",
+      "fileCount": 16,
+      "latestModified": "2026-05-13T19:11:28Z",
+      "latestFile": "_chat.txt",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:31Z",
+      "last_verified_at": "2026-06-05T19:45:31Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Cojab + Blackwell"
+    },
+    "05. COJAB_Transcripciones_Llamadas": {
+      "subfolderId": "17bYBp6kGeQ8SXAjliz7PkZsx4x8AvTno",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:31Z",
+      "last_verified_at": "2026-06-05T19:45:31Z"
+    },
+    "06. COJAB_Agenda_Trabajos": {
+      "subfolderId": "15f-3duKAJNzgqRd0sGSzSCNmNkKgGpM1",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:31Z",
+      "last_verified_at": "2026-06-05T19:45:31Z"
+    }
+  },
+  "pqProxy": {
+    "score": 50,
+    "tierMix": {
+      "tier1": 0,
+      "tier2": 0,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": "n/a",
+    "hasMetrics": false,
+    "evidence": "DELTA 2026-05-07: cuenta nueva creada hoy. Cascarón sin archivos cargados aún.",
+    "suggestion": "Coordinar onboarding: contrato/OC, kickoff, plan editorial.",
+    "fileEvaluated": null,
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "new_account",
+    "priority": 2,
+    "label": "Onboarding cuenta nueva",
+    "text": "Coordinar onboarding: contrato/OC, kickoff, plan editorial.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": false,
+  "lastCrawledAt": "2026-06-05T19:45:31Z",
+  "driveFiles": [
+    {
+      "id": "1HQ1dbRfYzHT78ZuM-6XpqfZUpFbYHi0b",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T19:11:28.000Z",
+      "size": "3047",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1O08N852B8EcPUwms5bbVq327G1KyyOLA",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T19:11:18.000Z",
+      "size": "8694",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1oowzozc65caAAZ24d7W3bwUfRwaSq_HlOMWBANquAvU",
+      "name": "NOTA_EXCELSIOR_30ABRIL26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T01:38:46.514Z",
+      "size": "1036192",
+      "subfolder": "02",
+      "subfolderName": "02. COJAB_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Vz32sfVr1nrVqQkVYiXZ3n9DtgO3nJYc",
+      "name": "00003069-PHOTO-2026-05-04-19-52-08.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T01:57:14.000Z",
+      "size": "123953",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1ItDM4jLMbY76V3M2NH2M9cbkKLdo569o",
+      "name": "00003066-El arte contemporáneo de Marcos Cojab toma el Senado de la República.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-05T00:47:52.000Z",
+      "size": "67428",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "15xH58DONv414ZgoYHk5xwTukUV_q3Hh0",
+      "name": "00003055-PHOTO-2026-04-30-13-17-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "size": "122447",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1TZKYU2N3o3O0F_p0Hck32ErBNsC7TyvI",
+      "name": "00003054-PHOTO-2026-04-30-13-17-22.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "size": "133734",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1TZ9jvCkHqiDrmuh6qyNvuN1nD84WcN8o",
+      "name": "00003059-PHOTO-2026-04-30-13-17-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "size": "138744",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "106d65s9uGvIAPG3hiYwas359A_mys97m",
+      "name": "00003056-PHOTO-2026-04-30-13-17-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "size": "135665",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "14szLeQAtl8jo8_MnNATLl2FcvkLsa1ME",
+      "name": "00003058-PHOTO-2026-04-30-13-17-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "size": "108858",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "18TSlzWWDznozIqwOmt_UgX9kNNgKFmzr",
+      "name": "00003057-PHOTO-2026-04-30-13-17-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T19:17:22.000Z",
+      "size": "85265",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1j0qXImKnB7dd9cXD7uwYtqY5QQKxOdH6",
+      "name": "00003043-PHOTO-2026-04-30-13-12-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T19:12:22.000Z",
+      "size": "79161",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1tgyiycqX-Uf1zPJCUOYeJv0zoHc-kMHg",
+      "name": "00003060-PHOTO-2026-04-30-13-17-23.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T19:12:22.000Z",
+      "size": "79161",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1kJNyHKWjHaz-xHmNFQZ3hVfrlHWic3Ma",
+      "name": "00003025-Nota_Cojab_Excelsior.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T19:23:06.000Z",
+      "size": "47324",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1jUU1dWLeXEN3NNeBMwjaPpDi8p8nPa8z",
+      "name": "00003011-VIDEO-2026-04-28-15-10-02.mp4",
+      "mimeType": "video/mp4",
+      "modifiedTime": "2026-04-28T21:12:04.000Z",
+      "size": "1445861",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1UX1cdRTsX7ZVf19ErNtUOxIAJ-9PFPBU",
+      "name": "00003010-PHOTO-2026-04-28-15-10-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T21:12:04.000Z",
+      "size": "162015",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    },
+    {
+      "id": "1szgKzW4kWkdr8PzCrxuG_OYo21S4kedx",
+      "name": "00003009-Marcos_Cojab_Senado_Propuesta.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-28T21:12:04.000Z",
+      "size": "2721",
+      "subfolder": "04",
+      "subfolderName": "04. COJAB_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Cojab + Blackwell"
+    }
+  ]
+}

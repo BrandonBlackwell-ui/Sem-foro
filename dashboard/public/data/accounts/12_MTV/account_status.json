@@ -1,0 +1,1619 @@
+{
+  "number": "12",
+  "folderTitle": "12. MTV",
+  "folderId": "1tEXH7EaofRaXmPrX4Eq8ru-sd5ydlkQP",
+  "folderModifiedTime": "2026-04-29T20:58:59.496Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "Hidalgo - Hidalgo consolida modelo propio de política científica con 25 millones de pesos en 2026 ok (1) (1).docx (en Contenidos / Columnas)",
+    "modifiedTime": "2026-06-09T18:33:20.379000Z",
+    "source": "02.MTV_Entregables"
+  },
+  "deliverableSource": "02.MTV_Entregables/Contenidos / Columnas",
+  "lastActivity": {
+    "time": "2026-05-14T17:50:23.721Z",
+    "source": "02.MTV_Entregables/Contenidos / Columnas",
+    "file": "Hidalgo activa el plan para garantizar suelo y certeza al Polo Zapotlán, tras los 2 mil mdd de Solar International",
+    "fileId": "1hF4StsyaBoiYTjCPe6we_shz58bse3wpJf3ke4fwlUs"
+  },
+  "subfolderActivity": {
+    "01. MTV_Contratos_OC": {
+      "subfolderId": "1Y0ZON8vHM23exfV5-FeW-IQiLwYN5dK_",
+      "fileCount": 2,
+      "latestModified": "2026-05-11T18:26:57.377000Z",
+      "latestFile": "Blackwell_Propuesta MTV 30122025",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:07Z_verify",
+      "last_verified_at": "2026-06-12T14:09:07Z"
+    },
+    "02.MTV_Entregables": {
+      "subfolderId": "1HZxdCgrLqXQ13T52Pa9EGjGuE3wOYtjW",
+      "fileCount": 21,
+      "latestModified": "2026-06-09T18:33:20.379000Z",
+      "latestFile": "Hidalgo - Hidalgo consolida modelo propio de política científica con 25 millones de pesos en 2026 ok (1) (1).docx (en Contenidos / Columnas)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:47Z_verify",
+      "last_verified_at": "2026-06-11T01:57:47Z",
+      "nestedNote": "Contiene subcarpetas: Réplica, Planes de comunicación, Contenidos / Columnas"
+    },
+    "03.MTV_Reportes_Avance": {
+      "subfolderId": "1AKr5aFEDdhtqYB1m5ugAtzJVZ3ufZgI9",
+      "fileCount": 5,
+      "latestModified": "2026-06-09T15:08:29.198000Z",
+      "latestFile": "Copia de Tello - Checklist  .xlsx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:48Z_verify",
+      "last_verified_at": "2026-06-11T01:57:48Z"
+    },
+    "04.MTV_Conversaciones_WA": {
+      "subfolderId": "1gatgo4liFLMdvRmnODM-MeydfM7V63EZ",
+      "fileCount": 433,
+      "latestModified": "2026-05-08T16:48:38Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - Tello + Blackwell_08052026)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:48Z_verify",
+      "last_verified_at": "2026-06-11T01:57:48Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Interno Tello_08052026, WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    "05. MTV_Transcripciones_Llamadas": {
+      "subfolderId": "1IoaFJHhdDfLN7HjAhG2wKGr6fn0T20m-",
+      "fileCount": 5,
+      "latestModified": "2026-05-26T17:39:33.002000Z",
+      "latestFile": "Transcripción llamada 26 de mayo 2026",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:50Z_verify",
+      "last_verified_at": "2026-06-11T01:57:50Z"
+    },
+    "06.MTV_Agenda_Trabajos": {
+      "subfolderId": "1SiRgXJYSFrcRhme7cAp-PWUhaZt1Py0z",
+      "fileCount": 8,
+      "latestModified": "2026-05-31T01:52:42.447000Z",
+      "latestFile": "Actividades del 11 al 15 de mayo",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:50Z_verify",
+      "last_verified_at": "2026-06-11T01:57:50Z"
+    }
+  },
+  "pqProxy": {
+    "score": 73,
+    "tierMix": {
+      "tier1": 2,
+      "tier2": 4,
+      "tier3": 1,
+      "none": 0
+    },
+    "narrativaQuality": "media",
+    "hasMetrics": false,
+    "evidence": "Avance actividades acumulado: Crónica (T2, ene), Milenio (T1, planificación ene), Excélsior (T2, semblanza feb), Reporte Índigo (T2, entrevista feb), La Jornada notas (T1), Fortune USA (internacional). Encuentro gestionado con Pedro Gamboa/Milenio TV. Columnas en proceso para Forbes y La Jornada. Narrativa en slides con mix de actividades realizadas/pendientes sin KPIs consolidados. | DELTA 2026-05-07: Reporte mensual ABRIL completo: 4 placements T1 (~17M alcance Meltwater) + roadmap mayo (Carriedo, Cacho, AIFA con T1). | DELTA 2026-05-11T18:30:00Z: Propuesta 2026-2027 (gdoc) cargada al folder 01 el 11-may; sin firma visible. Testigos PDF 8-may consolida 12 piezas con narrativa 'estratega de planeación'. | DELTA 2026-05-15T14:00:00Z: columna re-enmarcada en torno a inversión SICC, mensaje Polo Zapotlán + AIFA + corredor logístico; pendiente colocación. Aporta señal de productividad MTV pre-Reporte mensual.",
+    "suggestion": "Borrador columna 'Hidalgo activa el plan...Polo Zapotlán' actualizado al pivote Solar International (2,000 mdd, 1,700 empleos directos, obra arranca oct-2026). Validar autorización con cliente para placement esta semana; coordinar con sala de prensa estatal para alineación de mensajes y posible voceria Tello Vargas.",
+    "fileEvaluated": "Hidalgo activa el plan para garantizar suelo y certeza al Polo Zapotlán, tras los 2 mil mdd de Solar International",
+    "evaluatedAt": "2026-05-15T14:00:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 2,
+    "label": "Acción sobre delta del día",
+    "text": "Borrador columna 'Hidalgo activa el plan...Polo Zapotlán' actualizado al pivote Solar International (2,000 mdd, 1,700 empleos directos, obra arranca oct-2026). Validar autorización con cliente para placement esta semana; coordinar con sala de prensa estatal para alineación de mensajes y posible voceria Tello Vargas.",
+    "source": "delta-2026-05-15"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:56:47Z",
+  "driveFiles": [
+    {
+      "id": "1xUsmYk-GaVyYrjSx0NSQWeLUTk46Jr-N",
+      "name": "Hidalgo - Hidalgo consolida modelo propio de política científica con 25 millones de pesos en 2026 ok (1) (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-09T18:33:20.379Z",
+      "size": "16876",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1f7pYjipAFqS-crjnDwyn3kCSDLhuDGbF",
+      "name": "Derecho_Replica_Pletora_MTV.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-09T17:35:19.723Z",
+      "size": "9747",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Réplica"
+    },
+    {
+      "id": "1ldjSIqx3jlkKdAlcer38VNbrxtxSK8rb",
+      "name": "Copia de Tello - Checklist  .xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-06-09T15:08:29.198Z",
+      "size": "20192",
+      "subfolder": "03",
+      "subfolderName": "03.MTV_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1Nx7SnuOYmBFOqGe2H7KmtyEDIqMuR7wd",
+      "name": "MTV_Hidalgo consolida modelo de planeación territorial que se traduce.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-09T14:51:04.000Z",
+      "size": "17081",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1Txwy_7n1TxQ58TK0rHxYjsKK09rbbYASCOOIuZU2KeE",
+      "name": "Perfil_Medio_Central",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-08T15:34:45.325Z",
+      "size": "28551",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Réplica"
+    },
+    {
+      "id": "1KgAnKRXbVboQ_IACAj8xXPydu97qAWgT",
+      "name": "Perfil_Medio_Pletora_Hidalgo.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-08T15:31:17.826Z",
+      "size": "53539",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Réplica"
+    },
+    {
+      "id": "11cHlf9tOyxLqm3mmjjur_VjioNZKhXaZ",
+      "name": "Evaluacion_Tello_Vargas_040626.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-04T15:39:54.000Z",
+      "size": "26966",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1LNwr5kuo-HmOmX8xRlxznnAPX82Uzv1M",
+      "name": "Argumentario_Defensivo_Proceso_MTV.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-04T14:22:56.356Z",
+      "size": "18447",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1cmatjFEIWYoylQiju6eJXEGzwR8avF49",
+      "name": "BriefingBook_Milenio_PedroGamboa 010626.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-02T20:59:09.961Z",
+      "size": "1310037",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1ayvdqvxUZ39a4b-JPs6J2JMfQ908UOBn",
+      "name": "MTV_Reporte mensual MAYO 26.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-06-01T16:57:52.486Z",
+      "size": "11052136",
+      "subfolder": "03",
+      "subfolderName": "03.MTV_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1GwPmk2ttZB26O91dngfh08qVDxly5VbHMbcCNh6it80",
+      "name": "Actividades del 11 al 15 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-31T01:52:42.447Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1astK92gBhtJhGo_z6bTX-xkawKnFA8CCwByKXD8ROX8",
+      "name": "Actividades 4 al 8 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-31T01:28:39.530Z",
+      "size": "1301",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "18NnQzZSQk3AJFWU2614qVb7y0nB51q_QnWvAlAeEr6M",
+      "name": "Actividades del 18 al 22 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-31T01:26:48.723Z",
+      "size": "1364",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1iLKBofaJAa2isFwe9PhaPtzkBs5apf_BnQislSKsXlY",
+      "name": "Actividades 25 - 29 de mayo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-31T01:22:18.966Z",
+      "size": "1215",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1oFQW9v9oeHjwJyuEBPuZyuNTj3yYOCCn",
+      "name": "IMPULSO INDIGENA (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-31T01:19:09.000Z",
+      "size": "8183",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1jUcBCfwpvhL0ezyud6lVYtofRbMd6PairoUbpyUQCNY",
+      "name": "Transcripción llamada 26 de mayo 2026",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-26T17:39:33.002Z",
+      "size": "2739",
+      "subfolder": "05",
+      "subfolderName": "05. MTV_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1vXnoN7yTgZwrqfCFlslFu5PjgCbCvZif",
+      "name": "plan_comunicacion_bimestral_v2_MTV.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-25T18:09:51.012Z",
+      "size": "2798825",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Planes de comunicación"
+    },
+    {
+      "id": "1SAByLmd7AqqIC8rWjJ02RBAgQAmvQxLGJI7ANKKcU1A",
+      "name": "Transcripción plan de comunicación y reporte de resultados abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-21T17:11:04.186Z",
+      "size": "7764",
+      "subfolder": "05",
+      "subfolderName": "05. MTV_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "15k_b9qxf82mqjh6CBMUrmsFKt1hTGTwR",
+      "name": "Tello - 18-05-26.m4a",
+      "mimeType": "audio/x-m4a",
+      "modifiedTime": "2026-05-18T19:16:13.000Z",
+      "size": "13373835",
+      "subfolder": "05",
+      "subfolderName": "05. MTV_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1OcGsUsbkLjA6UIMlvaUX2BRFph6qdu5L",
+      "name": "MTV_Reporte mensual ABRIL 26.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-18T13:57:50.838Z",
+      "size": "14411739",
+      "subfolder": "03",
+      "subfolderName": "03.MTV_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1XcocEytkepOCrZFOGynYum2cBiIu_JOO",
+      "name": "2026 MTV - Mundo Ejecutivo (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T22:05:54.000Z",
+      "size": "3003631",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1hF4StsyaBoiYTjCPe6we_shz58bse3wpJf3ke4fwlUs",
+      "name": "Hidalgo activa el plan para garantizar suelo y certeza al Polo Zapotlán, tras los 2 mil mdd de Solar International ",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-15T21:58:25.369Z",
+      "size": "2574",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1ZS3jOHpnKChVnAKE6_95i9LpyPRcbbqaZVxICgR3NkU",
+      "name": "Transcripción_llamada_12_05_26",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-12T20:12:53.769Z",
+      "size": "6104",
+      "subfolder": "05",
+      "subfolderName": "05. MTV_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1QjZtCbZZkJMyc0XSN_EFem5WeS0o-HBWHJ9z9NN7PZI",
+      "name": "Blackwell_Propuesta MTV 30122025",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-11T18:26:57.377Z",
+      "size": "15538",
+      "subfolder": "01",
+      "subfolderName": "01. MTV_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1AOHk2fP2SwLQ5c6oxLTvF7ubOXhqNt_v",
+      "name": "Testigos de Trabajo Blackwell_Miguel Tello (MTV).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-08T18:07:41.000Z",
+      "size": "21564",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1U8vU0JeXNCuM53Qn7zj9vbeH1phzpA3G",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:48:38.000Z",
+      "size": "183418",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1dFcJ4OQCVPeL9gmTEl6PV-dCIcXlmpDd",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:48:24.000Z",
+      "size": "189879",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1N5hRvAmfOhUe24oAROO07kbVzUVkZkQK",
+      "name": "00000445-Sandra Cortes (com Soc Sep Yunuen).vcf",
+      "mimeType": "text/vcard",
+      "modifiedTime": "2026-05-08T16:48:24.000Z",
+      "size": "197",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "15OAOBPiCUxnxWfFm7unNjaZg1WSuMHcP",
+      "name": "00000922-Primer Corte_Miguel Tello Vargas_08052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T13:39:10.000Z",
+      "size": "20012",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "19hol0fBhYmceH3ZvNc727htgu3eulyfI",
+      "name": "00001294-Primer Corte_Miguel Tello Vargas_08052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T13:39:10.000Z",
+      "size": "20012",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "10_gv1bg-6X_Q7HEBlKlma2mL8Qq2Affm",
+      "name": "00000920-Tercer Corte_Miguel Tello Vargas_07052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T02:48:16.000Z",
+      "size": "24460",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1h3M0id11cqc9RNpalAdG0hTMUZ_vw63J",
+      "name": "00001292-Tercer Corte_Miguel Tello Vargas_07052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-08T02:48:16.000Z",
+      "size": "24460",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1Uo11k14mym6fE5RwdeK1t3ChxHrHfh72",
+      "name": "00000918-Segundo Corte_Miguel Tello Vargas_07052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T21:08:30.000Z",
+      "size": "43378",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1z4WiZ5UjMQ831Dm40tTGUDhCRuu1Xgu8",
+      "name": "00001290-Segundo Corte_Miguel Tello Vargas_07052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T21:08:30.000Z",
+      "size": "43378",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1oU92L7t80vcBfrgq_7pr_MpeEqohHiWo",
+      "name": "00000913-PHOTO-2026-05-07-09-02-46.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T15:07:20.000Z",
+      "size": "100143",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1-HYUWAXV63-IOzl4LlX1HmV_auTLu7r5",
+      "name": "00000911-AUDIO-2026-05-07-08-45-24.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-05-07T14:45:26.000Z",
+      "size": "49500",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1fqwfGVN_4ICbrnrzXg7RLJW5WyoSYT9V",
+      "name": "00000909-AUDIO-2026-05-07-08-42-38.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-05-07T14:45:24.000Z",
+      "size": "45291",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1fO4qNXyQE83LK5bYDe1vraiE8xgSpgc4",
+      "name": "00000906-Primer Corte_Miguel Tello Vargas_07052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T13:39:34.000Z",
+      "size": "24358",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1sc1Z2XZrbygHxy2DKe3C9IPKrt6LagZ4",
+      "name": "00001272-Primer Corte_Miguel Tello Vargas_07052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T13:39:34.000Z",
+      "size": "24358",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1jiwKJtkQiml4C_eXSJRgqPh5SNVM82Rg",
+      "name": "00000904-Tercer Corte_Miguel Tello Vargas_06052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T02:55:30.000Z",
+      "size": "24635",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1GybUeVbfFpKwO8LNxMr61sYw7laH1SOK",
+      "name": "00001268-Tercer Corte_Miguel Tello Vargas_06052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-07T02:55:30.000Z",
+      "size": "24635",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1V8i3qhQ43Exe7gZ-chNV_qwyM9HPaNg3",
+      "name": "00001266-PHOTO-2026-05-06-19-29-51.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T01:33:24.000Z",
+      "size": "77269",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1k95qUjDR4Ip5SLrP2fulGIH7bP5_-0YL",
+      "name": "00000903-PHOTO-2026-05-06-15-51-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T21:51:14.000Z",
+      "size": "256036",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "14vCYvzoiPc_KHXXpufaLHmjKwgYc00QD",
+      "name": "00001264-PHOTO-2026-05-06-15-52-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T21:51:14.000Z",
+      "size": "256036",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1jLVJlVOaCJBFdjFBEoQG3m2dFiO3-M0P",
+      "name": "00000901-Segundo Corte_Miguel Tello Vargas_06052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-06T21:49:44.000Z",
+      "size": "363067",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1dKRiuNQAaLlvgYhjs6g2c07RGyXmrzuU",
+      "name": "00001263-Segundo Corte_Miguel Tello Vargas_06052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-06T21:49:44.000Z",
+      "size": "363067",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1L2XhsWO-l9gwBn_sktQUu4o4HBDBnEyC",
+      "name": "00000899-Primer Corte_Miguel Tello Vargas_06052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-06T13:35:00.000Z",
+      "size": "26834",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1XtYH-bAWfRQTbU9MAtHvZER68oUhCD9S",
+      "name": "00001260-Primer Corte_Miguel Tello Vargas_06052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-06T13:35:00.000Z",
+      "size": "26834",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1j8SQ0Ua2QYThk1lO1XZwL547AyIpvuYg",
+      "name": "00000897-Segundo Corte_Miguel Tello Vargas_05052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-06T00:54:42.000Z",
+      "size": "27173",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "18OFbJONtBMBGqRX74hKagaOiM0T1GQRr",
+      "name": "00001258-Segundo Corte_Miguel Tello Vargas_05052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-06T00:54:42.000Z",
+      "size": "27173",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1UFpfNXr5I_Eu-JicCE1-i80k0K0X0Dhn",
+      "name": "00001256-MTV - Columna - La ciudad que se vende sola- cómo el gobierno digital atrae inversión y talento.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T15:52:12.000Z",
+      "size": "18631",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1o6H9wXN5-xXORyr40K2YdVuYOjWZJpsC",
+      "name": "00000891-Primer Corte_Miguel Tello Vargas_05052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T13:42:32.000Z",
+      "size": "24282",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1JK2eU1OUIkMkP0Lng7hswD9xBOASf5nh",
+      "name": "00001250-Primer Corte_Miguel Tello Vargas_05052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T13:42:32.000Z",
+      "size": "24282",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1EJh2jXqJTwlPjQGU9MKVuvdAY2BDMi5z",
+      "name": "00000888-Tercer Corte_Miguel Tello Vargas_04052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T03:18:20.000Z",
+      "size": "23979",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1bBvzoDyLVNyAjxw7Zb4uev_TNmXvy0Q7",
+      "name": "00001248-Tercer Corte_Miguel Tello Vargas_04052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T03:18:20.000Z",
+      "size": "23979",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1eF-p9m_2bZyPWhHe54yKTxlL7KKBe66I",
+      "name": "00000886-Segundo Corte_Miguel Tello Vargas_04052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-04T22:14:54.000Z",
+      "size": "25178",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1yWIq57WToPrKwr-hVVluB6iCY_fidk4N",
+      "name": "00001246-Segundo Corte_Miguel Tello Vargas_04052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-04T22:14:54.000Z",
+      "size": "25178",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1jdhrc2XlHit7c5WshN_iF6rQFe0yyEOx",
+      "name": "00000883-Primer Corte_Miguel Tello Vargas_04052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-04T13:43:16.000Z",
+      "size": "435517",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "14hhlNJGYAP4XYE6HcZvG1-Qm6satYGH2",
+      "name": "00001244-Primer Corte_Miguel Tello Vargas_04052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-04T13:43:16.000Z",
+      "size": "435517",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1o-VYbGkXGPNJiF7ozaUKWif7LOQXAvqf",
+      "name": "00000881-Corte_Miguel Tello Vargas_03052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-03T21:13:46.000Z",
+      "size": "25132",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1EP4l7JMQI-LupFcU2Ji9LP9IxaLwZvKe",
+      "name": "00001241-Corte_Miguel Tello Vargas_03052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-03T21:13:46.000Z",
+      "size": "25132",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "11NohrqncWNhkd6nxjrL9QnklKhh6UhQv",
+      "name": "00000879-Corte_Miguel Tello Vargas_02052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-02T20:27:48.000Z",
+      "size": "24910",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1tkIVcO21__lnorAaGS7oZTJLTudorLMk",
+      "name": "00001239-Corte_Miguel Tello Vargas_02052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-02T20:27:48.000Z",
+      "size": "24910",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1eHcw3rQm5xJyMv_74AJGumoKZhnjav2M",
+      "name": "00000877-Tercer Corte_Miguel Tello Vargas_01052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-02T02:36:58.000Z",
+      "size": "23563",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1wCeI82SbILTHR0MczZAwW797uUJFvkjf",
+      "name": "00001237-Tercer Corte_Miguel Tello Vargas_01052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-02T02:36:58.000Z",
+      "size": "23563",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1Vva6wpW5QKECUDJGs3OMF11OyLZCMriP",
+      "name": "00000875-Segundo Corte_Miguel Tello Vargas_01052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-01T20:32:20.000Z",
+      "size": "24511",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1sgErgRhlbvtOYmLQdl9d759QluXvzqyy",
+      "name": "00001235-Segundo Corte_Miguel Tello Vargas_01052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-01T20:32:20.000Z",
+      "size": "24511",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1H-vxSH3vcoZnPfgAiQsUBHDCHR6PlpBF",
+      "name": "00000873-Primer Corte_Miguel Tello Vargas_01052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-01T13:55:44.000Z",
+      "size": "24373",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1UM5zKN9IcKghbnkwzYQizzneA4xyevwk",
+      "name": "00001233-Primer Corte_Miguel Tello Vargas_01052026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-01T13:55:44.000Z",
+      "size": "24373",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "18IGqTxlNByV0JHwuvDBwxtabr88wzpWZ",
+      "name": "00000871-Tercer  Corte_Miguel Tello Vargas_30042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-01T02:48:10.000Z",
+      "size": "22836",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1hilbCamoM5fY0MRrY_EYn5QwKtYTRyfs",
+      "name": "00001231-Tercer  Corte_Miguel Tello Vargas_30042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-01T02:48:10.000Z",
+      "size": "22836",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1DMxXWyThHeSmCvBXAvfu6EQDV9VAwK6Z",
+      "name": "Avence actividades MTV -BWS.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-30T23:21:11.845Z",
+      "size": "5616104",
+      "subfolder": "03",
+      "subfolderName": "03.MTV_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1o0pK1Dvgfjr0BnGT_s6FJoUMr58iGVf-",
+      "name": "00000869-Segundo Corte_Miguel Tello Vargas_30042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T22:26:46.000Z",
+      "size": "32426",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "18x95sioOTmWoQRXH4njq4w1EQ_FSlDZI",
+      "name": "00001228-Segundo Corte_Miguel Tello Vargas_30042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T22:26:46.000Z",
+      "size": "32426",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1rCtxnn2WlvzX4UJMxZKFB-VIMRdEEJlDfVx9c1Z7hKw",
+      "name": "Actividades 27-30 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-30T22:15:34.025Z",
+      "size": "1375",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1nK_DG4hUZU2t8b85IEtQwIcloc0EcjCV",
+      "name": "00000865-Primer Corte_Miguel Tello Vargas_30042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T13:34:42.000Z",
+      "size": "23398",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "10FdHE-4gm3OuARXEoKSwOjIYlFNY1QSV",
+      "name": "00000868-PHOTO-2026-04-30-07-34-15.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-30T13:34:42.000Z",
+      "size": "79312",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1-0RiiLlqx9Jv7gmsy37_Gf8qWLpuNI5z",
+      "name": "00001224-Primer Corte_Miguel Tello Vargas_30042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T13:34:42.000Z",
+      "size": "23398",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "18FJCE1jYeUFLZmpVLYSXj35zj9t4ERs9",
+      "name": "00000863-Tercer Corte_Miguel Tello Vargas_29042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T03:06:24.000Z",
+      "size": "25066",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "10P0xGwyeH29WNIEJdpX7yN9i2ZPg6Km3",
+      "name": "00001222-Tercer Corte_Miguel Tello Vargas_29042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T03:06:24.000Z",
+      "size": "25066",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "14L9ADN-WbN7cbIOSANFyIQV04G9k0T-m",
+      "name": "00000861-Segundo Corte_Miguel Tello Vargas_29042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:05:38.000Z",
+      "size": "24303",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1VlJ5GRChtxyvNWv80Z3YxgSUimDjwcc1",
+      "name": "00001215-Segundo Corte_Miguel Tello Vargas_29042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T22:05:38.000Z",
+      "size": "24303",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1cTmJFlgsQwKx3R1zBXUb6abafScEsasj",
+      "name": "Presentación equipo MTV -BWS.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-29T20:29:32.144Z",
+      "size": "7561152",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "14JdXf7Aq_Zd_KKiZicon1h4IBT1S4s3N",
+      "name": "Reunión Metropolitana ok _Rev Ángel (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:26:25.000Z",
+      "size": "52637",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1iDUcU-P_4i9SA3MVKgIsc9cFTFMmc2F5",
+      "name": "Columna_Milenio_FIIEDB (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:26:12.000Z",
+      "size": "16529",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "11u_p5pjwsKlB7eUAd3CBm1GFLwZFBAfk",
+      "name": "Lo que necesitamos es más Tuzobús_ok.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:26:02.000Z",
+      "size": "16153",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1V4rHCTOq0nxfJmHLnusm-JwWNxdgJK_q",
+      "name": "2026 MT - Hidalgo impulsa modelo de partería centrado en las mujeres 210426 (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:25:51.000Z",
+      "size": "16146",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1FEmrjWh5x5FaqkNAJengnvhCaN_yB89z",
+      "name": "2026 MT - Un acierto llamado planeación, Hidalgo ya no se improvisa ok.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:25:46.000Z",
+      "size": "15096",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1FWhS-nxWAvic2lPOBtBqtqpbrLXUCagJ",
+      "name": "Infraestructura en Hidalgo .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:25:35.000Z",
+      "size": "8531",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": "Contenidos / Columnas"
+    },
+    {
+      "id": "1fjmtj35TkDAKSQsNCpHs0jYvHxD8vRfUL3V7uJV0Zn4",
+      "name": "Actividades del 20 al 24 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T20:23:14.455Z",
+      "size": "1319",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1C890VDOjbwiFB1TVjUDML-MEJI8WDqqoQ80-Xma9lS8",
+      "name": "Actividades del 13 al 17 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T20:21:14.422Z",
+      "size": "1489",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1DBTLrXRItC0rSVQwG1i_jW7t9bW7dRYDKLIYMJssr1M",
+      "name": "Actividades del 6 al 10 de abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T20:17:07.389Z",
+      "size": "1394",
+      "subfolder": "06",
+      "subfolderName": "06.MTV_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1vB0ksNlIJWcCQH0PdZwb5vijlvcLlD7-",
+      "name": "Transcripción_llamada_28_04_26.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T20:16:26.000Z",
+      "size": "14945",
+      "subfolder": "05",
+      "subfolderName": "05. MTV_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1VIbNWhycywqFJs6XfAxjzfzqPkcOzNhP",
+      "name": "00000859-Primer Corte_Miguel Tello Vargas_29042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T13:40:24.000Z",
+      "size": "22817",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1huSP50rid9mUU23RxYN16bw1qmIxV45-",
+      "name": "00001212-Primer Corte_Miguel Tello Vargas_29042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T13:40:24.000Z",
+      "size": "22817",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1oYBvQTTNRkaqt196QZpFZxRJO3rRdim6",
+      "name": "00000857-Tercer Corte_Miguel Tello Vargas_28042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T01:48:00.000Z",
+      "size": "23746",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1_x-_BBjJWk367CuDohpd12A-njdjep1s",
+      "name": "00001210-Tercer Corte_Miguel Tello Vargas_28042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T01:48:00.000Z",
+      "size": "23746",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1nG_EpjAaHBbcTgVoV5U9vySoHmM4kCaT",
+      "name": "00000855-Segundo Corte_Miguel Tello Vargas_28042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T22:28:02.000Z",
+      "size": "25026",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1vlXaNu52AasFyzfvIJAkf2_2CRQTbRys",
+      "name": "00001208-Segundo Corte_Miguel Tello Vargas_28042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T22:28:02.000Z",
+      "size": "25026",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1CwnxK0R6QBmlS0SAduhRx0-X8UgX3oES",
+      "name": "00000853-Primer Corte_Miguel Tello Vargas_28042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T13:38:12.000Z",
+      "size": "23876",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1WK2tnebvps0qYpKJudbLC9LVuJA-EeQ2",
+      "name": "00001205-Primer Corte_Miguel Tello Vargas_28042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T13:38:12.000Z",
+      "size": "23876",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1yPbnRplGablGdtjAd_iXAXXtdA1yedin",
+      "name": "00000851-Tercer Corte_Miguel Tello Vargas_27042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T03:34:46.000Z",
+      "size": "22951",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1uPu0Dva_Yr4cDeOhW_s7OrNw2czt87aR",
+      "name": "00001203-Tercer Corte_Miguel Tello Vargas_27042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-28T03:34:46.000Z",
+      "size": "22951",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1y_HurIoHKm4pkwvjt137-WUKGsL88Jdu",
+      "name": "00000847-Segundo Corte_Miguel Tello Vargas_27042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-27T22:51:04.000Z",
+      "size": "25563",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1cIEMJLBF9igHWNFdvn4jaER2YAg_qcOH",
+      "name": "00001199-Infraestructura en Hidalgo .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-27T22:51:04.000Z",
+      "size": "8531",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1twCVwOi19Iai5B7VxxhIpoQZ9ZjZfo7A",
+      "name": "00001201-Segundo Corte_Miguel Tello Vargas_27042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-27T22:51:04.000Z",
+      "size": "25563",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1f7BHJqe3nC0uuEFmcCMSMjapn0ihCQvk",
+      "name": "00001197-PHOTO-2026-04-27-12-50-11.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-27T18:50:10.000Z",
+      "size": "114045",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1jpiNhk_PBaybK-ln7u2PmHuSs-HdrzAk",
+      "name": "00000845-Primer Corte_Miguel Tello Vargas_27042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-27T13:29:52.000Z",
+      "size": "22383",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1emM9sk1OTtbyrzNLOTbKHnth9b-as572",
+      "name": "00001193-Primer Corte_Miguel Tello Vargas_27042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-27T13:29:52.000Z",
+      "size": "22383",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1p5GJn3j-5HPsbTm4dRKYfsJbsW2CvBNJ",
+      "name": "00000843-Corte_Miguel Tello Vargas_26042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-26T20:38:48.000Z",
+      "size": "23704",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1msriXR3ko8uWzjvRUz25alOWfTIQYnrA",
+      "name": "00001191-Corte_Miguel Tello Vargas_26042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-26T20:38:48.000Z",
+      "size": "23704",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1qGE-vCu4raSR9vQ7fb_58WrjW8j4Sd3t",
+      "name": "00000836-Corte_Miguel Tello Vargas_25042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-25T17:13:48.000Z",
+      "size": "23302",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1O7ROzbdo0LdluSzBPP-TqLC9trxHk7zU",
+      "name": "00001189-Corte_Miguel Tello Vargas_25042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-25T17:13:48.000Z",
+      "size": "23302",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1o_0AMfgnUnv8rZmtFpFcX08MnbFx0Xol",
+      "name": "00000825-Segundo Corte_Miguel Tello Vargas_24042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-25T01:37:34.000Z",
+      "size": "23676",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1YAbNRdIjLjTRLrroGWqiTw2oL041phyI",
+      "name": "00001187-Segundo Corte_Miguel Tello Vargas_24042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-25T01:37:34.000Z",
+      "size": "23676",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1iwJRAdN951xi5PyjY1wDRIW83YtwFVvf",
+      "name": "00001219-Hidalgo - Hidalgo consolida modelo propio de política científica con 25 millones de pesos en 2026 ok (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T18:38:14.000Z",
+      "size": "16876",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1Y_5Aw113STZa7aZLA7BjmX8M9-FzlH_C",
+      "name": "00001183-Hidalgo - Hidalgo consolida modelo propio de política científica con 25 millones de pesos en 2026 ok (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T18:38:14.000Z",
+      "size": "16876",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1ADUs__YutC2EenpD-uXvPYALLK--fyVP",
+      "name": "00000823-Primer Corte_Miguel Tello Vargas_24042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T13:38:06.000Z",
+      "size": "23668",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "15YV9FGCHEqocm25FLCLPcY09W3JlNqyd",
+      "name": "00001178-Primer Corte_Miguel Tello Vargas_24042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T13:38:06.000Z",
+      "size": "23668",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "199O1ELFm6IKBOyB1rtLv53mA4oPZ-Khv",
+      "name": "00000821-Tercer Corte_Miguel Tello Vargas_23042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T02:53:26.000Z",
+      "size": "23786",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "159eadDvljj_cTGwFNEBkahkMhtIpKSnC",
+      "name": "00001176-Tercer Corte_Miguel Tello Vargas_23042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T02:53:26.000Z",
+      "size": "23786",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1WaVx4IL-lrrA3nvF5HjC2AdDeU0JLmbb",
+      "name": "00000819-Segundo Corte_Miguel Tello Vargas_23042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T21:39:02.000Z",
+      "size": "23588",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1zKW6WknQ-WvS_qHrZ2MMpwPBxv_w74YD",
+      "name": "00001174-Segundo Corte_Miguel Tello Vargas_23042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T21:39:02.000Z",
+      "size": "23588",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1qGi65MN4WwF9yJ-HRDj7FF62LnqszcAR",
+      "name": "00000817-Primer  Corte_Miguel Tello Vargas_23042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T13:39:32.000Z",
+      "size": "21824",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1NX13li86Bdr-NmFxj9XZ5lIqEF9gEHyV",
+      "name": "00001172-Primer  Corte_Miguel Tello Vargas_23042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T13:39:32.000Z",
+      "size": "21824",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1M_U0oHk3YzwrvnwwWFH1klcSgseCWSS_",
+      "name": "Planeación MT (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T03:52:13.000Z",
+      "size": "2633844",
+      "subfolder": "02",
+      "subfolderName": "02.MTV_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1fjNQUKCrGPxJZKZfKnE7x4YUSHh2oDJc",
+      "name": "00000815-Tercer Corte_Miguel Tello Vargas_22042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T02:52:36.000Z",
+      "size": "21297",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1_zeBXpbeIJoKp_Szukk7wXneEGdTO8wN",
+      "name": "00001170-Tercer Corte_Miguel Tello Vargas_22042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-23T02:52:36.000Z",
+      "size": "21297",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1J5DnrMraC2SFiYQgbiZ1gvKwwDkuUbqE",
+      "name": "00000813-Segundo Corte_Miguel Tello Vargas_22042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-22T21:01:24.000Z",
+      "size": "24067",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1nLEnOXeB2oLH8d5Qp6v1zQpnKE8lUSXx",
+      "name": "00001168-Segundo Corte_Miguel Tello Vargas_22042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-22T21:01:24.000Z",
+      "size": "24067",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1gG4d98WNYYfM04tEOmVO_42PDo9uOHav",
+      "name": "00001166-2026 MT - Un acierto llamado planeación, Hidalgo ya no se improvisa ok.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-22T19:51:22.000Z",
+      "size": "15096",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1W3DKpQC_ASzz2IDeiOwBPv6KaLVavFRB",
+      "name": "00001163-AUDIO-2026-04-22-10-04-42.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-04-22T16:18:08.000Z",
+      "size": "46491",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "15k19p8ZWwnKH-YHtqeoMeJn0853fLVwp",
+      "name": "00000811-Primer Corte_Miguel Tello Vargas_22042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-22T13:18:36.000Z",
+      "size": "21813",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1tm6BSECWz-ijTgGJ3OvzcYaJxM4UZbyI",
+      "name": "00001160-Primer Corte_Miguel Tello Vargas_22042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-22T13:18:36.000Z",
+      "size": "21813",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "11vnC5ijRImWYQRrkKq0rvTNKy1c4M8d8",
+      "name": "00000809-Tercer Corte_Miguel Tello Vargas_21042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-22T02:48:36.000Z",
+      "size": "21049",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1zXme_eglrOUs_CdAWNGsq6mGqxkimKxz",
+      "name": "00001158-Tercer Corte_Miguel Tello Vargas_21042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-22T02:48:36.000Z",
+      "size": "21049",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1GArhpzPJLxDnMOPadMUgCogCCNO41S-l",
+      "name": "00000807-Segundo Corte_Miguel Tello Vargas_21042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T21:01:28.000Z",
+      "size": "23777",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1bIGkRO-5bP8ziMH_4t4WMczsTr4U5N1-",
+      "name": "00001156-Segundo Corte_Miguel Tello Vargas_21042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T21:01:28.000Z",
+      "size": "23777",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1RZzcffbC3_vN0-_OONSbrCoSk1LEDEIO",
+      "name": "00001154-2026 MT - Hidalgo impulsa modelo de partería centrado en las mujeres 210426 (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T20:39:04.000Z",
+      "size": "16146",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "18i4MRZWNakFXEfh44LLjLDT2rraEOYcq",
+      "name": "00001147-AUDIO-2026-04-21-13-14-52.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-04-21T19:14:52.000Z",
+      "size": "17475",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "10PwOAM2aPpBob67Kwt59be8eDxHxuFGE",
+      "name": "Blackwell_Propuesta MTV 30122025.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-21T18:41:22.000Z",
+      "size": "159100",
+      "subfolder": "01",
+      "subfolderName": "01. MTV_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1Jy6FAElDo2AGOjn4lGejHxbDrosXs2s2",
+      "name": "00001144-2026 MT - Hidalgo impulsa modelo de partería centrado en las mujeres 210426.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T17:54:18.000Z",
+      "size": "16495",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "134mGzsrw_kV2NsesaunHkRcfo748tj9l",
+      "name": "00000805-Primer Corte_Miguel Tello Vargas_21042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T13:31:42.000Z",
+      "size": "22083",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1QCciFjk3ASXUlsbEHhpZ2dkfL1boj-6q",
+      "name": "00001140-Primer Corte_Miguel Tello Vargas_21042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T13:31:42.000Z",
+      "size": "22083",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1RyQg1YQ1dxG_DXYvboUPqNElA_6sJvx6",
+      "name": "00000803-Tercer Corte_Miguel Tello Vargas_20042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T03:12:12.000Z",
+      "size": "20913",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1Kpq1BsMRMuxNJaLJHU2IpmKyedKnjf_C",
+      "name": "00001138-Tercer Corte_Miguel Tello Vargas_20042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-21T03:12:12.000Z",
+      "size": "20913",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1zKOzcpWPpF7zs56nEJ0ZguQoMRLtcs48",
+      "name": "00000801-Segundo Corte_Miguel Tello Vargas_20042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-20T21:52:38.000Z",
+      "size": "441514",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    },
+    {
+      "id": "1Jqk84djFX4dyOpLIda0skbF8mmQKI684",
+      "name": "00001125-Segundo Corte_Miguel Tello Vargas_20042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-20T21:52:38.000Z",
+      "size": "441514",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1ou7kq2jcwsalMHnbVWVqZ3mWHSoL8kHW",
+      "name": "00001119-AUDIO-2026-04-20-14-59-39.opus",
+      "mimeType": "audio/ogg",
+      "modifiedTime": "2026-04-20T20:59:40.000Z",
+      "size": "13162",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Tello + Blackwell_08052026"
+    },
+    {
+      "id": "1KkJkIFBCe15UFk4hThSU2hHqX6K1z1tg",
+      "name": "00000797-Primer Corte_Miguel Tello Vargas_20042026_02.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-20T14:33:24.000Z",
+      "size": "22838",
+      "subfolder": "04",
+      "subfolderName": "04.MTV_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Tello_08052026"
+    }
+  ]
+}

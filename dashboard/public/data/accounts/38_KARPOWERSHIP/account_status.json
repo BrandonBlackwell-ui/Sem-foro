@@ -1,0 +1,538 @@
+{
+  "number": "38",
+  "folderTitle": "38. KARPOWERSHIP",
+  "folderId": "1eFO2jHChCDx6rR98avfguKXQthQLrr8D",
+  "folderModifiedTime": "2026-05-12T16:40:11.979Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "2026.05.14 - Mexico - Blackwell Strategy - AgencyAgreement - V0 - MU_ET (Propuesta de contrato, vobo op 250526).docx",
+    "modifiedTime": "2026-05-25T16:14:00.510000Z",
+    "source": "01. Karpowership_Contratos_OC"
+  },
+  "deliverableSource": "01. Karpowership_Contratos_OC",
+  "lastActivity": {
+    "time": "2026-05-14T22:27:04Z",
+    "source": "01. Karpowership_Contratos_OC",
+    "file": "NDA Karpowership_Blackwell.docx",
+    "fileId": "1bSzi7XVbQ_NPu_tiFo8kf-33IpT8nP2c"
+  },
+  "subfolderActivity": {
+    "01. Karpowership_Contratos_OC": {
+      "subfolderId": "1d7Ln0qS-7glhdlQfSHjHlK9xZP8vvxI8",
+      "fileCount": 6,
+      "latestModified": "2026-05-25T16:14:00.510000Z",
+      "latestFile": "2026.05.14 - Mexico - Blackwell Strategy - AgencyAgreement - V0 - MU_ET (Propuesta de contrato, vobo op 250526).docx",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:15Z_verify",
+      "last_verified_at": "2026-06-12T14:09:15Z",
+      "nestedNote": "Contiene subcarpetas: Expediente"
+    },
+    "02. Karpowership_Entregables": {
+      "subfolderId": "1O-G1LMVq4zRy-BeAR6CKFzo6kbXHEQfT",
+      "fileCount": 1,
+      "latestModified": "2026-05-20T14:08:25Z",
+      "latestFile": "Testigo_trabajo_realizado_Karpowership.xlsx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:42:00Z_verify",
+      "last_verified_at": "2026-06-09T19:42:00Z"
+    },
+    "03.Karpowership_Reportes_Avance": {
+      "subfolderId": "1PU7O6TPg9_d87v4NJzIzLR7xvcwBOSis",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:42:00Z_verify",
+      "last_verified_at": "2026-06-09T19:42:00Z"
+    },
+    "04. Karpowership_Conversaciones_WA": {
+      "subfolderId": "1EYr0Od67wdAlpbARqfjAigcNPA8JvjYS",
+      "fileCount": 35,
+      "latestModified": "2026-05-20T14:17:30.358000Z",
+      "latestFile": "_chat_Karpowership_Medios.txt",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:42:00Z_verify",
+      "last_verified_at": "2026-06-09T19:42:00Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Interno KPS_20052026, WhatsApp Chat - Blackwell & KPS_20052026, WhatsApp Chat - Blackwell & KPS"
+    },
+    "05.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-09T19:41:44Z",
+      "last_verified_at": "2026-06-09T19:41:44Z"
+    },
+    "06.(missing)": {
+      "subfolderMissing": true,
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "source": "drive_crawl_2026-06-09T19:41:44Z",
+      "last_verified_at": "2026-06-09T19:41:44Z"
+    }
+  },
+  "pqProxy": {
+    "score": null,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "KARPOWERSHIP cuenta nueva 12-may 16:39 — propuesta engagement (sin firma) + credentials EN entregados al cliente. Sin entregables PR ni reportes aún (subfolders 02-06 ausentes). | DELTA 2026-05-15T14:00:00Z: NDA mutuo Karpowership-Blackwell agregado a 01., antecedente directo a firma comercial; account llega a fc=3 en slot crítico.",
+    "suggestion": "NDA firmado 13-may (KARPOWERSHIP/Blackwell, gobernanza inglesa, LCIA Londres). Avanzar a firma de propuesta comercial esta semana. En paralelo, crear subfolders 02-06 (Entregables, Reportes_Avance, Conversaciones_WA, Transcripciones_Llamadas, Agenda_Trabajos) y abrir kickoff cliente.",
+    "fileEvaluated": "NDA Karpowership_Blackwell.docx",
+    "evaluatedAt": "2026-05-15T14:00:00Z"
+  },
+  "nextAction": {
+    "type": "onboarding",
+    "priority": 1,
+    "label": "Cerrar firma de propuesta",
+    "text": "NDA firmado 13-may (KARPOWERSHIP/Blackwell, gobernanza inglesa, LCIA Londres). Avanzar a firma de propuesta comercial esta semana. En paralelo, crear subfolders 02-06 (Entregables, Reportes_Avance, Conversaciones_WA, Transcripciones_Llamadas, Agenda_Trabajos) y abrir kickoff cliente.",
+    "source": "delta-2026-05-15"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+  ],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-09T19:41:44Z",
+  "driveFiles": [
+    {
+      "id": "13tddCWPj77LHBFDAHuojtI0_OJrGX_wN",
+      "name": "2026.05.14 - Mexico - Blackwell Strategy - AgencyAgreement - V0 - MU_ET (Propuesta de contrato, vobo op 250526).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-25T16:14:00.510Z",
+      "size": "36707",
+      "subfolder": "01",
+      "subfolderName": "01. Karpowership_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1g9DW_74R6gvIxGERwPO-lB70Dlbp9XEg",
+      "name": "NDA_Karpowership_BWS_Firmado Completo.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-21T16:37:48.928Z",
+      "size": "13377698",
+      "subfolder": "01",
+      "subfolderName": "01. Karpowership_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1HGlOB8VaO4xOzbbR4a6nXokOwbpD0tWO",
+      "name": "_chat_Karpowership_Medios.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-20T14:17:30.358Z",
+      "size": "2455",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1VnvdQx2tR4ttNQrWbLrPN31RwT7PqXRU",
+      "name": "_chat (1).txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-20T14:12:00.000Z",
+      "size": "20571",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "16GecW8m1JA0BASCimQ0XTA1OlM2qqiJn",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-20T14:11:48.000Z",
+      "size": "25834",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno KPS_20052026"
+    },
+    {
+      "id": "1v3IbtQA2kUd1yuCO9NH9wGlBd_CYru0d",
+      "name": "Testigo_trabajo_realizado_Karpowership.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-05-20T14:08:25.000Z",
+      "size": "13494",
+      "subfolder": "02",
+      "subfolderName": "02. Karpowership_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1wwEY89NtdQfbZxmyw3puHMxB7_qO7s7d",
+      "name": "00003110-Karpowership_FlashReport_YucatanLaunch_2026.05.19 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T18:56:56.000Z",
+      "size": "444228",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno KPS_20052026"
+    },
+    {
+      "id": "1Myt7qfI6_JygBBbBH7th2jgkaYRiSZ1q",
+      "name": "00003139-Karpowership_FlashReport_YucatanLaunch_2026.05.19 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T18:56:56.000Z",
+      "size": "444228",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1xCeUuig5jy2cXGt-vMb8uDSMQ90f4YoV",
+      "name": "00003138-BW-26-05-KP-001_Karpowership_Report_May2026_EN.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T18:24:38.000Z",
+      "size": "35187",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1usP4W0JG5lqfg-RzEND7Uq3dOrDhjB2i",
+      "name": "00003104-Karpowership_FlashReport_YucatanLaunch_2026.05.18 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T02:52:32.000Z",
+      "size": "445380",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno KPS_20052026"
+    },
+    {
+      "id": "1Tk2TTx2MDB0Ukyw6INZvi3G1ILL31JuP",
+      "name": "00003131-Karpowership_FlashReport_YucatanLaunch_2026.05.18 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T02:52:32.000Z",
+      "size": "445380",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1pirs9Ro9di4mFkeCeE5Kvsb6K18691fx",
+      "name": "00003096-Karpowership_Flash_Report_May18_2026_2.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-05-19T01:35:34.000Z",
+      "size": "731229",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno KPS_20052026"
+    },
+    {
+      "id": "1R_XVJrBLBbgmApl0TK5id2IGSMRLWi8k",
+      "name": "00003094-Karpowership_FlashReport_YucatanLaunch_2026.05.18.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-19T01:35:34.000Z",
+      "size": "344953",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno KPS_20052026"
+    },
+    {
+      "id": "1GJu4q9YdpcUeRri8XNUqY-P8e3hSUOOI",
+      "name": "00003031-PR_MX_ESP_Karpowership ref orzará la seguridad energé tica en la Peninsula de Yu catan_2026.05.15_Final (5).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-18T17:11:46.000Z",
+      "size": "527492",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno KPS_20052026"
+    },
+    {
+      "id": "1mSjTtZlOD-kEJYV4Cw6R4jeRT-tEyL4v",
+      "name": "00003030-PR_MX_ESP_Karpowership ref orzará la seguridad energé tica en la Peninsula de Yu catan_2026.05.15_Final (3).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-18T17:11:46.000Z",
+      "size": "185629",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno KPS_20052026"
+    },
+    {
+      "id": "1-Exjp8Nj2P1sOGO88aywmxwhoHBuVkWY",
+      "name": "00003028-PHOTO-2026-05-18-11-07-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-18T17:07:46.000Z",
+      "size": "422059",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno KPS_20052026"
+    },
+    {
+      "id": "19eXnVJJkcCTAsRRBhAJfwO5pUb0eTHeC",
+      "name": "00003027-PHOTO-2026-05-18-11-07-44.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-18T17:07:44.000Z",
+      "size": "212176",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno KPS_20052026"
+    },
+    {
+      "id": "1bSzi7XVbQ_NPu_tiFo8kf-33IpT8nP2c",
+      "name": "NDA Karpowership_Blackwell (Sin Firmar).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-18T14:55:37.031Z",
+      "size": "37591",
+      "subfolder": "01",
+      "subfolderName": "01. Karpowership_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1p_gbJTiAcNF9gnDLGPmmfVZU0t4kMRXz",
+      "name": "NDA_Karpowership_BWS_FirmaH.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-18T14:55:19.000Z",
+      "size": "13364716",
+      "subfolder": "01",
+      "subfolderName": "01. Karpowership_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1tbR9WdYlVTMElJN5_kIZPQL-NqmA4t4R",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-15T18:23:52.000Z",
+      "size": "16034",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1NGgM9UVNJjmBFxWL6LskNheYsYrLbMqX",
+      "name": "00003112-Editorial Control- Announcement 1 Mexico (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T17:43:22.000Z",
+      "size": "18764",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1D8xN9Qf_j3F4y5xP_VCpMBRqFH617i-j",
+      "name": "00003112-Editorial Control- Announcement 1 Mexico.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-15T17:43:22.000Z",
+      "size": "18764",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1ONjG5bCk1Uvfq_xlO7BbWcJJb6r7SV-k",
+      "name": "00003106-Press Release QRoo May14,  2026 ENGSPA (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T23:22:48.000Z",
+      "size": "1690810",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1j8K3vweDfyhYzbW0thDH5hwgDEMQWc8t",
+      "name": "00003106-Press Release QRoo May14,  2026 ENGSPA (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T23:22:48.000Z",
+      "size": "1690810",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1jF8S3FD1HP-5BuXZaoVS8G39qi1HglxJ",
+      "name": "00003093-Press Release QRoo May14,  2026 ENGSPA (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T20:43:54.000Z",
+      "size": "2647236",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1-LrYwN6W-akh5F6D01cVH-h2S4aJ1hHG",
+      "name": "00003096-PHOTO-2026-05-14-14-36-46 (1).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-14T20:43:54.000Z",
+      "size": "422806",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1ZPtthGDvK8gEwgQrizU_pKLNQ2wK6HZi",
+      "name": "00003103-Press Release QRoo May14,  2026 ENGSPA (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T20:43:54.000Z",
+      "size": "2647236",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1GcCG6DEzZ1sOHwX6N_0cYe_I_MZbD_d_",
+      "name": "00003095-PHOTO-2026-05-14-14-36-46 (1).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-14T20:43:54.000Z",
+      "size": "445012",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1J97DrWUONFCd5X-zpMsof0WjuS9FRApx",
+      "name": "00003095-PHOTO-2026-05-14-14-36-46.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-14T20:43:54.000Z",
+      "size": "445012",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "18sa003yivIlgPRbl9cIn5BdiQyCVJ9Xj",
+      "name": "00003096-PHOTO-2026-05-14-14-36-46.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-14T20:43:54.000Z",
+      "size": "422806",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1xGwdBCe64QmCRM2bky0796C2xyg25j16",
+      "name": "00003103-Press Release QRoo May14,  2026 ENGSPA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T20:43:54.000Z",
+      "size": "2647236",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1rZbPgQSvk3Rxbor9JScOKE8kNT4ezDIh",
+      "name": "00003093-Press Release QRoo May14,  2026 ENGSPA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T20:43:54.000Z",
+      "size": "2647236",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1vn5TUlRswe-ghKPYvDuWg0s5KNWD1OlQ",
+      "name": "00003080-Press Release QRoo May13, 2026 (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T18:23:50.000Z",
+      "size": "2643639",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "10-RISNyAr_J6QGoVxfleovHCQ8GjKRoZ",
+      "name": "00003080-Press Release QRoo May13, 2026 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T18:23:50.000Z",
+      "size": "2643639",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1W5HEG3RsfGKygaUttfGsZbYYj4ItFw9I",
+      "name": "00003077-Press Release QRoo May13, 2026 (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T16:34:34.000Z",
+      "size": "10349",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1_5xDH5i0HAo8AftB_xc7oDbDDNOw-Cig",
+      "name": "00003077-Press Release QRoo May13, 2026 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T16:34:34.000Z",
+      "size": "10349",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1ErLOIiy6qq5uTXjyOLKkAy9KHJdqloJf",
+      "name": "00003053-PHOTO-2026-05-13-17-41-24 (1).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-14T01:23:48.000Z",
+      "size": "72342",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1Z3yONJ7Mf2qHI_PhhioJ8qsbXJY2OP40",
+      "name": "00003053-PHOTO-2026-05-13-17-41-24.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-14T01:23:48.000Z",
+      "size": "72342",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1EMMurxX71ddzaIPT2lfz-wd_mo3SijVB",
+      "name": "00003049-Karpowership_Press_Release_Quintana_Roo_v3_1 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T20:39:18.000Z",
+      "size": "17834",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS_20052026"
+    },
+    {
+      "id": "1IaC84Tjb23VlavYQ7TAP4pqQZcnILuhs",
+      "name": "00003049-Karpowership_Press_Release_Quintana_Roo_v3_1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T20:39:18.000Z",
+      "size": "17834",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Blackwell & KPS"
+    },
+    {
+      "id": "1gyIl20IHAYpNZFC8Y_LIdR8gc5KXM8sH",
+      "name": "Blackwell_Proposal_Karpowership_sin firma.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T16:41:27.361Z",
+      "size": "4314726",
+      "subfolder": "01",
+      "subfolderName": "01. Karpowership_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1ViMgN0TaAgge9RaDb47FlinR0D5gallK",
+      "name": "Blackwell_credentials_EN_c_.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-12T04:43:43.000Z",
+      "size": "3339196",
+      "subfolder": "01",
+      "subfolderName": "01. Karpowership_Contratos_OC",
+      "nestedPath": null
+    }
+  ]
+}

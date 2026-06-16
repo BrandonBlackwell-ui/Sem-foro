@@ -1,0 +1,414 @@
+{
+  "number": "05",
+  "folderTitle": "05. CREDIX",
+  "folderId": "1dIUZyibPOp6GZOSl9xkFfqv8-6U59UWF",
+  "folderModifiedTime": "2026-04-30T18:37:27.320Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "Captura de pantalla 2026-06-03 a las 7.16.43 a. m..png",
+    "modifiedTime": "2026-06-03T13:16:48Z",
+    "source": "04. CREDIX_Conversaciones_WA"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-13T18:12:32.369Z",
+    "source": "03. CREDIX_Reportes_Avance",
+    "file": "Reporte de Avance CREDIX",
+    "fileId": null
+  },
+  "subfolderActivity": {
+    "01. CREDIX_Contrato_OC": {
+      "subfolderId": "1iy1r0lY8mDvLBdxugAgVNEEa8-6LNnch",
+      "fileCount": 1,
+      "latestModified": "2026-04-20T23:49:14.006000Z",
+      "latestFile": "RE_ Inicio de proyecto Credix + Blackwell.eml",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:06Z_verify",
+      "last_verified_at": "2026-06-12T14:09:06Z"
+    },
+    "02. CREDIX_Entregables": {
+      "subfolderId": "1x_DHS18AXO6hax6Zl2oRxNWlp3fMWqqW",
+      "fileCount": 7,
+      "latestModified": "2026-05-13T00:27:23.275000Z",
+      "latestFile": "Credix Nota 1 (VF).docx",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:32Z_verify",
+      "last_verified_at": "2026-06-11T01:57:32Z",
+      "nestedNote": "Contiene subcarpetas: SCREENS SEGUIMIENTO"
+    },
+    "03. CREDIX_Reportes_Avance": {
+      "subfolderId": "15wJk-UoGEiqrmLSbyzPKRWCjaC2APqrH",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T18:12:32.369000Z",
+      "latestFile": "Reporte de Avance CREDIX",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:33Z_verify",
+      "last_verified_at": "2026-06-11T01:57:33Z"
+    },
+    "04. CREDIX_Conversaciones_WA": {
+      "subfolderId": "11scSB09vOfR4R9wXMttpjpkn9qSklMGI",
+      "fileCount": 19,
+      "latestModified": "2026-06-03T13:16:48Z",
+      "latestFile": "Captura de pantalla 2026-06-03 a las 7.16.43 a. m..png",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:33Z_verify",
+      "last_verified_at": "2026-06-11T01:57:33Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Credix_BWS"
+    },
+    "05. CREDIX_Transcripciones_Llamadas": {
+      "subfolderId": "1SacqUhEEyNqae0DQNUVuDLuftXeUZ2zk",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:34Z_verify",
+      "last_verified_at": "2026-06-11T01:57:34Z"
+    },
+    "06. CREDIX_Agenda_Trabajos": {
+      "subfolderId": "1snPkCqNQtYyvaR3xFeoucUSpbM203rBR",
+      "fileCount": 2,
+      "latestModified": "2026-05-13T00:29:01.715000Z",
+      "latestFile": "Actividades 23 al 27 de marzo",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:34Z_verify",
+      "last_verified_at": "2026-06-11T01:57:34Z"
+    }
+  },
+  "pqProxy": {
+    "score": null,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Lectura no posible: latestDeliverable es Credix Nota 1 y 2.docx de Feb-09, contenido no disponible en este ciclo. Se requiere reporte de resultados actualizado.",
+    "suggestion": "Cargar contrato/OC firmada en carpeta 01 de inmediato. Gestionar publicación de Nota 1 esta semana. Crear primera agenda en 06.",
+    "fileEvaluated": "Credix Nota 1 y 2.docx",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Cargar contrato/OC firmada en carpeta 01 de inmediato. Gestionar publicación de Nota 1 esta semana. Crear primera agenda en 06.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:56:34Z",
+  "driveFiles": [
+    {
+      "id": "1mNxUfUE8WnIWMh84kSi0PVDIq1goE8ZA",
+      "name": "Captura de pantalla 2026-06-03 a las 7.16.43 a. m..png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-06-03T13:16:48.000Z",
+      "size": "494848",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "122dje-wUieYdcA5VYJ8ghWCYc_7kQww_",
+      "name": "Captura de pantalla 2026-06-03 a las 7.16.34 a. m..png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-06-03T13:16:39.000Z",
+      "size": "488133",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1asqx0uRnB-NetsrFuCDrw_F92O0BHqDg",
+      "name": "Captura de pantalla 2026-06-03 a las 7.15.26 a. m..png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-06-03T13:15:32.000Z",
+      "size": "560647",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1pa-LdFCCAnxRjPLaMWOl8LGfnAKYlAcr",
+      "name": "WhatsApp Image 2026-06-02 at 4.55.26 PM.jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-06-03T13:15:08.000Z",
+      "size": "119934",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "14th15AAhqnY42f2_8V0QIBXx0gp18XRe4nkG1mb5wAA",
+      "name": "Reporte de Avance CREDIX",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T18:12:32.369Z",
+      "size": "1024",
+      "subfolder": "03",
+      "subfolderName": "03. CREDIX_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1xaG8TomYIqYJacqUdFgSO6U8z5uViXLpvWZEaajCLPE",
+      "name": "Actividades 23 al 27 de marzo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T00:29:01.715Z",
+      "size": "1217",
+      "subfolder": "06",
+      "subfolderName": "06. CREDIX_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1bFIRqcbxvH7PZWaP9P0O_6tJRK97vXXX",
+      "name": "Credix Nota 1 (VF).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T00:27:23.275Z",
+      "size": "9987",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1_1d0nFQYQOu3yfXIkVujPfaLlp5cDi2L",
+      "name": "Credix lanza Club Credix, la primera plataforma de una SOFOM para brokers en México (2).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T00:25:39.000Z",
+      "size": "8783",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1WZqNbCV5svQBA7ltzGeuFOjvndUMdqVwCZOiZLCyYlU",
+      "name": "Actividades 30marzo-3abril",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-29T22:47:23.821Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. CREDIX_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "13HL5GyMPt7lp8I-zmiC8xalQGh7uuHDO",
+      "name": "RE_ Inicio de proyecto Credix + Blackwell.eml",
+      "mimeType": "message/rfc822",
+      "modifiedTime": "2026-04-20T23:49:14.006Z",
+      "size": "249589",
+      "subfolder": "01",
+      "subfolderName": "01. CREDIX_Contrato_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1hXoD3se-Vgn9cLxOQbG3W5-L1NaNUu_S",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-04-20T23:46:16.000Z",
+      "size": "28065",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1rt8YXFqS5lZH1o8tV7ffW-PRWMGZiVI5",
+      "name": "00000395-Credix lanza Club Credix, la primera plataforma de una SOFOM para brokers en México.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-31T01:57:20.000Z",
+      "size": "8783",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1aEC8fReMSEDKeV6XwRF7MMotNxGWE-MA",
+      "name": "00000391-Broker-PNG1.png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-03-30T18:50:34.000Z",
+      "size": "48729",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "12zyqJ-hcoZqaqqpKGNtpCIKOVk9fQEkK",
+      "name": "00000377-CredixN2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-17T18:36:42.000Z",
+      "size": "7917",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1JxtrXTOL02YtDSL--DjrulgTaQFdgyGx",
+      "name": "00000362-Credix Nota 2 VF.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-13T19:31:00.000Z",
+      "size": "8072",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1Xf1rDM7MPp-IqQzKNich2KqL1S3IhViI",
+      "name": "00000340-Credix Nota 1 (VF).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-26T01:29:30.000Z",
+      "size": "2482876",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1KFL0KRR8FBhNfnq1vlpw-JoXO2816TBo",
+      "name": "00000324-PHOTO-2026-02-24-19-15-01.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-25T01:17:10.000Z",
+      "size": "124787",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1_iM0Y-3PECeUM7LATzQOl2qodxweiMY8",
+      "name": "00000322-PHOTO-2026-02-24-19-14-28.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-25T01:17:10.000Z",
+      "size": "93942",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1Rd8MsjxWuqR4apwJotrZ7S0eb1WgS5B8",
+      "name": "00000301-Credix Nota 1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-17T20:21:18.000Z",
+      "size": "3124152",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "19wDd4NtzuhTsLqXdL-A5UI_hZdHW5uCK",
+      "name": "00000288-Credix Nota 1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-17T19:24:58.000Z",
+      "size": "1679194",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1v-CHGbn22M1YPzCLe9b20wzMmhW6KJoZ",
+      "name": "00000271-Credix Nota 1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-09T17:45:58.000Z",
+      "size": "2481754",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1aWfgWXlEcxEfhp0RCLnRw8QtJJ8BlOMy",
+      "name": "Stock-Credix-1.jpg.jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-09T16:33:54.000Z",
+      "size": "854302",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1zLfiSzQz2YNTFfSrn8ne6-z2CUE4hQau",
+      "name": "Stock-Credix.jpg.jpeg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-09T16:24:58.000Z",
+      "size": "1623572",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1KNjsuAu2NKnindC64lv_sSUAQoMrkuQd",
+      "name": "Captura de pantalla 2026-02-09 a las 12.24.38 p. m..png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-02-09T16:24:42.000Z",
+      "size": "651956",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "nestedPath": "SCREENS SEGUIMIENTO"
+    },
+    {
+      "id": "12_aa98L0hkJMb2odhwQZBfHDbeYJWRDr",
+      "name": "Captura de pantalla 2026-02-09 a las 12.24.23 p. m..png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-02-09T16:24:28.000Z",
+      "size": "705368",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "nestedPath": "SCREENS SEGUIMIENTO"
+    },
+    {
+      "id": "1nSuxnYQlWacTQe11bkD-cZq869lrUPj1",
+      "name": "PROPUESTA ESTRATEGIA CREDIX 2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-09T14:56:40.000Z",
+      "size": "10390",
+      "subfolder": "02",
+      "subfolderName": "02. CREDIX_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "14QmGMdmH3KfH_Tb1E2GI863cqy7J4IaO",
+      "name": "00000253-Credix Nota 1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-19T15:25:40.000Z",
+      "size": "52397",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1MREpVNx9_NlaXu2Q-p3fPzLDXSCeSP3G",
+      "name": "00000252-PROPUESTA ESTRATEGIA CREDIX 2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-19T15:25:40.000Z",
+      "size": "74995",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "15hfE37rQ6EIMK3mvbqm7HZdIROJfLwaY",
+      "name": "00000231-PHOTO-2026-01-15-12-24-35.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-15T18:24:40.000Z",
+      "size": "79587",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    },
+    {
+      "id": "1MD63Ue5sgCPaDPCFh5uVMmJ7muL1YtwO",
+      "name": "00000224-Nota 2 Blackwell.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-01-15T17:40:24.000Z",
+      "size": "16943",
+      "subfolder": "04",
+      "subfolderName": "04. CREDIX_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Credix_BWS"
+    }
+  ]
+}

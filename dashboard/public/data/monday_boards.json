@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "1.0",
+  "asOf": "2026-05-14",
+  "comment": "Mapping entre cuentas del Semáforo Blackwell y boards de Monday.com. El cron lee este archivo en Step 7.5 para sincronizar acciones recomendadas como tasks.",
+  "workspace": {
+    "id": 14894007,
+    "name": "Pruebas",
+    "url": "https://blackwellstrategy.monday.com/workspaces/14894007"
+  },
+  "defaults": {
+    "assignee_user_id": 101221993,
+    "assignee_name": "Daniel Padilla",
+    "due_days_from_sync": 5,
+    "group_active": "topics",
+    "group_archived": "group_title"
+  },
+  "column_ids_template": {
+    "comment": "IDs observados en el board de Veracruz. Si el cron detecta IDs distintos en otro board (porque fue creado fuera del template), debe llamar get_board_info primero y usar los IDs reales.",
+    "person": "person",
+    "date": "date4",
+    "estado": "color_mm355my2",
+    "prioridad": "color_mm35hcc4",
+    "dimension": "color_mm354rm4",
+    "impacto_score": "text_mm35zy4f",
+    "categoria": "color_mm355w3t",
+    "evidencia": "long_text_mm352849"
+  },
+  "status_labels": {
+    "estado": [
+      "Por hacer",
+      "En desarrollo",
+      "En revisión",
+      "Concluido"
+    ],
+    "prioridad": [
+      "Alta",
+      "Media",
+      "Baja"
+    ],
+    "dimension": [
+      "CO",
+      "PQ",
+      "SC",
+      "CO + SC",
+      "CO + PQ"
+    ],
+    "categoria": [
+      "Documentación",
+      "Comunicación",
+      "Entregable",
+      "Administrativo"
+    ]
+  },
+  "boards": {
+    "01": {
+      "board_id": 18413235486,
+      "board_name": "TURBOFIN",
+      "account_drive_title": "01. TURBOFIN"
+    },
+    "02": {
+      "board_id": 18413235498,
+      "board_name": "MAJA",
+      "account_drive_title": "02. MAJA"
+    },
+    "03": {
+      "board_id": 18413235510,
+      "board_name": "ADUANAS/proyecto concluido",
+      "account_drive_title": "03. ADUANAS/proyecto concluido"
+    },
+    "04": {
+      "board_id": 18413235526,
+      "board_name": "IDLAYR /proyecto concluido",
+      "account_drive_title": "04. IDLAYR /proyecto concluido"
+    },
+    "05": {
+      "board_id": 18413235539,
+      "board_name": "CREDIX",
+      "account_drive_title": "05. CREDIX"
+    },
+    "06": {
+      "board_id": 18413235555,
+      "board_name": "RR",
+      "account_drive_title": "06. RR"
+    },
+    "07": {
+      "board_id": 18413235578,
+      "board_name": "APOLLO",
+      "account_drive_title": "07. APOLLO"
+    },
+    "08": {
+      "board_id": 18413293409,
+      "board_name": "ULDIS",
+      "account_drive_title": "08. ULDIS"
+    },
+    "09": {
+      "board_id": 18413293429,
+      "board_name": "GRUPO AZVI",
+      "account_drive_title": "09. GRUPO AZVI"
+    },
+    "10": {
+      "board_id": 18413293445,
+      "board_name": "JACK LEVI/ Detenido",
+      "account_drive_title": "10. JACK LEVI/ Detenido"
+    },
+    "11": {
+      "board_id": 18413293483,
+      "board_name": "ASCENSO Y DESCENSO",
+      "account_drive_title": "11. ASCENSO Y DESCENSO "
+    },
+    "12": {
+      "board_id": 18413293497,
+      "board_name": "MTV",
+      "account_drive_title": "12. MTV"
+    },
+    "13": {
+      "board_id": 18413293515,
+      "board_name": "GRUPO CIMA",
+      "account_drive_title": "13. GRUPO CIMA"
+    },
+    "14": {
+      "board_id": 18413293594,
+      "board_name": "DALINDE",
+      "account_drive_title": "14. DALINDE"
+    },
+    "15": {
+      "board_id": 18413293633,
+      "board_name": "ARMOR LIFE LAB /terminanción anticipada",
+      "account_drive_title": "15.ARMOR LIFE LAB /terminanción anticipada"
+    },
+    "16": {
+      "board_id": 18413293675,
+      "board_name": "MAPELLY/proyecto concluido",
+      "account_drive_title": "16. MAPELLY/proyecto concluido"
+    },
+    "17": {
+      "board_id": 18412407772,
+      "board_name": "Irugami",
+      "account_drive_title": "17. IRUGAMI"
+    },
+    "18": {
+      "board_id": 18413293766,
+      "board_name": "STPRM",
+      "account_drive_title": "18. STPRM"
+    },
+    "19": {
+      "board_id": 18413293808,
+      "board_name": "Casa Mata",
+      "account_drive_title": "19. Casa Mata"
+    },
+    "20": {
+      "board_id": 18410932504,
+      "board_name": "Veracruz",
+      "account_drive_title": "20. Veracruz / Haddad"
+    },
+    "21": {
+      "board_id": 18413293873,
+      "board_name": "Nuvoil",
+      "account_drive_title": "21. Nuvoil"
+    },
+    "22": {
+      "board_id": 18413294004,
+      "board_name": "Total Play/Proyecto concluido",
+      "account_drive_title": "22.Total Play/Proyecto concluido"
+    },
+    "23": {
+      "board_id": 18413294030,
+      "board_name": "LUCA/Terminación Anticipada",
+      "account_drive_title": "23. LUCA/Terminación Anticipada"
+    },
+    "24": {
+      "board_id": 18413294072,
+      "board_name": "GICSA",
+      "account_drive_title": "24. GICSA"
+    },
+    "25": {
+      "board_id": 18413294252,
+      "board_name": "Andy",
+      "account_drive_title": "25. Andy"
+    },
+    "26": {
+      "board_id": 18413294324,
+      "board_name": "BERNARDO V",
+      "account_drive_title": "26. BERNARDO V"
+    },
+    "27": {
+      "board_id": 18412407694,
+      "board_name": "Cuernavaca",
+      "account_drive_title": "27. CUERNAVACA"
+    },
+    "28": {
+      "board_id": 18412407740,
+      "board_name": "Queretaro",
+      "account_drive_title": "28. QUERETARO"
+    },
+    "29": {
+      "board_id": 18413294374,
+      "board_name": "COAST OIL",
+      "account_drive_title": "29. COAST OIL"
+    },
+    "30": {
+      "board_id": 18413294554,
+      "board_name": "ERICK RUBI",
+      "account_drive_title": "30.ERICK RUBI"
+    },
+    "31": {
+      "board_id": 18413294618,
+      "board_name": "SASIL",
+      "account_drive_title": "31. SASIL"
+    },
+    "32": {
+      "board_id": 18413294684,
+      "board_name": "COJAB",
+      "account_drive_title": "32. COJAB"
+    },
+    "33": {
+      "board_id": 18412407673,
+      "board_name": "Neza",
+      "account_drive_title": "33. NEZA"
+    },
+    "34": {
+      "board_id": 18413294886,
+      "board_name": "SUPPLY_PAY",
+      "account_drive_title": "34. SUPPLY_PAY"
+    },
+    "35": {
+      "board_id": 18410931564,
+      "board_name": "Pepe Aguilar",
+      "account_drive_title": "35. PEPE AGUILAR"
+    },
+    "37": {
+      "board_id": 18413294964,
+      "board_name": "LEADSALES",
+      "account_drive_title": "37. LEADSALES"
+    },
+    "38": {
+      "board_id": 18413295069,
+      "board_name": "KARPOWERSHIP",
+      "account_drive_title": "38. KARPOWERSHIP"
+    }
+  }
+}

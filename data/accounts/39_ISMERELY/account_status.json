@@ -1,0 +1,256 @@
+{
+  "number": "39",
+  "folderTitle": "39. ISMERELY",
+  "folderId": "12ADhd43qMt-NfKoO7Mv1D7a4FAf5LCU_",
+  "folderModifiedTime": "2026-05-22T02:37:36.874Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "isActive": true,
+  "subfolderActivity": {
+    "01. Ismerely_Contratos_OC": {
+      "subfolderId": "1PTB-WO5IaLnfp5QWaxEHIjyUpNSsY8tA",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:15Z_verify",
+      "last_verified_at": "2026-06-12T14:09:15Z"
+    },
+    "02. Ismerely_Entregables": {
+      "subfolderId": "1mbpsNaxHZDn4TYpLwLDAHUdBMVMm_5iw",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:42:01Z_verify",
+      "last_verified_at": "2026-06-09T19:42:01Z"
+    },
+    "03. Ismerely_Reportes_Avance": {
+      "subfolderId": "15W_10DhOJ8fY5xT1AEF8Rgy1kj1IbE4s",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:42:01Z_verify",
+      "last_verified_at": "2026-06-09T19:42:01Z"
+    },
+    "04. Ismerely_Conversaciones_WA": {
+      "subfolderId": "1i4ex62W_b1gg9rUJ0ZKFzdU8jFXPL_jh",
+      "fileCount": 17,
+      "latestModified": "2026-05-22T02:30:34Z",
+      "latestFile": "_chat.txt (en 27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:42:01Z_verify",
+      "last_verified_at": "2026-06-09T19:42:01Z",
+      "nestedNote": "Contiene subcarpetas: 27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    "05. Ismerely_Transcripciones_llamadas": {
+      "subfolderId": "1EwQa-4SKNCyyeKcbsJ-_Sncc0IsuHdzo",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:42:01Z_verify",
+      "last_verified_at": "2026-06-09T19:42:01Z"
+    },
+    "06. Ismerely_Agenda_Trabajos": {
+      "subfolderId": "1jKVgRxBktNAWQABFrz7BBPygheaJ6imq",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:42:01Z_verify",
+      "last_verified_at": "2026-06-09T19:42:01Z"
+    }
+  },
+  "latestDeliverable": {
+    "title": "_chat.txt (en 27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY)",
+    "modifiedTime": "2026-05-22T02:30:34Z",
+    "source": "04. Ismerely_Conversaciones_WA"
+  },
+  "lastCrawledAt": "2026-06-09T19:41:45Z",
+  "driveFiles": [
+    {
+      "id": "10S_leOakE6YcC9S7kL2mehvgrhHMoRae",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-22T02:30:34.000Z",
+      "size": "16757",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1Fa_MkbRJZSefM4DfKcDowuqNX4hs4yr5",
+      "name": "00003137-METRICAS_ISMERELY_FORBES.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-06T19:17:42.000Z",
+      "size": "382265",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1VbpYbmSY00pmVmKSYOEWdu051Jb67zQj",
+      "name": "00003122-PHOTO-2026-04-28-11-22-11.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-28T17:23:40.000Z",
+      "size": "127632",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1rkRvo8VxnsTSYTQ_jG3ZMyz6Gh12LIXe",
+      "name": "00003112-Elisa Ramírez - Forbes .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-23T17:21:00.000Z",
+      "size": "293216",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1CV9IScvdGkI5kkFPW3zv_88mxXNwEzCX",
+      "name": "00003100-PHOTO-2026-04-16-11-53-12.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-16T18:00:42.000Z",
+      "size": "162403",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1GOogczEHTBAx0uXV4-traaYAz2TXh8QO",
+      "name": "00003099-PHOTO-2026-04-16-11-53-09.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-16T17:53:08.000Z",
+      "size": "78493",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1w8uoo8OPMv95zhvW8BO4ug1G4t8hJyxQ",
+      "name": "00003097-PHOTO-2026-04-16-11-52-59.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-16T17:53:08.000Z",
+      "size": "157800",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1pHI2ha8_5efbGxHdDP2sTu_0VpU5psC8",
+      "name": "00003098-PHOTO-2026-04-16-11-53-05.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-16T17:53:08.000Z",
+      "size": "98872",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "14L1wBRiGlxCY26T9W83FGiDwC-H5qN4t",
+      "name": "00003068-Ismerely_Estrategia_Comunicacion_2026 v. 3.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-09T22:35:48.000Z",
+      "size": "70176",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1cbG2tZA_tPGYqmWnJEae9wF5nPxA6MR1",
+      "name": "00003060-Elisa - Ismerely.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-08T04:09:14.000Z",
+      "size": "9607",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1OteEzSCbNct3JM7TbDMC5aNlT-Fk6IJp",
+      "name": "00003056-ISMERELY-ELISA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-07T20:39:24.000Z",
+      "size": "2483159",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1KYtVPVO5Vjgk_TjG_fPVlJKw6m62fqXh",
+      "name": "00003083-PHOTO-2026-04-10-17-23-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T19:33:30.000Z",
+      "size": "95445",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1gkgDoml-nfCe2rl0lCvwA9_Io4PIihyH",
+      "name": "00003082-PHOTO-2026-04-10-17-23-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T19:33:30.000Z",
+      "size": "110985",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "15RKziiJ8fRewKg9-S13NR4jrxUQfhQ51",
+      "name": "00003081-PHOTO-2026-04-10-17-23-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T19:33:30.000Z",
+      "size": "131309",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1mVD8zAEkuY21-QThWr5ybo0f97wkqd0M",
+      "name": "00003043-ISMERELY-ELISA.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-07T18:06:56.000Z",
+      "size": "9396",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "1oJjypRxyxMadCota2Ajxxl8KAolL4xTD",
+      "name": "00003036-Elisa Ramírez artículo .docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-06T22:00:54.000Z",
+      "size": "16596",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    },
+    {
+      "id": "10yVAoAvXsUdPIeIcxfWQLIEZzrDg_V3j",
+      "name": "00003033-Ismerely_Estrategia_Comunicacion_2026.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-04-06T16:17:40.000Z",
+      "size": "848614",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "nestedPath": "27MAR al 21 MAY2026_WhatsApp Chat - BLACKWELL | ISMERELY"
+    }
+  ]
+}

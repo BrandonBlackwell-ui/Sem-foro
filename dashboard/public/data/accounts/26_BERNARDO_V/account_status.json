@@ -1,0 +1,302 @@
+{
+  "number": "26",
+  "folderTitle": "26. BERNARDO V",
+  "folderId": "14uoNzrFPTIuf1Vh3mNtfJZ8l1LekI0Cs",
+  "folderModifiedTime": "2026-05-22T02:47:01.903Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "15abril al 12 de mayo_BV_reporte_actividades_v3.docx",
+    "modifiedTime": "2026-05-13T04:36:40.239000Z",
+    "source": "03. BERNARDO_V_Reportes_Avance"
+  },
+  "deliverableSource": "03. BERNARDO_V_Reportes_Avance",
+  "lastActivity": {
+    "time": "2026-05-13T04:36:40.239Z",
+    "source": "03. BERNARDO_V_Reportes_Avance",
+    "file": "15abril al 12 de mayo_BV_reporte_actividades_v3.docx",
+    "fileId": "1xhXvoQ3tYvue9hIhIoy9qBsVyOgtPCK2"
+  },
+  "subfolderActivity": {
+    "01. BERNARDO_V_Contratos_OC": {
+      "subfolderId": "15LApniS8c0UNtdBkMKmk5kn2qAYfAaIE",
+      "fileCount": 1,
+      "latestModified": "2026-05-07T23:10:29.108000Z",
+      "latestFile": "Contrato_grupo_collado_Bernardo_V.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:11Z_verify",
+      "last_verified_at": "2026-06-12T14:09:11Z"
+    },
+    "02. BERNARDO_V_Entregables": {
+      "subfolderId": "1JM2RqDjVyV1iij8ituu94LubH1mzae7b",
+      "fileCount": 14,
+      "latestModified": "2026-03-27T19:04:17Z",
+      "latestFile": "Escaleta_Reunion_Zoom_Yordi.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:04Z_verify",
+      "last_verified_at": "2026-06-11T01:58:04Z"
+    },
+    "03. BERNARDO_V_Reportes_Avance": {
+      "subfolderId": "1CY_zFhujw0jHCVWpn1manQ_MgaTSr4tS",
+      "fileCount": 2,
+      "latestModified": "2026-05-13T04:36:40.239000Z",
+      "latestFile": "15abril al 12 de mayo_BV_reporte_actividades_v3.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:04Z_verify",
+      "last_verified_at": "2026-06-11T01:58:04Z"
+    },
+    "04. BERNARDO_V_Conversaciones_WA": {
+      "subfolderId": "1IWfWeDSZLI_01cf0B8q7R2nBnlq5ctIG",
+      "fileCount": 2,
+      "latestModified": "2026-04-29T22:33:59Z",
+      "latestFile": "Abril 2026 WhatsApp Chat - Christian Alvarez Productor Yordi Rosado.zip",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:04Z_verify",
+      "last_verified_at": "2026-06-11T01:58:04Z"
+    },
+    "05.BERNARDO_V_Transcripciones_llamadas": {
+      "subfolderId": "1ZyDU0viJT07P1iPcwjDD4Olqv7VI-Tc7",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:05Z_verify",
+      "last_verified_at": "2026-06-11T01:58:05Z"
+    },
+    "06. BERNARDO_V_Agenda_Trabajos": {
+      "subfolderId": "1Ei_4ilHJYvk-3H5I-d6Uf5EndqKbgcMA",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:58:05Z_verify",
+      "last_verified_at": "2026-06-11T01:58:05Z"
+    }
+  },
+  "pqProxy": {
+    "score": 50,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable es una escaleta de reunión Zoom con Yordi Rosado, no un reporte de resultados PR. Cuenta rescatada de stale: lastActivity actualizada a Apr-29 via WA exports de abril. | DELTA 2026-05-06: CO: contrato firmado y verificable cierra gap mayor del baseline (CO+8).",
+    "suggestion": "Subir Anexo A a 01.Contratos_OC para completar evidencia CO.",
+    "fileEvaluated": "Contrato_grupo_collado (1).pdf",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Subir Anexo A a 01.Contratos_OC para completar evidencia CO.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "media",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T01:57:03Z",
+  "driveFiles": [
+    {
+      "id": "1xhXvoQ3tYvue9hIhIoy9qBsVyOgtPCK2",
+      "name": "15abril al 12 de mayo_BV_reporte_actividades_v3.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T04:36:40.239Z",
+      "size": "10570",
+      "subfolder": "03",
+      "subfolderName": "03. BERNARDO_V_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1XE_YjA46gWoJlfCuOs7adKVzh-his0Zs",
+      "name": "Contrato_grupo_collado_Bernardo_V.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T23:10:29.108Z",
+      "size": "869151",
+      "subfolder": "01",
+      "subfolderName": "01. BERNARDO_V_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1KGU4XZ_iimUeAGQkTxQTJJwVKiTA-3L7",
+      "name": "Abril 2026 WhatsApp Chat - Christian Alvarez Productor Yordi Rosado.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-29T22:33:59.000Z",
+      "size": "3265",
+      "subfolder": "04",
+      "subfolderName": "04. BERNARDO_V_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1FObzYup6VHkw8W8RLvMX7jdkQWEninj9",
+      "name": "ABRIL2026WhatsApp Chat - Bernardo Vogel.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-04-29T22:28:43.740Z",
+      "size": "19057901",
+      "subfolder": "04",
+      "subfolderName": "04. BERNARDO_V_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1BW2zozhHaAnIO2k46-APVlH4f_jRcAzP",
+      "name": "reporte_actividades.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-27T21:02:40.000Z",
+      "size": "11122",
+      "subfolder": "03",
+      "subfolderName": "03. BERNARDO_V_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1yHxdWVxKbrLg1nlEX5Ba5kXBRKMbV0EP",
+      "name": "Escaleta_Reunion_Zoom_Yordi.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-27T19:04:17.000Z",
+      "size": "22804",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1WGhR1Wnbe-b45xundt12kjgzxlhqKxUC",
+      "name": "Estrategia_BV_v5.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-25T22:48:46.000Z",
+      "size": "239467",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1eJn73eKaBas9azEXySIRCcPdhUVrsGs-",
+      "name": "Estrategia_Comunicacion_Vogel_v2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-25T19:14:50.000Z",
+      "size": "21418",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1871hIzmGex9mCpj1nvZ06PElrI607jAJ",
+      "name": "Histórico_Noticias_VB-MS_20-11-25.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2025-11-20T23:17:26.000Z",
+      "size": "20589603",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1oxN8-_Dk6QBn5t8D_VYztxxRGsLiiF36",
+      "name": "BEVOV2 27.10 (1).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2025-11-12T21:45:08.000Z",
+      "size": "469929",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1ee8Nv0Pt6zo2Qqp4od5DoTcak7vry35Q",
+      "name": "BEVOV2 31.10.25.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2025-11-03T15:01:42.000Z",
+      "size": "488656",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "14M9osFL2YvExKn8U2JnLmCWEWr35dizJ",
+      "name": "Taller Crisis Mediática_BV.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2025-10-30T19:00:40.000Z",
+      "size": "27283086",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1mEvi-BxO5sdJMVxfo96RmwOtPZ41uOTu",
+      "name": "Taller Crisis Mediática_B.key",
+      "mimeType": "application/x-iwork-keynote-sffkey",
+      "modifiedTime": "2025-10-30T16:54:16.000Z",
+      "size": "26906521",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1wz2FWL7mrPN5e9Z3rNZmDp5lQG5wCCMd",
+      "name": "BEVOV2 27.10.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2025-10-30T16:12:18.000Z",
+      "size": "460353",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Jwkrjfq3LCjLoH6d9ISzxHyLsToG44DZ",
+      "name": "TALLER-EntrevistaBEVO.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2025-10-29T21:37:58.000Z",
+      "size": "16673372",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1a-908x_w6jHUhh1gKakG6o1Bq7CuGzUV",
+      "name": "Archivo_Dinamico_COMPLETO_BV_MS.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2025-10-29T04:01:14.000Z",
+      "size": "20586239",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1sfiCxpKVXwpIohaNCeVktB09E8Jc8XyI",
+      "name": "VeboN1V1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2025-10-28T15:27:44.000Z",
+      "size": "15423",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "11gg-f_T-E8naI7KtbMV_5YE6TDcHAqJh",
+      "name": "La_Jornada_2025_10_26 Replica BV.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2025-10-27T14:49:00.000Z",
+      "size": "101514",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1dfMQMKLx8jYsKcvszxu9lmS3CDfvDkIF",
+      "name": "PPTA BV_V1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2025-10-25T01:10:38.000Z",
+      "size": "451257",
+      "subfolder": "02",
+      "subfolderName": "02. BERNARDO_V_Entregables",
+      "nestedPath": null
+    }
+  ]
+}

@@ -1,0 +1,470 @@
+{
+  "number": "17",
+  "account_id": "17",
+  "account_name": "IRUGAMI",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1sileDsB0fFoeMJb8dn9iE7OfV_vIBzvw",
+      "title": "2026 - Entrevista Enfoque Noticias 100.1 FM - Diputado Irugami Perea Cruz .docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-25T18:20:31.189Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1SiZIa_OKpT_B8S_CxObBE-aO5vl3QUA-",
+      "title": "Columna_Opinion_Jovenes_Unen_al_Barrio_Acapulco_IRUGAMI.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-19T15:23:53.310Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1lY7WmKVCyB-bAqa6gCG9-qtr_tgcfCXD",
+      "title": "2026_Nota3_DiputadoAcapulqueño_EDITADAvf.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-19T15:22:09.960Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1RTv1BUfbOVA9yHG-Qlu9perq4n-ZCbTp",
+      "title": "2026_Nota2_DiputadosMorenaPT_ElSur (1) (2).docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-19T15:21:06.301Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1ChcCnABlidXLQAU0269jmm-IvBjueEBG",
+      "title": "Recomendacion_ElSur_IPC.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-14T15:41:08.047Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1VyGAq6q3uOPJBRxBLZgk2AGCGrdi38nF",
+      "title": "2026_Nota4_IrugamiDestaca_.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-13T10:00:09.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1uLqelDVVMHZjWIjDytNZHTRQNSNU9La3",
+      "title": "e7dc2093-5e52-4277-a0a5-3c098f773f77.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.834Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1N4rTvYBwbwbmW1iYk_WBS5Bus-dmrDgf",
+      "title": "244803c6-b447-4aab-a03b-5f63077648f0.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.712Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1olJGZCghz_TmoD8CKwmn3ReCGpvYh7R9",
+      "title": "1c559dea-5323-4389-9096-d8928a516055.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.699Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "16_l8R7_SfQO8CH7xOZosPTOkXzZcMtWr",
+      "title": "51a07793-7b97-4912-8c85-91df788b5668.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.689Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1z9Ja1UVs0tAw_68mzKk19NZbxirDuSpf",
+      "title": "65cd28be-8812-4897-af3c-eed43cb78d2f.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.685Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1rdawWOfuy8i-f7HkB9OASeVt34ADoWx8",
+      "title": "dcb43d9c-8d6e-4e26-89d2-620177b17805.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.667Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1lyACClD-NQ2WqOYz7IoAPFxS_lcz6b2f",
+      "title": "10cb5361-3fbd-4acf-b434-ec77e50dd07f.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.651Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1Ee6YAVbRgJHnZzBrutklQh_gIQL_pyEL",
+      "title": "f2faaa29-57b3-487d-95f9-14b07c7deb91.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.648Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1CU42GIJUngZ3Xxms3nEhAe8igEaWEVEmU2EwcivhQiw",
+      "title": "Estatus 19 de mayo Irugami",
+      "subfolder": "03",
+      "subfolderName": "03.IRUGAMI_Reportes_Avance",
+      "modifiedTime": "2026-05-20T19:01:01.758Z",
+      "kind": "Google Slides→texto"
+    },
+    {
+      "id": "18PdfUxJokF_4IHiY9sgim12KromuW_pp",
+      "title": "IPC_Reporte mensual ABRIL 26.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.IRUGAMI_Reportes_Avance",
+      "modifiedTime": "2026-05-06T20:23:06.565Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1BmqLaq5JDHXkz8DHEyFzr9MUd3ExVYnO",
+      "title": "Reporte_Actividades_IPC_260409 .docx",
+      "subfolder": "03",
+      "subfolderName": "03.IRUGAMI_Reportes_Avance",
+      "modifiedTime": "2026-04-23T04:08:07.780Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1PRgTzY9v1UM3SwChyzlbmVKt5CN7mH6E",
+      "title": "IRUGAMI_chat_consolidado.txt",
+      "subfolder": "04",
+      "subfolderName": "04.IRUGAMI_Conversaciones_WA",
+      "modifiedTime": "2026-05-14T01:10:56.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1FefqZ6BYQm0Si6fZzQPc8xvIWC0icjjzujKWdVSqtGE",
+      "title": "Actividades del 18 al 22 de mayo",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "modifiedTime": "2026-05-22T23:08:14.802Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1_vbaRkqla2viugaN7mxnRKRzbxFCu9aRNx_IFCzmRSg",
+      "title": "Actividades del 11 - 15 de mayo",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "modifiedTime": "2026-05-15T22:02:46.829Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1txHQL9W5b0N7YfUzrVjQmuajelnV3p7aMxllyV5Jsg4",
+      "title": "Actividades 4-8 mayo",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "modifiedTime": "2026-05-11T13:59:46.723Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1CJWHt9yRv2wkWf3CaUgxxrgeytAjlIw7FamQR5Vkq7I",
+      "title": "Actividades del 27 al 30 de abril",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "modifiedTime": "2026-04-30T20:54:05.205Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1xcAyE_sfJPPA93do__8A9mtw12vAG82FC9r3iGrHCs4",
+      "title": "Actividades del 6 al 10 de abril",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "modifiedTime": "2026-04-29T20:48:03.227Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1hyi6v3pmEo9SgwV-DVUbD3f_l8ZM6Xg_",
+      "title": "c1304c85-931b-43e0-b14d-3720dc61e1ac.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.575Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1xNdZ4urrdyYkfdmcmTEME9UyEp-FEjGG",
+      "title": "d76524ef-0cba-499b-9c10-a429b9003d79.JPG",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-07T20:27:34.540Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1B1FPSadeT6vEii7uWiFTqJCrIohcT-c7",
+      "title": "2026 - Entrevista Irugami Perea, en El Weso.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-06T02:33:13.870Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "19lvrSEBov-xBOFqYa4LWLZIt5aWNVvRb",
+      "title": "2026 - Acercamiento Magda Cisneros_IRUGAMI.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-06T02:22:53.078Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "11D85B_64vnnkT0eHyVQK0hXz7WbDpBwf",
+      "title": "2026_Nota2_DiputadosMorenaPT_EDITADAvf.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-04T23:02:34.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1Po1CbHD-MIwM2vYzSF7SmAB8nDhwHgcR",
+      "title": "2026_Nota1_LaIniciativa_Otis_EDITADAvf.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-05-04T23:02:32.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1yChBfasSdbF7SY0xglLLW-G_IzQz0XTO",
+      "title": "2026 Acapulco - TalkPoints_Imaginar_Acapulco_Distinto_3pag.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-04-30T23:30:31.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1lWCv54SQmrAgvqKf7AGg87_aMS026iVX",
+      "title": "Tianguis_Turistico_Acapulco_2026_Inversion_Historica_IRUGAMI.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-04-30T17:23:27.398Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1z9BPo0TKO1_IZBorDlc1KS4-nkGm_K2A",
+      "title": "Contenido_Editorial_Jovenes_Unen_al_Barrio_Acapulco_IRUGAMI.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-04-30T17:23:11.465Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1H21-ae7D_x40ZGgWNR6bqAzjipnUEnfE",
+      "title": "2026 Acapulco - Dos años y medio después de Otis_IRUGAMI.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-04-30T17:22:41.290Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1t5rc5AsQbst6rexambtEenLew7zSRYkK",
+      "title": "PROPUESTA DE ENTREVISTA CON EL SUR 170426_IRUGAMI.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-04-30T17:21:38.527Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1Dap8vNx172kyPDklmg0CRZ0mMhe5vWeO",
+      "title": "Plan de Comunicación_Jovenes_Unen_Al_Barrio.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-04-29T19:55:30.140Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1GDCuvEvDn8GfFvVx6v8nDUP5ZVBf9thHbn-6u4AVuuo",
+      "title": "Actividades del 13 al 17 de abril",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "modifiedTime": "2026-04-29T19:50:23.120Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1hTz6yIp5rWyEmuM45bB7rOr-PdR0YkXmdAbyJMOBUrk",
+      "title": "Actividades del 20 al 24 de abril",
+      "subfolder": "06",
+      "subfolderName": "06.IRUGAMI_Agenda_Trabajos",
+      "modifiedTime": "2026-04-29T19:48:26.762Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "17dAU1NHfzSqdEtoOjiO-sWdadwe9ny2c",
+      "title": "Propuesta_Difusion_Final_Irugami_Abril2026_1 cliente.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-04-23T04:10:30.103Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1QOBeXC65Gaa_hrqRS_cBv6FHiSIUdbkj",
+      "title": "OnePager_Irugami_MensajesClave.docx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-04-23T04:09:01.366Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1BLR89Xc_1cUWd21K3dxpF1G0JTacgu8Yp_d2xTO7nWs",
+      "title": "Proyecto Aca. v2",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-03-25T04:42:24.011Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "13NCka94GE_ZTpMXTZSGmJ3JL9i8SPw0SidhrNUigRqU",
+      "title": "Proyecto Aca. ",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-02-25T18:12:28.385Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1PqBqnG32C1KmmE3vzSZ3KSj0r5XLud3aJMOcI0hm1Xc",
+      "title": " Mapeo KOLs Aca",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-02-24T07:25:18.546Z",
+      "kind": "Google Slides→texto"
+    },
+    {
+      "id": "1YDa9dZ6O7_nSKjQ5evK8vD0nA64hSxIz",
+      "title": "VOCEROS ACAPULCO.xlsx",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-02-24T06:05:46.793Z",
+      "kind": "Excel→texto"
+    },
+    {
+      "id": "1jE0bjNW0f_KtevDgglj3sXgMPemZePCO2sgYudDWWgc",
+      "title": "Plan IPC 60 días",
+      "subfolder": "02",
+      "subfolderName": "02.IRUGAMI_Entregables",
+      "modifiedTime": "2026-02-20T02:17:16.006Z",
+      "kind": "Google Slides→texto"
+    }
+  ],
+  "files_read_count": 44,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Posicionar a Jesús Irugami Perea Cruz (Diputado federal Morena, Acapulco) como líder territorial viable y candidato a presidencia municipal 2027 mediante cobertura estratégica en medios T1-T2, difusión de iniciativa legislativa de conectividad digital de emergencia (Art. 75 LGPC + Art. 102 LMTR), y narrativa integrada post-Otis para filtro de encuesta Morena (convocatoria 21-sep-2026).",
+    "content_summary": "Cuenta en fase final (95%+) con portafolio mediático consolidado: 4+ entrevistas radio T1 completadas (Enfoque 25-may, MVS, W Radio), 10+ notas T1 nacionales publicadas (Excélsior, Milenio, Heraldo, La Crónica). Iniciativa legislativa conectividad digital presentada 15-abr y amplificada en mayo (Mundo Ejecutivo, Milenio, El Sur, Tianguis Turístico 1,900 MDP). Plan 6-acciones ejecutado en 90%+ (Semanas 0-3 completas; Semanas 4-6 en cierre). Únicos pendientes críticos: negociación paquete mensual El Sur sin cierre contractual, validación post-31-may de sostenibilidad mediática local, y reporte consolidado de alcance digital para encuesta Morena.",
+    "current_status": "A 25 de mayo: Entrevista Enfoque 100.1 FM (Alicia Salgado, T1 radio, 5-10 min, Q&A post-Otis) ejecutada exitosamente. Columna opinión y 4+ notas sobre iniciativa conectividad publicadas (4-22 may). Ranking Congresistas MX posicionó perfil legislativo. Conferencia de prensa iniciativa ejecutada 25-abr con voces ciudadanas Acapulco. Paquete El Sur ($25,500/mes) en negociación sin firma. Reporte consolidado de alcance mayo + entrevista El Sur pendientes de reagendar.",
+    "scope_of_service": "1) Gestión de entrevistas en radio nacional (MVS, Enfoque, W Radio, Heraldo Radio) con briefs defensivos, Q&A y talking points. 2) Colocación de notas en T1 nacionales (Excélsior, Milenio, Heraldo, La Crónica, Crónica) sobre reconstrucción, juventud, legislativa, gestión federal. 3) Desarrollo y publicación de columnas de opinión firmadas por diputado (tema: juventud, barrios, conectividad). 4) Posicionamiento como legislador destacado en iniciativa conectividad digital ante emergencias (reformas LGPC + LMTR, presentada 15-abr). 5) Relación estratégica con El Sur de Guerrero (medio T2, 281k visitantes/mes, alcance regional Acapulco). 6) Desarrollo de Q&A defensivo y narrativa para encuesta Morena (honestidad, cercanía, trabajo territorial, transformación). 7) Plan comunicación enfocado en destape narrativo y posicionamiento pre-encuesta. 8) Monitoreo presencia territorial sistemática en medios locales/redes.",
+    "client_promises": [
+      {
+        "promise": "Gestión de 3+ entrevistas en radio nacional (MVS, Enfoque, W Radio, Heraldo Radio)",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Colocación de notas en medios T1 nacionales (Excélsior, Milenio, Heraldo, La Crónica, Crónica)",
+        "cadence": "mensual",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Desarrollo y publicación de columnas de opinión firmadas por diputado",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Posicionamiento como diputado destacado en tema legislativo (conectividad digital ante emergencias)",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Relación estratégica con El Sur de Guerrero con paquete mensual de pauta",
+        "cadence": "mensual",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Desarrollo de Q&A defensivo y narrativa para encuesta Morena",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Plan de comunicación enfocado en destape narrativo y posicionamiento pre-encuesta Morena",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Monitoreo de presencia territorial sistemática y documentación en medios locales/redes",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Propuesta de difusión 6-acciones iniciativa legislativa (pitch columnistas, boletín, radio, conferencia, nota posicionadora, campaña digital)",
+        "cadence": "evento",
+        "status": "en_proceso"
+      }
+    ],
+    "fulfilled": [
+      "Entrevista Enfoque Noticias 100.1 FM (25-may-2026, T1 radio nacional, locutora Alicia Salgado, 5-10 min, brief Q&A post-Otis completo). Archivo: 2026 - Entrevista Enfoque Noticias 100.1 FM - Diputado Irugami Perea Cruz.docx.",
+      "Entrevista W Radio El Hueso (9-abr-2026, T1 radio sátira política, Fernando Rivera Calderón, formato lúdico, narrativa central Semana Santa 2026).",
+      "Entrevista MVS Radio Noticias (1-abr-2026, T1 radio nacional, cobertura agenda).",
+      "Nota Milenio: Reconstrucción Acapulco todo el año (25-feb-2026, T1, Abierto Mexicano Tenis).",
+      "Nota Heraldo: Reconstrucción ambiental y resiliencia costera (5-mar-2026, T1, eje ambiente post-Otis).",
+      "Nota Heraldo: Reactivación pesquera 1M alevines Laguna Tres Palos (24-mar-2026, T1, CONAPESCA).",
+      "Nota Excélsior: Acapulco alista Semana Santa (6-mar-2026, T1, seguridad/servicios).",
+      "Mención Frentes Políticos Excélsior por Alicia Salgado (12-mar-2026, T1, reconocimiento candidato 2027).",
+      "Nota La Crónica: Irugami lidera preferencias Acapulco 2027 (23-mar-2026, T1, intención voto).",
+      "Columna opinión Jóvenes Unen al Barrio (17-abr propuesta, 600-700 palabras, destino El Sur). Archivo: Columna_Opinion_Jovenes_Unen_al_Barrio_IRUGAMI.docx.",
+      "Iniciativa legislativa conectividad digital presentada 15-abr-2026 (Art. 75 LGPC + Art. 102 LMTR, co-autores Yoloczin Domínguez, Javier Taja, Gerardo Olivares). Documentos: 2026_Nota1_LaIniciativa_Otis_EDITADAvf.docx y 2026_Nota2_DiputadosMorenaPT_EDITADAvf.docx.",
+      "Conferencia de prensa iniciativa 25-abr-2026 en San Lázaro (voces ciudadanas Acapulco, Otis, sector pesquero).",
+      "Contenido TecNM Acapulco 4-may-2026 (Talk Points ponencia, 12:00 PM, conectividad emergencia + Jóvenes Unen al Barrio). Archivo: 2026 Acapulco - TalkPoints_Imaginar_Acapulco_Distinto_3pag.docx.",
+      "Contenido editorial Jóvenes Unen al Barrio (aterrizaje programa 16-abr, coordinación federal-estatal-municipal, respaldo legislativo Irugami). Archivo: Contenido_Editorial_Jovenes_Unen_al_Barrio_Acapulco_IRUGAMI.docx.",
+      "Análisis post-Otis Dos años y medio después (avances verificables, deudas pendientes, propuestas estratégicas). Archivo: 2026 Acapulco - Dos años y medio después de Otis_IRUGAMI.docx.",
+      "Contenido Tianguis Turístico 2026 inversión 1,900 MDP (supervisión 27-mar con director Fonatur Sebastián Ramírez, ocupación Semana Santa 90%, 16,800 habitaciones). Archivo: Tianguis_Turistico_Acapulco_2026_Inversion_Historica_IRUGAMI.docx.",
+      "OnePager mensajes clave (mensaje central, pilares narrativos, preguntas difíciles, frases ancla). Archivo: OnePager_Irugami_MensajesClave.docx.",
+      "Propuesta difusión 6-acciones iniciativa (Semanas 0-6: pitch columnistas, boletín, entrevista radio, conferencia, nota posicionadora, campaña digital). Archivo: Propuesta_Difusion_Final_Irugami_Abril2026_1 cliente.docx.",
+      "Actividades territoriales (13-17 abr y 20-24 abr documentadas). Archivos: Actividades del 13 al 17 de abril + Actividades del 20 al 24 de abril.",
+      "Plan comunicación Jóvenes Unen al Barrio (2 acciones: nota nacional + columna local El Sur, línea digital complementaria). Archivo: Plan de Comunicación_Jovenes_Unen_Al_Barrio.docx.",
+      "Documento narrativo Proyecto Acapulco v1 (24-feb-2026) y v2 (4-mar-2026) con enfoque, mensajes, Q&A, feedback entrevistas. Archivos: Proyecto Aca. + Proyecto Aca. v2."
+    ],
+    "pending": [
+      "Entrevista El Sur con Juan Luis Altamirano: reagendada de 23-abr. Propuesta documento 17-abr con duración 20-30 min, teléfono, audífonos alámbricos. Status: PENDIENTE CIERRE fecha definitiva (última mención: 20-24 abr, reagendamos sin confirmación final).",
+      "Cierre negociación paquete mensual El Sur de Acapulco: En diálogo según plan comunicación (17-abr). Propuesta $25,500/mes. Tarifas no confirmadas. Sin contrato ejecutado. Status: EN RIESGO.",
+      "Reporte consolidado de alcance acumulado POST-25-may-2026: Números de impresiones, alcance, engagement, menciones de prensa publicadas en junio. Métrica crítica para evaluación pre-encuesta Morena. Sin entregar.",
+      "Validación final: ¿Iniciativa legislativa tiene seguimiento mediático continuado en prensa regional Guerrero post-31-may? Sostenibilidad de mensaje en medios locales después del pico de mayo. Sin validación documentada.",
+      "Entrevista TecNM Acapulco (4-may-2026): Ficha técnica recibida. No hay reporte de cobertura post-evento, alcance con estudiantes, amplificación redes/medios locales. Sin seguimiento documentado.",
+      "Confirmación de asistencia diputado a eventos territoriales: Actividades reportadas (13-17 abr, 20-24 abr) sin detalles de participación real, cobertura generada, o impacto local documentado.",
+      "Columna opinión Jóvenes Unen al Barrio en El Sur: Propuesta 17-abr (título \"Que los jóvenes de Acapulco encuentren futuro en su propio barrio\", 600-700 pal). No hay evidencia de publicación confirmada."
+    ],
+    "urgent_actions": [
+      {
+        "action": "Confirmar FECHA DEFINITIVA entrevista El Sur con Juan Luis Altamirano. Enviar propuesta reagendada con 3 opciones de horario. Responsable: Equipo PR Blackwell. Due: 2-3 días hábiles (MÁXIMO 27-may-2026).",
+        "owner": "Equipo PR Blackwell",
+        "due": "2026-05-27"
+      },
+      {
+        "action": "Cierre contractual paquete mensual El Sur ($25,500/mes, 12 meses mínimo). Reunión con director/comercial El Sur. Enviar propuesta definitiva con tarifas, periodicidad, formatos. Responsable: Cuenta executive Blackwell. Due: 1 semana.",
+        "owner": "Cuenta Executive Blackwell",
+        "due": "2026-06-02"
+      },
+      {
+        "action": "Redactar y entregar REPORTE CONSOLIDADO DE ALCANCE MAYO 2026: impresiones totales, reach, engagement, menciones prensa (nacional + Guerrero), clasificación por medio (T1/T2/T3). Incluir tabla de notas por fecha y medio. Responsable: Equipo análisis. Due: antes de 31-may.",
+        "owner": "Equipo Análisis / Comunicación",
+        "due": "2026-05-31"
+      },
+      {
+        "action": "Seguimiento TecNM Acapulco (4-may): solicitar reporte de asistencia, cobertura local, menciones en redes/prensa Guerrero. Si no hay, gestionar nota de seguimiento en El Sur o Novedades. Responsable: Coordinador territorial. Due: 3 días.",
+        "owner": "Coordinador Territorial",
+        "due": "2026-05-28"
+      }
+    ]
+  },
+  "analyzed_at": "2026-06-11T02:54:18Z"
+}

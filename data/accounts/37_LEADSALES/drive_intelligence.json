@@ -1,0 +1,389 @@
+{
+  "number": "37",
+  "account_id": "37",
+  "account_name": "LEADSALES",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1Sm4Bn7cNuTGnAaKV2zW7yEW4kq1HRs8-",
+      "title": "BWS_ODC_LeadSales_docx",
+      "subfolder": "01",
+      "subfolderName": "01. LEADSALES_Contrato",
+      "modifiedTime": "2026-05-14T05:15:30.106Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1IflPP_NKRuMtldFEq6-NANKx0kwZgsjArko9YhTp6Ck",
+      "title": "Leadsales_Heraldo",
+      "subfolder": "02",
+      "subfolderName": "02. LEADSALES_Entregables",
+      "modifiedTime": "2026-05-13T01:50:31.825Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1D7NrGepTRhQQ_WOTEiGaCFV40jxY-VEZaGw9Piln7ng",
+      "title": "Leadsales_Excelsior",
+      "subfolder": "02",
+      "subfolderName": "02. LEADSALES_Entregables",
+      "modifiedTime": "2026-05-13T01:50:13.428Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1bYljl2Lw6cQsPBoP7Plu62hab4udz23POlWdi5knLI8",
+      "title": "Leadsales_Milenio",
+      "subfolder": "02",
+      "subfolderName": "02. LEADSALES_Entregables",
+      "modifiedTime": "2026-05-13T01:49:48.567Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1CzvNRSAttUt0bydaMX4t6kP0qedz_mCG",
+      "title": "REPORTE GENERAL LEADSALES .pdf",
+      "subfolder": "03",
+      "subfolderName": "03. LEADSALES_Reportes_Avances",
+      "modifiedTime": "2026-05-13T01:37:31.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1x_Q7x4eNmGipihhmcvufy40jwWG-q2yr",
+      "title": "_chat 2.txt",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-13T18:41:04.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1-wCoJzJTAnQ1AypdpPUCLh53c14A8zXK",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-13T18:40:56.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1G7Rrux2D1TKOPpSjV6jKDba9cUhg-9TL",
+      "title": "00003231-REPORTE GENERAL LEADSALES .pdf",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-13T01:47:28.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1FIZg_34abZW58aawmT3x0KDZ3xcUw_r7",
+      "title": "00003229-STICKER-2026-05-12-08-29-38.webp",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-12T14:34:28.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1SaEFlcatXQLADnf32Y_GeAYodhu3gmHJ",
+      "title": "00003228-PHOTO-2026-05-12-08-29-06.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-12T14:29:06.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1zMUTbH5v6gCIarBHVw5KRW4Bniajabfb",
+      "title": "00003221-STICKER-2026-05-11-21-30-49.webp",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-12T03:30:48.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "15_1sGPcagckAjROjf91UONMWsfYOw22K",
+      "title": "00003219-PHOTO-2026-05-11-20-37-09.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-12T02:41:04.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1ShIy3XFpklnidYNHuvRIxV58exhvAGMP",
+      "title": "00003204-PHOTO-2026-05-11-18-45-14.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-12T00:46:38.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1dzVBZNRN4NOAQFyqcejqFtciGD_CUUKs",
+      "title": "00003201-STICKER-2026-05-11-16-32-38.webp",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-11T22:27:42.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "10MAPAfo9k1QdltJ-rOdMM3ZXQ2wOKQEg",
+      "title": "00003196-STICKER-2026-05-11-16-27-40.webp",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-11T22:27:42.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1WJCDgDguI-zcYg7vlEKz5660T9zfW75l",
+      "title": "00003195-STICKER-2026-05-11-16-26-15.webp",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-11T22:26:16.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "16wdCJj6XU24EbKZgulUyfgzT7SoENZWr",
+      "title": "00003157-PHOTO-2026-05-09-08-52-10.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-09T14:56:46.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1s_MS1WgGP0HfVfWBAhxx_l4zRnCUx796",
+      "title": "00003076-PHOTO-2026-05-04-18-18-27.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T00:47:52.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1sheLJiXFSFZQmmi5EiOCq_36KGSCdiZc",
+      "title": "00003077-PHOTO-2026-05-04-18-19-02.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T00:47:52.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1nKoHGJXJkMKPAJg4aOf-MgIqUW0wMXg4",
+      "title": "00003074-PHOTO-2026-05-04-18-13-37.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T00:47:52.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1_qc4c1H3kmVILgsZW87a6t5c3vjtfF6V",
+      "title": "00003073-PHOTO-2026-05-04-18-12-29.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T00:47:50.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1qj3AGBaEWChV0Zcyks3mo5xjVaNKj3-W",
+      "title": "00003072-PHOTO-2026-05-04-18-11-51.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T00:47:50.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1i-maDTOZf-O89_orJjO4B7R0fRpjAucR",
+      "title": "00003071-PHOTO-2026-05-04-18-08-19.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-05-05T00:47:50.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1wCI2FN1j61UcsOETri-aIFK3MW7RhyvP",
+      "title": "00003007-Propuesta_LeadSales.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-04-13T21:16:52.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1WbaVIyk_t9lz5FuyGwvjcC73deohEMeS",
+      "title": "00003211-STICKER-2026-05-11-18-49-36.webp",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "modifiedTime": "2026-03-25T17:07:52.000Z",
+      "kind": "imagen"
+    }
+  ],
+  "files_read_count": 25,
+  "files_skipped": [
+    "[04] 00003122-AUDIO-2026-05-07-13-43-37.opus: formato no soportado (application/ogg)"
+  ],
+  "account_summary": {
+    "project_purpose": "Gestionar publicaciones en 3 medios nacionales de tier T1 para posicionar el lanzamiento de Lead Agent (producto de IA de Leadsales para ventas en WhatsApp) con narrativa de \"Vibe Selling\" y argumentos de ROI en LATAM.",
+    "content_summary": "Blackwell ejecutó exitosamente 3 publicaciones web en medios T1 nacionales (Heraldo, Milenio, Excelsior) el 11/05/26 bajo acuerdo de intercambio: medios a cambio de asesoría en IA. Las notas posicionaron Lead Agent, filosofía Vibe Selling, y métricas de valor (4.7M pesos pérdida anual, costo <51,700 pesos mensuales). El proyecto cerró con aprobaciones finales del cliente y evidencia de publicaciones en vivo.",
+    "current_status": "Cuenta concluida 13/05/26. Las 3 publicaciones fueron publicadas y validadas; reporte final enviado 12/05/26. Trabajo completado bajo presupuesto de $90,000 MXN ($0 costo real por intercambio de asesoría IA).",
+    "fulfilled": [
+      "3 publicaciones web publicadas en Heraldo de México (11/05/26)",
+      "Publicación en Milenio (11/05/26) — titular destacado 'Vibe Selling' y contexto Meta Business AI",
+      "Publicación en Excelsior (12/05/26) — visual Lead Agent + contexto operativo de 24/7",
+      "Narrativas autorizadas por cliente (Brody Medina, Ana Sofia Leadsales, Roby CEO) — iteraciones 4-5 con ajustes de lenguaje y énfasis en 'inteligencia artificial' full",
+      "Control editorial verificado — 3 documentos Google co-editados, comentarios integrados",
+      "Reporte general de trabajo entregado 12/05/26 con links y capturas",
+      "Acuerdo de intercambio ejecutado: Blackwell recibirá mentoría de IA con Roby como compensación"
+    ],
+    "pending": [
+      "Ejecución de mentoría/asesoría IA que quedó pendiente (prometida por Leadsales a cambio del servicio) — sin fecha confirmada de inicio al cierre de cuenta"
+    ],
+    "client_promises": [
+      {
+        "promise": "Publicar 3 notas en medios nacionales T1 con narrativa de Lead Agent y Vibe Selling",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Control editorial: narrativa autorizada sin interpretaciones del medio",
+        "cadence": "continuo",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Entrega de reportes de avance y publicaciones confirmadas",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Asesoría especializada en IA a cambio del valor de servicio (intercambio)",
+        "cadence": "null",
+        "status": "pendiente"
+      }
+    ],
+    "pq_assessment": {
+      "placements": 3,
+      "tier_mix": "T1 Nacional (Heraldo, Milenio, Excelsior)",
+      "quality_narrative": "Narrativa centrada, coherente across 3 medios. Lead Agent posicionado como solución post-Meta-ban (15 ene 2026). Vocero CEO (Roby) destacado en todas. Métricas de valor claras (4.7M pérdida anual, <51.7k vs 51.7k salarios). Vibe Selling adoptado como concepto de diferenciación. Ajustes finales en lenguaje (IA→Inteligencia Artificial) incorporados.",
+      "result_vs_objective": "100% de objetivo: 3 publicaciones nacionales estratégicas colocadas en T1 con control editorial full. Launch timing sincronizado (11-12 mayo = día del lanzamiento real). Amplificación en contexto regulatorio positivo (post-ban de chatbots genéricos).",
+      "score_estimate": 92
+    },
+    "co_assessment": {
+      "committed": 3,
+      "delivered": 3,
+      "on_time": 3,
+      "late": 0,
+      "missed": 0,
+      "note": "Operación limpia: 3 publicaciones comprometidas, 3 entregadas en 2 días (11-12 mayo). Timeline ajustado dinámicamente (fecha launch confirmada 5 mayo, publicaciones salieron 6 días después sin retraso). Chat muestra alineación cliente-agencia sin fricciones; 4 iteraciones de contenido integradas sin rechazo. Intercambio IA pendiente queda fuera del cierre de operación PR."
+    },
+    "key_facts": [
+      "Contrato firmado 13/05/26; inversión $90,000 MXN + IVA (vigencia 30 días)",
+      "Publicaciones: Heraldo (11/05/26 18:45), Milenio (11/05/26 20:37), Excelsior (12/05/26 08:28)",
+      "Vocero: Roby Peñacastro (CEO Leadsales)",
+      "Equipo Leadsales: Humberto Herrera (Account), Brody Medina (Head of Marketing), Ana Sofia (Social Media Lead)",
+      "Equipo Blackwell: Uriel, Sol, Johanna, Marisol",
+      "Narrativa clave: 'O creces con la IA o te reemplazan' (quote Roby)",
+      "Contexto: Meta ban chatbots IA genéricos 15 enero 2026 → Lead Agent como solución nativa Business AI",
+      "Datos posicionados: 30-40% mensajes fuera horario, 70-80% preguntas repetitivas, 4.7M pesos pérdida anual",
+      "Costo Lead Agent: <51,700 pesos mensuales vs equipo 3 personas = 51,700 pesos",
+      "Acuerdo especial: Intercambio de publicaciones por asesoría IA de Leadsales (100% valor servicio compensado)"
+    ],
+    "per_file_notes": [
+      {
+        "file": "BWS_ODC_LeadSales_docx",
+        "folder": "01. LEADSALES_Contrato",
+        "finding": "Propuesta firmada 13/05/26, $90k + IVA por 3 publicaciones + consultoría + control editorial. Vigencia 30 días. Permite intercambio IA como pago."
+      },
+      {
+        "file": "Leadsales_Heraldo",
+        "folder": "02. LEADSALES_Entregables",
+        "finding": "Titular impactante 'Con Lead Agent, Leadsales lleva IA a ventas por WhatsApp en LATAM'. Context: Meta Partner official, Vibe Selling, números de ROI (4.7M, 51.7k), quote Roby."
+      },
+      {
+        "file": "Leadsales_Excelsior",
+        "folder": "02. LEADSALES_Entregables",
+        "finding": "Énfasis en post-ban de chatbots (4.2% adopción), Vibe Selling como metodología honesta, colaboración human-agent (90-10), 24/7 sin ausencias."
+      },
+      {
+        "file": "Leadsales_Milenio",
+        "folder": "02. LEADSALES_Entregables",
+        "finding": "Posicionamiento de Lead Agent como 'primera en implementar Vibe Selling en LATAM', comparativa costo operativo, reafirma no-desplazamiento del vendedor."
+      },
+      {
+        "file": "REPORTE GENERAL LEADSALES .pdf (ambos)",
+        "folder": "03 & 04. REPORTE / CONVERSACIONES",
+        "finding": "Reporte final 12/05/26: 3 impactos web, links verificados, fechas y medios documentados, no incluye métricas de alcance (impresiones/shares no reportadas)."
+      },
+      {
+        "file": "_chat.txt (principal)",
+        "folder": "04. LEADSALES_Conversaciones_WA",
+        "finding": "Timeline completo 13 abr - 12 may: pitch propuesta, alineación de narrativa (23-24 abr), iteraciones contenido (4-8 may), aprobaciones finales (9-11 may), publicaciones (11-12 may). Clima positivo, sin escalaciones."
+      },
+      {
+        "file": "_chat 2.txt",
+        "folder": "04. LEADSALES_Conversaciones_WA",
+        "finding": "Cierre 12 mayo: Humberto confirma '3 notas cerramos ya'; pide coordinación de mentoría IA con Roby a cambio. Sol valida operación cerrada y reportada."
+      },
+      {
+        "file": "00003007-Propuesta_LeadSales.pdf",
+        "folder": "04. LEADSALES_Conversaciones_WA",
+        "finding": "Propuesta inicial (13/04/26): 3 publicaciones nacionales + consultoría + control editorial por $90k. Firma autorizada por Humberto Herrera (representante legal Leadsales)."
+      },
+      {
+        "file": "00003204 a 00003229 (imágenes)",
+        "folder": "04. LEADSALES_Conversaciones_WA",
+        "finding": "Screenshots de 3 publicaciones live (Heraldo, Milenio, Excelsior) con titulares, fotos de Roby, visual Lead Agent, evidence de colocación. Stickers celebratorios de equipo Leadsales."
+      }
+    ],
+    "scope_of_service": [
+      "Curaduría estratégica de 3 medios nacionales (Heraldo, Milenio, Excelsior) T1",
+      "Desarrollo y gestión de narrativa alineada a lanzamiento Lead Agent",
+      "Consultoría de apoyo y revisión de mensajes",
+      "Control editorial en publicaciones (garantía de narrativa autorizada)",
+      "Colocación de contenidos en portales web de medios nacionales",
+      "Reportería y seguimiento de publicaciones"
+    ],
+    "business_risk": "El intercambio de servicios (publicaciones por asesoría IA) quedó parcialmente sin ejecutar: Blackwell no recibió mentoría IA de Leadsales al cierre, con riesgo de deuda moral/comercial pendiente y falta de claridad de timing para compensación pactada.",
+    "opportunity": "Formalizar y ejecutar la mentoría IA prometida con Roby para generar activo de conocimiento en equipo Blackwell sobre IA/NLP aplicado a ventas conversacionales, con posible spillover a otras cuentas tech.",
+    "risks": [
+      {
+        "risk": "Intercambio IA no ejecutado: mentoría con Roby quedó pendiente sin fecha; riesgo de dilución o olvido del compromiso",
+        "severity": "media"
+      },
+      {
+        "risk": "No se reportan métricas de alcance (impresiones, shares, engagement) — solo links y fechas de publicación; imposible medir ROI mediático",
+        "severity": "media"
+      },
+      {
+        "risk": "Narrativa de Vibe Selling es concepto nuevo/acuñado por cliente; sin validación de adoption/resonancia en audiencia post-publicación",
+        "severity": "baja"
+      }
+    ],
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "approval",
+        "date": "11/05/26",
+        "source": "Brody Medina, Ana Sofia, Roby CEO",
+        "note": "Aprobación final de 3 notas; 'check!!' múltiples. Roby: 'Se ve cabrona la foto' + like a headline."
+      },
+      {
+        "type": "positive",
+        "signal": "praise",
+        "date": "12/05/26",
+        "source": "Humberto Herrera",
+        "note": "'Muy orgullosos de ustedes' al equipo Blackwell post-publicación."
+      },
+      {
+        "type": "positive",
+        "signal": "scope_expand",
+        "date": "05/05/26",
+        "source": "Brody Medina",
+        "note": "Solicita adelantar publicación a 11 mayo (lunes proxima semana) = confianza en timeline."
+      },
+      {
+        "type": "positive",
+        "signal": "referral",
+        "date": "12/05/26",
+        "source": "Humberto Herrera",
+        "note": "Solicita coordinar mentoría IA con Roby 'a cambio de lo que hicimos' = reconoce valor entrega."
+      }
+    ],
+    "strategic_recommendations": [
+      "Formalizar en documento anexo la mentoría IA pendiente: scope, duración, facilitador (Roby), fechas target (Q3 2026). Asignar propietario interno Blackwell para ejecutar.",
+      "Implementar system de tracking de alcance mediático post-publicación (impresiones, shares, mentions de 'Vibe Selling' en redes/prensa) para medir amplificación real del concepto.",
+      "Documentar learnings de Vibe Selling + Lead Agent en caso study interno: innovación de narrative positioning en contexto regulatorio (post-ban Meta)."
+    ],
+    "monday_ticket": {
+      "tipo": "normal",
+      "trigger": "Seguimiento de mentoría IA pendiente con Leadsales/Roby: formalizar alcance y calendario de sesiones como compensación de intercambio pactado."
+    }
+  },
+  "analyzed_at": "2026-06-05T21:39:46Z"
+}

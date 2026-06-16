@@ -1,0 +1,20 @@
+{
+  "name": "blackwell-wa-listener",
+  "version": "1.0.0",
+  "description": "Listener de WhatsApp para Blackwell Semáforo — escucha grupos y guarda mensajes en Supabase",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "@whiskeysockets/baileys": "^6.7.9",
+    "pino": "^9.4.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

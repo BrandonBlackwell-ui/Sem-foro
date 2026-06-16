@@ -1,0 +1,61 @@
+# ── Credenciales y secretos — NUNCA subir a git ──────────────────────────────
+.env
+Contraseña Supabase.txt
+service_account.json
+credentials.json
+token.json
+*.pem
+*.key
+
+# ── Datos generados por el sync (raíz — los de dashboard/public/data/ SÍ se suben) ──
+data/accounts_status.json
+data/accounts_status.js
+data/drive_intelligence.js
+data/*.bak*
+
+# ── Carpeta de deploy manual (no necesaria en git) ──────────────────────────
+netlify_deploy_ready/
+netlify_deploy/assets/
+netlify_deploy/data/
+netlify_deploy/index.html
+netlify_deploy/favicon.svg
+netlify_deploy/icons.svg
+netlify_deploy/.netlify/
+netlify_deploy/*.sh
+netlify_deploy/*.plist
+netlify_deploy/.last_deploy_hash
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# ── Node / React dashboard ────────────────────────────────────────────────────
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.env.local
+
+# ── WA Listener ───────────────────────────────────────────────────────────────
+wa_listener/node_modules/
+wa_listener/auth_state/        # sesión de WhatsApp — contiene claves privadas
+wa_listener/.env
+
+# ── Netlify ───────────────────────────────────────────────────────────────────
+.netlify
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# WhatsApp local session keys
+wa_listener/auth_state/

@@ -1,0 +1,584 @@
+{
+  "schemaVersion": "1.0",
+  "source": "ESTATUS PROYECTOS.xlsx",
+  "generated": "2026-05-18",
+  "tierLegend": {
+    "top": {
+      "label": "Top ingresos",
+      "color": "#38761d",
+      "description": "Cuentas top por ingresos del portafolio"
+    },
+    "estrategica": {
+      "label": "Estratégica",
+      "color": "#bf9000",
+      "description": "Cuentas estratégicas (alto perfil / pipeline político)"
+    },
+    "otra": {
+      "label": "Otra activa",
+      "color": "#94a3b8",
+      "description": "Cuentas activas sin clasificación especial"
+    },
+    "inactiva": {
+      "label": "Inactiva",
+      "color": "#cbd5e1",
+      "description": "Finalizada, Lead o fuera del scope vivo"
+    }
+  },
+  "accounts": [
+    {
+      "number": "01",
+      "name": "01. TURBOFIN",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 74000.0,
+      "responsable": "Sol",
+      "team": [
+        "daniel_m",
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "02",
+      "name": "02. MAJA",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 100000.0,
+      "responsable": "Sol",
+      "team": [
+        "angel",
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "03",
+      "name": "03. ADUANAS",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Proyecto",
+      "ingreso_mxn": null,
+      "responsable": "",
+      "team": [
+        "daniel_m"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "04",
+      "name": "04. IDALAYR",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "",
+      "ingreso_mxn": null,
+      "responsable": "",
+      "team": [],
+      "notas": ""
+    },
+    {
+      "number": "05",
+      "name": "05. CREDIX",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 160000.0,
+      "responsable": "Jo",
+      "team": [
+        "daniel_m",
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "06",
+      "name": "06. RR",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 0.0,
+      "responsable": "Sol",
+      "team": [
+        "daniel_m",
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "07",
+      "name": "07. APOLLO",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 140000.0,
+      "responsable": "Sol",
+      "team": [
+        "daniel_m",
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "08",
+      "name": "08. ULDIS",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 100000.0,
+      "responsable": "Sol",
+      "team": [
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "09",
+      "name": "09. GRUPO AZVI",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 190000.0,
+      "responsable": "Sol",
+      "team": [
+        "daniel_m",
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "10",
+      "name": "10. JACK LEVI",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Fee",
+      "ingreso_mxn": null,
+      "responsable": "",
+      "team": [
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "11",
+      "name": "11. ASCENSO Y DESCENSO",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 300000.0,
+      "responsable": "Sol",
+      "team": [],
+      "notas": ""
+    },
+    {
+      "number": "12",
+      "name": "12. MTV",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 180000.0,
+      "responsable": "Sol",
+      "team": [
+        "angel",
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "13",
+      "name": "13. GRUPO CIMA",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 166000.0,
+      "responsable": "Sol",
+      "team": [
+        "daniel_m",
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "14",
+      "name": "14. DALINDE",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 78500.0,
+      "responsable": "Sol",
+      "team": [
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "15",
+      "name": "15. ARMOR LIFE LAB",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Fee",
+      "ingreso_mxn": 0.0,
+      "responsable": "",
+      "team": [],
+      "notas": ""
+    },
+    {
+      "number": "16",
+      "name": "16. MAPELLY",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "",
+      "ingreso_mxn": 0.0,
+      "responsable": "",
+      "team": [],
+      "notas": ""
+    },
+    {
+      "number": "17",
+      "name": "17. IRUGAMI",
+      "tier": "estrategica",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 35714.0,
+      "responsable": "Jo",
+      "team": [
+        "atenas"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "18",
+      "name": "18. STPRM",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 230000.0,
+      "responsable": "Jo",
+      "team": [
+        "atenas",
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "19",
+      "name": "19. CASA MATA",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 45000.0,
+      "responsable": "Sol",
+      "team": [],
+      "notas": ""
+    },
+    {
+      "number": "20",
+      "name": "20. VERACRUZ",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 230000.0,
+      "responsable": "Jo",
+      "team": [
+        "atenas"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "21",
+      "name": "21. NUVOIL",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 160000.0,
+      "responsable": "Jo",
+      "team": [
+        "angel",
+        "daniel_m"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "22",
+      "name": "22. TOTAL PLAY",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 60000.0,
+      "responsable": "Jo",
+      "team": [
+        "angel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "23",
+      "name": "23. LUCA",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 0.0,
+      "responsable": "Sol",
+      "team": [
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "24",
+      "name": "24. GICSA",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 80000.0,
+      "responsable": "Jo",
+      "team": [],
+      "notas": ""
+    },
+    {
+      "number": "25",
+      "name": "25. ANDY",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 60000.0,
+      "responsable": "Sol",
+      "team": [
+        "angel",
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "26",
+      "name": "26. BERNARDO V",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "",
+      "ingreso_mxn": 0.0,
+      "responsable": "Jo",
+      "team": [],
+      "notas": ""
+    },
+    {
+      "number": "27",
+      "name": "27. CUERNAVACA",
+      "tier": "estrategica",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 53572.0,
+      "responsable": "Jo",
+      "team": [
+        "atenas"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "28",
+      "name": "28. QUERETARO",
+      "tier": "estrategica",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 89285.0,
+      "responsable": "Jo",
+      "team": [
+        "atenas"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "29",
+      "name": "29. COAST OIL",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 138500.0,
+      "responsable": "Jo",
+      "team": [
+        "angel",
+        "daniel_m"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "30",
+      "name": "30. ERIK RUBI",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Probono",
+      "ingreso_mxn": 0.0,
+      "responsable": "Jo",
+      "team": [],
+      "notas": ""
+    },
+    {
+      "number": "31",
+      "name": "31. SASIL",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 100000.0,
+      "responsable": "Jo",
+      "team": [
+        "atenas"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "32",
+      "name": "32. COJAB",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Probono",
+      "ingreso_mxn": 0.0,
+      "responsable": "Sol",
+      "team": [
+        "mariana"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "33",
+      "name": "33. NEZA",
+      "tier": "estrategica",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 71428.0,
+      "responsable": "Jo",
+      "team": [
+        "atenas"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "34",
+      "name": "34. SUPPLY PAY",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 175000.0,
+      "responsable": "Jo",
+      "team": [
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "35",
+      "name": "35. PEPE AGUILAR",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 230000.0,
+      "responsable": "Sol",
+      "team": [
+        "angel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "36",
+      "name": "36. TERRY GUTIERREZ",
+      "tier": "inactiva",
+      "estatus": "Lead",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 0.0,
+      "responsable": "Sol",
+      "team": [],
+      "notas": ""
+    },
+    {
+      "number": "37",
+      "name": "37. ISMERELY",
+      "tier": "inactiva",
+      "estatus": "Activo",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 260000.0,
+      "responsable": "Jo",
+      "team": [
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "37",
+      "name": "37. LEADSALES",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Probono",
+      "ingreso_mxn": 0.0,
+      "responsable": "Sol",
+      "team": [
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "38",
+      "name": "38. GERARDO GUTIERREZ",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 100000.0,
+      "responsable": "Sol",
+      "team": [
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "38",
+      "name": "38. KARPOWERSHIP",
+      "tier": "top",
+      "estatus": "Activo",
+      "tipo": "Fee",
+      "ingreso_mxn": 230000.0,
+      "responsable": "Jo",
+      "team": [
+        "angel",
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "41",
+      "name": "41. PONCHO ALMERAZ",
+      "tier": "inactiva",
+      "estatus": "Finalizado",
+      "tipo": "Probono",
+      "ingreso_mxn": 0.0,
+      "responsable": "Sol",
+      "team": [
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "42",
+      "name": "42. AUSTRIA",
+      "tier": "otra",
+      "estatus": "Activo",
+      "tipo": "Probono",
+      "ingreso_mxn": 0.0,
+      "responsable": "Jo",
+      "team": [
+        "atenas",
+        "uriel"
+      ],
+      "notas": ""
+    },
+    {
+      "number": "45",
+      "name": "45. GEOVANNA BAÑUELOS",
+      "tier": "inactiva",
+      "estatus": "Lead",
+      "tipo": "Proyecto",
+      "ingreso_mxn": 350000.0,
+      "responsable": "Jo",
+      "team": [
+        "atenas"
+      ],
+      "notas": ""
+    }
+  ]
+}

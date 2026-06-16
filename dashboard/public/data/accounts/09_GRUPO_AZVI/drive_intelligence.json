@@ -1,0 +1,494 @@
+{
+  "number": "09",
+  "account_id": "09",
+  "account_name": "GRUPO AZVI",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "14GTLPqR9Bk_p7eLaVG1zq7t5NPn_3bJj",
+      "title": "Respaldo_seguimiento_renovación_contrato_Grupo_AZVI.jpeg",
+      "subfolder": "01",
+      "subfolderName": "01. AZVI_Contratos_OC",
+      "modifiedTime": "2026-05-18T15:28:48.556Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1R-U0awVEZbueWH-7Or8gq2YSO_bM0463",
+      "title": "Correo renovación contrato .jpeg",
+      "subfolder": "01",
+      "subfolderName": "01. AZVI_Contratos_OC",
+      "modifiedTime": "2026-04-21T00:06:10.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1PQhUdisfTlOa22-JqWSQUJUAE6e2D9qO",
+      "title": "CONTRATO_AZVI.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. AZVI_Contratos_OC",
+      "modifiedTime": "2026-04-21T00:06:06.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1SDi4H7fkQ5hodBqMGJLP05tXBYndbbEJ",
+      "title": "Adendum_AZVI_011125_1763495405627.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. AZVI_Contratos_OC",
+      "modifiedTime": "2026-04-21T00:06:01.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1Kh0FnAq8Jv8hN91GPCMsnrRO5ipxQZe6",
+      "title": "Viaticos MTY AZVI - Hoja 1 (4).pdf",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-05-13T00:16:16.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1bH3_1Hn0uhxoy9NtNL5lJ9UESxw7nmgp",
+      "title": "Briefing_Book_Vinculaciones_Mayo2026_VF.docx",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-05-12T14:58:36.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1OewtIjiC4EjOr_c2KDrERWjbOIDmZXap",
+      "title": "Testigo de trabajo Blackwell_Grupo Azvi.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-05-08T18:08:30.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1gtm3Cg0yAsvZc8ne1iHI3-oyCS-Gbde04eVP8UOphWY",
+      "title": "AZVI_Presupuesto Viaje vinculacion MTY",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-05-07T04:44:55.122Z",
+      "kind": "Google Slides→texto"
+    },
+    {
+      "id": "1CLUADp8m-UhtjrmaacYo2JVPtLSTgEFl",
+      "title": "AZVI_140426.pptx",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:18:12.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1RMn7NA14iOWxB62XHISrrcxlU89BWQGp",
+      "title": "AZVI_Forbes_Mexico (1).docx",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:17:25.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1S4u0uioAItNE4EQWQJURO2eWGXozzzLG",
+      "title": "Excelsior_270426 (1).docx",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:15:51.247Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1iE7X718uJ9p_L6__-XLDjQvfupRT5VJO",
+      "title": "Milenio_270426 (1).docx",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:15:27.423Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1kUcFj7VCLiXlchN2BzF7n0bD5lLoE9eS",
+      "title": "WhatsApp Image 2026-04-10 at 5.55.52 PM.jpeg",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:12:31.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1SSzR7k1OOHfIr7TQqMPvN6WfNjBa8hAN",
+      "title": "WhatsApp Image 2026-04-10 at 2.29.37 PM.jpeg",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:12:19.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1RnnDW1AiKU87be7lwZB9wcNlLRAY2ClZ",
+      "title": "WhatsApp Image 2026-04-10 at 1.56.01 PM (1).jpeg",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:12:07.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1-8WvzxHZfehqk5y2YlTNQ984gA8utjCQ",
+      "title": "WhatsApp Image 2026-04-10 at 1.56.01 PM.jpeg",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:12:04.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "116KAFAoZ9SosPaPzYFCk1ZprlymK4URn",
+      "title": "20250304 Postura para Mario Maldonado_v1.docx",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:11:46.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1InqdfcwvnggGm7NBH7Q5oD8q2hPjdyye",
+      "title": "20260410 Carta_Francisco_Ortiz_Reforma_EC_2 (1).docx",
+      "subfolder": "02",
+      "subfolderName": "02. AZVI_Entregables",
+      "modifiedTime": "2026-04-29T22:11:44.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1gZmmqVP23NsPB8K7-DQrFhB9ZPK8r8Xl",
+      "title": "AZVI_Abril (1).pptx",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "modifiedTime": "2026-05-08T14:20:36.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1ceguJHVpqyFsY__U3c2b9KG_-WhEP54a",
+      "title": "AZVI_Reporte Q1.pdf",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "modifiedTime": "2026-04-23T03:43:43.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1sEWKwV9b52wST-k2Wijcf-cSbiiuvrOo",
+      "title": "Reporte de actividades Grupo Azvi + BWS octubre (1).pdf",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "modifiedTime": "2026-02-13T19:37:25.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "10iZC3jybKNq_BqigU_2klDg9vICcv-pQ",
+      "title": "Reporte de actividades Azvi + BWS septiembre (3).pdf",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "modifiedTime": "2026-02-13T19:36:59.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1nsd0EpZq49Mbc9OEWeolsQoRi7jn23y_",
+      "title": "Reporte de actividades Grupo Azvi + BWS noviembre 2025 (3).pdf",
+      "subfolder": "03",
+      "subfolderName": "03. AZVI_Reportes_Avance",
+      "modifiedTime": "2026-02-13T19:36:15.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1Q7Z2UboVIHTMFDSw4_DvejjaumGhw37R",
+      "title": "ESTATUS AZVI_BLACKWELL_ 2026_05_12 08_27 CST - Notas de Gemini.docx",
+      "subfolder": "05",
+      "subfolderName": "05. AZVI_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-12T15:08:18.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1ESDXjiHz1zn3OZyJOLW_XHe2ZWuE9Ii5",
+      "title": "Seguimiento vinculación medios MTY_ 2026_05_07 10_00 CST - Notas de Gemini.docx",
+      "subfolder": "05",
+      "subfolderName": "05. AZVI_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-08T19:51:48.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1_Sv1lsZc9PzzYmOtVi8bxk3WpNb0uwE1",
+      "title": "Estatus_ 2026_04_28 10_00 CST - Notas de Gemini.docx",
+      "subfolder": "05",
+      "subfolderName": "05. AZVI_Transcripciones_Llamadas",
+      "modifiedTime": "2026-04-29T16:19:06.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1Y9DxecILSUMgR7geoNHQkNbUylu6GShmZVcAxdHthVo",
+      "title": "Touchpoint AZVI + BWS: 2026/04/15 09:58 CST - Notas de Gemini",
+      "subfolder": "05",
+      "subfolderName": "05. AZVI_Transcripciones_Llamadas",
+      "modifiedTime": "2026-04-23T03:44:33.311Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1EBOxfpPggRD9JPi4nLvmV0ElpMY7EI0r",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "modifiedTime": "2026-05-18T16:26:18.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1dRUbrfJGUFF_LuwVit6qAqxKMxSrAbXg",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "modifiedTime": "2026-05-18T16:26:06.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1be3nFXCcipbRMhfXf8q4WWkHq3-ZJouc",
+      "title": "00002981-Itinerario_MTY_Mayo_2026.pdf",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "modifiedTime": "2026-05-16T00:44:46.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1QMN_Aug_8ATTYAAECZyf11JYtc6ecaKA",
+      "title": "00002948-Viaticos MTY AZVI - Hoja 1 (4).pdf",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "modifiedTime": "2026-05-12T23:01:18.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "16Ejo79cIqLNctBGwswtheL4eVBAoSrWU",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T16:45:52.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1ITN0QQlLqIaaWG85x0dQabiK0rEcoaSW",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T16:45:16.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1EPAjbkgxa69aXLQDIBHTOG1vIa6UijVu",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "modifiedTime": "2026-05-08T16:45:02.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1ma3YSBbVXctmPcRD6ImrJM3hAUHKd9I8",
+      "title": "00002871-AZVI_Presupuesto Viaje vinculacion MTY.pdf",
+      "subfolder": "04",
+      "subfolderName": "04.AZVI_Conversaciones_WA",
+      "modifiedTime": "2026-05-07T12:33:40.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "14YKKs7ZTZCRcjh0ofhRpw2v3Py1O5sOAdEMd7_mjEXI",
+      "title": "Actividades del 11 al 15 de mayo",
+      "subfolder": "06",
+      "subfolderName": "06.AZVI_Agenda_Trabajos",
+      "modifiedTime": "2026-05-15T18:21:01.114Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1DP-FJqOIx2atdZIm0ZSnmwB0q20q7wOhC9BVmDfXs4M",
+      "title": "Actividades del 27 de marzo al 30 de abril",
+      "subfolder": "06",
+      "subfolderName": "06.AZVI_Agenda_Trabajos",
+      "modifiedTime": "2026-05-13T00:11:04.450Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1TPqEFwsmRVWw3hs0Xty3y7XxMbII4uHBkKyu4400KFc",
+      "title": "Actividades del 4 al 8 de mayo",
+      "subfolder": "06",
+      "subfolderName": "06.AZVI_Agenda_Trabajos",
+      "modifiedTime": "2026-05-08T14:20:18.925Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1GZabhZFL4Hia7swFqFWmIHdKXrGFLG8fNlixuJFzYQU",
+      "title": "Actividades 13 al 17 de abril",
+      "subfolder": "06",
+      "subfolderName": "06.AZVI_Agenda_Trabajos",
+      "modifiedTime": "2026-04-29T18:31:12.260Z",
+      "kind": "Google Doc→texto"
+    }
+  ],
+  "files_read_count": 39,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Ejecutar estrategia integral de comunicación corporativa e institucional para Grupo Azvi en México, posicionando proyectos ferroviarios clave (Tren Saltillo-Nuevo Laredo 136 km, Puerta Logística del Bajío, Tren Suburbano AIFA), gestionando riesgos narrativos regulatorios (caso Koldo, auditorías ASF) y asegurando cobertura favorable en medios T1/T2 nacionales y regionales para adjudicaciones, operación y consolidación de liderazgo en infraestructura ferroviaria mexicana.",
+    "content_summary": "Período febrero-mayo 2026: Blackwell ejecutó exitosamente vinculación presencial Monterrey-Saltillo (18-19 mayo) con 5 medios T1/T2 regionales, vocera Elena Crespo presente. Acumulado 394+ notas monitoreadas (agosto 2025-mayo 2026). Contenciones exitosas: rectificación Reforma caso Tren Maya/Koldo (10 abril, <12h), cobertura AIFA (Excélsior, Milenio) sin exposición política. Contratos renovados $190k MXN/mes. Pendientes críticos: follow-up post-vinculación MTY-Saltillo vencido (30 mayo), aprobación final Forbes 175 años Azvi, validación impacto entrevista El Norte (Silvia Olvera), integración narrativa socios consorcio.",
+    "current_status": "Vinculación MTY-Saltillo (18-19 mayo) ejecutada: 5 medios T1/T2 confirmados (El Norte/remota, Multimedios, El Horizonte-Azteca, Vanguardia, Heraldo Saltillo), Elena Crespo presente, logística y hospedaje completados. Monitoreo permanente activo (zimat, 150+ notas mayo). Follow-up formalizado con medios PENDIENTE: sin confirmación de publicaciones derivadas, encuadres, fechas o impacto post-evento. Forbes en revisión interna Azvi sin aprobación final. Contrato vigente, comunicación abierta con Elena Crespo.",
+    "scope_of_service": [
+      "Monitoreo permanente 7 días/semana (zimat Monitoreos) de menciones Azvi, Construcciones Urales, Gami, proyectos ferroviarios con alertas clasificadas por tier y urgencia.",
+      "Vinculación estratégica con medios T1/T2 nacionales y regionales: encuentros 1:1, briefings, gestión de entrevistas, coordinación de eventos.",
+      "Gestión de contenidos: comunicados de prensa, cartas aclaratorias, posicionamientos técnicos, propuestas publicitarias (Forbes patrocinado).",
+      "Gestión de crisis reputacional: contención narrativa caso Koldo, protocolos <12h, rectificaciones editoriales, derecho de réplica.",
+      "Preparación de voceros: Elena Crespo — briefing books, Q&A, mensajes técnicos, capacitación para entrevistas presenciales.",
+      "Reportes mensuales: cobertura cuantitativa (notas, alcances Meltwater), análisis cualitativo narrativa y posicionamiento.",
+      "Coordinación logística: viajes presenciales voceros (transporte, hospedaje, agenda), viáticos consultores."
+    ],
+    "client_promises": [
+      {
+        "promise": "Ejecutar vinculación presencial mínimo 5 medios T1/T2 noreste (Multimedios, El Horizonte/TV Azteca, Vanguardia, Heraldo Saltillo, +1) en Monterrey-Saltillo 18-19 mayo 2026 con vocera Elena Crespo.",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Generar cobertura positiva sobre Tren Saltillo-Nuevo Laredo (adjudicación 19-27 marzo 2026) en medios nacionales y regionales con narrativa técnica y financiera.",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Gestionar narrativa y contención en torno a participación Azvi en proyectos ferroviarios frente a riesgos regulatorios (caso Koldo, auditorías ASF, incidentes).",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Producir contenido especial patrocinado en Forbes México con perfiles de liderazgo, trayectoria 175 años, cartera ferroviaria global.",
+        "cadence": "único",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Asegurar remuneración mensual $190,000 MXN (fija por factura) según Adendum noviembre 2025 con cobertura de viáticos para consultor en viajes fuera CDMX.",
+        "cadence": "mensual",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Mantener confidencialidad información corporativa Azvi y cumplimiento normativo (anticorrupción, LAFT, código ético, compliance penal).",
+        "cadence": "continuo",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Realizar follow-up formal post-vinculación con 5 medios Monterrey-Saltillo para confirmar publicaciones, encuadre y fechas antes de 30 mayo 2026.",
+        "cadence": "único",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Monitoreo continuo de narrativas ferroviarias y riesgos reputacionales con emisión de alertas y recomendaciones estratégicas (7 días/semana, octubre 2025–mayo 2026).",
+        "cadence": "continuo",
+        "status": "cumplido"
+      }
+    ],
+    "fulfilled": [
+      "Contrato base 1 agosto 2025; Adendum renovación 1 noviembre 2025 ($190k MXN/mes fijo, pago 5 días post-factura) — CONTRATO_AZVI.pdf.",
+      "Vinculación Monterrey-Saltillo 18-19 mayo 2026: 5 medios confirmados (El Norte/Silvia Olvera remota, Multimedios/Esther Herrera, El Horizonte/Luis Padua, Vanguardia, Heraldo Saltillo); itinerario 00002981-Itinerario_MTY_Mayo_2026.pdf; transporte privado $7k, hospedaje Holiday Inn $5,056, viáticos $8k; Elena Crespo presente.",
+      "Briefing Book completo (Briefing_Book_Vinculaciones_Mayo2026_VF.docx): Q&A por medio, fact sheet 175 años, mensajes clave técnicos, perfiles periodistas.",
+      "Cobertura Tren Saltillo-Nuevo Laredo adjudicación (20 marzo 2026): Reforma, Quadratín, El Economista, Mural, Zócalo, El Diario Chihuahua, Lado MX; narrativa consorcio Azvindi, 7,850 MXN, 8.8 km, 200 km/h máx.",
+      "Cobertura Tren Suburbano AIFA inauguración (27 abril 2026): Excélsior, Milenio, Cambio 22 destacan filial Cupisa electromecánica/catenaria sin exposición política — AZVI_Abril (1).pptx Slides 13-14.",
+      "Contención Reforma caso Tren Maya/Koldo (9-10 abril): Carta aclaratoria <12h a Francisco Ortiz (editor); rectificación publicada impresa; aclaración rol subcontratista vía/catenaria vs consorcio — 20260410 Carta_Francisco_Ortiz_Reforma_EC_2.docx.",
+      "Rectificación López-Doriga caso Koldo (4 noviembre 2025): Derecho de réplica publicado 'ni Grupo AZVI ni sus filiales son objeto de proceso judicial corrupción España' tras falsas acusaciones Víctor Aldama; acciones legales difamación.",
+      "Monitoreo permanente activo (octubre 2025-mayo 2026): zimat Monitoreos (Jorge Francisco) 7 días/semana, 150+ notas capturadas con clasificación T1/T2/T3, urgencia, transcripciones radio/TV.",
+      "Reuniones alineación estratégica semanales: 15 mayo (revisión abril, plan MTY, briefing book), 8 mayo (confirmación El Norte, presupuesto), 17 abril (plan balanceo narrativa), 4-8 mayo (logística).",
+      "Preparación vocera Elena Crespo: 5+ reuniones uno-a-uno (16-17 febrero 2026 Le Pain Quotidien/El Cardenal); briefing books Monterrey-Saltillo; Q&A técnico; mensajes postura Koldo.",
+      "Puerta Logística Bajío: cobertura TV4 Noticias, El Economista, El Sol Bajío destacan participación Grupo Azvi inversión 2,500 MXN, construcción junio 2026."
+    ],
+    "pending": [
+      "Follow-up formal post-vinculación MTY-Saltillo VENCIDO (plazo 30 mayo): sin confirmación de publicaciones derivadas, encuadres, fechas de salida, impacto o feedback de periodistas — Actividades 11-15 mayo lista como 'Pendiente'.",
+      "Aprobación final Forbes: contenido en etapa 'avanzada' desde febrero, múltiples seguimientos sin aprobación; revisión interna Azvi sobre 'trayectoria 175 años, cartera global, posicionamiento corporativo' bloqueada — Actividades 27 marzo-30 abril, 4-8 mayo, 11-15 mayo repiten 'Seguimiento aprobación Forbes'.",
+      "Entrevista El Norte (Silvia Olvera): confirmada para 18 mayo vía remota; cliente revisará 'internamente viabilidad y % de participación consorcios'; sin reporte de publicación derivada hasta 13 mayo — Actividades 27 marzo-30 abril.",
+      "Integración comunicacional socios consorcio (Recal, Indie): participan en licitaciones pero sin alineación narrativa de posicionamiento compartido — _chat.txt 19/03/26 'Podríamos intentar detener los que no han salido?'.",
+      "Reporte consolidado post-evento: sin documento oficial que resuma (a) medios que publicaron post-viaje, (b) alcances/impactos, (c) temas cubiertos vs briefing, (d) feedback periodistas.",
+      "Mario Maldonado: estrategia pendiente de definición — columna del 4 marzo/5 marzo replica narrativa Koldo sin cambios; expectativa de 'exclusiva' o primicia para Monterrey aún no materializada."
+    ],
+    "per_file_notes": [
+      {
+        "file": "Touchpoint AZVI + BWS: 2026/04/15 09:58 CST - Notas de Gemini",
+        "folder": "05. AZVI_Transcripciones_Llamadas",
+        "finding": "Reunión estratégica (15 abril): confirmación vinculación MTY 18-19 mayo, estrategia Forbes + Milenio/Excélsior post-concurso 152B, discusión Mario Maldonado (primicia vs encuentros locales), ajuste logística, espera de resultado concurso para activar 'fase 2' publicaciones."
+      },
+      {
+        "file": "_chat.txt (Interno Azvi_18052026)",
+        "folder": "04. AZVI_Conversaciones_WA",
+        "finding": "Chat WhatsApp interno Azvi: confirmación presencia Elena Crespo en Monterrey 18-19 mayo, preparativos logísticos, monitoreo Reforma/Quadratín/El Economista (20 marzo cobertura Tren Saltillo-Nuevo Laredo), intento de contención de notas no publicadas, tensión con Construcciones Urales sobre timing mediático pre-adjudicación."
+      },
+      {
+        "file": "_chat.txt (Azvi + Blackwell general 2026)",
+        "folder": "04. AZVI_Conversaciones_WA",
+        "finding": "Comunicación Azvi-Blackwell: monitoreo diario de cobertura (carpetas PDFs February-May 2026), reportes Luis Pacheco a Elena Crespo de menciones/notas de interés, preparación postura Mario Maldonado (versiones v1/v2/v3), confirmación entrevista El Norte (Silvia Olvera) 18 mayo remota, seguimientos Forbes sin cierre, gestión logística vuelos/hospedaje."
+      },
+      {
+        "file": "00002981-Itinerario_MTY_Mayo_2026.pdf",
+        "folder": "04. AZVI_Conversaciones_WA",
+        "finding": "Itinerario oficial 18-19 mayo: Monterrey (Multimedios 8:30-10:30, El Norte 14-16, TV Azteca Noreste 17-19), Saltillo (Vanguardia 8:30-10:30, Heraldo Saltillo 11-13); hospedaje Hyatt Place Valle; trasporte privado coordinado."
+      },
+      {
+        "file": "00002948-Viaticos MTY AZVI - Hoja 1 (4).pdf",
+        "folder": "04. AZVI_Conversaciones_WA",
+        "finding": "Presupuesto viáticos Monterrey: vuelos Volaris 2x $5,243 ($10,486), hospedaje Holiday Inn 2 noches 2x $2,528 ($5,056), viáticos (transporte/alimentos) 2x $4k ($8k), transporte privado $7k; total $35,123 + IVA."
+      },
+      {
+        "file": "00002871-AZVI_Presupuesto Viaje vinculacion MTY.pdf",
+        "folder": "04. AZVI_Conversaciones_WA",
+        "finding": "Presupuesto alternativo (inicial): vuelos Aeroméxico 2x $7,097 ($14,194), hospedaje Holiday Inn 1 noche 2x $2,076 ($4,152), viáticos $8k, total $30,297 sin transporte local definido; sugerencia de 2 consultores (uno descartado después)."
+      },
+      {
+        "file": "_chat.txt (Monitoreo AZVI y Dalinde octubre-noviembre 2025)",
+        "folder": "04. AZVI_Conversaciones_WA",
+        "finding": "Monitoreo octubre-noviembre 2025: zimat (Jorge Francisco) reporta notas Construcciones Urales/Azvi en Reforma, Zócalo, El Economista sobre adjudicación Tren Saltillo-Nuevo Laredo; columna Mario Maldonado (caso Koldo 4 marzo) con 150+ screenshots prensa/radio; derecho de réplica López-Doriga (4 noviembre) publicado en su columna."
+      },
+      {
+        "file": "Actividades del 11 al 15 de mayo",
+        "folder": "06. AZVI_Agenda_Trabajos",
+        "finding": "Reporte actividades 15 mayo: reunión alineación (revisión reporte abril con alcances, agenda MTY final, briefing book, Q&A); monitoreo permanente; pendientes: plan vinculaciones MTY-Saltillo y seguimiento aprobación Forbes."
+      },
+      {
+        "file": "Actividades del 27 de marzo al 30 de abril",
+        "folder": "06. AZVI_Agenda_Trabajos",
+        "finding": "Reporte actividades 30 abril: publicaciones inauguración AIFA (Excélsior, Milenio, Cambio 22); reunión estratégica (Forbes revisión, El Norte entrevista Silvia Olvera pendiente de viabilidad cliente, posible visita medios otoño recorrido obra); pendientes: Forbes aprobación, viabilidad El Norte, definir participación, logística mayo."
+      },
+      {
+        "file": "Actividades del 4 al 8 de mayo",
+        "folder": "06. AZVI_Agenda_Trabajos",
+        "finding": "Reporte actividades 8 mayo: reunión alineación (presupuesto MTY, confirmación entrevista Silvia Olvera 18 mayo); desarrollo reporte abril; monitoreo; pendientes: agenda final MTY, briefing book, reporte mensual, Forbes aprobación."
+      },
+      {
+        "file": "Actividades 13 al 17 de abril",
+        "folder": "06. AZVI_Agenda_Trabajos",
+        "finding": "Reporte actividades 17 abril: reunión alineación (plan balanceo conversación, seguimiento encuentros MTY-Saltillo); monitoreo permanente; pendiente: gestión con medios regionales para vinculación mayo."
+      }
+    ],
+    "key_facts": [
+      "Contrato activo: Grupo Azvi con Blackwell desde 1 agosto 2025; renovado 1 noviembre 2025 con Adendum a $190,000 MXN/mes fijo.",
+      "Vinculación MTY-Saltillo 18-19 mayo 2026: 5 medios T1/T2 (El Norte remota, Multimedios, El Horizonte-Azteca, Vanguardia, Heraldo Saltillo), Elena Crespo vocera, logística completada.",
+      "Cobertura Tren Saltillo-Nuevo Laredo: 20 marzo 2026 adjudicación consorcio Azvindi (Gami-Recal-Moyeda) por $7,850 MXN para 8.8 km, 200 km/h máx.; Reforma, Quadratín, El Economista, Mural, Zócalo, El Diario Chihuahua, Lado MX publicaron.",
+      "Caso Koldo contención: 9-10 abril 2026 carta aclaratoria <12h a Reforma; 4 noviembre 2025 derecho de réplica López-Doriga publicado tras acusaciones falsas Víctor Aldama.",
+      "AIFA inauguración: 27 abril 2026 cobertura Excélsior, Milenio, Cambio 22 sobre filial Cupisa (electromecánica/catenaria) sin exposición política.",
+      "Puerta Logística Bajío: inversión Grupo Azvi $2,500 MXN; construcción junio 2026; cobertura TV4, El Economista, El Sol Bajío.",
+      "Monitoreo zimat: octubre 2025-mayo 2026 Jorge Francisco captura 150+ notas con clasificación T1/T2/T3, transcripciones radio/TV, alertas urgencia.",
+      "Follow-up post-evento PENDIENTE: plazo vencido 30 mayo 2026; sin confirmación publicaciones derivadas MTY-Saltillo ni reporte consolidado impacto.",
+      "Forbes en revisión: contenido en etapa 'avanzada' desde febrero; sin aprobación final Azvi sobre narrativa '175 años, cartera global, posicionamiento corporativo'.",
+      "Entrevista El Norte: Silvia Olvera, 18 mayo remota; cliente revisará viabilidad interna y % participación consorcios; sin reporte publicación derivada."
+    ],
+    "business_risk": "Sin follow-up formal post-vinculación (vencido 30 mayo) y sin reporte consolidado de impacto MTY-Saltillo, existe riesgo de desconexión con medios y pérdida de credibilidad de Blackwell como facilitador de cobertura valiosa para adjudicaciones futuras.",
+    "opportunity": "Conversión de encuentros MTY-Saltillo en 'primera vuelta' para una 'segunda vuelta' de cobertura más sustantiva post-adjudicaciones 2026 (152B Monterrey, Puerta Logística operación) con mismo set de medios como aliados consolidados.",
+    "recommended_action": "Entregar en máximo 5 días reporte consolidado post-vinculación MTY-Saltillo (publicaciones, alcances, temas, feedback) y definir con Elena Crespo estrategia de seguimiento a medios para segunda fase de cobertura (junio-agosto 2026).",
+    "risks": [
+      {
+        "risk": "Follow-up post-evento MTY-Saltillo vencido (30 mayo); sin reporte consolidado impacto; riesgo de ruptura relación con medios regionales y pérdida credibilidad de Blackwell.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Forbes en revisión interna Azvi desde febrero sin cierre; posible pérdida de ventana editorial T1 o rechazo de narrativa por alineación corporativa no resuelta.",
+        "severity": "media"
+      },
+      {
+        "risk": "Estrategia Mario Maldonado (columnista El Universal/Heraldo/CEO) indefinida; narrativa Koldo sigue circulando sin cambios pese a postura y llamada; expectativa de 'exclusiva/primicia' no materializada.",
+        "severity": "media"
+      },
+      {
+        "risk": "Entrevista El Norte (Silvia Olvera 18 mayo) sin confirmación de publicación derivada ni feedback cliente sobre viabilidad; possible 'no-show' editorial post-reunión.",
+        "severity": "media"
+      },
+      {
+        "risk": "Socios consorcio (Recal, Indie, Construcciones Urales) sin alineación narrativa compartida; Construcciones Urales pidió frenar publicaciones pre-adjudicación (19 marzo), señal de tensión interna.",
+        "severity": "baja"
+      }
+    ]
+  },
+  "analyzed_at": "2026-06-11T03:45:32Z"
+}

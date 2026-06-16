@@ -1,0 +1,48 @@
+# netlify.toml — Configuración de Netlify para Proyecto Blackwell
+
+[build]
+  publish = "dashboard/dist"
+  command = "npm --prefix dashboard install && npm --prefix dashboard run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Función serverless para "Pregunta a Drive" (AskDrive)
+[functions]
+  directory = "netlify_deploy/netlify/functions"
+  node_bundler = "esbuild"
+
+# Redirects específicos PRIMERO (antes del catch-all /*)
+[[redirects]]
+  from = "/ask"
+  to = "/.netlify/functions/ask"
+  status = 200
+
+# Catch-all para React Router — SIEMPRE AL FINAL
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Configuración para `netlify dev` (desarrollo local)
+[dev]
+  command = "npm --prefix dashboard run dev"
+  targetPort = 5173
+  port = 8888
+  publish = "dashboard/public"
+  functionsPort = 9999
+  framework = "#custom"
+  autoLaunch = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"

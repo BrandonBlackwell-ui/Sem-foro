@@ -1,0 +1,66 @@
+{
+  "number": "38",
+  "account_id": "38",
+  "account_name": "KARPOWERSHIP",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1v3IbtQA2kUd1yuCO9NH9wGlBd_CYru0d",
+      "title": "Testigo_trabajo_realizado_Karpowership.xlsx",
+      "subfolder": "02",
+      "subfolderName": "02. Karpowership_Entregables",
+      "modifiedTime": "2026-05-20T14:08:25.000Z",
+      "kind": "Excel (texto)"
+    },
+    {
+      "id": "13tddCWPj77LHBFDAHuojtI0_OJrGX_wN",
+      "title": "2026.05.14 - Mexico - Blackwell Strategy - AgencyAgreement - V0 - MU_ET (Propuesta de contrato, vobo op 250526).docx",
+      "subfolder": "01",
+      "subfolderName": "01. Karpowership_Contratos_OC",
+      "modifiedTime": "2026-05-25T16:14:00.510Z",
+      "kind": "Word (texto)"
+    },
+    {
+      "id": "1g9DW_74R6gvIxGERwPO-lB70Dlbp9XEg",
+      "title": "NDA_Karpowership_BWS_Firmado Completo.pdf",
+      "subfolder": "01",
+      "subfolderName": "01. Karpowership_Contratos_OC",
+      "modifiedTime": "2026-05-21T16:37:48.928Z",
+      "kind": "PDF"
+    },
+    {
+      "id": "1HGlOB8VaO4xOzbbR4a6nXokOwbpD0tWO",
+      "title": "_chat_Karpowership_Medios.txt",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "modifiedTime": "2026-05-20T14:17:30.358Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1VnvdQx2tR4ttNQrWbLrPN31RwT7PqXRU",
+      "title": "_chat (1).txt",
+      "subfolder": "04",
+      "subfolderName": "04. Karpowership_Conversaciones_WA",
+      "modifiedTime": "2026-05-20T14:12:00.000Z",
+      "kind": "texto"
+    }
+  ],
+  "files_read_count": 5,
+  "files_skipped": [],
+  "account_summary": {
+    "content_summary": "```json\n{\n  \"content_summary\": \"Karpowership lanzó proyecto en Yucatán (250 MW, planta flotante GNL) con cobertura masiva el 18-19/05/26: 30+ publicaciones incluyendo T1 (Bloomberg, El Economista, Heraldo de México, Quadratín), T2 (sectorial: Energía a Debate, Offshore Energy, LNG Prime) y T3 (consu",
+    "business_risk": null,
+    "recommended_action": null,
+    "score_adjustment_recommendation": {
+      "co_delta": 0,
+      "pq_delta": 0,
+      "sc_delta": 0,
+      "reason": null
+    },
+    "monday_ticket": {
+      "tipo": "normal",
+      "trigger": null
+    }
+  },
+  "analyzed_at": "2026-06-04T14:48:39Z"
+}

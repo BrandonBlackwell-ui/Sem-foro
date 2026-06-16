@@ -1,0 +1,11 @@
+{
+  "_comment": "Watermarks de lectura incremental de WhatsApp por cuenta. Generado automáticamente por wa_parser.py.",
+  "_schema": {
+    "account_number": {
+      "last_ts": "ISO timestamp del último mensaje procesado",
+      "rolling_summary": "resumen acumulado opcional",
+      "message_count_total": "total de mensajes en el chat al último sync",
+      "updated_at": "ISO timestamp de la última actualización"
+    }
+  }
+}

@@ -1,0 +1,490 @@
+{
+  "number": "24",
+  "folderTitle": "24. GICSA",
+  "folderId": "1p5QE0y2LQDvrG1iS1Dm44nJlmufhS84h",
+  "folderModifiedTime": "2026-05-21T15:54:44.916Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "boletin_gicsa_Gol-e-Arte 21MAY.docx",
+    "modifiedTime": "2026-06-01T15:31:18.345000Z",
+    "source": "02.GICSA_Entregables"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-11T17:15:30Z",
+    "source": "02.GICSA_Entregables",
+    "file": "ABRIL2026_Evidencias_GICSA.xlsx",
+    "fileId": "12Ocvr0TLfp4kddQ7n8tQ-gr0RmXxWHUF"
+  },
+  "subfolderActivity": {
+    "01.GICSA_Contratos_OC": {
+      "subfolderId": "1eWWxV8c1wp6XeZ7VZHe96VT8R33vm8kx",
+      "fileCount": 7,
+      "latestModified": "2026-05-26T16:26:42.134000Z",
+      "latestFile": "ID Apoderado Jesus Alejandro Morfin Chong.pdf (en Expediente)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:11Z_verify",
+      "last_verified_at": "2026-06-12T14:09:11Z",
+      "nestedNote": "Contiene subcarpetas: Expediente"
+    },
+    "02.GICSA_Entregables": {
+      "subfolderId": "13H0q6Bua5QMfNnYfZizKi3u9QI_eLIDH",
+      "fileCount": 10,
+      "latestModified": "2026-06-01T15:31:18.345000Z",
+      "latestFile": "boletin_gicsa_Gol-e-Arte 21MAY.docx",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T04:09:30Z_verify",
+      "last_verified_at": "2026-06-11T04:09:30Z",
+      "nestedNote": "Contiene subcarpetas: drive-download-20260522T041304Z-3-001"
+    },
+    "03. GICSA_Reportes_Avance": {
+      "subfolderId": "1NGvkGhWI3SIGN38no1X5yP1PHtG-xsG7",
+      "fileCount": 1,
+      "latestModified": "2026-04-29T23:30:46Z",
+      "latestFile": "FlashReport_GICSA_Abril2026.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T04:09:31Z_verify",
+      "last_verified_at": "2026-06-11T04:09:31Z"
+    },
+    "04. GICSA_Conversaciones_WhatsApp": {
+      "subfolderId": "1etE4E20yNya3qeK2833eXWc_lmVqXt9e",
+      "fileCount": 18,
+      "latestModified": "2026-04-29T23:47:38Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - GICSA+JO)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T04:09:31Z_verify",
+      "last_verified_at": "2026-06-11T04:09:31Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - GICSA+JO"
+    },
+    "05. GICSA_Transcripciones_llamadas": {
+      "subfolderId": "1q57xBA9CDcWXKyczXSpYJ3aQdcmvZkV9",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T04:09:31Z_verify",
+      "last_verified_at": "2026-06-11T04:09:31Z"
+    },
+    "06. GICSA_Agenda_Trabajos": {
+      "subfolderId": "1st0K-1EZQ1U33y8OwjaijidjXyS_8R69",
+      "fileCount": 1,
+      "latestModified": "2026-04-29T23:45:15Z",
+      "latestFile": "Abri- Mayo 2026 Plan de Trabajo _GICSA_Mayo2026.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T04:09:32Z_verify",
+      "last_verified_at": "2026-06-11T04:09:32Z"
+    }
+  },
+  "pqProxy": {
+    "score": 71,
+    "tierMix": {
+      "tier1": 1,
+      "tier2": 6,
+      "tier3": 4,
+      "none": 0
+    },
+    "narrativaQuality": "alta",
+    "hasMetrics": true,
+    "evidence": "FlashReport Abril 2026: 17+ impactos totales. Milenio columna Estira y Afloja (T1), Quadratín (T2), Eje Central (T3), El Sol de Acapulco/OEM (T2), Reporte Índigo (T2), Heraldo columna (T2), La Razón (T2). 100% sentimiento positivo. Narrativa clara con mensajes posicionados y tabla de links. | DELTA 2026-05-11T18:30:00Z: Tracker evidencias abril GICSA cargado 11-may con 17 piezas Reapertura Isla Acapulco (5 T1 + 3 T2 + 9 T3, 3 columnas firmadas).",
+    "suggestion": "Consolidar tracker GICSA con cifras EPV/Meltwater para próximo reporte mensual abril. Capitalizar tres columnas firmadas (Reporte Indigo, Heraldo, La Razón) con segunda ola pre-apertura noviembre 2026. Definir si tracker xlsx será el formato oficial de reporte o si se acompaña con .pptx ejecutivo.",
+    "fileEvaluated": "ABRIL2026_Evidencias_GICSA.xlsx",
+    "evaluatedAt": "2026-05-11T18:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Consolidar tracker GICSA con cifras EPV/Meltwater para próximo reporte mensual abril. Capitalizar tres columnas firmadas (Reporte Indigo, Heraldo, La Razón) con segunda ola pre-apertura noviembre 2026. Definir si tracker xlsx será el formato oficial de reporte o si se acompaña con .pptx ejecutivo.",
+    "source": "delta-2026-05-11"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "media",
+  "playbookViolations": [],
+  "isActive": true,
+  "lastCrawledAt": "2026-06-11T04:09:19Z",
+  "driveFiles": [
+    {
+      "id": "1dqwAvAVSR8D6uYOWShF_LtDObyAwP6MQ",
+      "name": "boletin_gicsa_Gol-e-Arte 21MAY.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-06-01T15:31:18.345Z",
+      "size": "18641",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1o-YVTCltCvBwDd8nrgAvXh4TkmP0wDJg",
+      "name": "ID Apoderado Jesus Alejandro Morfin Chong.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T16:26:42.134Z",
+      "size": "586836",
+      "subfolder": "01",
+      "subfolderName": "01.GICSA_Contratos_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1sl9zEOSke7URPH9E0GPYWpP5uKPOps5t",
+      "name": "Constancia de situacion fiscal GICSA mayo 2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T16:26:18.815Z",
+      "size": "139357",
+      "subfolder": "01",
+      "subfolderName": "01.GICSA_Contratos_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1PgyYoQIZ0SlDwHJ0jmIuGRs7PxaE2n8h",
+      "name": "Opinion de cumplimiento GICSA.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T16:25:51.212Z",
+      "size": "80521",
+      "subfolder": "01",
+      "subfolderName": "01.GICSA_Contratos_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1r9XFQ7yHzpuNrGn1OowF7h5iRZZ-Chtp",
+      "name": "Acta Constitutiva GICSA.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T16:25:32.261Z",
+      "size": "2836066",
+      "subfolder": "01",
+      "subfolderName": "01.GICSA_Contratos_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1CPM3a_1KOe0gOeCpnHfd9Svv2MyFkCVO",
+      "name": "Poderes GICSa.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-26T16:25:10.150Z",
+      "size": "2644412",
+      "subfolder": "01",
+      "subfolderName": "01.GICSA_Contratos_OC",
+      "nestedPath": "Expediente"
+    },
+    {
+      "id": "1wuYHdT0HwgAq0bXv0lJd_shDjveUKOpy",
+      "name": "5.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-21T23:24:38.000Z",
+      "size": "111757",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": "drive-download-20260522T041304Z-3-001"
+    },
+    {
+      "id": "1LMWciN1VdUN0QQa_WwCGPW1hqtGNx_I3",
+      "name": "3.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-21T23:24:38.000Z",
+      "size": "175972",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": "drive-download-20260522T041304Z-3-001"
+    },
+    {
+      "id": "19EPhwFqbwo5yQUc3VikG-2CfOBZxR-vw",
+      "name": "1.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-21T23:24:38.000Z",
+      "size": "132610",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": "drive-download-20260522T041304Z-3-001"
+    },
+    {
+      "id": "1DmGd7BA-SkbfmoiljcxT-88kbtCOKWwf",
+      "name": "6.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-21T23:24:38.000Z",
+      "size": "150345",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": "drive-download-20260522T041304Z-3-001"
+    },
+    {
+      "id": "1E6DCMzcSupk7fIRtpvFa1a8bfxF7KvVX",
+      "name": "7.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-21T23:24:38.000Z",
+      "size": "186911",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": "drive-download-20260522T041304Z-3-001"
+    },
+    {
+      "id": "1MRM9yqFvWA9JHGyInW9vZkk8hAphdf-F",
+      "name": "2.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-21T23:24:38.000Z",
+      "size": "157037",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": "drive-download-20260522T041304Z-3-001"
+    },
+    {
+      "id": "10BjtKQvjVOsstIXfr3p_jPwhUCvUmr_8",
+      "name": "4.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-21T23:24:38.000Z",
+      "size": "163754",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": "drive-download-20260522T041304Z-3-001"
+    },
+    {
+      "id": "19Q85EJRhRm5Wl9wbp3mfL5LExdC5zi_V2IgtA12iquI",
+      "name": "ODC-GICSA ABR2026 BLACKWELL",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-11T19:01:47.128Z",
+      "size": "11107",
+      "subfolder": "01",
+      "subfolderName": "01.GICSA_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "12Ocvr0TLfp4kddQ7n8tQ-gr0RmXxWHUF",
+      "name": "ABRIL2026_Evidencias_GICSA.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modifiedTime": "2026-05-11T17:15:30.578Z",
+      "size": "12604",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1MyClUdGrwX4TujjWU_LKKtbMKMJlXGb3",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-04-29T23:47:38.000Z",
+      "size": "23049",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1cP05eX3YzVaEoBQ7R0SxfzE5euK0YGOy",
+      "name": "00003174-Abri- Mayo 2026 Plan de Trabajo _GICSA_Mayo2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T23:46:36.000Z",
+      "size": "29021",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1h2QZaUOgDygWUsQw1Pt6cIb3_w3dqIoF",
+      "name": "Abri- Mayo 2026 Plan de Trabajo _GICSA_Mayo2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-29T23:45:15.000Z",
+      "size": "29021",
+      "subfolder": "06",
+      "subfolderName": "06. GICSA_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1gmKLtpsW4j81ElQvzFnKqKhEmpjtdmgP",
+      "name": "00003172-FlashReport_GICSA_Abril2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T23:35:38.000Z",
+      "size": "470812",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1rjrCZZDoatBbEpb7Smnk9Pu9vUmGIZ16",
+      "name": "FlashReport_GICSA_Abril2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T23:30:46.000Z",
+      "size": "470812",
+      "subfolder": "03",
+      "subfolderName": "03. GICSA_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "1GphE5zxAIHpTGheFPBtuVT-2E67IJ5Wa",
+      "name": "ODC-GICSA ABR2026 BLACKWELL.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-29T22:39:18.000Z",
+      "size": "417166",
+      "subfolder": "01",
+      "subfolderName": "01.GICSA_Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1Rfiu6M4yeCo8Zy94p38Eouj2zbv9tjwu",
+      "name": "00003155-ODC-GICSA ABR2026 BLACKWELL.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-28T20:38:56.000Z",
+      "size": "417166",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "13rNmC_i8hBiV7uYIGg-xsochqO3iRgfL",
+      "name": "00003144-ODC-GICSA ABR2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-24T02:11:46.000Z",
+      "size": "5893535",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "11ZDAE5Vtat89UVScuYDT09vKRHe-Y__E",
+      "name": "00003140-G026 LUXE 2026 CSF 01.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-24T00:41:54.000Z",
+      "size": "139857",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1luFbjG7jBA-LZCalOotSDXV1oTAVgbMX",
+      "name": "00003115-PHOTO-2026-04-13-12-36-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-13T18:41:56.000Z",
+      "size": "197227",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1aWe6QBzq2h3Bv3AGiuH-RB0WF16eOw3A",
+      "name": "00003078-PHOTO-2026-04-10-07-37-57.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T13:38:12.000Z",
+      "size": "105170",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1Pw64lmTTpEeNjHGSIwq-Pi_M8TG28UGf",
+      "name": "00003077-PHOTO-2026-04-10-07-37-27.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-10T13:37:28.000Z",
+      "size": "120879",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1uGu-bbBe51prhKRmDfVo9cz2fcrdH1Y0",
+      "name": "00003038-PHOTO-2026-04-07-13-03-59.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T19:06:34.000Z",
+      "size": "656304",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1zJ2Pp14Vjy4-4u_jCOhjdb1A-pkKyzBu",
+      "name": "00003040-PHOTO-2026-04-07-13-04-00.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T19:06:34.000Z",
+      "size": "370742",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1931dYhUHAQAdCBeAAl-396VEwOBM53zk",
+      "name": "00003039-PHOTO-2026-04-07-13-04-00.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T19:06:34.000Z",
+      "size": "414000",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1pzIeDvvxzHh7Hpn_uv720-0EIfTr8mRU",
+      "name": "00003041-PHOTO-2026-04-07-13-04-00.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-04-07T19:06:34.000Z",
+      "size": "443569",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1b-1w-ohJ5-gmlsYTkmBZQJlPqZwT7_Yy",
+      "name": "00003029-LOGO_GICSA_2.png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-04-07T18:25:52.000Z",
+      "size": "16378",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1YTocJqfCezjqBsumuhC-wy2DQnWXOsWD",
+      "name": "00003031-LOGO_GICSA.ps",
+      "mimeType": "application/postscript",
+      "modifiedTime": "2026-04-07T18:25:52.000Z",
+      "size": "248976",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1Tjtgvoek319ZkhqojS7ZI-3_tmu2Awn9",
+      "name": "00003032-LOGO_GICSA.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-07T18:25:52.000Z",
+      "size": "248714",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1fmR4M3LfL0aoDznHIR-9I6kIfIH93VVG",
+      "name": "00003030-LOGO_GICSA_3.png",
+      "mimeType": "image/png",
+      "modifiedTime": "2026-04-07T18:25:52.000Z",
+      "size": "16350",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1ZpBFIpnBlGZ6ufxjcEpPYLiE69RLd4Ra",
+      "name": "00003014-Comunicado_LaIsla_Acapulco_GICSA v2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-26T21:20:46.000Z",
+      "size": "16799",
+      "subfolder": "04",
+      "subfolderName": "04. GICSA_Conversaciones_WhatsApp",
+      "nestedPath": "WhatsApp Chat - GICSA+JO"
+    },
+    {
+      "id": "1e-CUidnxPtoNgH-thwfLbQroj8k3wjdZ",
+      "name": "comunicado_LaIsla_Acapulco_GICSA v.2.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-26T18:55:26.000Z",
+      "size": "18289",
+      "subfolder": "02",
+      "subfolderName": "02.GICSA_Entregables",
+      "nestedPath": null
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "number": "37",
+  "folderTitle": "37. LEADSALES / Proyecto concluido ",
+  "folderId": "1pYmpOvtaV8hX6CyZzVORA3Klo9atvK3N",
+  "folderModifiedTime": "2026-06-02T21:11:01.228Z",
+  "derivedStatus": "concluded",
+  "statusSuffix": "CONCLUIDO",
+  "latestDeliverable": {
+    "title": "BWS_ODC_LeadSales_docx",
+    "modifiedTime": "2026-05-14T05:15:30.106000Z",
+    "source": "01. LEADSALES_Contrato"
+  },
+  "deliverableSource": "01. LEADSALES_Contrato",
+  "lastActivity": {
+    "time": "2026-05-14T05:15:30.106Z",
+    "source": "01. LEADSALES_Contrato",
+    "file": "BWS_ODC_LeadSales_docx",
+    "fileId": "1Sm4Bn7cNuTGnAaKV2zW7yEW4kq1HRs8-"
+  },
+  "subfolderActivity": {
+    "01. LEADSALES_Contrato": {
+      "subfolderId": "1s-tmHJE4_eji85aHtGkzFmnj8NyMwzdg",
+      "fileCount": 1,
+      "latestModified": "2026-05-14T05:15:30.106000Z",
+      "latestFile": "BWS_ODC_LeadSales_docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:14Z_verify",
+      "last_verified_at": "2026-06-12T14:09:14Z"
+    },
+    "02. LEADSALES_Entregables": {
+      "subfolderId": "1bKqnVUA5eRVIPNJTou6GRLt-zO9oA1QK",
+      "fileCount": 3,
+      "latestModified": "2026-05-13T01:50:31.825000Z",
+      "latestFile": "Leadsales_Heraldo",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:36Z",
+      "last_verified_at": "2026-06-05T19:45:36Z"
+    },
+    "03. LEADSALES_Reportes_Avances": {
+      "subfolderId": "1KqpG_shwU6ErOE43zL0St9zGf3ucShHD",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T01:37:31Z",
+      "latestFile": "REPORTE GENERAL LEADSALES .pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:36Z",
+      "last_verified_at": "2026-06-05T19:45:36Z"
+    },
+    "04. LEADSALES_Conversaciones_WA": {
+      "subfolderId": "1Ygfwqj9R6_RG4SWPf9L5dRl9_o-ziYfu",
+      "fileCount": 21,
+      "latestModified": "2026-05-13T18:41:04Z",
+      "latestFile": "_chat 2.txt",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:36Z",
+      "last_verified_at": "2026-06-05T19:45:36Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Leadsales + Blackwell"
+    },
+    "05. LEADSALES_Transcripciones_Llamadas": {
+      "subfolderId": "19r3AZm8Mqstv_SBKsM95nZKu5Rll1nlW",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:36Z",
+      "last_verified_at": "2026-06-05T19:45:36Z"
+    },
+    "06. LEADSALES_Agendas_Trabajos": {
+      "subfolderId": "1_90eOB3lxTgEiaKiKKEjP8uzn23bivWz",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:36Z",
+      "last_verified_at": "2026-06-05T19:45:36Z"
+    }
+  },
+  "pqProxy": {
+    "score": 50,
+    "tierMix": {
+      "tier1": 0,
+      "tier2": 0,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": "n/a",
+    "hasMetrics": false,
+    "evidence": "DELTA 2026-05-07: cuenta nueva creada hoy. Cascarón sin archivos cargados aún.",
+    "suggestion": "Coordinar onboarding: contrato/OC, kickoff, plan editorial.",
+    "fileEvaluated": null,
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "new_account",
+    "priority": 2,
+    "label": "Onboarding cuenta nueva",
+    "text": "Coordinar onboarding: contrato/OC, kickoff, plan editorial.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [
+    "slot_empty:05. LEADSALES_Transcripciones_Llamadas",
+    "slot_empty:06. LEADSALES_Agendas_Trabajos"
+  ],
+  "isActive": false,
+  "lastCrawledAt": "2026-06-05T19:45:36Z",
+  "driveFiles": [
+    {
+      "id": "1Sm4Bn7cNuTGnAaKV2zW7yEW4kq1HRs8-",
+      "name": "BWS_ODC_LeadSales_docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-14T05:15:30.106Z",
+      "size": "12974",
+      "subfolder": "01",
+      "subfolderName": "01. LEADSALES_Contrato",
+      "nestedPath": null
+    },
+    {
+      "id": "1x_Q7x4eNmGipihhmcvufy40jwWG-q2yr",
+      "name": "_chat 2.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T18:41:04.000Z",
+      "size": "1110",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1-wCoJzJTAnQ1AypdpPUCLh53c14A8zXK",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T18:40:56.000Z",
+      "size": "24419",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1IflPP_NKRuMtldFEq6-NANKx0kwZgsjArko9YhTp6Ck",
+      "name": "Leadsales_Heraldo",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T01:50:31.825Z",
+      "size": "2390",
+      "subfolder": "02",
+      "subfolderName": "02. LEADSALES_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1D7NrGepTRhQQ_WOTEiGaCFV40jxY-VEZaGw9Piln7ng",
+      "name": "Leadsales_Excelsior",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T01:50:13.428Z",
+      "size": "3698",
+      "subfolder": "02",
+      "subfolderName": "02. LEADSALES_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1bYljl2Lw6cQsPBoP7Plu62hab4udz23POlWdi5knLI8",
+      "name": "Leadsales_Milenio",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T01:49:48.567Z",
+      "size": "3496",
+      "subfolder": "02",
+      "subfolderName": "02. LEADSALES_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1G7Rrux2D1TKOPpSjV6jKDba9cUhg-9TL",
+      "name": "00003231-REPORTE GENERAL LEADSALES .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T01:47:28.000Z",
+      "size": "782494",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1CzvNRSAttUt0bydaMX4t6kP0qedz_mCG",
+      "name": "REPORTE GENERAL LEADSALES .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T01:37:31.000Z",
+      "size": "782494",
+      "subfolder": "03",
+      "subfolderName": "03. LEADSALES_Reportes_Avances",
+      "nestedPath": null
+    },
+    {
+      "id": "1FIZg_34abZW58aawmT3x0KDZ3xcUw_r7",
+      "name": "00003229-STICKER-2026-05-12-08-29-38.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-12T14:34:28.000Z",
+      "size": "480656",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1SaEFlcatXQLADnf32Y_GeAYodhu3gmHJ",
+      "name": "00003228-PHOTO-2026-05-12-08-29-06.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-12T14:29:06.000Z",
+      "size": "117589",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1zMUTbH5v6gCIarBHVw5KRW4Bniajabfb",
+      "name": "00003221-STICKER-2026-05-11-21-30-49.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-12T03:30:48.000Z",
+      "size": "465436",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "15_1sGPcagckAjROjf91UONMWsfYOw22K",
+      "name": "00003219-PHOTO-2026-05-11-20-37-09.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-12T02:41:04.000Z",
+      "size": "107230",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1ShIy3XFpklnidYNHuvRIxV58exhvAGMP",
+      "name": "00003204-PHOTO-2026-05-11-18-45-14.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-12T00:46:38.000Z",
+      "size": "182499",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1dzVBZNRN4NOAQFyqcejqFtciGD_CUUKs",
+      "name": "00003201-STICKER-2026-05-11-16-32-38.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-11T22:27:42.000Z",
+      "size": "396112",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "10MAPAfo9k1QdltJ-rOdMM3ZXQ2wOKQEg",
+      "name": "00003196-STICKER-2026-05-11-16-27-40.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-11T22:27:42.000Z",
+      "size": "396112",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1WJCDgDguI-zcYg7vlEKz5660T9zfW75l",
+      "name": "00003195-STICKER-2026-05-11-16-26-15.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-11T22:26:16.000Z",
+      "size": "496552",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "16wdCJj6XU24EbKZgulUyfgzT7SoENZWr",
+      "name": "00003157-PHOTO-2026-05-09-08-52-10.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-09T14:56:46.000Z",
+      "size": "540968",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1yW3xqKP6A30zXrQ9hg8bqv-i_9faqcKI",
+      "name": "00003122-AUDIO-2026-05-07-13-43-37.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-07T19:43:38.000Z",
+      "size": "163714",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1s_MS1WgGP0HfVfWBAhxx_l4zRnCUx796",
+      "name": "00003076-PHOTO-2026-05-04-18-18-27.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T00:47:52.000Z",
+      "size": "15887",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1sheLJiXFSFZQmmi5EiOCq_36KGSCdiZc",
+      "name": "00003077-PHOTO-2026-05-04-18-19-02.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T00:47:52.000Z",
+      "size": "13250",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1nKoHGJXJkMKPAJg4aOf-MgIqUW0wMXg4",
+      "name": "00003074-PHOTO-2026-05-04-18-13-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T00:47:52.000Z",
+      "size": "17497",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1_qc4c1H3kmVILgsZW87a6t5c3vjtfF6V",
+      "name": "00003073-PHOTO-2026-05-04-18-12-29.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T00:47:50.000Z",
+      "size": "16695",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1qj3AGBaEWChV0Zcyks3mo5xjVaNKj3-W",
+      "name": "00003072-PHOTO-2026-05-04-18-11-51.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T00:47:50.000Z",
+      "size": "15346",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1i-maDTOZf-O89_orJjO4B7R0fRpjAucR",
+      "name": "00003071-PHOTO-2026-05-04-18-08-19.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-05T00:47:50.000Z",
+      "size": "14942",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1wCI2FN1j61UcsOETri-aIFK3MW7RhyvP",
+      "name": "00003007-Propuesta_LeadSales.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-13T21:16:52.000Z",
+      "size": "52578",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    },
+    {
+      "id": "1WbaVIyk_t9lz5FuyGwvjcC73deohEMeS",
+      "name": "00003211-STICKER-2026-05-11-18-49-36.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-25T17:07:52.000Z",
+      "size": "402892",
+      "subfolder": "04",
+      "subfolderName": "04. LEADSALES_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Leadsales + Blackwell"
+    }
+  ]
+}

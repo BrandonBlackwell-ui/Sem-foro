@@ -1,0 +1,276 @@
+{
+  "number": "39",
+  "account_id": "39",
+  "account_name": "ISMERELY",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "10S_leOakE6YcC9S7kL2mehvgrhHMoRae",
+      "title": "_chat.txt",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-05-22T02:30:34.000Z",
+      "kind": "texto"
+    },
+    {
+      "id": "1Fa_MkbRJZSefM4DfKcDowuqNX4hs4yr5",
+      "title": "00003137-METRICAS_ISMERELY_FORBES.pdf",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-05-06T19:17:42.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1VbpYbmSY00pmVmKSYOEWdu051Jb67zQj",
+      "title": "00003122-PHOTO-2026-04-28-11-22-11.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-28T17:23:40.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1rkRvo8VxnsTSYTQ_jG3ZMyz6Gh12LIXe",
+      "title": "00003112-Elisa Ramírez - Forbes .pdf",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-23T17:21:00.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1CV9IScvdGkI5kkFPW3zv_88mxXNwEzCX",
+      "title": "00003100-PHOTO-2026-04-16-11-53-12.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-16T18:00:42.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1GOogczEHTBAx0uXV4-traaYAz2TXh8QO",
+      "title": "00003099-PHOTO-2026-04-16-11-53-09.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-16T17:53:08.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1w8uoo8OPMv95zhvW8BO4ug1G4t8hJyxQ",
+      "title": "00003097-PHOTO-2026-04-16-11-52-59.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-16T17:53:08.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1pHI2ha8_5efbGxHdDP2sTu_0VpU5psC8",
+      "title": "00003098-PHOTO-2026-04-16-11-53-05.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-16T17:53:08.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "14L1wBRiGlxCY26T9W83FGiDwC-H5qN4t",
+      "title": "00003068-Ismerely_Estrategia_Comunicacion_2026 v. 3.pptx",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-09T22:35:48.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1cbG2tZA_tPGYqmWnJEae9wF5nPxA6MR1",
+      "title": "00003060-Elisa - Ismerely.docx",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-08T04:09:14.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1OteEzSCbNct3JM7TbDMC5aNlT-Fk6IJp",
+      "title": "00003056-ISMERELY-ELISA.docx",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-07T20:39:24.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1KYtVPVO5Vjgk_TjG_fPVlJKw6m62fqXh",
+      "title": "00003083-PHOTO-2026-04-10-17-23-52.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-07T19:33:30.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1gkgDoml-nfCe2rl0lCvwA9_Io4PIihyH",
+      "title": "00003082-PHOTO-2026-04-10-17-23-52.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-07T19:33:30.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "15RKziiJ8fRewKg9-S13NR4jrxUQfhQ51",
+      "title": "00003081-PHOTO-2026-04-10-17-23-52.jpg",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-07T19:33:30.000Z",
+      "kind": "imagen"
+    },
+    {
+      "id": "1mVD8zAEkuY21-QThWr5ybo0f97wkqd0M",
+      "title": "00003043-ISMERELY-ELISA.docx",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-07T18:06:56.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1oJjypRxyxMadCota2Ajxxl8KAolL4xTD",
+      "title": "00003036-Elisa Ramírez artículo .docx",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-06T22:00:54.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "10yVAoAvXsUdPIeIcxfWQLIEZzrDg_V3j",
+      "title": "00003033-Ismerely_Estrategia_Comunicacion_2026.pptx",
+      "subfolder": "04",
+      "subfolderName": "04. Ismerely_Conversaciones_WA",
+      "modifiedTime": "2026-04-06T16:17:40.000Z",
+      "kind": "PowerPoint→texto"
+    }
+  ],
+  "files_read_count": 17,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Ejecutar campaña de posicionamiento integral de marca e CEO (Elisa Ramírez) de Ismerely en medios T1 mexicanos mediante artículos editoriales, reportajes y columnas que legitimen el modelo de network marketing y visibilicen tres productos (Creathy, Prana, Dra. Elida) en 6 meses (mayo-octubre 2026).",
+    "content_summary": "Blackwell completó exitosamente la publicación ancla en Forbes México (28 ABR 2026) con alcance de 716.52k (82% móvil), pero el plan editorial de 12 publicaciones de mayo-octubre permanece casi completamente sin ejecutar tras 7 semanas desde publicación. De las 11 publicaciones restantes, solo se han mapeado inicialmente; no hay trazabilidad de ejecución, contratos negociados ni publicaciones finalizadas en El Financiero, Reforma, Milenio, Heraldo, Expansión, Fast Company ni Mundo Ejecutivo. Únicamente existe documentación activa del lado Blackwell en gestiones Men's Health (en pausa sin seguimiento desde 19 MAY) y mapeo de rankings Forbes (sin entrega de plazos).",
+    "current_status": "La cuenta ejecutó la campaña Forbes con éxito (28 ABR 2026 publicado, métricas entregadas 06 MAY 2026), pero se encuentra en fase de estancamiento operativo desde finales de mayo: 11 de 12 publicaciones del plan 2026 siguen sin publicarse, sin confirmación de medios cerrados, ni evidencia de gestión activa en el mes de mayo posterior a Forbes.",
+    "scope_of_service": [
+      "Artículo CEO Elisa Ramírez en Forbes México (digital + impreso + redes sociales) — paquete integrado",
+      "Entregar métricas de alcance vía herramienta Meltwater",
+      "Mapeo y gestión de posicionamientos futuros de Elisa en rankings editoriales Forbes ('Top 10 empresarias', 'Top 10 empresas crecimiento')",
+      "Plan editorial estratégico 6 meses: 12 publicaciones en 4 territorios (CEO, Creathy, Prana, Dra. Elida) con medios T1 y T2",
+      "Exploración y gestión de contactos con Men's Health para cobertura especializada"
+    ],
+    "client_promises": [
+      {
+        "promise": "Artículo CEO Elisa Ramírez en Forbes México (digital + impreso + redes sociales) — paquete integrado $560k",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Entregar métricas/alcance de publicación Forbes vía herramienta Meltwater",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Mapear y explorar calendario para posicionamientos futuros de Elisa en artículos tipo 'Top 10 empresarias' y 'Top 10 empresas crecimiento' en Forbes",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Plan editorial estratégico 6 meses (mayo-octubre 2026): 12 publicaciones en 4 territorios (CEO, Creathy, Prana, Dra. Elida) con medios T1 y T2",
+        "cadence": "continuo",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Explorar y gestionar contactos con Men's Health para cobertura especializada",
+        "cadence": "evento",
+        "status": "en_riesgo"
+      }
+    ],
+    "fulfilled": [
+      "Forbes México artículo digital publicado 28 ABR 2026: 'Elisa Ramírez, la CEO que reinventa el network marketing en México' (00003112-Elisa Ramírez - Forbes .pdf) — T1, editorial validado",
+      "Alcance total 716.52k reportado 06 MAY 2026 via Meltwater (00003137-METRICAS_ISMERELY_FORBES.pdf): 82% móvil (586.25k), 18% web (130.27k)",
+      "Proceso narrativo completado: propuesta inicial 06 ABR → ajustes 07-09 ABR → aprobación cliente 08 ABR → publicación 28 ABR, con 4 iteraciones de redacción",
+      "3 fotos CEO seleccionadas y validadas 16 ABR 2026 para publicación Forbes (00003097, 00003098, 00003099, 00003100-PHOTO)",
+      "Estrategia comunicación 2026 completada 09 ABR (v.3): diagnóstico FODA, 4 mensajes clave, plan editorial 12 publicaciones, mezcla medios T1-T2, presupuesto $780k (00003068-Ismerely_Estrategia_Comunicacion_2026 v. 3.pptx)"
+    ],
+    "pending": [
+      "Plan editorial 6 meses (mayo-octubre 2026): 11 publicaciones NO ejecutadas — Capitanas-Reforma mayo $70k, Creathy-Financiero junio $60k, Prana-Milenio julio $60k, Dra. Elida-Heraldo agosto $60k, Expansión-Second Cover septiembre $70k, Fast Company septiembre $40k, Mundo Ejecutivo octubre $70k, Reforma digital octubre $60k, más 3 columnas De Jefes/Alicia Salgado/Dario Celis sin trazabilidad",
+      "Cobertura especializada Creathy: sin gestión activa en El Financiero, Mundo Ejecutivo, Fast Company con ángulo innovación/adaptógenos",
+      "Posicionamiento Dra. Elida como experta FTX/fitness: sin ejecución en Heraldo, canales deportivos/nutrición",
+      "Mapeo y envío de requisitos para rankings editoriales Forbes ('Top 10 empresarias', 'Top 10 empresas crecimiento'): en revisión interna Blackwell sin fecha de entrega (chat 20 MAY sin seguimiento posterior)",
+      "Men's Health: gestiones en pausa desde 19 MAY sin respuesta de Sol Guerrero ni reportería de avance ('estamos en gestiones')"
+    ],
+    "key_facts": [
+      "Forbes México publicado 28 ABR 2026; URL: https://forbes.com.mx/ad-elisa-ramirez-la-ceo-que-reinventa-el-network-marketing-en-mexico/",
+      "Alcance total Forbes: 716.52k (móvil 586.25k, web 130.27k) vía Meltwater, reportado 06 MAY 2026",
+      "Presupuesto plan editorial 2026: $780k total; paquete Forbes $560k; 11 publicaciones restantes $220k presupuesto pendiente",
+      "Ismerely: 4ª empresa más grande México en suplementos alimenticios multinivel, ~$8M USD anuales, 7 años bajo liderazgo Elisa Ramírez",
+      "Productos a posicionar: Creathy (1ª creatina con adaptógenos), Prana (energía integral), Dra. Elida (experta fitness 20+ años)",
+      "Evento hito: Summit 'Juntos' en Arena CDMX (lleno) — narrativa editorial sin explotar en prensa escrita T1",
+      "Última actividad registrada: 20 MAY 2026 (chat); promesa de mapeo Forbes rankings sin seguimiento posterior",
+      "Equipo cliente: Eduardo Uribe (comercial), Citlali Juagra (operaciones/marketing), DRM (Dan R. Martínez, estrategia), Sol Guerrero/Marisol (gestor de medios)"
+    ],
+    "per_file_notes": "\n[\n  {\n    \"file\": \"_chat.txt\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"WhatsApp 27 MAR—21 MAY 2026: proceso iterativo Forbes (propuesta 06 ABR, ajustes 07-09 ABR, aprobación 08 ABR, publicación 28 ABR), métricas entregadas 06 MAY, pero sin seguimiento de las 11 publicaciones restantes ni respuesta confirmada en Men's Health (19 MAY) ni cierre de rankings Forbes (20 MAY).\"\n  },\n  {\n    \"file\": \"00003137-METRICAS_ISMERELY_FORBES.pdf\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Reporte Meltwater 06 MAY 2026: alcance 716.52k total (82% móvil 586.25k, 18% web 130.27k) para artículo Forbes publicado 28 ABR.\"\n  },\n  {\n    \"file\": \"00003122-PHOTO-2026-04-28-11-22-11.jpg\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Screenshot publicación Forbes en vivo 28 ABR 2026, mostrando titular 'Elisa Ramírez, la CEO que reinventa el network marketing en México', branding Forbes, fotografía CEO en evento en vivo.\"\n  },\n  {\n    \"file\": \"00003112-Elisa Ramírez - Forbes .pdf\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Versión final publicada Forbes 28 ABR 2026 (3 páginas): artículo 1,800+ palabras posicionando CEO como transformadora de industria MLM, referencias a Arena CDMX Summit, $8M USD anuales, expansión EE.UU./Latam, liderazgo horizontal, modelo profesionalizado.\"\n  },\n  {\n    \"file\": \"00003100-PHOTO-2026-04-16-11-53-12.jpg\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Fotografía CEO Elisa Ramírez en evento Arena CDMX, vestido rosa/floral, sonriente de perfil — una de 3 fotos finales seleccionadas 16 ABR para propuestas a Forbes.\"\n  },\n  {\n    \"file\": \"00003099-PHOTO-2026-04-16-11-53-09.jpg\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Fotografía CEO frontal/perfil en escenario Arena CDMX, vestido rosa, micrófono en mano, luces de fondo azules — segunda opción fotográfica validada 16 ABR.\"\n  },\n  {\n    \"file\": \"00003097-PHOTO-2026-04-16-11-52-59.jpg\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Fotografía CEO con cadena decorativa en escenario, vestido rosa/floral, micrófono — tercera propuesta fotográfica seleccionada 16 ABR para Forbes.\"\n  },\n  {\n    \"file\": \"00003098-PHOTO-2026-04-16-11-53-05.jpg\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Fotografía CEO en escenario con proyecciones en pantallas gigantes detrás (mirrors effect) — variante de escena Arena CDMX, usada en propuestas 16 ABR.\"\n  },\n  {\n    \"file\": \"00003068-Ismerely_Estrategia_Comunicacion_2026 v. 3.pptx\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Estrategia completa 09 ABR 2026 (v.3): FODA diagnóstico, 4 mensajes (CEO, Creathy, Prana, Dra. Elida), plan editorial 12 pubs mayo-octubre, mezcla T1/T2, presupuesto desglosado $780k; tarifarios 2026 con descuentos Forbes negociados ($560k paquete impresa+digital+RRSS).\"\n  },\n  {\n    \"file\": \"00003060-Elisa - Ismerely.docx\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Draft narrativa Forbes v.2 (07 ABR post-ajustes): versión cálida con énfasis 'Elisa' vs 'Ramírez', mantiene estructura Arena CDMX y legitimidad MLM, marca cambios en rojo por comentarios Dan (cliente).\"\n  },\n  {\n    \"file\": \"00003056-ISMERELY-ELISA.docx\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Draft narrativa Forbes v.3 (07 ABR tarde, 5:10 PM): incorpora feedback cliente sobre tono warm, sustancia y lenguaje corporativo; última versión pre-aprobación con menciones Elisa + \"Construir nuevo mundo juntos\".\"\n  },\n  {\n    \"file\": \"00003083-PHOTO-2026-04-10-17-23-52.jpg\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Fotografía evento Arena CDMX desde perspectiva de multitud en oscuridad, pantalones de LED rojo, pantallas grandes mostrando CEO — captura escala del Summit 'Juntos'.\"\n  },\n  {\n    \"file\": \"00003082-PHOTO-2026-04-10-17-23-52.jpg\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Fotografía Arena CDMX, CEO en escenario con luz blanca focal, audiencia parcial visible, atmósfera de evento corporativo masivo.\"\n  },\n  {\n    \"file\": \"00003081-PHOTO-2026-04-10-17-23-52.jpg\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Fotografía Arena CDMX con CEO en escenario, puño levantado (victoria), audiencia masiva de fondo desenfocado, flores en primer plano — imagen de liderazgo masivo.\"\n  },\n  {\n    \"file\": \"00003043-ISMERELY-ELISA.docx\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Draft narrativa Forbes v.1 (07 ABR 12:06 PM): propuesta inicial Blackwell pre-feedback; estructura: CEO lider transformacional, Arena CDMX hito, modelo MLM legitimado, expansión internacional.\"\n  },\n  {\n    \"file\": \"00003036-Elisa Ramírez artículo .docx\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Draft narrativa inicial Forbes (06 ABR): narrativa larga posicionando Elisa como CEO joven conquistadora Arena CDMX, redefinidora MLM, incluye datos $8M USD, 7 años, Arena fill como validación modelo.\"\n  },\n  {\n    \"file\": \"00003033-Ismerely_Estrategia_Comunicacion_2026.pptx\",\n    \"folder\": \"04. Ismerely_Conversaciones_WA\",\n    \"finding\": \"Estrategia inicial v.1 (06 ABR): diagnóstico FODA, 4 territorios de mensajes (CEO, Creathy, Prana, Dra. Elida), plan 12 pubs 6 meses, mezcla medios, presupuesto $780k.\"\n  }\n]\n",
+    "risks": [
+      {
+        "risk": "Stancamiento operativo post-Forbes: 11 de 12 publicaciones sin ejecutarse tras 7 semanas; brecha entre promesa estratégica y ejecución táctica en medios T1.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Men's Health gestión en pausa sin cierre desde 19 MAY; respuesta genérica ('estamos en gestiones') sin trazabilidad de contactos, pitches o plazos.",
+        "severity": "alta"
+      },
+      {
+        "risk": "Rankings Forbes ('Top 10 empresarias', 'Top 10 empresas crecimiento') mapeados pero sin envío de requisitos, plazos, o seguimiento desde 20 MAY; riesgo de perder ventana editorial.",
+        "severity": "media"
+      },
+      {
+        "risk": "Narrativa MLM: artículo Forbes legitimó modelo, pero sin cobertura sostenida en medios de negocios, la credibilidad puede erosionarse si competidores (Herbalife, GNC) capturan la conversación.",
+        "severity": "media"
+      },
+      {
+        "risk": "Productos Creathy/Prana/Dra. Elida sin posicionamiento en medios especializados (fitness, nutrición, FTX) — ventana temporal para tendencia adaptógenos es ahora (2026); retraso = pérdida de opportunity window.",
+        "severity": "media"
+      },
+      {
+        "risk": "Falta de reportería de avance: cliente no ha recibido confirmación de medios cerrados, contratos negociados o fechas de publicación para 11 publicaciones restantes — confianza en riesgo.",
+        "severity": "alta"
+      }
+    ],
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "praise",
+        "date": "28 ABR 2026",
+        "source": "Eduardo Uribe + Humberto Herrera (team Ismerely)",
+        "note": "Aprobación explícita de nota Forbes ('Adelante con la nota'), congratulaciones post-publicación ('felicidades team')."
+      },
+      {
+        "type": "positive",
+        "signal": "approval",
+        "date": "06 MAY 2026",
+        "source": "Citlali Juagra",
+        "note": "Validación de métricas Meltwater ('Excelente muchas gracias')"
+      },
+      {
+        "type": "negative",
+        "signal": "no_response",
+        "date": "20 MAY 2026",
+        "source": "Citlali Juagra / Blackwell chat group",
+        "note": "Solicitud de mapeo rankings Forbes ('seguimiento a esto estaría genial') sin respuesta confirmada de Blackwell; Uriel dice 'vamos a mapear' pero sin cierre."
+      },
+      {
+        "type": "negative",
+        "signal": "no_response",
+        "date": "19 MAY 2026 onwards",
+        "source": "Eduardo Uribe follow-up Men's Health",
+        "note": "Eduardo pregunta sobre Men's Health 19 MAY; Sol Guerrero responde 'estamos en gestiones' 8:21 PM; sin seguimiento, actualización ni confirmación posterior."
+      }
+    ],
+    "strategic_recommendations": [
+      "Reactivar operativamente el plan editorial: designar un project manager dedicado (no rotativo) para los 11 deliverables mayo-octubre; crear dashboard de ejecución con trazabilidad semanal de pitches, confirmaciones y publicaciones.",
+      "Cerrar Men's Health dentro de 5 días de trabajo (propuesta, tarifario, vocero); si no prospera, comunicar al cliente y redirigir presupuesto a T1 confirmados (Financiero, Heraldo, Expansión).",
+      "Mapear y enviar requisitos rankings Forbes esta semana; asignar responsable de follow-up cada 5 días; plazos típicos editoriales son 6-8 semanas, así que hay ventana hasta finales JUN.",
+      "Crear narrativas diferenciadas por producto (Creathy=innovación/ciencia, Prana=burnout antídoto, Dra. Elida=experta FTX) y alinear a medios especializados (Financiero=datos, Heraldo=fitness, Fast Company=millennial); no hacer 'paquetes genéricos'.",
+      "Reportería semanal al cliente: confirmaciones de medios, fechas de publicación, movimientos en picth. El cliente no debe enterarse por el chat de Whatsapp; comunicación debe ser proactiva, vía reportes ejecutivos.",
+      "Validar presupuesto disponible real: plan dice $780k, pero $560k fue Forbes; cliente debe confirmar si los $220k restantes están aprobados y comprometidos, o si hay recorte que impacte ejecución.",
+      "Posicionar a Elisa Ramírez como experta de MLM moderno en auditorios de negocios/emprendimiento (conferencias, webinars editoriales, mesas de expertos), no solo artículos; ampliar visibilidad más allá de prensa escrita."
+    ]
+  },
+  "analyzed_at": "2026-06-09T20:00:05Z"
+}

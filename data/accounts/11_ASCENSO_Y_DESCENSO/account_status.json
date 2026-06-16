@@ -1,0 +1,1073 @@
+{
+  "number": "11",
+  "folderTitle": "11. ASCENSO Y DESCENSO/ Detenido",
+  "folderId": "1TPaEultfx7NFIJOTBJpszGRIjxZsGKO_",
+  "folderModifiedTime": "2026-06-10T16:48:10.845Z",
+  "derivedStatus": "paused",
+  "statusSuffix": "PAUSA",
+  "latestDeliverable": {
+    "title": "Reporte de actividades y Plan S8 al 12 jun 26",
+    "modifiedTime": "2026-06-08T05:26:25.450000Z",
+    "source": "02.ASCENSO Y DESCENSO_Entregables"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-02T05:15:30.275Z",
+    "source": "02.ASCENSO Y DESCENSO_Entregables",
+    "file": "Estrategia de comunicación Ascenso y Descenso",
+    "fileId": null
+  },
+  "subfolderActivity": {
+    "01. Contratos_OC": {
+      "subfolderId": "1kxMZT4dNVE2dwX1olVBp8HiPHT7Fiawm",
+      "fileCount": 1,
+      "latestModified": "2025-12-22T15:57:08Z",
+      "latestFile": "Propuesta_ SERVICIOS .pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:07Z_verify",
+      "last_verified_at": "2026-06-12T14:09:07Z"
+    },
+    "02.ASCENSO Y DESCENSO_Entregables": {
+      "subfolderId": "1xqrXn4fDN4szLFKI50HBIhq6j528vaYy",
+      "fileCount": 13,
+      "latestModified": "2026-06-08T05:26:25.450000Z",
+      "latestFile": "Reporte de actividades y Plan S8 al 12 jun 26",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:43Z_verify",
+      "last_verified_at": "2026-06-11T01:57:43Z"
+    },
+    "03.ASCENSO Y DESCENSO_Reportes_Avance": {
+      "subfolderId": "1sx89UXAexSMRtQ-TmlrhRA-2Exybe3Bo",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:43Z_verify",
+      "last_verified_at": "2026-06-11T01:57:43Z"
+    },
+    "04.ASCENSO Y DESCENSO_Conversaciones_WA": {
+      "subfolderId": "16hcfjgDbR9NpX-qCsohMhGXT7o1yqHV2",
+      "fileCount": 78,
+      "latestModified": "2026-05-29T15:01:50Z",
+      "latestFile": "WhatsApp Chat - Ascenso 4T.zip",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:43Z_verify",
+      "last_verified_at": "2026-06-11T01:57:43Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Mario Q + Blackwell_20052026, WhatsApp Chat - Interno ascenso y descenso_20052026, WhatsApp Chat - Ascenso 4T_20052026, WhatsApp Chat - Interno Fútbol"
+    },
+    "05. ASCENSO Y DESCENSO_Transcripciones_Llamadas": {
+      "subfolderId": "1KdXQ55CufSOQqLV3lUnjd9QoL2ClvtoR",
+      "fileCount": 4,
+      "latestModified": "2026-05-21T04:25:46.526000Z",
+      "latestFile": "PRESENTACION PLAN ASCENSO Y DESCENSO : 2026/05/20 18:25 CST - Notas de Gemini",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:45Z_verify",
+      "last_verified_at": "2026-06-11T01:57:45Z"
+    },
+    "06. ASCENSO Y DESCENSO_Agenda_Trabajos": {
+      "subfolderId": "1lbSMlD8Kc3i2LdWjTQboYDek2-Q-BB67",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-11T01:57:46Z_verify",
+      "last_verified_at": "2026-06-11T01:57:46Z"
+    }
+  },
+  "pqProxy": {
+    "score": null,
+    "tierMix": null,
+    "narrativaQuality": null,
+    "hasMetrics": null,
+    "evidence": "Entregable es un documento de estrategia narrativa y amplificación mediática (plan de debate ascenso/descenso en Liga MX). Propone medios target (Aristegui/T1, La Jornada/T1, Radio Fórmula/T1, El Heraldo/T2, Excélsior/T1, Pascal Beltrán del Río) pero no reporta placements ejecutados.",
+    "suggestion": "Ejecutar Fase 1 esta semana: sembrar el estudio con columnistas seleccionados (Animal Político, El Financiero, El Economista). Usar declaraciones de Sheinbaum como contexto.",
+    "fileEvaluated": "narrativa_ascenso_descenso 260410.docx",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "ongoing",
+    "priority": 3,
+    "label": "Acción sobre el último entregable",
+    "text": "Ejecutar Fase 1 esta semana: sembrar el estudio con columnistas seleccionados (Animal Político, El Financiero, El Economista). Usar declaraciones de Sheinbaum como contexto.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "analysisConfidence": "alta",
+  "playbookViolations": [],
+  "isActive": false,
+  "lastCrawledAt": "2026-06-11T01:56:45Z",
+  "driveFiles": [
+    {
+      "id": "1YCJTGW_DR1_CSkmJs4INoZRx_Qvg9SZcb322aYyG8t4",
+      "name": "Reporte de actividades y Plan S8 al 12 jun 26",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-06-08T05:26:25.450Z",
+      "size": "1636142",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1MgYWzyTvMMg9GsqeYUETGjTSUAnGdBL6ykg815B1REo",
+      "name": "Nota en EL HERALDO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-06-08T05:21:59.946Z",
+      "size": "614206",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1sukH7StNkXFZdLfmzRz3fXi1x-kTEBeC",
+      "name": "WhatsApp Chat - Ascenso 4T.zip",
+      "mimeType": "application/zip",
+      "modifiedTime": "2026-05-29T15:01:50.000Z",
+      "size": "3121149",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1EF6G8LWKIk_51n_WbhcZXpBnLzaHlXaiDdkFye0ujGc",
+      "name": "TRASCENDIDO EN MILENIO",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T14:48:39.038Z",
+      "size": "1285254",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "19Rzr4_EVVjWzogndb9-KyaiqODtEUKOfH_Q0yQNBzpw",
+      "name": "Nota en LA CRÓNICA",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T14:46:22.423Z",
+      "size": "471590",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Dwu0900vaZA-nbLfdssdwcy3hdeumFVa6ZFlCdViG4A",
+      "name": "talking_points_fos_AL eng",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-29T14:44:52.073Z",
+      "size": "6312",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Vqx-ImPOIhiNBf1AFmI-QH18aeFOdiy9Ed7_o2BNEM0",
+      "name": "Plan_comunicacion_ascenso",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-05-21T18:21:55.698Z",
+      "size": "7553796",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1HE0lDTkW4tXUyj7NrYCrBoHZB4JAM0UrqUvb1n8Y4jU",
+      "name": "PRESENTACION PLAN ASCENSO Y DESCENSO : 2026/05/20 18:25 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-21T04:25:46.526Z",
+      "size": "27325",
+      "subfolder": "05",
+      "subfolderName": "05. ASCENSO Y DESCENSO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1yeYQQvzXTf7EVcleH4UclFE9Fv31E02Y",
+      "name": "Estudio.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-21T04:25:05.702Z",
+      "size": "2256998",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "10rMluirwX2kl9wJJfiExzce0N2TURldy",
+      "name": "_chat (1).txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-20T13:48:02.000Z",
+      "size": "28520",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso_20052026"
+    },
+    {
+      "id": "1SDsyCw2oL4ZvGErBnO0A9xFEjEvJ0Xga",
+      "name": "_chat (1).txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-20T13:47:48.000Z",
+      "size": "20287",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1VXdd8TUgLNwMWQ2ZsnDoy0YkbBbPdFdb",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-20T13:47:26.000Z",
+      "size": "12176",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Fútbol"
+    },
+    {
+      "id": "1ObZGfY58iPaC0L2IOhQxtnoPxjy4nhJa",
+      "name": "00000942-STICKER-2026-05-18-20-38-56.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-19T02:41:38.000Z",
+      "size": "433310",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1m2eiQjZJWRywQZGvigxsl4eIG-vTQNch",
+      "name": "00000922-PHOTO-2026-05-18-18-14-19.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-19T00:14:30.000Z",
+      "size": "212715",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1y6TEd9tg9-7pR06W1p2lBRxSYW8wv5G6",
+      "name": "00000908-STICKER-2026-05-18-15-11-44.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-16T15:19:42.000Z",
+      "size": "125482",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1DsL-Rlx1wpikS872CwqbVogpb4haplrR",
+      "name": "00000483-PHOTO-2026-05-16-09-15-37.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-16T15:06:30.000Z",
+      "size": "263618",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1jlHEtn0-f9jJRYa031qylPkbAPl_A4Va",
+      "name": "00000481-PHOTO-2026-05-16-09-15-36.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-16T14:50:18.000Z",
+      "size": "237098",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1T9fHgfam4UE4A8fjyVwJQ-lePo5G4rUR",
+      "name": "00000482-PHOTO-2026-05-16-09-15-36.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-16T14:50:18.000Z",
+      "size": "249492",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1vvs81u8c9LSOSW4-L9c1N6mz4H0BKcVI",
+      "name": "00000886-PHOTO-2026-05-16-08-06-25.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-16T14:06:26.000Z",
+      "size": "182009",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1vj8HmstPGPNvV6EwF67oYou6bpGuy5u9",
+      "name": "00000472-Impactos de la Suspensión de la Movilidad Deportiva-Abril 2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-11T16:29:24.000Z",
+      "size": "1041441",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "16VLR0dmjtR-rpFda6NdBdo_aHnZKiNzt",
+      "name": "00000469-plan_comunicacion_ascenso_260511.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-11T15:35:22.000Z",
+      "size": "354358",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1qz8QYgHhMYw91GlTiGaMwCzlyAJCLWx8",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:34:34.000Z",
+      "size": "17391",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T"
+    },
+    {
+      "id": "1C3c6N0uSt9rqdKIlwz4bL7RxJQV0wdQJ",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:34:14.000Z",
+      "size": "29442",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso"
+    },
+    {
+      "id": "1UUGRlR7oJlOXz9RdZJ78sBdyrGXiTdfo",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-08T16:32:54.000Z",
+      "size": "55762",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1wjlymQYtqhdUqtjM2_UphKwxxWxQ5P4i",
+      "name": "00000781-PHOTO-2026-05-07-18-41-55 (1).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-08T00:51:32.000Z",
+      "size": "151354",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "17n03FUaIaZNP3YPuehNbcX5cUgYbdLfN",
+      "name": "00000781-PHOTO-2026-05-07-18-41-55.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-08T00:51:32.000Z",
+      "size": "151354",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1eerijgNI1SYcCC0O_HaDAyoiV2NInQGs",
+      "name": "00000166-STICKER-2026-05-05-08-27-26.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-05-05T14:27:26.000Z",
+      "size": "69252",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Fútbol"
+    },
+    {
+      "id": "18Xc1iXmMFFsaJszKb0NEyEWDv7MI2qJh",
+      "name": "00000704-Plan_Comunicacion_Liga_Expansion_Mayo_Junio_2026 (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T21:19:08.000Z",
+      "size": "325505",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1pWUX780Kshp8XE3seVUr7niC2w60YJXc",
+      "name": "00000172-Plan_Comunicacion_Liga_Expansion_Mayo_Junio_2026 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T21:19:08.000Z",
+      "size": "325505",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Fútbol"
+    },
+    {
+      "id": "1Q8niHXb7Ka1zzidDj6BispT69e81m9ki",
+      "name": "00000704-Plan_Comunicacion_Liga_Expansion_Mayo_Junio_2026 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-04T21:19:08.000Z",
+      "size": "325505",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1zAqRckGpdZjZVXzwrdArEZ_kpJGaIBxX",
+      "name": "00000126-AUDIO-2026-05-04-13-00-11.opus",
+      "mimeType": "application/ogg",
+      "modifiedTime": "2026-05-04T19:00:10.000Z",
+      "size": "204308",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Fútbol"
+    },
+    {
+      "id": "1N92_6Gxcj_2v7XLNhy-fZR04MbEKagV7ZpEO9uyhh4M",
+      "name": "Estrategia de comunicación Ascenso y Descenso",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "modifiedTime": "2026-05-02T05:15:30.275Z",
+      "size": "14792",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1B9skykLbbEp7KqgOMLckAjOO96T1hd8QWeFxbm-DCh0",
+      "name": "Presentacion estudio : 2026/04/28 18:28 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-30T23:04:59.477Z",
+      "size": "46820",
+      "subfolder": "05",
+      "subfolderName": "05. ASCENSO Y DESCENSO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1E33xyFGGEmH63COL0_fPZxrGGDZ0ApjH",
+      "name": "narrativa_ascenso_descenso 260410.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-30T23:03:39.297Z",
+      "size": "22072",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1xQBed9R9j_frGs0dq5uJpETtP-wGJgUN",
+      "name": "Promotion, Relegation, and Competitive Balance_Apr26 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-30T23:01:11.000Z",
+      "size": "657004",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1hNSZi2qbX4fIqjHRRv704_CSQav5I4Px",
+      "name": "00000466-Promotion, Relegation, and Competitive Balance_Apr26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-28T18:26:54.000Z",
+      "size": "657004",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1Pvrj5p5-RKNTw6Hk4GO2n2nFy8bmT2UO",
+      "name": "00000624-Promotion, Relegation, and Competitive Balance_Apr26.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-28T18:26:54.000Z",
+      "size": "657004",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1frktdKExVtM2st0rFPQw8FiCKFJhD4NP1JfSU9bdfLs",
+      "name": "TEAMBACK FUTBOL : 2026/04/14 17:56 CST - Notas de Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-23T03:47:17.020Z",
+      "size": "37285",
+      "subfolder": "05",
+      "subfolderName": "05. ASCENSO Y DESCENSO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1iPDnvbF7U3niKqQZJ9Qqgb6xcHiPXkcDFTENZbuygj8",
+      "name": "Q&A Ascenso y descenso",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-04-16T19:05:21.800Z",
+      "size": "4872",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1_wfJ01TfuH7Hlz2Ow-2t1mxOPVJWamUN",
+      "name": "00000593-STICKER-2026-04-15-11-50-03.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-04-15T17:50:02.000Z",
+      "size": "42552",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1CHUnQqnYmjfyViTdX753GryC5tJU5EId",
+      "name": "00000547-STICKER-2026-04-10-13-17-43 (1).webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-04-10T20:30:38.000Z",
+      "size": "104118",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1K4KVqiUyB7wRSsEJReuxdOU36Z8sLLxJ",
+      "name": "00000377-narrativa_ascenso_descenso 260410.docx (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T20:30:38.000Z",
+      "size": "217997",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1TXYic4dcv3G9JN2rRz9vYcJVFNvgtz07",
+      "name": "00000377-narrativa_ascenso_descenso 260410.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T20:30:38.000Z",
+      "size": "217997",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T"
+    },
+    {
+      "id": "1211ow8nJYq3EVX65kAWM7z2HhlkUNNMs",
+      "name": "00000547-STICKER-2026-04-10-13-17-43.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-04-10T20:30:38.000Z",
+      "size": "104118",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1Van6ZDDkDlrDl-W_oltzxPpQ25qDdaLr",
+      "name": "00000513-narrativa_ascenso_descenso 260410.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-04-10T17:22:00.000Z",
+      "size": "22111",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "16VRWA-31_eQhlkIl1fnbitFfl5Uq2yAK",
+      "name": "00000509-100426 Conade-Deporte que transforma (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T16:10:26.000Z",
+      "size": "913974",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1-pZpai9mLo97FHqVDW8n3Bdwn6DBrG_J",
+      "name": "00000509-100426 Conade-Deporte que transforma.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T16:10:26.000Z",
+      "size": "913974",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1QtQ1t-ztiuRq1gq4cGCJb1wk-J2Vlpl9",
+      "name": "00000510-100426 Sedatu-Mundial Social. Entrega de Canchas.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T16:10:26.000Z",
+      "size": "2212952",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "13Fra-9mJ_4s-RFUpKjdoGqPr8GlgYU3-",
+      "name": "00000508-100426 Gobernación-Mundial Social 2026. Canchas y murales..pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T16:10:26.000Z",
+      "size": "2418701",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1B34sRqRi46ziZ8c8oYC3ky1tbpEjkdJx",
+      "name": "00000507-100426 Gobierno de México-Copa Mundial de la FIFA 2026.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-10T16:10:24.000Z",
+      "size": "1789371",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "18bjju-_maMCedr20ZwJ23kbVWXo6TPnh",
+      "name": "00000441-narrativa_ascenso_descenso_ 260406.docx (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-06T22:44:18.000Z",
+      "size": "224323",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1GmfqF6_fhDr65Y6lHku3Pq0O65wtT-0S",
+      "name": "00000441-narrativa_ascenso_descenso_ 260406.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-04-06T22:44:18.000Z",
+      "size": "224323",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1NgbzjfAhUNiHhBY-c-HZP37gN0iAvA_Q",
+      "name": "00000426-narrativa_ascenso_descenso_v2.docx (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-28T03:23:24.000Z",
+      "size": "160499",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1A2qKhp_SBQSYag8vemwcPqyVD9ZT7f9i",
+      "name": "00000426-narrativa_ascenso_descenso_v2.docx.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-28T03:23:24.000Z",
+      "size": "160499",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1HvWScy30pE4TUMPGx3mdfP14xVUzZYzS",
+      "name": "00000420-Impactos de la Suspensión de la Movilidad Deportiva.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "modifiedTime": "2026-03-25T01:06:12.000Z",
+      "size": "8180280",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1EHndQoojDrP-Migg-2pFCWS5hsLXfL1V",
+      "name": "Minuta de Reunión Ascenso 20MAR2026.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-03-20T21:18:40.000Z",
+      "size": "17871",
+      "subfolder": "05",
+      "subfolderName": "05. ASCENSO Y DESCENSO_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1bSw6JLfRpPyLeC4Vyyu3rzQYVz0Wcy48",
+      "name": "00000201-STICKER-2026-05-05-20-38-05.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-03-18T19:20:28.000Z",
+      "size": "53548",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno Fútbol"
+    },
+    {
+      "id": "1cpmqUE-h5RLSt9KB9HRP-qjubnJ7iOUv",
+      "name": "00000369-Q&A Ascenso y descenso (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T15:06:32.000Z",
+      "size": "86285",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1719IpB4_9hRxgTcG3LR4M_-sFtNgggxm",
+      "name": "00000369-Q&A Ascenso y descenso.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T15:06:32.000Z",
+      "size": "86285",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T"
+    },
+    {
+      "id": "1cdFzNTxzKFWlqwLZnP29n0ais1PoufPM",
+      "name": "00000368-Estrategia de comunicación Ascenso y Descenso (2).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T15:06:30.000Z",
+      "size": "88631",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1qTTUhvFxZVsr4_BmE7CHi3CqTpxYb132",
+      "name": "00000368-Estrategia de comunicación Ascenso y Descenso (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-03-10T15:06:30.000Z",
+      "size": "88631",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T"
+    },
+    {
+      "id": "1oLmXKWq7BFhmkdQV_1dojAV-KVYU5yJv",
+      "name": "00000318-240226 Gobierno de México-Jóvenes Transformando México.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-24T14:42:36.000Z",
+      "size": "42670094",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1PbEeFw1c51TbzcyUvtchIylQPeTJMFT-",
+      "name": "00000315-PHOTO-2026-02-23-11-59-56 (1).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-23T17:59:56.000Z",
+      "size": "100598",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "17rPu4sj78F3z24XnDd--UlA9Ji8OMm4j",
+      "name": "00000315-PHOTO-2026-02-23-11-59-56.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-02-23T17:59:56.000Z",
+      "size": "100598",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "16lDmtJVkGoses8CYuzYs_iYCBMKR3_5a",
+      "name": "00000341-Estrategia de comunicación Ascenso y Descenso (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T20:25:06.000Z",
+      "size": "77341",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T_20052026"
+    },
+    {
+      "id": "1XRFzS67BYU2Y31ZTMHD4rhqvoPxi7d4g",
+      "name": "00000341-Estrategia de comunicación Ascenso y Descenso.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T20:25:06.000Z",
+      "size": "77341",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Ascenso 4T"
+    },
+    {
+      "id": "1qlNfHy2HfInv59LlFbhILYipOtmOu4_H",
+      "name": "00000303-Estrategia de comunicación Ascenso y Descenso.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T20:25:06.000Z",
+      "size": "77341",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1iDnAQy32hSuZmQdJckHMWrszZBemB38v",
+      "name": "00000300-Estrategia de comunicación Ascenso y Descenso.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T19:46:48.000Z",
+      "size": "77379",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "17eofVMUR4BEjiGfwGO3_IZwosKSI4gbg",
+      "name": "00000337-propuesta futbol v3 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T06:27:06.000Z",
+      "size": "7944",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1J1kugeFTo10Kq_KDPTtoOxT_2smCrOgp",
+      "name": "00000285-propuesta futbol v3.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T06:27:06.000Z",
+      "size": "7944",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1k4yR9XQqwbpPVILQjcPfJ4iiXDXwGmuH",
+      "name": "00000337-propuesta futbol v3.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T06:27:06.000Z",
+      "size": "7944",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1Gftxwb-BkeLeUprpKQ49j8li5ZQ3KBqw",
+      "name": "00000283-propuesta futbol v3.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-19T06:21:56.000Z",
+      "size": "11254",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1n0Og-LwYKEt6nMr7pd8vonLLw1I2PnV8",
+      "name": "00000270-propuesta futbol.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-19T01:34:10.000Z",
+      "size": "10375",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1rCUHEcuL7sF52OFWx7vCw2N8aZMvga0J",
+      "name": "00000269-propuesta futbol.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-19T01:34:10.000Z",
+      "size": "5922",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1sIsG08weYdcbL7HL6tu1_Z6mjMH2kBn7",
+      "name": "Estrategia de comunicación Ascenso y Descenso (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-13T13:32:08.000Z",
+      "size": "76892",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Iyed6CCQBqvkX1Uo3b4kyMTqKRmt1xiz",
+      "name": "Estatus cuenta Ascenso_Descenso (Fútbol).docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-02-12T23:52:03.000Z",
+      "size": "61060",
+      "subfolder": "02",
+      "subfolderName": "02.ASCENSO Y DESCENSO_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1pGM9pp9l-yHanlYNJb7v6nlheJUPPoxm",
+      "name": "00000186-Estrategia de comunicación Ascenso y Descenso (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-12T19:26:40.000Z",
+      "size": "76892",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso_20052026"
+    },
+    {
+      "id": "1tqoR2DHhg4H5BA3e-SKeay4hvVQW4qO1",
+      "name": "00000186-Estrategia de comunicación Ascenso y Descenso.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-12T19:26:40.000Z",
+      "size": "76892",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso"
+    },
+    {
+      "id": "1U9Op8lsfPNwAaVsE7R5n7C9TKlcGkfWI",
+      "name": "00000178-Propuesta v2 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-10T04:01:56.000Z",
+      "size": "148869",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso_20052026"
+    },
+    {
+      "id": "1Gn12ie-3XOtmn2FIXZxhZkD7FynKcKtE",
+      "name": "00000171-Propuesta v2 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-10T04:01:56.000Z",
+      "size": "148869",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso_20052026"
+    },
+    {
+      "id": "1orRApGHt2Gmt1dz1KKn-ejpU2NJfejDR",
+      "name": "00000171-Propuesta v2.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-10T04:01:56.000Z",
+      "size": "148869",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso"
+    },
+    {
+      "id": "1vRd6-RnbvQvkkeyZQfZHgKzXkvwuX0Ww",
+      "name": "00000178-Propuesta v2.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-10T04:01:56.000Z",
+      "size": "148869",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso"
+    },
+    {
+      "id": "1D6-XgqcPgP04xM4lA8O7B76MQxMKomku",
+      "name": "00000140-Propuesta v1 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-05T21:22:54.000Z",
+      "size": "137472",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso_20052026"
+    },
+    {
+      "id": "1nBMykM-afseVDxCM2XBZr2d3xZYJtyHe",
+      "name": "00000140-Propuesta v1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-05T21:22:54.000Z",
+      "size": "137472",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso"
+    },
+    {
+      "id": "1VDx66qx8hc1LJNpB9iZQWZ82SI3krXNZ",
+      "name": "00000100-Propuesta v1 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-03T17:53:02.000Z",
+      "size": "122004",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso_20052026"
+    },
+    {
+      "id": "1uQO2MMZW4LPGHSi3cJzh9T-D5cpIbCus",
+      "name": "00000100-Propuesta v1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-02-03T17:53:02.000Z",
+      "size": "122004",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso"
+    },
+    {
+      "id": "1bLY_XEqKB3HN-MxDMjxVPsFLYilWbK3v",
+      "name": "00000076-PHOTO-2026-01-26-15-06-52 (1).jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-26T21:06:52.000Z",
+      "size": "93905",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso_20052026"
+    },
+    {
+      "id": "1zCOR5w9zsMPbaLs-GUogmMqLP3ZW5asc",
+      "name": "00000076-PHOTO-2026-01-26-15-06-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-01-26T21:06:52.000Z",
+      "size": "93905",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso"
+    },
+    {
+      "id": "17jkuYPT9-Jqi9XJ4NvvSWQMR2J6Yyqpc",
+      "name": "00000546-STICKER-2026-04-10-13-04-47.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2026-01-19T15:25:42.000Z",
+      "size": "375918",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    },
+    {
+      "id": "1RXwNYm4UDjv-bYxq61U0yIXSlv9qhZAD",
+      "name": "00000024-Inteligencia Estratégica y Relacionamiento Un Fútbol para Todos  2 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-13T19:41:22.000Z",
+      "size": "104782",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso_20052026"
+    },
+    {
+      "id": "1Fe_ecOuxZSxoC0FFHSLkayRDWeOXOKjT",
+      "name": "00000024-Inteligencia Estratégica y Relacionamiento Un Fútbol para Todos  2.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-13T19:41:22.000Z",
+      "size": "104782",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso"
+    },
+    {
+      "id": "1LoNOkmxzXr0AsaNdTXkodlRxFwdutbAn",
+      "name": "00000020-Términos de Referencia (TDR) para la Contratación del Estudio de Impactos de la Suspensión de la Movilidad Deportiva en el Fútbol Mexicano (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-13T19:00:48.000Z",
+      "size": "90790",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso_20052026"
+    },
+    {
+      "id": "1a3misLUDiG-rSV84zoeuQfPph0WNQ51s",
+      "name": "00000020-Términos de Referencia (TDR) para la Contratación del Estudio de Impactos de la Suspensión de la Movilidad Deportiva en el Fútbol Mexicano.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-01-13T19:00:48.000Z",
+      "size": "90790",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Interno ascenso y descenso"
+    },
+    {
+      "id": "1rlyhG11x4e7Nvn52d9yvV0Jbb2cTT4pi",
+      "name": "Propuesta_ SERVICIOS .pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2025-12-22T15:57:08.000Z",
+      "size": "50130",
+      "subfolder": "01",
+      "subfolderName": "01. Contratos_OC",
+      "nestedPath": null
+    },
+    {
+      "id": "1otRw2XjGI8cx1OjTx9Xeoi-lAECGtgAk",
+      "name": "00000419-STICKER-2026-03-24-18-07-14 (1).webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2025-10-31T21:48:18.000Z",
+      "size": "58134",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell_20052026"
+    },
+    {
+      "id": "1utysreUUl5i7Y0eNSeUjUbsNPeLd31wH",
+      "name": "00000419-STICKER-2026-03-24-18-07-14.webp",
+      "mimeType": "image/webp",
+      "modifiedTime": "2025-10-31T21:48:18.000Z",
+      "size": "58134",
+      "subfolder": "04",
+      "subfolderName": "04.ASCENSO Y DESCENSO_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Mario Q + Blackwell"
+    }
+  ]
+}

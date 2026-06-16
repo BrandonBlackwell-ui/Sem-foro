@@ -1,0 +1,369 @@
+{
+  "number": "07",
+  "account_id": "07",
+  "account_name": "APOLLO",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1WQ2y1vGU75Kx2BWNfKIpXRaRyLEwylLn",
+      "title": "ODC-APOLLO-RENOVACIÓN_28_Abril_2026 (SIN FIRMA).pdf",
+      "subfolder": "01",
+      "subfolderName": "01. APOLLO_Contrato_OC",
+      "modifiedTime": "2026-06-10T17:27:11.964Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1nbqEdatiZM3bMZPJyW1sKF-Ao2nrW9Ic",
+      "title": "ODC-APOLLO-RENOVACIÓN_28_Abril_2026 (SIN FIRMA).docx",
+      "subfolder": "01",
+      "subfolderName": "01. APOLLO_Contrato_OC",
+      "modifiedTime": "2026-05-26T16:01:16.734Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1_Rur4sOPJNvVrdrBzRfhQ0ODMESWRcgH",
+      "title": "Estatus_Apollo_8 junio_2026 .pptx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-06-08T18:40:20.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1LKxKazzuNnHbDNnpfbt-zVuBZ94HQqgE",
+      "title": "Estatus_Apollo_25may2026 .pptx.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-25T23:15:24.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "18Lj7K5582low2Qa6E3BSxhQAmXl9nIQA",
+      "title": "Estatus_Apollo_18may2026 .pptx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-21T16:18:16.870Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1DhNa6cb5mvlF_Cb90WS09xEBz5R4rD9b",
+      "title": "Por cuatro décadas, Química Apollo se consolida.docx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-19T14:43:46.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "199VZhnRxELvTUhvWyOMLWwW6bvL3hsD3",
+      "title": "Química Apollo refuerza su enfoque técnico.docx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-19T14:33:27.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "17O7i7U5Nv4t0A7_mGQGStsu6pbXDalch",
+      "title": "Carta_Aclaratoria_LaSillaRota_120526.docx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-15T19:25:25.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1T4JxQePIQxx8b04C94MHAZttSWCCR_ql",
+      "title": "CMP2026_BriefingBook_QuimicaApollo_VF (1).docx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-15T19:24:15.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "15Br9f63b0I81Qb_mSM7m95XelX_SI3B6",
+      "title": "NOTAS_APOLLO_MAYO (2).docx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-15T19:23:22.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1uBZ86fbTPIZ_KnLbsyhUk-yqCfme6Mth",
+      "title": "Apollo_Contenidos_CMP2026 (1).pptx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-15T19:23:10.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1jhJGgPGWFdrkAh0ispA8_5ZkUWtfFEtm",
+      "title": "Quimica Apollo_Playbook_2026.docx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-15T19:23:03.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1ZXkGIEN8uquXAi_wljzzSRhfeTwxH7M_",
+      "title": "editorial_analisis_apollo_2026.pptx (1).pdf",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-13T00:36:26.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1Mcne4Z-XeRPXYlRw9dcwIc1Hz-E4eQJy",
+      "title": "Estatus_Apollo_27abr2026 (8).pptx (1).pdf",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-13T00:36:16.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1zqcoP2SSAUQqZIdpExBiaJx2Lga44zQa",
+      "title": "Estatus_Apollo_04may2026 .pptx.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-13T00:36:15.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "137K-gP_O9yVjDccBP696jHRz2-a0LLdr",
+      "title": "Carta_Aclaratoria_LaSillaRota_070526_VF.docx",
+      "subfolder": "02",
+      "subfolderName": "02. APOLLO_Entregables",
+      "modifiedTime": "2026-05-13T00:34:35.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "13NjNfk2QFOiYIBmSBP4C0zVpdqgCP6or",
+      "title": "APOLLO_ ReporteMensual_MAYO26.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.APOLLO_Reportes_Avance",
+      "modifiedTime": "2026-06-10T15:49:09.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1tqd6PdhkzOtCle58069U7nt_wrc-DIvr",
+      "title": "QUIMICAAPOLLO_REPORTEDECOBERTURA_2026.pptx.pdf",
+      "subfolder": "03",
+      "subfolderName": "03.APOLLO_Reportes_Avance",
+      "modifiedTime": "2026-06-08T18:33:41.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "19qnuRjTMaAk47O0voE9bQ0QGku4gRGcq",
+      "title": "QUIMICA APOLLO_Reporte ABRIL (2).pptx",
+      "subfolder": "03",
+      "subfolderName": "03.APOLLO_Reportes_Avance",
+      "modifiedTime": "2026-05-08T14:52:39.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1LCqtBlJ1A0nxEKBAXfjl_qJoGbzXA81F",
+      "title": "OnePager_Q1_ApolloVF (1).pdf",
+      "subfolder": "03",
+      "subfolderName": "03.APOLLO_Reportes_Avance",
+      "modifiedTime": "2026-04-29T22:02:33.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1Kqj_MDfSNzvsQJFVCsnGC80mZCql6rW-",
+      "title": "Reporte mensual de mayo Apollo_ 2026_06_10 08_58 CST - Notas de Gemini.docx",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "modifiedTime": "2026-06-10T15:49:39.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "15eZpkXA9Mjjxwh0EGzBVoFGkS2WBKJKEFBYmacVEfJg",
+      "title": "Transcripción: 2026/06/08 ",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "modifiedTime": "2026-06-08T18:39:25.376Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1VchqUR8dt02IVtBAo_qq6gD4pRTY_fo8C9u70sjdcwU",
+      "title": "Transcripcion 2026/05/25 ",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-25T20:40:28.544Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1LfFo69WKkCAAJSdBDtN3zDSleujsbxOrkcM2e_lWWb8",
+      "title": "Transcripción: 2026/05/18 ",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-18T20:54:12.798Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1cYGS0toyrxkrBhAD-fJzCxVIn6x7j_4pqSUoRjGPmrk",
+      "title": "Transcripción 2026/05/11 ",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-11T21:12:31.313Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1-567f53CP8qLi9OyVnwsOqUrstHLPAsK-fLQxIiU1xY",
+      "title": "Alineación por crisis: 07/05/26",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-07T17:05:44.726Z",
+      "kind": "Google Doc→texto"
+    },
+    {
+      "id": "1NKq9pr4PFdPRi6xCPYmNKtQocfaMmEg5",
+      "title": "Minuta_04may2026.pdf",
+      "subfolder": "05",
+      "subfolderName": "05. APOLLO_Transcripciones_Llamadas",
+      "modifiedTime": "2026-05-04T23:13:21.000Z",
+      "kind": "PDF→texto"
+    }
+  ],
+  "files_read_count": 27,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Construir y fortalecer la reputación corporativa de Química Apollo como líder técnico en el sector energético-petroquímico mexicano mediante gestión estratégica de narrativa, posicionamiento en medios nacionales T1/T2, gestión de crisis y generación de 2 impactos editoriales mensuales en medios de alto tier durante 6 meses (abril 2026–septiembre 2027).",
+    "content_summary": "Apollo ha alcanzado tracción operativa significativa en mayo-junio 2026: 5 impactos publicados en T1/T2 (Excélsior, Dinero en Imagen, Cuadratin, Energía Hoy, Mundo Ejecutivo) con ~3.93M alcance combinado, cumpliendo meta mensual. Crisis activa controlada: La Silla Rota (6-may) y Heraldo Tabasco (23-may) vinculan falsamente a Apollo con Felipa Obrador; carta aclaratoria redactada 13-may fundamentada en ASF, archivada preventivamente sin respuesta aún. Junio proyecta 3+ impactos (Milenio 8-jun confirmado, Excélsior agua 15-jun pendiente aprobación foto, El Heraldo 22-jun en desarrollo). Riesgo comercial crítico: OC Renovación sin firma desde 28-abr (73+ días vencida) bloquea facturación y continuidad. Cliente califica servicio 9/10 (mayo); satisfecho con pivote estratégico de anuncios pagados a alianzas editoriales; requiere análisis ROI, imagen agua industrial, y mejora en eficiencia operativa (way of working).",
+    "current_status": "Operativamente activo: 7 reuniones semanales ejecutadas (4-may a 10-jun), playbook 100+ diapositivas aprobado, calendario editorial junio confirmado parcialmente. Comercialmente en riesgo: OC sin firma vencida 73 días; análisis ROI mayo pendiente; aprobación Aldara de foto agua industrial (debe llegar esta semana) crítica para publicación 15-jun; feedback way of working Blackwell pendiente para 16-jun.",
+    "scope_of_service": [
+      "Consultoría estratégica en comunicación e inteligencia sectorial (plan maestro comunicación 2026)",
+      "Reuniones de estatus semanales remotas (30–60 min) con alineación estratégica y acuerdos formalizados",
+      "Monitoreo diario de medios tradicionales y digitales con alertas de riesgo/coyuntura en tiempo real",
+      "Mapeo y perfilamiento de actores clave, medios y líderes de opinión (stakeholders, aliados, amenazas)",
+      "Briefing books personalizados para eventos (CMP 2026, CMP 3–6 junio completado, otros)",
+      "Análisis de coyuntura sectorial y actualización de argumentarios de crisis/riesgo (caso Aníbal Carrasco, Felipa Obrador)",
+      "Gestión de crisis y redacción de cartas aclaratorias fundamentadas (ASF, documentos contractuales)",
+      "Desarrollo y gestión de contenidos editoriales con control narrativo (objetivo 2 impactos/mes)",
+      "Evaluación de participación en rankings e iniciativas (ESR, Industria Limpia, ANEAS, CMP)",
+      "Playbook corporativo estratégico (perfil 42 años, operaciones 14 estados, 4 ISOs, 50+ clientes, diferenciadores, ESG)",
+      "Reportes mensuales ejecutivos con métricas de huella digital, tono, tier, alcance e impacto estimado (Meltwater)",
+      "Análisis de ROI: comparativo earned media vs. costo de inserción pagada (solicitado Aldara, pendiente mayo)"
+    ],
+    "client_promises": [
+      {
+        "promise": "2 impactos editoriales mensuales en medios nacionales T1/T2 con control narrativo positivo",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Reuniones de estatus semanales remotas (30–60 min) para alineación estratégica y acuerdos formalizados",
+        "cadence": "semanal",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Monitoreo diario de medios tradicionales y digitales con alertas de coyuntura en tiempo real",
+        "cadence": "continuo",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Briefing books personalizados para eventos (CMP 2026, otros)",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Mapeo actualizado de stakeholders, medios y líderes de opinión con clasificación de sentimiento y riesgo",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Análisis de coyuntura sectorial y riesgos de reputación con argumentarios actualizados",
+        "cadence": "mensual",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Gestión de crisis y cartas aclaratorias fundamentadas legalmente",
+        "cadence": "evento",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Playbook corporativo estratégico (perfil, diferenciadores, ESG, gobierno corporativo)",
+        "cadence": "único",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Reportes mensuales ejecutivos con métricas de huella digital, tono, tier de medios e impacto estimado",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Análisis de ROI: comparativo earned media vs. costo de inserción pagada",
+        "cadence": "mensual",
+        "status": "pendiente"
+      }
+    ],
+    "fulfilled": [
+      "7 reuniones semanales documentadas (4-may, 7-may, 11-may, 18-may, 25-may, 8-jun, 10-jun) con acuerdos formalizados en minutas y Google Docs; gestión operativa consistente y transparente.",
+      "5 impactos publicados mayo 2026: Excélsior 19-may (Refuerza enfoque técnico), Dinero en Imagen 19-may, Cuadratin 19-may, Energía Hoy 26-may, Mundo Ejecutivo 26-may (Cuatro décadas, consolidándose como referente técnico); ~3.93M alcance combinado (Meltwater), cumpliendo meta mensual 2 impactos.",
+      "Briefing Book CMP 2026 entregado mayo: 11 secciones (agenda, actores, tendencias, preguntas sensibles, protocolos, way of working), 100+ diapositivas, aprobado por Aldara Noguez 25-may.",
+      "Playbook corporativo: 100+ diapositivas con perfil ejecutivo (42 años operación, Tomás Gorozpe DG), operaciones 14 estados, 4 ISOs (9001, 14001, 37001, 45001), 50+ clientes (Pemex, CFE, Ternium), diferenciadores técnicos MEDERE, laboratorio EMA, sistema operativo, aprobado y en revisión interna para actualizaciones mayo-junio.",
+      "Carta Aclaratoria La Silla Rota redactada 13-may (versión mejorada 7-may): rechaza nexo Felipa Obrador (no es socia/accionista), fundamentada en ASF y documentos contractuales, archivada preventivamente sin envío; Heraldo Tabasco respuesta análoga solicitada 25-may.",
+      "Monitoreo diario activo: reportes diarios en WhatsApp con portadas T1, alertas crisis (La Silla Rota 6-may, 12-may), Heraldo Tabasco 23-may identificado, matriz de 24 menciones 2026 (58.3% negativas=Aníbal/accidentes refinerías, 33.3% positivas=trayectoria/DG, 8.3% neutral); desplazamiento en Google búsquedas operativo (Cuadratin, Energía Hoy, Heraldo México top resultados noticias).",
+      "Calendario editorial junio confirmado parcialmente: Milenio 8-jun (CMP trayectoria) publicado, Excélsior 15-jun agua industrial pendiente aprobación foto Aldara, El Heraldo 22-jun historia institucional en desarrollo; estructura coherente con 2+ impactos junio en track.",
+      "Argumentario consolidado: integración de menciones adversas (Lourdes Mendoza 6 columnas Financiero, Aníbal Carrasco expediente TFJA 2020-2026, Felipa Obrador AMLO prima) en documento único vivo Google Docs + PDF actualizado post-crisis La Silla Rota (7-may), sostenido en ASF.",
+      "Análisis editorial trimestral (abril-mayo 2026): evaluación de inversión recomendada ~$392K (vs. $776K ofertado) — P&E Brand Content conservado, Global Energy plana julio $70.2K aceptada, Industry & Energy publicación sep, Armas descartada, 50+ Mujeres/P&E Night descartadas; estrategia eficiencia presupuestaria validada Aldara/Rafa.",
+      "Evaluación de eventos sector: CMP prioridad confirmada jun, Future Energy (19-may) recomendado asistencia 1 día, Downstream (27-29-may) Coatzacoalcos evaluado, ANEAS alianza estratégica documentada y carta de intención enviada semana 4-may."
+    ],
+    "pending": [
+      "Firma del contrato OC Renovación 28-abr-2026: VENCIDA 73 días (10-jun-2026); bloquea facturación, formalización de cadena de compromisos, y continuidad operativa; Aldara reportó 10-jun 'respuesta sobre investigación firma' pendiente esta semana.",
+      "Análisis ROI mayo 2026: solicitado explícitamente por Aldara (10-jun); debe calcular costo comparativo inserción pagada vs. earned media obtenido (5 notas ~3.93M alcance); impacto directo en reporte mensual junio y justificación presupuestaria.",
+      "Retracción/resolución La Silla Rota (6-may, 12-may): Carta Aclaratoria 13-may sin respuesta/retracción del medio; Heraldo Tabasco (23-may) análoga; monitoreo activo sin réplicas T1 (Reforma, Financiero, El Universal) aún controlado, pero vigilancia permanente requerida.",
+      "Banco de imágenes institucionales: meta julio 2026; fotografías para agua industrial (15-jun) y sector requeridas; Aldara debe enviar foto aprobada esta semana para publicación 15-jun; shooting fotográfico + video corporativo cotización presentada Tomás (propuesta 2 semanas).",
+      "Reportes mensuales con métricas huella digital completas: abril-mayo parciales; junio debe incluir análisis sentimiento, engagement, posicionamiento digital con datos plataforma Brief Media (onboarding Aldara 11-jun, ajustes configuración en curso).",
+      "Contenido agua industrial (15-jun Excélsior): aprobación foto Aldara requerida antes de martes 11-jun; segundo contenido agua aprobado en 8-jun, pero foto pendiente.",
+      "Contenido sector petroquímico (22-jun El Heraldo): en desarrollo, aprobación propuesta Aldara pendiente esta semana (9-13-jun).",
+      "Microanálisis way of working (operativo): Blackwell debe presentar en reunión 16-jun perspectiva eficiencia mutua incluyendo comentarios Mariana (operativa), solicitado Aldara 10-jun; feedback sobre daily reporting, flujo aprobaciones, coordinación urgencias.",
+      "Propuestas temáticas futuras julio-agosto: 4 títulos pendientes revisión/aprobación Aldara (contenido técnico sectorial, certificaciones, tema empleador branding); Blackwell adelantado en desarrollo.",
+      "Consolidación calendario actividades: Aldara reportó (10-jun) múltiples correos con actividades dispersas; debe entregar documento único esta semana con ANEAS, Pemex, eventos julio-agosto, deadlines."
+    ],
+    "per_file_notes": [
+      {
+        "file": "QUIMICA APOLLO_Reporte ABRIL (2).pptx",
+        "folder": "03.APOLLO_Reportes_Avance",
+        "finding": "Reporte abril 2026: Plan Maestro Comunicación 2026 formalizado, mapeo stakeholders construido, argumentario Lourdes Mendoza consolidado, evaluación eventos sector con recomendaciones prioridad, ruta ANEAS trazada, presupuesto editorial optimizado $392K (vs $776K), way of work alineada; no publicaciones aún, bases sentadas."
+      },
+      {
+        "file": "OnePager_Q1_ApolloVF (1).pdf",
+        "folder": "03.APOLLO_Reportes_Avance",
+        "finding": "Resumen Q1 2026: Plan Anual Comunicación desarrollado, monitoreo mediático diario activo con alertas riesgos y coyuntura, presentación DG nueva liderazgo, ficha informativa sector actualizada; estrategia integral en ejecución, continuidad monitoreo confirmada."
+      },
+      {
+        "file": "Reporte mensual de mayo Apollo_ 2026_06_10 08_58 CST - Notas de Gemini.docx",
+        "folder": "05. APOLLO_Transcripciones_Llamadas",
+        "finding": "Reunión reporte 10-jun: 5 impactos mayo (3.93M alcance Meltwater), posicionamiento CMP exitoso, transición pagado→alianzas estratégicas confirmada, servicio calificado 9/10 por adaptabilidad, ROI mayo pendiente, foto agua industrial pendiente, way of working feedback pendiente 16-jun, Rafa incluido distribución reportes."
+      },
+      {
+        "file": "Transcripción: 2026/06/08 (Google Doc→texto)",
+        "folder": "05. APOLLO_Transcripciones_Llamadas",
+        "finding": "Reunión TEAMBACK 8-jun: Milenio 8-jun confirmado publicado, agua industrial 15-jun aprobado contenido pero foto pendiente, agenda junio (22-jun El Heraldo institucional, julio técnico/certificaciones), playbook revisión RR.HH. para género/sustentabilidad, material audiovisual (foto+video) cotización a Tomás 2 semanas, cobertura mayo análisis: 58.3% negativo (Aníbal/refinerías), 33.3% positivo (trayectoria/DG), huella digital estrategia digital desplazando resultados negativos Google."
+      },
+      {
+        "file": "Transcripcion 2026/05/25 (Google Doc→texto)",
+        "folder": "05. APOLLO_Transcripciones_Llamadas",
+        "finding": "Reunión 25-may: Heraldo Tabasco carta respuesta pendiente revisión Aldara, foto Mundo Ejecutivo aplazada a 26-may por validación, CMP 2-4 jun propuesta cronograma 3 ó 4-jun + 8-jun para impactos, foto stand 2-jun comprometida, playbook actualización RR.HH./medio ambiente pendiente Aldara pos-viaje Veracruz, argumentario actualizado integrado Google Docs+PDF, nota tema acceso legal contrato 089."
+      },
+      {
+        "file": "Transcripción: 2026/05/18 (Google Doc→texto)",
+        "folder": "05. APOLLO_Transcripciones_Llamadas",
+        "finding": "Reunión 18-may: Primeros 2 contenidos aprobados (Mundo Ejecutivo, otra), calendarios mayo (19-may, 25-may), briefing book Word solicitado, parrilla junio 4 contenidos (3-4 jun CMP, 8 ó 9-jun CMP, 15-jun, 22-jun), playbook corporativo documento vivo Google Docs, fotos requisito evento, propuesta temáticas títulos aprobados, contenido técnico postergado a julio para evitar repetición CMP."
+      },
+      {
+        "file": "Transcripción 2026/05/11 (Google Doc→texto)",
+        "folder": "05. APOLLO_Transcripciones_Llamadas",
+        "finding": "Reunión kickoff 11-may: Plan Maestro presentado, narrativa definida, mapeo stakeholders completado, caso Lourdes Mendoza documentado, argumentario integrado, reporte mensual solicitado (métricas, huella digital prioridad Rafa), plataforma Brief Media onboarding solicitado, agilidad crítica, contenidos mayo prioritarios, CMP briefing book prioridad, análisis ROI implementación urgente, plataforma monitoreo (social+tradicional) mostrada (-95 sentimiento actual)."
+      },
+      {
+        "file": "Alineación por crisis: 07/05/26 (Google Doc→texto)",
+        "folder": "05. APOLLO_Transcripciones_Llamadas",
+        "finding": "Reunión crisis 7-may (La Silla Rota 6-may): carta aclaratoria borrador redactada basada ASF, monitoreo intensivo sin réplicas T1, Aníbal Carrasco identificado detonante 2020+, Lu (subgerente mercadotecnia) aportó contrato 089 para fundamentación, recomendación no comunicación externa para no amplificar, perfil medio/periodista solicitado, argumentario consolidado clave."
+      },
+      {
+        "file": "Minuta_04may2026.pdf",
+        "folder": "05. APOLLO_Transcripciones_Llamadas",
+        "finding": "Minuta 4-may: Contrato OC base, contenidos 1B/2A aprobados mayo, CMP prioridad confirmada (3-6 jun Boca del Río), briefing book solicitado (~18-may), presupuesto editorial optimizado $392K, eventos evaluados (Downstream, Future Energy, ANEAS), ficha institucional solicitada, analista comunicación en contratación, reporte mensual métricas huella digital prioridad Rafa, plazo reunión siguiente 11-may."
+      }
+    ]
+  },
+  "analyzed_at": "2026-06-11T02:35:07Z"
+}

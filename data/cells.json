@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.3",
+  "asOf": "2026-05-14",
+  "approvedBy": ["Humberto", "Alonso"],
+  "source": "ESTATUS PROYECTOS.xlsx columna Responsable (Sol=Marisol, Jo=Johanna) — actualizado 14-may-2026",
+  "cells": [
+    {
+      "id": "A",
+      "label": "Célula A",
+      "lead_id": "marisol",
+      "lead_name": "Marisol Guerrero",
+      "lead_role": "Gerente de Operaciones",
+      "members": [
+        "turbofin", "maja", "rocha", "apollo", "uldis", "azvi",
+        "futbol", "tello", "cima", "dalinde", "pujol", "luca",
+        "andy", "cojab", "pepe", "terry", "leadsales"
+      ],
+      "tentative_members": ["terry"],
+      "extras_not_in_dashboard": []
+    },
+    {
+      "id": "B",
+      "label": "Célula B",
+      "lead_id": "johanna",
+      "lead_name": "Johanna Palacio",
+      "lead_role": "Directora de Operaciones",
+      "members": [
+        "credix", "irugami", "stprm", "veracruz", "nuvoil", "totalplay",
+        "gicsa", "bernardo", "cuernavaca", "queretaro", "coastoil", "erikrubi",
+        "sasil", "neza", "supplypay", "karpowership"
+      ],
+      "tentative_members": [],
+      "extras_not_in_dashboard": []
+    }
+  ],
+  "unassigned": {
+    "reason": "Concluida / pausada / sin responsable en el xlsx",
+    "members": ["aduanas", "idlayr", "jack", "armor", "mapelly"]
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "number": "31",
+  "folderTitle": "31. SASIL/proyecto concluido",
+  "folderId": "1Y7g2jApC6p4Jn2hzle--niE7C5DZJEDU",
+  "folderModifiedTime": "2026-06-02T18:34:08.306Z",
+  "derivedStatus": "concluded",
+  "statusSuffix": "CONCLUIDO",
+  "latestDeliverable": {
+    "title": "FlashReport_Sasil_Mayo2026 (1).pdf",
+    "modifiedTime": "2026-05-13T20:27:16Z",
+    "source": "03. SASIL_Reportes_Avance"
+  },
+  "deliverableSource": "subfolder",
+  "lastActivity": {
+    "time": "2026-05-13T20:27:16Z",
+    "source": "03. SASIL_Reportes_Avance",
+    "file": "FlashReport_Sasil_Mayo2026 (1).pdf",
+    "fileId": "1WNLxBJPecZYHVgDqQyCz3FlGVwVTS4Km"
+  },
+  "subfolderActivity": {
+    "01. SASIL_Contratos_OC": {
+      "subfolderId": "1KyCpgFo8gjEOjfznWH9R5DjvsK8m0iWm",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:13Z_verify",
+      "last_verified_at": "2026-06-12T14:09:13Z"
+    },
+    "02. SASIL_Entregables": {
+      "subfolderId": "1OaIn-cTEiIkWYhSeuVw4lIZkSFyh1i4r",
+      "fileCount": 11,
+      "latestModified": "2026-05-07T22:40:16Z",
+      "latestFile": "00003063-PHOTO-2026-05-07-16-40-13.jpg",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:30Z",
+      "last_verified_at": "2026-06-05T19:45:30Z"
+    },
+    "03. SASIL_Reportes_Avance": {
+      "subfolderId": "1_T8OEA9dWsDJKIZLFc_qPkz8hr5hQypO",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T20:27:16Z",
+      "latestFile": "FlashReport_Sasil_Mayo2026 (1).pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:30Z",
+      "last_verified_at": "2026-06-05T19:45:30Z"
+    },
+    "04. SASIL_Conversaciones_WA": {
+      "subfolderId": "1NGHKvelURjtwnhqsLwV9OmZiefiF4koD",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T04:58:08Z",
+      "latestFile": "_chat.txt (en WhatsApp Chat - Sasil + Medios)",
+      "hasNestedFolders": true,
+      "nestedFilesPresent": true,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:30Z",
+      "last_verified_at": "2026-06-05T19:45:30Z",
+      "nestedNote": "Contiene subcarpetas: WhatsApp Chat - Sasil + Medios"
+    },
+    "05. SASIL_Transcripciones_Llamadas": {
+      "subfolderId": "1aX_gsgTkW21FKDW7WzAEl2c6rZ6LFtTj",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:30Z",
+      "last_verified_at": "2026-06-05T19:45:30Z"
+    },
+    "06. SASIL_Agenda_Trabajos": {
+      "subfolderId": "1Ri7zI6azTQhWd9B30tKvGEoacVLc4Z6J",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T10:09:58.187000Z",
+      "latestFile": "Lo que hicimos esta semana:",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-05T19:45:30Z",
+      "last_verified_at": "2026-06-05T19:45:30Z"
+    }
+  },
+  "pqProxy": {
+    "score": 50,
+    "tierMix": {
+      "tier1": 0,
+      "tier2": 0,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": "n/a",
+    "hasMetrics": false,
+    "evidence": "DELTA 2026-05-07: cuenta nueva creada hoy. Cascarón sin archivos cargados aún.",
+    "suggestion": "Coordinar onboarding: contrato/OC, kickoff, plan editorial.",
+    "fileEvaluated": null,
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "new_account",
+    "priority": 2,
+    "label": "Onboarding cuenta nueva",
+    "text": "Coordinar onboarding: contrato/OC, kickoff, plan editorial.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-17T13:25:00Z",
+  "playbookViolations": [
+    "contrato_OC_vacio_en_01"
+  ],
+  "analysisConfidence": "alta",
+  "isActive": false,
+  "lastCrawledAt": "2026-06-05T19:45:30Z",
+  "driveFiles": [
+    {
+      "id": "1WNLxBJPecZYHVgDqQyCz3FlGVwVTS4Km",
+      "name": "FlashReport_Sasil_Mayo2026 (1).pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-13T20:27:16.000Z",
+      "size": "1150508",
+      "subfolder": "03",
+      "subfolderName": "03. SASIL_Reportes_Avance",
+      "nestedPath": null
+    },
+    {
+      "id": "188DgWIinuYja9qOohFj0YCAq3as9tlvKwa97u8svx2M",
+      "name": "Lo que hicimos esta semana:",
+      "mimeType": "application/vnd.google-apps.document",
+      "modifiedTime": "2026-05-13T10:09:58.187Z",
+      "size": "1024",
+      "subfolder": "06",
+      "subfolderName": "06. SASIL_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1UNknIYofEHqabZf14ryMk7gBLDBKNQC5",
+      "name": "_chat.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T04:58:08.000Z",
+      "size": "8533",
+      "subfolder": "04",
+      "subfolderName": "04. SASIL_Conversaciones_WA",
+      "nestedPath": "WhatsApp Chat - Sasil + Medios"
+    },
+    {
+      "id": "12QSG76_CDELprFxiIFaDK1WRCCaB3Y1Q",
+      "name": "00003063-PHOTO-2026-05-07-16-40-13.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T22:40:16.000Z",
+      "size": "94156",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1c393ZLGi7jLewIp-dzjaQnjDZP-qm8Uf",
+      "name": "00003059-PHOTO-2026-05-07-12-27-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T19:19:50.000Z",
+      "size": "275242",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "188h02OWX1LZnXzyVrK8IIPo6wUqGVMuK",
+      "name": "00003058-PHOTO-2026-05-07-12-27-54.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T19:19:50.000Z",
+      "size": "93941",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1yW8bU9J-S4pcxdHahEMGUqE8GEHyTLsY",
+      "name": "00003053-PHOTO-2026-05-07-12-18-43.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T18:19:18.000Z",
+      "size": "113153",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1vGLIDKQMLBudNzyZlF6MbEd0v-0VS4za",
+      "name": "00003049-PHOTO-2026-05-07-07-59-27.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T13:59:28.000Z",
+      "size": "262198",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1HhxP6rGrifQzPYjH2XbxZq06JJ3W-aJb",
+      "name": "00003045-PHOTO-2026-05-07-07-54-52.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-07T13:51:36.000Z",
+      "size": "164896",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1GfmmAuoE3tUzlmxwKXdLicqjwSI7OGVj",
+      "name": "00003040-PHOTO-2026-05-06-11-38-24.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-06T17:35:08.000Z",
+      "size": "87117",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1JjRPN-9uadWqQuQ_uV2pcRcf3Mo-EaPI",
+      "name": "00003034-Nota - Sasil de León, el perfil que suma argumentos para encabezar la Secretaría de las Mujeres.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T20:28:18.000Z",
+      "size": "8218",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1roooxAbEH571iUf4dcQzQJ4aGkgWh7MO",
+      "name": "00003035-Nota - Secretaría de las Mujeres permanece sin titular; perfil de Sasil de León gana terreno.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T20:28:18.000Z",
+      "size": "8425",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1cktXyGJlJaMY5wMyqjkisPudOr7wbmd4",
+      "name": "00003029-Trascendido.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-05T20:00:10.000Z",
+      "size": "7496",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1u8le5JLgaACgWO8ACg1qyFptOgiqxxt2",
+      "name": "00003027-PHOTO-2026-05-04-17-51-45.jpg",
+      "mimeType": "image/jpeg",
+      "modifiedTime": "2026-05-04T23:55:52.000Z",
+      "size": "226074",
+      "subfolder": "02",
+      "subfolderName": "02. SASIL_Entregables",
+      "nestedPath": null
+    }
+  ]
+}

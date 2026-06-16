@@ -1,0 +1,123 @@
+{
+  "number": "16",
+  "account_id": "16",
+  "account_name": "MAPELLY",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1AEOlxWuX5nA76yKohSRFmBoJUxrgFGOR",
+      "title": "Link_BG_Mexico.pdf",
+      "subfolder": "01",
+      "subfolderName": "01.Contrato_OC",
+      "modifiedTime": "2026-04-22T17:44:11.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1RgUze7wLOmYu8Q058wqAMWa1rqy9n07Z",
+      "title": "REPORTE GENERAL SafeLink .pdf",
+      "subfolder": "03",
+      "subfolderName": "03.Reportes_Avance",
+      "modifiedTime": "2026-02-05T17:25:39.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1CaCjUzuUdvCO1SVw_QSI1jFoKVVOQmYM",
+      "title": "WhatsApp Chat - Mapelli - Blackwell.zip",
+      "subfolder": "04",
+      "subfolderName": "04.Conversaciones_WA",
+      "modifiedTime": "2026-04-22T17:40:36.000Z",
+      "kind": "WhatsApp/ZIP→texto"
+    }
+  ],
+  "files_read_count": 3,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Posicionamiento estratégico de SafeLink Group (Link BG Mexico) en medios nacionales mexicanos mediante publicaciones web controladas, narrativa institucional unificada y gestión de imagen corporativa para fortalecer credibilidad en espacios digitales clave.",
+    "content_summary": "Proyecto ejecutado entre enero y febrero 2026. Blackwell realizó 4 publicaciones web en medios nacionales de Tier 1 (Heraldo, Excélsior, Milenio, Dinero en Imagen) bajo contrato firmado el 07/01/2026 por MXN 100,000 + IVA. Todas las notas fueron publicadas con éxito, contenido aprobado por cliente y entregables completados. Cuenta concluida sin pendientes operativos.",
+    "current_status": "Proyecto finalizado el 05/02/2026 con entrega de reporte final. Las 4 publicaciones fueron ejecutadas, documentadas y aprobadas por el cliente (Mapelli). No hay actividad posterior ni compromisos pendientes.",
+    "client_promises": [
+      {
+        "promise": "4 publicaciones web en medios nacionales (Heraldo, Excélsior, Milenio, Dinero en Imagen)",
+        "status": "cumplido",
+        "cadence": "único"
+      },
+      {
+        "promise": "Desarrollo de narrativa institucional unificada para voceros",
+        "status": "cumplido",
+        "cadence": "único"
+      },
+      {
+        "promise": "Control editorial de contenidos publicados",
+        "status": "cumplido",
+        "cadence": "continuo"
+      },
+      {
+        "promise": "Entrega de reporte de trabajo con evidencias",
+        "status": "cumplido",
+        "cadence": "único"
+      }
+    ],
+    "pending": [],
+    "scope_of_service": [
+      "Diseño de mensaje estratégico unificado para narrativa institucional",
+      "Publicaciones web en medios nacionales y estatales (portales digitales)",
+      "Control editorial de contenidos posicionados (validación de narrativa)",
+      "Gestión de backlinks (máximo 2 por nota según políticas de medios)",
+      "Producción de audiovisuales/fotos para acompañar notas"
+    ],
+    "pq_assessment": "{\"placements\":4,\"tier_mix\":\"100% Tier 1 nacional (3 medios masivos + 1 especializado negocios)\",\"quality_narrative\":\"Narrativa consistente en las 4 piezas: posicionamiento institucional, capital humano y crecimiento de SafeLink. Control editorial efectivo — cliente aprobó contenido antes de publicación. Medios respetaron línea editorial de cliente.\",\"score_estimate\":95,\"result_vs_objective\":\"Superó objetivo: 4/4 publicaciones entregadas en 35 días. Todas de Tier 1. Medios de alto impacto. Cliente expresó satisfacción ('buen trabajo', aprobación final).\"}}",
+    "co_assessment": {
+      "committed": 4,
+      "on_time": 4,
+      "late": 0,
+      "missed": 0,
+      "delivered": 4,
+      "note": "Ejecución impecable. Única desviación menor: pausa intencional de publicación de Excélsior (solicitado por cliente 21/01, pero medio no permitió retiro — se publicó mismo día de Heraldo). Cliente aceptó reprogramación de siguientes notas. Pagos al día (factura emitida 06/01, contrato vigente desde 07/01). Sin incumplimientos."
+    },
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "approval",
+        "source": "Mapelli (cliente) WA 05/02/26 11:39",
+        "date": "2026-02-05",
+        "note": "'Listo. 👌🏻 buen trabajo'"
+      },
+      {
+        "type": "positive",
+        "signal": "praise",
+        "source": "Mapelli (cliente) WA 05/02/26 11:40",
+        "date": "2026-02-05",
+        "note": "'Igualmente!!', respuesta a agradecimiento de equipo Blackwell"
+      },
+      {
+        "type": "positive",
+        "signal": "scope_expand",
+        "source": "Mapelli (cliente) WA 06/01/26 9:09",
+        "date": "2026-01-06",
+        "note": "'Correcto vienen mas de otros para este año' — implica intención de trabajo futuro"
+      }
+    ],
+    "per_file_notes": [
+      {
+        "file": "Link_BG_Mexico.pdf",
+        "folder": "01.Contrato_OC",
+        "finding": "Contrato marco firmado 07/01/2026 (electrónico, blockchain). Anexo A especifica 4 publicaciones web nacionales, MXN 100,000 + IVA, pago anticipado. Cláusulas estándar de confidencialidad, IP (contenidos creados = propiedad Blackwell, cliente recibe licencia exclusiva), plazo de confirmación 5 días hábiles."
+      },
+      {
+        "file": "REPORTE GENERAL SafeLink .pdf",
+        "folder": "03.Reportes_Avance",
+        "finding": "Reporte ejecutivo enero-febrero 2026. Documenta 4 publicaciones con links directos a medios, fechas exactas (21/01 Heraldo, 21/01 Excélsior, 28/01 Milenio, 04/02 Dinero en Imagen), temas y versión digital. Evidencia visual: capturas/fotos de cada publicación en los portales."
+      },
+      {
+        "file": "WhatsApp Chat - Mapelli - Blackwell.zip",
+        "folder": "04.Conversaciones_WA",
+        "finding": "Intercambio completo 06/01-05/02/2026. Mapelli (cliente) aprueba OC el 06/01. Equipo Blackwell (Uriel, BWS, Sol) gestiona: propuestas de notas (13/01), media kits (15/01), ajustes de backlinks (máx 2 por nota, 20/01), fotos (20/01), aprobación final (20/01 'luz verde'), publicación secuencial. Cliente solicita 1 nota/semana (21/01) — equipo reprograma. Cierre: reporte entregado 05/02, cliente aprueba ('buen trabajo')."
+      }
+    ],
+    "score_adjustment_recommendation": "{\"co_delta\":0,\"pq_delta\":0,\"sc_delta\":0,\"reason\":\"Cuenta concluida sin anomalías. Desempeño operativo excelente (4/4 entregables a tiempo, sin retrasos). Calidad de colocaciones Tier 1, narrativa consistente, aprobación del cliente. No hay ajustes recomendados — calificación base es representativa.\"}}",
+    "notes": "Cuenta cerrada satisfactoriamente. Cliente (Mapelli, representante de SafeLink Group) expresó intención de proyectos futuros ('vienen más'). Relación con Humberto Herrera (Blackwell) es de larga duración ('cliente nuestro de muchos años'). Sin riesgos narrativos ni regulatorios. Cumplimiento operativo y de calidad excepcional. Blackwell demostró capacidad de gestión editorial, negociación con medios (ajuste de backlinks, reprogramación) y entrega ágil.",
+    "risks": [],
+    "opportunities": []
+  },
+  "analyzed_at": "2026-06-05T20:29:19Z"
+}

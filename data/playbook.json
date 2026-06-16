@@ -1,0 +1,1757 @@
+{
+  "generated": "2026-04-22",
+  "currentWeek": "Semana_17",
+  "weekStart": "2026-04-20",
+  "weekEnd": "2026-04-24",
+  "srValidationDeadline": "2026-04-27T09:00 (lunes 9h)",
+  "folderLabelRules": {
+    "activo": {
+      "score": true,
+      "render": "color",
+      "pattern": true,
+      "note": "Proyecto activo"
+    },
+    "concluido": {
+      "score": false,
+      "render": "gray",
+      "pattern": true,
+      "note": "Proyecto concluido"
+    },
+    "terminacion": {
+      "score": false,
+      "render": "gray",
+      "pattern": true,
+      "note": "Terminación anticipada"
+    },
+    "pausa": {
+      "score": false,
+      "render": "gray",
+      "pattern": true,
+      "note": "En pausa"
+    },
+    "evento": {
+      "score": false,
+      "render": "gray",
+      "pattern": true,
+      "note": "Evento único"
+    }
+  },
+  "folderLabels": {
+    "stprm": "activo",
+    "ipc": "activo",
+    "azvi": "activo",
+    "tello": "activo",
+    "nuvoil": "activo",
+    "cima": "activo",
+    "apollo": "activo",
+    "armor": "terminacion",
+    "jack": "pausa",
+    "maja": "activo",
+    "turbofin": "activo",
+    "pujol": "activo",
+    "rocha": "activo",
+    "futbol": "activo",
+    "dalinde": "activo",
+    "andy": "activo",
+    "veracruz": "activo",
+    "luca": "activo",
+    "bernardo": "activo",
+    "uldis": "activo",
+    "credix": "activo",
+    "erikrubi": "activo",
+    "totalplay": "activo",
+    "gicsa": "activo",
+    "aduanas": "activo",
+    "mapelly": "activo",
+    "irugami": "activo",
+    "idlayr": "concluido"
+  },
+  "weeks": {
+    "stprm": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 2,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 2,
+        "onTime": 1,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 2,
+        "onTime": 2,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 2,
+        "onTime": 1,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "ipc": [],
+    "azvi": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 4,
+        "onTime": 4,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 4,
+        "onTime": 3,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 4,
+        "onTime": 3,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 4,
+        "onTime": 2,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "tello": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 2,
+        "onTime": 2,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 2,
+        "onTime": 1,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 2,
+        "onTime": 1,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 2,
+        "onTime": 1,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "nuvoil": [],
+    "cima": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 4,
+        "onTime": 3,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 4,
+        "onTime": 3,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 4,
+        "onTime": 2,
+        "late": 1,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 4,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "apollo": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 5,
+        "onTime": 4,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 5,
+        "onTime": 5,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 5,
+        "onTime": 4,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 5,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "armor": [],
+    "jack": [],
+    "maja": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 3,
+        "onTime": 2,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 3,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 3,
+        "onTime": 2,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 3,
+        "onTime": 2,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "turbofin": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 4,
+        "onTime": 4,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 4,
+        "onTime": 4,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 4,
+        "onTime": 3,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 4,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "pujol": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 1,
+        "onTime": 0,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 1,
+        "onTime": 0,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 1,
+        "onTime": 0,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 1,
+        "onTime": 0,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      }
+    ],
+    "rocha": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 4,
+        "onTime": 4,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 4,
+        "onTime": 4,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 4,
+        "onTime": 3,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 4,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "futbol": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 2,
+        "onTime": 2,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 2,
+        "onTime": 1,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 2,
+        "onTime": 2,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 2,
+        "onTime": 1,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "dalinde": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 3,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 3,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 3,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 3,
+        "onTime": 2,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "andy": [],
+    "veracruz": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 3,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 3,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 3,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 3,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "luca": [],
+    "bernardo": [],
+    "uldis": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 1,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 1,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 1,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 1,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "credix": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 2,
+        "onTime": 1,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 2,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 2,
+        "onTime": 1,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "erikrubi": [],
+    "totalplay": [],
+    "gicsa": [],
+    "aduanas": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 3,
+        "onTime": 3,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 3,
+        "onTime": 2,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 3,
+        "onTime": 2,
+        "late": 1,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 3,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "mapelly": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 2,
+        "onTime": 1,
+        "late": 0,
+        "missed": 1,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "irugami": [
+      {
+        "week": "Semana_14",
+        "start": "2026-03-30",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_15",
+        "start": "2026-04-06",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_16",
+        "start": "2026-04-13",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      },
+      {
+        "week": "Semana_17",
+        "start": "2026-04-20",
+        "planned": 2,
+        "onTime": 0,
+        "late": 0,
+        "missed": 0,
+        "note": ""
+      }
+    ],
+    "idlayr": []
+  },
+  "scSignals": {
+    "stprm": [],
+    "ipc": [],
+    "azvi": [
+      {
+        "date": "2026-04-18",
+        "type": "positive",
+        "signal": "approval",
+        "source": "02_Entregables",
+        "note": "EC aprueba reporte Q1 sin comentarios"
+      },
+      {
+        "date": "2026-04-10",
+        "type": "positive",
+        "signal": "praise",
+        "source": "04_Conversaciones_WA",
+        "note": "«gracias por la cobertura del adendum»"
+      },
+      {
+        "date": "2026-03-28",
+        "type": "positive",
+        "signal": "scope_expand",
+        "source": "03_Reportes_Avance",
+        "note": "Pide sumar medios sector ferroviario"
+      }
+    ],
+    "tello": [
+      {
+        "date": "2026-04-08",
+        "type": "negative",
+        "signal": "no_response",
+        "source": "06_Agenda_Trabajos",
+        "note": "Sin respuesta desde hace 12 días"
+      }
+    ],
+    "nuvoil": [],
+    "cima": [
+      {
+        "date": "2026-04-13",
+        "type": "negative",
+        "signal": "complaint",
+        "source": "04_Conversaciones_WA",
+        "note": "Queja por tiempo de respuesta a crisis"
+      },
+      {
+        "date": "2026-04-03",
+        "type": "positive",
+        "signal": "approval",
+        "source": "02_Entregables",
+        "note": "Aprueba crisis statement"
+      }
+    ],
+    "apollo": [
+      {
+        "date": "2026-04-17",
+        "type": "positive",
+        "signal": "approval",
+        "source": "02_Entregables",
+        "note": "TG aprueba síntesis diaria"
+      },
+      {
+        "date": "2026-04-05",
+        "type": "positive",
+        "signal": "scope_expand",
+        "source": "04_Conversaciones_WA",
+        "note": "TG pide agregar 3 medios B2B"
+      },
+      {
+        "date": "2026-03-25",
+        "type": "negative",
+        "signal": "no_response",
+        "source": "06_Agenda_Trabajos",
+        "note": "Sin respuesta a minuta estratégica"
+      }
+    ],
+    "armor": [],
+    "jack": [],
+    "maja": [
+      {
+        "date": "2026-04-10",
+        "type": "positive",
+        "signal": "approval",
+        "source": "02_Entregables",
+        "note": "CP aprueba narrativa relanzamiento"
+      },
+      {
+        "date": "2026-03-18",
+        "type": "negative",
+        "signal": "no_response",
+        "source": "06_Agenda_Trabajos",
+        "note": "14 días sin respuesta en WA"
+      }
+    ],
+    "turbofin": [
+      {
+        "date": "2026-04-12",
+        "type": "positive",
+        "signal": "approval",
+        "source": "02_Entregables",
+        "note": "ME aprueba reporte semanal sin comentarios"
+      },
+      {
+        "date": "2026-04-02",
+        "type": "positive",
+        "signal": "praise",
+        "source": "04_Conversaciones_WA",
+        "note": "«muchas gracias Alex»"
+      }
+    ],
+    "pujol": [],
+    "rocha": [
+      {
+        "date": "2026-04-17",
+        "type": "positive",
+        "signal": "approval",
+        "source": "03_Reportes_Avance",
+        "note": "RR aprueba reporte de cronología"
+      },
+      {
+        "date": "2026-04-08",
+        "type": "positive",
+        "signal": "praise",
+        "source": "04_Conversaciones_WA",
+        "note": "«excelente manejo del tema»"
+      }
+    ],
+    "futbol": [],
+    "dalinde": [
+      {
+        "date": "2026-04-14",
+        "type": "positive",
+        "signal": "approval",
+        "source": "02_Entregables",
+        "note": "Aprobación de Forbes placement"
+      },
+      {
+        "date": "2026-03-20",
+        "type": "positive",
+        "signal": "referral",
+        "source": "03_Reportes_Avance",
+        "note": "Refiere a colega en sector salud"
+      }
+    ],
+    "andy": [],
+    "veracruz": [
+      {
+        "date": "2026-04-20",
+        "type": "positive",
+        "signal": "approval",
+        "source": "05_Transcripciones_Llamadas",
+        "note": "AH aprueba plan 90 días"
+      }
+    ],
+    "luca": [],
+    "bernardo": [],
+    "uldis": [],
+    "credix": [
+      {
+        "date": "2026-03-28",
+        "type": "negative",
+        "signal": "no_response",
+        "source": "06_Agenda_Trabajos",
+        "note": "Sin respuesta a kickoff formal"
+      }
+    ],
+    "erikrubi": [],
+    "totalplay": [],
+    "gicsa": [],
+    "aduanas": [
+      {
+        "date": "2025-12-15",
+        "type": "positive",
+        "signal": "approval",
+        "source": "02_Entregables",
+        "note": "AT aprueba ciclo semanal"
+      }
+    ],
+    "mapelly": [],
+    "irugami": [],
+    "idlayr": []
+  },
+  "weeklyCheck": {
+    "stprm": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "mariana",
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "ok",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "partial",
+        "agendaProxima": "ok"
+      },
+      "srValidated": "pending",
+      "note": ""
+    },
+    "ipc": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "azvi": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "uriel",
+      "consultorSr": "daniel",
+      "items": {
+        "resumenSemanal": "ok",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "ok",
+        "agendaProxima": "partial"
+      },
+      "srValidated": "pending",
+      "note": ""
+    },
+    "tello": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "uriel",
+      "consultorSr": "angel",
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "nuvoil": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": "angel+daniel",
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "cima": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "uriel",
+      "consultorSr": "daniel",
+      "items": {
+        "resumenSemanal": "partial",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "ok",
+        "agendaProxima": "partial"
+      },
+      "srValidated": "pending",
+      "note": ""
+    },
+    "apollo": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "mariana",
+      "consultorSr": "daniel",
+      "items": {
+        "resumenSemanal": "ok",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "ok",
+        "agendaProxima": "ok"
+      },
+      "srValidated": "pending",
+      "note": ""
+    },
+    "armor": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "uriel",
+      "consultorSr": "angel",
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "jack": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "uriel",
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "maja": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "mariana",
+      "consultorSr": "angel",
+      "items": {
+        "resumenSemanal": "partial",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "ok",
+        "agendaProxima": "partial"
+      },
+      "srValidated": "pending",
+      "note": ""
+    },
+    "turbofin": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "mariana",
+      "consultorSr": "daniel",
+      "items": {
+        "resumenSemanal": "ok",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "ok",
+        "agendaProxima": "ok"
+      },
+      "srValidated": "ok",
+      "note": ""
+    },
+    "pujol": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "rocha": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "mariana",
+      "consultorSr": "daniel",
+      "items": {
+        "resumenSemanal": "ok",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "ok",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "ok",
+      "note": ""
+    },
+    "futbol": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": "angel",
+      "items": {
+        "resumenSemanal": "partial",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "partial",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "pending",
+      "note": ""
+    },
+    "dalinde": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "mariana",
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "ok",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "ok",
+        "agendaProxima": "ok"
+      },
+      "srValidated": "ok",
+      "note": ""
+    },
+    "andy": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "mariana",
+      "consultorSr": "angel",
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "veracruz": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "partial",
+        "chatWA": "ok",
+        "transcripciones": "ok",
+        "aprobaciones": "partial",
+        "agendaProxima": "partial"
+      },
+      "srValidated": "pending",
+      "note": ""
+    },
+    "luca": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "bernardo": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "uldis": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "credix": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": "mariana",
+      "consultorSr": "daniel",
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "partial",
+        "agendaProxima": "partial"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "erikrubi": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "totalplay": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "gicsa": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "aduanas": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "mapelly": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "ok",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "irugami": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    },
+    "idlayr": {
+      "week": "Semana_17",
+      "dueDate": "2026-04-24",
+      "validationDue": "2026-04-27T09:00",
+      "consultorJr": null,
+      "consultorSr": null,
+      "items": {
+        "resumenSemanal": "missing",
+        "chatWA": "missing",
+        "transcripciones": "missing",
+        "aprobaciones": "missing",
+        "agendaProxima": "missing"
+      },
+      "srValidated": "missing",
+      "note": ""
+    }
+  },
+  "folderUpdates": {
+    "stprm": {
+      "01_Contrato_OC": null,
+      "02_Entregables": "2026-04-20",
+      "03_Reportes_Avance": "2026-04-05",
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": "2026-04-20"
+    },
+    "ipc": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "azvi": {
+      "01_Contrato_OC": "2025-11-01",
+      "02_Entregables": "2026-04-22",
+      "03_Reportes_Avance": "2026-04-18",
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": "2026-03-15"
+    },
+    "tello": {
+      "01_Contrato_OC": "2025-12-30",
+      "02_Entregables": "2026-04-20",
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "nuvoil": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "cima": {
+      "01_Contrato_OC": "2026-01-20",
+      "02_Entregables": "2026-04-20",
+      "03_Reportes_Avance": "2026-04-15",
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": "2026-04-10"
+    },
+    "apollo": {
+      "01_Contrato_OC": null,
+      "02_Entregables": "2026-04-22",
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": "2026-04-12"
+    },
+    "armor": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "jack": {
+      "01_Contrato_OC": "2025-09-01",
+      "02_Entregables": null,
+      "03_Reportes_Avance": "2025-09-15",
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "maja": {
+      "01_Contrato_OC": "2026-02-13",
+      "02_Entregables": "2026-04-22",
+      "03_Reportes_Avance": "2026-04-15",
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": "2026-04-05"
+    },
+    "turbofin": {
+      "01_Contrato_OC": "2025-08-11",
+      "02_Entregables": "2026-04-22",
+      "03_Reportes_Avance": "2026-04-19",
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": "2026-04-15"
+    },
+    "pujol": {
+      "01_Contrato_OC": "2026-02-20",
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "rocha": {
+      "01_Contrato_OC": null,
+      "02_Entregables": "2026-04-22",
+      "03_Reportes_Avance": "2026-04-17",
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": "2026-04-02"
+    },
+    "futbol": {
+      "01_Contrato_OC": null,
+      "02_Entregables": "2026-04-21",
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "dalinde": {
+      "01_Contrato_OC": "2026-01-15",
+      "02_Entregables": "2026-04-22",
+      "03_Reportes_Avance": "2026-04-16",
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": "2026-04-01"
+    },
+    "andy": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "veracruz": {
+      "01_Contrato_OC": "2026-04-17",
+      "02_Entregables": "2026-04-22",
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": "2026-04-20",
+      "06_Agenda_Trabajos": "2026-04-20"
+    },
+    "luca": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "bernardo": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "uldis": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "credix": {
+      "01_Contrato_OC": "2026-03-10",
+      "02_Entregables": "2026-04-02",
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": "2026-04-21",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": "2026-03-25"
+    },
+    "erikrubi": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "totalplay": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "gicsa": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "aduanas": {
+      "01_Contrato_OC": null,
+      "02_Entregables": "2025-12-15",
+      "03_Reportes_Avance": "2025-12-01",
+      "04_Conversaciones_WA": "2025-12-20",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "mapelly": {
+      "01_Contrato_OC": null,
+      "02_Entregables": "2025-11-10",
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": "2025-11-05",
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "irugami": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    },
+    "idlayr": {
+      "01_Contrato_OC": null,
+      "02_Entregables": null,
+      "03_Reportes_Avance": null,
+      "04_Conversaciones_WA": null,
+      "05_Transcripciones_Llamadas": null,
+      "06_Agenda_Trabajos": null
+    }
+  },
+  "scSignalTaxonomy": {
+    "approval": {
+      "label": "Cliente aprueba un entregable sin comentarios",
+      "type": "positive",
+      "where": "02_Entregables",
+      "howto": "Captura del correo o mensaje de WA"
+    },
+    "praise": {
+      "label": "Cliente hace un comentario positivo espontáneo",
+      "type": "positive",
+      "where": "04_Conversaciones_WA",
+      "howto": "Captura o en el resumen de acuerdos"
+    },
+    "scope_expand": {
+      "label": "Cliente pide ampliar el alcance del servicio",
+      "type": "positive",
+      "where": "03_Reportes_Avance",
+      "howto": "Nota en la minuta de la reunión"
+    },
+    "referral": {
+      "label": "Cliente refiere a otro cliente",
+      "type": "positive",
+      "where": "03_Reportes_Avance",
+      "howto": "Nota escrita del consultor Sr"
+    },
+    "complaint": {
+      "label": "Cliente presenta una queja específica",
+      "type": "negative",
+      "where": "05_Transcripciones_Llamadas",
+      "howto": "Transcripción + resumen con acción correctiva"
+    },
+    "no_response": {
+      "label": "Cliente no responde en 2 semanas o más",
+      "type": "negative",
+      "where": "06_Agenda_Trabajos",
+      "howto": "Nota de seguimiento con fecha de último contacto"
+    },
+    "no_show": {
+      "label": "Cliente cancela reunión sin reagendar",
+      "type": "negative",
+      "where": "06_Agenda_Trabajos",
+      "howto": "Nota breve con fecha y contexto"
+    }
+  },
+  "folderResponsibles": [
+    {
+      "folder": "01_Contrato_OC",
+      "responsible": "Consultor Sr",
+      "frequency": "Al inicio y al renovar"
+    },
+    {
+      "folder": "02_Entregables",
+      "responsible": "Consultor Jr",
+      "frequency": "Cada vez que se entrega algo; resumen cada viernes"
+    },
+    {
+      "folder": "03_Reportes_Avance",
+      "responsible": "Consultor Sr",
+      "frequency": "Quincenal o mensual según contrato"
+    },
+    {
+      "folder": "04_Conversaciones_WA",
+      "responsible": "Consultor Jr",
+      "frequency": "Cada lunes antes de las 10h"
+    },
+    {
+      "folder": "05_Transcripciones_Llamadas",
+      "responsible": "Consultor Jr",
+      "frequency": "Máximo 24h después de cada llamada"
+    },
+    {
+      "folder": "06_Agenda_Trabajos",
+      "responsible": "Consultor Sr",
+      "frequency": "Antes de cada semana o acción"
+    }
+  ],
+  "effectIfMissing": [
+    {
+      "situation": "01_Contrato_OC vacía",
+      "effect": "CO inicia en 0 hasta que se suba"
+    },
+    {
+      "situation": "Sin entregables en 02_Entregables en la semana",
+      "effect": "CO de esa semana = 0"
+    },
+    {
+      "situation": "Sin exportación de WA por 2 semanas",
+      "effect": "SC pierde 2 puntos por semana sin registro"
+    },
+    {
+      "situation": "Sin transcripciones en el mes",
+      "effect": "PQ no puede triangularse; calificación baja al mínimo del rango"
+    },
+    {
+      "situation": "Sin agenda subida",
+      "effect": "CO no tiene base de compromisos; se estima con el contrato"
+    },
+    {
+      "situation": "Carpeta sin movimiento por 3 semanas en proyecto activo",
+      "effect": "El semáforo marca alerta automática para dirección"
+    }
+  ],
+  "glosario": [
+    {
+      "term": "CO",
+      "def": "Cumplimiento Operativo: entregables realizados vs comprometidos"
+    },
+    {
+      "term": "SF",
+      "def": "Salud Financiera: meses pagados al corriente vs meses transcurridos"
+    },
+    {
+      "term": "PQ",
+      "def": "Performance / Calidad: promedio de calificación de entregables (narrativa, tier de medio, resultado vs objetivo)"
+    },
+    {
+      "term": "SC",
+      "def": "Satisfacción del Cliente: señales positivas vs total de señales registradas"
+    },
+    {
+      "term": "Score global",
+      "def": "Promedio ponderado: CO×30% + SF×20% + PQ×20% + SC×30%"
+    },
+    {
+      "term": "Tier estratégica",
+      "def": "Cuenta de alto valor con contrato marco y operación continua"
+    },
+    {
+      "term": "Tier táctica",
+      "def": "Cuenta de alcance específico o puntual"
+    },
+    {
+      "term": "Semana sin actividad",
+      "def": "Semana donde no se subió ningún archivo a las carpetas del proyecto"
+    },
+    {
+      "term": "Patrón",
+      "def": "Comportamiento identificado en proyectos históricos que sirve como referencia para los activos"
+    }
+  ],
+  "filenameConvention": {
+    "pattern": "[CLIENTE]_[Tipo]_[AAAAMMDD]",
+    "example": "AZVI_Nota_20260418.pdf",
+    "regex": "^[A-Z0-9]+_[A-Za-zÁÉÍÓÚÑáéíóúñ ]+_[0-9]{8}\\.(pdf|docx|pptx|png|jpg|xlsx|zip|txt|mp4|m4a)$"
+  },
+  "weeklyConsultorChecklist": [
+    {
+      "key": "resumenSemanal",
+      "label": "Resumen semanal de actividades subido a 02_Entregables/Semana_NN"
+    },
+    {
+      "key": "chatWA",
+      "label": "Exportación de chat de WA del cliente subida a 04_Conversaciones_WA"
+    },
+    {
+      "key": "transcripciones",
+      "label": "Transcripciones de llamadas de la semana subidas a 05_Transcripciones_Llamadas"
+    },
+    {
+      "key": "aprobaciones",
+      "label": "Capturas de aprobaciones o comentarios del cliente guardadas en la carpeta que corresponde"
+    },
+    {
+      "key": "agendaProxima",
+      "label": "Agenda de la semana siguiente subida a 06_Agenda_Trabajos"
+    }
+  ],
+  "activityInactivityThresholds": {
+    "weeksWithoutMovement": 3,
+    "daysSinceLastUpdateWarn": 14,
+    "daysSinceLastUpdateAlert": 21
+  }
+}

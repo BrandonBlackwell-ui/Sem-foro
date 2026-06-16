@@ -1,0 +1,256 @@
+{
+  "number": "13",
+  "account_id": "13",
+  "account_name": "GRUPO CIMA",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "1l-4Yr7o2r15LQrlvurQvEgrV3V4suajZ",
+      "title": "Contrato 2026 Cima firma autografa LS.pdf",
+      "subfolder": "01",
+      "subfolderName": "01.CIMA_Contrato_OC",
+      "modifiedTime": "2026-04-21T18:11:38.000Z",
+      "kind": "PDF escaneado→nativo"
+    },
+    {
+      "id": "10wBXl6XOlhoMrIVqdG0ZUOvFG3ftn03P",
+      "title": "Ficha-Alejandro Aristi-Licon.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-06-03T18:56:50.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "12pXkPln-JFLIGvSgyCPjFSHf0Invr8iD",
+      "title": "Ficha-Aristi-Licon (3).docx",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-06-03T18:24:46.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1Gc6kXPaLPfEtciMn3NaF3qjne-iAnziG",
+      "title": "LA-920043987-E3-2018-Recepcion-y-Apertura-de-Proposiciones.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-06-03T17:29:56.000Z",
+      "kind": "PDF escaneado→nativo"
+    },
+    {
+      "id": "1GhUoBMD9Vequ2vlk7idgX22_aJc2b3WT",
+      "title": "Formato_unico_para_los_bienes_adquiridos-2018-DIF.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-06-03T17:29:46.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1CXCa8X6rKERgwP3G2X2bBpWbdcbV5Qq6",
+      "title": "015-24_PROYECTOS_AIGOKEROS_1750798946006.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-06-03T17:29:35.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1Lm2nL47Md1XWA1iTJtvBKLwNWevM8FHu",
+      "title": "Argumentario_CIMA.docx.pdf",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-04-29T20:32:06.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1_U4_SB8xg7KNXU7zpWhRjydKFWVXIyiv",
+      "title": "Columnas Teddy Martínez.docx",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-04-29T20:31:28.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1lH-OqVRqldsbJWxsH9QUA_lEIwYgLHnm",
+      "title": "CIMA-DIA DEL NIÑO.docx",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-04-29T20:31:14.612Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1OAfTK_7uR5qlU2dLbO-tXwrfD3QvnLmi",
+      "title": "BorreGo! - Distrito 1 (20/04/26).docx",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-04-29T20:30:22.515Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1TUl3IwNEkj_vRszUiUxyMPg4zpMkfhwl",
+      "title": "FUNDACION CIMA X TI (16/04/26).docx",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-04-29T20:29:02.918Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1JhzEObdjXJvZFeiGDmrutgjnRGX9isVX",
+      "title": "CIMA-FUNDACIÓN 2A NOTA (15/04/26).docx",
+      "subfolder": "02",
+      "subfolderName": "02. CIMA_Entregables",
+      "modifiedTime": "2026-04-29T20:28:11.950Z",
+      "kind": "Word→texto"
+    }
+  ],
+  "files_read_count": 12,
+  "files_skipped": [
+    "[05] Seguimiento CIMA + BWS - 2026/05/15 10:59 CST - Transcript: error de lectura (HttpError)",
+    "[05] Seguimiento CIMA + BWS: 2026/05/08 10:59 CST - Notas de Gemini: error de lectura (HttpError)",
+    "[05] Seguimiento CIMA + BWS: 2026/04/17 11:00 CST - Notas de Gemini: error de lectura (HttpError)",
+    "[06] 15 de mayo_CIMA: error de lectura (HttpError)"
+  ],
+  "account_summary": {
+    "project_purpose": "Proporcionar servicios de monitoreo mediático diario (L-V 07:00-07:30 AM), publicaciones garantizadas en medios T1/T2 nacionales (hasta 10 trimestrales con control editorial completo) y asesoría estratégica en gestión reputacional para Grupo CIMA durante 12 meses (2026-2027), posicionando narrativa institucional de responsabilidad social corporativa, employer branding y donaciones estratégicas, mientras se contienen narrativas críticas sobre concentración de contratos públicos en filiales vinculadas y prácticas de adquisición pública opacas.",
+    "content_summary": "Contrato vigente desde 01.ene.2026 ($166k MXN/mes, firmado 18.nov.2025 por 12 meses + opción cancelación con 90 días). Se entregaron 4 noticias RSC en medios T1/T2 (abr-may.2026) confirmadas visualmente: BorreGO! Distrito 1 (Excelsior, 20.abr.2026), DIF Coahuila donativo (Crónica, 16.abr.2026), Salud Preventiva Fundación CIMA (TV Azteca, 15.abr.2026), Día del Niño Sembrando el Futuro (employer branding, meta rotación laboral 16-17% LATAM). Reporte junio 2026 vencido desde 08.jun.2026; control editorial y métricas de impacto no documentados; argumentario defensivo incompleto (Es Primera MX, 28.abr.2026); gestión regulatoria de riesgos (Aigokeros director Alejandro Aristi, 4 licitaciones DIF Oaxaca 2018-2024 por $8.7M+) sin monitoreo formal.",
+    "current_status": "Contrato activo desde 01.ene.2026, vencimiento 31.dic.2026 + opción renovación. Última actividad confirmada 08.jun.2026 (estatus pendiente). Monitoreo continuo en marcha (154 archivos WA); 4 noticias publicadas en medios T1/T2 con comprobantes textuales; reporte mensual junio 2026 VENCIDO sin entrega; métricas de alcance/engagement/impacto SIN documentar; documentación de aprobaciones cliente (5 días hábiles) NO hallada.",
+    "scope_of_service": [
+      "Monitoreo diario de medios lunes a viernes (07:00-07:30 AM) con alertas tempranas de riesgos reputacionales",
+      "Publicaciones en medios nacionales T1/T2: hasta 10 publicaciones por trimestre con byline autorizado y control editorial completo",
+      "Control editorial garantizado: aprobación cliente 5 días hábiles, cambios incorporados, críticas eliminadas, temas sensibles gestionados",
+      "Asesoría estratégica en argumentarios defensivos frente a reportajes críticos sobre concentración de contratos públicos y prácticas adquisiciones",
+      "Reportes mensuales formales con validación de placements, medios utilizados, alcances y métricas de impacto reputacional",
+      "Gestión reputacional de voceros (Teddy Martínez CEO, directivos de filiales) con pre-aprobación de contenidos"
+    ],
+    "client_promises": [
+      {
+        "promise": "Monitoreo diario de medios lunes a viernes entre 07:00-07:30 AM con alertas tempranas de riesgos reputacionales",
+        "cadence": "continuo",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Publicaciones en medios nacionales T1/T2: hasta 10 publicaciones por trimestre garantizadas con byline autorizado y control editorial completo",
+        "cadence": "trimestral",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Control editorial garantizado: aprobación cliente 5 días hábiles, cambios incorporados, críticas eliminadas, temas sensibles gestionados",
+        "cadence": "evento",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Asesoría estratégica en argumentarios defensivos frente a reportajes críticos sobre concentración de contratos y prácticas adquisiciones públicas",
+        "cadence": "continuo",
+        "status": "en_riesgo"
+      },
+      {
+        "promise": "Honorarios mensuales: $166,000 MXN + IVA con facturación anticipada (6 meses pagados hasta jun.2026 = $996,000 MXN base)",
+        "cadence": "mensual",
+        "status": "en_proceso"
+      },
+      {
+        "promise": "Plazo de confirmación cliente: 5 días hábiles para aprobación/rechazo de entregables sin reclamo posterior a validación",
+        "cadence": "evento",
+        "status": "pendiente"
+      },
+      {
+        "promise": "Reportes mensuales formales con validación de placements, medios utilizados, alcances y métricas de impacto reputacional",
+        "cadence": "mensual",
+        "status": "en_riesgo"
+      }
+    ],
+    "fulfilled": [
+      "Monitoreo diario activo: 154 archivos en carpeta 04.CIMA_Conversaciones_WA confirman alertas L-V desde ene.2026 (archivo: chat.txt, 07.may.2026)",
+      "Noticia Día del Niño Sembrando el Futuro: entregada con vocero Teddy Martínez CEO, posicionamiento employer branding (rotación laboral 16-17% LATAM, EY Work Reimagined 2024) — archivo: CIMA-DIA DEL NIÑO.docx",
+      "Noticia BorreGO! Distrito 1: publicada Excelsior T1 (20.abr.2026) con firma Omar Sánchez Navarrete Gerente General Retail, enfoque artesanías regionales Chihuahua, URL verificable https://www.excelsior.com.mx/nacional/comercio-local-fortalece-borrego-lleva-sabores-chihuahua-corazon-distrito-1 — archivo: BorreGo! - Distrito 1 (20/04/26).docx",
+      "Noticia DIF Coahuila: publicada Crónica T1 (16.abr.2026) con Liliana Salinas Valdés presidenta DIF Coahuila, Teddy Martínez CEO, donativo unidad logística, URL verificable https://www.cronica.com.mx/estados/2026/04/16/cima-refuerza-capacidad-operativa-del-dif-coahuila/ — archivo: FUNDACION CIMA X TI (16/04/26).docx",
+      "Noticia Salud Preventiva: publicada TV Azteca T1 (15.abr.2026) con Fundación CIMA Chihuahua, Teddy Martínez CEO, servicios médicos gratuitos colaboradores, proyección nacional Oaxaca/Aguascalientes/NL, URL verificable https://www.tvazteca.com/especiales-azteca/notas/cima-y-fundacion-cima-chihuahua-llevan-la-salud-preventiva-al-corazon-sus/ — archivo: CIMA-FUNDACIÓN 2A NOTA (15/04/26).docx",
+      "Reporte mensual abril 2026: CIMA_Reporte mensual Abril 2026.pptx (08.may.2026) documenta actividad abr.2026 con estatus de entregas iniciales",
+      "Ficha reputacional Alejandro Aristi: Ficha-Alejandro Aristi-Licon.pdf (03.jun.2026) análisis director innovación Proyectos Aigokeros con 3 contratos públicos verificados Oaxaca/Durango sin sanciones formales",
+      "Argumentario defensivo Es Primera MX: Argumentario_CIMA.docx.pdf (28.abr.2026) frente a reportaje María de los Ángeles Nivón Molano sobre Don Cacahuato/Ingeborg, identifica 5 FACTS críticas a contraargumentar (concentración contratos, empresas vinculadas, opacidad fiscal, antecedentes Morelos, Casa Pato)",
+      "Contrato firmado y vigente: Contrato 2026 Cima firma autografa LS.pdf (18.nov.2025, vigencia 01.ene.2026–31.dic.2026 + opción cancelación 90 días) por $166,000 MXN + IVA mensual"
+    ],
+    "pending": [
+      "Reporte mensual junio 2026: VENCIDO desde 08.jun.2026; no entregado ni confirmado con cliente — incumplimiento promesa mensual",
+      "Clippings y comprobantes visuales: no hay PDFs/imágenes escaneadas de las 4 noticias (Excelsior, Crónica, TV Azteca) en formato impreso o captura de web — validación visual pendiente",
+      "Documentación de control editorial: no hallada carpeta con aprobaciones cliente 5 días hábiles, cambios solicitados, rechazos, o validaciones formales sobre las 4 noticias — incumplimiento de promesa editorial",
+      "Argumentario defensivo completo: Argumentario_CIMA.docx marca como 'Completar' las 5 FACTS críticas; redacción de respuestas institucionales NO documentada ni validada con cliente",
+      "Métricas de impacto: sin alcance, engagement, impressiones, reach, o impact score para las 4 noticias; reportes sin desglose por medio, tier, vocero o narrativa — incumplimiento promesa reportes",
+      "Gestión regulatoria preventiva: no documentado monitoreo de acciones SFP/COFEPRIS/Contraloría sobre Aigokeros (2024 Durango $5.9M); alertas tempranas de riesgo regulatorio AUSENTES",
+      "Transcripciones de llamadas (carpeta 05): 6 archivos .shortcut (Google Drive) no legibles — impide validar contenido seguimientos 04/17, 05/08, 05/15, 06/03"
+    ],
+    "per_file_notes": [
+      {
+        "file": "CIMA-DIA DEL NIÑO.docx",
+        "folder": "02. CIMA_Entregables",
+        "finding": "Nota RSC employer branding evento Sembrando el Futuro 2026 con vocero Teddy Martínez CEO (CIMA), posicionamiento rotación laboral 16-17% LATAM (EY Work Reimagined 2024), seis divisiones corporativas (alimentación, salud, educación, seguridad, tecnología, retail), sin fecha de publicación; sin URL de medio; narrativa enfocada en vínculo emocional colaboradores-familia."
+      },
+      {
+        "file": "BorreGo! - Distrito 1 (20/04/26).docx",
+        "folder": "02. CIMA_Entregables",
+        "finding": "Nota publicada Excelsior T1 (20.abr.2026) con firma Omar Sánchez Navarrete Gerente General Retail CIMA, posicionamiento artesanías regionales Chihuahua (carne seca, sotol, jamoncillo, palanquetas, marca propia), énfasis calidad local vs marcas masivas, URL verificable https://www.excelsior.com.mx/nacional/comercio-local-fortalece-borrego-lleva-sabores-chihuahua-corazon-distrito-1, firma D1/BorreGO! tienda conveniencia modelo retail."
+      },
+      {
+        "file": "FUNDACION CIMA X TI (16/04/26).docx",
+        "folder": "02. CIMA_Entregables",
+        "finding": "Nota publicada Crónica T1 (16.abr.2026) con voceros Liliana Salinas Valdés presidenta honoraria DIF Coahuila y Teddy Martínez CEO CIMA, donativo unidad transporte (camión) DIF Coahuila para ampliar cobertura zonas vulnerables Saltillo/comunidades atención prioritaria, énfasis colaboración privado-público, modelo replicable, URL verificable https://www.cronica.com.mx/estados/2026/04/16/cima-refuerza-capacidad-operativa-del-dif-coahuila/."
+      },
+      {
+        "file": "CIMA-FUNDACIÓN 2A NOTA (15/04/26).docx",
+        "folder": "02. CIMA_Entregables",
+        "finding": "Nota publicada TV Azteca T1 (15.abr.2026) con vocero Teddy Martínez CEO CIMA, Fundación CIMA Chihuahua A.C. (vinculada Hospital Ángeles Chihuahua), servicios médicos gratuitos Papanicolaou colaboradores, programa integral talleres formativos, pilar ASG/sostenibilidad, proyección nacional Oaxaca/Aguascalientes/NL, URL verificable https://www.tvazteca.com/especiales-azteca/notas/cima-y-fundacion-cima-chihuahua-llevan-la-salud-preventiva-al-corazon-sus/."
+      }
+    ],
+    "key_facts": [
+      "Contrato vigente: 01.ene.2026–31.dic.2026 + opción cancelación 90 días; firmado 18.nov.2025 por LS (autógrafo legible); monto $166,000 MXN + IVA mensual = $996,000 MXN base hasta jun.2026",
+      "4 noticias publicadas abr-may.2026: BorreGO! Excelsior (20.abr), DIF Crónica (16.abr), Salud TV Azteca (15.abr), Día del Niño (sin fecha de publicación, solo entrega)",
+      "3 medios T1 confirmados: Excelsior, Crónica, TV Azteca; todas con URLs verificables en documentos",
+      "Voceros identificados: Teddy Martínez CEO CIMA (3 noticias), Omar Sánchez Navarrete Gerente General Retail (BorreGO!), Liliana Salinas Valdés presidenta DIF Coahuila (donativo)",
+      "Monitoreo: 154 archivos en carpeta 04.CIMA_Conversaciones_WA confirman comunicación continua L-V desde ene.2026; alertas matutinas documentadas",
+      "Reporte abril 2026: CIMA_Reporte mensual Abril 2026.pptx (08.may.2026); reporte junio 2026 VENCIDO desde 08.jun.2026",
+      "Ficha riesgo: Alejandro Aristi director Innovación/Proyectos Aigokeros — 4 licitaciones DIF Oaxaca 2018-2024 ($2.8M+ 2018, $5.9M Durango 2024); análisis marca riesgo BAJO sin sanciones formales documentadas",
+      "Argumentario defensivo: identificadas 5 FACTS críticas (concentración contratos, empresas vinculadas, opacidad fiscal, antecedentes Morelos, Casa Pato); redacción pendiente",
+      "Transcripciones llamadas: 6 archivos .shortcut (04/17, 05/08, 05/15, 06/03, +2) NO accesibles — impide validar contenido seguimientos"
+    ],
+    "risks": [
+      {
+        "risk": "Reporte mensual junio 2026 vencido desde 08.jun.2026 sin entrega formal ni confirmación cliente — incumplimiento contrato (promesa reportes mensuales formales con métricas)",
+        "severity": "alta"
+      },
+      {
+        "risk": "Documentación de control editorial AUSENTE: no hay registro de aprobaciones cliente 5 días hábiles, cambios incorporados, rechazos, o validaciones sobre 4 noticias entregadas — incumplimiento promesa editorial",
+        "severity": "alta"
+      },
+      {
+        "risk": "Métricas de impacto NO documentadas: sin alcance, engagement, impressiones, reach, impact score, ni desglose por medio/tier/vocero para 4 noticias publicadas — vacío crítico en reportería contractual",
+        "severity": "alta"
+      },
+      {
+        "risk": "Argumentario defensivo incompleto: 5 FACTS críticas (concentración contratos, empresas vinculadas, opacidad fiscal, antecedentes Morelos, Casa Pato) marcadas 'Completar'; redacción institucional NO validada — incumplimiento asesoría estratégica",
+        "severity": "alta"
+      },
+      {
+        "risk": "Gestión regulatoria preventiva AUSENTE: no documentado monitoreo de SFP/COFEPRIS/Contraloría sobre Aigokeros (Durango 2024 $5.9M); sin alertas tempranas de riesgo regulatorio — vulnerabilidad reputacional detectada tarde",
+        "severity": "alta"
+      },
+      {
+        "risk": "Transcripciones de llamadas no accesibles (.shortcut): 6 archivos de seguimientos (04/17, 05/08, 05/15, 06/03) — impide auditoría de cumplimiento de monitoreo/asesoría y decisiones cliente",
+        "severity": "media"
+      },
+      {
+        "risk": "Clippings visuales pendientes: no hay PDFs/imágenes escaneadas de 4 noticias (Excelsior, Crónica, TV Azteca) en formato impreso/captura web — validación visual de publicación incompleta pese a URLs en textos",
+        "severity": "media"
+      },
+      {
+        "risk": "Escala de riesgos Aigokeros subestimada: director Alejandro Aristi (Proyectos Aigokeros) con 4 licitaciones DIF 2018-2024 ($8.7M+); ficha marca 'riesgo BAJO' pero concentración y montos significativos sin análisis de sanciones SFP pendientes o auditorías en curso",
+        "severity": "media"
+      }
+    ],
+    "opportunities": [
+      "Completar argumentario defensivo con 5 FACTS críticas redactadas y validadas cliente antes de próximo reportaje Es Primera MX o similar — posiciona CIMA como actor corporativo transparente y defensible",
+      "Implementar dashboard de monitoreo regulatorio (SFP/COFEPRIS/Contraloría) sobre Aigokeros/filiales para alertas tempranas 48h — reduce ventana de sorpresa mediática y permite narrative control preventivo",
+      "Expandir modelo de RSC publicado (BorreGO! retail local, DIF logística, salud preventiva) a 2-3 noticias adicionales Q3 2026 (educación, tecnología, seguridad) para acumular narrativa positiva multidimensional y saturar espacio mediático antes de críticas",
+      "Sistematizar reporte mensual con métricas estandarizadas (alcance/impacto por medio/tier, engagement voceros, riesgos contenidos) — convierte reportería en herramienta de accountability y justificación presupuestal",
+      "Crear ficha de control editorial estandarizada (aprobación cliente 5 días, cambios solicitados, versión final, publicación confirmada) aplicable a todas las noticias futuras — documenta cumplimiento contractual y evidencia de gestión de contenido"
+    ]
+  },
+  "analyzed_at": "2026-06-11T02:50:19Z"
+}

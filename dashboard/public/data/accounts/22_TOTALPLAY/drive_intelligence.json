@@ -1,0 +1,273 @@
+{
+  "number": "22",
+  "account_id": "22",
+  "account_name": "TOTALPLAY",
+  "cadenceType": null,
+  "files": [
+    {
+      "id": "194shaWt1imx6wW8F3na2fskb86Z8sHcB",
+      "title": "ODC-TOTALPLAY ABR2026.docx",
+      "subfolder": "01",
+      "subfolderName": "01. TOTAL_PLAY_Contratos_OC",
+      "modifiedTime": "2026-04-23T22:40:54.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1PKpy_adyXKCOPmrYk2eIYZho00RUn1YB",
+      "title": "Abril2026_Evidencia-Totalplay.xlsx",
+      "subfolder": "02",
+      "subfolderName": "02. TOTAL_PLAY_Entregables",
+      "modifiedTime": "2026-04-30T00:03:39.000Z",
+      "kind": "Excel→texto"
+    },
+    {
+      "id": "1FwBD3pSP2TYcogp20vyR-HDUvQyOZale",
+      "title": "comunicado_Totalplay_5T4D10_VF.docx",
+      "subfolder": "02",
+      "subfolderName": "02. TOTAL_PLAY_Entregables",
+      "modifiedTime": "2026-04-23T04:16:53.000Z",
+      "kind": "Word→texto"
+    },
+    {
+      "id": "1xZG28VPdfsJvR4whQr93BlU_GJ2Upvyt",
+      "title": "Reporte_Totalplay_INFINITY_OneWeek.pptx.pdf",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "modifiedTime": "2026-05-04T22:53:43.000Z",
+      "kind": "PDF→texto"
+    },
+    {
+      "id": "1OW2Jaq29txsZXQ865soHbq3jowztigQi",
+      "title": "Reporte_Totalplay_INFINITY_OneWeek.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "modifiedTime": "2026-05-04T22:53:21.253Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1QztwIPs2UtUxTSQ608jwPtw0D3OWHGQE",
+      "title": "2026 Totalplay - FlashReport_Totalplay_INFINITY_v2.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "modifiedTime": "2026-04-23T22:07:25.033Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "11nB_DOo-FLB5qzi4I5KuasTWFh1ZB8n1",
+      "title": "Totalplay - Corte de medio - 23 abril.xlsx",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "modifiedTime": "2026-04-23T21:01:14.000Z",
+      "kind": "Excel→texto"
+    },
+    {
+      "id": "1kAo7ECaPFgB2nzyGgk7IGjFL0sLwOMSt",
+      "title": "2026 Totalplay - Flashreport_Totalplay_INFINITY.pptx",
+      "subfolder": "03",
+      "subfolderName": "03.TOTAL_PLAY_Reportes_Avance",
+      "modifiedTime": "2026-04-23T19:32:24.000Z",
+      "kind": "PowerPoint→texto"
+    },
+    {
+      "id": "1AZ4M71HHmwT8h54y7TRLisXOmHjCzGta",
+      "title": "WhatsApp Chat - TOTALPLAY + BLACKWELL.zip",
+      "subfolder": "04",
+      "subfolderName": "04.TOTAL_PLAY_Conversaciones_WhatsApp",
+      "modifiedTime": "2026-04-30T00:06:59.000Z",
+      "kind": "WhatsApp/ZIP→texto"
+    },
+    {
+      "id": "1vPnJcgbqI-DoGQ8-E_vEWXZXpusG6yfk",
+      "title": "Estrategia_Comunicacion_Totalplay_5T4D10_GLG_2026_2.docx",
+      "subfolder": "06",
+      "subfolderName": "06.TOTAL_PLAY_Agenda_Trabajos",
+      "modifiedTime": "2026-04-21T18:57:23.000Z",
+      "kind": "Word→texto"
+    }
+  ],
+  "files_read_count": 10,
+  "files_skipped": [],
+  "account_summary": {
+    "project_purpose": "Gestionar el lanzamiento nacional de la alianza estratégica Totalplay × 5T4D10 Infinity, posicionando a Totalplay como pionera de la categoría telco-wellness en México mediante cobertura en medios de negocio, salud y tecnología.",
+    "content_summary": "Alianza telco-wellness lanzada el 22-23 de abril de 2026 con ejecución exitosa: 25 impactos totales (15 notas web en T1, 1 impresa, 9 en RRSS), 100% cobertura positiva, +6.7M alcance, $985K MXN en valor equivalente. Mensajes clave instalados: primera alianza telco-wellness, democratización del bienestar, respuesta a crisis de sedentarismo, acceso de $3,799 (ahorro de $10K). Voceros: Karmen Valencia (Directora Marketing Totalplay), Rodrigo Garduño (Fundador 5T4D10).",
+    "current_status": "Proyecto concluido en mayo 2026. Último entregable: Reporte_Totalplay_INFINITY_OneWeek.pptx.pdf (05-04-2026). No hay trabajo activo pendiente ni compromisos en curso.",
+    "client_promises": [
+      {
+        "promise": "Consultoría en comunicación estratégica + mapeo de medios + briefing de voceros + conferencia de prensa presencial",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Desarrollo de 1 comunicado de prensa + mensajes clave + talking points para ambos voceros",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Convocatoria y gestión de conferencia de prensa para lanzamiento 22-23 abril",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Monitoreo, clipping y reporte de cobertura en medios post-evento",
+        "cadence": "evento",
+        "status": "cumplido"
+      },
+      {
+        "promise": "Entrega de reporte de resultados en 24 horas post-evento",
+        "cadence": "evento",
+        "status": "cumplido"
+      }
+    ],
+    "pending": [
+      "Seguimiento post-evento más allá de una semana (no hay evidencia de actividad después de 25 de abril)",
+      "Integración a Apple TV, Roku y LG Smart TV de plataforma Infinity (mencionada como fase futura, no completada)",
+      "App exclusiva integrada a servicio Totalplay (mencionada como siguiente fase, no desarrollada)",
+      "Alta de Blackwell como proveedor en Totalplay (bloqueado administrativamente: Johanna solicita 28 apr que Karmen ayude a 'Jesús' con documentos, respuesta indica fricción operativa)",
+      "Segunda fase de la alianza o plan de continuidad (no hay evidencia en documentos)"
+    ],
+    "scope_of_service": [
+      "Consultoría en comunicación estratégica y posicionamiento en medios alto impacto",
+      "Mapeo e invitación a medios target (negocios, tecnología, salud, wellness)",
+      "Desarrollo de estrategia narrativa (FODA, insights, 3 mensajes clave, proof points)",
+      "Redacción y gestión de 1 comunicado de prensa con aprobación de cliente y voceros",
+      "Elaboración de talking points para 2 voceros (Rodrigo Garduño, Karmen Valencia) con 6 ángulos temáticos",
+      "Briefing y ensayo de voceros previo a evento",
+      "Coordinación logística de conferencia de prensa (venue, AV, catering, acreditaciones)",
+      "Acreditación y atención a medios en evento",
+      "Gestión de panel de lanzamiento y acompañamiento a voceros",
+      "Captura fotográfica y video b-roll de evento",
+      "Distribución de kit de prensa físico y digital",
+      "Lanzamiento de boletín de prensa post-evento",
+      "Pitch directo a medios target",
+      "Monitoreo y clipping de cobertura en 24-48 horas",
+      "Reporte de resultados en 24 horas post-evento",
+      "Reporte final consolidado de cobertura y alcance"
+    ],
+    "pq_assessment": "{\"score_estimate\":95,\"tier_mix\":\"T1 dominante: La Crónica, El Economista (web+impreso), Mundo Ejecutivo, Quadratín, MNI Noticias son núcleo. T2/T3: Lado MX, Tijuana Informativo, PubliktDigital, México a la Carta, El Industrial, Macaonline, Yahoo Noticias. RRSS: medios de comunicación + 2 influencers.\",\"quality_narrative\":\"Narrativa estratégica de alto nivel: posicionamiento innovador (primera alianza telco-wellness México), anclaje en crisis de salud pública (85% jóvenes sedentarios OMS), democratización del acceso ($10K ahorro), valor corporativo diferenciado. Talking points matizados por audiencia: salud pública, negocio/mercado, estilo de vida personal. Comunicado profesional, citas auténticas de ambos voceros, datos verificables (Ookla, ENSANUT, Meltwater). Ausencia de controversia o tone-deafness.\",\"result_vs_objective\":\"Objetivo: instalar Totalplay como pionera telco-wellness con cobertura positiva en medios T1. Resultado: 15 notas web en medios de negocios (T1/T1-2), 1 cobertura impresa (El Economista P29), 100% sentimiento positivo, +6.7M alcance, $985K valor equivalente. Todos los 3 mensajes clave posicionados en publicaciones (primera alianza, democratización, respuesta a crisis). Voceros citados textualmente. Objetivo cumplido y superado en calidad de tier y consistencia narrativa.\"}\"",
+    "co_assessment": {
+      "committed": 5,
+      "delivered": 5,
+      "on_time": 5,
+      "late": 0,
+      "missed": 0,
+      "note": "Cumplimiento operativo perfecto en scope de evento. ODC emitida 20 abril, evento ejecutado 22-23 abril, reportes entregados 23-24 abril y 05 mayo (within SLA). Única fricción: gestión de alta de Blackwell como proveedor en Totalplay (administrativo, fuera de scope PR). Coordinación interna fluidez (WhatsApp muestra dinamismo, resoluciones rápidas, retrasos mínimos en aprobaciones)."
+    },
+    "sc_signals": [
+      {
+        "type": "positive",
+        "signal": "approval",
+        "date": "16-04-26",
+        "source": "Karmen Valencia",
+        "note": "Aprobación de estrategia y comunicado: 'me encanta el comunicado, recomiendan que se lo mande... de verdad, me encantó!!!!👏🏼 está cañón!!! muy inspirador'"
+      },
+      {
+        "type": "positive",
+        "signal": "praise",
+        "date": "22-04-26",
+        "source": "Karmen Valencia, Sara Leyva, Sol Guerrero",
+        "note": "Post-evento: celebración de resultados en tiempo real. Karmen: 'Qué buenas fotooooooos', 'Si jaló la alianza no?'. Sara, Sol en apoyo logístico."
+      },
+      {
+        "type": "positive",
+        "signal": "scope_expand",
+        "date": "21-04-26",
+        "source": "Karmen Valencia",
+        "note": "Client solicita adicionales fuera de ODC: fotógrafo, personalizadores impresos, loop de video para plasma, roll-up, boletín con QR. Blackwell delivery sin reclamo adicional."
+      },
+      {
+        "type": "positive",
+        "signal": "praise",
+        "date": "23-04-26",
+        "source": "Angel Alcántara (Blackwell)",
+        "note": "Flash Report enviado 23 abril 4:09pm con 'Por acá seguimos. Gracias!' — cierre profesional y oportuno."
+      },
+      {
+        "type": "negative",
+        "signal": "no_response",
+        "date": "28-04-26",
+        "source": "Johanna Palacio",
+        "note": "Bloqueo administrativo: 'Jesús' (punto de contacto Totalplay para alta de proveedor) no responde a solicitudes de documentación. Karmen: 'Creo que renuncio' (humor). Escalado a Isabel Alba (Mena). Impacta facturación, no cobertura PR."
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Dependencia narrativa de figura de Rodrigo Garduño: si hay controversia personal/marca del vocero, alianza se vuelve vulnerable",
+        "severity": "media"
+      },
+      {
+        "risk": "Cobertura limitada geográfica de Totalplay (principales ciudades): alcance potencial acotado a ciudades conectadas",
+        "severity": "baja"
+      },
+      {
+        "risk": "App exclusiva Totalplay aún en desarrollo: promesa de diferenciación (siguiente fase) no cumplida al cierre",
+        "severity": "baja"
+      },
+      {
+        "risk": "Ruido PROFECO sobre límites de datos en Totalplay contaminaría narrativa positiva si resurge pre-fase siguiente",
+        "severity": "media"
+      }
+    ],
+    "strategic_recommendations": [
+      "Documentar y formalizar modelo de alianza telco-bienestar para replicabilidad con otros actores del ecosistema (fintech, viajes, educación)",
+      "Establecer plan de seguimiento editorial de 60-90 días: entrevistas monográficas con voceros, case studies de usuarios iniciales, monitoreo de traction del Reto 2026",
+      "Preparar narrativa defensiva sobre límites de datos PROFECO vs posicionamiento de valor integral (salud > ancho de banda)",
+      "Desarrollar materiales de amplificación interna (ínternal comms Totalplay, Grupo Salinas) para visibilizar alianza como case de innovación corporativa",
+      "Coordinación con equipos de producto: acelerar roadmap de app exclusiva Totalplay e integración a Smart TV para validar próxima fase"
+    ],
+    "per_file_notes": [
+      {
+        "file": "ODC-TOTALPLAY ABR2026.docx",
+        "folder": "01. Contratos",
+        "finding": "Orden de compra $60K MXN paquete único (30 días), servicios: consultoría estratégica, comunicado, monitoreo, evento. Emitida 20 abril. Cliente: TOTALPLAY TELECOMUNICACIONES SAPI. Proveedor: Blackwell (Métodos y Fundamentos de Comunicación SA de CV). Representantes: Karmen Valencia (cliente), Humberto Herrera (Blackwell)."
+      },
+      {
+        "file": "Abril2026_Evidencia-Totalplay.xlsx",
+        "folder": "02. Entregables",
+        "finding": "Registro de 14 publicaciones web (La Crónica, Quadratín, MNI, Consultoria, Publikt, Mundo Ejecutivo, Sandra Cortes, etc.) con fechas 22-23 abril, links funcionales, medio y proveedor BW. Desglose: web, RRSS. No totaliza 25 impactos reportados pero es subset de tracking inicial."
+      },
+      {
+        "file": "comunicado_Totalplay_5T4D10_VF.docx",
+        "folder": "02. Entregables",
+        "finding": "Comunicado final versión VF (Very Final), datado 22 abril, estructura: lede, problema de salud pública (85% jóvenes sedentarios), solución (alianza), features Infinity ($3,799 vs $13,799), descripción de voceros y contactos de prensa (Gerardo Lopez Gallo 5T4D10, Sara Leyva Totalplay, Ángel Alcántara Blackwell). Aprobado por cliente."
+      },
+      {
+        "file": "Reporte_Totalplay_INFINITY_OneWeek.pptx.pdf",
+        "folder": "03. Reportes",
+        "finding": "Reporte ejecutivo final (mayo 2026) en PDF/PPT: 25 impactos, +6.7M alcance, $985K valor, 100% positivo. Desglose: 15 web (La Crónica, El Economista, Mundo Ejecutivo, Quadratín, MNI), 1 impresa, 9 RRSS (4 FB, 3 X, 2 IG). Incluye ejemplos visuales de cobertura, mensajes clave posicionados, actividades realizadas (pre/durante/post evento), calendario ejecución."
+      },
+      {
+        "file": "Reporte_Totalplay_INFINITY_OneWeek.pptx",
+        "folder": "03. Reportes",
+        "finding": "Versión PowerPoint del reporte final: 11 slides con mismo contenido que PDF (cuantitativo, cualitativo, cobertura destacada, RRSS, links, mensaje clave). Formatos slides limpios, branding Blackwell Strategy."
+      },
+      {
+        "file": "2026 Totalplay - FlashReport_Totalplay_INFINITY_v2.pptx",
+        "folder": "03. Reportes",
+        "finding": "Flash Report v2 (23 abril 4:09pm) 2 slides: 20 impactos, +6.2M alcance, $710K valor, 100% positivo. Cobertura destacada (La Crónica, El Economista, Mundo Ejecutivo, Quadratín, MNI). Mensajes clave resumidos. Notas con links a portales."
+      },
+      {
+        "file": "Totalplay - Corte de medio - 23 abril.xlsx",
+        "folder": "03. Reportes",
+        "finding": "Media cut (corte de medio) 23 abril en Excel: desglose detallado de 9 artículos con metadata (URL, entrada, palabras clave, tipo medio, autor, alcance, equivalencia, tonalidad, hashtags). Muestra: El Economista (2.7M alcance, $75K equivalencia), Quadratín (1M alcance, $85K), Lado MX (8K alcance, $30K), MNI (7.5K alcance, $30K). Impreso El Economista P29 ($500K alcance, $150K equivalencia estimada)."
+      },
+      {
+        "file": "2026 Totalplay - Flashreport_Totalplay_INFINITY.pptx",
+        "folder": "03. Reportes",
+        "finding": "Flash Report v1 (24 hrs post evento, 23 abril): 3 slides. 9 impactos, +5.6M alcance, $595K valor, 100% positivo. Cobertura La Crónica, El Economista, Lado MX, Quadratín, MNI. Resumen ejecutivo a 24 horas. Tono de cierre: 'Gracias'."
+      },
+      {
+        "file": "WhatsApp Chat - TOTALPLAY + BLACKWELL.zip",
+        "folder": "04. Conversaciones",
+        "finding": "Chat grupal desde 12 abril a 28 abril: 67 mensajes + 19 fotos del evento. Dinámica: confirmación de cambios de fecha (13 apr, evento pospuesto una semana a solicitud de Rodrigo), coordinación logística (venue, kit, personalizadores, loop de video), aprobación de estrategia y comunicado (16 apr praise de Karmen), día del evento (22 apr: llegadas, setup, fotos), seguimiento de cobertura (real-time links de publicaciones 22-25 apr), fricción administrativa (28 apr: bloqueo de alta de proveedor con 'Jesús'). Tono: profesional, ágil, cercano."
+      },
+      {
+        "file": "Estrategia_Comunicacion_Totalplay_5T4D10_GLG_2026_2.docx",
+        "folder": "06. Agenda_Trabajos",
+        "finding": "Documento estratégico 20 páginas (versión GLG, ajustes por 5T4D10): contexto macro (Nov 2025-abr 2026 Totalplay + Rodrigo Garduño), FODA, 5 insights (conectividad insuficiente, sedentarismo como crisis, estructura > motivación, alianza mejor historia, precio como proof point), eje narrativo central, 3 mensajes clave (salud pública, primera telco-wellness, democratización), proof points, comunicado final, talking points para Rodrigo (6 ángulos) y Karmen (6 ángulos), calendario de ejecución (lunes 13 al viernes 17 abril, detalló actividades por hora). Documento confidencial estratégico."
+      }
+    ],
+    "monday_ticket": "{\"tipo\":\"normal\",\"trigger\":\"Administrativo: seguimiento de alta de Blackwell como proveedor en Totalplay (bloqueado 28 abril). Resolver documentación con 'Jesús' / Isabel Alba (Mena) para completar relación comercial post-evento (facturación, reporting institucional).\"}}",
+    "score_adjustment_recommendation": "{\"co_delta\":0,\"pq_delta\":0,\"sc_delta\":0,\"reason\":\"Proyecto cerrado sin issues sustantivos. Co (operativo) perfecto: 5/5 entregables on-time. PQ (calidad) alta: 25 impactos, 100% positivo, T1 dominante, narrativa integral, mensajes instalados. SC (relación cliente) positiva: aprobaciones, praise, scope expansion sin fricción de contenido. Sin recomendación de ajuste.\"}}"
+  },
+  "analyzed_at": "2026-06-05T20:51:35Z"
+}

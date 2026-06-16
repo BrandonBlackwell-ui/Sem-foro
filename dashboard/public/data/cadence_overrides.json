@@ -1,0 +1,33 @@
+{
+  "_note": "Overrides de cadencia operativa por cuenta. Si una cuenta no opera con cadencia semanal estándar (entregables todas las semanas), márcala aquí. El dashboard ajusta scoring, suggestions y la tabla CO Histórico.",
+  "_cadenceTypes": {
+    "weekly": "Cadencia semanal estándar (default). Se evalúa con la tabla CO Histórico semanal del playbook §5.",
+    "on-demand": "Crisis-on-demand. Cliente activa servicios solo cuando hay evento. No se penaliza por semanas sin actividad. Modelo tipo seguro de auto.",
+    "monthly": "Cadencia mensual. Se evalúa por mes calendario, no por semana.",
+    "event": "Evento único. Trabajo discreto con fecha de fin.",
+    "advisory": "Asesoría ad-hoc. Sin entregables recurrentes esperados."
+  },
+  "overrides": {
+    "pujol": {
+      "cadenceType": "on-demand",
+      "note": "Cliente con modelo crisis-on-demand confirmado por Fabiola (04-may-26 bitácora). El cliente sigue activo pero solo activa servicios cuando hay crisis — como un seguro de autos. No aplica cadencia semanal del playbook §5.",
+      "aliases": ["casa_mata", "casamata", "Casa Mata", "19. Casa Mata", "19", "1BABQF39mYd6PYs2hCj7I2Q2llI017kut"],
+      "accountNumber": "19",
+      "folderTitle": "19. Casa Mata",
+      "folderId": "1BABQF39mYd6PYs2hCj7I2Q2llI017kut",
+      "setBy": "Fabiola",
+      "setAt": "2026-05-04T11:46:00Z",
+      "confirmedAt": "2026-05-11T18:50:00Z"
+    },
+    "casamata": {
+      "cadenceType": "on-demand",
+      "note": "Alias de la cuenta 19. Casa Mata (Pujol/Grupo Olvera). Crisis-on-demand confirmado por Fabiola 11-may-26. No se penaliza el SC por ausencia de cadencia semanal.",
+      "canonicalId": "pujol",
+      "accountNumber": "19",
+      "folderTitle": "19. Casa Mata",
+      "folderId": "1BABQF39mYd6PYs2hCj7I2Q2llI017kut",
+      "setBy": "Fabiola",
+      "setAt": "2026-05-11T18:50:00Z"
+    }
+  }
+}

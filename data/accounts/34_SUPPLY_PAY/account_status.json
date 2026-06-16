@@ -1,0 +1,229 @@
+{
+  "number": "34",
+  "folderTitle": "34. SUPPLY_PAY",
+  "folderId": "1I2luUWKI7yjpmUPsPz4pJwT8xk4V1VN7",
+  "folderModifiedTime": "2026-05-22T03:46:22.021Z",
+  "derivedStatus": "active",
+  "statusSuffix": null,
+  "latestDeliverable": {
+    "title": "nota_draft1.docx",
+    "modifiedTime": "2026-05-22T03:47:37.723000Z",
+    "source": "02. SUPPLY_PAY_Entregables"
+  },
+  "deliverableSource": "06. SUPPLY_PAY_Agenda_Trabajos",
+  "lastActivity": {
+    "time": "2026-05-13T04:52:48Z",
+    "source": "06. SUPPLY_PAY_Agenda_Trabajos",
+    "file": "agenda_harvest_blackwell.docx",
+    "fileId": "1Ndcz-mMSZB5C-DBnB8yRUELyDyP5F9i0"
+  },
+  "subfolderActivity": {
+    "01. Contratos_OC": {
+      "subfolderId": "1pXFa59BjNoR4pYpV80g5jmRF165XhQHQ",
+      "fileCount": 1,
+      "latestModified": "2026-05-07T19:44:01Z",
+      "latestFile": "Jorge Ayala firmado.pdf",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-12T14:09:14Z_verify",
+      "last_verified_at": "2026-06-12T14:09:14Z"
+    },
+    "02. SUPPLY_PAY_Entregables": {
+      "subfolderId": "1vb9aWBexce9LwJWmylMC65cQl440eRcb",
+      "fileCount": 5,
+      "latestModified": "2026-05-22T03:47:37.723000Z",
+      "latestFile": "nota_draft1.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:57Z_verify",
+      "last_verified_at": "2026-06-09T19:41:57Z"
+    },
+    "03. SUPPLY_PAY_Reportes_Avance": {
+      "subfolderId": "1QdHfuUSk2DE8VHsTjBx5MuXVuxfRES2u",
+      "fileCount": 0,
+      "latestModified": null,
+      "latestFile": null,
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:57Z_verify",
+      "last_verified_at": "2026-06-09T19:41:57Z"
+    },
+    "04. SUPPLY_PAY_CONVERSACIONES_WA": {
+      "subfolderId": "1LQye0VBqQryh3nzynG3pgKML00vJ8ajk",
+      "fileCount": 2,
+      "latestModified": "2026-05-13T04:38:54Z",
+      "latestFile": "12MAY2026_Supplypay_chat 3.txt",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:57Z_verify",
+      "last_verified_at": "2026-06-09T19:41:57Z"
+    },
+    "05. SUPPLY_PAY_Transcripciones_Llamadas": {
+      "subfolderId": "17jqx6y21RUknb_ZUb2YniRcSKya6hbEx",
+      "fileCount": 2,
+      "latestModified": "2026-05-13T04:44:57Z",
+      "latestFile": "Kick-off Supply Pay- Blackwell_otter_ai_transcript (1).txt",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:58Z_verify",
+      "last_verified_at": "2026-06-09T19:41:58Z"
+    },
+    "06. SUPPLY_PAY_Agenda_Trabajos": {
+      "subfolderId": "1wdnllJXhf02qSaerP3IYwAYJpi4CUBGw",
+      "fileCount": 1,
+      "latestModified": "2026-05-13T04:52:48Z",
+      "latestFile": "agenda_harvest_blackwell.docx",
+      "hasNestedFolders": false,
+      "nestedFilesPresent": false,
+      "subfolderMissing": false,
+      "source": "drive_crawl_2026-06-09T19:41:58Z_verify",
+      "last_verified_at": "2026-06-09T19:41:58Z"
+    }
+  },
+  "pqProxy": {
+    "score": 60,
+    "tierMix": {
+      "tier1": 0,
+      "tier2": 0,
+      "tier3": 0,
+      "none": 0
+    },
+    "narrativaQuality": "media",
+    "hasMetrics": false,
+    "evidence": "DELTA 2026-05-07: cuenta nueva creada hoy. Onboarding con 1 archivos formales (ver delta_note en drive_intelligence).",
+    "suggestion": "Kickoff entregables y plan de cobertura mensual.",
+    "fileEvaluated": "Jorge Ayala firmado.pdf",
+    "evaluatedAt": "2026-05-08T17:30:00Z"
+  },
+  "nextAction": {
+    "type": "new_account",
+    "priority": 2,
+    "label": "Onboarding cuenta nueva",
+    "text": "Kickoff entregables y plan de cobertura mensual.",
+    "source": "coherence-sync"
+  },
+  "lastAnalyzedAt": "2026-05-13T16:10:56Z",
+  "playbookViolations": [
+    "01"
+  ],
+  "analysisConfidence": "alta",
+  "isActive": true,
+  "lastCrawledAt": "2026-06-09T19:41:40Z",
+  "driveFiles": [
+    {
+      "id": "1ykktHmE5YWOkLxpRrNvSsc7jnCwRh7Ln",
+      "name": "nota_draft1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-22T03:47:37.723Z",
+      "size": "24613",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1lDD0VrQn03AQ74mvtPOpEtGTBror5qqd",
+      "name": "columna_draft1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-22T03:46:38.088Z",
+      "size": "21347",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1xBMP8n_dzxF4XY8xXoyk-JTSjMwgEqFt",
+      "name": "plan_harva_blackwell_1.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-22T03:15:19.125Z",
+      "size": "119373",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1A85_TeQ4091ZvpiXtavgLkHITm9jc66-",
+      "name": "plan_harva_blackwell_1.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-22T03:15:00.122Z",
+      "size": "35164",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1R8_zcuKLcxB4iCzLD4_D_DoW9I_NBngX",
+      "name": "plan_harva_blackwell.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-21T20:25:03.039Z",
+      "size": "38401",
+      "subfolder": "02",
+      "subfolderName": "02. SUPPLY_PAY_Entregables",
+      "nestedPath": null
+    },
+    {
+      "id": "1Ndcz-mMSZB5C-DBnB8yRUELyDyP5F9i0",
+      "name": "agenda_harvest_blackwell.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modifiedTime": "2026-05-13T04:52:48.000Z",
+      "size": "11869",
+      "subfolder": "06",
+      "subfolderName": "06. SUPPLY_PAY_Agenda_Trabajos",
+      "nestedPath": null
+    },
+    {
+      "id": "1j9K08x_gXnvwkQfQziuc5Dig2N3BcXXz",
+      "name": "Kick-off Supply Pay- Blackwell_otter_ai_transcript (1).txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T04:44:57.000Z",
+      "size": "22027",
+      "subfolder": "05",
+      "subfolderName": "05. SUPPLY_PAY_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1m-HIWJ7O4aJlwgKt5IJwf4rP22cEGNTM",
+      "name": "12MAY2026_Supplypay_chat 3.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-13T04:38:54.000Z",
+      "size": "4138",
+      "subfolder": "04",
+      "subfolderName": "04. SUPPLY_PAY_CONVERSACIONES_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "1aJp4LygJ8qi15ac4Z2Ps42THfwJzbqMr",
+      "name": "11mayo2026 Kick-off Supply Pay- Blackwell_otter_ai_transcript.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-12T03:14:26.524Z",
+      "size": "22027",
+      "subfolder": "05",
+      "subfolderName": "05. SUPPLY_PAY_Transcripciones_Llamadas",
+      "nestedPath": null
+    },
+    {
+      "id": "1_-OYUDSF0hmB-xVnbL8F678mlO29HCN2",
+      "name": "7 al 11 mayo_chat 2.txt",
+      "mimeType": "text/plain",
+      "modifiedTime": "2026-05-12T03:07:19.736Z",
+      "size": "2138",
+      "subfolder": "04",
+      "subfolderName": "04. SUPPLY_PAY_CONVERSACIONES_WA",
+      "nestedPath": null
+    },
+    {
+      "id": "118a2gy_SJmaCX8Rgbn5FD8_ctXSNGYcQ",
+      "name": "Jorge Ayala firmado.pdf",
+      "mimeType": "application/pdf",
+      "modifiedTime": "2026-05-07T19:44:01.000Z",
+      "size": "396874",
+      "subfolder": "01",
+      "subfolderName": "01. Contratos_OC",
+      "nestedPath": null
+    }
+  ]
+}
