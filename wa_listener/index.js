@@ -43,7 +43,9 @@ if (existsSync(envPath)) {
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
-const PAIRING_PHONE_NUMBER = process.env.WA_PAIRING_PHONE_NUMBER?.replace(/\D/g, "");
+const PAIRING_MODE = (process.env.WA_PAIRING_MODE || "qr").toLowerCase();
+const PAIRING_PHONE_NUMBER =
+  PAIRING_MODE === "code" ? process.env.WA_PAIRING_PHONE_NUMBER?.replace(/\D/g, "") : "";
 const AUTH_DIR = process.env.AUTH_DIR || join(__dir, "auth_state");
 const RECONNECT_DELAY_MS = 5_000;
 const PAIRING_RETRY_DELAY_MS = Number(process.env.WA_PAIRING_RETRY_DELAY_MS || 90_000);
@@ -106,9 +108,7 @@ function startStatusServer() {
           ? `<p>Scan this QR in WhatsApp -> Linked devices -> Link a device.</p><img src="${latestQrDataUrl}" alt="WhatsApp QR" /><p>Generated: <code>${latestQrAt}</code></p><p>This page refreshes automatically.</p>`
           : latestPairingCode
             ? `<p>Open WhatsApp -> Linked devices -> Link with phone number instead.</p><div class="code">${latestPairingCode}</div><p>Generated: <code>${latestPairingAt}</code></p><p>This code expires fast. This page refreshes automatically.</p>`
-            : PAIRING_PHONE_NUMBER
-              ? "<p>Waiting for a pairing code. Refresh in a few seconds.</p>"
-              : "<p>Waiting for a QR. Refresh in a few seconds.</p>"
+            : "<p>Waiting for a QR. Refresh in a few seconds.</p>"
     }
   </main>
 </body>
