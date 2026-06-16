@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "jsdom": "^29.1.1"
   }
