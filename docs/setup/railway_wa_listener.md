@@ -53,11 +53,12 @@ Without this volume, every redeploy/restart may require scanning a new QR.
 ## First deploy
 
 1. Deploy the service.
-2. Open Railway logs.
-3. If `WA_PAIRING_PHONE_NUMBER` is set, use the printed pairing code in
-   WhatsApp -> Linked devices -> Link with phone number instead.
-   Otherwise, scan the QR printed by the listener.
-4. Wait for:
+2. In Railway Networking, generate a public domain for the service.
+3. Open `https://your-railway-domain/qr`.
+4. Scan the clean QR image there.
+5. You can also use the printed pairing code in Railway logs if
+   `WA_PAIRING_PHONE_NUMBER` is set.
+6. Wait for:
 
 ```txt
 WhatsApp connected.

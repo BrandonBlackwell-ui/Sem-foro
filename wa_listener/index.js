@@ -19,6 +19,8 @@ import makeWASocket, {
   isJidGroup,
 } from "@whiskeysockets/baileys";
 import { createClient } from "@supabase/supabase-js";
+import http from "http";
+import QRCode from "qrcode";
 import qrcode from "qrcode-terminal";
 import pino from "pino";
 import WebSocket from "ws";
@@ -46,6 +48,7 @@ const AUTH_DIR = process.env.AUTH_DIR || join(__dir, "auth_state");
 const RECONNECT_DELAY_MS = 5_000;
 const PAIRING_RETRY_DELAY_MS = Number(process.env.WA_PAIRING_RETRY_DELAY_MS || 90_000);
 const MAX_RECONNECTS = 120;
+const PORT = process.env.PORT ? Number(process.env.PORT) : null;
 
 if (!SUPABASE_URL || !SUPABASE_KEY) {
   console.error("SUPABASE_URL and SUPABASE_SERVICE_KEY are required in wa_listener/.env");
@@ -60,6 +63,60 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
 const logger = pino({ level: "silent" });
 const groupCache = new Map();
 let reconnectCount = 0;
+let latestQrDataUrl = null;
+let latestQrAt = null;
+let isWhatsAppConnected = false;
+
+function startStatusServer() {
+  if (!PORT) return;
+
+  const server = http.createServer((req, res) => {
+    if (req.url === "/health") {
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ ok: true, connected: isWhatsAppConnected }));
+      return;
+    }
+
+    if (req.url === "/" || req.url === "/qr") {
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+      res.end(`<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="10" />
+  <title>Blackwell WhatsApp Listener</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; font-family: Arial, sans-serif; background: #111; color: #fff; }
+    main { text-align: center; max-width: 560px; padding: 24px; }
+    img { width: min(82vw, 420px); height: auto; background: #fff; padding: 16px; border-radius: 12px; }
+    p { color: #bbb; line-height: 1.5; }
+    code { color: #fff; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Blackwell WhatsApp Listener</h1>
+    ${
+      isWhatsAppConnected
+        ? "<h2>WhatsApp connected.</h2><p>You can close this page. Keep the Railway service running.</p>"
+        : latestQrDataUrl
+          ? `<p>Scan this QR in WhatsApp -> Linked devices -> Link a device.</p><img src="${latestQrDataUrl}" alt="WhatsApp QR" /><p>Generated: <code>${latestQrAt}</code></p><p>This page refreshes automatically.</p>`
+          : "<p>Waiting for a QR. Refresh in a few seconds.</p>"
+    }
+  </main>
+</body>
+</html>`);
+      return;
+    }
+
+    res.writeHead(404, { "Content-Type": "text/plain" });
+    res.end("Not found");
+  });
+
+  server.listen(PORT, () => {
+    console.log(`Status server listening on port ${PORT}. Open /qr to scan WhatsApp.`);
+  });
+}
 
 async function loadGroupMappings() {
   const { data, error } = await supabase
@@ -236,12 +293,19 @@ async function connectToWhatsApp() {
 
   sock.ev.on("connection.update", async ({ connection, lastDisconnect, qr }) => {
     if (qr) {
+      latestQrDataUrl = await QRCode.toDataURL(qr, { margin: 2, scale: 8 });
+      latestQrAt = new Date().toISOString();
+      isWhatsAppConnected = false;
       console.log("\nScan this QR with WhatsApp -> Linked devices -> Link a device:\n");
       qrcode.generate(qr, { small: true });
+      if (PORT) {
+        console.log(`Or open the Railway public URL at /qr to scan a clean QR image.`);
+      }
       console.log("\nIf the QR expires, a new one will appear automatically.\n");
     }
 
     if (connection === "close") {
+      isWhatsAppConnected = false;
       const statusCode = lastDisconnect?.error?.output?.statusCode;
       const shouldReconnect = statusCode !== DisconnectReason.loggedOut;
 
@@ -271,6 +335,8 @@ async function connectToWhatsApp() {
 
     if (connection === "open") {
       reconnectCount = 0;
+      isWhatsAppConnected = true;
+      latestQrDataUrl = null;
       console.log("WhatsApp connected.");
       await loadGroupMappings();
 
@@ -321,5 +387,6 @@ async function connectToWhatsApp() {
 }
 
 console.log("Blackwell WA Listener starting...");
+startStatusServer();
 await loadGroupMappings();
 await connectToWhatsApp();
