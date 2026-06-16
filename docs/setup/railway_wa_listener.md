@@ -22,6 +22,7 @@ SUPABASE_URL=https://vqgfkfvywbpjldreuplb.supabase.co
 SUPABASE_SERVICE_KEY=your_service_role_key
 AUTH_DIR=/data/auth_state
 WA_PAIRING_PHONE_NUMBER=5215512345678
+WA_PAIRING_RETRY_DELAY_MS=90000
 ```
 
 Do not put these values in git.
@@ -29,6 +30,9 @@ Do not put these values in git.
 `WA_PAIRING_PHONE_NUMBER` is optional but recommended on Railway because log
 timestamps can make terminal QR codes hard to scan. Use digits only, including
 country code.
+
+`WA_PAIRING_RETRY_DELAY_MS` keeps Railway from generating replacement pairing
+codes too quickly. The default is 90000 milliseconds.
 
 ## Persistent volume
 

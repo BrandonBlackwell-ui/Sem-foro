@@ -44,6 +44,7 @@ const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
 const PAIRING_PHONE_NUMBER = process.env.WA_PAIRING_PHONE_NUMBER?.replace(/\D/g, "");
 const AUTH_DIR = process.env.AUTH_DIR || join(__dir, "auth_state");
 const RECONNECT_DELAY_MS = 5_000;
+const PAIRING_RETRY_DELAY_MS = Number(process.env.WA_PAIRING_RETRY_DELAY_MS || 90_000);
 const MAX_RECONNECTS = 120;
 
 if (!SUPABASE_URL || !SUPABASE_KEY) {
@@ -251,8 +252,17 @@ async function connectToWhatsApp() {
         console.log(`Retry ${reconnectCount}/${MAX_RECONNECTS} in ${RECONNECT_DELAY_MS / 1000}s...`);
         setTimeout(connectToWhatsApp, RECONNECT_DELAY_MS);
       } else if (statusCode === DisconnectReason.loggedOut) {
-        console.log("Session logged out. Delete wa_listener/auth_state and restart to scan a new QR.");
-        process.exit(1);
+        if (PAIRING_PHONE_NUMBER) {
+          reconnectCount++;
+          console.log(
+            "Pairing code was not accepted or expired. " +
+            `Waiting ${Math.round(PAIRING_RETRY_DELAY_MS / 1000)}s before generating a new one...`
+          );
+          setTimeout(connectToWhatsApp, PAIRING_RETRY_DELAY_MS);
+        } else {
+          console.log("Session logged out. Delete wa_listener/auth_state and restart to scan a new QR.");
+          process.exit(1);
+        }
       } else {
         console.error("Maximum reconnect attempts reached. Restart the listener manually.");
         process.exit(1);
