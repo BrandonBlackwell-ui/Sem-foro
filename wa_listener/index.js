@@ -65,6 +65,8 @@ const groupCache = new Map();
 let reconnectCount = 0;
 let latestQrDataUrl = null;
 let latestQrAt = null;
+let latestPairingCode = null;
+let latestPairingAt = null;
 let isWhatsAppConnected = false;
 
 function startStatusServer() {
@@ -89,6 +91,7 @@ function startStatusServer() {
     body { margin: 0; min-height: 100vh; display: grid; place-items: center; font-family: Arial, sans-serif; background: #111; color: #fff; }
     main { text-align: center; max-width: 560px; padding: 24px; }
     img { width: min(82vw, 420px); height: auto; background: #fff; padding: 16px; border-radius: 12px; }
+    .code { display: inline-block; margin: 12px 0; padding: 16px 20px; border: 1px solid #444; border-radius: 12px; font-size: clamp(34px, 8vw, 64px); font-weight: 800; letter-spacing: 0.12em; color: #fff; background: #181818; }
     p { color: #bbb; line-height: 1.5; }
     code { color: #fff; }
   </style>
@@ -101,7 +104,11 @@ function startStatusServer() {
         ? "<h2>WhatsApp connected.</h2><p>You can close this page. Keep the Railway service running.</p>"
         : latestQrDataUrl
           ? `<p>Scan this QR in WhatsApp -> Linked devices -> Link a device.</p><img src="${latestQrDataUrl}" alt="WhatsApp QR" /><p>Generated: <code>${latestQrAt}</code></p><p>This page refreshes automatically.</p>`
-          : "<p>Waiting for a QR. Refresh in a few seconds.</p>"
+          : latestPairingCode
+            ? `<p>Open WhatsApp -> Linked devices -> Link with phone number instead.</p><div class="code">${latestPairingCode}</div><p>Generated: <code>${latestPairingAt}</code></p><p>This code expires fast. This page refreshes automatically.</p>`
+            : PAIRING_PHONE_NUMBER
+              ? "<p>Waiting for a pairing code. Refresh in a few seconds.</p>"
+              : "<p>Waiting for a QR. Refresh in a few seconds.</p>"
     }
   </main>
 </body>
@@ -280,6 +287,8 @@ async function connectToWhatsApp() {
     setTimeout(async () => {
       try {
         const code = await sock.requestPairingCode(PAIRING_PHONE_NUMBER);
+        latestPairingCode = code;
+        latestPairingAt = new Date().toISOString();
         console.log("");
         console.log("WhatsApp pairing code:");
         console.log(code);
@@ -295,6 +304,8 @@ async function connectToWhatsApp() {
     if (qr) {
       latestQrDataUrl = await QRCode.toDataURL(qr, { margin: 2, scale: 8 });
       latestQrAt = new Date().toISOString();
+      latestPairingCode = null;
+      latestPairingAt = null;
       isWhatsAppConnected = false;
       console.log("\nScan this QR with WhatsApp -> Linked devices -> Link a device:\n");
       qrcode.generate(qr, { small: true });
@@ -337,6 +348,8 @@ async function connectToWhatsApp() {
       reconnectCount = 0;
       isWhatsAppConnected = true;
       latestQrDataUrl = null;
+      latestPairingCode = null;
+      latestPairingAt = null;
       console.log("WhatsApp connected.");
       await loadGroupMappings();
 
