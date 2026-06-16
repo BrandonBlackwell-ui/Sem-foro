@@ -21,6 +21,7 @@ import makeWASocket, {
 import { createClient } from "@supabase/supabase-js";
 import qrcode from "qrcode-terminal";
 import pino from "pino";
+import WebSocket from "ws";
 import { readFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -49,7 +50,11 @@ if (!SUPABASE_URL || !SUPABASE_KEY) {
   process.exit(1);
 }
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
+  realtime: {
+    transport: WebSocket,
+  },
+});
 const logger = pino({ level: "silent" });
 const groupCache = new Map();
 let reconnectCount = 0;
