@@ -1,171 +1,52 @@
-name: Sync diario Blackwell
+name: WhatsApp daily analysis
 
 on:
-  # Corre todos los días a las 6:00 AM hora de Ciudad de México (UTC-6 = 12:00 UTC)
+  # 6:00 AM Mexico City during standard time. Adjust if you want another hour.
   schedule:
     - cron: "0 12 * * *"
 
-  # Permite correrlo manualmente desde GitHub → Actions → "Run workflow"
   workflow_dispatch:
     inputs:
-      mode:
-        description: "Modo de sync"
-        required: false
-        default: "delta"
-        type: choice
-        options:
-          - delta
-          - baseline
-          - hotfix
-      accounts:
-        description: "Números de cuenta para hotfix (ej: 19 20 21)"
+      date:
+        description: "Date to analyze in YYYY-MM-DD. Empty = yesterday."
         required: false
         default: ""
 
 jobs:
-  sync-and-deploy:
+  analyze-whatsapp:
     runs-on: ubuntu-latest
-    timeout-minutes: 180  # Claude puede tomar 1-2h con 30+ cuentas
-    permissions:
-      contents: write
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # evitar deprecation de Node.js 20
+    timeout-minutes: 30
 
     steps:
-      # ── 1. Checkout del repositorio ─────────────────────────────────────────
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── 2. Configurar Python ─────────────────────────────────────────────────
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
 
-      - name: Instalar dependencias Python
+      - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # ── 3. Configurar Node.js ────────────────────────────────────────────────
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Instalar dependencias Node
-        run: npm install --no-audit --no-fund
-        working-directory: dashboard
-
-      # ── 4. Escribir credenciales desde secrets ───────────────────────────────
-      - name: Escribir service_account.json
-        run: echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > service_account.json
-
-      - name: Crear .env
+      - name: Create environment
         run: |
           cat > .env << EOF
-          DRIVE_ROOT_FOLDER_ID=${{ secrets.DRIVE_ROOT_FOLDER_ID }}
-          GOOGLE_SERVICE_ACCOUNT_JSON=service_account.json
-          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_MODEL=claude-haiku-4-5
-          NETLIFY_SITE_ID=${{ secrets.NETLIFY_SITE_ID }}
           SUPABASE_URL=${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }}
-          CRAWL_MAX_DEPTH=4
-          STALE_MAX_AGE_DAYS=7
-          STALE_MAX_REVERIFY_PER_RUN=200
-          MAX_BATCHES_PER_ACCOUNT=2
-          GITHUB_ACTIONS=true
+          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
+          WA_ANALYSIS_MODEL=${{ vars.WA_ANALYSIS_MODEL || 'claude-haiku-4-5' }}
           EOF
 
-      # ── 5. Restaurar snapshot anterior para que delta funcione ───────────────
-      # Si data/accounts_status.json no existe (checkout limpio), lo copia
-      # desde dashboard/public/data/ que sí está comprometido en el repo.
-      - name: Restaurar snapshot anterior
+      - name: Analyze WhatsApp messages
         run: |
-          mkdir -p data
-          if [ ! -f data/accounts_status.json ] && [ -f dashboard/public/data/accounts_status.json ]; then
-            cp dashboard/public/data/accounts_status.json data/
-            echo "✓ Snapshot restaurado desde dashboard/public/data/accounts_status.json"
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python scripts/sync/wa_daily_analyzer.py --date "${{ github.event.inputs.date }}"
           else
-            echo "✓ Snapshot ya existe en data/"
-          fi
-          # Restaurar watermarks de WhatsApp (lectura incremental)
-          if [ ! -f data/wa_watermarks.json ] && [ -f dashboard/public/data/wa_watermarks.json ]; then
-            cp dashboard/public/data/wa_watermarks.json data/
-            echo "✓ WA watermarks restaurados desde dashboard/public/data/wa_watermarks.json"
-          fi
-          # Restaurar también los per-account si existen en public
-          if [ -d dashboard/public/data/accounts ]; then
-            mkdir -p data/accounts
-            cp -r dashboard/public/data/accounts/. data/accounts/ 2>/dev/null || true
-            echo "✓ Per-account data restaurada"
+            python scripts/sync/wa_daily_analyzer.py
           fi
 
-      # ── 6. Correr el sync ────────────────────────────────────────────────────
-      - name: Sync delta (modo normal)
-        if: ${{ github.event_name == 'schedule' || (github.event.inputs.mode == 'delta' || github.event.inputs.mode == '') }}
-        run: python scripts/sync/main_sync.py --skip-build
-        env:
-          PYTHONPATH: scripts/sync
-
-      - name: Sync baseline (modo completo)
-        if: ${{ github.event.inputs.mode == 'baseline' }}
-        run: python scripts/sync/main_sync.py --mode baseline --skip-build
-        env:
-          PYTHONPATH: scripts/sync
-
-      - name: Sync hotfix (cuentas específicas)
-        if: ${{ github.event.inputs.mode == 'hotfix' }}
-        run: python scripts/sync/main_sync.py --mode hotfix --accounts ${{ github.event.inputs.accounts }} --skip-build
-        env:
-          PYTHONPATH: scripts/sync
-
-      # ── 7. Copiar datos actualizados al dashboard ────────────────────────────
-      - name: Copiar datos a dashboard/public/data/
-        run: |
-          cp data/accounts_status.json  dashboard/public/data/ || true
-          cp data/accounts_status.js    dashboard/public/data/ || true
-          cp data/drive_intelligence.js dashboard/public/data/ || true
-          # Watermarks de WhatsApp — persisten entre corridas vía repo
-          cp data/wa_watermarks.json    dashboard/public/data/ || true
-          # Copiar per-account data
-          if [ -d data/accounts ]; then
-            mkdir -p dashboard/public/data/accounts
-            cp -r data/accounts/. dashboard/public/data/accounts/
-          fi
-
-      # ── 8. Guardar snapshot en el repo (para que el próximo delta sepa desde dónde) ──
-      - name: Commit snapshot actualizado al repo
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dashboard/public/data/
-          git diff --staged --quiet || git commit -m "data: snapshot sync $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
-          git push origin main || true
-
-      # ── 9. Build del dashboard React ─────────────────────────────────────────
-      - name: Build React dashboard
-        run: npm run build
-        working-directory: dashboard
-
-      # ── 10. Deploy a Netlify ─────────────────────────────────────────────────
-      - name: Deploy a Netlify
-        run: |
-          npm install -g netlify-cli
-          netlify deploy \
-            --prod \
-            --dir=dashboard/dist \
-            --functions=netlify_deploy/netlify/functions \
-            --site=${{ secrets.NETLIFY_SITE_ID }} \
-            --message="auto-deploy $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
-      # ── 11. Limpiar credenciales ─────────────────────────────────────────────
-      - name: Limpiar credenciales sensibles
+      - name: Clean environment
         if: always()
-        run: |
-          rm -f service_account.json
-          rm -f .env
+        run: rm -f .env

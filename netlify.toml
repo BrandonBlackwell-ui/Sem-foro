@@ -1,4 +1,4 @@
-# netlify.toml — Configuración de Netlify para Proyecto Blackwell
+# Netlify configuration for Semaforo dashboard.
 
 [build]
   publish = "dashboard/dist"
@@ -7,30 +7,16 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Función serverless para "Pregunta a Drive" (AskDrive)
-[functions]
-  directory = "netlify_deploy/netlify/functions"
-  node_bundler = "esbuild"
-
-# Redirects específicos PRIMERO (antes del catch-all /*)
-[[redirects]]
-  from = "/ask"
-  to = "/.netlify/functions/ask"
-  status = 200
-
-# Catch-all para React Router — SIEMPRE AL FINAL
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Configuración para `netlify dev` (desarrollo local)
 [dev]
   command = "npm --prefix dashboard run dev"
   targetPort = 5173
   port = 8888
   publish = "dashboard/public"
-  functionsPort = 9999
   framework = "#custom"
   autoLaunch = true
 

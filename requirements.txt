@@ -1,26 +1,5 @@
-# Blackwell — dependencias Python
-# Instalar con: pip install -r requirements.txt
+# Semaforo WhatsApp daily analysis dependencies.
 
-# Google Drive API
-google-api-python-client>=2.120.0
-google-auth>=2.28.0
-google-auth-oauthlib>=1.2.0
-google-auth-httplib2>=0.2.0
-
-# Variables de entorno desde .env
 python-dotenv>=1.0.1
-
-# Anthropic Claude API (para análisis narrativo y lectura de documentos)
-# >=0.40 incluye soporte nativo de PDFs como document blocks.
 anthropic>=0.40.0
-
-# Lectura del contenido real de archivos de Drive (Office)
-python-docx>=1.1.0     # .docx
-python-pptx>=0.6.23    # .pptx
-openpyxl>=3.1.0        # .xlsx
-
-# Validación de schema JSON
-jsonschema>=4.21.0
-
-# Supabase — persistencia de WhatsApp y score overrides
 supabase>=2.3.0

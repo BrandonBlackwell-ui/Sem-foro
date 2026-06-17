@@ -4,7 +4,6 @@ import { KpiStrip } from '../briefing/KpiStrip'
 import { DecisionsBlock } from '../briefing/DecisionsBlock'
 import { FilterChips } from '../briefing/FilterChips'
 import { MasterTable } from '../briefing/MasterTable'
-import { AskDrive } from '../briefing/AskDrive'
 import { WhatsAppRadar } from '../briefing/WhatsAppRadar'
 
 export function BriefingTab() {
@@ -37,11 +36,6 @@ export function BriefingTab() {
 
       {/* Zone B2: WhatsApp Radar */}
       <WhatsAppRadar />
-
-      {/* Zone C: Ask Drive */}
-      <div className="pane-card" style={{ marginBottom: '24px' }}>
-        <AskDrive />
-      </div>
     </section>
   )
 }
