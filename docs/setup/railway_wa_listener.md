@@ -21,18 +21,23 @@ Set these in Railway service variables:
 SUPABASE_URL=https://vqgfkfvywbpjldreuplb.supabase.co
 SUPABASE_SERVICE_KEY=your_service_role_key
 AUTH_DIR=/data/auth_state
-WA_PAIRING_PHONE_NUMBER=5215512345678
 WA_PAIRING_RETRY_DELAY_MS=90000
+DEEPGRAM_API_KEY=your_deepgram_api_key
+DEEPGRAM_MODEL=nova-3
+DEEPGRAM_LANGUAGE=es
 ```
 
 Do not put these values in git.
 
-`WA_PAIRING_PHONE_NUMBER` is optional but recommended on Railway because log
-timestamps can make terminal QR codes hard to scan. Use digits only, including
-country code.
+The listener links WhatsApp with QR by default. Open `/qr` on the Railway public
+domain to scan it.
 
 `WA_PAIRING_RETRY_DELAY_MS` keeps Railway from generating replacement pairing
 codes too quickly. The default is 90000 milliseconds.
+
+`DEEPGRAM_API_KEY` is optional. When present, WhatsApp audio/voice notes from
+mapped groups are transcribed with Deepgram before being saved to Supabase.
+The transcript is saved in `wa_messages.body` prefixed with `[Audio transcrito]`.
 
 ## Persistent volume
 

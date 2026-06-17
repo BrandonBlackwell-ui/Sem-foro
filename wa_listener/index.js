@@ -17,6 +17,7 @@ import makeWASocket, {
   fetchLatestBaileysVersion,
   makeCacheableSignalKeyStore,
   isJidGroup,
+  downloadContentFromMessage,
 } from "@whiskeysockets/baileys";
 import { createClient } from "@supabase/supabase-js";
 import http from "http";
@@ -43,6 +44,10 @@ if (existsSync(envPath)) {
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
+const DEEPGRAM_API_KEY = process.env.DEEPGRAM_API_KEY || "";
+const DEEPGRAM_MODEL = process.env.DEEPGRAM_MODEL || "nova-3";
+const DEEPGRAM_LANGUAGE = process.env.DEEPGRAM_LANGUAGE || "es";
+const MAX_TRANSCRIBE_AUDIO_BYTES = Number(process.env.MAX_TRANSCRIBE_AUDIO_BYTES || 25 * 1024 * 1024);
 const PAIRING_MODE = (process.env.WA_PAIRING_MODE || "qr").toLowerCase();
 const PAIRING_PHONE_NUMBER =
   PAIRING_MODE === "code" ? process.env.WA_PAIRING_PHONE_NUMBER?.replace(/\D/g, "") : "";
@@ -199,46 +204,127 @@ function getEpochSeconds(timestamp) {
 }
 
 function getMessageType(message) {
-  if (!message) return "unknown";
-  const type = Object.keys(message)[0];
+  const unwrapped = unwrapMessage(message);
+  if (!unwrapped) return "unknown";
+  const type = Object.keys(unwrapped)[0];
   return type ? type.replace("Message", "") : "unknown";
 }
 
-function getMessageText(message) {
+function unwrapMessage(message) {
   if (!message) return null;
 
   if (message.ephemeralMessage?.message) {
-    return getMessageText(message.ephemeralMessage.message);
+    return unwrapMessage(message.ephemeralMessage.message);
   }
 
   if (message.viewOnceMessage?.message) {
-    return getMessageText(message.viewOnceMessage.message);
+    return unwrapMessage(message.viewOnceMessage.message);
   }
 
+  return message;
+}
+
+function getMessageText(message) {
+  const unwrapped = unwrapMessage(message);
+  if (!unwrapped) return null;
+
   return (
-    message.conversation ||
-    message.extendedTextMessage?.text ||
-    message.imageMessage?.caption ||
-    message.documentMessage?.caption ||
-    message.videoMessage?.caption ||
-    message.buttonsResponseMessage?.selectedDisplayText ||
-    message.listResponseMessage?.title ||
-    message.templateButtonReplyMessage?.selectedDisplayText ||
-    message.reactionMessage?.text ||
+    unwrapped.conversation ||
+    unwrapped.extendedTextMessage?.text ||
+    unwrapped.imageMessage?.caption ||
+    unwrapped.documentMessage?.caption ||
+    unwrapped.videoMessage?.caption ||
+    unwrapped.buttonsResponseMessage?.selectedDisplayText ||
+    unwrapped.listResponseMessage?.title ||
+    unwrapped.templateButtonReplyMessage?.selectedDisplayText ||
+    unwrapped.reactionMessage?.text ||
     null
   );
 }
 
-function buildMessageRow(msg, mapping) {
+function getAudioMessage(message) {
+  const unwrapped = unwrapMessage(message);
+  return unwrapped?.audioMessage || null;
+}
+
+async function streamToBuffer(stream) {
+  const chunks = [];
+  for await (const chunk of stream) {
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks);
+}
+
+async function transcribeAudioMessage(audioMessage) {
+  if (!audioMessage || !DEEPGRAM_API_KEY) return null;
+
+  const declaredLength = Number(audioMessage.fileLength || 0);
+  if (declaredLength > MAX_TRANSCRIBE_AUDIO_BYTES) {
+    console.warn(`Skipping audio transcription: file too large (${declaredLength} bytes).`);
+    return null;
+  }
+
+  try {
+    const stream = await downloadContentFromMessage(audioMessage, "audio");
+    const audioBuffer = await streamToBuffer(stream);
+    if (!audioBuffer.length) return null;
+
+    if (audioBuffer.length > MAX_TRANSCRIBE_AUDIO_BYTES) {
+      console.warn(`Skipping audio transcription: downloaded file too large (${audioBuffer.length} bytes).`);
+      return null;
+    }
+
+    return await transcribeWithDeepgram(audioBuffer, audioMessage.mimetype || "audio/ogg");
+  } catch (error) {
+    console.warn("Audio transcription failed:", error?.message || error);
+    return null;
+  }
+}
+
+async function transcribeWithDeepgram(audioBuffer, contentType) {
+  const params = new URLSearchParams({
+    model: DEEPGRAM_MODEL,
+    language: DEEPGRAM_LANGUAGE,
+    smart_format: "true",
+    punctuate: "true",
+  });
+
+  const response = await fetch(`https://api.deepgram.com/v1/listen?${params}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Token ${DEEPGRAM_API_KEY}`,
+      "Content-Type": contentType,
+    },
+    body: audioBuffer,
+    signal: AbortSignal.timeout(60_000),
+  });
+
+  const json = await response.json().catch(() => null);
+  if (!response.ok) {
+    throw new Error(`Deepgram ${response.status}: ${JSON.stringify(json)?.slice(0, 300)}`);
+  }
+
+  return json?.results?.channels?.[0]?.alternatives?.[0]?.transcript?.trim() || null;
+}
+
+async function buildMessageRow(msg, mapping) {
   const remoteJid = msg.key?.remoteJid;
   const participantJid = msg.key?.participant || msg.participant || null;
   const authorJid = participantJid || remoteJid || null;
-  const body = getMessageText(msg.message);
+  let body = getMessageText(msg.message);
   const msgType = getMessageType(msg.message);
   const epoch = getEpochSeconds(msg.messageTimestamp);
   const sentAt = new Date(epoch * 1000).toISOString();
   const status = msg.status == null ? null : Number(msg.status);
   const isSystem = Boolean(msg.messageStubType) || Boolean(body && isSystemBody(body));
+  const audioMessage = getAudioMessage(msg.message);
+
+  if (!body && audioMessage) {
+    const transcript = await transcribeAudioMessage(audioMessage);
+    if (transcript) {
+      body = `[Audio transcrito] ${transcript}`;
+    }
+  }
 
   return {
     msg_id: msg.key?.id,
@@ -389,7 +475,7 @@ async function connectToWhatsApp() {
       const mapping = groupCache.get(remoteJid);
       if (!mapping) continue;
 
-      const row = buildMessageRow(msg, mapping);
+      const row = await buildMessageRow(msg, mapping);
       if (!row.msg_id || !row.remote_jid || !row.key) continue;
 
       console.log(`[${row.account_id}] ${row.author ?? "unknown"}: ${row.body?.slice(0, 60) ?? `(${row.msg_type})`}`);
