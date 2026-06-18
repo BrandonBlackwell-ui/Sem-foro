@@ -297,6 +297,9 @@ def _column_values(
             os.getenv("MONDAY_TASKS_DUE_DATE_COLUMN_ID", "date_mm45ncq9"): {
                 "date": _due_date_for_item(item, urgency).isoformat()
             },
+            os.getenv("MONDAY_TASKS_WORK_TYPE_COLUMN_ID", "color_mm4513mj"): {
+                "label": _normalize_work_type(item.get("work_type"))
+            },
         }
         monday_user = _resolve_monday_user(item, monday_users)
         if monday_user:
@@ -375,6 +378,7 @@ def _evidence_text(row: dict[str, Any], item: dict[str, Any]) -> str:
         f"Responsable inferido: {owner} ({owner_type})",
         f"Urgencia: {urgency}",
         f"Fecha de entrega: {_due_date_for_item(item, urgency).isoformat()}",
+        f"Tipo de trabajo: {_normalize_work_type(item.get('work_type'))}",
         f"Sentimiento: {row.get('sentiment')} | Satisfaccion: {row.get('satisfaction')} | Riesgo: {row.get('risk_level')}",
         f"Score: {row.get('new_score')} | Delta: {row.get('score_delta')}",
         "",
@@ -422,6 +426,38 @@ def _priority_label(urgency: str) -> str:
 def _normalize_urgency(value: Any) -> str:
     urgency = str(value or "medium").strip().lower()
     return urgency if urgency in {"high", "medium", "low"} else "medium"
+
+
+def _normalize_work_type(value: Any) -> str:
+    text = str(value or "").strip()
+    allowed = {
+        "Reunión / Seguimiento",
+        "Campaña",
+        "Nota a cliente",
+        "Crisis",
+        "Media training",
+        "Análisis",
+        "Reporte",
+        "Otro",
+    }
+    if text in allowed:
+        return text
+    aliases = {
+        "reunion / seguimiento": "Reunión / Seguimiento",
+        "reunión/seguimiento": "Reunión / Seguimiento",
+        "seguimiento": "Reunión / Seguimiento",
+        "campana": "Campaña",
+        "campaña": "Campaña",
+        "nota": "Nota a cliente",
+        "nota cliente": "Nota a cliente",
+        "crisis": "Crisis",
+        "media training": "Media training",
+        "analisis": "Análisis",
+        "análisis": "Análisis",
+        "reporte": "Reporte",
+        "otro": "Otro",
+    }
+    return aliases.get(text.lower(), "Otro")
 
 
 def _account_id(row: dict[str, Any]) -> str:

@@ -40,6 +40,16 @@ DEFAULT_BASE_SCORE = 70
 MAX_MESSAGES_PER_GROUP = 600
 MAX_AMBIGUOUS_CONTEXT_MESSAGES = 5
 DEFAULT_MAX_ABS_SCORE_DELTA = 3
+WORK_TYPE_LABELS = {
+    "Reunión / Seguimiento",
+    "Campaña",
+    "Nota a cliente",
+    "Crisis",
+    "Media training",
+    "Análisis",
+    "Reporte",
+    "Otro",
+}
 LOCAL_TZ = ZoneInfo(os.getenv("WA_ANALYSIS_TIMEZONE", "America/Mexico_City"))
 
 
@@ -313,7 +323,7 @@ Devuelve este JSON:
   "summary": "resumen breve del dia en este grupo",
   "positive_signals": ["..."],
   "negative_signals": ["..."],
-  "action_items": [{{"action":"...", "owner":"...", "owner_type":"client|blackwell|shared|unknown", "urgency":"low|medium|high", "due_date":"YYYY-MM-DD|null"}}],
+  "action_items": [{{"action":"...", "owner":"...", "owner_type":"client|blackwell|shared|unknown", "urgency":"low|medium|high", "due_date":"YYYY-MM-DD|null", "work_type":"Reunión / Seguimiento|Campaña|Nota a cliente|Crisis|Media training|Análisis|Reporte|Otro"}}],
   "evidence": [{{"quote":"fragmento corto", "why_it_matters":"..."}}]
 }}
 
@@ -331,6 +341,15 @@ Reglas obligatorias para action_items:
   - Si urgency es medium o low y no hay fecha explicita, due_date debe ser el dia siguiente a {target_date.isoformat()}.
   - Si el mensaje menciona una fecha relativa o textual ("siguiente miercoles", "mañana", "viernes", etc.), calcula la fecha calendario usando {target_date.isoformat()} como fecha base.
   - Si realmente no se puede inferir una fecha, usa null.
+- Siempre devuelve work_type usando exactamente una de estas etiquetas:
+  - "Reunión / Seguimiento": follow-up, confirmar, validar, monitorear, agendar, coordinar, revisar avances.
+  - "Campaña": acciones de campaña, pauta, difusión masiva, activación, estrategia de comunicación.
+  - "Nota a cliente": redactar, enviar o preparar nota/comunicado/documento para cliente o vocería.
+  - "Crisis": riesgo reputacional, queja, reclamo, incidente, urgencia sensible o contención.
+  - "Media training": entrenamiento, preparación de vocero, simulación, Q&A, talking points de entrevista.
+  - "Análisis": investigar, analizar, diagnosticar, evaluar, revisar datos o cobertura.
+  - "Reporte": reportes, métricas, entregables de resultados, compilados, dashboards.
+  - "Otro": si ninguna etiqueta encaja claramente.
 - Si no hay tareas accionables reales, devuelve action_items como [].
 
 Analisis previo del dia, resumido:
@@ -651,10 +670,34 @@ def _normalize_action_items(value: Any, group_name: str | None = None) -> list[d
                 "owner_type": owner_type,
                 "urgency": _normalize_choice(item.get("urgency"), {"low", "medium", "high"}, "medium"),
                 "due_date": _normalize_due_date(item.get("due_date")),
+                "work_type": _normalize_work_type(item.get("work_type")),
             }
         )
 
     return normalized
+
+
+def _normalize_work_type(value: Any) -> str:
+    text = str(value or "").strip()
+    if text in WORK_TYPE_LABELS:
+        return text
+    normalized = text.lower()
+    aliases = {
+        "reunion / seguimiento": "Reunión / Seguimiento",
+        "reunión/seguimiento": "Reunión / Seguimiento",
+        "seguimiento": "Reunión / Seguimiento",
+        "campana": "Campaña",
+        "campaña": "Campaña",
+        "nota": "Nota a cliente",
+        "nota cliente": "Nota a cliente",
+        "crisis": "Crisis",
+        "media training": "Media training",
+        "analisis": "Análisis",
+        "análisis": "Análisis",
+        "reporte": "Reporte",
+        "otro": "Otro",
+    }
+    return aliases.get(normalized, "Otro")
 
 
 def _normalize_due_date(value: Any) -> str | None:
