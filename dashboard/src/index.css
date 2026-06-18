@@ -1664,3 +1664,221 @@ body[data-grid="on"] {
   .product-header { padding: 20px; border-radius: 24px; }
   .detail-hero { grid-template-columns: 1fr; }
 }
+
+/* Softer app polish: lighter type, calmer cards */
+:root {
+  --radius: 18px;
+  --grid: rgba(60, 60, 67, 0.028);
+  --shadow: 0 12px 32px rgba(17, 24, 39, 0.07);
+}
+
+html,
+body {
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+body[data-grid="on"] {
+  background-size: auto, auto, 32px 32px, 32px 32px;
+}
+
+.product-header {
+  min-height: auto;
+  border-radius: 24px;
+  padding: 26px 28px;
+  box-shadow: 0 14px 42px rgba(17, 24, 39, 0.055);
+}
+
+.product-header h1 {
+  max-width: 980px;
+  font-size: clamp(36px, 4.2vw, 56px);
+  font-weight: 680;
+  letter-spacing: -0.01em;
+}
+
+.product-header p {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #7A7A80;
+}
+
+.eyebrow,
+.metric-card span,
+.focus-card h2,
+.section-head h2,
+.calendar-panel h2,
+.task-item small,
+.score-panel small,
+.score-orbit small,
+.account-side small,
+.back-button,
+.primary-button,
+.secondary-button,
+.client-tabs button,
+.date-strip button {
+  font-family: var(--sans);
+  letter-spacing: 0.015em;
+  text-transform: none;
+}
+
+.eyebrow,
+.metric-card span,
+.focus-card h2,
+.section-head h2,
+.calendar-panel h2 {
+  font-size: 13px;
+  font-weight: 650;
+  color: #4B5563;
+}
+
+.back-button {
+  border-bottom: 0;
+  color: #0A84FF;
+  margin-bottom: 10px;
+  font-weight: 650;
+}
+
+.primary-button {
+  min-height: 46px;
+  padding: 0 22px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.client-tabs {
+  margin-bottom: 26px;
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(17, 24, 39, 0.045);
+}
+
+.client-tabs button {
+  min-width: 138px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.metric-card,
+.calendar-panel,
+.account-row,
+.score-panel,
+.detail-summary,
+.focus-card,
+.score-orbit,
+.timeline-item,
+.chat-message,
+.score-graph {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.055);
+}
+
+.card-3d {
+  box-shadow:
+    0 12px 34px rgba(17, 24, 39, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.78) inset;
+}
+
+.card-3d::after {
+  height: 12px;
+  opacity: 0.42;
+}
+
+.account-row.card-3d:hover,
+.metric-card.card-3d:hover,
+.focus-card.card-3d:hover,
+.calendar-panel.card-3d:hover {
+  transform: perspective(900px) translateY(-1px);
+  box-shadow:
+    0 16px 38px rgba(17, 24, 39, 0.075),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.detail-hero {
+  grid-template-columns: 180px minmax(0, 1fr) 220px;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.score-panel {
+  min-height: 170px;
+}
+
+.score-panel span {
+  font-size: 52px;
+  font-weight: 720;
+}
+
+.score-panel small {
+  color: #6B7280;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.detail-summary {
+  padding: 28px 30px;
+}
+
+.detail-summary p,
+.day-summary {
+  font-size: 18px;
+  line-height: 1.58;
+  color: #25272C;
+}
+
+.pill-row {
+  margin-bottom: 18px;
+}
+
+.status-pill,
+.badge,
+.owner-type {
+  padding: 5px 11px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.score-orbit {
+  min-height: 170px;
+}
+
+.score-orbit strong {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.score-orbit small {
+  color: #6B7280;
+  font-size: 13px;
+}
+
+.focus-card {
+  padding: 24px 26px;
+}
+
+.task-item,
+.signal-list p {
+  border-left-width: 4px;
+  padding: 14px 16px;
+}
+
+.task-item strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.signal-list h3 {
+  font-family: var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 650;
+  color: #6B7280;
+}
+
+@media (max-width: 920px) {
+  .product-header h1 { font-size: 36px; }
+  .client-tabs button { min-width: 0; }
+  .detail-summary { padding: 22px; }
+}
