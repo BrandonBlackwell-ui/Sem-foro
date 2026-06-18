@@ -309,7 +309,7 @@ export default function App() {
   const latestSelectedAnalysis = selectedJid ? latestAnalysisByGroup.get(selectedJid) ?? null : null
   const selectedDayAnalysis = selectedHistory.find((analysis) => analysis.id === selectedHistoryId) ?? null
   const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
-  const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
+  const selectedScore = latestSelectedAnalysis?.new_score ?? selectedGroup?.score?.current_score ?? null
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
   const allActions = selectedHistory.flatMap((analysis) => asArray(analysis.action_items))
   const allPositiveSignals = selectedHistory.flatMap((analysis) => asArray(analysis.positive_signals))
@@ -419,7 +419,7 @@ export default function App() {
 
         <section className="account-list" aria-label="Cuentas de WhatsApp">
           {groupSummaries.map((group) => {
-            const scoreValue = group.score?.current_score ?? group.analysis?.new_score ?? null
+            const scoreValue = group.analysis?.new_score ?? group.score?.current_score ?? null
             const sentiment = group.analysis?.sentiment ?? 'pendiente'
             const status = scoreLabel(scoreValue)
             return (
@@ -474,7 +474,7 @@ export default function App() {
           <section className="detail-hero">
             <div className={`score-panel card-3d ${scoreColor(selectedScore)}`}>
               <span>{selectedScore ?? '--'}</span>
-              <small>{scoreLabel(selectedScore)}</small>
+              <small>Ultimo score - {scoreLabel(selectedScore)}</small>
             </div>
             <div className="detail-summary card-3d">
               <div className="pill-row">
