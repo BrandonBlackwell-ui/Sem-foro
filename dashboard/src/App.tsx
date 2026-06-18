@@ -111,9 +111,10 @@ function shortDate(value: string | null | undefined) {
 
 function badgeClass(value: string) {
   const normalized = value.toLowerCase()
-  if (['positive', 'satisfied', 'low', 'estable'].includes(normalized)) return 'green'
-  if (['neutral', 'unknown', 'mixed', 'medium', 'pendiente'].includes(normalized)) return 'yellow'
+  if (['positive', 'satisfied', 'low', 'estable', 'blackwell'].includes(normalized)) return 'green'
+  if (['neutral', 'unknown', 'mixed', 'medium', 'pendiente', 'shared'].includes(normalized)) return 'yellow'
   if (['negative', 'unsatisfied', 'high', 'atencion'].includes(normalized)) return 'red'
+  if (['client'].includes(normalized)) return 'gray'
   return 'gray'
 }
 
@@ -156,6 +157,11 @@ function actionMeta(item: unknown) {
   const owner = fieldText(item.owner, 'Sin responsable')
   const urgency = fieldText(item.urgency, 'sin urgencia')
   return `${owner} - ${urgency}`
+}
+
+function actionOwnerType(item: unknown) {
+  if (!isRecord(item)) return 'unknown'
+  return fieldText(item.owner_type, 'unknown')
 }
 
 export default function App() {
@@ -460,7 +466,10 @@ export default function App() {
             {actionItems.length ? (
               actionItems.map((item, index) => (
                 <div className="task-item" key={index}>
-                  <strong>{actionText(item)}</strong>
+                  <div className="task-title">
+                    <strong>{actionText(item)}</strong>
+                    <span className={`owner-type ${badgeClass(actionOwnerType(item))}`}>{actionOwnerType(item)}</span>
+                  </div>
                   <small>{actionMeta(item)}</small>
                 </div>
               ))

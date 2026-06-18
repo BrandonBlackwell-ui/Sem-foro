@@ -223,9 +223,20 @@ Devuelve este JSON:
   "summary": "resumen breve del dia en este grupo",
   "positive_signals": ["..."],
   "negative_signals": ["..."],
-  "action_items": [{{"action":"...", "owner":"...", "urgency":"low|medium|high"}}],
+  "action_items": [{{"action":"...", "owner":"...", "owner_type":"client|blackwell|shared|unknown", "urgency":"low|medium|high"}}],
   "evidence": [{{"quote":"fragmento corto", "why_it_matters":"..."}}]
 }}
+
+Reglas obligatorias para action_items:
+- No devuelvas owner vacio.
+- Si la accion depende del cliente, usa owner "Cliente" y owner_type "client".
+- Si la accion depende de Blackwell, usa como owner el nombre exacto de la persona que respondio, acepto, confirmo, resolvio o quedo implicada en el transcript.
+- Si no hay una persona clara pero la responsabilidad es de Blackwell, usa owner "Blackwell" y owner_type "blackwell".
+- Si la accion es compartida, usa owner "Cliente + <nombre/persona/equipo Blackwell>" y owner_type "shared".
+- Si no se puede inferir responsable con evidencia del transcript, usa owner "Por definir" y owner_type "unknown".
+- Para tareas tipo confirmar, validar, monitorear o dar seguimiento: asigna owner a quien debe hacer la siguiente accion, no necesariamente a quien la pidio.
+- Usa nombres reales visibles en el transcript, por ejemplo el push_name del mensaje. No inventes cargos ni nombres.
+- Si no hay tareas accionables reales, devuelve action_items como [].
 
 Transcript:
 {transcript}
@@ -283,7 +294,7 @@ def _build_daily_row(
         "summary": str(analysis.get("summary") or "")[:4000],
         "positive_signals": _json_list(analysis.get("positive_signals")),
         "negative_signals": _json_list(analysis.get("negative_signals")),
-        "action_items": _json_list(analysis.get("action_items")),
+        "action_items": _normalize_action_items(analysis.get("action_items")),
         "evidence": _json_list(analysis.get("evidence")),
         "model": model,
         "raw_analysis": analysis,
@@ -355,6 +366,62 @@ def _parse_json(text: str) -> dict:
 
 def _json_list(value: Any) -> list:
     return value if isinstance(value, list) else []
+
+
+def _normalize_action_items(value: Any) -> list[dict[str, Any]]:
+    if not isinstance(value, list):
+        return []
+
+    normalized: list[dict[str, Any]] = []
+    for item in value:
+        if isinstance(item, str):
+            action = item.strip()
+            if action:
+                normalized.append(
+                    {
+                        "action": action,
+                        "owner": "Por definir",
+                        "owner_type": "unknown",
+                        "urgency": "medium",
+                    }
+                )
+            continue
+
+        if not isinstance(item, dict):
+            continue
+
+        action = str(item.get("action") or "").strip()
+        if not action:
+            continue
+
+        owner = str(item.get("owner") or "").strip()
+        if not owner or owner.lower() in {"null", "none", "unknown", "sin responsable"}:
+            owner = "Por definir"
+
+        owner_type = _normalize_choice(
+            item.get("owner_type"),
+            {"client", "blackwell", "shared", "unknown"},
+            "unknown",
+            aliases={"cliente": "client", "bw": "blackwell", "equipo": "blackwell", "both": "shared"},
+        )
+
+        if owner == "Cliente":
+            owner_type = "client"
+        elif owner.startswith("Cliente +"):
+            owner_type = "shared"
+        elif owner != "Por definir" and owner_type == "unknown":
+            owner_type = "blackwell"
+
+        normalized.append(
+            {
+                "action": action,
+                "owner": owner,
+                "owner_type": owner_type,
+                "urgency": _normalize_choice(item.get("urgency"), {"low", "medium", "high"}, "medium"),
+            }
+        )
+
+    return normalized
 
 
 def _normalize_choice(value: Any, allowed: set[str], default: str, aliases: dict[str, str] | None = None) -> str:
