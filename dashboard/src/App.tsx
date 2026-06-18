@@ -171,6 +171,7 @@ export default function App() {
   const [detailMessages, setDetailMessages] = useState<WaMessage[]>([])
   const [groups, setGroups] = useState<WaGroup[]>([])
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
+  const [messagesOpen, setMessagesOpen] = useState(false)
   const [loading, setLoading] = useState(true)
   const [detailLoading, setDetailLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -292,6 +293,10 @@ export default function App() {
   const actionItems = selectedAnalysis ? asArray(selectedAnalysis.action_items) : []
   const positiveSignals = selectedAnalysis ? asArray(selectedAnalysis.positive_signals) : []
   const negativeSignals = selectedAnalysis ? asArray(selectedAnalysis.negative_signals) : []
+
+  useEffect(() => {
+    setMessagesOpen(false)
+  }, [selectedJid])
 
   useEffect(() => {
     async function loadDetailMessages() {
@@ -426,6 +431,7 @@ export default function App() {
           </div>
           <p>{selectedAnalysis?.summary || 'Este grupo existe en Supabase, pero todavia no tiene resumen guardado.'}</p>
         </div>
+        <ScoreOrbit score={selectedScore} tone={scoreColor(selectedScore)} analyzed={Boolean(selectedAnalysis)} />
       </section>
 
       <section className="focus-card">
@@ -490,24 +496,50 @@ export default function App() {
       </section>
 
       <section className="focus-card">
-        <div className="section-head">
-          <h2>Mensajes</h2>
-          <span>{detailLoading ? 'cargando' : `${detailMessages.length}`}</span>
+        <div className="section-head collapsible-head">
+          <div>
+            <h2>Mensajes</h2>
+            <p>Conversacion cruda disponible para auditoria.</p>
+          </div>
+          <button className="secondary-button" onClick={() => setMessagesOpen((open) => !open)}>
+            {messagesOpen ? 'Ocultar' : `Ver ${detailLoading ? '' : detailMessages.length} mensajes`}
+          </button>
         </div>
-        <div className="message-feed">
-          {detailMessages.slice(0, 12).map((message) => (
-            <article className="chat-message" key={message.id}>
-              <header>
-                <strong>{message.push_name || message.author || 'Sin autor'}</strong>
-                <time>{shortDate(message.sent_at)}</time>
-              </header>
-              <p>{message.body || '(sin texto)'}</p>
-              <span>{message.msg_type}</span>
-            </article>
-          ))}
-        </div>
+        {messagesOpen && (
+          <div className="message-feed">
+            {detailMessages.slice(0, 12).map((message) => (
+              <article className="chat-message" key={message.id}>
+                <header>
+                  <strong>{message.push_name || message.author || 'Sin autor'}</strong>
+                  <time>{shortDate(message.sent_at)}</time>
+                </header>
+                <p>{message.body || '(sin texto)'}</p>
+                <span>{message.msg_type}</span>
+              </article>
+            ))}
+          </div>
+        )}
       </section>
     </main>
+  )
+}
+
+function ScoreOrbit({ score, tone, analyzed }: { score: number | null; tone: string; analyzed: boolean }) {
+  return (
+    <aside className={`score-orbit ${tone}`} aria-label="Visualizacion 3D del estado">
+      <div className="orbit-stage">
+        <div className="orbit-ring one" />
+        <div className="orbit-ring two" />
+        <div className="orbit-core">
+          <span>{score ?? '--'}</span>
+        </div>
+        <i className="satellite a" />
+        <i className="satellite b" />
+        <i className="satellite c" />
+      </div>
+      <strong>{analyzed ? 'Analisis activo' : 'Pendiente'}</strong>
+      <small>{score == null ? 'Sin score historico' : 'Score vivo desde Supabase'}</small>
+    </aside>
   )
 }
 

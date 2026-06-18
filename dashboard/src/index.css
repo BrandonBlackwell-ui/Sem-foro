@@ -225,6 +225,22 @@ input, select, textarea { font-family: inherit; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.secondary-button {
+  background: var(--paper-soft);
+  color: var(--ink-800);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 9px 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.secondary-button:hover {
+  border-color: var(--ink-500);
+  background: var(--paper-bright);
+}
 .overview-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -356,7 +372,7 @@ input, select, textarea { font-family: inherit; }
 .status-pill.gray { color: var(--slate); background: var(--gray-bg); border-color: rgba(168,172,181,0.35); }
 .detail-hero {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-columns: 180px minmax(0, 1fr) 220px;
   gap: 16px;
   margin-bottom: 16px;
 }
@@ -397,6 +413,92 @@ input, select, textarea { font-family: inherit; }
   color: var(--graphite);
   font-size: 18px;
   line-height: 1.6;
+}
+.score-orbit {
+  position: relative;
+  min-height: 180px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 7px;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(251,248,238,0.88), rgba(241,236,221,0.55)),
+    radial-gradient(circle at 50% 40%, rgba(91,122,196,0.13), transparent 58%);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  perspective: 740px;
+}
+.orbit-stage {
+  position: relative;
+  width: 124px;
+  height: 106px;
+  transform-style: preserve-3d;
+  animation: orbit-tilt 7s ease-in-out infinite;
+}
+.orbit-core {
+  position: absolute;
+  inset: 27px 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  box-shadow: 0 16px 28px rgba(14, 27, 69, 0.13);
+  transform: translateZ(34px);
+}
+.orbit-core span {
+  color: var(--ink-900);
+  font-family: var(--mono);
+  font-weight: 800;
+  font-size: 20px;
+}
+.orbit-ring {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(58,91,168,0.34);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+.orbit-ring.one {
+  transform: rotateX(68deg) rotateZ(16deg);
+  animation: ring-spin 8s linear infinite;
+}
+.orbit-ring.two {
+  inset: 24px 7px;
+  transform: rotateY(66deg) rotateZ(-18deg);
+  animation: ring-spin 10s linear infinite reverse;
+}
+.satellite {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink-500);
+  box-shadow: 0 0 0 5px rgba(58,91,168,0.08);
+}
+.satellite.a { top: 17px; left: 22px; transform: translateZ(28px); }
+.satellite.b { right: 18px; top: 47px; transform: translateZ(44px); }
+.satellite.c { left: 55px; bottom: 9px; transform: translateZ(20px); }
+.score-orbit.green .satellite { background: var(--teal); }
+.score-orbit.yellow .satellite { background: var(--amber); }
+.score-orbit.orange .satellite { background: var(--orange); }
+.score-orbit.red .satellite { background: var(--crimson); }
+.score-orbit strong {
+  color: var(--ink-900);
+  font-size: 14px;
+}
+.score-orbit small {
+  color: var(--char);
+  font-family: var(--mono);
+  font-size: 10.5px;
+}
+@keyframes orbit-tilt {
+  0%, 100% { transform: rotateX(58deg) rotateZ(-9deg); }
+  50% { transform: rotateX(64deg) rotateZ(9deg); }
+}
+@keyframes ring-spin {
+  to { rotate: 360deg; }
 }
 .detail-grid {
   display: grid;
@@ -476,6 +578,14 @@ input, select, textarea { font-family: inherit; }
 .focus-card .section-head span {
   font-family: var(--mono);
   color: var(--char);
+}
+.collapsible-head {
+  align-items: center;
+}
+.collapsible-head p {
+  margin: 6px 0 0;
+  color: var(--char);
+  font-size: 13px;
 }
 .task-list {
   display: grid;
@@ -861,6 +971,13 @@ input, select, textarea { font-family: inherit; }
   .real-grid.metrics, .real-grid.split { grid-template-columns: 1fr; }
   .message-row { grid-template-columns: 1fr; gap: 4px; }
   .account-grid { grid-template-columns: 1fr; }
+  .app-shell { width: min(100vw - 28px, 1180px); padding-top: 20px; }
+  .product-header { align-items: flex-start; flex-direction: column; }
+  .product-header h1 { font-size: 34px; }
+  .overview-strip, .detail-grid, .detail-hero { grid-template-columns: 1fr; }
+  .account-row { grid-template-columns: 54px minmax(0, 1fr); }
+  .account-side { grid-column: 1 / -1; justify-items: start; }
+  .collapsible-head { align-items: flex-start; flex-direction: column; }
 }
 
 /* ─── Ask Drive — quick prompt chips ─── */
