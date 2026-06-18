@@ -1406,3 +1406,261 @@ input, select, textarea { font-family: inherit; }
 @media (max-width: 900px) {
   html, body { font-size: 14.5px; }
 }
+
+/* iOS 16-inspired visual layer */
+:root {
+  --ink-900: #111827;
+  --ink-800: #1F2937;
+  --ink-700: #374151;
+  --ink-600: #4B5563;
+  --ink-500: #0A84FF;
+  --ink-400: #5E5CE6;
+
+  --blue-700: #0057D9;
+  --blue-600: #007AFF;
+  --blue-500: #409CFF;
+  --blue-100: #E5F1FF;
+
+  --paper: #F5F5F7;
+  --paper-soft: rgba(255, 255, 255, 0.62);
+  --paper-bright: rgba(255, 255, 255, 0.88);
+  --paper-edge: rgba(60, 60, 67, 0.18);
+
+  --graphite: #1D1D1F;
+  --char: #636366;
+  --slate: #8E8E93;
+  --slate-2: #AEAEB2;
+  --rule: rgba(60, 60, 67, 0.18);
+  --rule-soft: rgba(60, 60, 67, 0.10);
+  --grid: rgba(60, 60, 67, 0.045);
+
+  --teal: #30A46C;
+  --teal-bg: rgba(52, 199, 89, 0.13);
+  --amber: #B26A00;
+  --amber-bg: rgba(255, 159, 10, 0.15);
+  --crimson: #D92D20;
+  --crimson-bg: rgba(255, 59, 48, 0.13);
+  --orange: #C25700;
+  --orange-bg: rgba(255, 149, 0, 0.14);
+  --gray: #8E8E93;
+  --gray-bg: rgba(142, 142, 147, 0.14);
+
+  --bg: #F5F5F7;
+  --panel: rgba(255, 255, 255, 0.78);
+  --text: #111827;
+  --muted: #636366;
+  --border: rgba(60, 60, 67, 0.18);
+  --border-soft: rgba(60, 60, 67, 0.10);
+  --shadow: 0 18px 44px rgba(17, 24, 39, 0.08);
+  --radius: 22px;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", system-ui, sans-serif;
+}
+
+html,
+body {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(10, 132, 255, 0.14), transparent 28%),
+    radial-gradient(circle at 92% 10%, rgba(52, 199, 89, 0.10), transparent 28%),
+    #F5F5F7;
+}
+
+body[data-grid="on"] {
+  background-image:
+    radial-gradient(circle at 18% 0%, rgba(10, 132, 255, 0.14), transparent 28%),
+    radial-gradient(circle at 92% 10%, rgba(52, 199, 89, 0.10), transparent 28%),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px, 28px 28px;
+}
+
+.app-shell {
+  width: min(1240px, calc(100vw - 44px));
+  padding-top: 28px;
+}
+
+.product-header {
+  align-items: center;
+  border: 1px solid var(--rule-soft);
+  border-radius: 28px;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(22px) saturate(1.3);
+  box-shadow: 0 20px 60px rgba(17, 24, 39, 0.07);
+}
+
+.product-header h1 {
+  font-size: clamp(36px, 5vw, 62px);
+  font-weight: 780;
+}
+
+.product-header p {
+  color: var(--slate);
+  font-size: 15px;
+}
+
+.eyebrow,
+.metric-card span,
+.focus-card h2,
+.section-head h2,
+.calendar-panel h2 {
+  letter-spacing: 0.08em;
+}
+
+.primary-button,
+.secondary-button,
+.date-strip button,
+.client-tabs button {
+  border-radius: 999px;
+}
+
+.primary-button {
+  background: linear-gradient(180deg, #1688FF, #006BE6);
+  color: white;
+  box-shadow: 0 12px 28px rgba(0, 122, 255, 0.26);
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(0, 122, 255, 0.31);
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(16px);
+}
+
+.overview-strip {
+  gap: 16px;
+}
+
+.metric-card,
+.calendar-panel,
+.account-row,
+.score-panel,
+.detail-summary,
+.focus-card,
+.score-orbit,
+.timeline-item,
+.chat-message,
+.score-graph {
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  border-color: rgba(60, 60, 67, 0.14);
+  backdrop-filter: blur(20px) saturate(1.25);
+}
+
+.metric-card {
+  min-height: 134px;
+  padding: 20px;
+}
+
+.metric-card strong {
+  margin-top: 12px;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 780;
+}
+
+.metric-card small {
+  color: var(--slate);
+  font-size: 14px;
+}
+
+.card-3d {
+  box-shadow:
+    0 26px 60px rgba(17, 24, 39, 0.09),
+    0 1px 0 rgba(255, 255, 255, 0.82) inset;
+}
+
+.card-3d::after {
+  inset: auto 28px -12px;
+  background: rgba(17, 24, 39, 0.10);
+}
+
+.account-row {
+  grid-template-columns: 68px minmax(0, 1fr) auto;
+  min-height: 102px;
+  padding: 18px 20px;
+}
+
+.account-row:hover,
+.timeline-item:hover,
+.timeline-item.active {
+  border-color: rgba(10, 132, 255, 0.36);
+  background: rgba(255, 255, 255, 0.90);
+}
+
+.score-dot,
+.score-badge,
+.timeline-score {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.08);
+}
+
+.status-pill,
+.badge,
+.owner-type,
+.account-meta span {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.calendar-panel {
+  padding: 18px 20px;
+}
+
+.date-strip button,
+.client-tabs {
+  background: rgba(255, 255, 255, 0.56);
+  backdrop-filter: blur(18px);
+}
+
+.date-strip button.active,
+.client-tabs button.active {
+  background: #007AFF;
+  border-color: #007AFF;
+  color: white;
+  box-shadow: 0 12px 26px rgba(0, 122, 255, 0.25);
+}
+
+.client-tabs {
+  border-radius: 24px;
+  padding: 6px;
+}
+
+.detail-hero {
+  grid-template-columns: 190px minmax(0, 1fr) 230px;
+}
+
+.detail-summary p,
+.day-summary {
+  color: #1D1D1F;
+  font-size: 17px;
+}
+
+.task-item,
+.signal-list p,
+.list-item {
+  border-radius: 16px;
+  background: rgba(245, 245, 247, 0.72);
+}
+
+.message-feed {
+  gap: 12px;
+}
+
+.chat-message {
+  padding: 14px 16px;
+}
+
+.score-orbit {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(10, 132, 255, 0.14), transparent 58%),
+    rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 920px) {
+  .app-shell { width: min(100vw - 26px, 1240px); }
+  .product-header { padding: 20px; border-radius: 24px; }
+  .detail-hero { grid-template-columns: 1fr; }
+}
