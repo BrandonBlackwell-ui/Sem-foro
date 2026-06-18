@@ -1,20 +1,16 @@
 #!/usr/bin/env python3
 """
-Daily WhatsApp analyzer for Semaforo.
+Daily WhatsApp group analyzer for Semaforo.
 
-It reads only one date window from wa_messages, analyzes only accounts with
+It reads only one local-date window from wa_messages, analyzes only groups with
 messages in that window, and writes:
-  - wa_daily_analysis: one analysis row per account per day
-  - wa_account_scores: base score plus cumulative daily deltas
+  - wa_daily_analysis: one analysis row per group per day
+  - wa_account_scores: account base score plus cumulative group/day deltas
 
-Required environment:
-  SUPABASE_URL
-  SUPABASE_SERVICE_KEY
-  ANTHROPIC_API_KEY
-
-Optional:
-  WA_ANALYSIS_MODEL=claude-haiku-4-5
-  WA_ANALYSIS_DATE=YYYY-MM-DD
+Default date behavior:
+  If today is 2026-06-18 in America/Mexico_City, the default analysis date is
+  2026-06-17. The query window is 2026-06-17 00:00 to 2026-06-18 00:00 local,
+  converted to UTC for Supabase.
 """
 from __future__ import annotations
 
@@ -38,14 +34,15 @@ load_dotenv(ROOT / ".env", override=False)
 logger = logging.getLogger("wa_daily_analyzer")
 
 DEFAULT_BASE_SCORE = 70
-MAX_MESSAGES_PER_ACCOUNT = 600
+MAX_MESSAGES_PER_GROUP = 600
 LOCAL_TZ = ZoneInfo(os.getenv("WA_ANALYSIS_TIMEZONE", "America/Mexico_City"))
 
 
 @dataclass
-class AccountBatch:
+class GroupBatch:
     account_id: str
-    group_names: list[str]
+    group_jid: str
+    group_name: str | None
     messages: list[dict[str, Any]]
 
     @property
@@ -63,18 +60,24 @@ def main() -> None:
     target_date = _resolve_target_date(args.date)
     start_at, end_at = _day_window_utc(target_date)
 
-    logger.info("Analyzing WhatsApp activity for %s", target_date.isoformat())
+    logger.info(
+        "Analyzing WhatsApp messages for %s local (%s to %s UTC)",
+        target_date.isoformat(),
+        start_at.isoformat(),
+        end_at.isoformat(),
+    )
+
     sb = _supabase_client()
-    batches = _load_changed_account_batches(sb, start_at, end_at)
+    batches = _load_changed_group_batches(sb, start_at, end_at)
 
     if not batches:
-        logger.info("No WhatsApp messages found for %s. Nothing to analyze.", target_date)
+        logger.info("No WhatsApp groups with message text found for %s.", target_date)
         return
 
     if args.dry_run:
-        logger.info("Dry run: %d account(s) would be analyzed.", len(batches))
+        logger.info("Dry run: %d group(s) would be analyzed.", len(batches))
         for batch in batches:
-            logger.info("  %s: %d messages", batch.account_id, len(batch.messages))
+            logger.info("  %s / %s: %d messages", batch.account_id, batch.group_name or batch.group_jid, len(batch.messages))
         return
 
     client = _anthropic_client()
@@ -83,46 +86,23 @@ def main() -> None:
     for batch in batches:
         score_state = _get_score_state(sb, batch.account_id)
         previous_score = float(score_state.get("current_score") or score_state.get("base_score") or DEFAULT_BASE_SCORE)
-        analysis = _analyze_account_day(client, model, target_date, batch, previous_score)
-        score_delta = _clamp(float(analysis.get("score_delta", 0) or 0), -10, 10)
-        new_score = _clamp(previous_score + score_delta, 0, 100)
-
-        daily_row = {
-            "account_id": batch.account_id,
-            "analysis_date": target_date.isoformat(),
-            "group_names": batch.group_names,
-            "message_count": len(batch.messages),
-            "first_message_at": batch.first_message_at,
-            "last_message_at": batch.last_message_at,
-            "previous_score": previous_score,
-            "score_delta": score_delta,
-            "new_score": new_score,
-            "sentiment": str(analysis.get("sentiment") or "neutral")[:40],
-            "satisfaction": str(analysis.get("satisfaction") or "unknown")[:40],
-            "risk_level": str(analysis.get("risk_level") or "low")[:40],
-            "summary": str(analysis.get("summary") or "")[:4000],
-            "positive_signals": _json_list(analysis.get("positive_signals")),
-            "negative_signals": _json_list(analysis.get("negative_signals")),
-            "action_items": _json_list(analysis.get("action_items")),
-            "evidence": _json_list(analysis.get("evidence")),
-            "model": model,
-            "raw_analysis": analysis,
-            "analyzed_at": datetime.now(timezone.utc).isoformat(),
-        }
+        analysis = _analyze_group_day(client, model, target_date, batch, previous_score)
+        score_delta = _score_delta_from_analysis(analysis)
+        daily_row = _build_daily_row(target_date, batch, previous_score, score_delta, model, analysis)
 
         sb.table("wa_daily_analysis").upsert(
             daily_row,
-            on_conflict="account_id,analysis_date",
+            on_conflict="account_id,group_jid,analysis_date",
         ).execute()
 
         total_delta = _load_total_delta(sb, batch.account_id)
         base_score = float(score_state.get("base_score") or DEFAULT_BASE_SCORE)
-        cumulative_score = _clamp(base_score + total_delta, 0, 100)
+        current_score = _clamp(base_score + total_delta, 0, 100)
         score_row = {
             "account_id": batch.account_id,
-            "account_name": batch.group_names[0] if batch.group_names else None,
+            "account_name": batch.group_name,
             "base_score": base_score,
-            "current_score": cumulative_score,
+            "current_score": current_score,
             "total_delta": total_delta,
             "last_analyzed_date": target_date.isoformat(),
             "last_message_at": batch.last_message_at,
@@ -132,39 +112,44 @@ def main() -> None:
         sb.table("wa_account_scores").upsert(score_row, on_conflict="account_id").execute()
 
         logger.info(
-            "%s: %d msg(s), delta=%+.1f, score %.1f -> %.1f",
+            "%s / %s: %d msg(s), %s, delta=%+.1f, account_score=%.1f",
             batch.account_id,
+            batch.group_name or batch.group_jid,
             len(batch.messages),
+            daily_row["sentiment"],
             score_delta,
-            previous_score,
-            cumulative_score,
+            current_score,
         )
 
 
-def _load_changed_account_batches(sb, start_at: datetime, end_at: datetime) -> list[AccountBatch]:
+def _load_changed_group_batches(sb, start_at: datetime, end_at: datetime) -> list[GroupBatch]:
     rows = _fetch_messages(sb, start_at, end_at)
-    by_account: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    groups_by_account: dict[str, set[str]] = defaultdict(set)
+    by_group: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    names: dict[tuple[str, str], str | None] = {}
 
     for row in rows:
         account_id = str(row.get("account_id") or "").strip()
+        group_jid = str(row.get("group_jid") or "").strip()
+        body = str(row.get("body") or "").strip()
+
         if not account_id or account_id == "00_UNMAPPED":
             continue
-        body = str(row.get("body") or "").strip()
-        if not body:
+        if not group_jid or not body:
             continue
-        by_account[account_id].append(row)
-        if row.get("group_name"):
-            groups_by_account[account_id].add(str(row["group_name"]))
 
-    batches = []
-    for account_id in sorted(by_account):
-        messages = by_account[account_id][-MAX_MESSAGES_PER_ACCOUNT:]
+        key = (account_id, group_jid)
+        by_group[key].append(row)
+        names.setdefault(key, str(row["group_name"]) if row.get("group_name") else None)
+
+    batches: list[GroupBatch] = []
+    for account_id, group_jid in sorted(by_group):
+        key = (account_id, group_jid)
         batches.append(
-            AccountBatch(
+            GroupBatch(
                 account_id=account_id,
-                group_names=sorted(groups_by_account[account_id]),
-                messages=messages,
+                group_jid=group_jid,
+                group_name=names.get(key),
+                messages=by_group[key][-MAX_MESSAGES_PER_GROUP:],
             )
         )
     return batches
@@ -177,7 +162,7 @@ def _fetch_messages(sb, start_at: datetime, end_at: datetime) -> list[dict[str, 
     while True:
         res = (
             sb.table("wa_messages")
-            .select("id, account_id, group_name, group_jid, push_name, author, body, msg_type, sent_at")
+            .select("id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at")
             .gte("sent_at", start_at.isoformat())
             .lt("sent_at", end_at.isoformat())
             .neq("msg_type", "system")
@@ -190,36 +175,35 @@ def _fetch_messages(sb, start_at: datetime, end_at: datetime) -> list[dict[str, 
         if len(chunk) < page_size:
             break
         offset += page_size
-    logger.info("Loaded %d WhatsApp message(s) from selected day.", len(rows))
+    logger.info("Loaded %d WhatsApp message(s) from selected date window.", len(rows))
     return rows
 
 
-def _analyze_account_day(client, model: str, target_date: date, batch: AccountBatch, previous_score: float) -> dict:
+def _analyze_group_day(client, model: str, target_date: date, batch: GroupBatch, previous_score: float) -> dict:
     transcript = "\n".join(
-        f"[{m.get('sent_at')}] {m.get('group_name') or '?'} | {m.get('push_name') or m.get('author') or '?'}: {m.get('body')}"
+        f"[{m.get('sent_at')}] {m.get('push_name') or m.get('author') or '?'}: {m.get('body')}"
         for m in batch.messages
     )
     system = (
-        "Eres analista de satisfacción y riesgo para Blackwell. "
-        "Evalúas conversaciones de WhatsApp de clientes. "
+        "Eres analista de satisfaccion y riesgo para Blackwell. "
+        "Evalua conversaciones de WhatsApp de clientes. "
         "No inventes datos fuera del transcript. "
-        "Responde únicamente JSON válido."
+        "Responde unicamente JSON valido."
     )
     prompt = f"""
 Cuenta: {batch.account_id}
+Grupo: {batch.group_name or batch.group_jid}
 Fecha analizada: {target_date.isoformat()}
-Score previo: {previous_score}
-Grupos: {", ".join(batch.group_names) or "desconocido"}
+Score actual antes de este grupo: {previous_score}
 
-Analiza solo estos mensajes del día. Decide si la conversación debe sumar o restar
-puntos al score del cliente.
+Analiza solo los mensajes de este grupo y de este dia.
 
 Reglas de score_delta:
-- Rango permitido: -10 a +10.
-- Cliente satisfecho, aprobaciones, avance claro, desbloqueos o buena coordinación: suma.
-- Quejas, frustración, urgencias no atendidas, retrasos, regaños, riesgo de churn: resta.
-- Ruido operativo normal sin señal clara: 0.
-- Sé conservador: no muevas más de 3 puntos salvo evidencia fuerte.
+- Devuelve un numero entre -10 y +10.
+- Si el cliente esta satisfecho, aprueba avances, agradece, desbloquea o hay buena coordinacion: suma puntos.
+- Si el dia es neutral o solo operativo sin senales claras: 0.
+- Si hay quejas, frustracion, reclamos, retrasos, urgencias no atendidas o riesgo de churn: resta puntos.
+- Se conservador: normalmente usa -3 a +3. Solo usa mas si hay evidencia fuerte.
 
 Devuelve este JSON:
 {{
@@ -227,7 +211,7 @@ Devuelve este JSON:
   "sentiment": "positive|neutral|negative|mixed",
   "satisfaction": "satisfied|neutral|unsatisfied|unknown",
   "risk_level": "low|medium|high",
-  "summary": "resumen breve del día",
+  "summary": "resumen breve del dia en este grupo",
   "positive_signals": ["..."],
   "negative_signals": ["..."],
   "action_items": [{{"action":"...", "owner":"...", "urgency":"low|medium|high"}}],
@@ -246,6 +230,51 @@ Transcript:
     )
     text = "".join(block.text for block in response.content if getattr(block, "type", "") == "text")
     return _parse_json(text)
+
+
+def _score_delta_from_analysis(analysis: dict) -> float:
+    raw_delta = float(analysis.get("score_delta", 0) or 0)
+    sentiment = str(analysis.get("sentiment") or "neutral").lower()
+    satisfaction = str(analysis.get("satisfaction") or "unknown").lower()
+
+    if sentiment == "neutral" and satisfaction in ("neutral", "unknown"):
+        return 0
+    return _clamp(raw_delta, -10, 10)
+
+
+def _build_daily_row(
+    target_date: date,
+    batch: GroupBatch,
+    previous_score: float,
+    score_delta: float,
+    model: str,
+    analysis: dict,
+) -> dict:
+    new_score = _clamp(previous_score + score_delta, 0, 100)
+    return {
+        "account_id": batch.account_id,
+        "group_jid": batch.group_jid,
+        "group_name": batch.group_name,
+        "analysis_date": target_date.isoformat(),
+        "group_names": [batch.group_name] if batch.group_name else [],
+        "message_count": len(batch.messages),
+        "first_message_at": batch.first_message_at,
+        "last_message_at": batch.last_message_at,
+        "previous_score": previous_score,
+        "score_delta": score_delta,
+        "new_score": new_score,
+        "sentiment": str(analysis.get("sentiment") or "neutral")[:40],
+        "satisfaction": str(analysis.get("satisfaction") or "unknown")[:40],
+        "risk_level": str(analysis.get("risk_level") or "low")[:40],
+        "summary": str(analysis.get("summary") or "")[:4000],
+        "positive_signals": _json_list(analysis.get("positive_signals")),
+        "negative_signals": _json_list(analysis.get("negative_signals")),
+        "action_items": _json_list(analysis.get("action_items")),
+        "evidence": _json_list(analysis.get("evidence")),
+        "model": model,
+        "raw_analysis": analysis,
+        "analyzed_at": datetime.now(timezone.utc).isoformat(),
+    }
 
 
 def _get_score_state(sb, account_id: str) -> dict:
@@ -350,9 +379,9 @@ def _setup_logging() -> None:
 
 
 def _parse_args():
-    parser = argparse.ArgumentParser(description="Analyze daily WhatsApp messages.")
-    parser.add_argument("--date", help="Date to analyze in YYYY-MM-DD. Defaults to yesterday UTC.")
-    parser.add_argument("--dry-run", action="store_true", help="List accounts that would be analyzed.")
+    parser = argparse.ArgumentParser(description="Analyze daily WhatsApp messages by group.")
+    parser.add_argument("--date", help="Date to analyze in YYYY-MM-DD. Defaults to yesterday in Mexico City.")
+    parser.add_argument("--dry-run", action="store_true", help="List groups that would be analyzed.")
     return parser.parse_args()
 
 

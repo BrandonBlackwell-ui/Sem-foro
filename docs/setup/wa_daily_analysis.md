@@ -13,7 +13,7 @@ supabase/migrations/002_wa_daily_analysis.sql
 It creates:
 
 - `wa_account_scores`: base score, current score, cumulative delta.
-- `wa_daily_analysis`: one LLM analysis per account per day.
+- `wa_daily_analysis`: one LLM analysis per WhatsApp group per day.
 
 Existing `wa_messages` rows are not moved or deleted.
 
@@ -38,13 +38,13 @@ WA_ANALYSIS_MODEL=claude-haiku-4-5
 The workflow runs once per day and:
 
 1. Reads only yesterday's WhatsApp messages.
-2. Groups them by `account_id`.
-3. Skips accounts with no messages.
+2. Groups them by `account_id` + `group_jid`.
+3. Skips groups with no message text.
 4. Asks the LLM for a conservative score delta from `-10` to `+10`.
 5. Writes one row to `wa_daily_analysis`.
 6. Recalculates `wa_account_scores.current_score` as `base_score + sum(score_delta)`.
 
-Re-running the same date updates that day's row instead of creating duplicates.
+Re-running the same date updates that group's row instead of creating duplicates.
 
 ## 4. Manual Run
 

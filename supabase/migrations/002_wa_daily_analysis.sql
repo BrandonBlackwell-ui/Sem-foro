@@ -20,6 +20,8 @@ comment on column wa_account_scores.current_score is 'Clamped score after applyi
 create table if not exists wa_daily_analysis (
   id                 bigserial primary key,
   account_id         text not null,
+  group_jid          text,
+  group_name         text,
   analysis_date      date not null,
   group_names        text[] not null default '{}',
   message_count      integer not null default 0,
@@ -39,11 +41,14 @@ create table if not exists wa_daily_analysis (
   model              text,
   raw_analysis       jsonb,
   analyzed_at        timestamptz not null default now(),
-  unique (account_id, analysis_date)
+  unique (account_id, group_jid, analysis_date)
 );
 
 create index if not exists wa_daily_analysis_account_date
   on wa_daily_analysis (account_id, analysis_date desc);
+
+create index if not exists wa_daily_analysis_group_date
+  on wa_daily_analysis (group_jid, analysis_date desc);
 
 create index if not exists wa_daily_analysis_date
   on wa_daily_analysis (analysis_date desc);
