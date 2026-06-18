@@ -89,7 +89,9 @@ def main() -> None:
 
     for batch in batches:
         score_state = _get_score_state(sb, batch.account_id)
-        previous_score = float(score_state.get("current_score") or score_state.get("base_score") or DEFAULT_BASE_SCORE)
+        existing_delta = _load_existing_daily_delta(sb, batch.account_id, batch.group_jid, target_date)
+        current_score = float(score_state.get("current_score") or score_state.get("base_score") or DEFAULT_BASE_SCORE)
+        previous_score = _clamp(current_score - existing_delta, 0, 100)
         analysis = _analyze_group_day(client, model, target_date, batch, previous_score)
         score_delta = _score_delta_from_analysis(analysis)
         daily_row = _build_daily_row(target_date, batch, previous_score, score_delta, model, analysis)
@@ -310,7 +312,7 @@ def _get_score_state(sb, account_id: str) -> dict:
         .maybe_single()
         .execute()
     )
-    if res.data:
+    if res and res.data:
         return res.data
     return {
         "account_id": account_id,
@@ -328,6 +330,21 @@ def _load_total_delta(sb, account_id: str) -> float:
         .execute()
     )
     return sum(float(row.get("score_delta") or 0) for row in (res.data or []))
+
+
+def _load_existing_daily_delta(sb, account_id: str, group_jid: str, target_date: date) -> float:
+    res = (
+        sb.table("wa_daily_analysis")
+        .select("score_delta")
+        .eq("account_id", account_id)
+        .eq("group_jid", group_jid)
+        .eq("analysis_date", target_date.isoformat())
+        .maybe_single()
+        .execute()
+    )
+    if not res or not res.data:
+        return 0
+    return float(res.data.get("score_delta") or 0)
 
 
 def _supabase_client():
