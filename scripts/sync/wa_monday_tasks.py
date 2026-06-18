@@ -295,7 +295,7 @@ def _column_values(
         values: dict[str, Any] = {
             os.getenv("MONDAY_TASKS_STATUS_COLUMN_ID", "color_mm452en1"): {"label": status_label},
             os.getenv("MONDAY_TASKS_DUE_DATE_COLUMN_ID", "date_mm45ncq9"): {
-                "date": _due_date_for_urgency(urgency, 5).isoformat()
+                "date": _due_date_for_item(item, urgency).isoformat()
             },
         }
         monday_user = _resolve_monday_user(item, monday_users)
@@ -308,7 +308,7 @@ def _column_values(
     columns = boards_config["column_ids_template"]
     defaults = boards_config["defaults"]
     urgency = _normalize_urgency(item.get("urgency"))
-    due_date = _due_date_for_urgency(urgency, int(defaults.get("due_days_from_sync", 5)))
+    due_date = _due_date_for_item(item, urgency, int(defaults.get("due_days_from_sync", 5)))
 
     values: dict[str, Any] = {
         columns["date"]: {"date": due_date.isoformat()},
@@ -363,14 +363,18 @@ def _monday_item_name(row: dict[str, Any], item: dict[str, Any]) -> str:
 
 
 def _evidence_text(row: dict[str, Any], item: dict[str, Any]) -> str:
+    action = str(item.get("action") or "").strip()
     owner = str(item.get("owner") or "Por definir").strip()
     owner_type = str(item.get("owner_type") or "unknown").strip()
     urgency = _normalize_urgency(item.get("urgency"))
     lines = [
+        f"Tarea: {action}",
+        "",
         f"Fuente: WhatsApp / analisis diario {row.get('analysis_date')}",
         f"Grupo: {row.get('group_name') or row.get('group_jid')}",
         f"Responsable inferido: {owner} ({owner_type})",
         f"Urgencia: {urgency}",
+        f"Fecha de entrega: {_due_date_for_item(item, urgency).isoformat()}",
         f"Sentimiento: {row.get('sentiment')} | Satisfaccion: {row.get('satisfaction')} | Riesgo: {row.get('risk_level')}",
         f"Score: {row.get('new_score')} | Delta: {row.get('score_delta')}",
         "",
@@ -395,8 +399,19 @@ def _sync_key(row: dict[str, Any], index: int, action: str) -> str:
     return f"wa-{row.get('id')}-{index}-{digest}"
 
 
+def _due_date_for_item(item: dict[str, Any], urgency: str, default_days: int = 1) -> date:
+    due_date = str(item.get("due_date") or "").strip()
+    if due_date:
+        try:
+            return date.fromisoformat(due_date[:10])
+        except ValueError:
+            pass
+
+    return _due_date_for_urgency(urgency, default_days)
+
+
 def _due_date_for_urgency(urgency: str, default_days: int) -> date:
-    days = {"high": 1, "medium": 3, "low": default_days}.get(urgency, default_days)
+    days = {"high": 0, "medium": 1, "low": 1}.get(urgency, default_days)
     return datetime.now(LOCAL_TZ).date() + timedelta(days=days)
 
 

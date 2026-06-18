@@ -282,6 +282,7 @@ def _analyze_group_day(model: str, target_date: date, batch: GroupBatch, previou
 Cuenta: {batch.account_id}
 Grupo: {batch.group_name or batch.group_jid}
 Fecha analizada: {target_date.isoformat()}
+Fecha de hoy para calcular vencimientos: {target_date.isoformat()}
 Score actual antes de este grupo: {previous_score}
 
 Analiza solamente los MENSAJES NUEVOS NO ANALIZADOS.
@@ -312,7 +313,7 @@ Devuelve este JSON:
   "summary": "resumen breve del dia en este grupo",
   "positive_signals": ["..."],
   "negative_signals": ["..."],
-  "action_items": [{{"action":"...", "owner":"...", "owner_type":"client|blackwell|shared|unknown", "urgency":"low|medium|high"}}],
+  "action_items": [{{"action":"...", "owner":"...", "owner_type":"client|blackwell|shared|unknown", "urgency":"low|medium|high", "due_date":"YYYY-MM-DD|null"}}],
   "evidence": [{{"quote":"fragmento corto", "why_it_matters":"..."}}]
 }}
 
@@ -325,6 +326,11 @@ Reglas obligatorias para action_items:
 - Si no se puede inferir responsable con evidencia del transcript, usa owner "Por definir" y owner_type "unknown".
 - Para tareas tipo confirmar, validar, monitorear o dar seguimiento: asigna owner a quien debe hacer la siguiente accion, no necesariamente a quien la pidio.
 - Usa nombres reales visibles en el transcript, por ejemplo el push_name del mensaje. No inventes cargos ni nombres.
+- Siempre devuelve due_date por accion:
+  - Si urgency es high/urgente y no hay fecha explicita, due_date debe ser {target_date.isoformat()}.
+  - Si urgency es medium o low y no hay fecha explicita, due_date debe ser el dia siguiente a {target_date.isoformat()}.
+  - Si el mensaje menciona una fecha relativa o textual ("siguiente miercoles", "mañana", "viernes", etc.), calcula la fecha calendario usando {target_date.isoformat()} como fecha base.
+  - Si realmente no se puede inferir una fecha, usa null.
 - Si no hay tareas accionables reales, devuelve action_items como [].
 
 Analisis previo del dia, resumido:
@@ -644,10 +650,23 @@ def _normalize_action_items(value: Any, group_name: str | None = None) -> list[d
                 "owner": owner,
                 "owner_type": owner_type,
                 "urgency": _normalize_choice(item.get("urgency"), {"low", "medium", "high"}, "medium"),
+                "due_date": _normalize_due_date(item.get("due_date")),
             }
         )
 
     return normalized
+
+
+def _normalize_due_date(value: Any) -> str | None:
+    if value is None:
+        return None
+    text = str(value).strip()
+    if not text or text.lower() in {"null", "none", "unknown", "sin fecha", "n/a"}:
+        return None
+    try:
+        return date.fromisoformat(text[:10]).isoformat()
+    except ValueError:
+        return None
 
 
 def _normalize_choice(value: Any, allowed: set[str], default: str, aliases: dict[str, str] | None = None) -> str:
