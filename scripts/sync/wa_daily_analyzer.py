@@ -38,6 +38,7 @@ logger = logging.getLogger("wa_daily_analyzer")
 
 DEFAULT_BASE_SCORE = 70
 MAX_MESSAGES_PER_GROUP = 600
+MAX_AMBIGUOUS_CONTEXT_MESSAGES = 5
 DEFAULT_MAX_ABS_SCORE_DELTA = 3
 LOCAL_TZ = ZoneInfo(os.getenv("WA_ANALYSIS_TIMEZONE", "America/Mexico_City"))
 
@@ -183,7 +184,8 @@ def _load_changed_group_batches(sb, target_date: date, start_at: datetime, end_a
 
         if last_analyzed_at:
             new_messages = [row for row in messages if _parse_dt(row.get("sent_at")) and _parse_dt(row.get("sent_at")) > last_analyzed_at]
-            context_messages = [row for row in messages if _parse_dt(row.get("sent_at")) and _parse_dt(row.get("sent_at")) <= last_analyzed_at][-80:]
+            prior_messages = [row for row in messages if _parse_dt(row.get("sent_at")) and _parse_dt(row.get("sent_at")) <= last_analyzed_at]
+            context_messages = prior_messages[-MAX_AMBIGUOUS_CONTEXT_MESSAGES:] if _needs_micro_context(new_messages) else []
         else:
             new_messages = messages
             context_messages = []
@@ -234,6 +236,33 @@ def _fetch_messages(sb, start_at: datetime, end_at: datetime) -> list[dict[str, 
     return rows
 
 
+def _needs_micro_context(messages: list[dict[str, Any]]) -> bool:
+    ambiguous_terms = {
+        "ok",
+        "ok enterado",
+        "enterado",
+        "listo",
+        "va",
+        "sale",
+        "si",
+        "sí",
+        "claro",
+        "perfecto",
+        "gracias",
+        "de acuerdo",
+        "recibido",
+        "confirmado",
+    }
+    for message in messages:
+        body = str(message.get("body") or "").strip().lower()
+        normalized = " ".join(body.replace(".", " ").replace(",", " ").split())
+        if normalized in ambiguous_terms:
+            return True
+        if len(normalized) <= 18 and len(normalized.split()) <= 4:
+            return True
+    return False
+
+
 def _analyze_group_day(model: str, target_date: date, batch: GroupBatch, previous_score: float) -> dict:
     context_transcript = "\n".join(
         f"[{m.get('sent_at')}] {m.get('push_name') or m.get('author') or '?'}: {m.get('body')}"
@@ -256,15 +285,16 @@ Fecha analizada: {target_date.isoformat()}
 Score actual antes de este grupo: {previous_score}
 
 Analiza solamente los MENSAJES NUEVOS NO ANALIZADOS.
-El CONTEXTO ANTERIOR sirve para entender respuestas cortas como "ok", "listo",
-"sí" o referencias a una solicitud previa.
+El contexto principal es el resumen previo y las tareas ya detectadas.
+El MICRO-CONTEXTO opcional solo aparece cuando los mensajes nuevos son ambiguos,
+por ejemplo "ok", "listo", "sí", "enterado" o referencias muy cortas.
 
 Reglas criticas sobre contexto:
-- No generes tareas basadas solamente en el CONTEXTO ANTERIOR.
+- No generes tareas basadas solamente en el resumen previo, tareas previas o MICRO-CONTEXTO.
 - No repitas tareas que ya aparecen en el analisis previo.
 - action_items debe incluir solo tareas nuevas o actualizaciones claras que surjan de MENSAJES NUEVOS NO ANALIZADOS.
 - score_delta debe medir solamente el impacto incremental de los MENSAJES NUEVOS NO ANALIZADOS.
-- Si el mensaje nuevo es "ok" o similar, usa el contexto para decidir si confirma algo positivo, pero no inventes tareas nuevas.
+- Si el mensaje nuevo es "ok" o similar, usa el contexto para decidir si confirma algo positivo, pero no inventes tareas nuevas ni repitas las existentes.
 
 Reglas de score_delta:
 - Devuelve un numero entre -10 y +10.
@@ -297,10 +327,10 @@ Reglas obligatorias para action_items:
 - Usa nombres reales visibles en el transcript, por ejemplo el push_name del mensaje. No inventes cargos ni nombres.
 - Si no hay tareas accionables reales, devuelve action_items como [].
 
-Analisis previo del dia, si existe:
-{json.dumps(batch.existing_analysis or {}, ensure_ascii=False)[:3000]}
+Analisis previo del dia, resumido:
+{_analysis_context(batch.existing_analysis)}
 
-CONTEXTO ANTERIOR, ya analizado; NO crear tareas desde aqui:
+MICRO-CONTEXTO opcional, ya analizado; NO crear tareas desde aqui:
 {context_transcript or "(sin contexto anterior)"}
 
 MENSAJES NUEVOS NO ANALIZADOS; analizar solo esto:
@@ -324,6 +354,23 @@ def _score_delta_from_analysis(analysis: dict) -> float:
     if sentiment == "neutral" and satisfaction in ("neutral", "unknown"):
         return 0
     return _clamp(raw_delta, -max_abs_delta, max_abs_delta)
+
+
+def _analysis_context(existing: dict[str, Any] | None) -> str:
+    if not existing:
+        return "(sin analisis previo)"
+
+    compact = {
+        "summary": existing.get("summary") or "",
+        "score_delta_so_far": existing.get("score_delta"),
+        "sentiment_so_far": existing.get("sentiment"),
+        "satisfaction_so_far": existing.get("satisfaction"),
+        "risk_level_so_far": existing.get("risk_level"),
+        "existing_action_items_do_not_repeat": _json_list(existing.get("action_items"))[:20],
+        "positive_signals_so_far": _json_list(existing.get("positive_signals"))[:8],
+        "negative_signals_so_far": _json_list(existing.get("negative_signals"))[:8],
+    }
+    return json.dumps(compact, ensure_ascii=False)
 
 
 def _build_daily_row(
