@@ -32,6 +32,7 @@ from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(ROOT / ".env", override=False)
+load_dotenv(ROOT / "wa_listener" / ".env", override=False)
 
 logger = logging.getLogger("wa_daily_analyzer")
 
@@ -47,6 +48,9 @@ class GroupBatch:
     group_jid: str
     group_name: str | None
     messages: list[dict[str, Any]]
+    context_messages: list[dict[str, Any]]
+    new_messages: list[dict[str, Any]]
+    existing_analysis: dict[str, Any] | None = None
 
     @property
     def first_message_at(self) -> str | None:
@@ -55,6 +59,14 @@ class GroupBatch:
     @property
     def last_message_at(self) -> str | None:
         return self.messages[-1].get("sent_at") if self.messages else None
+
+    @property
+    def first_new_message_at(self) -> str | None:
+        return self.new_messages[0].get("sent_at") if self.new_messages else None
+
+    @property
+    def last_new_message_at(self) -> str | None:
+        return self.new_messages[-1].get("sent_at") if self.new_messages else None
 
 
 def main() -> None:
@@ -71,7 +83,7 @@ def main() -> None:
     )
 
     sb = _supabase_client()
-    batches = _load_changed_group_batches(sb, start_at, end_at)
+    batches = _load_changed_group_batches(sb, target_date, start_at, end_at)
     if args.group_jid:
         batches = [batch for batch in batches if batch.group_jid == args.group_jid]
     if args.limit_groups is not None:
@@ -84,29 +96,37 @@ def main() -> None:
     if args.dry_run:
         logger.info("Dry run: %d group(s) would be analyzed.", len(batches))
         for batch in batches:
-            logger.info("  %s / %s: %d messages", batch.account_id, batch.group_name or batch.group_jid, len(batch.messages))
+            logger.info(
+                "  %s / %s: %d new message(s), %d context message(s)",
+                batch.account_id,
+                batch.group_name or batch.group_jid,
+                len(batch.new_messages),
+                len(batch.context_messages),
+            )
         return
 
     model = os.getenv("OPENROUTER_MODEL", "google/gemini-3.1-flash-lite")
 
     for batch in batches:
         score_state = _get_score_state(sb, batch.account_id)
-        existing_delta = _load_existing_daily_delta(sb, batch.account_id, batch.group_jid, target_date)
+        existing = batch.existing_analysis or {}
+        existing_delta = float(existing.get("score_delta") or 0)
         current_score = float(score_state.get("current_score") or score_state.get("base_score") or DEFAULT_BASE_SCORE)
-        previous_score = _clamp(current_score - existing_delta, 0, 100)
+        previous_score = current_score if existing else _clamp(current_score - existing_delta, 0, 100)
         analysis = _analyze_group_day(model, target_date, batch, previous_score)
         score_delta = _score_delta_from_analysis(analysis)
         daily_row = _build_daily_row(target_date, batch, previous_score, score_delta, model, analysis)
 
-        (
-            sb.table("wa_daily_analysis")
-            .delete()
-            .eq("account_id", batch.account_id)
-            .eq("group_jid", batch.group_jid)
-            .eq("analysis_date", target_date.isoformat())
-            .execute()
-        )
-        sb.table("wa_daily_analysis").insert(daily_row).execute()
+        if existing:
+            daily_row = _merge_existing_daily_row(existing, daily_row, score_delta)
+            (
+                sb.table("wa_daily_analysis")
+                .update(daily_row)
+                .eq("id", existing["id"])
+                .execute()
+            )
+        else:
+            sb.table("wa_daily_analysis").insert(daily_row).execute()
 
         total_delta = _load_total_delta(sb, batch.account_id)
         base_score = float(score_state.get("base_score") or DEFAULT_BASE_SCORE)
@@ -128,14 +148,14 @@ def main() -> None:
             "%s / %s: %d msg(s), %s, delta=%+.1f, account_score=%.1f",
             batch.account_id,
             batch.group_name or batch.group_jid,
-            len(batch.messages),
+            len(batch.new_messages),
             daily_row["sentiment"],
             score_delta,
             current_score,
         )
 
 
-def _load_changed_group_batches(sb, start_at: datetime, end_at: datetime) -> list[GroupBatch]:
+def _load_changed_group_batches(sb, target_date: date, start_at: datetime, end_at: datetime) -> list[GroupBatch]:
     rows = _fetch_messages(sb, start_at, end_at)
     by_group: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     names: dict[tuple[str, str], str | None] = {}
@@ -157,12 +177,34 @@ def _load_changed_group_batches(sb, start_at: datetime, end_at: datetime) -> lis
     batches: list[GroupBatch] = []
     for account_id, group_jid in sorted(by_group):
         key = (account_id, group_jid)
+        messages = by_group[key][-MAX_MESSAGES_PER_GROUP:]
+        existing = _load_existing_daily_analysis(sb, account_id, group_jid, target_date)
+        last_analyzed_at = _parse_dt(existing.get("last_message_at")) if existing else None
+
+        if last_analyzed_at:
+            new_messages = [row for row in messages if _parse_dt(row.get("sent_at")) and _parse_dt(row.get("sent_at")) > last_analyzed_at]
+            context_messages = [row for row in messages if _parse_dt(row.get("sent_at")) and _parse_dt(row.get("sent_at")) <= last_analyzed_at][-80:]
+        else:
+            new_messages = messages
+            context_messages = []
+
+        if not new_messages:
+            logger.info(
+                "%s / %s has no messages newer than last analysis. Skipping LLM.",
+                account_id,
+                names.get(key) or group_jid,
+            )
+            continue
+
         batches.append(
             GroupBatch(
                 account_id=account_id,
                 group_jid=group_jid,
                 group_name=names.get(key),
-                messages=by_group[key][-MAX_MESSAGES_PER_GROUP:],
+                messages=messages,
+                context_messages=context_messages,
+                new_messages=new_messages,
+                existing_analysis=existing,
             )
         )
     return batches
@@ -193,9 +235,13 @@ def _fetch_messages(sb, start_at: datetime, end_at: datetime) -> list[dict[str, 
 
 
 def _analyze_group_day(model: str, target_date: date, batch: GroupBatch, previous_score: float) -> dict:
-    transcript = "\n".join(
+    context_transcript = "\n".join(
         f"[{m.get('sent_at')}] {m.get('push_name') or m.get('author') or '?'}: {m.get('body')}"
-        for m in batch.messages
+        for m in batch.context_messages
+    )
+    new_transcript = "\n".join(
+        f"[{m.get('sent_at')}] {m.get('push_name') or m.get('author') or '?'}: {m.get('body')}"
+        for m in batch.new_messages
     )
     system = (
         "Eres analista de satisfaccion y riesgo para Blackwell. "
@@ -209,7 +255,16 @@ Grupo: {batch.group_name or batch.group_jid}
 Fecha analizada: {target_date.isoformat()}
 Score actual antes de este grupo: {previous_score}
 
-Analiza solo los mensajes de este grupo y de este dia.
+Analiza solamente los MENSAJES NUEVOS NO ANALIZADOS.
+El CONTEXTO ANTERIOR sirve para entender respuestas cortas como "ok", "listo",
+"sí" o referencias a una solicitud previa.
+
+Reglas criticas sobre contexto:
+- No generes tareas basadas solamente en el CONTEXTO ANTERIOR.
+- No repitas tareas que ya aparecen en el analisis previo.
+- action_items debe incluir solo tareas nuevas o actualizaciones claras que surjan de MENSAJES NUEVOS NO ANALIZADOS.
+- score_delta debe medir solamente el impacto incremental de los MENSAJES NUEVOS NO ANALIZADOS.
+- Si el mensaje nuevo es "ok" o similar, usa el contexto para decidir si confirma algo positivo, pero no inventes tareas nuevas.
 
 Reglas de score_delta:
 - Devuelve un numero entre -10 y +10.
@@ -242,8 +297,14 @@ Reglas obligatorias para action_items:
 - Usa nombres reales visibles en el transcript, por ejemplo el push_name del mensaje. No inventes cargos ni nombres.
 - Si no hay tareas accionables reales, devuelve action_items como [].
 
-Transcript:
-{transcript}
+Analisis previo del dia, si existe:
+{json.dumps(batch.existing_analysis or {}, ensure_ascii=False)[:3000]}
+
+CONTEXTO ANTERIOR, ya analizado; NO crear tareas desde aqui:
+{context_transcript or "(sin contexto anterior)"}
+
+MENSAJES NUEVOS NO ANALIZADOS; analizar solo esto:
+{new_transcript}
 """.strip()
     text = _openrouter_chat_completion(
         model=model,
@@ -333,6 +394,19 @@ def _load_total_delta(sb, account_id: str) -> float:
     return sum(float(row.get("score_delta") or 0) for row in (res.data or []))
 
 
+def _load_existing_daily_analysis(sb, account_id: str, group_jid: str, target_date: date) -> dict[str, Any] | None:
+    res = (
+        sb.table("wa_daily_analysis")
+        .select("*")
+        .eq("account_id", account_id)
+        .eq("group_jid", group_jid)
+        .eq("analysis_date", target_date.isoformat())
+        .maybe_single()
+        .execute()
+    )
+    return res.data if res and res.data else None
+
+
 def _load_existing_daily_delta(sb, account_id: str, group_jid: str, target_date: date) -> float:
     res = (
         sb.table("wa_daily_analysis")
@@ -346,6 +420,31 @@ def _load_existing_daily_delta(sb, account_id: str, group_jid: str, target_date:
     if not res or not res.data:
         return 0
     return float(res.data.get("score_delta") or 0)
+
+
+def _merge_existing_daily_row(existing: dict[str, Any], incremental: dict[str, Any], new_delta: float) -> dict[str, Any]:
+    existing_delta = float(existing.get("score_delta") or 0)
+    previous_score = float(existing.get("previous_score") or incremental["previous_score"] or DEFAULT_BASE_SCORE)
+    combined_delta = _clamp(existing_delta + new_delta, -10, 10)
+
+    existing_actions = existing.get("action_items") if isinstance(existing.get("action_items"), list) else []
+    new_actions = incremental.get("action_items") if isinstance(incremental.get("action_items"), list) else []
+
+    return {
+        **incremental,
+        "previous_score": previous_score,
+        "score_delta": combined_delta,
+        "new_score": _clamp(previous_score + combined_delta, 0, 100),
+        "summary": _merge_summary(existing.get("summary"), incremental.get("summary")),
+        "positive_signals": _dedupe_json_list(_json_list(existing.get("positive_signals")) + _json_list(incremental.get("positive_signals"))),
+        "negative_signals": _dedupe_json_list(_json_list(existing.get("negative_signals")) + _json_list(incremental.get("negative_signals"))),
+        "action_items": _dedupe_action_items(existing_actions + new_actions),
+        "evidence": _dedupe_json_list(_json_list(existing.get("evidence")) + _json_list(incremental.get("evidence"))),
+        "raw_analysis": {
+            "previous_raw_analysis": existing.get("raw_analysis"),
+            "incremental_raw_analysis": incremental.get("raw_analysis"),
+        },
+    }
 
 
 def _supabase_client():
@@ -414,6 +513,34 @@ def _parse_json(text: str) -> dict:
 
 def _json_list(value: Any) -> list:
     return value if isinstance(value, list) else []
+
+
+def _dedupe_json_list(items: list[Any]) -> list[Any]:
+    seen: set[str] = set()
+    deduped: list[Any] = []
+    for item in items:
+        key = json.dumps(item, ensure_ascii=False, sort_keys=True) if isinstance(item, (dict, list)) else str(item)
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(item)
+    return deduped
+
+
+def _dedupe_action_items(items: list[Any]) -> list[dict[str, Any]]:
+    seen: set[str] = set()
+    deduped: list[dict[str, Any]] = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        action = str(item.get("action") or "").strip().lower()
+        owner = str(item.get("owner") or "").strip().lower()
+        key = f"{action}|{owner}"
+        if not action or key in seen:
+            continue
+        seen.add(key)
+        deduped.append(item)
+    return deduped
 
 
 def _normalize_action_items(value: Any, group_name: str | None = None) -> list[dict[str, Any]]:
@@ -499,6 +626,19 @@ def _day_window_utc(target_date: date) -> tuple[datetime, datetime]:
     local_start = datetime.combine(target_date, time.min, tzinfo=LOCAL_TZ)
     local_end = local_start + timedelta(days=1)
     return local_start.astimezone(timezone.utc), local_end.astimezone(timezone.utc)
+
+
+def _parse_dt(value: Any) -> datetime | None:
+    if not value:
+        return None
+    try:
+        text = str(value).replace("Z", "+00:00")
+        parsed = datetime.fromisoformat(text)
+        if parsed.tzinfo is None:
+            return parsed.replace(tzinfo=timezone.utc)
+        return parsed.astimezone(timezone.utc)
+    except ValueError:
+        return None
 
 
 def _clamp(value: float, min_value: float, max_value: float) -> float:

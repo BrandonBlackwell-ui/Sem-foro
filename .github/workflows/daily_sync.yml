@@ -1,9 +1,14 @@
 name: WhatsApp daily analysis
 
 on:
-  # 6:00 AM Mexico City during standard time. Adjust if you want another hour.
+  # Mexico City business-day checkpoints: 7:00, 11:30, 15:00, 18:30, 22:15.
+  # Cron uses UTC; Mexico City is UTC-6.
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "0 13 * * *"
+    - cron: "30 17 * * *"
+    - cron: "0 21 * * *"
+    - cron: "30 0 * * *"
+    - cron: "15 4 * * *"
 
   workflow_dispatch:
     inputs:
@@ -49,7 +54,7 @@ jobs:
           if [ -n "${{ github.event.inputs.date }}" ]; then
             python scripts/sync/wa_daily_analyzer.py --date "${{ github.event.inputs.date }}"
           else
-            python scripts/sync/wa_daily_analyzer.py
+            python scripts/sync/wa_daily_analyzer.py --date "$(TZ=America/Mexico_City date +%F)"
           fi
 
       - name: Sync WhatsApp tasks to Monday
@@ -57,7 +62,7 @@ jobs:
           if [ -n "${{ github.event.inputs.date }}" ]; then
             python scripts/sync/wa_monday_tasks.py --date "${{ github.event.inputs.date }}"
           else
-            python scripts/sync/wa_monday_tasks.py
+            python scripts/sync/wa_monday_tasks.py --date "$(TZ=America/Mexico_City date +%F)"
           fi
 
       - name: Clean environment
