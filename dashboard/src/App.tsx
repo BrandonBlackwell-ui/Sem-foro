@@ -171,6 +171,8 @@ export default function App() {
   const [detailMessages, setDetailMessages] = useState<WaMessage[]>([])
   const [groups, setGroups] = useState<WaGroup[]>([])
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
+  const [selectedOverviewDate, setSelectedOverviewDate] = useState<string>('latest')
+  const [clientTab, setClientTab] = useState<'resumen' | 'historico' | 'mensajes'>('resumen')
   const [messagesOpen, setMessagesOpen] = useState(false)
   const [loading, setLoading] = useState(true)
   const [detailLoading, setDetailLoading] = useState(false)
@@ -214,6 +216,22 @@ export default function App() {
     return map
   }, [analyses])
 
+  const analysisDates = useMemo(() => {
+    return Array.from(new Set(analyses.map((analysis) => analysis.analysis_date))).sort((a, b) => b.localeCompare(a))
+  }, [analyses])
+
+  const overviewAnalysisByGroup = useMemo(() => {
+    const map = new Map<string, DailyAnalysis>()
+    if (selectedOverviewDate === 'latest') return latestAnalysisByGroup
+
+    for (const analysis of analyses) {
+      if (analysis.analysis_date === selectedOverviewDate) {
+        map.set(analysis.group_jid, analysis)
+      }
+    }
+    return map
+  }, [analyses, latestAnalysisByGroup, selectedOverviewDate])
+
   const scoreByAccount = useMemo(() => {
     return new Map(scores.map((score) => [score.account_id, score]))
   }, [scores])
@@ -243,7 +261,7 @@ export default function App() {
 
     for (const group of groups) {
       const stats = messageStats.get(group.jid)
-      const analysis = latestAnalysisByGroup.get(group.jid) ?? null
+      const analysis = overviewAnalysisByGroup.get(group.jid) ?? null
       const accountId = analysis?.account_id || group.account_id || stats?.account || 'Sin cuenta'
       all.set(group.jid, {
         jid: group.jid,
@@ -259,7 +277,7 @@ export default function App() {
 
     for (const [jid, stats] of messageStats) {
       if (!all.has(jid)) {
-        const analysis = latestAnalysisByGroup.get(jid) ?? null
+        const analysis = overviewAnalysisByGroup.get(jid) ?? null
         const accountId = analysis?.account_id || stats.account || 'Sin cuenta'
         all.set(jid, {
           jid,
@@ -278,10 +296,14 @@ export default function App() {
       if (!!b.analysis !== !!a.analysis) return Number(!!b.analysis) - Number(!!a.analysis)
       return (b.last_message_at || '').localeCompare(a.last_message_at || '')
     })
-  }, [groups, latestAnalysisByGroup, rawMessages, scoreByAccount])
+  }, [groups, overviewAnalysisByGroup, rawMessages, scoreByAccount])
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
-  const selectedAnalysis = selectedGroup?.analysis ?? null
+  const selectedDateAnalysis = useMemo(() => {
+    if (!selectedGroup || selectedOverviewDate === 'latest') return null
+    return analyses.find((analysis) => analysis.group_jid === selectedGroup.jid && analysis.analysis_date === selectedOverviewDate) ?? null
+  }, [analyses, selectedGroup, selectedOverviewDate])
+  const selectedAnalysis = selectedDateAnalysis ?? selectedGroup?.analysis ?? null
   const selectedScore = selectedGroup?.score?.current_score ?? selectedAnalysis?.new_score ?? null
   const selectedSatisfaction = selectedAnalysis ? normalizeSatisfaction(selectedAnalysis.satisfaction) : 'unknown'
   const selectedHistory = useMemo(() => {
@@ -296,6 +318,7 @@ export default function App() {
 
   useEffect(() => {
     setMessagesOpen(false)
+    setClientTab('resumen')
   }, [selectedJid])
 
   useEffect(() => {
@@ -374,13 +397,30 @@ export default function App() {
           <MetricCard label="Grupos activos" value={groupSummaries.filter((group) => group.active).length} detail={`${groupSummaries.length} totales`} />
         </section>
 
+        <section className="calendar-panel card-3d">
+          <div>
+            <span className="eyebrow">Calendario</span>
+            <h2>Compilado por dia</h2>
+          </div>
+          <div className="date-strip">
+            <button className={selectedOverviewDate === 'latest' ? 'active' : ''} onClick={() => setSelectedOverviewDate('latest')}>
+              Ultimo
+            </button>
+            {analysisDates.map((day) => (
+              <button className={selectedOverviewDate === day ? 'active' : ''} key={day} onClick={() => setSelectedOverviewDate(day)}>
+                {day}
+              </button>
+            ))}
+          </div>
+        </section>
+
         <section className="account-list" aria-label="Cuentas de WhatsApp">
           {groupSummaries.map((group) => {
             const scoreValue = group.score?.current_score ?? group.analysis?.new_score ?? null
             const sentiment = group.analysis?.sentiment ?? 'pendiente'
             const status = scoreLabel(scoreValue)
             return (
-              <button className="account-row" key={group.jid} onClick={() => setSelectedJid(group.jid)}>
+              <button className="account-row card-3d" key={group.jid} onClick={() => setSelectedJid(group.jid)}>
                 <span className={`score-dot ${scoreColor(scoreValue)}`}>{scoreValue ?? '--'}</span>
                 <span className="account-main">
                   <strong>{group.name}</strong>
@@ -414,88 +454,108 @@ export default function App() {
         </button>
       </header>
 
-      <section className="detail-hero">
-        <div className={`score-panel ${scoreColor(selectedScore)}`}>
-          <span>{selectedScore ?? '--'}</span>
-          <small>{scoreLabel(selectedScore)}</small>
-        </div>
-        <div className="detail-summary">
-          <div className="pill-row">
-            <span className={`status-pill ${selectedAnalysis ? badgeClass(selectedAnalysis.sentiment) : 'yellow'}`}>
-              {selectedAnalysis?.sentiment ?? 'pendiente'}
-            </span>
-            <span className={`status-pill ${badgeClass(selectedSatisfaction)}`}>{selectedSatisfaction}</span>
-            <span className={`status-pill ${selectedAnalysis ? badgeClass(selectedAnalysis.risk_level) : 'yellow'}`}>
-              riesgo {selectedAnalysis?.risk_level ?? 'pendiente'}
-            </span>
-          </div>
-          <p>{selectedAnalysis?.summary || 'Este grupo existe en Supabase, pero todavia no tiene resumen guardado.'}</p>
-        </div>
-        <ScoreOrbit score={selectedScore} tone={scoreColor(selectedScore)} analyzed={Boolean(selectedAnalysis)} />
-      </section>
+      <nav className="client-tabs" aria-label="Secciones del cliente">
+        <button className={clientTab === 'resumen' ? 'active' : ''} onClick={() => setClientTab('resumen')}>
+          Resumen
+        </button>
+        <button className={clientTab === 'historico' ? 'active' : ''} onClick={() => setClientTab('historico')}>
+          Historico
+        </button>
+        <button className={clientTab === 'mensajes' ? 'active' : ''} onClick={() => setClientTab('mensajes')}>
+          Mensajes
+        </button>
+      </nav>
 
-      <section className="focus-card">
-        <div className="section-head">
-          <h2>Progreso historico</h2>
-          <span>{selectedHistory.length} dias</span>
-        </div>
-        <div className="timeline">
-          {selectedHistory.length ? (
-            selectedHistory.map((item) => (
-              <article className="timeline-item" key={item.id}>
-                <div className={`timeline-score ${scoreColor(item.new_score)}`}>{item.new_score ?? '--'}</div>
-                <div>
-                  <header>
-                    <strong>{item.analysis_date}</strong>
-                    <span className={item.score_delta >= 0 ? 'green' : 'red'}>
-                      {item.score_delta > 0 ? '+' : ''}
-                      {item.score_delta}
-                    </span>
-                  </header>
-                  <p>{item.summary || 'Sin resumen guardado.'}</p>
-                </div>
-              </article>
-            ))
-          ) : (
-            <p>No hay historico guardado para esta cuenta todavia.</p>
-          )}
-        </div>
-      </section>
+      {clientTab === 'resumen' && (
+        <>
+          <section className="detail-hero">
+            <div className={`score-panel card-3d ${scoreColor(selectedScore)}`}>
+              <span>{selectedScore ?? '--'}</span>
+              <small>{scoreLabel(selectedScore)}</small>
+            </div>
+            <div className="detail-summary card-3d">
+              <div className="pill-row">
+                <span className={`status-pill ${selectedAnalysis ? badgeClass(selectedAnalysis.sentiment) : 'yellow'}`}>
+                  {selectedAnalysis?.sentiment ?? 'pendiente'}
+                </span>
+                <span className={`status-pill ${badgeClass(selectedSatisfaction)}`}>{selectedSatisfaction}</span>
+                <span className={`status-pill ${selectedAnalysis ? badgeClass(selectedAnalysis.risk_level) : 'yellow'}`}>
+                  riesgo {selectedAnalysis?.risk_level ?? 'pendiente'}
+                </span>
+              </div>
+              <p>{selectedAnalysis?.summary || 'Este grupo existe en Supabase, pero todavia no tiene resumen guardado.'}</p>
+            </div>
+            <ScoreOrbit score={selectedScore} tone={scoreColor(selectedScore)} analyzed={Boolean(selectedAnalysis)} />
+          </section>
 
-      <section className="detail-grid">
-        <article className="focus-card">
+          <section className="detail-grid">
+            <article className="focus-card card-3d">
+              <div className="section-head">
+                <h2>Tareas</h2>
+                <span>{actionItems.length}</span>
+              </div>
+              <div className="task-list">
+                {actionItems.length ? (
+                  actionItems.map((item, index) => (
+                    <div className="task-item" key={index}>
+                      <div className="task-title">
+                        <strong>{actionText(item)}</strong>
+                        <span className={`owner-type ${badgeClass(actionOwnerType(item))}`}>{actionOwnerType(item)}</span>
+                      </div>
+                      <small>{actionMeta(item)}</small>
+                    </div>
+                  ))
+                ) : (
+                  <p>No hay tareas detectadas.</p>
+                )}
+              </div>
+            </article>
+
+            <article className="focus-card card-3d">
+              <div className="section-head">
+                <h2>Senales</h2>
+                <span>{positiveSignals.length + negativeSignals.length}</span>
+              </div>
+              <SignalList title="A favor" items={positiveSignals} tone="green" />
+              <SignalList title="A revisar" items={negativeSignals} tone="red" />
+            </article>
+          </section>
+        </>
+      )}
+
+      {clientTab === 'historico' && (
+        <section className="focus-card card-3d">
           <div className="section-head">
-            <h2>Tareas</h2>
-            <span>{actionItems.length}</span>
+            <h2>Historico de puntos</h2>
+            <span>{selectedHistory.length} dias</span>
           </div>
-          <div className="task-list">
-            {actionItems.length ? (
-              actionItems.map((item, index) => (
-                <div className="task-item" key={index}>
-                  <div className="task-title">
-                    <strong>{actionText(item)}</strong>
-                    <span className={`owner-type ${badgeClass(actionOwnerType(item))}`}>{actionOwnerType(item)}</span>
+          <ScoreGraph items={selectedHistory} />
+          <div className="timeline">
+            {selectedHistory.length ? (
+              selectedHistory.map((item) => (
+                <article className="timeline-item" key={item.id}>
+                  <div className={`timeline-score ${scoreColor(item.new_score)}`}>{item.new_score ?? '--'}</div>
+                  <div>
+                    <header>
+                      <strong>{item.analysis_date}</strong>
+                      <span className={item.score_delta >= 0 ? 'green' : 'red'}>
+                        {item.score_delta > 0 ? '+' : ''}
+                        {item.score_delta}
+                      </span>
+                    </header>
+                    <p>{item.summary || 'Sin resumen guardado.'}</p>
                   </div>
-                  <small>{actionMeta(item)}</small>
-                </div>
+                </article>
               ))
             ) : (
-              <p>No hay tareas detectadas.</p>
+              <p>No hay historico guardado para esta cuenta todavia.</p>
             )}
           </div>
-        </article>
+        </section>
+      )}
 
-        <article className="focus-card">
-          <div className="section-head">
-            <h2>Senales</h2>
-            <span>{positiveSignals.length + negativeSignals.length}</span>
-          </div>
-          <SignalList title="A favor" items={positiveSignals} tone="green" />
-          <SignalList title="A revisar" items={negativeSignals} tone="red" />
-        </article>
-      </section>
-
-      <section className="focus-card">
+      {clientTab === 'mensajes' && (
+      <section className="focus-card card-3d">
         <div className="section-head collapsible-head">
           <div>
             <h2>Mensajes</h2>
@@ -520,7 +580,47 @@ export default function App() {
           </div>
         )}
       </section>
+      )}
     </main>
+  )
+}
+
+function ScoreGraph({ items }: { items: DailyAnalysis[] }) {
+  const width = 760
+  const height = 180
+  const padding = 22
+  const points = items.map((item, index) => {
+    const score = Number(item.new_score ?? 0)
+    const x = items.length <= 1 ? width / 2 : padding + (index * (width - padding * 2)) / (items.length - 1)
+    const y = height - padding - (score / 100) * (height - padding * 2)
+    return { x, y, score, date: item.analysis_date }
+  })
+  const path = points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
+
+  return (
+    <div className="score-graph" aria-label="Grafica historica de puntos">
+      <svg viewBox={`0 0 ${width} ${height}`} role="img">
+        <defs>
+          <linearGradient id="scoreLine" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stopColor="#1F8F7C" />
+            <stop offset="55%" stopColor="#B8841C" />
+            <stop offset="100%" stopColor="#B43A3A" />
+          </linearGradient>
+        </defs>
+        <line className="grid-line" x1={padding} x2={width - padding} y1={padding} y2={padding} />
+        <line className="grid-line" x1={padding} x2={width - padding} y1={height / 2} y2={height / 2} />
+        <line className="grid-line" x1={padding} x2={width - padding} y1={height - padding} y2={height - padding} />
+        {path && <path className="score-path" d={path} />}
+        {points.map((point) => (
+          <g key={point.date}>
+            <circle className={`score-point ${scoreColor(point.score)}`} cx={point.x} cy={point.y} r="6" />
+            <text x={point.x} y={point.y - 12} textAnchor="middle">
+              {point.score}
+            </text>
+          </g>
+        ))}
+      </svg>
+    </div>
   )
 }
 
@@ -545,7 +645,7 @@ function ScoreOrbit({ score, tone, analyzed }: { score: number | null; tone: str
 
 function MetricCard({ label, value, detail, tone = 'gray' }: { label: string; value: string | number; detail: string; tone?: string }) {
   return (
-    <article className="metric-card">
+    <article className="metric-card card-3d">
       <span>{label}</span>
       <strong className={tone}>{value}</strong>
       <small>{detail}</small>
