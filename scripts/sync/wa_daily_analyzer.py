@@ -37,6 +37,7 @@ logger = logging.getLogger("wa_daily_analyzer")
 
 DEFAULT_BASE_SCORE = 70
 MAX_MESSAGES_PER_GROUP = 600
+DEFAULT_MAX_ABS_SCORE_DELTA = 3
 LOCAL_TZ = ZoneInfo(os.getenv("WA_ANALYSIS_TIMEZONE", "America/Mexico_City"))
 
 
@@ -257,10 +258,11 @@ def _score_delta_from_analysis(analysis: dict) -> float:
     raw_delta = float(analysis.get("score_delta", 0) or 0)
     sentiment = str(analysis.get("sentiment") or "neutral").lower()
     satisfaction = str(analysis.get("satisfaction") or "unknown").lower()
+    max_abs_delta = float(os.getenv("WA_ANALYSIS_MAX_ABS_DELTA", DEFAULT_MAX_ABS_SCORE_DELTA))
 
     if sentiment == "neutral" and satisfaction in ("neutral", "unknown"):
         return 0
-    return _clamp(raw_delta, -10, 10)
+    return _clamp(raw_delta, -max_abs_delta, max_abs_delta)
 
 
 def _build_daily_row(
@@ -295,7 +297,7 @@ def _build_daily_row(
         "summary": str(analysis.get("summary") or "")[:4000],
         "positive_signals": _json_list(analysis.get("positive_signals")),
         "negative_signals": _json_list(analysis.get("negative_signals")),
-        "action_items": _normalize_action_items(analysis.get("action_items")),
+        "action_items": _normalize_action_items(analysis.get("action_items"), group_name=batch.group_name),
         "evidence": _json_list(analysis.get("evidence")),
         "model": model,
         "raw_analysis": analysis,
@@ -414,7 +416,7 @@ def _json_list(value: Any) -> list:
     return value if isinstance(value, list) else []
 
 
-def _normalize_action_items(value: Any) -> list[dict[str, Any]]:
+def _normalize_action_items(value: Any, group_name: str | None = None) -> list[dict[str, Any]]:
     if not isinstance(value, list):
         return []
 
@@ -451,7 +453,11 @@ def _normalize_action_items(value: Any) -> list[dict[str, Any]]:
             aliases={"cliente": "client", "bw": "blackwell", "equipo": "blackwell", "both": "shared"},
         )
 
-        if owner == "Cliente":
+        internal_group = bool(group_name and "interno" in group_name.lower())
+
+        if internal_group and owner_type == "client" and owner != "Cliente":
+            owner_type = "blackwell"
+        elif owner == "Cliente":
             owner_type = "client"
         elif owner.startswith("Cliente +"):
             owner_type = "shared"
