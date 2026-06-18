@@ -274,7 +274,15 @@ def _supabase_request(
 
 def _column_values(boards_config: dict[str, Any], row: dict[str, Any], item: dict[str, Any], board: dict[str, Any]) -> dict[str, Any]:
     if board.get("central"):
-        return {}
+        urgency = _normalize_urgency(item.get("urgency"))
+        status_label = "Bloqueada" if item.get("owner_type") == "client" else "Por hacer"
+        values: dict[str, Any] = {
+            os.getenv("MONDAY_TASKS_STATUS_COLUMN_ID", "color_mm452en1"): {"label": status_label},
+            os.getenv("MONDAY_TASKS_DUE_DATE_COLUMN_ID", "date_mm45ncq9"): {
+                "date": _due_date_for_urgency(urgency, 5).isoformat()
+            },
+        }
+        return values
 
     columns = boards_config["column_ids_template"]
     defaults = boards_config["defaults"]
