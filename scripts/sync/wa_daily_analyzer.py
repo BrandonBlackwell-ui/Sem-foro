@@ -69,6 +69,10 @@ def main() -> None:
 
     sb = _supabase_client()
     batches = _load_changed_group_batches(sb, start_at, end_at)
+    if args.group_jid:
+        batches = [batch for batch in batches if batch.group_jid == args.group_jid]
+    if args.limit_groups is not None:
+        batches = batches[: args.limit_groups]
 
     if not batches:
         logger.info("No WhatsApp groups with message text found for %s.", target_date)
@@ -90,10 +94,15 @@ def main() -> None:
         score_delta = _score_delta_from_analysis(analysis)
         daily_row = _build_daily_row(target_date, batch, previous_score, score_delta, model, analysis)
 
-        sb.table("wa_daily_analysis").upsert(
-            daily_row,
-            on_conflict="account_id,group_jid,analysis_date",
-        ).execute()
+        (
+            sb.table("wa_daily_analysis")
+            .delete()
+            .eq("account_id", batch.account_id)
+            .eq("group_jid", batch.group_jid)
+            .eq("analysis_date", target_date.isoformat())
+            .execute()
+        )
+        sb.table("wa_daily_analysis").insert(daily_row).execute()
 
         total_delta = _load_total_delta(sb, batch.account_id)
         base_score = float(score_state.get("base_score") or DEFAULT_BASE_SCORE)
@@ -263,9 +272,14 @@ def _build_daily_row(
         "previous_score": previous_score,
         "score_delta": score_delta,
         "new_score": new_score,
-        "sentiment": str(analysis.get("sentiment") or "neutral")[:40],
-        "satisfaction": str(analysis.get("satisfaction") or "unknown")[:40],
-        "risk_level": str(analysis.get("risk_level") or "low")[:40],
+        "sentiment": _normalize_choice(analysis.get("sentiment"), {"positive", "neutral", "negative", "mixed"}, "neutral"),
+        "satisfaction": _normalize_choice(
+            analysis.get("satisfaction"),
+            {"satisfied", "neutral", "unsatisfied", "unknown"},
+            "unknown",
+            aliases={"high": "satisfied", "positive": "satisfied", "negative": "unsatisfied", "low": "unsatisfied"},
+        ),
+        "risk_level": _normalize_choice(analysis.get("risk_level"), {"low", "medium", "high"}, "low"),
         "summary": str(analysis.get("summary") or "")[:4000],
         "positive_signals": _json_list(analysis.get("positive_signals")),
         "negative_signals": _json_list(analysis.get("negative_signals")),
@@ -343,6 +357,13 @@ def _json_list(value: Any) -> list:
     return value if isinstance(value, list) else []
 
 
+def _normalize_choice(value: Any, allowed: set[str], default: str, aliases: dict[str, str] | None = None) -> str:
+    text = str(value or default).strip().lower()
+    if aliases and text in aliases:
+        text = aliases[text]
+    return text if text in allowed else default
+
+
 def _merge_summary(previous: str | None, current: str) -> str:
     parts = [p for p in [previous, current] if p]
     return "\n\n".join(parts)[-6000:]
@@ -381,6 +402,8 @@ def _setup_logging() -> None:
 def _parse_args():
     parser = argparse.ArgumentParser(description="Analyze daily WhatsApp messages by group.")
     parser.add_argument("--date", help="Date to analyze in YYYY-MM-DD. Defaults to yesterday in Mexico City.")
+    parser.add_argument("--group-jid", help="Analyze only this WhatsApp group JID.")
+    parser.add_argument("--limit-groups", type=int, help="Analyze only the first N groups from the selected date.")
     parser.add_argument("--dry-run", action="store_true", help="List groups that would be analyzed.")
     return parser.parse_args()
 
