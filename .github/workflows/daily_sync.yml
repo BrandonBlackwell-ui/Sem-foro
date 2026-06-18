@@ -49,6 +49,7 @@ jobs:
           MONDAY_TASKS_BOARD_NAME=${{ vars.MONDAY_TASKS_BOARD_NAME || 'WhatsApp Tasks' }}
           MONDAY_TASKS_STATUS_COLUMN_ID=${{ vars.MONDAY_TASKS_STATUS_COLUMN_ID || 'color_mm452en1' }}
           MONDAY_TASKS_DUE_DATE_COLUMN_ID=${{ vars.MONDAY_TASKS_DUE_DATE_COLUMN_ID || 'date_mm45ncq9' }}
+          MONDAY_TASKS_RESPONSIBLE_COLUMN_ID=${{ vars.MONDAY_TASKS_RESPONSIBLE_COLUMN_ID || 'multiple_person_mm453tee' }}
           EOF
 
       - name: Analyze WhatsApp messages

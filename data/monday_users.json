@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0",
+  "source": "blackwell_usuarios_monday_ids.csv",
+  "users": [
+    {
+      "name": "Humberto Herrera",
+      "email": "h@blackwellstrategy.com",
+      "monday_id": 27460453,
+      "active": true
+    },
+    {
+      "name": "Alonso Palafox",
+      "email": "finance@blackwellstrategy.com",
+      "monday_id": 65592045,
+      "active": true
+    },
+    {
+      "name": "Fabiola (pmanager / PMO)",
+      "email": "pmanager@blackwellstrategy.com",
+      "monday_id": 73673698,
+      "active": true
+    },
+    {
+      "name": "Jesus Montoya",
+      "email": "contabilidad@blackwellstrategy.com",
+      "monday_id": 78093993,
+      "active": true
+    },
+    {
+      "name": "DANIEL MENENDEZ",
+      "email": "d.menendez@blackwellstrategy.com",
+      "monday_id": 85098955,
+      "active": true
+    },
+    {
+      "name": "Daniel Padilla",
+      "email": "daniel.padilla@blackwellstrategy.com",
+      "monday_id": 101221993,
+      "active": true
+    },
+    {
+      "name": "Marisol Guerrero",
+      "email": "marisol@blackwellstrategy.com",
+      "monday_id": 104004746,
+      "active": true
+    },
+    {
+      "name": "Johanna Palacio",
+      "email": "johanna@blackwellstrategy.com",
+      "monday_id": 104004748,
+      "active": true
+    },
+    {
+      "name": "Orwell Blackwell",
+      "email": "orwell@blackwellstrategy.com",
+      "monday_id": 104132991,
+      "active": true
+    },
+    {
+      "name": "Sandra Cortes Tremary",
+      "email": "sandra.cortes@blackwellstrategy.com",
+      "monday_id": 104322254,
+      "active": true
+    },
+    {
+      "name": "Angel Alcantara Adan",
+      "email": "angel@blackwellstrategy.com",
+      "monday_id": 104322259,
+      "active": true
+    },
+    {
+      "name": "Kenya Atenas Nelly Lizarraga Morales",
+      "email": "atenas@blackwellstrategy.com",
+      "monday_id": 105637254,
+      "active": true
+    },
+    {
+      "name": "Luis Uriel Ensaztiga Arellano",
+      "email": "uriel@blackwellstrategy.com",
+      "monday_id": 105637255,
+      "active": false
+    },
+    {
+      "name": "Mariana Zamudio",
+      "email": "m.zamudio@blackwellstrategy.com",
+      "monday_id": 105639422,
+      "active": true
+    },
+    {
+      "name": "Brandon Emmanuel Perez Toledano",
+      "email": "brandon@blackwellstrategy.com",
+      "monday_id": 105639566,
+      "active": true
+    }
+  ]
+}

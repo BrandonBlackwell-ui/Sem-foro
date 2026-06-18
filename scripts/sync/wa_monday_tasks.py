@@ -13,7 +13,9 @@ import hashlib
 import json
 import logging
 import os
+import re
 import sys
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -39,6 +41,7 @@ def main() -> None:
     args = _parse_args()
     target_date = _resolve_target_date(args.date)
     boards_config = _load_boards_config()
+    monday_users = _load_monday_users()
     analyses = _fetch_daily_analyses(target_date, args.account_id)
 
     if args.limit is not None:
@@ -55,7 +58,7 @@ def main() -> None:
 
     totals = {"created": 0, "skipped": 0, "unmapped": 0, "empty": 0}
     for row in analyses:
-        row_totals = _sync_analysis_row(row, boards_config, api_key, args.dry_run)
+        row_totals = _sync_analysis_row(row, boards_config, monday_users, api_key, args.dry_run)
         for key, value in row_totals.items():
             totals[key] += value
 
@@ -71,7 +74,13 @@ def main() -> None:
     )
 
 
-def _sync_analysis_row(row: dict[str, Any], boards_config: dict[str, Any], api_key: str, dry_run: bool) -> dict[str, int]:
+def _sync_analysis_row(
+    row: dict[str, Any],
+    boards_config: dict[str, Any],
+    monday_users: dict[str, dict[str, Any]],
+    api_key: str,
+    dry_run: bool,
+) -> dict[str, int]:
     totals = {"created": 0, "skipped": 0, "unmapped": 0, "empty": 0}
     action_items = row.get("action_items") if isinstance(row.get("action_items"), list) else []
     if not action_items:
@@ -111,7 +120,7 @@ def _sync_analysis_row(row: dict[str, Any], boards_config: dict[str, Any], api_k
 
         sync_key = item.get("monday_sync_key") or _sync_key(row, index, action)
         item_name = _monday_item_name(row, item)
-        column_values = _column_values(boards_config, row, item, board)
+        column_values = _column_values(boards_config, row, item, board, monday_users)
 
         if dry_run:
             logger.info(
@@ -272,16 +281,28 @@ def _supabase_request(
     return json.loads(raw) if raw else None
 
 
-def _column_values(boards_config: dict[str, Any], row: dict[str, Any], item: dict[str, Any], board: dict[str, Any]) -> dict[str, Any]:
+def _column_values(
+    boards_config: dict[str, Any],
+    row: dict[str, Any],
+    item: dict[str, Any],
+    board: dict[str, Any],
+    monday_users: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
     if board.get("central"):
         urgency = _normalize_urgency(item.get("urgency"))
-        status_label = "Bloqueada" if item.get("owner_type") == "client" else "Por hacer"
+        owner_type = str(item.get("owner_type") or "unknown").strip().lower()
+        status_label = "Bloqueada" if owner_type == "client" else "Por hacer"
         values: dict[str, Any] = {
             os.getenv("MONDAY_TASKS_STATUS_COLUMN_ID", "color_mm452en1"): {"label": status_label},
             os.getenv("MONDAY_TASKS_DUE_DATE_COLUMN_ID", "date_mm45ncq9"): {
                 "date": _due_date_for_urgency(urgency, 5).isoformat()
             },
         }
+        monday_user = _resolve_monday_user(item, monday_users)
+        if monday_user:
+            values[os.getenv("MONDAY_TASKS_RESPONSIBLE_COLUMN_ID", "multiple_person_mm453tee")] = {
+                "personsAndTeams": [{"id": int(monday_user["monday_id"]), "kind": "person"}]
+            }
         return values
 
     columns = boards_config["column_ids_template"]
@@ -306,6 +327,29 @@ def _column_values(boards_config: dict[str, Any], row: dict[str, Any], item: dic
         }
 
     return values
+
+
+def _resolve_monday_user(item: dict[str, Any], monday_users: dict[str, dict[str, Any]]) -> dict[str, Any] | None:
+    owner_type = str(item.get("owner_type") or "unknown").strip().lower()
+    if owner_type == "client":
+        return None
+
+    owner = str(item.get("owner") or "").strip()
+    if not owner or owner in {"Cliente", "Por definir", "Blackwell"}:
+        return None
+
+    candidates = [owner]
+    for separator in ("+", "/", ",", " y ", " and "):
+        split_candidates: list[str] = []
+        for candidate in candidates:
+            split_candidates.extend(part.strip() for part in candidate.split(separator) if part.strip())
+        candidates = split_candidates or candidates
+
+    for candidate in candidates:
+        key = _name_key(candidate)
+        if key in monday_users:
+            return monday_users[key]
+    return None
 
 
 def _monday_item_name(row: dict[str, Any], item: dict[str, Any]) -> str:
@@ -386,6 +430,31 @@ def _board_for_row(boards_config: dict[str, Any], account_id: str) -> dict[str, 
 def _load_boards_config() -> dict[str, Any]:
     path = ROOT / "data" / "monday_boards.json"
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _load_monday_users() -> dict[str, dict[str, Any]]:
+    path = ROOT / "data" / "monday_users.json"
+    if not path.exists():
+        return {}
+
+    data = json.loads(path.read_text(encoding="utf-8"))
+    users: dict[str, dict[str, Any]] = {}
+    for user in data.get("users", []):
+        if not user.get("active", True):
+            continue
+        name = str(user.get("name") or "").strip()
+        monday_id = user.get("monday_id")
+        if not name or not monday_id:
+            continue
+        users[_name_key(name)] = user
+    return users
+
+
+def _name_key(value: str) -> str:
+    text = unicodedata.normalize("NFKD", value)
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    text = re.sub(r"[^a-zA-Z0-9]+", " ", text).strip().lower()
+    return " ".join(text.split())
 
 
 def _monday_api_key() -> str:
