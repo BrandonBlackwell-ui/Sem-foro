@@ -173,6 +173,7 @@ export default function App() {
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate, setSelectedOverviewDate] = useState<string>('latest')
   const [clientTab, setClientTab] = useState<'resumen' | 'historico' | 'mensajes'>('resumen')
+  const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
   const [messagesOpen, setMessagesOpen] = useState(false)
   const [loading, setLoading] = useState(true)
   const [detailLoading, setDetailLoading] = useState(false)
@@ -299,26 +300,28 @@ export default function App() {
   }, [groups, overviewAnalysisByGroup, rawMessages, scoreByAccount])
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
-  const selectedDateAnalysis = useMemo(() => {
-    if (!selectedGroup || selectedOverviewDate === 'latest') return null
-    return analyses.find((analysis) => analysis.group_jid === selectedGroup.jid && analysis.analysis_date === selectedOverviewDate) ?? null
-  }, [analyses, selectedGroup, selectedOverviewDate])
-  const selectedAnalysis = selectedDateAnalysis ?? selectedGroup?.analysis ?? null
-  const selectedScore = selectedGroup?.score?.current_score ?? selectedAnalysis?.new_score ?? null
-  const selectedSatisfaction = selectedAnalysis ? normalizeSatisfaction(selectedAnalysis.satisfaction) : 'unknown'
   const selectedHistory = useMemo(() => {
     if (!selectedGroup) return []
     return analyses
       .filter((analysis) => analysis.group_jid === selectedGroup.jid)
       .sort((a, b) => a.analysis_date.localeCompare(b.analysis_date))
   }, [analyses, selectedGroup])
-  const actionItems = selectedAnalysis ? asArray(selectedAnalysis.action_items) : []
-  const positiveSignals = selectedAnalysis ? asArray(selectedAnalysis.positive_signals) : []
-  const negativeSignals = selectedAnalysis ? asArray(selectedAnalysis.negative_signals) : []
+  const latestSelectedAnalysis = selectedJid ? latestAnalysisByGroup.get(selectedJid) ?? null : null
+  const selectedDayAnalysis = selectedHistory.find((analysis) => analysis.id === selectedHistoryId) ?? null
+  const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
+  const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
+  const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
+  const allActions = selectedHistory.flatMap((analysis) => asArray(analysis.action_items))
+  const allPositiveSignals = selectedHistory.flatMap((analysis) => asArray(analysis.positive_signals))
+  const allNegativeSignals = selectedHistory.flatMap((analysis) => asArray(analysis.negative_signals))
+  const actionItems = activeDayAnalysis ? asArray(activeDayAnalysis.action_items) : []
+  const positiveSignals = activeDayAnalysis ? asArray(activeDayAnalysis.positive_signals) : []
+  const negativeSignals = activeDayAnalysis ? asArray(activeDayAnalysis.negative_signals) : []
 
   useEffect(() => {
     setMessagesOpen(false)
     setClientTab('resumen')
+    setSelectedHistoryId(null)
   }, [selectedJid])
 
   useEffect(() => {
@@ -330,10 +333,10 @@ export default function App() {
 
       setDetailLoading(true)
       try {
-        if (selectedAnalysis) {
-          const { startIso, endIso } = dayWindowUtc(selectedAnalysis.analysis_date)
+        if (activeDayAnalysis) {
+          const { startIso, endIso } = dayWindowUtc(activeDayAnalysis.analysis_date)
           const rows = await supabaseGet<WaMessage[]>(
-            `/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at&group_jid=eq.${encodeURIComponent(selectedAnalysis.group_jid)}&sent_at=gte.${encodeURIComponent(startIso)}&sent_at=lt.${encodeURIComponent(endIso)}&order=sent_at.asc`,
+            `/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at&group_jid=eq.${encodeURIComponent(activeDayAnalysis.group_jid)}&sent_at=gte.${encodeURIComponent(startIso)}&sent_at=lt.${encodeURIComponent(endIso)}&order=sent_at.asc`,
           )
           setDetailMessages(rows)
         } else {
@@ -350,7 +353,7 @@ export default function App() {
     }
 
     loadDetailMessages()
-  }, [selectedAnalysis, selectedGroup])
+  }, [activeDayAnalysis, selectedGroup])
 
   if (loading) {
     return (
@@ -447,7 +450,7 @@ export default function App() {
           </button>
           <span className="eyebrow">Detalle</span>
           <h1>{selectedGroup.name}</h1>
-          <p>{selectedAnalysis ? `Analisis del ${selectedAnalysis.analysis_date}` : 'Grupo pendiente de analisis diario.'}</p>
+          <p>{selectedHistory.length ? `${selectedHistory.length} dia(s) analizados en el historico` : 'Grupo pendiente de analisis diario.'}</p>
         </div>
         <button className="primary-button" onClick={() => window.location.reload()}>
           Actualizar
@@ -475,28 +478,28 @@ export default function App() {
             </div>
             <div className="detail-summary card-3d">
               <div className="pill-row">
-                <span className={`status-pill ${selectedAnalysis ? badgeClass(selectedAnalysis.sentiment) : 'yellow'}`}>
-                  {selectedAnalysis?.sentiment ?? 'pendiente'}
+                <span className={`status-pill ${latestSelectedAnalysis ? badgeClass(latestSelectedAnalysis.sentiment) : 'yellow'}`}>
+                  {latestSelectedAnalysis?.sentiment ?? 'pendiente'}
                 </span>
                 <span className={`status-pill ${badgeClass(selectedSatisfaction)}`}>{selectedSatisfaction}</span>
-                <span className={`status-pill ${selectedAnalysis ? badgeClass(selectedAnalysis.risk_level) : 'yellow'}`}>
-                  riesgo {selectedAnalysis?.risk_level ?? 'pendiente'}
+                <span className={`status-pill ${latestSelectedAnalysis ? badgeClass(latestSelectedAnalysis.risk_level) : 'yellow'}`}>
+                  riesgo {latestSelectedAnalysis?.risk_level ?? 'pendiente'}
                 </span>
               </div>
-              <p>{selectedAnalysis?.summary || 'Este grupo existe en Supabase, pero todavia no tiene resumen guardado.'}</p>
+              <p>{selectedHistory.length ? `Resumen acumulado de ${selectedHistory.length} dia(s): ${selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')}` : 'Este grupo existe en Supabase, pero todavia no tiene resumen guardado.'}</p>
             </div>
-            <ScoreOrbit score={selectedScore} tone={scoreColor(selectedScore)} analyzed={Boolean(selectedAnalysis)} />
+            <ScoreOrbit score={selectedScore} tone={scoreColor(selectedScore)} analyzed={Boolean(latestSelectedAnalysis)} />
           </section>
 
           <section className="detail-grid">
             <article className="focus-card card-3d">
               <div className="section-head">
-                <h2>Tareas</h2>
-                <span>{actionItems.length}</span>
+                <h2>Compilado de tareas</h2>
+                <span>{allActions.length}</span>
               </div>
               <div className="task-list">
-                {actionItems.length ? (
-                  actionItems.map((item, index) => (
+                {allActions.length ? (
+                  allActions.slice(-6).map((item, index) => (
                     <div className="task-item" key={index}>
                       <div className="task-title">
                         <strong>{actionText(item)}</strong>
@@ -506,18 +509,18 @@ export default function App() {
                     </div>
                   ))
                 ) : (
-                  <p>No hay tareas detectadas.</p>
+                  <p>No hay tareas acumuladas.</p>
                 )}
               </div>
             </article>
 
             <article className="focus-card card-3d">
               <div className="section-head">
-                <h2>Senales</h2>
-                <span>{positiveSignals.length + negativeSignals.length}</span>
+                <h2>Compilado de senales</h2>
+                <span>{allPositiveSignals.length + allNegativeSignals.length}</span>
               </div>
-              <SignalList title="A favor" items={positiveSignals} tone="green" />
-              <SignalList title="A revisar" items={negativeSignals} tone="red" />
+              <SignalList title="A favor" items={allPositiveSignals.slice(-5)} tone="green" />
+              <SignalList title="A revisar" items={allNegativeSignals.slice(-5)} tone="red" />
             </article>
           </section>
         </>
@@ -529,11 +532,11 @@ export default function App() {
             <h2>Historico de puntos</h2>
             <span>{selectedHistory.length} dias</span>
           </div>
-          <ScoreGraph items={selectedHistory} />
+          <ScoreGraph items={selectedHistory} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
           <div className="timeline">
             {selectedHistory.length ? (
               selectedHistory.map((item) => (
-                <article className="timeline-item" key={item.id}>
+                <button className={`timeline-item ${selectedHistoryId === item.id ? 'active' : ''}`} key={item.id} onClick={() => setSelectedHistoryId(item.id)}>
                   <div className={`timeline-score ${scoreColor(item.new_score)}`}>{item.new_score ?? '--'}</div>
                   <div>
                     <header>
@@ -545,12 +548,69 @@ export default function App() {
                     </header>
                     <p>{item.summary || 'Sin resumen guardado.'}</p>
                   </div>
-                </article>
+                </button>
               ))
             ) : (
               <p>No hay historico guardado para esta cuenta todavia.</p>
             )}
           </div>
+          {selectedDayAnalysis && (
+            <div className="day-detail">
+              <div className="section-head">
+                <div>
+                  <h2>Detalle del dia</h2>
+                  <p>{selectedDayAnalysis.analysis_date}</p>
+                </div>
+                <span className={selectedDayAnalysis.score_delta >= 0 ? 'green' : 'red'}>
+                  {selectedDayAnalysis.score_delta > 0 ? '+' : ''}
+                  {selectedDayAnalysis.score_delta}
+                </span>
+              </div>
+              <p className="day-summary">{selectedDayAnalysis.summary || 'Sin resumen guardado.'}</p>
+              <div className="detail-grid day-grid">
+                <article>
+                  <h3>Tareas</h3>
+                  <div className="task-list">
+                    {actionItems.length ? (
+                      actionItems.map((item, index) => (
+                        <div className="task-item" key={index}>
+                          <div className="task-title">
+                            <strong>{actionText(item)}</strong>
+                            <span className={`owner-type ${badgeClass(actionOwnerType(item))}`}>{actionOwnerType(item)}</span>
+                          </div>
+                          <small>{actionMeta(item)}</small>
+                        </div>
+                      ))
+                    ) : (
+                      <p>No hay tareas detectadas.</p>
+                    )}
+                  </div>
+                </article>
+                <article>
+                  <h3>Senales</h3>
+                  <SignalList title="A favor" items={positiveSignals} tone="green" />
+                  <SignalList title="A revisar" items={negativeSignals} tone="red" />
+                </article>
+              </div>
+              <button className="secondary-button" onClick={() => setMessagesOpen((open) => !open)}>
+                {messagesOpen ? 'Ocultar mensajes' : `Ver ${detailLoading ? '' : detailMessages.length} mensajes del dia`}
+              </button>
+              {messagesOpen && (
+                <div className="message-feed">
+                  {detailMessages.slice(0, 12).map((message) => (
+                    <article className="chat-message" key={message.id}>
+                      <header>
+                        <strong>{message.push_name || message.author || 'Sin autor'}</strong>
+                        <time>{shortDate(message.sent_at)}</time>
+                      </header>
+                      <p>{message.body || '(sin texto)'}</p>
+                      <span>{message.msg_type}</span>
+                    </article>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </section>
       )}
 
@@ -585,7 +645,7 @@ export default function App() {
   )
 }
 
-function ScoreGraph({ items }: { items: DailyAnalysis[] }) {
+function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; selectedId: number | null; onSelect: (id: number) => void }) {
   const width = 760
   const height = 180
   const padding = 22
@@ -593,7 +653,7 @@ function ScoreGraph({ items }: { items: DailyAnalysis[] }) {
     const score = Number(item.new_score ?? 0)
     const x = items.length <= 1 ? width / 2 : padding + (index * (width - padding * 2)) / (items.length - 1)
     const y = height - padding - (score / 100) * (height - padding * 2)
-    return { x, y, score, date: item.analysis_date }
+    return { x, y, score, date: item.analysis_date, id: item.id }
   })
   const path = points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
 
@@ -612,8 +672,8 @@ function ScoreGraph({ items }: { items: DailyAnalysis[] }) {
         <line className="grid-line" x1={padding} x2={width - padding} y1={height - padding} y2={height - padding} />
         {path && <path className="score-path" d={path} />}
         {points.map((point) => (
-          <g key={point.date}>
-            <circle className={`score-point ${scoreColor(point.score)}`} cx={point.x} cy={point.y} r="6" />
+          <g className="score-point-hit" key={point.id} onClick={() => onSelect(point.id)}>
+            <circle className={`score-point ${scoreColor(point.score)} ${selectedId === point.id ? 'active' : ''}`} cx={point.x} cy={point.y} r="6" />
             <text x={point.x} y={point.y - 12} textAnchor="middle">
               {point.score}
             </text>
