@@ -28,6 +28,9 @@
     },
     {
       "name": "DANIEL MENENDEZ",
+      "aliases": [
+        "Daniel"
+      ],
       "email": "d.menendez@blackwellstrategy.com",
       "monday_id": 85098955,
       "active": true

@@ -447,6 +447,10 @@ def _load_monday_users() -> dict[str, dict[str, Any]]:
         if not name or not monday_id:
             continue
         users[_name_key(name)] = user
+        for alias in user.get("aliases", []):
+            alias_key = _name_key(str(alias))
+            if alias_key:
+                users[alias_key] = user
     return users
 
 
