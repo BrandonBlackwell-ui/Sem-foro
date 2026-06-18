@@ -376,7 +376,7 @@ export default function App() {
 
   if (!selectedGroup) {
     const analyzedCount = groupSummaries.filter((group) => group.analysis).length
-    const needsAnalysis = groupSummaries.length - analyzedCount
+    const quietGroups = Math.max(groupSummaries.length - analyzedCount, 0)
     const averageScore = scores.length
       ? Math.round(scores.reduce((total, score) => total + score.current_score, 0) / scores.length)
       : null
@@ -396,7 +396,11 @@ export default function App() {
 
         <section className="overview-strip">
           <MetricCard label="Score promedio" value={averageScore ?? '--'} detail={averageScore ? scoreLabel(averageScore) : 'Sin puntajes'} tone={scoreColor(averageScore)} />
-          <MetricCard label="Analizadas" value={analyzedCount} detail={`${needsAnalysis} pendientes`} />
+          <MetricCard
+            label="Actividad cubierta"
+            value={`${analyzedCount} de ${groupSummaries.length}`}
+            detail={quietGroups ? `${quietGroups} sin mensajes nuevos o cambios` : 'Todos con actividad revisada'}
+          />
           <MetricCard label="Grupos activos" value={groupSummaries.filter((group) => group.active).length} detail={`${groupSummaries.length} totales`} />
         </section>
 
