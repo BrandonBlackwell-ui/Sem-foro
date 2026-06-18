@@ -233,6 +233,18 @@ input, select, textarea { font-family: inherit; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.back-button {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--ink-700);
+  color: var(--ink-700);
+  padding: 0 0 3px;
+  margin-bottom: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 .real-grid {
   display: grid;
   gap: 16px;
@@ -366,6 +378,85 @@ input, select, textarea { font-family: inherit; }
   line-height: 1.45;
   overflow-wrap: anywhere;
 }
+.account-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.account-card {
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 18px;
+  min-height: 235px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 120ms ease, transform 120ms ease, background 120ms ease;
+}
+.account-card:hover {
+  border-color: var(--ink-500);
+  background: var(--paper-bright);
+  transform: translateY(-1px);
+}
+.account-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.score-badge {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rule);
+  background: var(--paper-soft);
+  border-radius: 50%;
+  font-family: var(--mono);
+  font-size: 18px;
+  font-weight: 700;
+}
+.score-badge.green { color: var(--teal); border-color: rgba(31,143,124,0.35); }
+.score-badge.yellow { color: var(--amber); border-color: rgba(184,132,28,0.35); }
+.score-badge.orange { color: var(--orange); border-color: rgba(194,106,29,0.35); }
+.score-badge.red { color: var(--crimson); border-color: rgba(180,58,58,0.35); }
+.account-card strong {
+  display: block;
+  color: var(--ink-900);
+  font-size: 22px;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+.account-card small {
+  color: var(--char);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.account-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.account-meta span {
+  border: 1px solid var(--rule-soft);
+  background: var(--paper-soft);
+  padding: 4px 8px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-700);
+}
+.account-card p {
+  margin: auto 0 0;
+  color: var(--graphite);
+  font-size: 13px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 @media (max-width: 920px) {
   .real-shell { width: min(100vw - 28px, 1380px); padding-top: 20px; }
@@ -373,6 +464,7 @@ input, select, textarea { font-family: inherit; }
   .real-header h1, .real-center h1 { font-size: 32px; }
   .real-grid.metrics, .real-grid.split { grid-template-columns: 1fr; }
   .message-row { grid-template-columns: 1fr; gap: 4px; }
+  .account-grid { grid-template-columns: 1fr; }
 }
 
 /* ─── Ask Drive — quick prompt chips ─── */
