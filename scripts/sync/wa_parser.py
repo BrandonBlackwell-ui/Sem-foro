@@ -158,7 +158,7 @@ def filter_after_watermark(
 
 
 def _format_msgs(messages: list[dict], max_chars: int = 8_000) -> str:
-    """Formatea lista de mensajes reales para enviar a Claude."""
+    """Formatea lista de mensajes reales para enviar al LLM."""
     lines = [f"[{m['ts_iso']}] {m['author']}: {m['text']}" for m in messages if not m["is_system"]]
     text = "\n".join(lines)
     if len(text) > max_chars:
@@ -185,13 +185,13 @@ def extract_incremental(
     Args:
         zip_data:        bytes del archivo .zip
         watermark_iso:   ISO timestamp del último mensaje ya procesado (o None para el primero)
-        rolling_summary: resumen acumulado de corridas anteriores (contexto para Claude)
+        rolling_summary: resumen acumulado de corridas anteriores (contexto para el LLM)
         context_window:  cuántos mensajes reales anteriores al watermark incluir como contexto
         max_new_chars:   límite de caracteres para los mensajes nuevos
 
     Returns:
-        (text_for_claude, latest_ts_iso)
-        - text_for_claude: texto listo para enviar a Haiku
+        (text_for_llm, latest_ts_iso)
+        - text_for_llm: texto listo para enviar al LLM
         - latest_ts_iso:   ISO del mensaje más reciente encontrado (para actualizar watermark)
                            None si no se encontró ningún mensaje con timestamp válido
     """

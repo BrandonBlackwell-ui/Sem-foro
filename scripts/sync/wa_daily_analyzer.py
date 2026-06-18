@@ -19,6 +19,8 @@ import json
 import logging
 import os
 import sys
+import urllib.error
+import urllib.request
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta, timezone
@@ -84,15 +86,14 @@ def main() -> None:
             logger.info("  %s / %s: %d messages", batch.account_id, batch.group_name or batch.group_jid, len(batch.messages))
         return
 
-    client = _anthropic_client()
-    model = os.getenv("WA_ANALYSIS_MODEL", "claude-haiku-4-5")
+    model = os.getenv("OPENROUTER_MODEL", "google/gemini-3.1-flash-lite")
 
     for batch in batches:
         score_state = _get_score_state(sb, batch.account_id)
         existing_delta = _load_existing_daily_delta(sb, batch.account_id, batch.group_jid, target_date)
         current_score = float(score_state.get("current_score") or score_state.get("base_score") or DEFAULT_BASE_SCORE)
         previous_score = _clamp(current_score - existing_delta, 0, 100)
-        analysis = _analyze_group_day(client, model, target_date, batch, previous_score)
+        analysis = _analyze_group_day(model, target_date, batch, previous_score)
         score_delta = _score_delta_from_analysis(analysis)
         daily_row = _build_daily_row(target_date, batch, previous_score, score_delta, model, analysis)
 
@@ -190,7 +191,7 @@ def _fetch_messages(sb, start_at: datetime, end_at: datetime) -> list[dict[str, 
     return rows
 
 
-def _analyze_group_day(client, model: str, target_date: date, batch: GroupBatch, previous_score: float) -> dict:
+def _analyze_group_day(model: str, target_date: date, batch: GroupBatch, previous_score: float) -> dict:
     transcript = "\n".join(
         f"[{m.get('sent_at')}] {m.get('push_name') or m.get('author') or '?'}: {m.get('body')}"
         for m in batch.messages
@@ -243,14 +244,12 @@ Reglas obligatorias para action_items:
 Transcript:
 {transcript}
 """.strip()
-    response = client.messages.create(
+    text = _openrouter_chat_completion(
         model=model,
-        max_tokens=1200,
-        temperature=0,
         system=system,
-        messages=[{"role": "user", "content": prompt}],
+        prompt=prompt,
+        max_tokens=1200,
     )
-    text = "".join(block.text for block in response.content if getattr(block, "type", "") == "text")
     return _parse_json(text)
 
 
@@ -357,13 +356,43 @@ def _supabase_client():
     return create_client(url, key)
 
 
-def _anthropic_client():
-    api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
+def _openrouter_chat_completion(model: str, system: str, prompt: str, max_tokens: int) -> str:
+    api_key = os.getenv("OPENROUTER_API_KEY", "").strip()
     if not api_key:
-        raise RuntimeError("ANTHROPIC_API_KEY is required for daily analysis.")
-    import anthropic
+        raise RuntimeError("OPENROUTER_API_KEY is required for daily analysis.")
 
-    return anthropic.Anthropic(api_key=api_key)
+    body = {
+        "model": model,
+        "temperature": 0,
+        "max_tokens": max_tokens,
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": prompt},
+        ],
+    }
+    request = urllib.request.Request(
+        "https://openrouter.ai/api/v1/chat/completions",
+        data=json.dumps(body).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}",
+            "HTTP-Referer": os.getenv("OPENROUTER_SITE_URL", "https://github.com/BrandonBlackwell-ui/Sem-foro"),
+            "X-Title": os.getenv("OPENROUTER_APP_NAME", "Blackwell Semaforo"),
+        },
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(request, timeout=90) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"OpenRouter request failed: {exc.code} {detail[:500]}") from exc
+
+    content = (payload.get("choices") or [{}])[0].get("message", {}).get("content", "")
+    if isinstance(content, list):
+        return "".join(str(part.get("text", "")) if isinstance(part, dict) else str(part) for part in content)
+    return str(content)
 
 
 def _parse_json(text: str) -> dict:

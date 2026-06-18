@@ -66,7 +66,7 @@ const EXCLUSION_LABELS = [
 ];
 
 // These are the last audited Semaforo scores from the legacy portfolio view.
-// They are used as the WhatsApp pipeline starting point; Claude daily deltas
+// They are used as the WhatsApp pipeline starting point; daily LLM deltas
 // are added on top in wa_account_scores.current_score.
 const LEGACY_AUDITED_BASE_SCORES = {
   "07": 100,

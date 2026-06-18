@@ -1,5 +1,4 @@
 # Semaforo WhatsApp daily analysis dependencies.
 
 python-dotenv>=1.0.1
-anthropic>=0.40.0
 supabase>=2.3.0

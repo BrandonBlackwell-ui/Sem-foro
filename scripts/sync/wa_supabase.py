@@ -3,7 +3,7 @@ wa_supabase.py — Persistencia de WhatsApp en Supabase.
 
 Reemplaza wa_watermarks.json con las tablas wa_analysis y wa_messages.
 
-Usado por claude_analyzer.py para:
+Usado por el analizador LLM para:
   - Leer watermark (último mensaje procesado) antes del análisis
   - Guardar mensajes del chat txt en wa_messages
   - Actualizar watermark y rolling_summary después del análisis

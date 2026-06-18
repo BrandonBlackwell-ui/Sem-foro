@@ -35,8 +35,10 @@ jobs:
           cat > .env << EOF
           SUPABASE_URL=${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }}
-          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
-          WA_ANALYSIS_MODEL=${{ vars.WA_ANALYSIS_MODEL || 'claude-haiku-4-5' }}
+          OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL=${{ vars.OPENROUTER_MODEL || 'google/gemini-3.1-flash-lite' }}
+          OPENROUTER_SITE_URL=https://github.com/BrandonBlackwell-ui/Sem-foro
+          OPENROUTER_APP_NAME=Blackwell Semaforo
           EOF
 
       - name: Analyze WhatsApp messages
