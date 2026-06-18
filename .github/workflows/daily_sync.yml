@@ -39,6 +39,9 @@ jobs:
           OPENROUTER_MODEL=${{ vars.OPENROUTER_MODEL || 'google/gemini-3.1-flash-lite' }}
           OPENROUTER_SITE_URL=https://github.com/BrandonBlackwell-ui/Sem-foro
           OPENROUTER_APP_NAME=Blackwell Semaforo
+          MONDAY_API_KEY=${{ secrets.MONDAY_API_KEY }}
+          MONDAY_TASKS_BOARD_ID=${{ vars.MONDAY_TASKS_BOARD_ID || '18418418634' }}
+          MONDAY_TASKS_BOARD_NAME=${{ vars.MONDAY_TASKS_BOARD_NAME || 'WhatsApp Tasks' }}
           EOF
 
       - name: Analyze WhatsApp messages
@@ -47,6 +50,14 @@ jobs:
             python scripts/sync/wa_daily_analyzer.py --date "${{ github.event.inputs.date }}"
           else
             python scripts/sync/wa_daily_analyzer.py
+          fi
+
+      - name: Sync WhatsApp tasks to Monday
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python scripts/sync/wa_monday_tasks.py --date "${{ github.event.inputs.date }}"
+          else
+            python scripts/sync/wa_monday_tasks.py
           fi
 
       - name: Clean environment
