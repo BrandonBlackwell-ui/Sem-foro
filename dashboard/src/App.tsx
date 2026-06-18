@@ -99,19 +99,21 @@ function fieldText(value: unknown, fallback = '') {
   return fallback
 }
 
-function fmtDate(value: string | null | undefined) {
-  if (!value) return 'Sin fecha'
+function shortDate(value: string | null | undefined) {
+  if (!value) return 'Sin actividad'
   return new Intl.DateTimeFormat('es-MX', {
-    dateStyle: 'medium',
-    timeStyle: 'short',
+    day: '2-digit',
+    month: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
   }).format(new Date(value))
 }
 
 function badgeClass(value: string) {
   const normalized = value.toLowerCase()
-  if (['positive', 'satisfied', 'low'].includes(normalized)) return 'green'
-  if (['neutral', 'unknown', 'mixed', 'medium'].includes(normalized)) return 'yellow'
-  if (['negative', 'unsatisfied', 'high'].includes(normalized)) return 'red'
+  if (['positive', 'satisfied', 'low', 'estable'].includes(normalized)) return 'green'
+  if (['neutral', 'unknown', 'mixed', 'medium', 'pendiente'].includes(normalized)) return 'yellow'
+  if (['negative', 'unsatisfied', 'high', 'atencion'].includes(normalized)) return 'red'
   return 'gray'
 }
 
@@ -130,11 +132,30 @@ function scoreColor(score: number | null | undefined) {
   return 'red'
 }
 
+function scoreLabel(score: number | null | undefined) {
+  if (score == null) return 'Pendiente'
+  if (score >= 80) return 'Sano'
+  if (score >= 65) return 'Estable'
+  if (score >= 50) return 'Observar'
+  return 'Atencion'
+}
+
 function dayWindowUtc(date: string) {
   const start = new Date(`${date}T00:00:00-06:00`)
   const end = new Date(start)
   end.setDate(end.getDate() + 1)
   return { startIso: start.toISOString(), endIso: end.toISOString() }
+}
+
+function actionText(item: unknown) {
+  return isRecord(item) ? fieldText(item.action, JSON.stringify(item)) : String(item)
+}
+
+function actionMeta(item: unknown) {
+  if (!isRecord(item)) return 'Sin responsable'
+  const owner = fieldText(item.owner, 'Sin responsable')
+  const urgency = fieldText(item.urgency, 'sin urgencia')
+  return `${owner} - ${urgency}`
 }
 
 export default function App() {
@@ -254,7 +275,11 @@ export default function App() {
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
   const selectedAnalysis = selectedGroup?.analysis ?? null
+  const selectedScore = selectedGroup?.score?.current_score ?? selectedAnalysis?.new_score ?? null
   const selectedSatisfaction = selectedAnalysis ? normalizeSatisfaction(selectedAnalysis.satisfaction) : 'unknown'
+  const actionItems = selectedAnalysis ? asArray(selectedAnalysis.action_items) : []
+  const positiveSignals = selectedAnalysis ? asArray(selectedAnalysis.positive_signals) : []
+  const negativeSignals = selectedAnalysis ? asArray(selectedAnalysis.negative_signals) : []
 
   useEffect(() => {
     async function loadDetailMessages() {
@@ -273,7 +298,7 @@ export default function App() {
           setDetailMessages(rows)
         } else {
           const rows = await supabaseGet<WaMessage[]>(
-            `/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at&group_jid=eq.${encodeURIComponent(selectedGroup.jid)}&order=sent_at.desc&limit=50`,
+            `/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at&group_jid=eq.${encodeURIComponent(selectedGroup.jid)}&order=sent_at.desc&limit=30`,
           )
           setDetailMessages(rows)
         }
@@ -308,62 +333,46 @@ export default function App() {
 
   if (!selectedGroup) {
     const analyzedCount = groupSummaries.filter((group) => group.analysis).length
-    const activeCount = groupSummaries.filter((group) => group.active).length
-    const scoredCount = groupSummaries.filter((group) => group.score).length
+    const needsAnalysis = groupSummaries.length - analyzedCount
+    const averageScore = scores.length
+      ? Math.round(scores.reduce((total, score) => total + score.current_score, 0) / scores.length)
+      : null
 
     return (
-      <main className="real-shell">
-        <header className="real-header">
+      <main className="app-shell">
+        <header className="product-header">
           <div>
-            <div className="real-kicker">Semaforo WhatsApp</div>
-            <h1>Cuentas y grupos</h1>
-            <p>Selecciona un grupo para abrir su resumen, tareas, senales y mensajes crudos desde Supabase.</p>
+            <span className="eyebrow">Semaforo WhatsApp</span>
+            <h1>Cuentas</h1>
+            <p>Vista rapida de salud, actividad y analisis diario por grupo.</p>
           </div>
-          <button className="real-button" onClick={() => window.location.reload()}>
+          <button className="primary-button" onClick={() => window.location.reload()}>
             Actualizar
           </button>
         </header>
 
-        <section className="real-grid metrics">
-          <div className="real-card">
-            <span className="real-label">Grupos detectados</span>
-            <strong>{groupSummaries.length}</strong>
-            <small>{activeCount} activos en wa_groups</small>
-          </div>
-          <div className="real-card">
-            <span className="real-label">Con analisis</span>
-            <strong>{analyzedCount}</strong>
-            <small>{analyses.length} analisis guardados</small>
-          </div>
-          <div className="real-card">
-            <span className="real-label">Con puntaje</span>
-            <strong>{scoredCount}</strong>
-            <small>{scores.length} cuentas con score</small>
-          </div>
-          <div className="real-card">
-            <span className="real-label">Mensajes recientes</span>
-            <strong>{rawMessages.length}</strong>
-            <small>Ultimos registros leidos</small>
-          </div>
+        <section className="overview-strip">
+          <MetricCard label="Score promedio" value={averageScore ?? '--'} detail={averageScore ? scoreLabel(averageScore) : 'Sin puntajes'} tone={scoreColor(averageScore)} />
+          <MetricCard label="Analizadas" value={analyzedCount} detail={`${needsAnalysis} pendientes`} />
+          <MetricCard label="Grupos activos" value={groupSummaries.filter((group) => group.active).length} detail={`${groupSummaries.length} totales`} />
         </section>
 
-        <section className="account-grid">
+        <section className="account-list" aria-label="Cuentas de WhatsApp">
           {groupSummaries.map((group) => {
             const scoreValue = group.score?.current_score ?? group.analysis?.new_score ?? null
-            const sentiment = group.analysis?.sentiment ?? 'sin analisis'
+            const sentiment = group.analysis?.sentiment ?? 'pendiente'
+            const status = scoreLabel(scoreValue)
             return (
-              <button className="account-card" key={group.jid} onClick={() => setSelectedJid(group.jid)}>
-                <div className="account-card-top">
-                  <span className={`score-badge ${scoreColor(scoreValue)}`}>{scoreValue ?? '--'}</span>
-                  <span className={`real-pill ${group.analysis ? badgeClass(sentiment) : 'gray'}`}>{sentiment}</span>
-                </div>
-                <strong>{group.name}</strong>
-                <small>{group.account_id}</small>
-                <div className="account-meta">
-                  <span>{group.message_count} mensajes recientes</span>
-                  <span>{group.analysis ? group.analysis.analysis_date : 'pendiente'}</span>
-                </div>
-                <p>{group.analysis?.summary || 'Este grupo aun no tiene analisis diario guardado en Supabase.'}</p>
+              <button className="account-row" key={group.jid} onClick={() => setSelectedJid(group.jid)}>
+                <span className={`score-dot ${scoreColor(scoreValue)}`}>{scoreValue ?? '--'}</span>
+                <span className="account-main">
+                  <strong>{group.name}</strong>
+                  <small>{group.analysis?.summary || 'Sin analisis diario guardado todavia.'}</small>
+                </span>
+                <span className="account-side">
+                  <span className={`status-pill ${badgeClass(sentiment)}`}>{group.analysis ? status : 'Pendiente'}</span>
+                  <small>{shortDate(group.last_message_at)}</small>
+                </span>
               </button>
             )
           })}
@@ -373,126 +382,85 @@ export default function App() {
   }
 
   return (
-    <main className="real-shell">
-      <header className="real-header">
+    <main className="app-shell">
+      <header className="product-header">
         <div>
           <button className="back-button" onClick={() => setSelectedJid(null)}>
-            Volver a cuentas
+            Volver
           </button>
-          <div className="real-kicker">Detalle de grupo</div>
+          <span className="eyebrow">Detalle</span>
           <h1>{selectedGroup.name}</h1>
-          <p>{selectedGroup.jid}</p>
+          <p>{selectedAnalysis ? `Analisis del ${selectedAnalysis.analysis_date}` : 'Grupo pendiente de analisis diario.'}</p>
         </div>
-        <button className="real-button" onClick={() => window.location.reload()}>
+        <button className="primary-button" onClick={() => window.location.reload()}>
           Actualizar
         </button>
       </header>
 
-      {!selectedAnalysis ? (
-        <section className="real-card">
-          <h2>Sin analisis guardado</h2>
-          <p>Este grupo existe en Supabase, pero todavia no tiene una fila en wa_daily_analysis.</p>
-        </section>
-      ) : (
-        <>
-          <section className="real-grid metrics">
-            <div className="real-card">
-              <span className="real-label">Cuenta</span>
-              <strong>{selectedAnalysis.group_name || selectedGroup.name}</strong>
-              <small>{selectedAnalysis.account_id}</small>
-            </div>
-            <div className="real-card">
-              <span className="real-label">Score actual</span>
-              <strong className={`score ${scoreColor(selectedGroup.score?.current_score)}`}>
-                {selectedGroup.score?.current_score ?? selectedAnalysis.new_score ?? '-'}
-              </strong>
-              <small>Delta total: {selectedGroup.score?.total_delta ?? selectedAnalysis.score_delta}</small>
-            </div>
-            <div className="real-card">
-              <span className="real-label">Delta del dia</span>
-              <strong className={selectedAnalysis.score_delta >= 0 ? 'score green' : 'score red'}>
-                {selectedAnalysis.score_delta > 0 ? '+' : ''}
-                {selectedAnalysis.score_delta}
-              </strong>
-              <small>{selectedAnalysis.analysis_date}</small>
-            </div>
-            <div className="real-card">
-              <span className="real-label">Mensajes analizados</span>
-              <strong>{selectedAnalysis.message_count}</strong>
-              <small>{fmtDate(selectedAnalysis.analyzed_at)}</small>
-            </div>
-          </section>
-
-          <section className="real-grid split">
-            <article className="real-card">
-              <div className="section-head">
-                <h2>Analisis Claude</h2>
-                <span className="real-pill">{selectedAnalysis.model || 'Sin modelo'}</span>
-              </div>
-              <div className="pill-row">
-                <span className={`real-pill ${badgeClass(selectedAnalysis.sentiment)}`}>{selectedAnalysis.sentiment}</span>
-                <span className={`real-pill ${badgeClass(selectedSatisfaction)}`}>{selectedSatisfaction}</span>
-                <span className={`real-pill ${badgeClass(selectedAnalysis.risk_level)}`}>riesgo {selectedAnalysis.risk_level}</span>
-              </div>
-              <p className="summary">{selectedAnalysis.summary || 'Sin resumen'}</p>
-            </article>
-
-            <article className="real-card">
-              <h2>Tareas detectadas</h2>
-              <div className="item-list">
-                {asArray(selectedAnalysis.action_items).length ? (
-                  asArray(selectedAnalysis.action_items).map((item, index) => (
-                    <div className="list-item" key={index}>
-                      <strong>{isRecord(item) ? fieldText(item.action, JSON.stringify(item)) : String(item)}</strong>
-                      <small>
-                        {isRecord(item) ? fieldText(item.owner, 'Sin responsable') : 'Sin responsable'} -{' '}
-                        {isRecord(item) ? fieldText(item.urgency, 'sin urgencia') : 'sin urgencia'}
-                      </small>
-                    </div>
-                  ))
-                ) : (
-                  <p>No hay tareas detectadas.</p>
-                )}
-              </div>
-            </article>
-          </section>
-
-          <section className="real-grid split">
-            <SignalCard title="Senales positivas" items={asArray(selectedAnalysis.positive_signals)} tone="green" />
-            <SignalCard title="Senales negativas" items={asArray(selectedAnalysis.negative_signals)} tone="red" />
-          </section>
-
-          <section className="real-card">
-            <h2>Evidencia</h2>
-            <div className="item-list evidence">
-              {asArray(selectedAnalysis.evidence).length ? (
-                asArray(selectedAnalysis.evidence).map((item, index) => (
-                  <div className="list-item" key={index}>
-                    <strong>{isRecord(item) ? fieldText(item.quote, JSON.stringify(item)) : String(item)}</strong>
-                    <small>{isRecord(item) ? fieldText(item.why_it_matters) : ''}</small>
-                  </div>
-                ))
-              ) : (
-                <p>Sin evidencia estructurada.</p>
-              )}
-            </div>
-          </section>
-        </>
-      )}
-
-      <section className="real-card">
-        <div className="section-head">
-          <h2>Mensajes crudos del grupo</h2>
-          <span className="real-pill">{detailLoading ? 'cargando' : `${detailMessages.length} filas`}</span>
+      <section className="detail-hero">
+        <div className={`score-panel ${scoreColor(selectedScore)}`}>
+          <span>{selectedScore ?? '--'}</span>
+          <small>{scoreLabel(selectedScore)}</small>
         </div>
-        <div className="message-table">
-          {detailMessages.map((message) => (
-            <div className="message-row" key={message.id}>
-              <time>{fmtDate(message.sent_at)}</time>
-              <strong>{message.push_name || message.author || 'Sin autor'}</strong>
-              <span>{message.msg_type}</span>
+        <div className="detail-summary">
+          <div className="pill-row">
+            <span className={`status-pill ${selectedAnalysis ? badgeClass(selectedAnalysis.sentiment) : 'yellow'}`}>
+              {selectedAnalysis?.sentiment ?? 'pendiente'}
+            </span>
+            <span className={`status-pill ${badgeClass(selectedSatisfaction)}`}>{selectedSatisfaction}</span>
+            <span className={`status-pill ${selectedAnalysis ? badgeClass(selectedAnalysis.risk_level) : 'yellow'}`}>
+              riesgo {selectedAnalysis?.risk_level ?? 'pendiente'}
+            </span>
+          </div>
+          <p>{selectedAnalysis?.summary || 'Este grupo existe en Supabase, pero todavia no tiene resumen guardado.'}</p>
+        </div>
+      </section>
+
+      <section className="detail-grid">
+        <article className="focus-card">
+          <div className="section-head">
+            <h2>Tareas</h2>
+            <span>{actionItems.length}</span>
+          </div>
+          <div className="task-list">
+            {actionItems.length ? (
+              actionItems.map((item, index) => (
+                <div className="task-item" key={index}>
+                  <strong>{actionText(item)}</strong>
+                  <small>{actionMeta(item)}</small>
+                </div>
+              ))
+            ) : (
+              <p>No hay tareas detectadas.</p>
+            )}
+          </div>
+        </article>
+
+        <article className="focus-card">
+          <div className="section-head">
+            <h2>Senales</h2>
+            <span>{positiveSignals.length + negativeSignals.length}</span>
+          </div>
+          <SignalList title="A favor" items={positiveSignals} tone="green" />
+          <SignalList title="A revisar" items={negativeSignals} tone="red" />
+        </article>
+      </section>
+
+      <section className="focus-card">
+        <div className="section-head">
+          <h2>Mensajes</h2>
+          <span>{detailLoading ? 'cargando' : `${detailMessages.length}`}</span>
+        </div>
+        <div className="message-feed">
+          {detailMessages.slice(0, 12).map((message) => (
+            <article className="chat-message" key={message.id}>
+              <header>
+                <strong>{message.push_name || message.author || 'Sin autor'}</strong>
+                <time>{shortDate(message.sent_at)}</time>
+              </header>
               <p>{message.body || '(sin texto)'}</p>
-            </div>
+              <span>{message.msg_type}</span>
+            </article>
           ))}
         </div>
       </section>
@@ -500,21 +468,29 @@ export default function App() {
   )
 }
 
-function SignalCard({ title, items, tone }: { title: string; items: unknown[]; tone: 'green' | 'red' }) {
+function MetricCard({ label, value, detail, tone = 'gray' }: { label: string; value: string | number; detail: string; tone?: string }) {
   return (
-    <article className="real-card">
-      <h2>{title}</h2>
-      <div className="item-list">
-        {items.length ? (
-          items.map((item, index) => (
-            <div className={`list-item ${tone}`} key={index}>
-              <strong>{String(item)}</strong>
-            </div>
-          ))
-        ) : (
-          <p>Sin senales.</p>
-        )}
-      </div>
+    <article className="metric-card">
+      <span>{label}</span>
+      <strong className={tone}>{value}</strong>
+      <small>{detail}</small>
     </article>
+  )
+}
+
+function SignalList({ title, items, tone }: { title: string; items: unknown[]; tone: 'green' | 'red' }) {
+  return (
+    <div className="signal-list">
+      <h3>{title}</h3>
+      {items.length ? (
+        items.map((item, index) => (
+          <p className={tone} key={index}>
+            {String(item)}
+          </p>
+        ))
+      ) : (
+        <p>Sin registros.</p>
+      )}
+    </div>
   )
 }
