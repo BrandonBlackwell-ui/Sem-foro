@@ -277,6 +277,12 @@ export default function App() {
   const selectedAnalysis = selectedGroup?.analysis ?? null
   const selectedScore = selectedGroup?.score?.current_score ?? selectedAnalysis?.new_score ?? null
   const selectedSatisfaction = selectedAnalysis ? normalizeSatisfaction(selectedAnalysis.satisfaction) : 'unknown'
+  const selectedHistory = useMemo(() => {
+    if (!selectedGroup) return []
+    return analyses
+      .filter((analysis) => analysis.group_jid === selectedGroup.jid)
+      .sort((a, b) => a.analysis_date.localeCompare(b.analysis_date))
+  }, [analyses, selectedGroup])
   const actionItems = selectedAnalysis ? asArray(selectedAnalysis.action_items) : []
   const positiveSignals = selectedAnalysis ? asArray(selectedAnalysis.positive_signals) : []
   const negativeSignals = selectedAnalysis ? asArray(selectedAnalysis.negative_signals) : []
@@ -413,6 +419,34 @@ export default function App() {
             </span>
           </div>
           <p>{selectedAnalysis?.summary || 'Este grupo existe en Supabase, pero todavia no tiene resumen guardado.'}</p>
+        </div>
+      </section>
+
+      <section className="focus-card">
+        <div className="section-head">
+          <h2>Progreso historico</h2>
+          <span>{selectedHistory.length} dias</span>
+        </div>
+        <div className="timeline">
+          {selectedHistory.length ? (
+            selectedHistory.map((item) => (
+              <article className="timeline-item" key={item.id}>
+                <div className={`timeline-score ${scoreColor(item.new_score)}`}>{item.new_score ?? '--'}</div>
+                <div>
+                  <header>
+                    <strong>{item.analysis_date}</strong>
+                    <span className={item.score_delta >= 0 ? 'green' : 'red'}>
+                      {item.score_delta > 0 ? '+' : ''}
+                      {item.score_delta}
+                    </span>
+                  </header>
+                  <p>{item.summary || 'Sin resumen guardado.'}</p>
+                </div>
+              </article>
+            ))
+          ) : (
+            <p>No hay historico guardado para esta cuenta todavia.</p>
+          )}
         </div>
       </section>
 
