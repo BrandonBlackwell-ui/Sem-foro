@@ -1,4 +1,4 @@
-import { useMemo, useState, useRef } from 'react'
+import { useMemo, useState } from 'react'
 import { useApp } from '../../context/AppContext'
 import { TASK_STATUS_LABEL, WORK_TYPE_LABEL } from '../../types'
 import type { ClientTask, TaskStatus, WorkType } from '../../types'
