@@ -317,6 +317,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     })
     sbGetAssignments().then(data => setAssignmentsRaw(data))
     sbGetTasks().then(data => { setTasks(data); setTasksLoading(false) })
+
+    // Refresco silencioso cada 30s para capturar cambios de Monday
+    const poll = setInterval(() => {
+      sbGetTasks().then(data => setTasks(data))
+    }, 30_000)
+    return () => clearInterval(poll)
   }, [])
 
   // ── Computed accounts ──
