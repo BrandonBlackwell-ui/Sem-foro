@@ -147,6 +147,7 @@ def _sync_analysis_row(
         updated = dict(item)
         updated["monday_item_id"] = created["id"]
         updated["monday_item_name"] = created.get("name") or item_name
+        updated["monday_created_at"] = created.get("created_at")
         updated["monday_sync_key"] = sync_key
         updated["monday_synced_at"] = datetime.now(timezone.utc).isoformat()
         updated_items.append(updated)
@@ -173,6 +174,7 @@ def _create_monday_item(
       create_item(board_id: $boardId, group_id: $groupId, item_name: $itemName, column_values: $columnValues) {
         id
         name
+        created_at
       }
     }
     """
@@ -264,9 +266,13 @@ def _upsert_wa_task(row: dict[str, Any], item: dict[str, Any], sync_key: str) ->
         "due_date": due_date.isoformat(),
         "work_type": work_type,
         "client_label": client_label,
+        "evidence_speaker": str(item.get("evidence_speaker") or "").strip() or None,
+        "evidence_quote": str(item.get("evidence_quote") or "").strip() or None,
+        "evidence_reason": str(item.get("evidence_reason") or "").strip() or None,
         "monday_item_id": monday_item_id,
         "monday_item_name": item.get("monday_item_name"),
         "monday_sync_key": sync_key,
+        "monday_created_at": item.get("monday_created_at") or item.get("monday_synced_at"),
         "monday_status": "Bloqueada" if str(item.get("owner_type") or "").strip().lower() == "client" else "Por hacer",
         "monday_due_date": due_date.isoformat(),
         "monday_work_type": work_type,
@@ -285,10 +291,30 @@ def _upsert_wa_task(row: dict[str, Any], item: dict[str, Any], sync_key: str) ->
         )
     except RuntimeError as exc:
         message = str(exc)
+        if _looks_like_missing_optional_task_column(message):
+            logger.warning("wa_tasks optional evidence/Monday-created columns are not available yet. Retrying legacy mirror payload.")
+            for key in ("evidence_speaker", "evidence_quote", "evidence_reason", "monday_created_at"):
+                payload.pop(key, None)
+            _supabase_request(
+                "POST",
+                "wa_tasks",
+                params={"on_conflict": "monday_sync_key"},
+                body=payload,
+                prefer="resolution=merge-duplicates,return=minimal",
+            )
+            return
         if "wa_tasks" in message or "PGRST" in message or "does not exist" in message:
             logger.warning("wa_tasks mirror table is not available yet. Run migration 004 to enable Monday sync.")
             return
         raise
+
+
+def _looks_like_missing_optional_task_column(message: str) -> bool:
+    lowered = message.lower()
+    return any(
+        column in lowered
+        for column in ("evidence_speaker", "evidence_quote", "evidence_reason", "monday_created_at")
+    )
 
 
 def _supabase_request(
@@ -426,11 +452,17 @@ def _evidence_text(row: dict[str, Any], item: dict[str, Any]) -> str:
     owner = str(item.get("owner") or "Por definir").strip()
     owner_type = str(item.get("owner_type") or "unknown").strip()
     urgency = _normalize_urgency(item.get("urgency"))
+    evidence_speaker = str(item.get("evidence_speaker") or "").strip()
+    evidence_quote = str(item.get("evidence_quote") or "").strip()
+    evidence_reason = str(item.get("evidence_reason") or "").strip()
     lines = [
         f"Tarea: {action}",
         "",
         f"Fuente: WhatsApp / analisis diario {row.get('analysis_date')}",
         f"Grupo: {row.get('group_name') or row.get('group_jid')}",
+        f"Quien lo dijo: {evidence_speaker or 'No inferido'}",
+        f"Cita origen: {evidence_quote or 'Sin cita especifica'}",
+        f"Motivo: {evidence_reason or 'Sin motivo especifico'}",
         f"Responsable inferido: {owner} ({owner_type})",
         f"Urgencia: {urgency}",
         f"Fecha de entrega: {_due_date_for_item(item, urgency).isoformat()}",

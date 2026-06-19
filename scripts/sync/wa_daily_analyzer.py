@@ -230,7 +230,7 @@ def _fetch_messages(sb, start_at: datetime, end_at: datetime) -> list[dict[str, 
     while True:
         res = (
             sb.table("wa_messages")
-            .select("id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at")
+            .select("id,account_id,group_name,group_jid,push_name,author,speaker_label,speaker_name,speaker_team,body,msg_type,sent_at")
             .gte("sent_at", start_at.isoformat())
             .lt("sent_at", end_at.isoformat())
             .neq("msg_type", "system")
@@ -324,6 +324,7 @@ Devuelve este JSON:
 }}
 
 Reglas obligatorias para action_items:
+- Ademas de action, owner, owner_type, urgency, due_date y work_type, incluye evidence_speaker, evidence_quote y evidence_reason en cada tarea.
 - No devuelvas owner vacio.
 - Si el transcript identifica al autor como "(Cliente)", tratalo como cliente.
 - Si el transcript identifica al autor como "(Blackwell)", tratalo como equipo Blackwell/BWS.
@@ -334,6 +335,9 @@ Reglas obligatorias para action_items:
 - Si no se puede inferir responsable con evidencia del transcript, usa owner "Por definir" y owner_type "unknown".
 - Para tareas tipo confirmar, validar, monitorear o dar seguimiento: asigna owner a quien debe hacer la siguiente accion, no necesariamente a quien la pidio.
 - Usa nombres reales visibles en el transcript, por ejemplo el push_name del mensaje. No inventes cargos ni nombres.
+- evidence_speaker debe ser quien pidio, confirmo o disparo la tarea segun el transcript.
+- evidence_quote debe ser una cita corta literal o casi literal del mensaje nuevo que origina la tarea.
+- Si la tarea sale de una respuesta de Blackwell a una solicitud del cliente, evidence_speaker puede ser el cliente que lo pidio y owner el Blackwell responsable de ejecutarla.
 - Siempre devuelve due_date por accion:
   - Si urgency es high/urgente y no hay fecha explicita, due_date debe ser {target_date.isoformat()}.
   - Si urgency es medium o low y no hay fecha explicita, due_date debe ser el dia siguiente a {target_date.isoformat()}.
@@ -376,6 +380,10 @@ def _format_transcript(messages: list[dict[str, Any]], participants: dict[str, d
 
 
 def _message_speaker(message: dict[str, Any], participants: dict[str, dict[str, Any]]) -> str:
+    speaker_label = str(message.get("speaker_label") or "").strip()
+    if speaker_label:
+        return speaker_label
+
     author = str(message.get("author") or "").strip()
     participant = _lookup_participant(author, participants)
     if participant:
@@ -736,6 +744,9 @@ def _normalize_action_items(value: Any, group_name: str | None = None) -> list[d
                 "urgency": _normalize_choice(item.get("urgency"), {"low", "medium", "high"}, "medium"),
                 "due_date": _normalize_due_date(item.get("due_date")),
                 "work_type": _normalize_work_type(item.get("work_type")),
+                "evidence_speaker": str(item.get("evidence_speaker") or "").strip() or None,
+                "evidence_quote": str(item.get("evidence_quote") or "").strip()[:800] or None,
+                "evidence_reason": str(item.get("evidence_reason") or "").strip()[:800] or None,
             }
         )
 

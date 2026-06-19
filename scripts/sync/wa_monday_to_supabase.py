@@ -89,6 +89,7 @@ def _fetch_monday_items(api_key: str, ids: list[str]) -> list[dict[str, Any]]:
       items(ids: $ids) {
         id
         name
+        created_at
         updated_at
         column_values {
           id
@@ -112,6 +113,7 @@ def _supabase_payload_from_monday(item: dict[str, Any], columns: dict[str, str])
 
     payload: dict[str, Any] = {
         "monday_item_name": item.get("name"),
+        "monday_created_at": item.get("created_at"),
         "monday_status": status,
         "monday_due_date": due_date,
         "monday_responsible_text": responsible,
@@ -147,13 +149,28 @@ def _column_date(values: dict[str, dict[str, Any]], column_id: str) -> str | Non
 
 
 def _patch_supabase_task(monday_item_id: str, payload: dict[str, Any]) -> None:
-    _supabase_request(
-        "PATCH",
-        "wa_tasks",
-        params={"monday_item_id": f"eq.{monday_item_id}"},
-        body=payload,
-        prefer="return=minimal",
-    )
+    try:
+        _supabase_request(
+            "PATCH",
+            "wa_tasks",
+            params={"monday_item_id": f"eq.{monday_item_id}"},
+            body=payload,
+            prefer="return=minimal",
+        )
+    except RuntimeError as exc:
+        message = str(exc).lower()
+        if "monday_created_at" in message:
+            logger.warning("wa_tasks.monday_created_at is not available yet. Retrying without it.")
+            payload.pop("monday_created_at", None)
+            _supabase_request(
+                "PATCH",
+                "wa_tasks",
+                params={"monday_item_id": f"eq.{monday_item_id}"},
+                body=payload,
+                prefer="return=minimal",
+            )
+            return
+        raise
 
 
 def _monday_request(api_key: str, query: str, variables: dict[str, Any]) -> dict[str, Any]:

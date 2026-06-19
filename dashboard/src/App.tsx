@@ -39,6 +39,8 @@ type WaMessage = {
   group_jid: string
   push_name: string | null
   author: string | null
+  speaker_label: string | null
+  speaker_team: string | null
   body: string | null
   msg_type: string
   sent_at: string
@@ -65,13 +67,23 @@ type WaTask = {
   due_date: string | null
   work_type: string | null
   client_label: string | null
+  evidence_speaker: string | null
+  evidence_quote: string | null
+  evidence_reason: string | null
   monday_item_id: string | null
   monday_item_name: string | null
+  monday_created_at: string | null
   monday_status: string | null
   monday_due_date: string | null
   monday_responsible_text: string | null
   monday_work_type: string | null
   monday_client_label: string | null
+  monday_updated_at: string | null
+  last_synced_to_monday_at: string | null
+  last_synced_from_monday_at: string | null
+  raw_action: unknown
+  raw_monday: unknown
+  created_at: string
   updated_at: string
 }
 
@@ -133,6 +145,15 @@ function shortDate(value: string | null | undefined) {
   }).format(new Date(value))
 }
 
+function shortDateOnly(value: string | null | undefined) {
+  if (!value) return 'Sin fecha'
+  return new Intl.DateTimeFormat('es-MX', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  }).format(new Date(`${value}T00:00:00`))
+}
+
 function badgeClass(value: string) {
   const normalized = value.toLowerCase()
   if (['positive', 'satisfied', 'low', 'estable', 'blackwell'].includes(normalized)) return 'green'
@@ -176,13 +197,25 @@ function actionText(item: unknown) {
   return isRecord(item) ? fieldText(item.action, JSON.stringify(item)) : String(item)
 }
 
-function actionMeta(item: unknown) {
-  if (!isRecord(item)) return 'Sin responsable'
-  const owner = fieldText(item.owner, 'Sin responsable')
-  const status = fieldText(item.monday_status, '')
-  const urgency = fieldText(item.urgency, 'sin urgencia')
-  const dueDate = fieldText(item.monday_due_date, fieldText(item.due_date, ''))
-  return [owner, status || urgency, dueDate].filter(Boolean).join(' - ')
+function actionDetail(item: unknown) {
+  if (!isRecord(item)) return {}
+  const rawAction = isRecord(item.raw_action) ? item.raw_action : {}
+  return {
+    owner: fieldText(item.monday_responsible_text, fieldText(item.owner, 'Sin responsable')),
+    inferredOwner: fieldText(item.owner, ''),
+    status: fieldText(item.monday_status, 'Sin estado'),
+    dueDate: fieldText(item.monday_due_date, fieldText(item.due_date, '')),
+    urgency: fieldText(item.urgency, 'sin urgencia'),
+    workType: fieldText(item.monday_work_type, fieldText(item.work_type, 'Sin tipo')),
+    client: fieldText(item.monday_client_label, fieldText(item.client_label, 'Sin cliente')),
+    evidenceSpeaker: fieldText(item.evidence_speaker, fieldText(rawAction.evidence_speaker, '')),
+    evidenceQuote: fieldText(item.evidence_quote, fieldText(rawAction.evidence_quote, '')),
+    evidenceReason: fieldText(item.evidence_reason, fieldText(rawAction.evidence_reason, '')),
+    mondayItemId: fieldText(item.monday_item_id, ''),
+    createdAt: fieldText(item.monday_created_at, fieldText(item.created_at, '')),
+    mondayUpdatedAt: fieldText(item.monday_updated_at, ''),
+    syncedAt: fieldText(item.last_synced_from_monday_at, fieldText(item.updated_at, '')),
+  }
 }
 
 function actionOwnerType(item: unknown) {
@@ -217,7 +250,7 @@ export default function App() {
           supabaseGet<AccountScore[]>('/rest/v1/wa_account_scores?select=*&order=current_score.desc'),
           supabaseGet<WaGroup[]>('/rest/v1/wa_groups?select=jid,name,account_id,active&order=name.asc'),
           supabaseGet<WaMessage[]>(
-            '/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at&order=sent_at.desc&limit=500',
+            '/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,speaker_label,speaker_team,body,msg_type,sent_at&order=sent_at.desc&limit=500',
           ),
         ])
         const taskRows = await supabaseGet<WaTask[]>(
@@ -371,12 +404,12 @@ export default function App() {
         if (activeDayAnalysis) {
           const { startIso, endIso } = dayWindowUtc(activeDayAnalysis.analysis_date)
           const rows = await supabaseGet<WaMessage[]>(
-            `/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at&group_jid=eq.${encodeURIComponent(activeDayAnalysis.group_jid)}&sent_at=gte.${encodeURIComponent(startIso)}&sent_at=lt.${encodeURIComponent(endIso)}&order=sent_at.asc`,
+            `/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,speaker_label,speaker_team,body,msg_type,sent_at&group_jid=eq.${encodeURIComponent(activeDayAnalysis.group_jid)}&sent_at=gte.${encodeURIComponent(startIso)}&sent_at=lt.${encodeURIComponent(endIso)}&order=sent_at.asc`,
           )
           setDetailMessages(rows)
         } else {
           const rows = await supabaseGet<WaMessage[]>(
-            `/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at&group_jid=eq.${encodeURIComponent(selectedGroup.jid)}&order=sent_at.desc&limit=30`,
+            `/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,speaker_label,speaker_team,body,msg_type,sent_at&group_jid=eq.${encodeURIComponent(selectedGroup.jid)}&order=sent_at.desc&limit=30`,
           )
           setDetailMessages(rows)
         }
@@ -539,13 +572,7 @@ export default function App() {
               <div className="task-list">
                 {allActions.length ? (
                   allActions.slice(-6).map((item, index) => (
-                    <div className="task-item" key={index}>
-                      <div className="task-title">
-                        <strong>{actionText(item)}</strong>
-                        <span className={`owner-type ${badgeClass(actionOwnerType(item))}`}>{actionOwnerType(item)}</span>
-                      </div>
-                      <small>{actionMeta(item)}</small>
-                    </div>
+                    <TaskCard item={item} key={index} />
                   ))
                 ) : (
                   <p>No hay tareas acumuladas.</p>
@@ -612,13 +639,7 @@ export default function App() {
                   <div className="task-list">
                     {actionItems.length ? (
                       actionItems.map((item, index) => (
-                        <div className="task-item" key={index}>
-                          <div className="task-title">
-                            <strong>{actionText(item)}</strong>
-                            <span className={`owner-type ${badgeClass(actionOwnerType(item))}`}>{actionOwnerType(item)}</span>
-                          </div>
-                          <small>{actionMeta(item)}</small>
-                        </div>
+                        <TaskCard item={item} key={index} compact />
                       ))
                     ) : (
                       <p>No hay tareas detectadas.</p>
@@ -639,7 +660,7 @@ export default function App() {
                   {detailMessages.slice(0, 12).map((message) => (
                     <article className="chat-message" key={message.id}>
                       <header>
-                        <strong>{message.push_name || message.author || 'Sin autor'}</strong>
+                        <strong>{message.speaker_label || message.push_name || message.author || 'Sin autor'}</strong>
                         <time>{shortDate(message.sent_at)}</time>
                       </header>
                       <p>{message.body || '(sin texto)'}</p>
@@ -669,7 +690,7 @@ export default function App() {
             {detailMessages.slice(0, 12).map((message) => (
               <article className="chat-message" key={message.id}>
                 <header>
-                  <strong>{message.push_name || message.author || 'Sin autor'}</strong>
+              <strong>{message.speaker_label || message.push_name || message.author || 'Sin autor'}</strong>
                   <time>{shortDate(message.sent_at)}</time>
                 </header>
                 <p>{message.body || '(sin texto)'}</p>
@@ -748,6 +769,62 @@ function MetricCard({ label, value, detail, tone = 'gray' }: { label: string; va
       <span>{label}</span>
       <strong className={tone}>{value}</strong>
       <small>{detail}</small>
+    </article>
+  )
+}
+
+function TaskCard({ item, compact = false }: { item: unknown; compact?: boolean }) {
+  const detail = actionDetail(item)
+  const ownerType = actionOwnerType(item)
+  return (
+    <article className={`task-item task-rich ${compact ? 'compact' : ''}`}>
+      <div className="task-title">
+        <strong>{actionText(item)}</strong>
+        <span className={`owner-type ${badgeClass(ownerType)}`}>{ownerType}</span>
+      </div>
+
+      <dl className="task-fields">
+        <div>
+          <dt>Estado Monday</dt>
+          <dd>{detail.status}</dd>
+        </div>
+        <div>
+          <dt>Fecha entrega</dt>
+          <dd>{shortDateOnly(detail.dueDate)}</dd>
+        </div>
+        <div>
+          <dt>Responsable</dt>
+          <dd>{detail.owner}</dd>
+        </div>
+        <div>
+          <dt>Tipo</dt>
+          <dd>{detail.workType}</dd>
+        </div>
+        <div>
+          <dt>Cliente</dt>
+          <dd>{detail.client}</dd>
+        </div>
+        <div>
+          <dt>Urgencia</dt>
+          <dd>{detail.urgency}</dd>
+        </div>
+      </dl>
+
+      {(detail.evidenceSpeaker || detail.evidenceQuote || detail.evidenceReason) && (
+        <div className="task-evidence">
+          <span>Origen</span>
+          <p>
+            {detail.evidenceSpeaker ? <strong>{detail.evidenceSpeaker}: </strong> : null}
+            {detail.evidenceQuote || detail.evidenceReason}
+          </p>
+        </div>
+      )}
+
+      <footer className="task-sync">
+        <span>{detail.mondayItemId ? `Monday #${detail.mondayItemId}` : 'Sin item Monday'}</span>
+        <span>{detail.createdAt ? `Creada ${shortDate(detail.createdAt)}` : 'Sin creacion'}</span>
+        <span>{detail.syncedAt ? `Sync ${shortDate(detail.syncedAt)}` : 'Sin sync'}</span>
+      </footer>
     </article>
   )
 }
