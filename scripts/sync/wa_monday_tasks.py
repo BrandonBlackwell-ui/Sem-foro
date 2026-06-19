@@ -114,6 +114,7 @@ def _sync_analysis_row(
             continue
 
         if item.get("monday_item_id"):
+            _upsert_wa_task(row, item, sync_key=item.get("monday_sync_key") or _sync_key(row, index, action))
             updated_items.append(item)
             totals["skipped"] += 1
             continue
@@ -149,6 +150,7 @@ def _sync_analysis_row(
         updated["monday_sync_key"] = sync_key
         updated["monday_synced_at"] = datetime.now(timezone.utc).isoformat()
         updated_items.append(updated)
+        _upsert_wa_task(row, updated, sync_key=sync_key)
         changed = True
         totals["created"] += 1
         logger.info("Created Monday item %s for %s.", created["id"], item_name)
@@ -238,6 +240,55 @@ def _patch_analysis_action_items(row_id: str, action_items: list[dict[str, Any]]
         body={"action_items": action_items},
         prefer="return=minimal",
     )
+
+
+def _upsert_wa_task(row: dict[str, Any], item: dict[str, Any], sync_key: str) -> None:
+    monday_item_id = str(item.get("monday_item_id") or "").strip()
+    if not monday_item_id:
+        return
+
+    urgency = _normalize_urgency(item.get("urgency"))
+    due_date = _due_date_for_item(item, urgency)
+    work_type = _normalize_work_type(item.get("work_type"))
+    client_label = _client_label_for_row(row)
+    payload = {
+        "analysis_id": row.get("id"),
+        "account_id": row.get("account_id"),
+        "group_jid": row.get("group_jid"),
+        "group_name": row.get("group_name"),
+        "analysis_date": row.get("analysis_date"),
+        "action": str(item.get("action") or "").strip(),
+        "owner": str(item.get("owner") or "").strip() or None,
+        "owner_type": str(item.get("owner_type") or "").strip() or None,
+        "urgency": urgency,
+        "due_date": due_date.isoformat(),
+        "work_type": work_type,
+        "client_label": client_label,
+        "monday_item_id": monday_item_id,
+        "monday_item_name": item.get("monday_item_name"),
+        "monday_sync_key": sync_key,
+        "monday_status": "Bloqueada" if str(item.get("owner_type") or "").strip().lower() == "client" else "Por hacer",
+        "monday_due_date": due_date.isoformat(),
+        "monday_work_type": work_type,
+        "monday_client_label": client_label,
+        "last_synced_to_monday_at": datetime.now(timezone.utc).isoformat(),
+        "raw_action": item,
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+    }
+    try:
+        _supabase_request(
+            "POST",
+            "wa_tasks",
+            params={"on_conflict": "monday_sync_key"},
+            body=payload,
+            prefer="resolution=merge-duplicates,return=minimal",
+        )
+    except RuntimeError as exc:
+        message = str(exc)
+        if "wa_tasks" in message or "PGRST" in message or "does not exist" in message:
+            logger.warning("wa_tasks mirror table is not available yet. Run migration 004 to enable Monday sync.")
+            return
+        raise
 
 
 def _supabase_request(

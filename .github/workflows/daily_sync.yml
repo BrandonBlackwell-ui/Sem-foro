@@ -51,6 +51,7 @@ jobs:
           MONDAY_TASKS_DUE_DATE_COLUMN_ID=${{ vars.MONDAY_TASKS_DUE_DATE_COLUMN_ID || 'date_mm45ncq9' }}
           MONDAY_TASKS_RESPONSIBLE_COLUMN_ID=${{ vars.MONDAY_TASKS_RESPONSIBLE_COLUMN_ID || 'multiple_person_mm453tee' }}
           MONDAY_TASKS_WORK_TYPE_COLUMN_ID=${{ vars.MONDAY_TASKS_WORK_TYPE_COLUMN_ID || 'color_mm4513mj' }}
+          MONDAY_TASKS_CLIENT_COLUMN_ID=${{ vars.MONDAY_TASKS_CLIENT_COLUMN_ID }}
           EOF
 
       - name: Analyze WhatsApp messages
@@ -68,6 +69,9 @@ jobs:
           else
             python scripts/sync/wa_monday_tasks.py --date "$(TZ=America/Mexico_City date +%F)"
           fi
+
+      - name: Mirror Monday task state to Supabase
+        run: python scripts/sync/wa_monday_to_supabase.py
 
       - name: Clean environment
         if: always()

@@ -51,6 +51,30 @@ type WaGroup = {
   active: boolean
 }
 
+type WaTask = {
+  id: number
+  analysis_id: number | null
+  account_id: string
+  group_jid: string | null
+  group_name: string | null
+  analysis_date: string
+  action: string
+  owner: string | null
+  owner_type: string | null
+  urgency: string | null
+  due_date: string | null
+  work_type: string | null
+  client_label: string | null
+  monday_item_id: string | null
+  monday_item_name: string | null
+  monday_status: string | null
+  monday_due_date: string | null
+  monday_responsible_text: string | null
+  monday_work_type: string | null
+  monday_client_label: string | null
+  updated_at: string
+}
+
 type GroupSummary = {
   jid: string
   name: string
@@ -155,8 +179,10 @@ function actionText(item: unknown) {
 function actionMeta(item: unknown) {
   if (!isRecord(item)) return 'Sin responsable'
   const owner = fieldText(item.owner, 'Sin responsable')
+  const status = fieldText(item.monday_status, '')
   const urgency = fieldText(item.urgency, 'sin urgencia')
-  return `${owner} - ${urgency}`
+  const dueDate = fieldText(item.monday_due_date, fieldText(item.due_date, ''))
+  return [owner, status || urgency, dueDate].filter(Boolean).join(' - ')
 }
 
 function actionOwnerType(item: unknown) {
@@ -170,6 +196,7 @@ export default function App() {
   const [rawMessages, setRawMessages] = useState<WaMessage[]>([])
   const [detailMessages, setDetailMessages] = useState<WaMessage[]>([])
   const [groups, setGroups] = useState<WaGroup[]>([])
+  const [tasks, setTasks] = useState<WaTask[]>([])
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate, setSelectedOverviewDate] = useState<string>('latest')
   const [clientTab, setClientTab] = useState<'resumen' | 'historico' | 'mensajes'>('resumen')
@@ -193,11 +220,15 @@ export default function App() {
             '/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,body,msg_type,sent_at&order=sent_at.desc&limit=500',
           ),
         ])
+        const taskRows = await supabaseGet<WaTask[]>(
+          '/rest/v1/wa_tasks?select=*&order=updated_at.desc&limit=500',
+        ).catch(() => [])
 
         setAnalyses(analysisRows)
         setScores(scoreRows)
         setGroups(groupRows)
         setRawMessages(rawRows)
+        setTasks(taskRows)
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Error desconocido')
       } finally {
@@ -311,10 +342,14 @@ export default function App() {
   const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
   const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
-  const allActions = selectedHistory.flatMap((analysis) => asArray(analysis.action_items))
+  const selectedTasks = selectedGroup ? tasks.filter((task) => task.group_jid === selectedGroup.jid) : []
+  const allActions = selectedTasks.length ? selectedTasks : selectedHistory.flatMap((analysis) => asArray(analysis.action_items))
   const allPositiveSignals = selectedHistory.flatMap((analysis) => asArray(analysis.positive_signals))
   const allNegativeSignals = selectedHistory.flatMap((analysis) => asArray(analysis.negative_signals))
-  const actionItems = activeDayAnalysis ? asArray(activeDayAnalysis.action_items) : []
+  const activeDayTasks = activeDayAnalysis
+    ? selectedTasks.filter((task) => task.analysis_id === activeDayAnalysis.id || task.analysis_date === activeDayAnalysis.analysis_date)
+    : []
+  const actionItems = activeDayTasks.length ? activeDayTasks : activeDayAnalysis ? asArray(activeDayAnalysis.action_items) : []
   const positiveSignals = activeDayAnalysis ? asArray(activeDayAnalysis.positive_signals) : []
   const negativeSignals = activeDayAnalysis ? asArray(activeDayAnalysis.negative_signals) : []
 
