@@ -54,3 +54,7 @@ drop policy if exists "service write wa_tasks" on wa_tasks;
 create policy "service write wa_tasks"
   on wa_tasks for all using (auth.role() = 'service_role')
   with check (auth.role() = 'service_role');
+
+grant select on wa_tasks to anon, authenticated, service_role;
+grant insert, update, delete on wa_tasks to service_role;
+grant usage, select on sequence wa_tasks_id_seq to service_role;

@@ -69,6 +69,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
 });
 const logger = pino({ level: "silent" });
 const groupCache = new Map();
+const participantCache = loadParticipantMappings();
 let reconnectCount = 0;
 let latestQrDataUrl = null;
 let latestQrAt = null;
@@ -194,6 +195,66 @@ function normalizeJidUser(jid) {
   return String(jid).split("@")[0];
 }
 
+function loadParticipantMappings() {
+  const candidates = [
+    join(__dir, "..", "data", "wa_participants.json"),
+    join(process.cwd(), "data", "wa_participants.json"),
+  ];
+
+  for (const path of candidates) {
+    if (!existsSync(path)) continue;
+    try {
+      const rows = JSON.parse(readFileSync(path, "utf8"));
+      const mappings = new Map();
+      for (const row of Array.isArray(rows) ? rows : []) {
+        const phone = phoneDigits(row?.phone);
+        if (!phone) continue;
+        mappings.set(phone, row);
+        if (phone.length >= 10) mappings.set(phone.slice(-10), row);
+      }
+      console.log(`${mappings.size} WhatsApp participant aliases loaded`);
+      return mappings;
+    } catch (error) {
+      console.warn(`Could not load participant aliases from ${path}:`, error?.message || error);
+    }
+  }
+
+  return new Map();
+}
+
+function phoneDigits(value) {
+  return String(value || "").replace(/\D/g, "");
+}
+
+function speakerTeamLabel(team) {
+  const normalized = String(team || "").trim().toLowerCase();
+  if (["bws", "blackwell", "blackwell strategy"].includes(normalized)) return "Blackwell";
+  if (["cliente", "client"].includes(normalized)) return "Cliente";
+  return String(team || "").trim() || null;
+}
+
+function resolveSpeaker(author, pushName) {
+  const digits = phoneDigits(author);
+  const participant = participantCache.get(digits) || participantCache.get(digits.slice(-10));
+
+  if (participant) {
+    const name = String(participant.name || author || pushName || "").trim() || null;
+    const team = speakerTeamLabel(participant.team);
+    return {
+      name,
+      team,
+      label: team ? `${name} (${team})` : name,
+    };
+  }
+
+  const fallbackName = String(pushName || author || "").trim() || null;
+  return {
+    name: fallbackName,
+    team: null,
+    label: fallbackName,
+  };
+}
+
 function getEpochSeconds(timestamp) {
   if (!timestamp) return Math.floor(Date.now() / 1000);
   if (typeof timestamp === "number") return timestamp;
@@ -311,6 +372,8 @@ async function buildMessageRow(msg, mapping) {
   const remoteJid = msg.key?.remoteJid;
   const participantJid = msg.key?.participant || msg.participant || null;
   const authorJid = participantJid || remoteJid || null;
+  const author = normalizeJidUser(authorJid);
+  const speaker = resolveSpeaker(author, msg.pushName || null);
   let body = getMessageText(msg.message);
   const msgType = getMessageType(msg.message);
   const epoch = getEpochSeconds(msg.messageTimestamp);
@@ -335,7 +398,10 @@ async function buildMessageRow(msg, mapping) {
     account_id: mapping.accountId,
     group_name: mapping.name,
     push_name: msg.pushName || null,
-    author: normalizeJidUser(authorJid),
+    author,
+    speaker_name: speaker.name,
+    speaker_team: speaker.team,
+    speaker_label: speaker.label,
     body,
     msg_type: isSystem ? "system" : msgType,
     sent_at: sentAt,

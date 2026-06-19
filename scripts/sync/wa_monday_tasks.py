@@ -353,9 +353,9 @@ def _column_values(
             },
         }
         client_label = _client_label_for_row(row)
-        client_column_id = os.getenv("MONDAY_TASKS_CLIENT_COLUMN_ID", "").strip()
-        if client_label and client_column_id:
-            values[client_column_id] = {"label": client_label}
+        group_column_id = _monday_group_column_id()
+        if client_label and group_column_id:
+            values[group_column_id] = {"label": client_label}
 
         monday_user = _resolve_monday_user(item, monday_users)
         if monday_user:
@@ -537,6 +537,14 @@ def _client_label_for_row(row: dict[str, Any]) -> str | None:
         if any(needle in normalized for needle in needles):
             return label
     return None
+
+
+def _monday_group_column_id() -> str:
+    return (
+        os.getenv("MONDAY_TASKS_GROUP_COLUMN_ID", "").strip()
+        or os.getenv("MONDAY_TASKS_CLIENT_COLUMN_ID", "").strip()
+        or "color_mm4ecz6r"
+    )
 
 
 def _account_id(row: dict[str, Any]) -> str:

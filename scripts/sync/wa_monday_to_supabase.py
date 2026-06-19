@@ -226,7 +226,11 @@ def _column_ids() -> dict[str, str]:
         "due_date": os.getenv("MONDAY_TASKS_DUE_DATE_COLUMN_ID", "date_mm45ncq9").strip(),
         "responsible": os.getenv("MONDAY_TASKS_RESPONSIBLE_COLUMN_ID", "multiple_person_mm453tee").strip(),
         "work_type": os.getenv("MONDAY_TASKS_WORK_TYPE_COLUMN_ID", "color_mm4513mj").strip(),
-        "client": os.getenv("MONDAY_TASKS_CLIENT_COLUMN_ID", "").strip(),
+        "client": (
+            os.getenv("MONDAY_TASKS_GROUP_COLUMN_ID", "").strip()
+            or os.getenv("MONDAY_TASKS_CLIENT_COLUMN_ID", "").strip()
+            or "color_mm4ecz6r"
+        ),
     }
 
 
