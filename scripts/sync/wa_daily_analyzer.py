@@ -40,6 +40,7 @@ DEFAULT_BASE_SCORE = 70
 MAX_MESSAGES_PER_GROUP = 600
 MAX_AMBIGUOUS_CONTEXT_MESSAGES = 5
 DEFAULT_MAX_ABS_SCORE_DELTA = 3
+PARTICIPANTS_PATH = ROOT / "data" / "wa_participants.json"
 WORK_TYPE_LABELS = {
     "Reunión / Seguimiento",
     "Campaña",
@@ -274,14 +275,9 @@ def _needs_micro_context(messages: list[dict[str, Any]]) -> bool:
 
 
 def _analyze_group_day(model: str, target_date: date, batch: GroupBatch, previous_score: float) -> dict:
-    context_transcript = "\n".join(
-        f"[{m.get('sent_at')}] {m.get('push_name') or m.get('author') or '?'}: {m.get('body')}"
-        for m in batch.context_messages
-    )
-    new_transcript = "\n".join(
-        f"[{m.get('sent_at')}] {m.get('push_name') or m.get('author') or '?'}: {m.get('body')}"
-        for m in batch.new_messages
-    )
+    participants = _load_participants()
+    context_transcript = _format_transcript(batch.context_messages, participants)
+    new_transcript = _format_transcript(batch.new_messages, participants)
     system = (
         "Eres analista de satisfaccion y riesgo para Blackwell. "
         "Evalua conversaciones de WhatsApp de clientes. "
@@ -329,7 +325,9 @@ Devuelve este JSON:
 
 Reglas obligatorias para action_items:
 - No devuelvas owner vacio.
-- Si la accion depende del cliente, usa owner "Cliente" y owner_type "client".
+- Si el transcript identifica al autor como "(Cliente)", tratalo como cliente.
+- Si el transcript identifica al autor como "(Blackwell)", tratalo como equipo Blackwell/BWS.
+- Si la accion depende del cliente, usa owner "Cliente" o el nombre del cliente identificado y owner_type "client".
 - Si la accion depende de Blackwell, usa como owner el nombre exacto de la persona que respondio, acepto, confirmo, resolvio o quedo implicada en el transcript.
 - Si no hay una persona clara pero la responsabilidad es de Blackwell, usa owner "Blackwell" y owner_type "blackwell".
 - Si la accion es compartida, usa owner "Cliente + <nombre/persona/equipo Blackwell>" y owner_type "shared".
@@ -368,6 +366,73 @@ MENSAJES NUEVOS NO ANALIZADOS; analizar solo esto:
         max_tokens=1200,
     )
     return _parse_json(text)
+
+
+def _format_transcript(messages: list[dict[str, Any]], participants: dict[str, dict[str, Any]]) -> str:
+    return "\n".join(
+        f"[{m.get('sent_at')}] {_message_speaker(m, participants)}: {m.get('body')}"
+        for m in messages
+    )
+
+
+def _message_speaker(message: dict[str, Any], participants: dict[str, dict[str, Any]]) -> str:
+    author = str(message.get("author") or "").strip()
+    participant = _lookup_participant(author, participants)
+    if participant:
+        name = str(participant.get("name") or author).strip()
+        team = _speaker_team_label(str(participant.get("team") or ""))
+        return f"{name} ({team})"
+
+    push_name = str(message.get("push_name") or "").strip()
+    if push_name and author:
+        return f"{push_name} ({author})"
+    return push_name or author or "Sin identificar"
+
+
+def _speaker_team_label(team: str) -> str:
+    normalized = team.strip().lower()
+    if normalized in {"bws", "blackwell", "blackwell strategy"}:
+        return "Blackwell"
+    if normalized in {"cliente", "client"}:
+        return "Cliente"
+    return team.strip() or "Equipo desconocido"
+
+
+def _lookup_participant(value: str, participants: dict[str, dict[str, Any]]) -> dict[str, Any] | None:
+    digits = _phone_digits(value)
+    if not digits:
+        return None
+    if digits in participants:
+        return participants[digits]
+    if len(digits) >= 10:
+        return participants.get(digits[-10:])
+    return None
+
+
+def _load_participants() -> dict[str, dict[str, Any]]:
+    if not PARTICIPANTS_PATH.exists():
+        return {}
+    try:
+        rows = json.loads(PARTICIPANTS_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        logger.warning("Could not parse %s: %s", PARTICIPANTS_PATH, exc)
+        return {}
+
+    participants: dict[str, dict[str, Any]] = {}
+    for row in rows if isinstance(rows, list) else []:
+        if not isinstance(row, dict):
+            continue
+        phone = _phone_digits(str(row.get("phone") or ""))
+        if not phone:
+            continue
+        participants[phone] = row
+        if len(phone) >= 10:
+            participants[phone[-10:]] = row
+    return participants
+
+
+def _phone_digits(value: str) -> str:
+    return "".join(ch for ch in value if ch.isdigit())
 
 
 def _score_delta_from_analysis(analysis: dict) -> float:
