@@ -773,40 +773,81 @@ function MetricCard({ label, value, detail, tone = 'gray' }: { label: string; va
   )
 }
 
+const STATUS_CONFIG: Record<string, { color: string; bg: string; icon: string }> = {
+  'por hacer':   { color: '#78808c', bg: 'rgba(120,128,140,0.10)', icon: '○' },
+  'en proceso':  { color: '#3a6ea5', bg: 'rgba(58,110,165,0.10)',  icon: '◑' },
+  'en revisión': { color: '#ef8212', bg: 'rgba(239,130,18,0.10)',  icon: '◕' },
+  'en revision': { color: '#ef8212', bg: 'rgba(239,130,18,0.10)',  icon: '◕' },
+  'bloqueada':   { color: '#e44258', bg: 'rgba(228,66,88,0.10)',   icon: '⊘' },
+  'concluida':   { color: '#00a884', bg: 'rgba(0,168,132,0.10)',   icon: '●' },
+}
+
+const URGENCY_CONFIG: Record<string, { color: string; icon: string }> = {
+  'high':   { color: '#e44258', icon: '▲' },
+  'medium': { color: '#ef8212', icon: '■' },
+  'low':    { color: '#78808c', icon: '▼' },
+}
+
+const WORK_TYPE_ICON: Record<string, string> = {
+  'reunión': '👥', 'reunion': '👥',
+  'campaña': '📢', 'campana': '📢',
+  'crisis': '⚡',
+  'nota a cliente': '📝', 'nota_clientes': '📝',
+  'reporte': '📊',
+  'análisis': '🔍', 'analisis': '🔍',
+  'media training': '🎙',
+}
+
+function getStatusConfig(status: string) {
+  const key = status.toLowerCase().trim()
+  return STATUS_CONFIG[key] ?? { color: '#78808c', bg: 'rgba(120,128,140,0.10)', icon: '○' }
+}
+
 function TaskCard({ item, compact = false }: { item: unknown; compact?: boolean }) {
   const detail = actionDetail(item)
   const ownerType = actionOwnerType(item)
+  const sc = getStatusConfig(detail.status ?? '')
+  const urg = URGENCY_CONFIG[(detail.urgency ?? '').toLowerCase()] ?? URGENCY_CONFIG['low']
+  const wtIcon = WORK_TYPE_ICON[(detail.workType ?? '').toLowerCase()] ?? '📋'
+
   return (
-    <article className={`task-item task-rich ${compact ? 'compact' : ''}`}>
+    <article
+      className={`task-item task-rich ${compact ? 'compact' : ''}`}
+      style={{ borderLeftColor: sc.color }}
+    >
+      {/* Header */}
       <div className="task-title">
         <strong>{actionText(item)}</strong>
         <span className={`owner-type ${badgeClass(ownerType)}`}>{ownerType}</span>
       </div>
 
+      {/* Status badge + urgency */}
+      <div className="task-meta-row">
+        <span className="task-status-badge" style={{ color: sc.color, background: sc.bg, border: `1px solid ${sc.color}40` }}>
+          {sc.icon} {detail.status}
+        </span>
+        <span className="task-urgency-badge" style={{ color: urg.color }}>
+          {urg.icon} {detail.urgency}
+        </span>
+      </div>
+
+      {/* Fields */}
       <dl className="task-fields">
         <div>
-          <dt>Estado Monday</dt>
-          <dd>{detail.status}</dd>
+          <dt>📅 Fecha entrega</dt>
+          <dd>{shortDateOnly(detail.dueDate) || '—'}</dd>
         </div>
         <div>
-          <dt>Fecha entrega</dt>
-          <dd>{shortDateOnly(detail.dueDate)}</dd>
-        </div>
-        <div>
-          <dt>Responsable</dt>
+          <dt>👤 Responsable</dt>
           <dd>{detail.owner}</dd>
         </div>
         <div>
-          <dt>Tipo</dt>
+          <dt>{wtIcon} Tipo</dt>
           <dd>{detail.workType}</dd>
         </div>
         <div>
-          <dt>Cliente</dt>
+          <dt>🏢 Cliente</dt>
           <dd>{detail.client}</dd>
-        </div>
-        <div>
-          <dt>Urgencia</dt>
-          <dd>{detail.urgency}</dd>
         </div>
       </dl>
 

@@ -868,6 +868,35 @@ input, select, textarea { font-family: inherit; }
   font-size: 13px;
   line-height: 1.45;
 }
+.task-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.task-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  font-family: var(--mono);
+  letter-spacing: 0.03em;
+}
+.task-urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
 .task-sync {
   display: flex;
   justify-content: space-between;
