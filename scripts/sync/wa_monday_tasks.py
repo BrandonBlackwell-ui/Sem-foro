@@ -301,6 +301,11 @@ def _column_values(
                 "label": _normalize_work_type(item.get("work_type"))
             },
         }
+        client_label = _client_label_for_row(row)
+        client_column_id = os.getenv("MONDAY_TASKS_CLIENT_COLUMN_ID", "").strip()
+        if client_label and client_column_id:
+            values[client_column_id] = {"label": client_label}
+
         monday_user = _resolve_monday_user(item, monday_users)
         if monday_user:
             values[os.getenv("MONDAY_TASKS_RESPONSIBLE_COLUMN_ID", "multiple_person_mm453tee")] = {
@@ -379,6 +384,7 @@ def _evidence_text(row: dict[str, Any], item: dict[str, Any]) -> str:
         f"Urgencia: {urgency}",
         f"Fecha de entrega: {_due_date_for_item(item, urgency).isoformat()}",
         f"Tipo de trabajo: {_normalize_work_type(item.get('work_type'))}",
+        f"Cliente / BW: {_client_label_for_row(row) or 'Sin etiqueta inferida'}",
         f"Sentimiento: {row.get('sentiment')} | Satisfaccion: {row.get('satisfaction')} | Riesgo: {row.get('risk_level')}",
         f"Score: {row.get('new_score')} | Delta: {row.get('score_delta')}",
         "",
@@ -458,6 +464,28 @@ def _normalize_work_type(value: Any) -> str:
         "otro": "Otro",
     }
     return aliases.get(text.lower(), "Otro")
+
+
+def _client_label_for_row(row: dict[str, Any]) -> str | None:
+    text = " ".join(
+        str(row.get(key) or "")
+        for key in ("group_name", "group_jid", "account_name", "account_id")
+    )
+    normalized = _name_key(text)
+
+    label_rules = [
+        ("Nuvoil", ("nuvoil", "nuvoil blackwell", "nuv oil")),
+        ("ISMERELY", ("ismerely",)),
+        ("Azvi", ("azvi", "grupo azvi")),
+        ("Coast Oil", ("coast oil", "coastoil")),
+        ("Tello", ("tello",)),
+        ("Pepe Aguilar", ("pepe aguilar", "pepe")),
+        ("Credix", ("credix",)),
+    ]
+    for label, needles in label_rules:
+        if any(needle in normalized for needle in needles):
+            return label
+    return None
 
 
 def _account_id(row: dict[str, Any]) -> str:
