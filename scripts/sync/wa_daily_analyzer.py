@@ -284,31 +284,37 @@ def _analyze_group_day(model: str, target_date: date, batch: GroupBatch, previou
         "No inventes datos fuera del transcript. "
         "Responde unicamente JSON valido."
     )
+    context_date_label = _context_date_range(batch.context_messages)
     prompt = f"""
 Cuenta: {batch.account_id}
 Grupo: {batch.group_name or batch.group_jid}
 Fecha analizada: {target_date.isoformat()}
-Fecha de hoy para calcular vencimientos: {target_date.isoformat()}
-Score actual antes de este grupo: {previous_score}
 
 Analiza solamente los MENSAJES NUEVOS NO ANALIZADOS.
 El contexto principal es el resumen previo y las tareas ya detectadas.
-El MICRO-CONTEXTO opcional solo aparece cuando los mensajes nuevos son ambiguos,
-por ejemplo "ok", "listo", "sí", "enterado" o referencias muy cortas.
+El MICRO-CONTEXTO opcional solo aparece cuando los mensajes nuevos son ambiguos.
+Los timestamps de los mensajes estan en hora local (America/Mexico_City).
+Usa las fechas y horas para detectar retrasos en respuesta entre mensajes.
 
 Reglas criticas sobre contexto:
 - No generes tareas basadas solamente en el resumen previo, tareas previas o MICRO-CONTEXTO.
 - No repitas tareas que ya aparecen en el analisis previo.
 - action_items debe incluir solo tareas nuevas o actualizaciones claras que surjan de MENSAJES NUEVOS NO ANALIZADOS.
 - score_delta debe medir solamente el impacto incremental de los MENSAJES NUEVOS NO ANALIZADOS.
-- Si el mensaje nuevo es "ok" o similar, usa el contexto para decidir si confirma algo positivo, pero no inventes tareas nuevas ni repitas las existentes.
+- Si el mensaje nuevo es "ok" o similar, usa el contexto para decidir si confirma algo positivo.
 
-Reglas de score_delta:
-- Devuelve un numero entre -10 y +10.
-- Si el cliente esta satisfecho, aprueba avances, agradece, desbloquea o hay buena coordinacion: suma puntos.
-- Si el dia es neutral o solo operativo sin senales claras: 0.
-- Si hay quejas, frustracion, reclamos, retrasos, urgencias no atendidas o riesgo de churn: resta puntos.
-- Se conservador: normalmente usa -3 a +3. Solo usa mas si hay evidencia fuerte.
+Reglas de score_delta — usa EXACTAMENTE esta tabla de señales WA:
+NO uses un score base. Devuelve la SUMA de los ajustes que apliquen segun lo observado:
+  Cliente inicia conversaciones activamente (no solo responde): +20
+  Respuestas sustanciales con contexto o preguntas: +15
+  Volumen alto, chat activo durante el periodo: +10
+  Tono positivo explicito (gracias, excelente, me gusta, perfecto): +10
+  Solo responde cuando se le busca, sin iniciativa: 0
+  Respuestas escasas o con retraso consistente (>3 dias entre mensajes): -10
+  Tono de presion o molestia (no entiendo, sigo esperando, cuando, por que): -20
+  Senal explicita de insatisfaccion o queja directa: -30
+Si el dia es completamente neutro sin ninguna senal: devuelve 0.
+El resultado puede ser positivo, negativo o 0 — no hay limite minimo ni maximo predefinido.
 
 Devuelve este JSON:
 {{
@@ -357,10 +363,10 @@ Reglas obligatorias para action_items:
 Analisis previo del dia, resumido:
 {_analysis_context(batch.existing_analysis)}
 
-MICRO-CONTEXTO opcional, ya analizado; NO crear tareas desde aqui:
+MICRO-CONTEXTO opcional {context_date_label}; NO crear tareas desde aqui:
 {context_transcript or "(sin contexto anterior)"}
 
-MENSAJES NUEVOS NO ANALIZADOS; analizar solo esto:
+MENSAJES NUEVOS NO ANALIZADOS — fecha {target_date.isoformat()}; analizar solo esto:
 {new_transcript}
 """.strip()
     text = _openrouter_chat_completion(
@@ -372,11 +378,35 @@ MENSAJES NUEVOS NO ANALIZADOS; analizar solo esto:
     return _parse_json(text)
 
 
+def _format_timestamp(sent_at: str | None) -> str:
+    if not sent_at:
+        return "sin fecha"
+    try:
+        dt = datetime.fromisoformat(str(sent_at).replace("Z", "+00:00"))
+        local = dt.astimezone(LOCAL_TZ)
+        return local.strftime("%Y-%m-%d %H:%M")
+    except Exception:
+        return str(sent_at)
+
+
 def _format_transcript(messages: list[dict[str, Any]], participants: dict[str, dict[str, Any]]) -> str:
     return "\n".join(
-        f"[{m.get('sent_at')}] {_message_speaker(m, participants)}: {m.get('body')}"
+        f"[{_format_timestamp(m.get('sent_at'))}] {_message_speaker(m, participants)}: {m.get('body')}"
         for m in messages
     )
+
+
+def _context_date_range(messages: list[dict[str, Any]]) -> str:
+    timestamps = [m.get("sent_at") for m in messages if m.get("sent_at")]
+    if not timestamps:
+        return ""
+    try:
+        dts = [datetime.fromisoformat(str(t).replace("Z", "+00:00")).astimezone(LOCAL_TZ) for t in timestamps]
+        lo = min(dts).strftime("%Y-%m-%d %H:%M")
+        hi = max(dts).strftime("%Y-%m-%d %H:%M")
+        return f"(mensajes del {lo} al {hi})"
+    except Exception:
+        return ""
 
 
 def _message_speaker(message: dict[str, Any], participants: dict[str, dict[str, Any]]) -> str:
@@ -447,11 +477,10 @@ def _score_delta_from_analysis(analysis: dict) -> float:
     raw_delta = float(analysis.get("score_delta", 0) or 0)
     sentiment = str(analysis.get("sentiment") or "neutral").lower()
     satisfaction = str(analysis.get("satisfaction") or "unknown").lower()
-    max_abs_delta = float(os.getenv("WA_ANALYSIS_MAX_ABS_DELTA", DEFAULT_MAX_ABS_SCORE_DELTA))
 
     if sentiment == "neutral" and satisfaction in ("neutral", "unknown"):
         return 0
-    return _clamp(raw_delta, -max_abs_delta, max_abs_delta)
+    return raw_delta
 
 
 def _analysis_context(existing: dict[str, Any] | None) -> str:
