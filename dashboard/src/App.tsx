@@ -225,7 +225,7 @@ export default function App() {
   const [groups, setGroups] = useState<WaGroup[]>([])
   const [tasks, setTasks] = useState<WaTask[]>([])
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
-  const [selectedOverviewDate, setSelectedOverviewDate] = useState<string>('latest')
+  const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
   const [deletedTasks, setDeletedTasks] = useState<WaTask[]>([])
   const [showDeleted, setShowDeleted] = useState(false)
@@ -278,9 +278,6 @@ export default function App() {
     return map
   }, [analyses])
 
-  const analysisDates = useMemo(() => {
-    return Array.from(new Set(analyses.map((analysis) => analysis.analysis_date))).sort((a, b) => b.localeCompare(a))
-  }, [analyses])
 
   const overviewAnalysisByGroup = useMemo(() => {
     const map = new Map<string, DailyAnalysis>()
