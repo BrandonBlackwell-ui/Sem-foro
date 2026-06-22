@@ -646,7 +646,7 @@ export default function App() {
             </div>
           </div>
           <div className="lb-chart-wrap">
-            <ScoreGraph items={filteredHistory} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
+            <ScoreGraph items={selectedHistory} startDate={cutoff} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
           </div>
           <div style={{display:'flex', flexDirection:'column', gap:10, marginTop:18}}>
             {filteredHistory.length
@@ -782,21 +782,25 @@ function todayMexicoStr() {
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Mexico_City' }).format(new Date())
 }
 
-function buildChartPoints(items: DailyAnalysis[]): ChartPoint[] {
+function buildChartPoints(items: DailyAnalysis[], startDate?: string): ChartPoint[] {
   if (!items.length) return []
 
   const byDate = new Map(items.map(i => [i.analysis_date, i]))
   const sorted = [...items].sort((a, b) => a.analysis_date.localeCompare(b.analysis_date))
-
-  const start  = new Date(`${sorted[0].analysis_date}T12:00:00`)
   const today  = todayMexicoStr()
-  // End = today if today is after last analysis, otherwise last analysis
-  const endStr = today > sorted[sorted.length - 1].analysis_date ? today : sorted[sorted.length - 1].analysis_date
-  const end    = new Date(`${endStr}T12:00:00`)
+
+  // If a startDate is given (range selector), use it; else use first analysis date
+  const startStr = startDate && startDate > sorted[0].analysis_date ? startDate : sorted[0].analysis_date
+  const start = new Date(`${startStr}T12:00:00`)
+  const end   = new Date(`${today}T12:00:00`)
+
+  // Carry-forward score from before the window
+  let lastScore = Number(sorted[0].new_score ?? 0)
+  for (const item of sorted) {
+    if (item.analysis_date < startStr) lastScore = Number(item.new_score ?? lastScore)
+  }
 
   const result: ChartPoint[] = []
-  let lastScore = Number(sorted[0].new_score ?? 0)
-
   const cur = new Date(start)
   while (cur <= end) {
     const dateStr = cur.toISOString().slice(0, 10)
@@ -812,8 +816,8 @@ function buildChartPoints(items: DailyAnalysis[]): ChartPoint[] {
   return result
 }
 
-function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; selectedId: number | null; onSelect: (id: number) => void }) {
-  const chartPoints = buildChartPoints(items)
+function ScoreGraph({ items, selectedId, onSelect, startDate }: { items: DailyAnalysis[]; selectedId: number | null; onSelect: (id: number) => void; startDate?: string }) {
+  const chartPoints = buildChartPoints(items, startDate)
   const width = 760
   const chartH = 180
   const padding = 28
@@ -872,19 +876,23 @@ function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; s
         ))}
 
         {/* Dots + tooltips */}
-        {mapped.map((point, idx) => {
+        {(() => {
+          let lastLabelX = -999
+          return mapped.map((point, idx) => {
           const dotColor = point.filled ? '#b8b4ac' : point.score >= 85 ? '#3f7050' : point.score >= 70 ? '#b07d1e' : '#a8453b'
           const isSelected = !point.filled && selectedId === point.id
           const tooltip = point.filled
             ? `Sin mensajes · ${fmtShortDate(point.date)}`
             : `${fmtShortDate(point.date)} · score ${point.score}${point.delta !== 0 ? ` (${point.delta > 0 ? '+' : ''}${point.delta})` : ''}${point.summary ? '\n' + point.summary : ''}`
+          const showScoreLabel = !point.filled && (point.x - lastLabelX) >= 38
+          if (showScoreLabel) lastLabelX = point.x
           return (
             <g key={`${point.date}-${idx}`}
                style={{cursor: point.filled ? 'default' : 'pointer'}}
                onClick={() => { if (!point.filled && point.id) onSelect(point.id) }}>
               <title>{tooltip}</title>
-              {/* Score label — only on real days */}
-              {!point.filled && (
+              {/* Score label — only on real days with enough spacing */}
+              {showScoreLabel && (
                 <text x={point.x} y={point.y - 11} textAnchor="middle" fontSize="11" fontWeight="700" fill={dotColor} fontFamily="'Libre Franklin',sans-serif">
                   {point.score}
                 </text>
@@ -910,7 +918,8 @@ function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; s
               )}
             </g>
           )
-        })}
+        })
+        })()}
       </svg>
     </div>
   )
