@@ -203,6 +203,7 @@ export default function App() {
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
   const [clientTab, setClientTab] = useState<'resumen' | 'historico' | 'mensajes'>('resumen')
+  const [chartRange, setChartRange] = useState<'7d' | '30d' | '365d'>('30d')
   const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
   const [messagesOpen, setMessagesOpen] = useState(false)
   const [loading, setLoading] = useState(true)
@@ -621,27 +622,35 @@ export default function App() {
         </div>
       )}
 
-      {clientTab === 'historico' && (
+      {clientTab === 'historico' && (() => {
+        const rangeDays = chartRange === '7d' ? 7 : chartRange === '30d' ? 30 : 365
+        const cutoff = new Date(new Date(`${todayMexicoStr()}T12:00:00`).getTime() - (rangeDays - 1) * 86400000).toISOString().slice(0, 10)
+        const filteredHistory = selectedHistory.filter(a => a.analysis_date >= cutoff)
+        return (
         <div className="lb-historico">
           <div className="lb-section-head">
             <div className="lb-section-title">Histórico de puntos</div>
-            <span className="lb-section-count">
-              {selectedHistory.length > 0
-                ? (() => {
-                    const first = selectedHistory[0].analysis_date
-                    const today = todayMexicoStr()
-                    const ms = new Date(`${today}T12:00:00`).getTime() - new Date(`${first}T12:00:00`).getTime()
-                    return Math.round(ms / 86400000) + 1
-                  })()
-                : 0} días
-            </span>
+            <div style={{display:'flex', alignItems:'center', gap:6}}>
+              {(['7d','30d','365d'] as const).map(r => (
+                <button key={r} onClick={() => setChartRange(r)} style={{
+                  fontFamily:"'Libre Franklin',sans-serif", fontSize:12, fontWeight: chartRange === r ? 700 : 400,
+                  padding:'3px 12px', borderRadius:999, cursor:'pointer', transition:'all .12s',
+                  background: chartRange === r ? '#3a3a44' : 'transparent',
+                  color: chartRange === r ? '#fdfcf8' : '#888',
+                  border: chartRange === r ? '1px solid #3a3a44' : '1px solid #d0ccc4',
+                }}>
+                  {r === '7d' ? 'Semanal' : r === '30d' ? 'Mensual' : 'Anual'}
+                </button>
+              ))}
+              <span className="lb-section-count" style={{marginLeft:4}}>{rangeDays} días</span>
+            </div>
           </div>
           <div className="lb-chart-wrap">
-            <ScoreGraph items={selectedHistory} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
+            <ScoreGraph items={filteredHistory} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
           </div>
           <div style={{display:'flex', flexDirection:'column', gap:10, marginTop:18}}>
-            {selectedHistory.length
-              ? selectedHistory.map((item) => (
+            {filteredHistory.length
+              ? filteredHistory.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => setSelectedHistoryId(item.id)}
@@ -714,7 +723,8 @@ export default function App() {
             </div>
           )}
         </div>
-      )}
+        )
+      })()}
 
       {clientTab === 'mensajes' && (
         <div style={{marginTop:22}}>
