@@ -433,12 +433,14 @@ export default function App() {
   }
 
   if (!selectedGroup) {
-    const analyzedCount = groupSummaries.filter((group) => group.analysis).length
     const todayStr = todayMexicoStr()
-    // Groups with messages today but no analysis yet (analyzer hasn't run for them yet)
-    const pendingAnalysis = groupSummaries.filter((g) => !g.analysis && g.last_message_at && g.last_message_at.slice(0,10) >= todayStr)
-    // Groups with no messages at all recently (truly quiet)
-    const trulyQuiet = groupSummaries.filter((g) => !g.analysis && (!g.last_message_at || g.last_message_at.slice(0,10) < todayStr))
+    // Only groups analyzed TODAY count as "analizados hoy"
+    const analyzedToday = groupSummaries.filter((g) => g.analysis?.analysis_date === todayStr)
+    const analyzedCount = analyzedToday.length
+    // Groups with messages today but not yet analyzed today
+    const pendingAnalysis = groupSummaries.filter((g) => g.analysis?.analysis_date !== todayStr && g.last_message_at && g.last_message_at.slice(0,10) >= todayStr)
+    // Groups with no messages at all recently
+    const trulyQuiet = groupSummaries.filter((g) => g.analysis?.analysis_date !== todayStr && (!g.last_message_at || g.last_message_at.slice(0,10) < todayStr))
     const averageScore = scores.length
       ? Math.round(scores.reduce((total, score) => total + score.current_score, 0) / scores.length)
       : null
@@ -501,14 +503,15 @@ export default function App() {
               )}
               <div className="lb-account-list">
                 {groupSummaries.filter(g => {
-                  if (groupFilter === 'analyzed') return !!g.analysis
-                  if (groupFilter === 'inactive') return !g.analysis && (!g.last_message_at || g.last_message_at.slice(0,10) < todayStr)
+                  if (groupFilter === 'analyzed') return g.analysis?.analysis_date === todayStr
+                  if (groupFilter === 'inactive') return g.analysis?.analysis_date !== todayStr && (!g.last_message_at || g.last_message_at.slice(0,10) < todayStr)
                   return true
                 }).map((group, gi) => {
-                  const scoreValue = group.score?.current_score ?? group.analysis?.new_score ?? null
-                  const hasMsgsToday = !group.analysis && group.last_message_at && group.last_message_at.slice(0,10) >= todayStr
-                  const status = group.analysis ? scoreLabel(scoreValue) : hasMsgsToday ? 'En proceso' : 'Pendiente'
-                  const stampColor = group.analysis
+                  const analyzedToday = group.analysis?.analysis_date === todayStr
+                  const scoreValue = analyzedToday ? (group.analysis?.new_score ?? null) : null
+                  const hasMsgsToday = !analyzedToday && group.last_message_at && group.last_message_at.slice(0,10) >= todayStr
+                  const status = analyzedToday ? scoreLabel(scoreValue) : hasMsgsToday ? 'En proceso' : 'Pendiente'
+                  const stampColor = analyzedToday
                     ? (scoreValue != null && scoreValue >= 85 ? '#3f7050' : scoreValue != null && scoreValue >= 70 ? '#b07d1e' : '#a8453b')
                     : hasMsgsToday ? '#3a6ea5' : '#9aa0a6'
                   const r = 26
