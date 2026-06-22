@@ -438,40 +438,18 @@ def _resolve_monday_user(item: dict[str, Any], monday_users: dict[str, dict[str,
 
 
 def _monday_item_name(row: dict[str, Any], item: dict[str, Any]) -> str:
-    owner = str(item.get("owner") or "Por definir").strip()
-    owner_type = str(item.get("owner_type") or "unknown").strip()
     action = str(item.get("action") or "").strip()
-    group_name = str(row.get("group_name") or row.get("group_jid") or "").strip()
-    prefix = "Cliente" if owner_type == "client" else owner
-    name = f"WA | {group_name} | {prefix}: {action}"
-    return name[:255]
+    return action[:255]
 
 
 def _evidence_text(row: dict[str, Any], item: dict[str, Any]) -> str:
-    action = str(item.get("action") or "").strip()
-    owner = str(item.get("owner") or "Por definir").strip()
-    owner_type = str(item.get("owner_type") or "unknown").strip()
     urgency = _normalize_urgency(item.get("urgency"))
+    urgency_label = {"high": "Alta", "medium": "Media", "low": "Baja"}.get(urgency, "Media")
     evidence_speaker = str(item.get("evidence_speaker") or "").strip()
-    evidence_quote = str(item.get("evidence_quote") or "").strip()
-    evidence_reason = str(item.get("evidence_reason") or "").strip()
     lines = [
-        f"Tarea: {action}",
+        f"Quién lo mencionó: {evidence_speaker or 'No inferido'}",
+        f"Urgencia: {urgency_label}",
         "",
-        f"Fuente: WhatsApp / analisis diario {row.get('analysis_date')}",
-        f"Grupo: {row.get('group_name') or row.get('group_jid')}",
-        f"Quien lo dijo: {evidence_speaker or 'No inferido'}",
-        f"Cita origen: {evidence_quote or 'Sin cita especifica'}",
-        f"Motivo: {evidence_reason or 'Sin motivo especifico'}",
-        f"Responsable inferido: {owner} ({owner_type})",
-        f"Urgencia: {urgency}",
-        f"Fecha de entrega: {_due_date_for_item(item, urgency).isoformat()}",
-        f"Tipo de trabajo: {_normalize_work_type(item.get('work_type'))}",
-        f"Cliente / BW: {_client_label_for_row(row) or 'Sin etiqueta inferida'}",
-        f"Sentimiento: {row.get('sentiment')} | Satisfaccion: {row.get('satisfaction')} | Riesgo: {row.get('risk_level')}",
-        f"Score: {row.get('new_score')} | Delta: {row.get('score_delta')}",
-        "",
-        "Resumen:",
         str(row.get("summary") or ""),
     ]
     return "\n".join(lines)[:20000]
