@@ -525,29 +525,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Calendar */}
-              <div className="lb-section-head">
-                <div>
-                  <div className="lb-section-title">Filtrar por fecha</div>
-                  <div className="lb-section-sub">Vista del listado según el día analizado</div>
-                </div>
-                <div className="lb-date-strip">
-                  {analysisDates.map((day, i) => {
-                    const label = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Mexico_City' }).format(new Date(`${day}T12:00:00`))
-                    const isLatest = i === 0
-                    return (
-                      <button
-                        key={day}
-                        className={`lb-date-btn${(isLatest && selectedOverviewDate === 'latest') || selectedOverviewDate === day ? ' active' : ''}`}
-                        onClick={() => setSelectedOverviewDate(isLatest ? 'latest' : day)}
-                        title={day}
-                      >
-                        {label}
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
 
               {/* Account list */}
               {groupFilter !== 'all' && (
