@@ -736,23 +736,24 @@ export default function App() {
 
       {clientTab === 'mensajes' && (
         <div style={{marginTop:22}}>
-          <div className="lb-section-head">
+          <div className="lb-section-head" style={{marginBottom:18}}>
             <div>
               <div className="lb-section-title">Mensajes</div>
-              <div className="lb-section-sub">Conversación cruda disponible para auditoría.</div>
+              <div className="lb-section-sub">{detailLoading ? 'Cargando...' : `${detailMessages.length} mensajes recientes`}</div>
             </div>
-            <button className="lb-btn-outline" onClick={() => setMessagesOpen((open) => !open)}>
-              {messagesOpen ? 'Ocultar' : `Ver ${detailLoading ? '...' : detailMessages.length} mensajes`}
-            </button>
           </div>
-          {messagesOpen && (
-            <div className="lb-messages">
-              {detailMessages.slice(0, 12).map((message) => {
+          {detailLoading ? (
+            <p className="lb-subtext" style={{textAlign:'center', padding:'32px 0'}}>Cargando mensajes...</p>
+          ) : detailMessages.length === 0 ? (
+            <p className="lb-subtext" style={{textAlign:'center', padding:'32px 0'}}>Sin mensajes disponibles para este grupo.</p>
+          ) : (
+            <div className="lb-messages" style={{maxWidth:'100%'}}>
+              {detailMessages.map((message) => {
                 const isTeam = message.speaker_team === 'blackwell'
                 return (
                   <div className={`lb-bubble-wrap ${isTeam ? 'right' : 'left'}`} key={message.id}>
                     <div className={`lb-bubble ${isTeam ? 'right' : 'left'}`}>
-                      <div className="lb-bubble-name">{message.speaker_label || message.push_name || message.author || 'Sin autor'}</div>
+                      <div className="lb-bubble-name" style={{color: isTeam ? '#3a6ea5' : '#3f7050'}}>{message.speaker_label || message.push_name || message.author || 'Sin autor'}</div>
                       <div className="lb-bubble-text">{message.body || '(sin texto)'}</div>
                       <div className="lb-bubble-time">{shortDate(message.sent_at)} · {message.msg_type}</div>
                     </div>
