@@ -170,13 +170,6 @@ function normalizeSatisfaction(value: string) {
   return normalized || 'unknown'
 }
 
-function scoreColor(score: number | null | undefined) {
-  const value = Number(score ?? 0)
-  if (value >= 80) return 'green'
-  if (value >= 65) return 'yellow'
-  if (value >= 50) return 'orange'
-  return 'red'
-}
 
 function scoreLabel(score: number | null | undefined) {
   if (score == null) return 'Pendiente'
@@ -669,11 +662,14 @@ export default function App() {
                   }}>
                   <div style={{width:42, height:42, borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', background: item.new_score != null && item.new_score >= 85 ? '#d4eedd' : item.new_score != null && item.new_score >= 70 ? '#fdf1ad' : '#fde8e6', fontFamily:"'Libre Franklin',sans-serif", fontWeight:800, fontSize:14, color: item.new_score != null && item.new_score >= 85 ? '#3f7050' : item.new_score != null && item.new_score >= 70 ? '#b07d1e' : '#a8453b', flexShrink:0}}>{item.new_score ?? '--'}</div>
                   <div style={{flex:1}}>
-                    <div style={{display:'flex', justifyContent:'space-between'}}>
-                      <strong style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:14}}>{item.analysis_date}</strong>
-                      <span style={{fontFamily:"'Libre Franklin',sans-serif", fontWeight:700, fontSize:14, color: item.score_delta >= 0 ? '#3f7050' : '#a8453b'}}>{item.score_delta > 0 ? '+' : ''}{item.score_delta}</span>
+                    <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                      <div>
+                        <span style={{fontFamily:"'Caveat',cursive", fontSize:20, fontWeight:700, color:'#1d1d1f'}}>{fmtShortDate(item.analysis_date)}</span>
+                        <span style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:11, color:'#9aa0a6', marginLeft:8}}>{item.analysis_date}</span>
+                      </div>
+                      <span style={{fontFamily:"'Caveat',cursive", fontWeight:700, fontSize:19, color: item.score_delta >= 0 ? '#3f7050' : '#a8453b'}}>{item.score_delta > 0 ? '+' : ''}{item.score_delta}</span>
                     </div>
-                    <p style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#5f636a', margin:'2px 0 0'}}>{item.summary || 'Sin resumen guardado.'}</p>
+                    <p style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#5f636a', margin:'3px 0 0'}}>{item.summary || 'Sin resumen guardado.'}</p>
                   </div>
                 </button>
               ))
@@ -766,40 +762,69 @@ export default function App() {
   )
 }
 
+function fmtShortDate(dateStr: string) {
+  const d = new Date(`${dateStr}T12:00:00`)
+  return new Intl.DateTimeFormat('es-MX', { day: '2-digit', month: 'short' }).format(d)
+}
+
 function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; selectedId: number | null; onSelect: (id: number) => void }) {
   const width = 760
-  const height = 180
-  const padding = 22
+  const chartH = 180
+  const padding = 28
+  const totalH = chartH + 28  // extra room for date labels
+
   const points = items.map((item, index) => {
     const score = Number(item.new_score ?? 0)
     const x = items.length <= 1 ? width / 2 : padding + (index * (width - padding * 2)) / (items.length - 1)
-    const y = height - padding - (score / 100) * (height - padding * 2)
+    const y = chartH - padding - (score / 100) * (chartH - padding * 2)
     return { x, y, score, date: item.analysis_date, id: item.id }
   })
   const path = points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
 
   return (
     <div className="score-graph" aria-label="Grafica historica de puntos">
-      <svg viewBox={`0 0 ${width} ${height}`} role="img">
+      <svg viewBox={`0 0 ${width} ${totalH}`} role="img">
         <defs>
           <linearGradient id="scoreLine" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0%" stopColor="#1F8F7C" />
-            <stop offset="55%" stopColor="#B8841C" />
-            <stop offset="100%" stopColor="#B43A3A" />
+            <stop offset="0%" stopColor="#3f7050" />
+            <stop offset="50%" stopColor="#b07d1e" />
+            <stop offset="100%" stopColor="#a8453b" />
           </linearGradient>
         </defs>
         <line className="grid-line" x1={padding} x2={width - padding} y1={padding} y2={padding} />
-        <line className="grid-line" x1={padding} x2={width - padding} y1={height / 2} y2={height / 2} />
-        <line className="grid-line" x1={padding} x2={width - padding} y1={height - padding} y2={height - padding} />
+        <line className="grid-line" x1={padding} x2={width - padding} y1={chartH / 2} y2={chartH / 2} />
+        <line className="grid-line" x1={padding} x2={width - padding} y1={chartH - padding} y2={chartH - padding} />
+        {/* Y-axis labels */}
+        <text x={padding - 4} y={padding + 4} textAnchor="end" fontSize="10" fill="#b0b4ba">100</text>
+        <text x={padding - 4} y={chartH / 2 + 4} textAnchor="end" fontSize="10" fill="#b0b4ba">50</text>
+        <text x={padding - 4} y={chartH - padding + 4} textAnchor="end" fontSize="10" fill="#b0b4ba">0</text>
         {path && <path className="score-path" d={path} />}
-        {points.map((point) => (
-          <g className="score-point-hit" key={point.id} onClick={() => onSelect(point.id)}>
-            <circle className={`score-point ${scoreColor(point.score)} ${selectedId === point.id ? 'active' : ''}`} cx={point.x} cy={point.y} r="6" />
-            <text x={point.x} y={point.y - 12} textAnchor="middle">
-              {point.score}
-            </text>
-          </g>
-        ))}
+        {points.map((point, idx) => {
+          const dotColor = point.score >= 85 ? '#3f7050' : point.score >= 70 ? '#b07d1e' : '#a8453b'
+          const isSelected = selectedId === point.id
+          // Show label every point if ≤8, otherwise every other
+          const showLabel = items.length <= 8 || idx % Math.ceil(items.length / 8) === 0 || idx === items.length - 1
+          return (
+            <g className="score-point-hit" key={point.id} onClick={() => onSelect(point.id)}>
+              {/* Score above dot */}
+              <text x={point.x} y={point.y - 11} textAnchor="middle" fontSize="11" fontWeight="700" fill={dotColor} fontFamily="'Libre Franklin',sans-serif">
+                {point.score}
+              </text>
+              {/* Dot */}
+              <circle
+                cx={point.x} cy={point.y} r={isSelected ? 7 : 5}
+                fill={isSelected ? dotColor : '#fdfcf8'}
+                stroke={dotColor} strokeWidth={isSelected ? 0 : 2.5}
+              />
+              {/* Date below chart */}
+              {showLabel && (
+                <text x={point.x} y={chartH + 18} textAnchor="middle" fontSize="10" fill="#9aa0a6" fontFamily="'Libre Franklin',sans-serif">
+                  {fmtShortDate(point.date)}
+                </text>
+              )}
+            </g>
+          )
+        })}
       </svg>
     </div>
   )
