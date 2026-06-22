@@ -77,6 +77,16 @@ type GroupSummary = {
   analysis: DailyAnalysis | null
 }
 
+type AccountSummary = {
+  account_id: string
+  name: string
+  groups: GroupSummary[]
+  score: AccountScore | null
+  analyzedToday: boolean
+  hasMessagesToday: boolean
+  latestAnalysis: DailyAnalysis | null
+}
+
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://vqgfkfvywbpjldreuplb.supabase.co'
 const SUPABASE_ANON_KEY =
   import.meta.env.VITE_SUPABASE_ANON_KEY ||
@@ -199,6 +209,7 @@ export default function App() {
   const [detailMessages, setDetailMessages] = useState<WaMessage[]>([])
   const [groups, setGroups] = useState<WaGroup[]>([])
   const [tasks, setTasks] = useState<WaTask[]>([])
+  const [selectedAccountId, setSelectedAccountId] = useState<string | null>(null)
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
@@ -331,6 +342,44 @@ export default function App() {
     })
   }, [groups, overviewAnalysisByGroup, rawMessages, scoreByAccount])
 
+  const accountSummaries = useMemo<AccountSummary[]>(() => {
+    const todayStr = todayMexicoStr()
+    const map = new Map<string, GroupSummary[]>()
+    for (const g of groupSummaries) {
+      const key = g.account_id === '00_UNMAPPED' ? g.jid : g.account_id
+      const arr = map.get(key) ?? []
+      arr.push(g)
+      map.set(key, arr)
+    }
+    const result: AccountSummary[] = []
+    for (const [key, grps] of map) {
+      const mainGroup = grps.find(g => !g.name.toLowerCase().includes('interno')) ?? grps[0]
+      const latestAnalysis = grps
+        .map(g => g.analysis)
+        .filter((a): a is DailyAnalysis => a !== null)
+        .sort((a, b) => b.analyzed_at.localeCompare(a.analyzed_at))[0] ?? null
+      const analyzedToday = grps.some(g => g.analysis?.analysis_date === todayStr)
+      const hasMessagesToday = grps.some(g => g.last_message_at && g.last_message_at.slice(0, 10) >= todayStr)
+      result.push({
+        account_id: key,
+        name: mainGroup.name,
+        groups: grps,
+        score: mainGroup.score,
+        analyzedToday,
+        hasMessagesToday,
+        latestAnalysis,
+      })
+    }
+    return result.sort((a, b) => {
+      if (!!b.latestAnalysis !== !!a.latestAnalysis) return Number(!!b.latestAnalysis) - Number(!!a.latestAnalysis)
+      const aLast = a.groups.map(g => g.last_message_at ?? '').sort().reverse()[0] ?? ''
+      const bLast = b.groups.map(g => g.last_message_at ?? '').sort().reverse()[0] ?? ''
+      return bLast.localeCompare(aLast)
+    })
+  }, [groupSummaries])
+
+  const selectedAccount = selectedAccountId ? accountSummaries.find(a => a.account_id === selectedAccountId) ?? null : null
+
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
   const selectedHistory = useMemo(() => {
@@ -432,15 +481,10 @@ export default function App() {
     )
   }
 
-  if (!selectedGroup) {
-    const todayStr = todayMexicoStr()
-    // Only groups analyzed TODAY count as "analizados hoy"
-    const analyzedToday = groupSummaries.filter((g) => g.analysis?.analysis_date === todayStr)
-    const analyzedCount = analyzedToday.length
-    // Groups with messages today but not yet analyzed today
-    const pendingAnalysis = groupSummaries.filter((g) => g.analysis?.analysis_date !== todayStr && g.last_message_at && g.last_message_at.slice(0,10) >= todayStr)
-    // Groups with no messages at all recently
-    const trulyQuiet = groupSummaries.filter((g) => g.analysis?.analysis_date !== todayStr && (!g.last_message_at || g.last_message_at.slice(0,10) < todayStr))
+  if (!selectedAccount) {
+    const analyzedCount = accountSummaries.filter(a => a.analyzedToday).length
+    const pendingAnalysis = accountSummaries.filter(a => !a.analyzedToday && a.hasMessagesToday)
+    const trulyQuiet = accountSummaries.filter(a => !a.analyzedToday && !a.hasMessagesToday)
     const averageScore = scores.length
       ? Math.round(scores.reduce((total, score) => total + score.current_score, 0) / scores.length)
       : null
@@ -461,7 +505,7 @@ export default function App() {
                 <div>
                   <span className="lb-eyebrow">Semáforo de satisfacción</span>
                   <h1 className="lb-h1">Cuentas</h1>
-                  <p className="lb-subtext">Vista rápida de salud, actividad y análisis diario por grupo.</p>
+                  <p className="lb-subtext">Vista rápida de salud, actividad y análisis diario por cuenta.</p>
                 </div>
                 <div style={{fontFamily:'var(--caveat)', fontSize:36, fontWeight:700, color:'#3a3a44', lineHeight:1, textAlign:'right'}}>
                   {new Date().toLocaleDateString('es-MX', {day:'numeric', month:'long', year:'numeric', timeZone:'America/Mexico_City'})}
@@ -477,9 +521,9 @@ export default function App() {
                 </div>
                 <div className="lb-postit lb-postit-yellow" style={{animationDelay:'80ms', cursor:'pointer', outline: groupFilter === 'analyzed' ? '2px solid #b07d1e' : 'none', outlineOffset:3}} onClick={() => setGroupFilter(f => f === 'analyzed' ? 'all' : 'analyzed')}>
                   <div className="lb-postit-label">Analizados hoy {groupFilter === 'analyzed' && <span style={{fontSize:13}}>✕</span>}</div>
-                  <div className="lb-postit-value" style={{color:'#b07d1e'}}>{analyzedCount}<span style={{fontSize:24,fontWeight:400}}> / {groupSummaries.length}</span></div>
+                  <div className="lb-postit-value" style={{color:'#b07d1e'}}>{analyzedCount}<span style={{fontSize:24,fontWeight:400}}> / {accountSummaries.length}</span></div>
                   <div className="lb-postit-detail" style={{color:'#8a6010'}}>
-                    {pendingAnalysis.length > 0 ? `${pendingAnalysis.length} con mensajes, esperando análisis` : 'Todos los activos revisados'}
+                    {pendingAnalysis.length > 0 ? `${pendingAnalysis.length} con mensajes, esperando análisis` : 'Todas las cuentas revisadas'}
                   </div>
                 </div>
                 <div className="lb-postit lb-postit-blue" style={{animationDelay:'160ms', cursor:'pointer', outline: groupFilter === 'inactive' ? '2px solid #3a6ea5' : 'none', outlineOffset:3}} onClick={() => setGroupFilter(f => f === 'inactive' ? 'all' : 'inactive')}>
@@ -495,30 +539,30 @@ export default function App() {
                 <div style={{display:'flex', alignItems:'center', gap:10, margin:'8px 0 4px', padding:'8px 14px', background: groupFilter === 'analyzed' ? 'rgba(176,125,30,.10)' : 'rgba(58,110,165,.10)', borderRadius:8}}>
                   <span style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, fontWeight:600, color: groupFilter === 'analyzed' ? '#8a6010' : '#3a5a8a'}}>
                     {groupFilter === 'analyzed'
-                      ? `Mostrando ${analyzedCount} grupos analizados hoy`
-                      : `Mostrando ${trulyQuiet.length} grupos sin mensajes recientes`}
+                      ? `Mostrando ${analyzedCount} cuentas analizadas hoy`
+                      : `Mostrando ${trulyQuiet.length} cuentas sin mensajes recientes`}
                   </span>
                   <button onClick={() => setGroupFilter('all')} style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:12, color:'#9aa0a6', background:'none', border:'1px solid #ccc', borderRadius:999, padding:'2px 10px', cursor:'pointer'}}>Ver todos</button>
                 </div>
               )}
               <div className="lb-account-list">
-                {groupSummaries.filter(g => {
-                  if (groupFilter === 'analyzed') return g.analysis?.analysis_date === todayStr
-                  if (groupFilter === 'inactive') return g.analysis?.analysis_date !== todayStr && (!g.last_message_at || g.last_message_at.slice(0,10) < todayStr)
+                {accountSummaries.filter(account => {
+                  if (groupFilter === 'analyzed') return account.analyzedToday
+                  if (groupFilter === 'inactive') return !account.analyzedToday && !account.hasMessagesToday
                   return true
-                }).map((group, gi) => {
-                  const analyzedToday = group.analysis?.analysis_date === todayStr
-                  const scoreValue = analyzedToday ? (group.analysis?.new_score ?? null) : null
-                  const hasMsgsToday = !analyzedToday && group.last_message_at && group.last_message_at.slice(0,10) >= todayStr
-                  const status = analyzedToday ? scoreLabel(scoreValue) : hasMsgsToday ? 'En proceso' : 'Pendiente'
-                  const stampColor = analyzedToday
+                }).map((account, gi) => {
+                  const scoreValue = account.analyzedToday ? (account.latestAnalysis?.new_score ?? null) : null
+                  const status = account.analyzedToday ? scoreLabel(scoreValue) : account.hasMessagesToday ? 'En proceso' : 'Pendiente'
+                  const stampColor = account.analyzedToday
                     ? (scoreValue != null && scoreValue >= 85 ? '#3f7050' : scoreValue != null && scoreValue >= 70 ? '#b07d1e' : '#a8453b')
-                    : hasMsgsToday ? '#3a6ea5' : '#9aa0a6'
+                    : account.hasMessagesToday ? '#3a6ea5' : '#9aa0a6'
                   const r = 26
                   const circ = 2 * Math.PI * r
                   const offset = scoreValue != null ? circ * (1 - scoreValue / 100) : circ
+                  const mainGroup = account.groups.find(g => !g.name.toLowerCase().includes('interno')) ?? account.groups[0]
+                  const lastMsgAt = account.groups.map(g => g.last_message_at ?? '').sort().reverse()[0] || null
                   return (
-                    <button className="lb-account-row" key={group.jid} style={{borderLeft: `5px solid ${stampColor}`, animationDelay: `${gi * 40}ms`}} onClick={() => setSelectedJid(group.jid)}>
+                    <button className="lb-account-row" key={account.account_id} style={{borderLeft: `5px solid ${stampColor}`, animationDelay: `${gi * 40}ms`}} onClick={() => { setSelectedAccountId(account.account_id); setSelectedJid(mainGroup?.jid ?? null) }}>
                       <div className="lb-score-ring">
                         <svg width="62" height="62" viewBox="0 0 62 62">
                           <circle cx="31" cy="31" r={r} fill="none" stroke="#e8e4d8" strokeWidth="5" />
@@ -529,12 +573,12 @@ export default function App() {
                         <div className="lb-score-ring-val" style={{color: stampColor}}>{scoreValue ?? '--'}</div>
                       </div>
                       <div className="lb-account-main">
-                        <div className="lb-account-name">{group.name}</div>
-                        <div className="lb-account-summary">{group.analysis?.summary || 'Sin análisis diario guardado todavía.'}</div>
+                        <div className="lb-account-name">{account.name}</div>
+                        <div className="lb-account-summary">{account.latestAnalysis?.summary || 'Sin análisis diario guardado todavía.'}</div>
                       </div>
                       <div className="lb-account-side">
                         <span className="lb-stamp" style={{color: stampColor, borderColor: stampColor, '--sr': gi % 2 === 0 ? '-4deg' : '3deg'} as React.CSSProperties}>{status}</span>
-                        <span className="lb-account-time">{shortDate(group.last_message_at)}</span>
+                        <span className="lb-account-time">{shortDate(lastMsgAt)}</span>
                       </div>
                     </button>
                   )
@@ -546,6 +590,12 @@ export default function App() {
         </div>
       </div>
     )
+  }
+
+  if (!selectedGroup) {
+    // selectedAccount is set but selectedJid has no matching group — fall back to overview
+    setSelectedAccountId(null)
+    return null
   }
 
   return (
@@ -562,12 +612,31 @@ export default function App() {
       {/* Detail header */}
       <div className="lb-header-row">
         <div>
-          <button className="lb-back-btn" onClick={() => setSelectedJid(null)}>← Volver</button>
+          <button className="lb-back-btn" onClick={() => { setSelectedAccountId(null); setSelectedJid(null) }}>← Volver</button>
           <span className="lb-eyebrow">Detalle</span>
-          <h1 className="lb-h2">{selectedGroup.name}</h1>
+          <h1 className="lb-h2">{selectedAccount?.name ?? selectedGroup.name}</h1>
           <p className="lb-subtext">{selectedHistory.length ? `${selectedHistory.length} día(s) analizados en el histórico` : 'Grupo pendiente de análisis diario.'}</p>
         </div>
       </div>
+
+      {/* Group tabs — shown when the account has multiple groups */}
+      {selectedAccount && selectedAccount.groups.length > 1 && (
+        <div style={{display:'flex', gap:8, marginBottom:16, flexWrap:'wrap'}}>
+          {selectedAccount.groups.map(g => (
+            <button key={g.jid}
+              onClick={() => setSelectedJid(g.jid)}
+              style={{
+                fontFamily:"'Libre Franklin',sans-serif", fontSize:13,
+                padding:'5px 14px', borderRadius:999, cursor:'pointer',
+                background: selectedJid === g.jid ? '#3a3a44' : 'transparent',
+                color: selectedJid === g.jid ? '#fdfcf8' : '#666',
+                border: selectedJid === g.jid ? '1px solid #3a3a44' : '1px solid #d0ccc4',
+              }}>
+              {g.name}
+            </button>
+          ))}
+        </div>
+      )}
 
       <nav className="lb-tabs" aria-label="Secciones del cliente">
         <button className={`lb-tab${clientTab === 'resumen' ? ' active' : ''}`} onClick={() => setClientTab('resumen')}>Resumen</button>
