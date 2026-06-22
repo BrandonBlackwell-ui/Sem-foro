@@ -104,6 +104,20 @@ const SUPABASE_ANON_KEY =
   import.meta.env.VITE_SUPABASE_ANON_KEY ||
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxZ2ZrZnZ5d2JwamxkcmV1cGxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1MjEwNDMsImV4cCI6MjA5NzA5NzA0M30.wR9_YXMi2udYsVNLY8SlPFwpxkqZ3j78hv961ShBkQk'
 
+async function supabasePatch(path: string, body: Record<string, unknown>): Promise<void> {
+  const res = await fetch(`${SUPABASE_URL}${path}`, {
+    method: 'PATCH',
+    headers: {
+      apikey: SUPABASE_ANON_KEY,
+      Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      'Content-Type': 'application/json',
+      Prefer: 'return=minimal',
+    },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) throw new Error(`${res.status}: ${await res.text()}`)
+}
+
 async function supabaseGet<T>(path: string): Promise<T> {
   const response = await fetch(`${SUPABASE_URL}${path}`, {
     headers: {
@@ -358,6 +372,11 @@ export default function App() {
   }, [groups, overviewAnalysisByGroup, rawMessages, scoreByAccount])
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
+
+  async function archiveTask(id: number) {
+    await supabasePatch(`/rest/v1/wa_tasks?id=eq.${id}`, { deleted_at: new Date().toISOString() })
+    setTasks(prev => prev.filter(t => t.id !== id))
+  }
   const selectedHistory = useMemo(() => {
     if (!selectedGroup) return []
     return analyses
@@ -643,7 +662,7 @@ export default function App() {
               </div>
               <div style={{display:'flex', flexDirection:'column', gap:12}}>
                 {allActions.length
-                  ? allActions.slice(-6).map((item, index) => <TaskCard item={item} key={index} />)
+                  ? allActions.slice(-6).map((item, index) => <TaskCard item={item} key={index} onArchive={archiveTask} />)
                   : <p className="lb-subtext">No hay tareas acumuladas.</p>}
               </div>
 
@@ -745,7 +764,7 @@ export default function App() {
                   <div className="lb-section-title" style={{fontSize:20, marginBottom:10}}>Tareas</div>
                   <div style={{display:'flex', flexDirection:'column', gap:10}}>
                     {actionItems.length
-                      ? actionItems.map((item, i) => <TaskCard item={item} key={i} compact />)
+                      ? actionItems.map((item, i) => <TaskCard item={item} key={i} compact onArchive={archiveTask} />)
                       : <p className="lb-subtext">No hay tareas detectadas.</p>}
                   </div>
                 </div>
@@ -1000,7 +1019,7 @@ function getStatusConfig(status: string) {
   return STATUS_CONFIG[key] ?? { color: '#78808c', bg: 'rgba(120,128,140,0.10)', icon: '○' }
 }
 
-function TaskCard({ item, compact = false }: { item: unknown; compact?: boolean }) {
+function TaskCard({ item, compact = false, onArchive }: { item: unknown; compact?: boolean; onArchive?: (id: number) => void }) {
   const detail = actionDetail(item)
   const ownerType = actionOwnerType(item)
   const sc = getStatusConfig(detail.status ?? '')
@@ -1055,6 +1074,15 @@ function TaskCard({ item, compact = false }: { item: unknown; compact?: boolean 
         <span>{detail.mondayItemId ? `Monday #${detail.mondayItemId}` : 'Sin item Monday'}</span>
         <span>{detail.createdAt ? `Creada ${shortDate(detail.createdAt)}` : ''}</span>
         <span>{detail.syncedAt ? `Sync ${shortDate(detail.syncedAt)}` : ''}</span>
+        {onArchive && isRecord(item) && typeof item.id === 'number' && (
+          <button
+            onClick={(e) => { e.stopPropagation(); if (confirm('¿Archivar esta tarea? No aparecerá en el dashboard pero quedará en el historial.')) onArchive(item.id as number) }}
+            style={{marginLeft:'auto', fontFamily:"'Libre Franklin',sans-serif", fontSize:11, color:'#c8902a', background:'none', border:'1px solid #e8d8b8', borderRadius:999, padding:'2px 10px', cursor:'pointer'}}
+            title="Archivar tarea (ya no está en Monday)"
+          >
+            Archivar
+          </button>
+        )}
       </div>
     </article>
   )
