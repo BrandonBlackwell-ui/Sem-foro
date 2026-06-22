@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 type DailyAnalysis = {
   id: number
@@ -425,20 +425,42 @@ export default function App() {
 
   if (loading) {
     return (
-      <main className="real-shell real-center">
-        <div className="real-kicker">Supabase</div>
-        <h1>Conectando datos reales...</h1>
-      </main>
+      <div className="lb-shell">
+        <div className="lb-book">
+          <div className="lb-page">
+            <div className="lb-lines" />
+            <div className="lb-margin" />
+            <div className="lb-spine"><div className="lb-rings">{Array.from({length: 9}).map((_, i) => <div className="lb-ring" key={i} />)}</div></div>
+            <div className="lb-content" style={{display:'flex',alignItems:'center',justifyContent:'center',minHeight:'60vh'}}>
+              <div style={{textAlign:'center'}}>
+                <span className="lb-eyebrow">Supabase</span>
+                <h1 className="lb-h2">Cargando datos...</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     )
   }
 
   if (error) {
     return (
-      <main className="real-shell real-center">
-        <div className="real-kicker danger">Error</div>
-        <h1>No se pudieron leer datos de Supabase</h1>
-        <p>{error}</p>
-      </main>
+      <div className="lb-shell">
+        <div className="lb-book">
+          <div className="lb-page">
+            <div className="lb-lines" />
+            <div className="lb-margin" />
+            <div className="lb-spine"><div className="lb-rings">{Array.from({length: 9}).map((_, i) => <div className="lb-ring" key={i} />)}</div></div>
+            <div className="lb-content" style={{display:'flex',alignItems:'center',justifyContent:'center',minHeight:'60vh'}}>
+              <div style={{textAlign:'center'}}>
+                <span className="lb-eyebrow" style={{color:'#a8453b'}}>Error</span>
+                <h1 className="lb-h2">No se pudieron leer datos</h1>
+                <p className="lb-subtext">{error}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     )
   }
 
@@ -450,258 +472,297 @@ export default function App() {
       : null
 
     return (
-      <main className="app-shell">
-        <header className="product-header">
-          <div>
-            <span className="eyebrow">Semaforo WhatsApp</span>
-            <h1>Cuentas</h1>
-            <p>Vista rapida de salud, actividad y analisis diario por grupo.</p>
-          </div>
-          <button className="primary-button" onClick={() => window.location.reload()}>
-            Actualizar
-          </button>
-        </header>
+      <div className="lb-shell">
+        <div className="lb-book">
+          <div className="lb-page">
+            <div className="lb-lines" />
+            <div className="lb-margin" />
+            <div className="lb-spine">
+              <div className="lb-rings">{Array.from({length: 9}).map((_, i) => <div className="lb-ring" key={i} />)}</div>
+            </div>
+            <div className="lb-content">
 
-        <section className="overview-strip">
-          <MetricCard label="Score promedio" value={averageScore ?? '--'} detail={averageScore ? scoreLabel(averageScore) : 'Sin puntajes'} tone={scoreColor(averageScore)} />
-          <MetricCard
-            label="Actividad cubierta"
-            value={`${analyzedCount} de ${groupSummaries.length}`}
-            detail={quietGroups ? `${quietGroups} sin mensajes nuevos o cambios` : 'Todos con actividad revisada'}
-          />
-          <MetricCard label="Grupos activos" value={groupSummaries.filter((group) => group.active).length} detail={`${groupSummaries.length} totales`} />
-        </section>
+              {/* Header */}
+              <div className="lb-header-row">
+                <div>
+                  <span className="lb-eyebrow">Semáforo de satisfacción</span>
+                  <h1 className="lb-h1">Cuentas</h1>
+                  <p className="lb-subtext">Vista rápida de salud, actividad y análisis diario por grupo.</p>
+                </div>
+                <div className="lb-header-actions">
+                  <button className="lb-btn-solid" onClick={() => window.location.reload()}>Actualizar</button>
+                </div>
+              </div>
 
-        <section className="calendar-panel card-3d">
-          <div>
-            <span className="eyebrow">Calendario</span>
-            <h2>Compilado por dia</h2>
-          </div>
-          <div className="date-strip">
-            <button className={selectedOverviewDate === 'latest' ? 'active' : ''} onClick={() => setSelectedOverviewDate('latest')}>
-              Ultimo
-            </button>
-            {analysisDates.map((day) => (
-              <button className={selectedOverviewDate === day ? 'active' : ''} key={day} onClick={() => setSelectedOverviewDate(day)}>
-                {day}
-              </button>
-            ))}
-          </div>
-        </section>
+              {/* Post-it stats */}
+              <div className="lb-stats-row">
+                <div className="lb-postit lb-postit-green" style={{animationDelay:'0ms'}}>
+                  <div className="lb-postit-label">Score promedio</div>
+                  <div className="lb-postit-value" style={{color: averageScore && averageScore >= 85 ? '#3f7050' : averageScore && averageScore >= 70 ? '#b07d1e' : '#a8453b'}}>{averageScore ?? '--'}</div>
+                  <div className="lb-postit-detail">{averageScore ? scoreLabel(averageScore) : 'Sin puntajes'}</div>
+                </div>
+                <div className="lb-postit lb-postit-yellow" style={{animationDelay:'80ms'}}>
+                  <div className="lb-postit-label">Actividad cubierta</div>
+                  <div className="lb-postit-value" style={{color:'#b07d1e'}}>{analyzedCount}<span style={{fontSize:24,fontWeight:400}}> / {groupSummaries.length}</span></div>
+                  <div className="lb-postit-detail">{quietGroups ? `${quietGroups} sin actividad` : 'Todos revisados'}</div>
+                </div>
+                <div className="lb-postit lb-postit-blue" style={{animationDelay:'160ms'}}>
+                  <div className="lb-postit-label">Grupos activos</div>
+                  <div className="lb-postit-value" style={{color:'#1a4a7a'}}>{groupSummaries.filter((g) => g.active).length}</div>
+                  <div className="lb-postit-detail">{groupSummaries.length} totales en seguimiento</div>
+                </div>
+              </div>
 
-        <section className="account-list" aria-label="Cuentas de WhatsApp">
-          {groupSummaries.map((group) => {
-            const scoreValue = group.score?.current_score ?? group.analysis?.new_score ?? null
-            const sentiment = group.analysis?.sentiment ?? 'pendiente'
-            const status = scoreLabel(scoreValue)
-            return (
-              <button className="account-row card-3d" key={group.jid} onClick={() => setSelectedJid(group.jid)}>
-                <span className={`score-dot ${scoreColor(scoreValue)}`}>{scoreValue ?? '--'}</span>
-                <span className="account-main">
-                  <strong>{group.name}</strong>
-                  <small>{group.analysis?.summary || 'Sin analisis diario guardado todavia.'}</small>
-                </span>
-                <span className="account-side">
-                  <span className={`status-pill ${badgeClass(sentiment)}`}>{group.analysis ? status : 'Pendiente'}</span>
-                  <small>{shortDate(group.last_message_at)}</small>
-                </span>
-              </button>
-            )
-          })}
-        </section>
-      </main>
+              {/* Calendar */}
+              <div className="lb-section-head">
+                <div>
+                  <div className="lb-section-title">Compilado por día</div>
+                  <div className="lb-section-sub">Selecciona una fecha para filtrar el listado</div>
+                </div>
+                <div className="lb-date-strip">
+                  <button className={`lb-date-btn${selectedOverviewDate === 'latest' ? ' active' : ''}`} onClick={() => setSelectedOverviewDate('latest')}>Último</button>
+                  {analysisDates.map((day) => (
+                    <button className={`lb-date-btn${selectedOverviewDate === day ? ' active' : ''}`} key={day} onClick={() => setSelectedOverviewDate(day)}>{day}</button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Account list */}
+              <div className="lb-account-list">
+                {groupSummaries.map((group, gi) => {
+                  const scoreValue = group.score?.current_score ?? group.analysis?.new_score ?? null
+                  const status = group.analysis ? scoreLabel(scoreValue) : 'Pendiente'
+                  const stampColor = scoreValue != null && scoreValue >= 85 ? '#3f7050' : scoreValue != null && scoreValue >= 70 ? '#b07d1e' : '#a8453b'
+                  const r = 26
+                  const circ = 2 * Math.PI * r
+                  const offset = scoreValue != null ? circ * (1 - scoreValue / 100) : circ
+                  return (
+                    <button className="lb-account-row" key={group.jid} style={{borderLeft: `5px solid ${stampColor}`, animationDelay: `${gi * 40}ms`}} onClick={() => setSelectedJid(group.jid)}>
+                      <div className="lb-score-ring">
+                        <svg width="62" height="62" viewBox="0 0 62 62">
+                          <circle cx="31" cy="31" r={r} fill="none" stroke="#e8e4d8" strokeWidth="5" />
+                          <circle cx="31" cy="31" r={r} fill="none" stroke={stampColor} strokeWidth="5"
+                            strokeDasharray={`${circ}`} strokeDashoffset={offset}
+                            style={{transition:'stroke-dashoffset 1s ease', transform:'rotate(-90deg)', transformOrigin:'center'}} />
+                        </svg>
+                        <div className="lb-score-ring-val" style={{color: stampColor}}>{scoreValue ?? '--'}</div>
+                      </div>
+                      <div className="lb-account-main">
+                        <div className="lb-account-name">{group.name}</div>
+                        <div className="lb-account-summary">{group.analysis?.summary || 'Sin análisis diario guardado todavía.'}</div>
+                      </div>
+                      <div className="lb-account-side">
+                        <span className="lb-stamp" style={{color: stampColor, borderColor: stampColor, '--sr': gi % 2 === 0 ? '-4deg' : '3deg'} as React.CSSProperties}>{status}</span>
+                        <span className="lb-account-time">{shortDate(group.last_message_at)}</span>
+                      </div>
+                    </button>
+                  )
+                })}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     )
   }
 
   return (
-    <main className="app-shell">
-      <header className="product-header">
-        <div>
-          <button className="back-button" onClick={() => setSelectedJid(null)}>
-            Volver
-          </button>
-          <span className="eyebrow">Detalle</span>
-          <h1>{selectedGroup.name}</h1>
-          <p>{selectedHistory.length ? `${selectedHistory.length} dia(s) analizados en el historico` : 'Grupo pendiente de analisis diario.'}</p>
-        </div>
-        <button className="primary-button" onClick={() => window.location.reload()}>
-          Actualizar
-        </button>
-      </header>
+    <div className="lb-shell">
+      <div className="lb-book">
+        <div className="lb-page">
+          <div className="lb-lines" />
+          <div className="lb-margin" />
+          <div className="lb-spine">
+            <div className="lb-rings">{Array.from({length: 9}).map((_, i) => <div className="lb-ring" key={i} />)}</div>
+          </div>
+          <div className="lb-content">
 
-      <nav className="client-tabs" aria-label="Secciones del cliente">
-        <button className={clientTab === 'resumen' ? 'active' : ''} onClick={() => setClientTab('resumen')}>
-          Resumen
-        </button>
-        <button className={clientTab === 'historico' ? 'active' : ''} onClick={() => setClientTab('historico')}>
-          Historico
-        </button>
-        <button className={clientTab === 'mensajes' ? 'active' : ''} onClick={() => setClientTab('mensajes')}>
-          Mensajes
-        </button>
+      {/* Detail header */}
+      <div className="lb-header-row">
+        <div>
+          <button className="lb-back-btn" onClick={() => setSelectedJid(null)}>← Volver</button>
+          <span className="lb-eyebrow">Detalle</span>
+          <h1 className="lb-h2">{selectedGroup.name}</h1>
+          <p className="lb-subtext">{selectedHistory.length ? `${selectedHistory.length} día(s) analizados en el histórico` : 'Grupo pendiente de análisis diario.'}</p>
+        </div>
+        <div className="lb-header-actions">
+          <button className="lb-btn-solid" onClick={() => window.location.reload()}>Actualizar</button>
+        </div>
+      </div>
+
+      <nav className="lb-tabs" aria-label="Secciones del cliente">
+        <button className={`lb-tab${clientTab === 'resumen' ? ' active' : ''}`} onClick={() => setClientTab('resumen')}>Resumen</button>
+        <button className={`lb-tab${clientTab === 'historico' ? ' active' : ''}`} onClick={() => setClientTab('historico')}>Histórico</button>
+        <button className={`lb-tab${clientTab === 'mensajes' ? ' active' : ''}`} onClick={() => setClientTab('mensajes')}>Mensajes</button>
       </nav>
 
       {clientTab === 'resumen' && (
-        <>
-          <section className="detail-hero">
-            <div className={`score-panel card-3d ${scoreColor(selectedScore)}`}>
-              <span>{selectedScore ?? '--'}</span>
-              <small>Ultimo score - {scoreLabel(selectedScore)}</small>
+        <div className="lb-resumen" style={{marginTop:24}}>
+          {/* Score + summary hero */}
+          <div style={{display:'flex', gap:22, flexWrap:'wrap', alignItems:'flex-start'}}>
+            <div className="lb-score-postit" style={{background: selectedScore != null && selectedScore >= 85 ? '#d4eedd' : selectedScore != null && selectedScore >= 70 ? '#fdf1ad' : '#fde8e6'}}>
+              <div className="lb-score-postit-val" style={{color: selectedScore != null && selectedScore >= 85 ? '#3f7050' : selectedScore != null && selectedScore >= 70 ? '#b07d1e' : '#a8453b'}}>{selectedScore ?? '--'}</div>
+              <div className="lb-score-postit-label">Último score · {scoreLabel(selectedScore)}</div>
+              {latestSelectedAnalysis && (
+                <div style={{marginTop:10, display:'flex', gap:6, flexWrap:'wrap', justifyContent:'center'}}>
+                  <span className={`lb-pill ${badgeClass(latestSelectedAnalysis.sentiment) === 'green' ? 'lb-pill-green' : badgeClass(latestSelectedAnalysis.sentiment) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{latestSelectedAnalysis.sentiment}</span>
+                  <span className={`lb-pill ${badgeClass(selectedSatisfaction) === 'green' ? 'lb-pill-green' : badgeClass(selectedSatisfaction) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{selectedSatisfaction}</span>
+                </div>
+              )}
             </div>
-            <div className="detail-summary card-3d">
-              <div className="pill-row">
-                <span className={`status-pill ${latestSelectedAnalysis ? badgeClass(latestSelectedAnalysis.sentiment) : 'yellow'}`}>
-                  {latestSelectedAnalysis?.sentiment ?? 'pendiente'}
-                </span>
-                <span className={`status-pill ${badgeClass(selectedSatisfaction)}`}>{selectedSatisfaction}</span>
-                <span className={`status-pill ${latestSelectedAnalysis ? badgeClass(latestSelectedAnalysis.risk_level) : 'yellow'}`}>
-                  riesgo {latestSelectedAnalysis?.risk_level ?? 'pendiente'}
-                </span>
-              </div>
-              <p>{selectedHistory.length ? `Resumen acumulado de ${selectedHistory.length} dia(s): ${selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')}` : 'Este grupo existe en Supabase, pero todavia no tiene resumen guardado.'}</p>
+            <div className="lb-summary-card" style={{flex:1}}>
+              <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
+              <p className="lb-summary-text">
+                {selectedHistory.length
+                  ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
+                  : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
+              </p>
             </div>
-            <ScoreOrbit score={selectedScore} tone={scoreColor(selectedScore)} analyzed={Boolean(latestSelectedAnalysis)} />
-          </section>
+          </div>
 
-          <section className="detail-grid">
-            <article className="focus-card card-3d">
-              <div className="section-head">
-                <h2>Compilado de tareas</h2>
-                <span>{allActions.length}</span>
+          {/* Tasks + signals grid */}
+          <div className="lb-resumen-grid" style={{marginTop:28}}>
+            <div>
+              <div className="lb-section-head" style={{marginTop:0}}>
+                <div className="lb-section-title">Compilado de tareas</div>
+                <span className="lb-section-count">{allActions.length}</span>
               </div>
-              <div className="task-list">
-                {allActions.length ? (
-                  allActions.slice(-6).map((item, index) => (
-                    <TaskCard item={item} key={index} />
-                  ))
-                ) : (
-                  <p>No hay tareas acumuladas.</p>
-                )}
+              <div style={{display:'flex', flexDirection:'column', gap:12}}>
+                {allActions.length
+                  ? allActions.slice(-6).map((item, index) => <TaskCard item={item} key={index} />)
+                  : <p className="lb-subtext">No hay tareas acumuladas.</p>}
               </div>
-            </article>
-
-            <article className="focus-card card-3d">
-              <div className="section-head">
-                <h2>Compilado de senales</h2>
-                <span>{allPositiveSignals.length + allNegativeSignals.length}</span>
+            </div>
+            <div>
+              <div className="lb-section-head" style={{marginTop:0}}>
+                <div className="lb-section-title">Señales</div>
+                <span className="lb-section-count">{allPositiveSignals.length + allNegativeSignals.length}</span>
               </div>
               <SignalList title="A favor" items={allPositiveSignals.slice(-5)} tone="green" />
               <SignalList title="A revisar" items={allNegativeSignals.slice(-5)} tone="red" />
-            </article>
-          </section>
-        </>
+            </div>
+          </div>
+        </div>
       )}
 
       {clientTab === 'historico' && (
-        <section className="focus-card card-3d">
-          <div className="section-head">
-            <h2>Historico de puntos</h2>
-            <span>{selectedHistory.length} dias</span>
+        <div className="lb-historico">
+          <div className="lb-section-head">
+            <div className="lb-section-title">Histórico de puntos</div>
+            <span className="lb-section-count">{selectedHistory.length} días</span>
           </div>
-          <ScoreGraph items={selectedHistory} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
-          <div className="timeline">
-            {selectedHistory.length ? (
-              selectedHistory.map((item) => (
-                <button className={`timeline-item ${selectedHistoryId === item.id ? 'active' : ''}`} key={item.id} onClick={() => setSelectedHistoryId(item.id)}>
-                  <div className={`timeline-score ${scoreColor(item.new_score)}`}>{item.new_score ?? '--'}</div>
-                  <div>
-                    <header>
-                      <strong>{item.analysis_date}</strong>
-                      <span className={item.score_delta >= 0 ? 'green' : 'red'}>
-                        {item.score_delta > 0 ? '+' : ''}
-                        {item.score_delta}
-                      </span>
-                    </header>
-                    <p>{item.summary || 'Sin resumen guardado.'}</p>
+          <div className="lb-chart-wrap">
+            <ScoreGraph items={selectedHistory} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
+          </div>
+          <div style={{display:'flex', flexDirection:'column', gap:10, marginTop:18}}>
+            {selectedHistory.length
+              ? selectedHistory.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => setSelectedHistoryId(item.id)}
+                  style={{
+                    display:'flex', gap:14, alignItems:'center', padding:'12px 16px',
+                    background: selectedHistoryId === item.id ? '#fffdf0' : '#fff',
+                    border: `1px solid ${selectedHistoryId === item.id ? '#d4c87a' : '#ece9e0'}`,
+                    borderRadius:8, cursor:'pointer', textAlign:'left', transition:'all .12s'
+                  }}>
+                  <div style={{width:42, height:42, borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', background: item.new_score != null && item.new_score >= 85 ? '#d4eedd' : item.new_score != null && item.new_score >= 70 ? '#fdf1ad' : '#fde8e6', fontFamily:"'Libre Franklin',sans-serif", fontWeight:800, fontSize:14, color: item.new_score != null && item.new_score >= 85 ? '#3f7050' : item.new_score != null && item.new_score >= 70 ? '#b07d1e' : '#a8453b', flexShrink:0}}>{item.new_score ?? '--'}</div>
+                  <div style={{flex:1}}>
+                    <div style={{display:'flex', justifyContent:'space-between'}}>
+                      <strong style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:14}}>{item.analysis_date}</strong>
+                      <span style={{fontFamily:"'Libre Franklin',sans-serif", fontWeight:700, fontSize:14, color: item.score_delta >= 0 ? '#3f7050' : '#a8453b'}}>{item.score_delta > 0 ? '+' : ''}{item.score_delta}</span>
+                    </div>
+                    <p style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#5f636a', margin:'2px 0 0'}}>{item.summary || 'Sin resumen guardado.'}</p>
                   </div>
                 </button>
               ))
-            ) : (
-              <p>No hay historico guardado para esta cuenta todavia.</p>
-            )}
+              : <p className="lb-subtext">No hay histórico guardado para esta cuenta todavía.</p>}
           </div>
+
           {selectedDayAnalysis && (
-            <div className="day-detail">
-              <div className="section-head">
+            <div style={{marginTop:28, padding:'22px 24px', background:'#fff', border:'1px solid #ece9e0', borderRadius:12}}>
+              <div className="lb-section-head" style={{marginTop:0}}>
                 <div>
-                  <h2>Detalle del dia</h2>
-                  <p>{selectedDayAnalysis.analysis_date}</p>
+                  <div className="lb-section-title">Detalle del día</div>
+                  <div className="lb-section-sub">{selectedDayAnalysis.analysis_date}</div>
                 </div>
-                <span className={selectedDayAnalysis.score_delta >= 0 ? 'green' : 'red'}>
-                  {selectedDayAnalysis.score_delta > 0 ? '+' : ''}
-                  {selectedDayAnalysis.score_delta}
-                </span>
+                <span style={{fontFamily:"'Libre Franklin',sans-serif", fontWeight:800, fontSize:22, color: selectedDayAnalysis.score_delta >= 0 ? '#3f7050' : '#a8453b'}}>{selectedDayAnalysis.score_delta > 0 ? '+' : ''}{selectedDayAnalysis.score_delta}</span>
               </div>
-              <p className="day-summary">{selectedDayAnalysis.summary || 'Sin resumen guardado.'}</p>
-              <div className="detail-grid day-grid">
-                <article>
-                  <h3>Tareas</h3>
-                  <div className="task-list">
-                    {actionItems.length ? (
-                      actionItems.map((item, index) => (
-                        <TaskCard item={item} key={index} compact />
-                      ))
-                    ) : (
-                      <p>No hay tareas detectadas.</p>
-                    )}
+              <p className="lb-summary-text" style={{marginBottom:20}}>{selectedDayAnalysis.summary || 'Sin resumen guardado.'}</p>
+              <div className="lb-resumen-grid">
+                <div>
+                  <div className="lb-section-title" style={{fontSize:20, marginBottom:10}}>Tareas</div>
+                  <div style={{display:'flex', flexDirection:'column', gap:10}}>
+                    {actionItems.length
+                      ? actionItems.map((item, i) => <TaskCard item={item} key={i} compact />)
+                      : <p className="lb-subtext">No hay tareas detectadas.</p>}
                   </div>
-                </article>
-                <article>
-                  <h3>Senales</h3>
+                </div>
+                <div>
+                  <div className="lb-section-title" style={{fontSize:20, marginBottom:10}}>Señales</div>
                   <SignalList title="A favor" items={positiveSignals} tone="green" />
                   <SignalList title="A revisar" items={negativeSignals} tone="red" />
-                </article>
+                </div>
               </div>
-              <button className="secondary-button" onClick={() => setMessagesOpen((open) => !open)}>
-                {messagesOpen ? 'Ocultar mensajes' : `Ver ${detailLoading ? '' : detailMessages.length} mensajes del dia`}
+              <button className="lb-btn-outline" style={{marginTop:20}} onClick={() => setMessagesOpen((open) => !open)}>
+                {messagesOpen ? 'Ocultar mensajes' : `Ver ${detailLoading ? '...' : detailMessages.length} mensajes del día`}
               </button>
               {messagesOpen && (
-                <div className="message-feed">
-                  {detailMessages.slice(0, 12).map((message) => (
-                    <article className="chat-message" key={message.id}>
-                      <header>
-                        <strong>{message.speaker_label || message.push_name || message.author || 'Sin autor'}</strong>
-                        <time>{shortDate(message.sent_at)}</time>
-                      </header>
-                      <p>{message.body || '(sin texto)'}</p>
-                      <span>{message.msg_type}</span>
-                    </article>
-                  ))}
+                <div className="lb-messages" style={{marginTop:18}}>
+                  {detailMessages.slice(0, 12).map((message) => {
+                    const isTeam = message.speaker_team === 'blackwell'
+                    return (
+                      <div className={`lb-bubble-wrap ${isTeam ? 'right' : 'left'}`} key={message.id}>
+                        <div className={`lb-bubble ${isTeam ? 'right' : 'left'}`}>
+                          <div className="lb-bubble-name">{message.speaker_label || message.push_name || message.author || 'Sin autor'}</div>
+                          <div className="lb-bubble-text">{message.body || '(sin texto)'}</div>
+                          <div className="lb-bubble-time">{shortDate(message.sent_at)} · {message.msg_type}</div>
+                        </div>
+                      </div>
+                    )
+                  })}
                 </div>
               )}
             </div>
           )}
-        </section>
+        </div>
       )}
 
       {clientTab === 'mensajes' && (
-      <section className="focus-card card-3d">
-        <div className="section-head collapsible-head">
-          <div>
-            <h2>Mensajes</h2>
-            <p>Conversacion cruda disponible para auditoria.</p>
+        <div style={{marginTop:22}}>
+          <div className="lb-section-head">
+            <div>
+              <div className="lb-section-title">Mensajes</div>
+              <div className="lb-section-sub">Conversación cruda disponible para auditoría.</div>
+            </div>
+            <button className="lb-btn-outline" onClick={() => setMessagesOpen((open) => !open)}>
+              {messagesOpen ? 'Ocultar' : `Ver ${detailLoading ? '...' : detailMessages.length} mensajes`}
+            </button>
           </div>
-          <button className="secondary-button" onClick={() => setMessagesOpen((open) => !open)}>
-            {messagesOpen ? 'Ocultar' : `Ver ${detailLoading ? '' : detailMessages.length} mensajes`}
-          </button>
+          {messagesOpen && (
+            <div className="lb-messages">
+              {detailMessages.slice(0, 12).map((message) => {
+                const isTeam = message.speaker_team === 'blackwell'
+                return (
+                  <div className={`lb-bubble-wrap ${isTeam ? 'right' : 'left'}`} key={message.id}>
+                    <div className={`lb-bubble ${isTeam ? 'right' : 'left'}`}>
+                      <div className="lb-bubble-name">{message.speaker_label || message.push_name || message.author || 'Sin autor'}</div>
+                      <div className="lb-bubble-text">{message.body || '(sin texto)'}</div>
+                      <div className="lb-bubble-time">{shortDate(message.sent_at)} · {message.msg_type}</div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
         </div>
-        {messagesOpen && (
-          <div className="message-feed">
-            {detailMessages.slice(0, 12).map((message) => (
-              <article className="chat-message" key={message.id}>
-                <header>
-              <strong>{message.speaker_label || message.push_name || message.author || 'Sin autor'}</strong>
-                  <time>{shortDate(message.sent_at)}</time>
-                </header>
-                <p>{message.body || '(sin texto)'}</p>
-                <span>{message.msg_type}</span>
-              </article>
-            ))}
-          </div>
-        )}
-      </section>
       )}
-    </main>
+
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -744,34 +805,6 @@ function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; s
   )
 }
 
-function ScoreOrbit({ score, tone, analyzed }: { score: number | null; tone: string; analyzed: boolean }) {
-  return (
-    <aside className={`score-orbit ${tone}`} aria-label="Visualizacion 3D del estado">
-      <div className="orbit-stage">
-        <div className="orbit-ring one" />
-        <div className="orbit-ring two" />
-        <div className="orbit-core">
-          <span>{score ?? '--'}</span>
-        </div>
-        <i className="satellite a" />
-        <i className="satellite b" />
-        <i className="satellite c" />
-      </div>
-      <strong>{analyzed ? 'Analisis activo' : 'Pendiente'}</strong>
-      <small>{score == null ? 'Sin score historico' : 'Score vivo desde Supabase'}</small>
-    </aside>
-  )
-}
-
-function MetricCard({ label, value, detail, tone = 'gray' }: { label: string; value: string | number; detail: string; tone?: string }) {
-  return (
-    <article className="metric-card card-3d">
-      <span>{label}</span>
-      <strong className={tone}>{value}</strong>
-      <small>{detail}</small>
-    </article>
-  )
-}
 
 const STATUS_CONFIG: Record<string, { color: string; bg: string; icon: string }> = {
   'por hacer':   { color: '#78808c', bg: 'rgba(120,128,140,0.10)', icon: '○' },
@@ -809,80 +842,68 @@ function TaskCard({ item, compact = false }: { item: unknown; compact?: boolean 
   const sc = getStatusConfig(detail.status ?? '')
   const urg = URGENCY_CONFIG[(detail.urgency ?? '').toLowerCase()] ?? URGENCY_CONFIG['low']
   const wtIcon = WORK_TYPE_ICON[(detail.workType ?? '').toLowerCase()] ?? '📋'
+  const ownerTagClass = ownerType === 'blackwell' ? 'blackwell' : 'client'
 
   return (
-    <article
-      className={`task-item task-rich ${compact ? 'compact' : ''}`}
-      style={{ borderLeftColor: sc.color }}
-    >
-      {/* Header */}
-      <div className="task-title">
-        <strong>{actionText(item)}</strong>
-        <span className={`owner-type ${badgeClass(ownerType)}`}>{ownerType}</span>
+    <article className="lb-task" style={{borderLeft: `4px solid ${sc.color}`}}>
+      <div className="lb-task-header">
+        <div className="lb-task-title">{actionText(item)}</div>
+        <span className={`lb-task-tag ${ownerTagClass}`}>{ownerType}</span>
       </div>
 
-      {/* Status badge + urgency */}
-      <div className="task-meta-row">
-        <span className="task-status-badge" style={{ color: sc.color, background: sc.bg, border: `1px solid ${sc.color}40` }}>
-          {sc.icon} {detail.status}
+      <div className="lb-task-status-row">
+        <span className="lb-task-status" style={{color: sc.color}}>
+          <span className="lb-task-status-dot" style={{background: sc.color}} />
+          {detail.status}
         </span>
-        <span className="task-urgency-badge" style={{ color: urg.color }}>
-          {urg.icon} {detail.urgency}
-        </span>
+        <span className="lb-task-priority" style={{color: urg.color}}>{urg.icon} {detail.urgency}</span>
       </div>
 
-      {/* Fields */}
-      <dl className="task-fields">
-        <div>
-          <dt>📅 Fecha entrega</dt>
-          <dd>{shortDateOnly(detail.dueDate) || '—'}</dd>
-        </div>
-        <div>
-          <dt>👤 Responsable</dt>
-          <dd>{detail.owner}</dd>
-        </div>
-        <div>
-          <dt>{wtIcon} Tipo</dt>
-          <dd>{detail.workType}</dd>
-        </div>
-        <div>
-          <dt>🏢 Cliente</dt>
-          <dd>{detail.client}</dd>
-        </div>
-      </dl>
-
-      {(detail.evidenceSpeaker || detail.evidenceQuote || detail.evidenceReason) && (
-        <div className="task-evidence">
-          <span>Origen</span>
-          <p>
-            {detail.evidenceSpeaker ? <strong>{detail.evidenceSpeaker}: </strong> : null}
-            {detail.evidenceQuote || detail.evidenceReason}
-          </p>
+      {!compact && (
+        <div className="lb-task-fields">
+          <div>
+            <div className="lb-task-field-label">Fecha entrega</div>
+            <div className="lb-task-field-val">{shortDateOnly(detail.dueDate) || '—'}</div>
+          </div>
+          <div>
+            <div className="lb-task-field-label">Responsable</div>
+            <div className="lb-task-field-val">{detail.owner}</div>
+          </div>
+          <div>
+            <div className="lb-task-field-label">{wtIcon} Tipo</div>
+            <div className="lb-task-field-val">{detail.workType}</div>
+          </div>
+          <div>
+            <div className="lb-task-field-label">Cliente</div>
+            <div className="lb-task-field-val">{detail.client}</div>
+          </div>
         </div>
       )}
 
-      <footer className="task-sync">
+      {(detail.evidenceSpeaker || detail.evidenceQuote || detail.evidenceReason) && !compact && (
+        <div className="lb-signal-green" style={{marginTop:12, fontSize:12.5}}>
+          {detail.evidenceSpeaker ? <strong>{detail.evidenceSpeaker}: </strong> : null}
+          {detail.evidenceQuote || detail.evidenceReason}
+        </div>
+      )}
+
+      <div className="lb-task-footer">
         <span>{detail.mondayItemId ? `Monday #${detail.mondayItemId}` : 'Sin item Monday'}</span>
-        <span>{detail.createdAt ? `Creada ${shortDate(detail.createdAt)}` : 'Sin creacion'}</span>
-        <span>{detail.syncedAt ? `Sync ${shortDate(detail.syncedAt)}` : 'Sin sync'}</span>
-      </footer>
+        <span>{detail.createdAt ? `Creada ${shortDate(detail.createdAt)}` : ''}</span>
+        <span>{detail.syncedAt ? `Sync ${shortDate(detail.syncedAt)}` : ''}</span>
+      </div>
     </article>
   )
 }
 
 function SignalList({ title, items, tone }: { title: string; items: unknown[]; tone: 'green' | 'red' }) {
+  const cls = tone === 'green' ? 'lb-signal-green' : 'lb-signal-red'
   return (
-    <div className="signal-list">
-      <h3>{title}</h3>
-      {items.length ? (
-        items.map((item, index) => (
-          <p className={tone} key={index}>
-            {String(item)}
-          </p>
-        ))
-      ) : (
-        <p>Sin registros.</p>
-      )}
+    <div style={{marginBottom: 14}}>
+      <div style={{fontFamily:"'Libre Franklin',sans-serif", fontWeight:700, fontSize:13, letterSpacing:'.05em', textTransform:'uppercase', color:'#9aa0a6', marginBottom:8}}>{title}</div>
+      {items.length
+        ? items.map((item, index) => <div className={cls} key={index}>{String(item)}</div>)
+        : <p className="lb-subtext" style={{fontSize:13}}>Sin registros.</p>}
     </div>
   )
 }
