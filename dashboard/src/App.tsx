@@ -54,35 +54,13 @@ type WaGroup = {
 }
 
 type WaTask = {
-  id: number
-  analysis_id: number | null
-  account_id: string
-  group_jid: string | null
-  group_name: string | null
-  analysis_date: string
-  action: string
-  owner: string | null
-  owner_type: string | null
-  urgency: string | null
-  due_date: string | null
-  work_type: string | null
-  client_label: string | null
-  evidence_speaker: string | null
-  evidence_quote: string | null
-  evidence_reason: string | null
   monday_item_id: string | null
-  monday_item_name: string | null
-  monday_created_at: string | null
+  action: string
   monday_status: string | null
   monday_due_date: string | null
   monday_responsible_text: string | null
   monday_work_type: string | null
   monday_client_label: string | null
-  monday_updated_at: string | null
-  last_synced_to_monday_at: string | null
-  last_synced_from_monday_at: string | null
-  raw_action: unknown
-  raw_monday: unknown
   created_at: string
   updated_at: string
   deleted_at: string | null
@@ -104,19 +82,6 @@ const SUPABASE_ANON_KEY =
   import.meta.env.VITE_SUPABASE_ANON_KEY ||
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxZ2ZrZnZ5d2JwamxkcmV1cGxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1MjEwNDMsImV4cCI6MjA5NzA5NzA0M30.wR9_YXMi2udYsVNLY8SlPFwpxkqZ3j78hv961ShBkQk'
 
-async function supabasePatch(path: string, body: Record<string, unknown>): Promise<void> {
-  const res = await fetch(`${SUPABASE_URL}${path}`, {
-    method: 'PATCH',
-    headers: {
-      apikey: SUPABASE_ANON_KEY,
-      Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-      'Content-Type': 'application/json',
-      Prefer: 'return=minimal',
-    },
-    body: JSON.stringify(body),
-  })
-  if (!res.ok) throw new Error(`${res.status}: ${await res.text()}`)
-}
 
 async function supabaseGet<T>(path: string): Promise<T> {
   const response = await fetch(`${SUPABASE_URL}${path}`, {
@@ -241,8 +206,6 @@ export default function App() {
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
-  const [deletedTasks, setDeletedTasks] = useState<WaTask[]>([])
-  const [showDeleted, setShowDeleted] = useState(false)
   const [clientTab, setClientTab] = useState<'resumen' | 'historico' | 'mensajes'>('resumen')
   const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
   const [messagesOpen, setMessagesOpen] = useState(false)
@@ -264,12 +227,9 @@ export default function App() {
             '/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,speaker_label,speaker_team,body,msg_type,sent_at&order=sent_at.desc&limit=500',
           ),
         ])
-        // Sync with Monday first — archives tasks deleted from Monday
-        await fetch('/api/monday-sync').catch(() => {})
-
-        const taskRows = await supabaseGet<WaTask[]>(
-          '/rest/v1/wa_tasks?select=*&order=updated_at.desc&limit=500&deleted_at=is.null',
-        ).catch(() => [])
+        const taskRows = await fetch('/api/monday-tasks')
+          .then(r => r.ok ? r.json() : [])
+          .catch(() => [])
 
         setAnalyses(analysisRows)
         setScores(scoreRows)
@@ -376,10 +336,6 @@ export default function App() {
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
-  async function archiveTask(id: number) {
-    await supabasePatch(`/rest/v1/wa_tasks?id=eq.${id}`, { deleted_at: new Date().toISOString() })
-    setTasks(prev => prev.filter(t => t.id !== id))
-  }
   const selectedHistory = useMemo(() => {
     if (!selectedGroup) return []
     return analyses
@@ -391,14 +347,13 @@ export default function App() {
   const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
   const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
-  const selectedTasks = selectedGroup ? tasks.filter((task) => task.group_jid === selectedGroup.jid) : []
+  const selectedTasks = selectedGroup
+    ? tasks.filter(t => t.monday_client_label && selectedGroup.name.toLowerCase().includes(t.monday_client_label.toLowerCase()))
+    : []
   const allActions = selectedTasks.length ? selectedTasks : selectedHistory.flatMap((analysis) => asArray(analysis.action_items))
   const allPositiveSignals = selectedHistory.flatMap((analysis) => asArray(analysis.positive_signals))
   const allNegativeSignals = selectedHistory.flatMap((analysis) => asArray(analysis.negative_signals))
-  const activeDayTasks = activeDayAnalysis
-    ? selectedTasks.filter((task) => task.analysis_id === activeDayAnalysis.id || task.analysis_date === activeDayAnalysis.analysis_date)
-    : []
-  const actionItems = activeDayTasks.length ? activeDayTasks : activeDayAnalysis ? asArray(activeDayAnalysis.action_items) : []
+  const actionItems = selectedTasks.length ? selectedTasks : activeDayAnalysis ? asArray(activeDayAnalysis.action_items) : []
   const positiveSignals = activeDayAnalysis ? asArray(activeDayAnalysis.positive_signals) : []
   const negativeSignals = activeDayAnalysis ? asArray(activeDayAnalysis.negative_signals) : []
 
@@ -406,16 +361,7 @@ export default function App() {
     setMessagesOpen(false)
     setClientTab('resumen')
     setSelectedHistoryId(null)
-    setShowDeleted(false)
-    setDeletedTasks([])
   }, [selectedJid])
-
-  useEffect(() => {
-    if (!showDeleted || !selectedGroup) return
-    supabaseGet<WaTask[]>(
-      `/rest/v1/wa_tasks?select=*&group_jid=eq.${encodeURIComponent(selectedGroup.jid)}&deleted_at=not.is.null&order=deleted_at.desc&limit=100`
-    ).then(setDeletedTasks).catch(() => {})
-  }, [showDeleted, selectedGroup])
 
   useEffect(() => {
     async function loadDetailMessages() {
@@ -662,34 +608,10 @@ export default function App() {
               </div>
               <div style={{display:'flex', flexDirection:'column', gap:12}}>
                 {allActions.length
-                  ? allActions.slice(-6).map((item, index) => <TaskCard item={item} key={index} onArchive={archiveTask} />)
+                  ? allActions.slice(-6).map((item, index) => <TaskCard item={item} key={index} />)
                   : <p className="lb-subtext">No hay tareas acumuladas.</p>}
               </div>
 
-              {/* Deleted tasks history */}
-              <div style={{marginTop:18, borderTop:'1px dashed #e6e2d6', paddingTop:14}}>
-                <button
-                  onClick={() => setShowDeleted(v => !v)}
-                  style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#9aa0a6', background:'none', border:'1px dashed #d0ccc4', borderRadius:999, padding:'4px 14px', cursor:'pointer', display:'flex', alignItems:'center', gap:6}}>
-                  <span style={{fontSize:16}}>🗑</span>
-                  {showDeleted ? 'Ocultar eliminadas' : 'Ver tareas eliminadas de Monday'}
-                </button>
-                {showDeleted && (
-                  <div style={{marginTop:12, display:'flex', flexDirection:'column', gap:10}}>
-                    {deletedTasks.length === 0
-                      ? <p className="lb-subtext" style={{fontSize:13}}>No hay tareas eliminadas registradas para este grupo.</p>
-                      : deletedTasks.map((item) => (
-                        <div key={item.id} style={{opacity:0.65, position:'relative'}}>
-                          <div style={{position:'absolute', top:8, right:10, fontFamily:"'Caveat',cursive", fontSize:14, color:'#a8453b', transform:'rotate(-2deg)', border:'1px solid #a8453b', borderRadius:4, padding:'1px 8px', background:'#fde8e6'}}>
-                            Eliminada {item.deleted_at ? new Intl.DateTimeFormat('es-MX',{day:'2-digit',month:'short',year:'numeric'}).format(new Date(item.deleted_at)) : ''}
-                          </div>
-                          <TaskCard item={item} />
-                        </div>
-                      ))
-                    }
-                  </div>
-                )}
-              </div>
             </div>
             <div>
               <div className="lb-section-head" style={{marginTop:0}}>
@@ -764,7 +686,7 @@ export default function App() {
                   <div className="lb-section-title" style={{fontSize:20, marginBottom:10}}>Tareas</div>
                   <div style={{display:'flex', flexDirection:'column', gap:10}}>
                     {actionItems.length
-                      ? actionItems.map((item, i) => <TaskCard item={item} key={i} compact onArchive={archiveTask} />)
+                      ? actionItems.map((item, i) => <TaskCard item={item} key={i} compact />)
                       : <p className="lb-subtext">No hay tareas detectadas.</p>}
                   </div>
                 </div>
@@ -1019,7 +941,7 @@ function getStatusConfig(status: string) {
   return STATUS_CONFIG[key] ?? { color: '#78808c', bg: 'rgba(120,128,140,0.10)', icon: '○' }
 }
 
-function TaskCard({ item, compact = false, onArchive }: { item: unknown; compact?: boolean; onArchive?: (id: number) => void }) {
+function TaskCard({ item, compact = false }: { item: unknown; compact?: boolean }) {
   const detail = actionDetail(item)
   const ownerType = actionOwnerType(item)
   const sc = getStatusConfig(detail.status ?? '')
@@ -1071,18 +993,7 @@ function TaskCard({ item, compact = false, onArchive }: { item: unknown; compact
       )}
 
       <div className="lb-task-footer">
-        <span>{detail.mondayItemId ? `Monday #${detail.mondayItemId}` : 'Sin item Monday'}</span>
-        <span>{detail.createdAt ? `Creada ${shortDate(detail.createdAt)}` : ''}</span>
-        <span>{detail.syncedAt ? `Sync ${shortDate(detail.syncedAt)}` : ''}</span>
-        {onArchive && isRecord(item) && typeof item.id === 'number' && (
-          <button
-            onClick={(e) => { e.stopPropagation(); if (confirm('¿Archivar esta tarea? No aparecerá en el dashboard pero quedará en el historial.')) onArchive(item.id as number) }}
-            style={{marginLeft:'auto', fontFamily:"'Libre Franklin',sans-serif", fontSize:11, color:'#c8902a', background:'none', border:'1px solid #e8d8b8', borderRadius:999, padding:'2px 10px', cursor:'pointer'}}
-            title="Archivar tarea (ya no está en Monday)"
-          >
-            Archivar
-          </button>
-        )}
+        <span>{detail.mondayItemId ? `Monday #${detail.mondayItemId}` : ''}</span>
       </div>
     </article>
   )
