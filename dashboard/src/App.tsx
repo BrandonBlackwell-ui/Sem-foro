@@ -472,6 +472,11 @@ export default function App() {
 
   if (!selectedGroup) {
     const analyzedCount = groupSummaries.filter((group) => group.analysis).length
+    const todayStr = todayMexicoStr()
+    // Groups with messages today but no analysis yet (analyzer hasn't run for them yet)
+    const pendingAnalysis = groupSummaries.filter((g) => !g.analysis && g.last_message_at && g.last_message_at.slice(0,10) >= todayStr)
+    // Groups with no messages at all recently (truly quiet)
+    const trulyQuiet = groupSummaries.filter((g) => !g.analysis && (!g.last_message_at || g.last_message_at.slice(0,10) < todayStr))
     const quietGroups = Math.max(groupSummaries.length - analyzedCount, 0)
     const averageScore = scores.length
       ? Math.round(scores.reduce((total, score) => total + score.current_score, 0) / scores.length)
@@ -508,14 +513,16 @@ export default function App() {
                   <div className="lb-postit-detail">{averageScore ? scoreLabel(averageScore) : 'Sin puntajes'}</div>
                 </div>
                 <div className="lb-postit lb-postit-yellow" style={{animationDelay:'80ms', cursor:'pointer', outline: groupFilter === 'analyzed' ? '2px solid #b07d1e' : 'none', outlineOffset:3}} onClick={() => setGroupFilter(f => f === 'analyzed' ? 'all' : 'analyzed')}>
-                  <div className="lb-postit-label">Actividad cubierta {groupFilter === 'analyzed' && <span style={{fontSize:13}}>✕</span>}</div>
+                  <div className="lb-postit-label">Analizados hoy {groupFilter === 'analyzed' && <span style={{fontSize:13}}>✕</span>}</div>
                   <div className="lb-postit-value" style={{color:'#b07d1e'}}>{analyzedCount}<span style={{fontSize:24,fontWeight:400}}> / {groupSummaries.length}</span></div>
-                  <div className="lb-postit-detail" style={{color:'#8a6010'}}>{quietGroups ? `${quietGroups} sin mensajes` : 'Todos revisados'} · <em>clic para filtrar</em></div>
+                  <div className="lb-postit-detail" style={{color:'#8a6010'}}>
+                    {pendingAnalysis.length > 0 ? `${pendingAnalysis.length} con mensajes, esperando análisis` : 'Todos los activos revisados'} · <em>clic para filtrar</em>
+                  </div>
                 </div>
                 <div className="lb-postit lb-postit-blue" style={{animationDelay:'160ms', cursor:'pointer', outline: groupFilter === 'inactive' ? '2px solid #3a6ea5' : 'none', outlineOffset:3}} onClick={() => setGroupFilter(f => f === 'inactive' ? 'all' : 'inactive')}>
-                  <div className="lb-postit-label">Sin actividad reciente {groupFilter === 'inactive' && <span style={{fontSize:13}}>✕</span>}</div>
-                  <div className="lb-postit-value" style={{color:'#1a4a7a'}}>{quietGroups}</div>
-                  <div className="lb-postit-detail" style={{color:'#3a5a8a'}}>grupos sin análisis · <em>clic para filtrar</em></div>
+                  <div className="lb-postit-label">Sin mensajes recientes {groupFilter === 'inactive' && <span style={{fontSize:13}}>✕</span>}</div>
+                  <div className="lb-postit-value" style={{color:'#1a4a7a'}}>{trulyQuiet.length}</div>
+                  <div className="lb-postit-detail" style={{color:'#3a5a8a'}}>sin mensajes en días previos · <em>clic para filtrar</em></div>
                 </div>
               </div>
 
@@ -537,16 +544,25 @@ export default function App() {
               {groupFilter !== 'all' && (
                 <div style={{display:'flex', alignItems:'center', gap:10, margin:'8px 0 4px', padding:'8px 14px', background: groupFilter === 'analyzed' ? 'rgba(176,125,30,.10)' : 'rgba(58,110,165,.10)', borderRadius:8}}>
                   <span style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, fontWeight:600, color: groupFilter === 'analyzed' ? '#8a6010' : '#3a5a8a'}}>
-                    {groupFilter === 'analyzed' ? `Mostrando ${analyzedCount} grupos con mensajes analizados` : `Mostrando ${quietGroups} grupos sin actividad reciente`}
+                    {groupFilter === 'analyzed'
+                      ? `Mostrando ${analyzedCount} grupos analizados hoy`
+                      : `Mostrando ${trulyQuiet.length} grupos sin mensajes recientes`}
                   </span>
                   <button onClick={() => setGroupFilter('all')} style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:12, color:'#9aa0a6', background:'none', border:'1px solid #ccc', borderRadius:999, padding:'2px 10px', cursor:'pointer'}}>Ver todos</button>
                 </div>
               )}
               <div className="lb-account-list">
-                {groupSummaries.filter(g => groupFilter === 'all' ? true : groupFilter === 'analyzed' ? !!g.analysis : !g.analysis).map((group, gi) => {
+                {groupSummaries.filter(g => {
+                  if (groupFilter === 'analyzed') return !!g.analysis
+                  if (groupFilter === 'inactive') return !g.analysis && (!g.last_message_at || g.last_message_at.slice(0,10) < todayStr)
+                  return true
+                }).map((group, gi) => {
                   const scoreValue = group.score?.current_score ?? group.analysis?.new_score ?? null
-                  const status = group.analysis ? scoreLabel(scoreValue) : 'Pendiente'
-                  const stampColor = scoreValue != null && scoreValue >= 85 ? '#3f7050' : scoreValue != null && scoreValue >= 70 ? '#b07d1e' : '#a8453b'
+                  const hasMsgsToday = !group.analysis && group.last_message_at && group.last_message_at.slice(0,10) >= todayStr
+                  const status = group.analysis ? scoreLabel(scoreValue) : hasMsgsToday ? 'En proceso' : 'Pendiente'
+                  const stampColor = group.analysis
+                    ? (scoreValue != null && scoreValue >= 85 ? '#3f7050' : scoreValue != null && scoreValue >= 70 ? '#b07d1e' : '#a8453b')
+                    : hasMsgsToday ? '#3a6ea5' : '#9aa0a6'
                   const r = 26
                   const circ = 2 * Math.PI * r
                   const offset = scoreValue != null ? circ * (1 - scoreValue / 100) : circ
