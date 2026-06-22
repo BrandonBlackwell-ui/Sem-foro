@@ -528,14 +528,24 @@ export default function App() {
               {/* Calendar */}
               <div className="lb-section-head">
                 <div>
-                  <div className="lb-section-title">Compilado por día</div>
-                  <div className="lb-section-sub">Selecciona una fecha para filtrar el listado</div>
+                  <div className="lb-section-title">Filtrar por fecha</div>
+                  <div className="lb-section-sub">Vista del listado según el día analizado</div>
                 </div>
                 <div className="lb-date-strip">
-                  <button className={`lb-date-btn${selectedOverviewDate === 'latest' ? ' active' : ''}`} onClick={() => setSelectedOverviewDate('latest')}>Último</button>
-                  {analysisDates.map((day) => (
-                    <button className={`lb-date-btn${selectedOverviewDate === day ? ' active' : ''}`} key={day} onClick={() => setSelectedOverviewDate(day)}>{day}</button>
-                  ))}
+                  {analysisDates.map((day, i) => {
+                    const label = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Mexico_City' }).format(new Date(`${day}T12:00:00`))
+                    const isLatest = i === 0
+                    return (
+                      <button
+                        key={day}
+                        className={`lb-date-btn${(isLatest && selectedOverviewDate === 'latest') || selectedOverviewDate === day ? ' active' : ''}`}
+                        onClick={() => setSelectedOverviewDate(isLatest ? 'latest' : day)}
+                        title={day}
+                      >
+                        {label}
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
 
