@@ -643,7 +643,16 @@ export default function App() {
         <div className="lb-historico">
           <div className="lb-section-head">
             <div className="lb-section-title">Histórico de puntos</div>
-            <span className="lb-section-count">{selectedHistory.length} días</span>
+            <span className="lb-section-count">
+              {selectedHistory.length > 0
+                ? (() => {
+                    const first = selectedHistory[0].analysis_date
+                    const today = todayMexicoStr()
+                    const ms = new Date(`${today}T12:00:00`).getTime() - new Date(`${first}T12:00:00`).getTime()
+                    return Math.round(ms / 86400000) + 1
+                  })()
+                : 0} días
+            </span>
           </div>
           <div className="lb-chart-wrap">
             <ScoreGraph items={selectedHistory} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
@@ -823,44 +832,29 @@ function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; s
     return { ...cp, x, y }
   })
 
-  // Separate segment paths: real-day segments in color, filled segments in gray dashed
-  const segments: { path: string; filled: boolean }[] = []
-  let segStart = 0
-  for (let i = 1; i <= mapped.length; i++) {
-    const prevFilled = mapped[i - 1]?.filled
-    const curFilled  = mapped[i]?.filled
-    if (i === mapped.length || curFilled !== prevFilled) {
-      const seg = mapped.slice(segStart, i)
-      if (seg.length >= 2) {
-        segments.push({ path: seg.map((p, j) => `${j === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' '), filled: !!seg[0].filled })
-      }
-      segStart = i - 1  // overlap by 1 so segments connect
+  const todayStr  = todayMexicoStr()
+
+  // Gray dashed baseline — all points connected
+  const grayPath = mapped.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ')
+
+  // Colored solid segments — only runs of real analysis days
+  const coloredSegs: string[] = []
+  let run: typeof mapped = []
+  for (const p of mapped) {
+    if (!p.filled) { run.push(p) }
+    else {
+      if (run.length >= 2) coloredSegs.push(run.map((r, j) => `${j === 0 ? 'M' : 'L'} ${r.x} ${r.y}`).join(' '))
+      run = []
     }
   }
+  if (run.length >= 2) coloredSegs.push(run.map((r, j) => `${j === 0 ? 'M' : 'L'} ${r.x} ${r.y}`).join(' '))
 
-  const todayStr  = todayMexicoStr()
   const showLabel = (idx: number, date: string) =>
     date === todayStr || chartPoints.length <= 10 || idx % Math.ceil(chartPoints.length / 10) === 0 || idx === chartPoints.length - 1
 
   return (
     <div className="score-graph" aria-label="Grafica historica de puntos">
       <svg viewBox={`0 0 ${width} ${totalH}`} role="img">
-        <line className="grid-line" x1={padding} x2={width - padding} y1={padding} y2={padding} />
-        <line className="grid-line" x1={padding} x2={width - padding} y1={chartH / 2} y2={chartH / 2} />
-        <line className="grid-line" x1={padding} x2={width - padding} y1={chartH - padding} y2={chartH - padding} />
-        <text x={padding - 4} y={padding + 4} textAnchor="end" fontSize="10" fill="#b0b4ba">100</text>
-        <text x={padding - 4} y={chartH / 2 + 4} textAnchor="end" fontSize="10" fill="#b0b4ba">50</text>
-        <text x={padding - 4} y={chartH - padding + 4} textAnchor="end" fontSize="10" fill="#b0b4ba">0</text>
-
-        {/* Colored real-day line + gray dashed filled-day line */}
-        {segments.map((seg, i) => (
-          <path key={i} d={seg.path}
-            fill="none"
-            stroke={seg.filled ? '#c8c4ba' : 'url(#lbScoreLine)'}
-            strokeWidth={seg.filled ? 1.5 : 2.5}
-            strokeDasharray={seg.filled ? '4 4' : undefined}
-          />
-        ))}
         <defs>
           <linearGradient id="lbScoreLine" x1="0" x2="1" y1="0" y2="0">
             <stop offset="0%" stopColor="#3f7050" />
@@ -869,13 +863,33 @@ function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; s
           </linearGradient>
         </defs>
 
+        <line className="grid-line" x1={padding} x2={width - padding} y1={padding} y2={padding} />
+        <line className="grid-line" x1={padding} x2={width - padding} y1={chartH / 2} y2={chartH / 2} />
+        <line className="grid-line" x1={padding} x2={width - padding} y1={chartH - padding} y2={chartH - padding} />
+        <text x={padding - 4} y={padding + 4} textAnchor="end" fontSize="10" fill="#b0b4ba">100</text>
+        <text x={padding - 4} y={chartH / 2 + 4} textAnchor="end" fontSize="10" fill="#b0b4ba">50</text>
+        <text x={padding - 4} y={chartH - padding + 4} textAnchor="end" fontSize="10" fill="#b0b4ba">0</text>
+
+        {/* Gray dashed baseline — always connects all days including gaps */}
+        <path d={grayPath} fill="none" stroke="#d0ccc4" strokeWidth="1.5" strokeDasharray="4 4" />
+
+        {/* Colored solid line — overlaid only on real-analysis runs */}
+        {coloredSegs.map((d, i) => (
+          <path key={i} d={d} fill="none" stroke="url(#lbScoreLine)" strokeWidth="2.5" />
+        ))}
+
+        {/* Dots + tooltips */}
         {mapped.map((point, idx) => {
-          const dotColor = point.filled ? '#c8c4ba' : point.score >= 85 ? '#3f7050' : point.score >= 70 ? '#b07d1e' : '#a8453b'
+          const dotColor = point.filled ? '#b8b4ac' : point.score >= 85 ? '#3f7050' : point.score >= 70 ? '#b07d1e' : '#a8453b'
           const isSelected = !point.filled && selectedId === point.id
+          const tooltip = point.filled
+            ? `Sin mensajes · ${fmtShortDate(point.date)}`
+            : `${fmtShortDate(point.date)} · score ${point.score}${point.delta !== 0 ? ` (${point.delta > 0 ? '+' : ''}${point.delta})` : ''}${point.summary ? '\n' + point.summary : ''}`
           return (
             <g key={`${point.date}-${idx}`}
                style={{cursor: point.filled ? 'default' : 'pointer'}}
                onClick={() => { if (!point.filled && point.id) onSelect(point.id) }}>
+              <title>{tooltip}</title>
               {/* Score label — only on real days */}
               {!point.filled && (
                 <text x={point.x} y={point.y - 11} textAnchor="middle" fontSize="11" fontWeight="700" fill={dotColor} fontFamily="'Libre Franklin',sans-serif">
@@ -883,15 +897,16 @@ function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; s
                 </text>
               )}
               {/* Dot */}
-              <circle
-                cx={point.x} cy={point.y}
+              <circle cx={point.x} cy={point.y}
                 r={point.filled ? 3 : isSelected ? 7 : 5}
-                fill={isSelected ? dotColor : point.filled ? '#c8c4ba' : '#fdfcf8'}
+                fill={isSelected ? dotColor : point.filled ? '#e8e4dc' : '#fdfcf8'}
                 stroke={dotColor}
                 strokeWidth={point.filled ? 1 : isSelected ? 0 : 2.5}
-                opacity={point.filled ? 0.5 : 1}
+                opacity={point.filled ? 0.7 : 1}
               />
-              {/* Date below */}
+              {/* Invisible hit area so small gray dots are hoverable */}
+              <circle cx={point.x} cy={point.y} r="10" fill="transparent" />
+              {/* Date label */}
               {showLabel(idx, point.date) && (
                 <text x={point.x} y={chartH + 18} textAnchor="middle" fontSize="10"
                   fontWeight={point.date === todayStr ? '700' : '400'}
