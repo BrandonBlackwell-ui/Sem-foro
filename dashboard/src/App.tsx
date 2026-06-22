@@ -776,14 +776,21 @@ type ChartPoint = {
   filled: boolean  // true = day had no messages, score carried forward
 }
 
+function todayMexicoStr() {
+  return new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Mexico_City' }).format(new Date())
+}
+
 function buildChartPoints(items: DailyAnalysis[]): ChartPoint[] {
   if (!items.length) return []
 
   const byDate = new Map(items.map(i => [i.analysis_date, i]))
   const sorted = [...items].sort((a, b) => a.analysis_date.localeCompare(b.analysis_date))
 
-  const start = new Date(`${sorted[0].analysis_date}T12:00:00`)
-  const end   = new Date(`${sorted[sorted.length - 1].analysis_date}T12:00:00`)
+  const start  = new Date(`${sorted[0].analysis_date}T12:00:00`)
+  const today  = todayMexicoStr()
+  // End = today if today is after last analysis, otherwise last analysis
+  const endStr = today > sorted[sorted.length - 1].analysis_date ? today : sorted[sorted.length - 1].analysis_date
+  const end    = new Date(`${endStr}T12:00:00`)
 
   const result: ChartPoint[] = []
   let lastScore = Number(sorted[0].new_score ?? 0)
@@ -831,7 +838,9 @@ function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; s
     }
   }
 
-  const showLabel = (idx: number) => chartPoints.length <= 10 || idx % Math.ceil(chartPoints.length / 10) === 0 || idx === chartPoints.length - 1
+  const todayStr  = todayMexicoStr()
+  const showLabel = (idx: number, date: string) =>
+    date === todayStr || chartPoints.length <= 10 || idx % Math.ceil(chartPoints.length / 10) === 0 || idx === chartPoints.length - 1
 
   return (
     <div className="score-graph" aria-label="Grafica historica de puntos">
@@ -883,11 +892,12 @@ function ScoreGraph({ items, selectedId, onSelect }: { items: DailyAnalysis[]; s
                 opacity={point.filled ? 0.5 : 1}
               />
               {/* Date below */}
-              {showLabel(idx) && (
+              {showLabel(idx, point.date) && (
                 <text x={point.x} y={chartH + 18} textAnchor="middle" fontSize="10"
-                  fill={point.filled ? '#c8c4ba' : '#9aa0a6'}
+                  fontWeight={point.date === todayStr ? '700' : '400'}
+                  fill={point.date === todayStr ? '#3a6ea5' : point.filled ? '#c8c4ba' : '#9aa0a6'}
                   fontFamily="'Libre Franklin',sans-serif">
-                  {fmtShortDate(point.date)}
+                  {point.date === todayStr ? 'hoy' : fmtShortDate(point.date)}
                 </text>
               )}
             </g>
