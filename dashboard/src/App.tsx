@@ -621,9 +621,6 @@ export default function App() {
           <h1 className="lb-h2">{selectedGroup.name}</h1>
           <p className="lb-subtext">{selectedHistory.length ? `${selectedHistory.length} día(s) analizados en el histórico` : 'Grupo pendiente de análisis diario.'}</p>
         </div>
-        <div className="lb-header-actions">
-          <button className="lb-btn-solid" onClick={() => window.location.reload()}>Actualizar</button>
-        </div>
       </div>
 
       <nav className="lb-tabs" aria-label="Secciones del cliente">

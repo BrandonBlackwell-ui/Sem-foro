@@ -53,7 +53,7 @@ async function fetchActiveMondayTasks() {
 
 // Fetch active wa_tasks that were never linked to Monday and are older than 7 days
 async function fetchUnlinkedOldTasks() {
-  const cutoff = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+  const cutoff = new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString()
   const res = await fetch(
     `${SB_URL}/rest/v1/wa_tasks?select=id&monday_item_id=is.null&deleted_at=is.null&created_at=lt.${cutoff}&limit=1000`,
     {
