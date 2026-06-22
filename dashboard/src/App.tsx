@@ -191,10 +191,6 @@ function actionDetail(item: unknown) {
   }
 }
 
-function actionOwnerType(item: unknown) {
-  if (!isRecord(item)) return 'unknown'
-  return fieldText(item.owner_type, 'unknown')
-}
 
 export default function App() {
   const [analyses, setAnalyses] = useState<DailyAnalysis[]>([])
@@ -943,17 +939,17 @@ function getStatusConfig(status: string) {
 
 function TaskCard({ item, compact = false }: { item: unknown; compact?: boolean }) {
   const detail = actionDetail(item)
-  const ownerType = actionOwnerType(item)
   const sc = getStatusConfig(detail.status ?? '')
   const urg = URGENCY_CONFIG[(detail.urgency ?? '').toLowerCase()] ?? URGENCY_CONFIG['low']
   const wtIcon = WORK_TYPE_ICON[(detail.workType ?? '').toLowerCase()] ?? '📋'
-  const ownerTagClass = ownerType === 'blackwell' ? 'blackwell' : 'client'
 
   return (
     <article className="lb-task" style={{borderLeft: `4px solid ${sc.color}`}}>
       <div className="lb-task-header">
         <div className="lb-task-title">{actionText(item)}</div>
-        <span className={`lb-task-tag ${ownerTagClass}`}>{ownerType}</span>
+        {detail.client && detail.client !== 'Sin cliente' && (
+          <span className="lb-task-tag blackwell">{detail.client}</span>
+        )}
       </div>
 
       <div className="lb-task-status-row">
@@ -961,7 +957,7 @@ function TaskCard({ item, compact = false }: { item: unknown; compact?: boolean 
           <span className="lb-task-status-dot" style={{background: sc.color}} />
           {detail.status}
         </span>
-        <span className="lb-task-priority" style={{color: urg.color}}>{urg.icon} {detail.urgency}</span>
+        {detail.dueDate && <span className="lb-task-priority" style={{color: urg.color}}>{detail.dueDate}</span>}
       </div>
 
       {!compact && (
