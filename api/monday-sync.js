@@ -51,6 +51,22 @@ async function fetchActiveMondayTasks() {
   return res.json()
 }
 
+// Fetch active wa_tasks that were never linked to Monday and are older than 7 days
+async function fetchUnlinkedOldTasks() {
+  const cutoff = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+  const res = await fetch(
+    `${SB_URL}/rest/v1/wa_tasks?select=id&monday_item_id=is.null&deleted_at=is.null&created_at=lt.${cutoff}&limit=1000`,
+    {
+      headers: {
+        apikey: SB_SERVICE_KEY,
+        Authorization: `Bearer ${SB_SERVICE_KEY}`,
+      },
+    }
+  )
+  if (!res.ok) throw new Error(`Supabase error: ${res.status}`)
+  return res.json()
+}
+
 // Mark tasks as deleted
 async function archiveTasks(taskIds) {
   if (!taskIds.length) return 0
@@ -77,21 +93,25 @@ export default async function handler(req, res) {
   if (!SB_SERVICE_KEY) return res.status(500).json({ error: 'SUPABASE_SERVICE_KEY not configured' })
 
   try {
-    const [mondayIds, supabaseTasks] = await Promise.all([
+    const [mondayIds, supabaseTasks, unlinked] = await Promise.all([
       fetchMondayItemIds(),
       fetchActiveMondayTasks(),
+      fetchUnlinkedOldTasks(),
     ])
 
-    // Find tasks in Supabase whose monday_item_id no longer exists in Monday
+    // Tasks whose monday_item_id no longer exists in Monday
     const orphaned = supabaseTasks.filter(t => !mondayIds.has(String(t.monday_item_id)))
-    const archivedCount = await archiveTasks(orphaned.map(t => t.id))
+    // Tasks that were never linked to Monday and are older than 7 days
+    const toArchive = [...orphaned.map(t => t.id), ...unlinked.map(t => t.id)]
+    const archivedCount = await archiveTasks(toArchive)
 
     return res.status(200).json({
       ok: true,
       monday_items: mondayIds.size,
       supabase_tasks: supabaseTasks.length,
       archived: archivedCount,
-      archived_ids: orphaned.map(t => t.monday_item_id),
+      archived_orphaned: orphaned.length,
+      archived_unlinked: unlinked.length,
     })
   } catch (err) {
     console.error('[monday-sync]', err)
