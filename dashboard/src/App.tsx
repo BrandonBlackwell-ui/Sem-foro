@@ -264,6 +264,9 @@ export default function App() {
             '/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,speaker_label,speaker_team,body,msg_type,sent_at&order=sent_at.desc&limit=500',
           ),
         ])
+        // Sync with Monday first — archives tasks deleted from Monday
+        await fetch('/api/monday-sync').catch(() => {})
+
         const taskRows = await supabaseGet<WaTask[]>(
           '/rest/v1/wa_tasks?select=*&order=updated_at.desc&limit=500&deleted_at=is.null',
         ).catch(() => [])
