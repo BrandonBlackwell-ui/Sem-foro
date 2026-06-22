@@ -518,7 +518,10 @@ export default function App() {
                   <h1 className="lb-h1">Cuentas</h1>
                   <p className="lb-subtext">Vista rápida de salud, actividad y análisis diario por grupo.</p>
                 </div>
-                <div className="lb-header-actions">
+                <div className="lb-header-actions" style={{display:'flex', flexDirection:'column', alignItems:'flex-end', gap:8}}>
+                  <div style={{fontFamily:'var(--caveat)', fontSize:36, fontWeight:700, color:'#3a3a44', lineHeight:1}}>
+                    {new Date().toLocaleDateString('es-MX', {day:'numeric', month:'long', year:'numeric', timeZone:'America/Mexico_City'})}
+                  </div>
                   <button className="lb-btn-solid" onClick={() => window.location.reload()}>Actualizar</button>
                 </div>
               </div>
