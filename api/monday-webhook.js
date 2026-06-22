@@ -52,9 +52,17 @@ export default async function handler(req, res) {
   if (!itemId) return res.status(400).json({ error: 'No itemId' })
 
   try {
+    // Item deleted in Monday → mark as deleted in Supabase (keep record for history)
+    if (event.type === 'delete_item' || event.type === 'DeleteItemEvent') {
+      await sbPatch(itemId, { deleted_at: new Date().toISOString() })
+      return res.status(200).json({ ok: true, action: 'marked_deleted' })
+    }
+
+    // Column changed → update the relevant field
     if (columnId && COLUMN_MAP[columnId]) {
       await sbPatch(itemId, { [COLUMN_MAP[columnId]]: extractValue(columnId, event.value) })
     }
+
     return res.status(200).json({ ok: true })
   } catch (err) {
     console.error('[monday-webhook]', err)

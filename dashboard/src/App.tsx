@@ -85,6 +85,7 @@ type WaTask = {
   raw_monday: unknown
   created_at: string
   updated_at: string
+  deleted_at: string | null
 }
 
 type GroupSummary = {
@@ -226,6 +227,8 @@ export default function App() {
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate, setSelectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
+  const [deletedTasks, setDeletedTasks] = useState<WaTask[]>([])
+  const [showDeleted, setShowDeleted] = useState(false)
   const [clientTab, setClientTab] = useState<'resumen' | 'historico' | 'mensajes'>('resumen')
   const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
   const [messagesOpen, setMessagesOpen] = useState(false)
@@ -248,7 +251,7 @@ export default function App() {
           ),
         ])
         const taskRows = await supabaseGet<WaTask[]>(
-          '/rest/v1/wa_tasks?select=*&order=updated_at.desc&limit=500',
+          '/rest/v1/wa_tasks?select=*&order=updated_at.desc&limit=500&deleted_at=is.null',
         ).catch(() => [])
 
         setAnalyses(analysisRows)
@@ -384,7 +387,16 @@ export default function App() {
     setMessagesOpen(false)
     setClientTab('resumen')
     setSelectedHistoryId(null)
+    setShowDeleted(false)
+    setDeletedTasks([])
   }, [selectedJid])
+
+  useEffect(() => {
+    if (!showDeleted || !selectedGroup) return
+    supabaseGet<WaTask[]>(
+      `/rest/v1/wa_tasks?select=*&group_jid=eq.${encodeURIComponent(selectedGroup.jid)}&deleted_at=not.is.null&order=deleted_at.desc&limit=100`
+    ).then(setDeletedTasks).catch(() => {})
+  }, [showDeleted, selectedGroup])
 
   useEffect(() => {
     async function loadDetailMessages() {
@@ -634,6 +646,31 @@ export default function App() {
                 {allActions.length
                   ? allActions.slice(-6).map((item, index) => <TaskCard item={item} key={index} />)
                   : <p className="lb-subtext">No hay tareas acumuladas.</p>}
+              </div>
+
+              {/* Deleted tasks history */}
+              <div style={{marginTop:18, borderTop:'1px dashed #e6e2d6', paddingTop:14}}>
+                <button
+                  onClick={() => setShowDeleted(v => !v)}
+                  style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#9aa0a6', background:'none', border:'1px dashed #d0ccc4', borderRadius:999, padding:'4px 14px', cursor:'pointer', display:'flex', alignItems:'center', gap:6}}>
+                  <span style={{fontSize:16}}>🗑</span>
+                  {showDeleted ? 'Ocultar eliminadas' : 'Ver tareas eliminadas de Monday'}
+                </button>
+                {showDeleted && (
+                  <div style={{marginTop:12, display:'flex', flexDirection:'column', gap:10}}>
+                    {deletedTasks.length === 0
+                      ? <p className="lb-subtext" style={{fontSize:13}}>No hay tareas eliminadas registradas para este grupo.</p>
+                      : deletedTasks.map((item) => (
+                        <div key={item.id} style={{opacity:0.65, position:'relative'}}>
+                          <div style={{position:'absolute', top:8, right:10, fontFamily:"'Caveat',cursive", fontSize:14, color:'#a8453b', transform:'rotate(-2deg)', border:'1px solid #a8453b', borderRadius:4, padding:'1px 8px', background:'#fde8e6'}}>
+                            Eliminada {item.deleted_at ? new Intl.DateTimeFormat('es-MX',{day:'2-digit',month:'short',year:'numeric'}).format(new Date(item.deleted_at)) : ''}
+                          </div>
+                          <TaskCard item={item} />
+                        </div>
+                      ))
+                    }
+                  </div>
+                )}
               </div>
             </div>
             <div>
