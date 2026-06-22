@@ -477,7 +477,6 @@ export default function App() {
     const pendingAnalysis = groupSummaries.filter((g) => !g.analysis && g.last_message_at && g.last_message_at.slice(0,10) >= todayStr)
     // Groups with no messages at all recently (truly quiet)
     const trulyQuiet = groupSummaries.filter((g) => !g.analysis && (!g.last_message_at || g.last_message_at.slice(0,10) < todayStr))
-    const quietGroups = Math.max(groupSummaries.length - analyzedCount, 0)
     const averageScore = scores.length
       ? Math.round(scores.reduce((total, score) => total + score.current_score, 0) / scores.length)
       : null
