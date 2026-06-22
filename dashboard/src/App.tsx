@@ -528,19 +528,19 @@ export default function App() {
                 <div className="lb-postit lb-postit-green" style={{animationDelay:'0ms'}}>
                   <div className="lb-postit-label">Score promedio</div>
                   <div className="lb-postit-value" style={{color: averageScore && averageScore >= 85 ? '#3f7050' : averageScore && averageScore >= 70 ? '#b07d1e' : '#a8453b'}}>{averageScore ?? '--'}</div>
-                  <div className="lb-postit-detail">{averageScore ? scoreLabel(averageScore) : 'Sin puntajes'}</div>
+                  <div className="lb-postit-detail">{averageScore ? '' : 'Sin puntajes'}</div>
                 </div>
                 <div className="lb-postit lb-postit-yellow" style={{animationDelay:'80ms', cursor:'pointer', outline: groupFilter === 'analyzed' ? '2px solid #b07d1e' : 'none', outlineOffset:3}} onClick={() => setGroupFilter(f => f === 'analyzed' ? 'all' : 'analyzed')}>
                   <div className="lb-postit-label">Analizados hoy {groupFilter === 'analyzed' && <span style={{fontSize:13}}>✕</span>}</div>
                   <div className="lb-postit-value" style={{color:'#b07d1e'}}>{analyzedCount}<span style={{fontSize:24,fontWeight:400}}> / {groupSummaries.length}</span></div>
                   <div className="lb-postit-detail" style={{color:'#8a6010'}}>
-                    {pendingAnalysis.length > 0 ? `${pendingAnalysis.length} con mensajes, esperando análisis` : 'Todos los activos revisados'} · <em>clic para filtrar</em>
+                    {pendingAnalysis.length > 0 ? `${pendingAnalysis.length} con mensajes, esperando análisis` : 'Todos los activos revisados'}
                   </div>
                 </div>
                 <div className="lb-postit lb-postit-blue" style={{animationDelay:'160ms', cursor:'pointer', outline: groupFilter === 'inactive' ? '2px solid #3a6ea5' : 'none', outlineOffset:3}} onClick={() => setGroupFilter(f => f === 'inactive' ? 'all' : 'inactive')}>
                   <div className="lb-postit-label">Sin mensajes recientes {groupFilter === 'inactive' && <span style={{fontSize:13}}>✕</span>}</div>
                   <div className="lb-postit-value" style={{color:'#1a4a7a'}}>{trulyQuiet.length}</div>
-                  <div className="lb-postit-detail" style={{color:'#3a5a8a'}}>sin mensajes en días previos · <em>clic para filtrar</em></div>
+                  <div className="lb-postit-detail" style={{color:'#3a5a8a'}}>sin mensajes en días previos</div>
                 </div>
               </div>
 
