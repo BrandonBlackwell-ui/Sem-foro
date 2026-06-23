@@ -485,8 +485,11 @@ export default function App() {
     const analyzedCount = accountSummaries.filter(a => a.analyzedToday).length
     const pendingAnalysis = accountSummaries.filter(a => !a.analyzedToday && a.hasMessagesToday)
     const trulyQuiet = accountSummaries.filter(a => !a.analyzedToday && !a.hasMessagesToday)
-    const averageScore = scores.length
-      ? Math.round(scores.reduce((total, score) => total + score.current_score, 0) / scores.length)
+    const todayScores = accountSummaries
+      .filter(a => a.analyzedToday && a.score)
+      .map(a => a.score!.current_score)
+    const averageScore = todayScores.length
+      ? Math.round(todayScores.reduce((t, s) => t + s, 0) / todayScores.length)
       : null
 
     return (
