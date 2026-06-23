@@ -688,10 +688,10 @@ export default function App() {
             <div>
               <div className="lb-section-head" style={{marginTop:0}}>
                 <div className="lb-section-title">Señales</div>
-                <span className="lb-section-count">{allPositiveSignals.length + allNegativeSignals.length}</span>
+                <span className="lb-section-count">{positiveSignals.length + negativeSignals.length}</span>
               </div>
-              <SignalList title="A favor" items={allPositiveSignals.slice(-5)} tone="green" />
-              <SignalList title="A revisar" items={allNegativeSignals.slice(-5)} tone="red" />
+              <SignalList title="A favor" items={positiveSignals} tone="green" />
+              <SignalList title="A revisar" items={negativeSignals} tone="red" />
             </div>
           </div>
         </div>
