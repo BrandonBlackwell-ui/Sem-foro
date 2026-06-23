@@ -397,8 +397,6 @@ export default function App() {
     ? tasks.filter(t => t.monday_client_label && selectedGroup.name.toLowerCase().includes(t.monday_client_label.toLowerCase()))
     : []
   const allActions = selectedTasks.length ? selectedTasks : selectedHistory.flatMap((analysis) => asArray(analysis.action_items))
-  const allPositiveSignals = selectedHistory.flatMap((analysis) => asArray(analysis.positive_signals))
-  const allNegativeSignals = selectedHistory.flatMap((analysis) => asArray(analysis.negative_signals))
   const actionItems = selectedTasks.length ? selectedTasks : activeDayAnalysis ? asArray(activeDayAnalysis.action_items) : []
   const positiveSignals = activeDayAnalysis ? asArray(activeDayAnalysis.positive_signals) : []
   const negativeSignals = activeDayAnalysis ? asArray(activeDayAnalysis.negative_signals) : []
