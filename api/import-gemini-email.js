@@ -44,19 +44,15 @@ export default async function handler(req, res) {
       const accounts = await accResponse.json();
       const titleLower = meetingTitle.toLowerCase();
       
-      // Look for a substring match in account_name or account_id
+      // Look for a substring match in account_name only (avoiding numeric ID date matching like '2026' -> '02')
       for (const acc of accounts) {
-        const name = (acc.account_name || '').toLowerCase();
-        const id = (acc.account_id || '').toLowerCase();
-        if (name && (titleLower.includes(name) || name.includes(titleLower))) {
-          accountId = acc.account_id;
-          matchedAccountName = acc.account_name;
-          break;
-        }
-        if (id && (titleLower.includes(id) || id.includes(titleLower))) {
-          accountId = acc.account_id;
-          matchedAccountName = acc.account_name || acc.account_id;
-          break;
+        const name = (acc.account_name || '').toLowerCase().trim();
+        if (name && name.length >= 2) {
+          if (titleLower.includes(name)) {
+            accountId = acc.account_id;
+            matchedAccountName = acc.account_name;
+            break;
+          }
         }
       }
     }
