@@ -1,92 +1,102 @@
 [
-  {
-    "name": "Humbero",
-    "team": "BWS",
-    "phone": "5513656006"
-  },
-  {
-    "name": "Sol Guerrero",
-    "team": "BWS",
-    "phone": "5626323819"
-  },
-  {
-    "name": "Miguel Tello",
-    "team": "Cliente",
-    "phone": "7712407347"
-  },
-  {
-    "name": "Miguel Tello",
-    "team": "Cliente",
-    "phone": "68457584423070"
-  },
-  {
-    "name": "Mónica León",
-    "team": "BWS",
-    "phone": "23261928800276"
-  },
-  {
-    "name": "Mónica León",
-    "team": "BWS",
-    "phone": "94661314117798"
-  },
-  {
-    "name": "Angel",
-    "team": "BWS",
-    "phone": "5623999805"
-  },
-  {
-    "name": "Luis Pacheco",
-    "team": "BWS",
-    "phone": "5626323488"
-  },
-  {
-    "name": "Orwell",
-    "team": "BWS",
-    "phone": "5626322944"
-  },
-  {
-    "name": "Sandra Cort\u00e9s",
-    "team": "BWS",
-    "phone": "5621222574"
-  },
-  {
-    "name": "Uriel",
-    "team": "BWS",
-    "phone": "5621222665"
-  },
-  {
-    "name": "Bezalel",
-    "team": "Cliente",
-    "phone": "7712193241"
-  },
-  {
-    "name": "Brenda Bernal",
-    "team": "Cliente",
-    "phone": "7712901286"
-  },
-  {
-    "name": "JE",
-    "team": "Cliente",
-    "phone": "8119653433"
-  },
-  {
-    "name": "Lex Gafri",
-    "team": "Cliente",
-    "phone": "5637969950"
-  },
-  {
-    "name": "Onesimo",
-    "team": "Cliente",
-    "phone": "7717090731"
-  },
-  {
-    "name": "SN",
-    "team": "Cliente",
-    "phone": "8120391326"
-  },
-  {
-    "name": "Fabiola",
-    "team": "BWS",
-    "phone": "5551037505"
-  }
+  // ---- BWS Team ----
+  { "name": "Humbero",                          "team": "BWS",     "phone": "5513656006" },
+  { "name": "Sol Guerrero",                     "team": "BWS",     "phone": "5626323819" },
+  { "name": "Johana",                           "team": "BWS",     "phone": "5626241742" },
+  { "name": "Daniel Menendez",                  "team": "BWS",     "phone": "5585370862" },
+  { "name": "Angel",                            "team": "BWS",     "phone": "5623999805" },
+  { "name": "Luis Pacheco",                     "team": "BWS",     "phone": "5626323488" },
+  { "name": "Orwell",                           "team": "BWS",     "phone": "5626322944" },
+  { "name": "Sandra Cortés",                    "team": "BWS",     "phone": "5621222574" },
+  { "name": "Uriel",                            "team": "BWS",     "phone": "5621222665" },
+  { "name": "Monica",                           "team": "BWS",     "phone": "5626241116" },
+  { "name": "Mónica León",                      "team": "BWS",     "phone": "23261928800276" },
+  { "name": "Mónica León",                      "team": "BWS",     "phone": "94661314117798" },
+  { "name": "Mariana",                          "team": "BWS",     "phone": "5511274796" },
+  { "name": "Fabiola",                          "team": "BWS",     "phone": "5551037505" },
+  { "name": "Daniel Padilla",                   "team": "BWS",     "phone": "5623997612" },
+  { "name": "Ivan",                             "team": "BWS",     "phone": "5610044338" },
+
+  // ---- Account: Tello ----
+  { "name": "Miguel Tello",                     "team": "Cliente",     "phone": "7712407347",    "account": "Tello" },
+  { "name": "Miguel Tello",                     "team": "Cliente",     "phone": "68457584423070", "account": "Tello" },
+  { "name": "Bezalel",                          "team": "Cliente",     "phone": "7712193241",    "account": "Tello" },
+  { "name": "Brenda Bernal",                    "team": "Cliente",     "phone": "7712901286",    "account": "Tello" },
+  { "name": "JE",                               "team": "Cliente",     "phone": "8119653433",    "account": "Tello" },
+  { "name": "Lex Gafri",                        "team": "Cliente",     "phone": "5637969950",    "account": "Tello" },
+  { "name": "Onesimo",                          "team": "Cliente",     "phone": "7717090731",    "account": "Tello" },
+  { "name": "SN",                               "team": "Cliente",     "phone": "8120391326",    "account": "Tello" },
+
+  // ---- Account: KPS ----
+  { "name": "Elif Tozlu",                       "team": "Cliente",     "phone": "5373044176",    "account": "KPS" },
+  { "name": "Negro",                            "team": "Cliente",     "phone": "5528995993",    "account": "KPS" },
+  { "name": "Karen Kumbasar",                   "team": "Cliente",     "phone": "5309181040",    "account": "KPS" },
+  { "name": "Ozlem Yalcin",                     "team": "Cliente",     "phone": "5322410880",    "account": "KPS" },
+  { "name": "Mert Ulas",                        "team": "Cliente",     "phone": "5456137879",    "account": "KPS" },
+
+  // ---- Account: Coastoil ----
+  { "name": "Rogelio Torres",                   "team": "Cliente",     "phone": "2291127006",    "account": "Coastoil" },
+  { "name": "Paola Verde",                      "team": "Cliente",     "phone": "2299848248",    "account": "Coastoil" },
+
+  // ---- Account: Nuvoil ----
+  { "name": "comunicación Nuvoil",              "team": "Cliente",     "phone": "2293310005",    "account": "Nuvoil" },
+
+  // ---- Account: Maja ----
+  { "name": "Jose I. de Nicolás M.",            "team": "Cliente",     "phone": "6679968880",    "account": "Maja" },
+  { "name": "Jhabiv",                           "team": "Cliente",     "phone": "6674475012",    "account": "Maja" },
+  { "name": "Alexia Rodarte",                   "team": "Cliente",     "phone": "6678638188",    "account": "Maja" },
+  { "name": "Ale Armenta",                      "team": "Cliente",     "phone": "3331170374",    "account": "Maja" },
+  { "name": "Adrian E.",                        "team": "Cliente",     "phone": "6671530554",    "account": "Maja" },
+  { "name": "SNM",                              "team": "Cliente",     "phone": "6671830644",    "account": "Maja" },
+  { "name": "Rodrigo Murguia",                  "team": "Cliente",     "phone": "6674108036",    "account": "Maja" },
+
+  // ---- Account: Apollo ----
+  { "name": "Rafael Garduño",                   "team": "Cliente",     "phone": "7221432501",    "account": "Apollo" },
+  { "name": "Lu",                               "team": "Cliente",     "phone": "7223999190",    "account": "Apollo" },
+  { "name": "Aldara Noguez",                    "team": "Cliente",     "phone": "7227615077",    "account": "Apollo" },
+
+  // ---- Account: AZVI ----
+  { "name": "Elena Crespo",                     "team": "Cliente",     "phone": "34629152468",   "account": "AZVI" },
+
+  // ---- Account: CIMA ----
+  { "name": "Alberto Granados",                 "team": "Cliente",     "phone": "5579213395",    "account": "CIMA" },
+  { "name": "ximena Hernandez",                 "team": "Cliente",     "phone": "6143945035",    "account": "CIMA" },
+
+  // ---- Account: CREDIX ----
+  { "name": "Cliente",                          "team": "Cliente",     "phone": "4432725212",    "account": "CREDIX" },
+  { "name": "Nadia Botello",                    "team": "Cliente",     "phone": "4591061952",    "account": "CREDIX" },
+
+  // ---- Account: Dalinde ----
+  { "name": "MGU",                              "team": "Cliente",     "phone": "5540554765",    "account": "Dalinde" },
+  { "name": "Lore",                             "team": "Cliente",     "phone": "5554723755",    "account": "Dalinde" },
+  { "name": "Anaid Zendejas",                   "team": "Cliente",     "phone": "5563175671",    "account": "Dalinde" },
+  { "name": "K BM",                             "team": "Cliente",     "phone": "5548863847",    "account": "Dalinde" },
+  { "name": "Roberto",                          "team": "Cliente",     "phone": "5524265635",    "account": "Dalinde" },
+
+  // ---- Account: Pepe ----
+  { "name": "Pepe Aguilar",                     "team": "Cliente",     "phone": "8185853629",    "account": "Pepe" },
+  { "name": "Kris",                             "team": "Cliente",     "phone": "5537347301",    "account": "Pepe" },
+  { "name": "Lauri Alvarez",                    "team": "Cliente",     "phone": "5358052353",    "account": "Pepe" },
+  { "name": "Sarah Duru",                       "team": "Cliente",     "phone": "3107707081",    "account": "Pepe" },
+  { "name": "Daniel Alba",                      "team": "Cliente",     "phone": "4922185626",    "account": "Pepe" },
+  { "name": "Chiristian Garcia",                "team": "Cliente",     "phone": "5512444319",    "account": "Pepe" },
+  { "name": "Yenny",                            "team": "Cliente",     "phone": "5518554861",    "account": "Pepe" },
+  { "name": "Daniela Q",                        "team": "Cliente",     "phone": "5569152574",    "account": "Pepe" },
+  { "name": "anal Laura",                       "team": "Cliente",     "phone": "5611727517",    "account": "Pepe" },
+  { "name": "R",                                "team": "Cliente",     "phone": "6621382024",    "account": "Pepe" },
+  { "name": "Agencia España",                   "team": "Cliente",     "phone": "34667529522",   "account": "Pepe" },
+
+  // ---- Account: RR ----
+  { "name": "G CORP",                           "team": "Cliente",     "phone": "6574958199",    "account": "RR" },
+  { "name": "AM (RR)",                          "team": "Cliente",     "phone": "7863008460",    "account": "RR" },
+  { "name": "Andres DA",                        "team": "Cliente",     "phone": "5532258991",    "account": "RR" },
+  { "name": "GN",                               "team": "Cliente",     "phone": "9562494047",    "account": "RR" },
+  { "name": "Julio Lezama",                     "team": "Cliente",     "phone": "9991089810",    "account": "RR" },
+
+  // ---- Account: Turbofin ----
+  { "name": "Lazaron Santillan",                "team": "Cliente",     "phone": "5544366223",    "account": "Turbofin" },
+  { "name": "Roni S.",                          "team": "Cliente",     "phone": "5537317727",    "account": "Turbofin" },
+  { "name": "Miriam Uribe",                     "team": "Cliente",     "phone": "5610290937",    "account": "Turbofin" },
+  { "name": "Jorge Corona",                     "team": "Cliente",     "phone": "5611614465",    "account": "Turbofin" },
+  { "name": "Eugenia",                          "team": "Cliente",     "phone": "6181099806",    "account": "Turbofin" }
 ]
