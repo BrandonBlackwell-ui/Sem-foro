@@ -30,8 +30,8 @@ export default async function handler(req, res) {
   }
 
   // 2. Fetch accounts list from Supabase to match the correct account
-  let accountId = '00_UNMAPPED';
-  let matchedAccountName = 'Unmapped';
+  let accountId = '12'; // Default to '12' (Interno Tello) for internal/unmatched meetings
+  let matchedAccountName = 'Interno Tello';
   try {
     const accResponse = await fetch(`${SB_URL}/rest/v1/wa_account_scores?select=account_id,account_name`, {
       headers: {
