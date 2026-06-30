@@ -226,6 +226,80 @@ export default function App() {
   const [meetings, setMeetings] = useState<any[]>([])
   const [selectedMeetingId, setSelectedMeetingId] = useState<string | null>(null)
   const [meetingsLoading, setMeetingsLoading] = useState(false)
+  const [reunionSubTab, setReunionSubTab] = useState<'detalle' | 'gemini'>('detalle')
+
+  // Gemini Notes Importer States
+  const [geminiText, setGeminiText] = useState('')
+  const [importingAccountId, setImportingAccountId] = useState('')
+  const [importSuccess, setImportSuccess] = useState<string | null>(null)
+  const [importError, setImportError] = useState<string | null>(null)
+  const [importLoading, setImportLoading] = useState(false)
+
+  // Real-time RegEx parser for Gemini meeting notes
+  const parsedTasks = useMemo(() => {
+    if (!geminiText.trim()) return []
+    const lines = geminiText.split('\n')
+    const list: { action: string; owner: string }[] = []
+    for (const line of lines) {
+      const cleanLine = line.trim().replace(/^[-*•\s+>]+\s*/, '')
+      // Match: [Brandon Pérez, Daniel Padilla] Proyectar Costos: Elaborar la proyeccion...
+      const match = cleanLine.match(/^\[([^\]]+)\]\s*([^:]+)\s*:\s*(.+)$/)
+      if (match) {
+        list.push({
+          owner: match[1].trim(),
+          action: `${match[2].trim()}: ${match[3].trim()}`
+        })
+      }
+    }
+    return list
+  }, [geminiText])
+
+  async function handleImportTasks() {
+    if (!importingAccountId) {
+      setImportError('Por favor selecciona una cuenta cliente.')
+      return
+    }
+    if (parsedTasks.length === 0) {
+      setImportError('No se encontraron tareas en el formato esperado.')
+      return
+    }
+
+    setImportLoading(true)
+    setImportError(null)
+    setImportSuccess(null)
+
+    const payload = parsedTasks.map(t => ({
+      account_id: importingAccountId,
+      action: t.action,
+      owner: t.owner
+    }))
+
+    try {
+      const res = await fetch('/api/import-gemini-tasks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tasks: payload })
+      })
+
+      if (!res.ok) {
+        const data = await res.json()
+        throw new Error(data.error || `HTTP error: ${res.status}`)
+      }
+
+      setImportSuccess(`¡Se importaron ${payload.length} tareas correctamente en Supabase!`)
+      setGeminiText('') // clear textarea
+      
+      // Reload Monday/Supabase tasks to show the new ones immediately
+      const updatedTasks = await fetch('/api/monday-tasks')
+        .then(r => r.ok ? r.json() : [])
+        .catch(() => [])
+      setTasks(updatedTasks)
+    } catch (err: any) {
+      setImportError(err.message || 'Error al conectar con la base de datos.')
+    } finally {
+      setImportLoading(false)
+    }
+  }
 
   async function handleSyncMeetings() {
     setMeetingsLoading(true)
@@ -522,7 +596,7 @@ export default function App() {
                 <div>
                   <span className="lb-eyebrow">Minutas e Inteligencia</span>
                   <h1 className="lb-h1">Reuniones</h1>
-                  <p className="lb-subtext">Tareas extraídas de llamadas y reuniones vía Fireflies.ai.</p>
+                  <p className="lb-subtext">Tareas extraídas de llamadas y reuniones vía Fireflies o Gemini.</p>
                   
                   {/* Conmutador de vistas */}
                   <div style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>
@@ -585,95 +659,255 @@ export default function App() {
 
               {/* Double column layout */}
               <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: '32px', marginTop: '28px' }}>
-                {/* Left Column: Meeting List */}
+                {/* Left Column: Meeting List & Navigation */}
                 <div>
-                  <div className="lb-section-title" style={{ marginBottom: '14px' }}>Historial de llamadas</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    {meetings.map((meeting) => {
-                      const isSelected = selectedMeetingId === meeting.id || (!selectedMeetingId && meetings[0]?.id === meeting.id)
-                      const durationMins = Math.round(meeting.duration / 60)
-                      return (
-                        <button
-                          key={meeting.id}
-                          onClick={() => setSelectedMeetingId(meeting.id)}
-                          style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '6px',
-                            padding: '12px 16px',
-                            background: isSelected ? '#fffdf0' : '#fff',
-                            border: `1px solid ${isSelected ? '#d4c87a' : '#ece9e0'}`,
-                            borderRadius: '8px',
-                            cursor: 'pointer',
-                            textAlign: 'left',
-                            transition: 'all .12s'
-                          }}
-                        >
-                          <span style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--ink-900)' }}>{meeting.title}</span>
-                          <div style={{ display: 'flex', gap: '8px', fontSize: '11px', color: '#9aa0a6', fontFamily: 'var(--mono)' }}>
-                            <span>📅 {new Date(meeting.date).toLocaleDateString('es-MX', { day: '2-digit', month: 'short' })}</span>
-                            <span>⏱ {durationMins} min</span>
-                          </div>
-                        </button>
-                      )
-                    })}
+                  <div className="lb-section-title" style={{ marginBottom: '14px' }}>Entradas</div>
+                  
+                  {/* Sub-tabs to choose Fireflies List vs Gemini Paste Importer */}
+                  <div style={{ display: 'flex', gap: '4px', background: 'var(--paper-soft)', padding: '3px', borderRadius: '6px', border: '1px solid var(--rule-soft)', marginBottom: '16px' }}>
+                    <button
+                      onClick={() => setReunionSubTab('detalle')}
+                      style={{
+                        flex: 1,
+                        background: reunionSubTab === 'detalle' ? '#fff' : 'transparent',
+                        border: 'none',
+                        borderRadius: '4px',
+                        padding: '6px 10px',
+                        fontSize: '11.5px',
+                        fontWeight: reunionSubTab === 'detalle' ? 700 : 500,
+                        color: reunionSubTab === 'detalle' ? 'var(--ink-900)' : '#666',
+                        cursor: 'pointer',
+                        boxShadow: reunionSubTab === 'detalle' ? '0 1px 3px rgba(0,0,0,0.08)' : 'none'
+                      }}
+                    >
+                      🤖 Fireflies API
+                    </button>
+                    <button
+                      onClick={() => setReunionSubTab('gemini')}
+                      style={{
+                        flex: 1,
+                        background: reunionSubTab === 'gemini' ? '#fff' : 'transparent',
+                        border: 'none',
+                        borderRadius: '4px',
+                        padding: '6px 10px',
+                        fontSize: '11.5px',
+                        fontWeight: reunionSubTab === 'gemini' ? 700 : 500,
+                        color: reunionSubTab === 'gemini' ? 'var(--ink-900)' : '#666',
+                        cursor: 'pointer',
+                        boxShadow: reunionSubTab === 'gemini' ? '0 1px 3px rgba(0,0,0,0.08)' : 'none'
+                      }}
+                    >
+                      ✨ Importar Gemini
+                    </button>
                   </div>
-                </div>
 
-                {/* Right Column: Selected Meeting Details & Tasks */}
-                <div>
-                  {activeMeeting ? (
+                  {reunionSubTab === 'detalle' ? (
                     <div>
-                      <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: '12px', padding: '24px' }}>
-                        <h2 className="lb-h2" style={{ marginTop: 0, fontSize: '22px' }}>{activeMeeting.title}</h2>
-                        <div style={{ display: 'flex', gap: '12px', fontSize: '12px', color: '#666', marginTop: '4px', marginBottom: '18px' }}>
-                          <span>📅 Fecha: {new Date(activeMeeting.date).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-                          <span>⏱ Duración: {Math.round(activeMeeting.duration / 60)} minutos</span>
-                        </div>
-
-                        <div style={{ borderTop: '1px solid var(--rule-soft)', paddingTop: '18px' }}>
-                          <div style={{ fontWeight: 700, fontSize: '13px', letterSpacing: '.05em', textTransform: 'uppercase', color: '#9aa0a6', marginBottom: '8px' }}>Resumen ejecutivo</div>
-                          <p className="lb-summary-text" style={{ margin: 0, lineHeight: '1.6' }}>{activeMeeting.summary}</p>
-                        </div>
-                      </div>
-
-                      <div style={{ marginTop: '24px' }}>
-                        <div className="lb-section-head" style={{ marginTop: 0 }}>
-                          <div className="lb-section-title">Tareas Extraídas por IA</div>
-                          <span className="lb-section-count">{activeMeeting.action_items?.length || 0}</span>
-                        </div>
-
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {activeMeeting.action_items?.length ? (
-                            activeMeeting.action_items.map((item: any, idx: number) => {
-                              const match = item.match(/^([^:-]+)[:|-]\s*(.+)$/)
-                              const speaker = match ? match[1].trim() : null
-                              const taskText = match ? match[2].trim() : item
-
-                              return (
-                                <article key={idx} className="lb-task" style={{ borderLeft: '4px solid #3a6ea5' }}>
-                                  <div className="lb-task-header">
-                                    <div className="lb-task-title">{taskText}</div>
-                                    {speaker && (
-                                      <span className="lb-task-tag blackwell" style={{ background: 'rgba(58,110,165,0.1)', color: '#3a6ea5', border: '1px solid rgba(58,110,165,0.25)' }}>
-                                        👤 {speaker}
-                                      </span>
-                                    )}
-                                  </div>
-                                  <div className="lb-task-footer" style={{ marginTop: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                    <span style={{ fontSize: '11px', color: '#9aa0a6' }}>Fuente: Transcripción Fireflies.ai</span>
-                                  </div>
-                                </article>
-                              )
-                            })
-                          ) : (
-                             <p className="lb-subtext">No se detectaron tareas pendientes en esta reunión.</p>
-                          )}
-                        </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                        {meetings.map((meeting) => {
+                          const isSelected = selectedMeetingId === meeting.id || (!selectedMeetingId && meetings[0]?.id === meeting.id)
+                          const durationMins = Math.round(meeting.duration / 60)
+                          return (
+                            <button
+                              key={meeting.id}
+                              onClick={() => setSelectedMeetingId(meeting.id)}
+                              style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '6px',
+                                padding: '12px 16px',
+                                background: isSelected ? '#fffdf0' : '#fff',
+                                border: `1px solid ${isSelected ? '#d4c87a' : '#ece9e0'}`,
+                                borderRadius: '8px',
+                                cursor: 'pointer',
+                                textAlign: 'left',
+                                transition: 'all .12s'
+                              }}
+                            >
+                              <span style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--ink-900)' }}>{meeting.title}</span>
+                              <div style={{ display: 'flex', gap: '8px', fontSize: '11px', color: '#9aa0a6', fontFamily: 'var(--mono)' }}>
+                                <span>📅 {new Date(meeting.date).toLocaleDateString('es-MX', { day: '2-digit', month: 'short' })}</span>
+                                <span>⏱ {durationMins} min</span>
+                              </div>
+                            </button>
+                          )
+                        })}
                       </div>
                     </div>
                   ) : (
-                    <p className="lb-subtext">No hay reuniones para mostrar.</p>
+                    <div style={{ fontSize: '12.5px', color: '#5f636a', lineHeight: 1.5, background: '#fff', border: '1px solid #ece9e0', padding: '16px', borderRadius: '8px' }}>
+                      <p style={{ margin: '0 0 10px' }}><strong>✨ Notas de Gemini:</strong></p>
+                      <p style={{ margin: '0 0 10px' }}>Esta herramienta extrae las tareas que Gemini envía a tu correo en formato:</p>
+                      <code style={{ display: 'block', background: 'var(--paper-soft)', padding: '6px 8px', borderRadius: '4px', fontSize: '11px', fontFamily: 'var(--mono)', wordBreak: 'break-all' }}>
+                        [Responsables] Tarea: Detalle de lo que se acordó.
+                      </code>
+                    </div>
+                  )}
+                </div>
+
+                {/* Right Column: Selected Meeting Details / Gemini Importer Panel */}
+                <div>
+                  {reunionSubTab === 'detalle' ? (
+                    activeMeeting ? (
+                      <div>
+                        <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: '12px', padding: '24px' }}>
+                          <h2 className="lb-h2" style={{ marginTop: 0, fontSize: '22px' }}>{activeMeeting.title}</h2>
+                          <div style={{ display: 'flex', gap: '12px', fontSize: '12px', color: '#666', marginTop: '4px', marginBottom: '18px' }}>
+                            <span>📅 Fecha: {new Date(activeMeeting.date).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                            <span>⏱ Duración: {Math.round(activeMeeting.duration / 60)} minutos</span>
+                          </div>
+
+                          <div style={{ borderTop: '1px solid var(--rule-soft)', paddingTop: '18px' }}>
+                            <div style={{ fontWeight: 700, fontSize: '13px', letterSpacing: '.05em', textTransform: 'uppercase', color: '#9aa0a6', marginBottom: '8px' }}>Resumen ejecutivo</div>
+                            <p className="lb-summary-text" style={{ margin: 0, lineHeight: '1.6' }}>{activeMeeting.summary}</p>
+                          </div>
+                        </div>
+
+                        <div style={{ marginTop: '24px' }}>
+                          <div className="lb-section-head" style={{ marginTop: 0 }}>
+                            <div className="lb-section-title">Tareas Extraídas por IA</div>
+                            <span className="lb-section-count">{activeMeeting.action_items?.length || 0}</span>
+                          </div>
+
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            {activeMeeting.action_items?.length ? (
+                              activeMeeting.action_items.map((item: any, idx: number) => {
+                                const match = item.match(/^([^:-]+)[:|-]\s*(.+)$/)
+                                const speaker = match ? match[1].trim() : null
+                                const taskText = match ? match[2].trim() : item
+
+                                return (
+                                  <article key={idx} className="lb-task" style={{ borderLeft: '4px solid #3a6ea5' }}>
+                                    <div className="lb-task-header">
+                                      <div className="lb-task-title">{taskText}</div>
+                                      {speaker && (
+                                        <span className="lb-task-tag blackwell" style={{ background: 'rgba(58,110,165,0.1)', color: '#3a6ea5', border: '1px solid rgba(58,110,165,0.25)' }}>
+                                          👤 {speaker}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="lb-task-footer" style={{ marginTop: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                      <span style={{ fontSize: '11px', color: '#9aa0a6' }}>Fuente: Transcripción Fireflies.ai</span>
+                                    </div>
+                                  </article>
+                                )
+                              })
+                            ) : (
+                               <p className="lb-subtext">No se detectaron tareas pendientes en esta reunión.</p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <p className="lb-subtext">No hay reuniones para mostrar.</p>
+                    )
+                  ) : (
+                    /* Gemini notes importer view */
+                    <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: '12px', padding: '24px' }}>
+                      <h2 className="lb-h2" style={{ marginTop: 0, fontSize: '22px' }}>Pegar Notas de Gemini</h2>
+                      <p className="lb-subtext" style={{ marginBottom: '20px' }}>Pega el cuerpo del correo o el texto del Google Doc. El sistema extraerá automáticamente a los responsables y las tareas.</p>
+
+                      {importSuccess && (
+                        <div style={{ background: '#d4eedd', color: '#3f7050', padding: '12px 16px', borderRadius: '6px', marginBottom: '16px', fontSize: '13px', fontWeight: 600 }}>
+                          ✅ {importSuccess}
+                        </div>
+                      )}
+
+                      {importError && (
+                        <div style={{ background: '#fde8e6', color: '#a8453b', padding: '12px 16px', borderRadius: '6px', marginBottom: '16px', fontSize: '13px', fontWeight: 600 }}>
+                          ❌ {importError}
+                        </div>
+                      )}
+
+                      <div style={{ marginBottom: '16px' }}>
+                        <label style={{ display: 'block', fontSize: '11px', fontWeight: 700, letterSpacing: '.05em', textTransform: 'uppercase', color: '#9aa0a6', marginBottom: '6px' }}>1. Cuenta Cliente Asignada</label>
+                        <select
+                          value={importingAccountId}
+                          onChange={e => { setImportingAccountId(e.target.value); setImportError(null); }}
+                          style={{
+                            width: '100%',
+                            padding: '10px 14px',
+                            borderRadius: '4px',
+                            border: '1px solid var(--rule-soft)',
+                            background: '#fff',
+                            fontSize: '13.5px',
+                            fontFamily: 'inherit',
+                            color: 'var(--ink-900)'
+                          }}
+                        >
+                          <option value="">-- Selecciona una cuenta cliente --</option>
+                          {scores.map(s => (
+                            <option key={s.account_id} value={s.account_id}>
+                              {s.account_name || s.account_id}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <div style={{ marginBottom: '18px' }}>
+                        <label style={{ display: 'block', fontSize: '11px', fontWeight: 700, letterSpacing: '.05em', textTransform: 'uppercase', color: '#9aa0a6', marginBottom: '6px' }}>2. Pegar texto de Notas / Correo</label>
+                        <textarea
+                          rows={8}
+                          value={geminiText}
+                          onChange={e => { setGeminiText(e.target.value); setImportSuccess(null); setImportError(null); }}
+                          placeholder={`Ejemplo:\n[Brandon Pérez, Daniel Padilla] Proyectar Costos: Elaborar la proyeccion...\n[Fabiola Carrasco] Revisar Cuentas: Enviar los enlaces...`}
+                          style={{
+                            width: '100%',
+                            boxSizing: 'border-box',
+                            padding: '12px 14px',
+                            borderRadius: '4px',
+                            border: '1px solid var(--rule-soft)',
+                            background: '#fdfcf8',
+                            fontSize: '13px',
+                            fontFamily: 'var(--mono)',
+                            lineHeight: 1.5,
+                            color: 'var(--ink-900)',
+                            resize: 'vertical'
+                          }}
+                        />
+                      </div>
+
+                      <div style={{ borderTop: '1px solid var(--rule-soft)', paddingTop: '18px' }}>
+                        <div style={{ fontWeight: 700, fontSize: '11px', letterSpacing: '.05em', textTransform: 'uppercase', color: '#9aa0a6', marginBottom: '12px' }}>Vista previa de tareas detectadas ({parsedTasks.length})</div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                          {parsedTasks.length ? (
+                            parsedTasks.map((t, idx) => (
+                              <article key={idx} className="lb-task" style={{ borderLeft: '4px solid #00a884', padding: '10px 14px', background: 'rgba(0,168,132,0.03)' }}>
+                                <div className="lb-task-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
+                                  <div className="lb-task-title" style={{ fontSize: '13px', fontWeight: 500, color: 'var(--ink-900)' }}>{t.action}</div>
+                                  <span className="lb-task-tag blackwell" style={{ background: 'rgba(0,168,132,0.1)', color: '#00a884', border: '1px solid rgba(0,168,132,0.25)', fontSize: '10.5px', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                    👤 {t.owner}
+                                  </span>
+                                </div>
+                              </article>
+                            ))
+                          ) : (
+                            <p className="lb-subtext" style={{ fontStyle: 'italic', fontSize: '12.5px' }}>Las tareas parsedas aparecerán aquí en tiempo real cuando pegues las minutas.</p>
+                          )}
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={handleImportTasks}
+                        disabled={importLoading || parsedTasks.length === 0 || !importingAccountId}
+                        style={{
+                          width: '100%',
+                          background: (importLoading || parsedTasks.length === 0 || !importingAccountId) ? '#ccc' : 'var(--ink-800)',
+                          color: '#fff',
+                          border: 'none',
+                          borderRadius: '4px',
+                          padding: '14px',
+                          fontSize: '13.5px',
+                          fontWeight: 700,
+                          cursor: (importLoading || parsedTasks.length === 0 || !importingAccountId) ? 'default' : 'pointer',
+                          marginTop: '20px',
+                          transition: 'background 0.15s',
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                        }}
+                      >
+                        {importLoading ? 'Guardando...' : `💾 Importar ${parsedTasks.length} Tareas en Supabase`}
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>
