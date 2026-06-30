@@ -267,7 +267,9 @@ export default function App() {
       meeting.action_items.push(`${task.owner || 'Sin asignar'}: ${task.action}`);
     }
     
-    return Array.from(map.values());
+    const meetingsList = Array.from(map.values());
+    meetingsList.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    return meetingsList;
   }, [dbTasks])
 
   async function handleSyncMeetings() {
@@ -625,7 +627,7 @@ export default function App() {
                 {/* Left Column: Meeting List */}
                 <div>
                   <div className="lb-section-title" style={{ marginBottom: '14px' }}>Minutas Recientes</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxHeight: '72vh', overflowY: 'auto', paddingRight: '4px' }}>
                     {meetings.length ? (
                       meetings.map((meeting) => {
                         const isSelected = selectedMeetingId === meeting.id || (!selectedMeetingId && meetings[0]?.id === meeting.id)
