@@ -221,6 +221,27 @@ export default function App() {
   const [detailLoading, setDetailLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
+  // Fireflies Integration States
+  const [viewMode, setViewMode] = useState<'semaforo' | 'reuniones'>('semaforo')
+  const [meetings, setMeetings] = useState<any[]>([])
+  const [selectedMeetingId, setSelectedMeetingId] = useState<string | null>(null)
+  const [meetingsLoading, setMeetingsLoading] = useState(false)
+
+  async function handleSyncMeetings() {
+    setMeetingsLoading(true)
+    try {
+      const res = await fetch('/api/fireflies-tasks')
+      if (res.ok) {
+        const data = await res.json()
+        setMeetings(data)
+      }
+    } catch (err) {
+      console.error(err)
+    } finally {
+      setMeetingsLoading(false)
+    }
+  }
+
   useEffect(() => {
     async function load() {
       setLoading(true)
@@ -239,11 +260,16 @@ export default function App() {
           .then(r => r.ok ? r.json() : [])
           .catch(() => [])
 
+        const meetingRows = await fetch('/api/fireflies-tasks')
+          .then(r => r.ok ? r.json() : [])
+          .catch(() => [])
+
         setAnalyses(analysisRows)
         setScores(scoreRows)
         setGroups(groupRows)
         setRawMessages(rawRows)
         setTasks(taskRows)
+        setMeetings(meetingRows)
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Error desconocido')
       } finally {
@@ -479,6 +505,186 @@ export default function App() {
     )
   }
 
+  if (viewMode === 'reuniones') {
+    const activeMeeting = meetings.find(m => m.id === (selectedMeetingId || meetings[0]?.id))
+    return (
+      <div className="lb-shell">
+        <div className="lb-book">
+          <div className="lb-page">
+            <div className="lb-lines" />
+            <div className="lb-margin" />
+            <div className="lb-spine">
+              <div className="lb-rings">{Array.from({length: 9}).map((_, i) => <div className="lb-ring" key={i} />)}</div>
+            </div>
+            <div className="lb-content">
+              {/* Header */}
+              <div className="lb-header-row">
+                <div>
+                  <span className="lb-eyebrow">Minutas e Inteligencia</span>
+                  <h1 className="lb-h1">Reuniones</h1>
+                  <p className="lb-subtext">Tareas extraídas de llamadas y reuniones vía Fireflies.ai.</p>
+                  
+                  {/* Conmutador de vistas */}
+                  <div style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>
+                    <button
+                      onClick={() => setViewMode('semaforo')}
+                      style={{
+                        fontFamily: "'Libre Franklin',sans-serif",
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        padding: '6px 14px',
+                        borderRadius: '999px',
+                        cursor: 'pointer',
+                        background: 'transparent',
+                        color: '#666',
+                        border: '1px solid #d0ccc4',
+                        transition: 'all 0.15s'
+                      }}
+                    >
+                      💬 Semáforo WhatsApp
+                    </button>
+                    <button
+                      onClick={() => setViewMode('reuniones')}
+                      style={{
+                        fontFamily: "'Libre Franklin',sans-serif",
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        padding: '6px 14px',
+                        borderRadius: '999px',
+                        cursor: 'pointer',
+                        background: '#3a3a44',
+                        color: '#fdfcf8',
+                        border: '1px solid #3a3a44',
+                        transition: 'all 0.15s'
+                      }}
+                    >
+                      🎙 Reuniones (Fireflies)
+                    </button>
+                  </div>
+                </div>
+                <div style={{textAlign: 'right'}}>
+                  <button
+                    onClick={handleSyncMeetings}
+                    disabled={meetingsLoading}
+                    style={{
+                      background: 'transparent',
+                      color: 'var(--ink-800)',
+                      border: '1px solid var(--ink-800)',
+                      borderRadius: '2px',
+                      padding: '8px 14px',
+                      fontSize: '12.5px',
+                      fontWeight: 500,
+                      cursor: 'pointer',
+                      lineHeight: 1
+                    }}
+                  >
+                    {meetingsLoading ? 'Sincronizando...' : '🔄 Sincronizar'}
+                  </button>
+                </div>
+              </div>
+
+              {/* Double column layout */}
+              <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: '32px', marginTop: '28px' }}>
+                {/* Left Column: Meeting List */}
+                <div>
+                  <div className="lb-section-title" style={{ marginBottom: '14px' }}>Historial de llamadas</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {meetings.map((meeting) => {
+                      const isSelected = selectedMeetingId === meeting.id || (!selectedMeetingId && meetings[0]?.id === meeting.id)
+                      const durationMins = Math.round(meeting.duration / 60)
+                      return (
+                        <button
+                          key={meeting.id}
+                          onClick={() => setSelectedMeetingId(meeting.id)}
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '6px',
+                            padding: '12px 16px',
+                            background: isSelected ? '#fffdf0' : '#fff',
+                            border: `1px solid ${isSelected ? '#d4c87a' : '#ece9e0'}`,
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            textAlign: 'left',
+                            transition: 'all .12s'
+                          }}
+                        >
+                          <span style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--ink-900)' }}>{meeting.title}</span>
+                          <div style={{ display: 'flex', gap: '8px', fontSize: '11px', color: '#9aa0a6', fontFamily: 'var(--mono)' }}>
+                            <span>📅 {new Date(meeting.date).toLocaleDateString('es-MX', { day: '2-digit', month: 'short' })}</span>
+                            <span>⏱ {durationMins} min</span>
+                          </div>
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                {/* Right Column: Selected Meeting Details & Tasks */}
+                <div>
+                  {activeMeeting ? (
+                    <div>
+                      <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: '12px', padding: '24px' }}>
+                        <h2 className="lb-h2" style={{ marginTop: 0, fontSize: '22px' }}>{activeMeeting.title}</h2>
+                        <div style={{ display: 'flex', gap: '12px', fontSize: '12px', color: '#666', marginTop: '4px', marginBottom: '18px' }}>
+                          <span>📅 Fecha: {new Date(activeMeeting.date).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                          <span>⏱ Duración: {Math.round(activeMeeting.duration / 60)} minutos</span>
+                        </div>
+
+                        <div style={{ borderTop: '1px solid var(--rule-soft)', paddingTop: '18px' }}>
+                          <div style={{ fontWeight: 700, fontSize: '13px', letterSpacing: '.05em', textTransform: 'uppercase', color: '#9aa0a6', marginBottom: '8px' }}>Resumen ejecutivo</div>
+                          <p className="lb-summary-text" style={{ margin: 0, lineHeight: '1.6' }}>{activeMeeting.summary}</p>
+                        </div>
+                      </div>
+
+                      <div style={{ marginTop: '24px' }}>
+                        <div className="lb-section-head" style={{ marginTop: 0 }}>
+                          <div className="lb-section-title">Tareas Extraídas por IA</div>
+                          <span className="lb-section-count">{activeMeeting.action_items?.length || 0}</span>
+                        </div>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                          {activeMeeting.action_items?.length ? (
+                            activeMeeting.action_items.map((item: any, idx: number) => {
+                              const match = item.match(/^([^:-]+)[:|-]\s*(.+)$/)
+                              const speaker = match ? match[1].trim() : null
+                              const taskText = match ? match[2].trim() : item
+
+                              return (
+                                <article key={idx} className="lb-task" style={{ borderLeft: '4px solid #3a6ea5' }}>
+                                  <div className="lb-task-header">
+                                    <div className="lb-task-title">{taskText}</div>
+                                    {speaker && (
+                                      <span className="lb-task-tag blackwell" style={{ background: 'rgba(58,110,165,0.1)', color: '#3a6ea5', border: '1px solid rgba(58,110,165,0.25)' }}>
+                                        👤 {speaker}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div className="lb-task-footer" style={{ marginTop: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <span style={{ fontSize: '11px', color: '#9aa0a6' }}>Fuente: Transcripción Fireflies.ai</span>
+                                  </div>
+                                </article>
+                              )
+                            })
+                          ) : (
+                             <p className="lb-subtext">No se detectaron tareas pendientes en esta reunión.</p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="lb-subtext">No hay reuniones para mostrar.</p>
+                  )}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   if (!selectedAccount) {
     const analyzedCount = accountSummaries.filter(a => a.analyzedToday).length
     const pendingAnalysis = accountSummaries.filter(a => !a.analyzedToday && a.hasMessagesToday)
@@ -507,6 +713,44 @@ export default function App() {
                   <span className="lb-eyebrow">Semáforo de satisfacción</span>
                   <h1 className="lb-h1">Cuentas</h1>
                   <p className="lb-subtext">Vista rápida de salud, actividad y análisis diario por cuenta.</p>
+                  
+                  {/* Conmutador de vistas */}
+                  <div style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>
+                    <button
+                      onClick={() => setViewMode('semaforo')}
+                      style={{
+                        fontFamily: "'Libre Franklin',sans-serif",
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        padding: '6px 14px',
+                        borderRadius: '999px',
+                        cursor: 'pointer',
+                        background: viewMode === 'semaforo' ? '#3a3a44' : 'transparent',
+                        color: viewMode === 'semaforo' ? '#fdfcf8' : '#666',
+                        border: viewMode === 'semaforo' ? '1px solid #3a3a44' : '1px solid #d0ccc4',
+                        transition: 'all 0.15s'
+                      }}
+                    >
+                      💬 Semáforo WhatsApp
+                    </button>
+                    <button
+                      onClick={() => setViewMode('reuniones')}
+                      style={{
+                        fontFamily: "'Libre Franklin',sans-serif",
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        padding: '6px 14px',
+                        borderRadius: '999px',
+                        cursor: 'pointer',
+                        background: (viewMode as string) === 'reuniones' ? '#3a3a44' : 'transparent',
+                        color: (viewMode as string) === 'reuniones' ? '#fdfcf8' : '#666',
+                        border: (viewMode as string) === 'reuniones' ? '1px solid #3a3a44' : '1px solid #d0ccc4',
+                        transition: 'all 0.15s'
+                      }}
+                    >
+                      🎙 Reuniones (Fireflies)
+                    </button>
+                  </div>
                 </div>
                 <div style={{fontFamily:'var(--caveat)', fontSize:36, fontWeight:700, color:'#3a3a44', lineHeight:1, textAlign:'right'}}>
                   {new Date().toLocaleDateString('es-MX', {day:'numeric', month:'long', year:'numeric', timeZone:'America/Mexico_City'})}
@@ -617,6 +861,44 @@ export default function App() {
           <span className="lb-eyebrow">Detalle</span>
           <h1 className="lb-h2">{selectedAccount?.name ?? selectedGroup.name}</h1>
           <p className="lb-subtext">{selectedHistory.length ? `${selectedHistory.length} día(s) analizados en el histórico` : 'Grupo pendiente de análisis diario.'}</p>
+          
+          {/* Conmutador de vistas */}
+          <div style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>
+            <button
+              onClick={() => { setSelectedAccountId(null); setSelectedJid(null); setViewMode('semaforo') }}
+              style={{
+                fontFamily: "'Libre Franklin',sans-serif",
+                fontSize: '12px',
+                fontWeight: 600,
+                padding: '6px 14px',
+                borderRadius: '999px',
+                cursor: 'pointer',
+                background: viewMode === 'semaforo' ? '#3a3a44' : 'transparent',
+                color: viewMode === 'semaforo' ? '#fdfcf8' : '#666',
+                border: viewMode === 'semaforo' ? '1px solid #3a3a44' : '1px solid #d0ccc4',
+                transition: 'all 0.15s'
+              }}
+            >
+              💬 Semáforo WhatsApp
+            </button>
+            <button
+              onClick={() => { setSelectedAccountId(null); setSelectedJid(null); setViewMode('reuniones') }}
+              style={{
+                fontFamily: "'Libre Franklin',sans-serif",
+                fontSize: '12px',
+                fontWeight: 600,
+                padding: '6px 14px',
+                borderRadius: '999px',
+                cursor: 'pointer',
+                background: (viewMode as string) === 'reuniones' ? '#3a3a44' : 'transparent',
+                color: (viewMode as string) === 'reuniones' ? '#fdfcf8' : '#666',
+                border: (viewMode as string) === 'reuniones' ? '1px solid #3a3a44' : '1px solid #d0ccc4',
+                transition: 'all 0.15s'
+              }}
+            >
+              🎙 Reuniones (Fireflies)
+            </button>
+          </div>
         </div>
       </div>
 
