@@ -64,30 +64,53 @@ export default async function handler(req, res) {
 
   // 3. Parse tasks from the email body
   const lines = body.split('\n');
-  const tasks = [];
+  const parsedTasks = [];
+  let currentTask = null;
+
+  for (let line of lines) {
+    line = line.trim();
+    if (!line) continue;
+
+    const cleanLine = line.replace(/^[-*•\s+>]+\s*/, '');
+    // Match: [Brandon Pérez, Daniel Padilla] Proyectar Costos: Elaborar la proyeccion...
+    const match = cleanLine.match(/^\[([^\]]+)\]\s*([^:]+)\s*:\s*(.+)$/);
+
+    if (match) {
+      if (currentTask) {
+        parsedTasks.push(currentTask);
+      }
+      currentTask = {
+        owner: match[1].trim(),
+        title: match[2].trim(),
+        detail: match[3].trim()
+      };
+    } else {
+      if (currentTask) {
+        currentTask.detail = `${currentTask.detail} ${cleanLine}`;
+      }
+    }
+  }
+
+  if (currentTask) {
+    parsedTasks.push(currentTask);
+  }
+
   const now = new Date().toISOString();
   const analysis_date = new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Mexico_City' });
 
-  for (const line of lines) {
-    const cleanLine = line.trim().replace(/^[-*•\s+>]+\s*/, '');
-    // Match: [Brandon Pérez, Daniel Padilla] Proyectar Costos: Elaborar la proyeccion...
-    const match = cleanLine.match(/^\[([^\]]+)\]\s*([^:]+)\s*:\s*(.+)$/);
-    if (match) {
-      tasks.push({
-        account_id: accountId,
-        action: `${match[2].trim()}: ${match[3].trim()}`,
-        owner: match[1].trim(),
-        analysis_date: analysis_date,
-        raw_action: {
-          source: 'gemini_meet_email_sync',
-          email_subject: subject || '',
-          created_at: now
-        },
-        created_at: now,
-        updated_at: now
-      });
-    }
-  }
+  const tasks = parsedTasks.map(task => ({
+    account_id: accountId,
+    action: `${task.title}: ${task.detail}`,
+    owner: task.owner,
+    analysis_date: analysis_date,
+    raw_action: {
+      source: 'gemini_meet_email_sync',
+      email_subject: subject || '',
+      created_at: now
+    },
+    created_at: now,
+    updated_at: now
+  }));
 
   if (tasks.length === 0) {
     console.log('[import-gemini-email] No tasks found matching the format [Name] Action: Detail');
