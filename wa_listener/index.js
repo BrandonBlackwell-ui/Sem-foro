@@ -519,11 +519,31 @@ async function connectToWhatsApp() {
       }
 
       if (unmapped.length > 0) {
-        console.log("\nGroups not mapped in Supabase wa_groups:");
-        for (const g of unmapped) {
-          console.log(`insert into wa_groups (jid, name, account_id) values ('${g.jid}', '${g.name.replaceAll("'", "''")}', 'XX');`);
+        // Reglas de auto-mapeo por nombre de grupo -> account_id.
+        const AUTO_ACCOUNT_RULES = [
+          { pattern: /maja/i, accountId: "02" },
+        ];
+        const rowsToInsert = unmapped.map((g) => {
+          const rule = AUTO_ACCOUNT_RULES.find((r) => r.pattern.test(g.name || ""));
+          return {
+            jid: g.jid,
+            name: g.name || g.jid,
+            account_id: rule ? rule.accountId : "00_UNMAPPED",
+            active: true,
+          };
+        });
+        const { error: insertError } = await supabase
+          .from("wa_groups")
+          .upsert(rowsToInsert, { onConflict: "jid", ignoreDuplicates: true });
+        if (insertError) {
+          console.error("Could not auto-register unmapped groups:", insertError.message);
+        } else {
+          for (const row of rowsToInsert) {
+            groupCache.set(row.jid, { accountId: row.account_id, name: row.name });
+            console.log(`Auto-registered group '${row.name}' -> account ${row.account_id}`);
+          }
+          console.log("Unmapped groups saved as 00_UNMAPPED. Assign account_id in Supabase wa_groups when needed.\n");
         }
-        console.log("Fill account_id and run those inserts in Supabase SQL Editor.\n");
       }
     }
   });
