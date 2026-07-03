@@ -1603,6 +1603,7 @@ export default function App() {
                   ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
                   : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
               </p>
+              <ContractTimeline contract={accountChecklistData?.contract} />
               <ScoreBreakdown components={weightedScore.components} />
             </div>
           </div>
@@ -2261,6 +2262,60 @@ const WORK_TYPE_ICON: Record<string, string> = {
 function getStatusConfig(status: string) {
   const key = status.toLowerCase().trim()
   return STATUS_CONFIG[key] ?? { color: '#78808c', bg: 'rgba(120,128,140,0.10)', icon: '○' }
+}
+
+function ContractTimeline({ contract }: { contract?: { vigencia?: string; nota?: string; fase_actual?: string } | null }) {
+  if (!contract?.vigencia || !contract.vigencia.includes('/')) return null
+  const [startStr, endStr] = contract.vigencia.split('/')
+  const start = new Date(`${startStr}T00:00:00`)
+  const end = new Date(`${endStr}T23:59:59`)
+  const now = new Date()
+  if (isNaN(start.getTime()) || isNaN(end.getTime()) || end <= start) return null
+
+  const total = end.getTime() - start.getTime()
+  const elapsed = Math.min(Math.max(now.getTime() - start.getTime(), 0), total)
+  const pct = (elapsed / total) * 100
+  const daysLeft = Math.max(0, Math.ceil((end.getTime() - now.getTime()) / 86400000))
+  const monthsLeft = Math.floor(daysLeft / 30)
+  const expired = now > end
+  const notStarted = now < start
+
+  const fmt = (d: Date) => d.toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })
+  const barColor = expired ? '#a32d2d' : daysLeft <= 60 ? '#b07d1e' : '#217a4c'
+  const remainingText = expired
+    ? 'Contrato vencido'
+    : notStarted
+      ? 'Aún no inicia'
+      : monthsLeft >= 1
+        ? `${monthsLeft} mes${monthsLeft === 1 ? '' : 'es'} restante${monthsLeft === 1 ? '' : 's'} (${daysLeft} días)`
+        : `${daysLeft} días restantes`
+
+  return (
+    <div className="lb-score-breakdown" aria-label="Línea de tiempo del contrato" style={{ marginBottom: 12 }}>
+      <div className="lb-score-breakdown-head">
+        <span>Vigencia del contrato</span>
+        <strong style={{ color: barColor }}>{remainingText}</strong>
+      </div>
+      <div style={{ padding: '6px 0 2px 0' }}>
+        <div style={{ position: 'relative', height: 10, borderRadius: 6, background: 'rgba(120,128,140,0.15)', overflow: 'visible' }}>
+          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${pct}%`, borderRadius: 6, background: `linear-gradient(90deg, ${barColor}88, ${barColor})` }} />
+          {!expired && !notStarted && (
+            <div style={{ position: 'absolute', left: `${pct}%`, top: -4, bottom: -4, width: 2, background: '#1c2027', borderRadius: 1 }} title={`Hoy: ${fmt(now)}`} />
+          )}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 6, fontSize: 12, color: '#78808c' }}>
+          <span>Inicio: {fmt(start)}</span>
+          <span style={{ fontWeight: 600, color: '#3d434c' }}>Hoy: {fmt(now)} · {Math.round(pct)}% transcurrido</span>
+          <span>Fin: {fmt(end)}</span>
+        </div>
+        {(contract.fase_actual || contract.nota) && (
+          <p style={{ margin: '8px 0 0 0', fontSize: 12, lineHeight: 1.45, color: '#78808c' }}>
+            {contract.fase_actual ? `Fase actual: ${contract.fase_actual.replace('_', ' ')}. ` : ''}{contract.nota ?? ''}
+          </p>
+        )}
+      </div>
+    </div>
+  )
 }
 
 function ScoreBreakdown({ components }: { components: ReturnType<typeof buildWeightedScore>['components'] }) {

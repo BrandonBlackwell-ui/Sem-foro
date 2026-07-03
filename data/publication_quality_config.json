@@ -3,6 +3,23 @@
   "notes": "PQ uses fixed account aliases and fixed media tiers. Do not let the LLM invent tiers.",
   "default_alias_policy": "Use sheet_client_name, legal_name and account_name as aliases when no explicit aliases exist.",
   "accounts": {
+    "maja": {
+      "aliases": ["Maja", "MAJA", "Maja Sportswear", "MAJA Sportswear"],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "Quadratin": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3"
+      }
+    },
     "tello": {
       "aliases": ["Miguel Tello", "Tello"],
       "media_tiers": {

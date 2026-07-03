@@ -1,6 +1,11 @@
 {
   "account_number": "02",
   "account_name": "MAJA",
+  "account_id": "maja",
+  "contract": {
+    "vigencia": "2026-02-13/2027-02-12",
+    "nota": "Sistema Integral de Gestión Reputacional, 12 meses (13/02/2026 - 12/02/2027). KPI: 20 impactos/mes (80 por cuatrimestre), 45% en medios Tier 1, al menos 1 impreso del 45%. Publicaciones no acumulables mes a mes."
+  },
   "schema": {
     "items": {
       "contrato": {
@@ -44,6 +49,18 @@
         "w_co": 0.15,
         "w_sc": 0.0,
         "w_sf": 0.0
+      },
+      "publicaciones_web": {
+        "label": "Impactos mensuales en medios",
+        "w_pq": 0.0,
+        "w_co": 0.0,
+        "w_sc": 0.0,
+        "w_sf": 0.0,
+        "meta_fase1": 20,
+        "meta_fase2": 20,
+        "unidad": "impactos/mes",
+        "trackable": true,
+        "nota": "KPI contrato: 20 impactos/mes, 45% en Tier 1, al menos 1 impreso."
       }
     },
     "statusScore": {
