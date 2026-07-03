@@ -6,6 +6,14 @@
     "vigencia": "2026-02-13/2027-02-12",
     "nota": "Sistema Integral de Gestión Reputacional, 12 meses (13/02/2026 - 12/02/2027). KPI: 20 impactos/mes (80 por cuatrimestre), 45% en medios Tier 1, al menos 1 impreso del 45%. Publicaciones no acumulables mes a mes."
   },
+  "contracts_history": [
+    {
+      "nombre": "Manejo inmediato de crisis mediática",
+      "vigencia": "2026-01-16/2026-02-14",
+      "estatus": "concluido",
+      "nota": "Contención de crisis por señalamientos de Pedro Ferriz Hijar (30 días): desacople narrativo, carta aclaratoria, mensajes para stakeholders e influencers, monitoreo con dos cortes diarios L-S. $180,000 MXN + IVA."
+    }
+  ],
   "schema": {
     "items": {
       "contrato": {

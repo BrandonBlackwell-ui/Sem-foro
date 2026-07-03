@@ -1603,7 +1603,7 @@ export default function App() {
                   ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
                   : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
               </p>
-              <ContractTimeline contract={accountChecklistData?.contract} />
+              <ContractTimeline contract={accountChecklistData?.contract} history={accountChecklistData?.contracts_history} />
               <ScoreBreakdown components={weightedScore.components} />
             </div>
           </div>
@@ -2264,8 +2264,20 @@ function getStatusConfig(status: string) {
   return STATUS_CONFIG[key] ?? { color: '#78808c', bg: 'rgba(120,128,140,0.10)', icon: '○' }
 }
 
-function ContractTimeline({ contract }: { contract?: { vigencia?: string; nota?: string; fase_actual?: string } | null }) {
-  if (!contract?.vigencia || !contract.vigencia.includes('/')) return null
+type ContractHistoryEntry = { nombre?: string; vigencia?: string; estatus?: string; nota?: string }
+
+function ContractTimeline({ contract, history }: { contract?: { vigencia?: string; nota?: string; fase_actual?: string } | null; history?: ContractHistoryEntry[] | null }) {
+  const [showHistory, setShowHistory] = useState(false)
+  const pastContracts = (history ?? []).filter(h => h.vigencia)
+  if ((!contract?.vigencia || !contract.vigencia.includes('/')) && !pastContracts.length) return null
+  if (!contract?.vigencia || !contract.vigencia.includes('/')) {
+    return (
+      <div className="lb-score-breakdown" aria-label="Contratos anteriores" style={{ marginBottom: 12 }}>
+        <div className="lb-score-breakdown-head"><span>Contratos</span><strong>Sin contrato vigente</strong></div>
+        <ContractHistoryList entries={pastContracts} />
+      </div>
+    )
+  }
   const [startStr, endStr] = contract.vigencia.split('/')
   const start = new Date(`${startStr}T00:00:00`)
   const end = new Date(`${endStr}T23:59:59`)
@@ -2313,7 +2325,48 @@ function ContractTimeline({ contract }: { contract?: { vigencia?: string; nota?:
             {contract.fase_actual ? `Fase actual: ${contract.fase_actual.replace('_', ' ')}. ` : ''}{contract.nota ?? ''}
           </p>
         )}
+        {pastContracts.length > 0 && (
+          <div style={{ marginTop: 8 }}>
+            <button
+              onClick={() => setShowHistory(!showHistory)}
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', fontSize: 12, fontWeight: 600, color: '#78808c' }}
+            >
+              {showHistory ? '▾' : '▸'} Contratos anteriores ({pastContracts.length})
+            </button>
+            {showHistory && <ContractHistoryList entries={pastContracts} />}
+          </div>
+        )}
       </div>
+    </div>
+  )
+}
+
+function ContractHistoryList({ entries }: { entries: ContractHistoryEntry[] }) {
+  const fmt = (s: string) => {
+    const d = new Date(`${s}T00:00:00`)
+    return isNaN(d.getTime()) ? s : d.toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })
+  }
+  return (
+    <div style={{ marginTop: 6 }}>
+      {entries.map((h, i) => {
+        const [s, e] = (h.vigencia ?? '').split('/')
+        return (
+          <div key={i} style={{
+            padding: '8px 12px',
+            marginBottom: 6,
+            background: 'rgba(120,128,140,0.06)',
+            borderRadius: 8,
+            borderLeft: '3px solid rgba(120,128,140,0.35)',
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8, flexWrap: 'wrap' }}>
+              <strong style={{ fontSize: 13, color: '#3d434c' }}>{h.nombre ?? 'Contrato'}</strong>
+              <span style={{ fontSize: 11, fontWeight: 600, color: '#78808c', textTransform: 'uppercase', letterSpacing: 0.4 }}>{h.estatus ?? 'concluido'}</span>
+            </div>
+            {s && e && <p style={{ margin: '2px 0 0 0', fontSize: 12, color: '#78808c' }}>{fmt(s)} → {fmt(e)}</p>}
+            {h.nota && <p style={{ margin: '4px 0 0 0', fontSize: 12, lineHeight: 1.45, color: '#78808c' }}>{h.nota}</p>}
+          </div>
+        )
+      })}
     </div>
   )
 }
