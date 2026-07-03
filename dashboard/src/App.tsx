@@ -833,32 +833,34 @@ export default function App() {
   useEffect(() => {
     if (!selectedAccount) { setAccountChecklistData(null); return }
     const aid = selectedAccount.account_id.toLowerCase()
-    const nameVariant = selectedAccount.name.toUpperCase().replace(/\s+/g, '_')
-    // Scan all account folders (01-20) and match by account_id, account_name, or folder name
+    const nameNorm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
     const tryFetch = async () => {
+      // Load manifest to get all folder names
+      let folders: string[] = []
+      try {
+        const mr = await fetch('/data/accounts/manifest.json')
+        if (mr.ok) folders = await mr.json()
+      } catch { /* fallback: empty */ }
+
+      // Fetch all checklists in parallel and pick the best match
       const results = await Promise.all(
-        Array.from({ length: 20 }, (_, i) => i + 1).map(async (n) => {
-          const num = String(n).padStart(2, '0')
-          // Try known name variants: account_id and WhatsApp group name
-          const candidates = [aid.toUpperCase(), nameVariant]
-          for (const cand of candidates) {
-            try {
-              const r = await fetch(`/data/accounts/${num}_${cand}/checklist.json`)
-              if (r.ok) { const d = await r.json(); return d }
-            } catch { /* skip */ }
-          }
+        folders.map(async (folder) => {
+          try {
+            const r = await fetch(`/data/accounts/${folder}/checklist.json`)
+            if (r.ok) return { folder, data: await r.json() }
+          } catch { /* skip */ }
           return null
         })
       )
-      // Also match by account_id or account_name field inside checklist
-      const match = results.find(d =>
-        d &&
-        (d.account_id?.toLowerCase() === aid ||
-         d.account_name?.toLowerCase() === aid ||
-         d.account_name?.toLowerCase().includes(aid) ||
-         aid.includes(d.account_name?.toLowerCase() ?? '___'))
-      ) ?? results.find(Boolean)
-      setAccountChecklistData(match ?? null)
+
+      const valid = results.filter(Boolean) as { folder: string; data: any }[]
+      // Match priority: account_id field → account_name contains aid → folder name contains aid
+      const match =
+        valid.find(x => x.data.account_id?.toLowerCase() === aid) ??
+        valid.find(x => nameNorm(x.data.account_name ?? '').includes(nameNorm(aid))) ??
+        valid.find(x => nameNorm(aid).includes(nameNorm(x.data.account_name ?? '').slice(0, 4) || '___')) ??
+        valid.find(x => nameNorm(x.folder).includes(nameNorm(aid)))
+      setAccountChecklistData(match?.data ?? null)
     }
     tryFetch()
   }, [selectedAccount?.account_id, selectedAccount?.name])
