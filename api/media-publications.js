@@ -145,11 +145,31 @@ function toRecords(csvText) {
   })
 }
 
+// Correcciones manuales a filas del Sheet: se matchea por el texto del campo link
+// y se reemplaza medio/URL. Útil cuando la fila del Sheet trae texto en vez de link.
+const PUBLICATION_OVERRIDES = [
+  {
+    match_link_text: 'ENTREVISTA EN MILENIO PEDRO GAMBOA',
+    media_name: 'Milenio',
+    url: 'https://www.medialog.com.mx/mx.asp?h=653abd06a797f8de777083f55e823b22&E=YntmcXBtcHM=&X=dXlwam9mbWpu',
+  },
+]
+
+function applyOverride(link, mediaName) {
+  const override = PUBLICATION_OVERRIDES.find(
+    (o) => normalize(o.match_link_text) === normalize(link),
+  )
+  if (!override) return { link, mediaName }
+  return { link: override.url, mediaName: override.media_name || mediaName }
+}
+
 function buildPublications(records, crosswalk) {
   const publications = []
   for (const record of records) {
     const sheetClient = recordField(record, 'cliente')
-    const link = recordField(record, 'link')
+    const rawLink = recordField(record, 'link')
+    const rawMedia = recordField(record, 'medio')
+    const { link, mediaName } = applyOverride(rawLink, rawMedia)
     const mapped = crosswalk.get(normalize(sheetClient))
     if (!mapped || !link) continue
 
@@ -163,7 +183,7 @@ function buildPublications(records, crosswalk) {
       account_id: mapped.account_id,
       account_name: mapped.account_name,
       sheet_client_name: sheetClient,
-      media_name: recordField(record, 'medio'),
+      media_name: mediaName,
       provider: recordField(record, 'proveedor'),
       columnist: recordField(record, 'columnista'),
       legal_name: recordField(record, 'razon social'),
