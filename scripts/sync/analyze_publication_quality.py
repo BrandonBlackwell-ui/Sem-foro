@@ -534,6 +534,13 @@ def _summaries_from_rows(sb: Any, new_rows: list[dict[str, Any]]) -> list[dict[s
 
 
 def _upsert_chunks(sb: Any, table: str, rows: list[dict[str, Any]], conflict: str) -> None:
+    # Dedupe by conflict key(s): duplicated Sheet rows (same URL twice) break
+    # Postgres upsert with "cannot affect row a second time". Keep the last row.
+    keys = [k.strip() for k in conflict.split(",")]
+    deduped: dict[tuple, dict[str, Any]] = {}
+    for row in rows:
+        deduped[tuple(row.get(k) for k in keys)] = row
+    rows = list(deduped.values())
     for start in range(0, len(rows), 100):
         sb.table(table).upsert(rows[start : start + 100], on_conflict=conflict).execute()
 
