@@ -169,6 +169,82 @@ function scoreLabel(score: number | null | undefined) {
   return 'Atencion'
 }
 
+function clampScore(value: number) {
+  return Math.max(0, Math.min(100, value))
+}
+
+function roundScore(value: number) {
+  return Math.round(value * 10) / 10
+}
+
+function buildWeightedScore(waScore: number | null | undefined) {
+  const normalizedWa = waScore == null ? null : clampScore(Number(waScore))
+  const waIntoSc = normalizedWa == null ? 0 : normalizedWa * 0.4
+  const waIntoGlobal = waIntoSc * 0.375
+  const components = [
+    {
+      key: 'co',
+      label: 'CO',
+      caption: 'Cumplimiento operativo',
+      value: null as number | null,
+      max: 37.5,
+      contribution: 0,
+      status: 'pendiente',
+    },
+    {
+      key: 'pq',
+      label: 'PQ',
+      caption: 'Calidad de publicaciones',
+      value: null as number | null,
+      max: 25,
+      contribution: 0,
+      status: 'pendiente',
+    },
+    {
+      key: 'sc',
+      label: 'SC',
+      caption: normalizedWa == null ? 'Falta WhatsApp, Meets y survey' : `Parcial: WA ${roundScore(normalizedWa)}/100`,
+      value: normalizedWa == null ? null : roundScore(waIntoGlobal),
+      max: 37.5,
+      contribution: waIntoGlobal,
+      status: normalizedWa == null ? 'pendiente' : 'parcial',
+    },
+    {
+      key: 'wa',
+      label: 'WA',
+      caption: 'Subscore conectado',
+      value: normalizedWa == null ? null : roundScore(normalizedWa),
+      max: 100,
+      contribution: normalizedWa ?? 0,
+      status: normalizedWa == null ? 'pendiente' : 'conectado',
+    },
+    {
+      key: 'meet',
+      label: 'Meet',
+      caption: 'Pendiente de clasificar minutas',
+      value: null as number | null,
+      max: 100,
+      contribution: 0,
+      status: 'pendiente',
+    },
+    {
+      key: 'survey',
+      label: 'Survey',
+      caption: 'Tipo A/B pendiente',
+      value: null as number | null,
+      max: 100,
+      contribution: 0,
+      status: 'pendiente',
+    },
+  ]
+
+  return {
+    globalPartial: normalizedWa == null ? null : roundScore(waIntoGlobal),
+    waScore: normalizedWa,
+    components,
+  }
+}
+
 function dayWindowUtc(date: string) {
   const start = new Date(`${date}T00:00:00-06:00`)
   const end = new Date(start)
@@ -492,6 +568,8 @@ export default function App() {
   const selectedDayAnalysis = selectedHistory.find((analysis) => analysis.id === selectedHistoryId) ?? null
   const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
   const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
+  const weightedScore = buildWeightedScore(selectedScore)
+  const displayScore = weightedScore.globalPartial
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
   const selectedTasks = selectedGroup
     ? tasks.filter(t => t.monday_client_label && selectedGroup.name.toLowerCase().includes(t.monday_client_label.toLowerCase()))
@@ -1007,9 +1085,10 @@ export default function App() {
         <div className="lb-resumen" style={{marginTop:24}}>
           {/* Score + summary hero */}
           <div style={{display:'flex', gap:22, flexWrap:'wrap', alignItems:'flex-start'}}>
-            <div className="lb-score-postit" style={{background: selectedScore != null && selectedScore >= 85 ? '#d4eedd' : selectedScore != null && selectedScore >= 70 ? '#fdf1ad' : '#fde8e6'}}>
-              <div className="lb-score-postit-val" style={{color: selectedScore != null && selectedScore >= 85 ? '#3f7050' : selectedScore != null && selectedScore >= 70 ? '#b07d1e' : '#a8453b'}}>{selectedScore ?? '--'}</div>
-              <div className="lb-score-postit-label">Último score · {scoreLabel(selectedScore)}</div>
+            <div className="lb-score-postit" style={{background: displayScore != null && displayScore >= 80 ? '#d4eedd' : displayScore != null && displayScore >= 45 ? '#fdf1ad' : '#fde8e6'}}>
+              <div className="lb-score-postit-val" style={{color: displayScore != null && displayScore >= 80 ? '#3f7050' : displayScore != null && displayScore >= 45 ? '#b07d1e' : '#a8453b'}}>{displayScore ?? '--'}</div>
+              <div className="lb-score-postit-label">Score global parcial</div>
+              <div className="lb-score-postit-note">WA real: {selectedScore ?? '--'} / 100</div>
               {latestSelectedAnalysis && (
                 <div style={{marginTop:10, display:'flex', gap:6, flexWrap:'wrap', justifyContent:'center'}}>
                   <span className={`lb-pill ${badgeClass(latestSelectedAnalysis.sentiment) === 'green' ? 'lb-pill-green' : badgeClass(latestSelectedAnalysis.sentiment) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{latestSelectedAnalysis.sentiment}</span>
@@ -1024,6 +1103,7 @@ export default function App() {
                   ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
                   : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
               </p>
+              <ScoreBreakdown components={weightedScore.components} />
             </div>
           </div>
 
@@ -1492,6 +1572,37 @@ const WORK_TYPE_ICON: Record<string, string> = {
 function getStatusConfig(status: string) {
   const key = status.toLowerCase().trim()
   return STATUS_CONFIG[key] ?? { color: '#78808c', bg: 'rgba(120,128,140,0.10)', icon: '○' }
+}
+
+function ScoreBreakdown({ components }: { components: ReturnType<typeof buildWeightedScore>['components'] }) {
+  return (
+    <div className="lb-score-breakdown" aria-label="Componentes del score global">
+      <div className="lb-score-breakdown-head">
+        <span>Ponderación conectada</span>
+        <strong>Global = CO 37.5% · PQ 25% · SC 37.5%</strong>
+      </div>
+      <div className="lb-score-bars">
+        {components.map((component) => {
+          const fill = component.value == null
+            ? 0
+            : Math.min(100, (Number(component.value) / component.max) * 100)
+          const valueText = component.value == null ? 'pendiente' : `${component.value}/${component.max}`
+          return (
+            <div className={`lb-score-bar-row ${component.status}`} key={component.key}>
+              <div className="lb-score-bar-label">
+                <strong>{component.label}</strong>
+                <span>{component.caption}</span>
+              </div>
+              <div className="lb-score-bar-track">
+                <div className="lb-score-bar-fill" style={{ width: `${fill}%` }} />
+              </div>
+              <div className="lb-score-bar-value">{valueText}</div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
 }
 
 function TaskCard({ item, compact = false }: { item: unknown; compact?: boolean }) {
