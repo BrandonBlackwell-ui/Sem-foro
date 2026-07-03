@@ -952,20 +952,28 @@ export default function App() {
     })()
   }, [])
 
-  const findChecklist = useCallback((accountId: string) => {
-    const aid = accountId.toLowerCase()
+  const findChecklist = useCallback((accountId: string, accountName?: string) => {
     const nameNorm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
-    return (
-      allChecklists.find(x => x.data.account_id?.toLowerCase() === aid) ??
-      allChecklists.find(x => nameNorm(x.data.account_name ?? '').includes(nameNorm(aid))) ??
-      allChecklists.find(x => nameNorm(aid).includes(nameNorm(x.data.account_name ?? '').slice(0, 4) || '___')) ??
-      allChecklists.find(x => nameNorm(x.folder).includes(nameNorm(aid)))
-    )?.data ?? null
+    const keys = [accountId, accountName].filter(Boolean).map(k => nameNorm(String(k)))
+    for (const key of keys) {
+      const match =
+        allChecklists.find(x => nameNorm(x.data.account_id ?? '') === key) ??
+        allChecklists.find(x => {
+          const cn = nameNorm(x.data.account_name ?? '')
+          return cn.length >= 3 && (cn.includes(key) || key.includes(cn))
+        }) ??
+        allChecklists.find(x => {
+          const fn = nameNorm(x.folder.replace(/^\d+/, ''))
+          return fn.length >= 3 && (fn.includes(key) || key.includes(fn))
+        })
+      if (match) return match.data
+    }
+    return null
   }, [allChecklists])
 
   const accountChecklistData = useMemo(
-    () => (selectedAccount ? findChecklist(selectedAccount.account_id) : null),
-    [selectedAccount?.account_id, findChecklist]
+    () => (selectedAccount ? findChecklist(selectedAccount.account_id, selectedAccount.name) : null),
+    [selectedAccount?.account_id, selectedAccount?.name, findChecklist]
   )
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
@@ -1350,11 +1358,19 @@ export default function App() {
     const analyzedCount = accountSummaries.filter(a => a.analyzedToday).length
     const pendingAnalysis = accountSummaries.filter(a => !a.analyzedToday && a.hasMessagesToday)
     const trulyQuiet = accountSummaries.filter(a => !a.analyzedToday && !a.hasMessagesToday)
-    const todayScores = accountSummaries
-      .filter(a => a.analyzedToday && a.score)
-      .map(a => a.score!.current_score)
-    const averageScore = todayScores.length
-      ? Math.round(todayScores.reduce((t, s) => t + s, 0) / todayScores.length)
+    // Promedio de scores globales ponderados (solo cuentas completas)
+    const globalScores = accountSummaries
+      .map(a => {
+        const checklist = findChecklist(a.account_id, a.name)
+        if (!checklist?.contract?.vigencia) return null
+        const wa = a.score?.current_score ?? a.latestAnalysis?.new_score ?? null
+        const weighted = buildWeightedScore(wa, a.operational, a.publicationQuality, checklist)
+        const core = weighted.components.filter(c => ['co', 'pq', 'sc', 'meet'].includes(c.key))
+        return core.every(c => c.value != null) ? weighted.globalPartial : null
+      })
+      .filter((s): s is number => s != null)
+    const averageScore = globalScores.length
+      ? Math.round(globalScores.reduce((t, s) => t + s, 0) / globalScores.length)
       : null
 
     return (
@@ -1458,7 +1474,7 @@ export default function App() {
                   return true
                 }).map(account => {
                   // Global ponderado solo para cuentas con checklist completo (contrato + meet)
-                  const checklist = findChecklist(account.account_id)
+                  const checklist = findChecklist(account.account_id, account.name)
                   let globalScore: number | null = null
                   if (checklist?.contract?.vigencia) {
                     const waForGlobal = account.score?.current_score ?? account.latestAnalysis?.new_score ?? null
@@ -1474,22 +1490,21 @@ export default function App() {
                   return 0
                 }).map(({ account, globalScore }, gi) => {
                   const isGlobal = globalScore != null
-                  const scoreValue = isGlobal ? globalScore : account.analyzedToday ? (account.latestAnalysis?.new_score ?? null) : null
+                  // Cuentas sin score global completo aparecen desactivadas (sin número, en gris)
+                  const scoreValue = isGlobal ? globalScore : null
                   const status = isGlobal
                     ? (globalScore >= 80 ? 'Sano' : globalScore >= 65 ? 'Atención' : 'Riesgo')
-                    : account.analyzedToday ? scoreLabel(scoreValue) : account.hasMessagesToday ? 'En proceso' : 'Pendiente'
+                    : 'Sin ponderar'
                   const stampColor = isGlobal
                     ? (globalScore >= 80 ? '#3f7050' : globalScore >= 65 ? '#b07d1e' : '#a8453b')
-                    : account.analyzedToday
-                      ? (scoreValue != null && scoreValue >= 85 ? '#3f7050' : scoreValue != null && scoreValue >= 70 ? '#b07d1e' : '#a8453b')
-                      : account.hasMessagesToday ? '#3a6ea5' : '#9aa0a6'
+                    : '#9aa0a6'
                   const r = 26
                   const circ = 2 * Math.PI * r
                   const offset = scoreValue != null ? circ * (1 - scoreValue / 100) : circ
                   const mainGroup = account.groups.find(g => !g.name.toLowerCase().includes('interno')) ?? account.groups[0]
                   const lastMsgAt = account.groups.map(g => g.last_message_at ?? '').sort().reverse()[0] || null
                   return (
-                    <button className="lb-account-row" key={account.account_id} style={{borderLeft: `5px solid ${stampColor}`, animationDelay: `${gi * 40}ms`}} onClick={() => { setSelectedAccountId(account.account_id); setSelectedJid(mainGroup?.jid ?? null) }}>
+                    <button className="lb-account-row" key={account.account_id} style={{borderLeft: `5px solid ${stampColor}`, animationDelay: `${gi * 40}ms`, opacity: isGlobal ? 1 : 0.55, filter: isGlobal ? 'none' : 'grayscale(0.4)'}} onClick={() => { setSelectedAccountId(account.account_id); setSelectedJid(mainGroup?.jid ?? null) }}>
                       <div className="lb-score-ring">
                         <svg width="62" height="62" viewBox="0 0 62 62">
                           <circle cx="31" cy="31" r={r} fill="none" stroke="#e8e4d8" strokeWidth="5" />
