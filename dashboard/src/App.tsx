@@ -333,6 +333,13 @@ const ACCOUNT_LINKS = [
     whatsappNames: ['Credix/BWS'],
     supabaseAccountIds: ['05'],
   },
+  {
+    accountId: 'maja',
+    dashboardNames: ['Maja', 'MAJA Sportswear'],
+    sheetNames: ['Maja Sportswear'],
+    whatsappNames: ['MAJA'],
+    supabaseAccountIds: ['02'],
+  },
 ] as const
 
 type AccountLink = (typeof ACCOUNT_LINKS)[number]
@@ -947,8 +954,15 @@ export default function App() {
 
   const findChecklist = useCallback((accountId: string, accountName?: string) => {
     const nameNorm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
+    // El account_id de la app es el número de cuenta ('02', '12') — match directo por account_number
+    const asNumber = /^\d+$/.test(accountId.trim()) ? String(Number(accountId.trim())) : null
+    if (asNumber) {
+      const byNumber = allChecklists.find(x => String(Number(x.data.account_number ?? -1)) === asNumber)
+      if (byNumber) return byNumber.data
+    }
     const keys = [accountId, accountName].filter(Boolean).map(k => nameNorm(String(k)))
     for (const key of keys) {
+      if (key.length < 3) continue
       const match =
         allChecklists.find(x => nameNorm(x.data.account_id ?? '') === key) ??
         allChecklists.find(x => {
