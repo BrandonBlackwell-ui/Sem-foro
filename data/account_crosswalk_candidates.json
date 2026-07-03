@@ -1,0 +1,733 @@
+{
+  "generated_at": "2026-07-02",
+  "source_files": {
+    "dashboard_accounts": "data/accounts.json",
+    "sheet": "C:\\Users\\Brand\\Downloads\\Template cierre medios 2026.xlsx",
+    "whatsapp_groups": "Supabase wa_groups populated by Baileys listener"
+  },
+  "purpose": "Candidate crosswalk between WhatsApp/Baileys groups, dashboard accounts, and media close Sheet client names.",
+  "confidence_legend": {
+    "alta": "safe direct/manual match",
+    "media": "probable alias, review recommended",
+    "baja": "weak textual match",
+    "pendiente": "no usable match found"
+  },
+  "rows": [
+    {
+      "account_id": "stprm",
+      "dashboard_name": "STPRM",
+      "dashboard_drive_name": "18. STPRM",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Sindicato de Pemex - Vicky - Aldana",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 22,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "ipc",
+      "dashboard_name": "IPC",
+      "dashboard_drive_name": null,
+      "status": "revisar",
+      "sheet_candidates": [],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "azvi",
+      "dashboard_name": "Grupo Azvi",
+      "dashboard_drive_name": "09. GRUPO AZVI",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Azvi",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 33,
+          "commitment": {
+            "row": 13,
+            "publications_per_month_contract": 6.0,
+            "contract_start": "2025-08-25 00:00:00",
+            "contract_end": "2026-08-25 00:00:00",
+            "renewal_status": "Vigente",
+            "current_month_publications": 0,
+            "pending_vs_contract": 6,
+            "year_publications_done": 33,
+            "year_publications_contract": 60
+          }
+        }
+      ],
+      "whatsapp_candidates": [
+        {
+          "jid": "120363422319641078@g.us",
+          "group_name": "Azvi + Blackwell",
+          "supabase_account_id": "09",
+          "active": true,
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_wa:Azvi,sheet:Azvi"
+        },
+        {
+          "jid": "120363401172777738@g.us",
+          "group_name": "Interno Azvi",
+          "supabase_account_id": "09",
+          "active": true,
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_wa:Azvi,sheet:Azvi"
+        }
+      ],
+      "notes": "Listo para usar en calculo automatizado"
+    },
+    {
+      "account_id": "tello",
+      "dashboard_name": "Tello (MTV)",
+      "dashboard_drive_name": "12. MTV",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Miguel Tello",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 19,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [
+        {
+          "jid": "120363425422565127@g.us",
+          "group_name": "Interno Tello",
+          "supabase_account_id": "12",
+          "active": true,
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_wa:Tello,sheet:Miguel Tello"
+        },
+        {
+          "jid": "120363395710402156@g.us",
+          "group_name": "Tello + Blackwell",
+          "supabase_account_id": "12",
+          "active": true,
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_wa:Tello,sheet:Miguel Tello"
+        }
+      ],
+      "notes": "Listo para usar en calculo automatizado"
+    },
+    {
+      "account_id": "nuvoil",
+      "dashboard_name": "Nuvoil",
+      "dashboard_drive_name": null,
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Nuvoil",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 6,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [
+        {
+          "jid": "120363426896666810@g.us",
+          "group_name": "INTERNO NUVOIL",
+          "supabase_account_id": "21",
+          "active": true,
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_wa:Nuvoil,alias_wa:Nuvoil-Blackwell,sheet:Nuvoil"
+        },
+        {
+          "jid": "120363425481127093@g.us",
+          "group_name": "Nuvoil-Blackwell",
+          "supabase_account_id": "21",
+          "active": true,
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_wa:Nuvoil,alias_wa:Nuvoil-Blackwell,sheet:Nuvoil"
+        }
+      ],
+      "notes": "Listo para usar en calculo automatizado"
+    },
+    {
+      "account_id": "cima",
+      "dashboard_name": "Grupo CIMA",
+      "dashboard_drive_name": "13. GRUPO CIMA",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Grupo Cimarrón",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 33,
+          "commitment": {
+            "row": 34,
+            "publications_per_month_contract": 2.0,
+            "contract_start": "2025-06-25 00:00:00",
+            "contract_end": "2025-09-25 00:00:00",
+            "renewal_status": "Renovar Cont",
+            "current_month_publications": 0,
+            "pending_vs_contract": 2,
+            "year_publications_done": 33,
+            "year_publications_contract": 6
+          }
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "apollo",
+      "dashboard_name": "Apollo (Química)",
+      "dashboard_drive_name": "07. APOLLO",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Quimica Apollo",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 12,
+          "commitment": {
+            "row": 75,
+            "publications_per_month_contract": null,
+            "contract_start": "",
+            "contract_end": "",
+            "renewal_status": "",
+            "current_month_publications": null,
+            "pending_vs_contract": null,
+            "year_publications_done": null,
+            "year_publications_contract": null
+          }
+        },
+        {
+          "sheet_client_name": "Apollo unbranding",
+          "confidence": "alta",
+          "score": 0.86,
+          "reason": "match_nombre",
+          "publication_rows": 0,
+          "commitment": {
+            "row": 47,
+            "publications_per_month_contract": null,
+            "contract_start": "",
+            "contract_end": "",
+            "renewal_status": "",
+            "current_month_publications": null,
+            "pending_vs_contract": null,
+            "year_publications_done": null,
+            "year_publications_contract": null
+          }
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "armor",
+      "dashboard_name": "Armor Life Lab",
+      "dashboard_drive_name": "15.ARMOR LIFE LAB / terminanción anticipada",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Armor Life Lab",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 37,
+          "commitment": {
+            "row": 14,
+            "publications_per_month_contract": 3.0,
+            "contract_start": "2025-09-25 00:00:00",
+            "contract_end": "2026-09-25 00:00:00",
+            "renewal_status": "Vigente",
+            "current_month_publications": 0,
+            "pending_vs_contract": 3,
+            "year_publications_done": 37,
+            "year_publications_contract": 27
+          }
+        }
+      ],
+      "whatsapp_candidates": [
+        {
+          "jid": "120363407983026702@g.us",
+          "group_name": "LAB-BWS OPERATIVO",
+          "supabase_account_id": "00_UNMAPPED",
+          "active": true,
+          "confidence": "alta",
+          "score": 0.86,
+          "reason": "sheet:Armor Life Lab"
+        }
+      ],
+      "notes": "Listo para usar en calculo automatizado"
+    },
+    {
+      "account_id": "jack",
+      "dashboard_name": "Jack Levi",
+      "dashboard_drive_name": "10. JACK LEVI/ Detenido",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Jack Levy",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 1,
+          "commitment": {
+            "row": 16,
+            "publications_per_month_contract": 4.0,
+            "contract_start": "2025-10-01 00:00:00",
+            "contract_end": "2026-10-01 00:00:00",
+            "renewal_status": "Vigente",
+            "current_month_publications": 0,
+            "pending_vs_contract": 4,
+            "year_publications_done": 1,
+            "year_publications_contract": 36
+          }
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "maja",
+      "dashboard_name": "MAJA Sportswear",
+      "dashboard_drive_name": "02. MAJA",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Maja Sportswear",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 103,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "turbofin",
+      "dashboard_name": "Turbofin",
+      "dashboard_drive_name": "01. TURBOFIN",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Turbofin",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 13,
+          "commitment": {
+            "row": 12,
+            "publications_per_month_contract": 4.0,
+            "contract_start": "2025-09-25 00:00:00",
+            "contract_end": "2026-03-25 00:00:00",
+            "renewal_status": "Renovar Contrato",
+            "current_month_publications": 0,
+            "pending_vs_contract": 4,
+            "year_publications_done": 13,
+            "year_publications_contract": "Renovar Contrato (24)"
+          }
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "pujol",
+      "dashboard_name": "Pujol (Casa Mata)",
+      "dashboard_drive_name": "19. Casa Mata",
+      "status": "revisar",
+      "sheet_candidates": [],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "rocha",
+      "dashboard_name": "Rocha (RR)",
+      "dashboard_drive_name": "06. RR",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Raúl Rocha",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 3,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "futbol",
+      "dashboard_name": "Futbol (Ascenso y Descenso)",
+      "dashboard_drive_name": "11. ASCENSO Y DESCENSO",
+      "status": "revisar",
+      "sheet_candidates": [],
+      "whatsapp_candidates": [
+        {
+          "jid": "120363418761598661@g.us",
+          "group_name": "Interno Futbol",
+          "supabase_account_id": "11",
+          "active": true,
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_wa:Futbol"
+        },
+        {
+          "jid": "120363406215553737@g.us",
+          "group_name": "Ascenso 4T",
+          "supabase_account_id": "11",
+          "active": true,
+          "confidence": "alta",
+          "score": 0.86,
+          "reason": "alias_wa:Ascenso"
+        }
+      ],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "dalinde",
+      "dashboard_name": "Dalinde",
+      "dashboard_drive_name": "14. DALINDE",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Dalinde",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 28,
+          "commitment": {
+            "row": 35,
+            "publications_per_month_contract": 1.0,
+            "contract_start": "2024-10-24 00:00:00",
+            "contract_end": "2025-10-24 00:00:00",
+            "renewal_status": "Renovar Cont",
+            "current_month_publications": 0,
+            "pending_vs_contract": 1,
+            "year_publications_done": 28,
+            "year_publications_contract": 26
+          }
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "andy",
+      "dashboard_name": "Andy",
+      "dashboard_drive_name": null,
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "InstaCoachAndy",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 12,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "veracruz",
+      "dashboard_name": "Veracruz (AH)",
+      "dashboard_drive_name": "20. Veracruz",
+      "status": "revisar",
+      "sheet_candidates": [],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "luca",
+      "dashboard_name": "Luca",
+      "dashboard_drive_name": null,
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Luca Edu",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 3,
+          "commitment": null
+        },
+        {
+          "sheet_client_name": "Ceron-Toluca",
+          "confidence": "alta",
+          "score": 0.86,
+          "reason": "match_nombre",
+          "publication_rows": 2,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "bernardo",
+      "dashboard_name": "Bernardo",
+      "dashboard_drive_name": null,
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Bernardo Gil",
+          "confidence": "alta",
+          "score": 0.86,
+          "reason": "match_nombre",
+          "publication_rows": 0,
+          "commitment": {
+            "row": 24,
+            "publications_per_month_contract": 1.0,
+            "contract_start": "2025-08-31 00:00:00",
+            "contract_end": "2025-09-30 00:00:00",
+            "renewal_status": "Renovar Cont",
+            "current_month_publications": 0,
+            "pending_vs_contract": 1,
+            "year_publications_done": 0,
+            "year_publications_contract": 4
+          }
+        },
+        {
+          "sheet_client_name": "Bernardo Voguel",
+          "confidence": "alta",
+          "score": 0.86,
+          "reason": "match_nombre",
+          "publication_rows": 0,
+          "commitment": {
+            "row": 21,
+            "publications_per_month_contract": 7.0,
+            "contract_start": "2025-10-01 00:00:00",
+            "contract_end": "2026-01-01 00:00:00",
+            "renewal_status": "Renovar Cont",
+            "current_month_publications": 0,
+            "pending_vs_contract": 7,
+            "year_publications_done": 0,
+            "year_publications_contract": "Renovar Contrato"
+          }
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "uldis",
+      "dashboard_name": "Uldis",
+      "dashboard_drive_name": "08. ULDIS",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Uldis",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 3,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "credix",
+      "dashboard_name": "Credix",
+      "dashboard_drive_name": "05. CREDIX",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Covalto -Credijusto",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 11,
+          "commitment": null
+        },
+        {
+          "sheet_client_name": "Credix",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 1,
+          "commitment": {
+            "row": 53,
+            "publications_per_month_contract": null,
+            "contract_start": "",
+            "contract_end": "",
+            "renewal_status": "",
+            "current_month_publications": null,
+            "pending_vs_contract": null,
+            "year_publications_done": null,
+            "year_publications_contract": null
+          }
+        }
+      ],
+      "whatsapp_candidates": [
+        {
+          "jid": "120363422964135599@g.us",
+          "group_name": "Credix/BWS",
+          "supabase_account_id": "05",
+          "active": true,
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_wa:Credix,sheet:Credix"
+        }
+      ],
+      "notes": "Listo para usar en calculo automatizado"
+    },
+    {
+      "account_id": "erikrubi",
+      "dashboard_name": "Erik Rubi",
+      "dashboard_drive_name": null,
+      "status": "revisar",
+      "sheet_candidates": [],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "totalplay",
+      "dashboard_name": "TotalPlay",
+      "dashboard_drive_name": null,
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Total Play",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 14,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "gicsa",
+      "dashboard_name": "GICSA",
+      "dashboard_drive_name": null,
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "GICSA",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 22,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "aduanas",
+      "dashboard_name": "Aduanas (ANAM)",
+      "dashboard_drive_name": "03. ADUANAS",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Aduanas",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "match_nombre",
+          "publication_rows": 0,
+          "commitment": {
+            "row": 18,
+            "publications_per_month_contract": 14.0,
+            "contract_start": "2025-08-01 00:00:00",
+            "contract_end": "2025-11-01 00:00:00",
+            "renewal_status": "Renovar Contrato",
+            "current_month_publications": 0,
+            "pending_vs_contract": 14,
+            "year_publications_done": 0,
+            "year_publications_contract": "Renovar Contrato (42)"
+          }
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "mapelly",
+      "dashboard_name": "Mapelly (SafeLink)",
+      "dashboard_drive_name": "16.Mapelly",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Safelink",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 4,
+          "commitment": null
+        },
+        {
+          "sheet_client_name": "Jose Carlos Mapelli",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "alias_manual",
+          "publication_rows": 2,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "irugami",
+      "dashboard_name": "Irugami",
+      "dashboard_drive_name": "17. Irugami",
+      "status": "revisar",
+      "sheet_candidates": [],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "idlayr",
+      "dashboard_name": "IDLayr",
+      "dashboard_drive_name": "04. IDLAYR /proyecto concluido",
+      "status": "revisar",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "IDLAYR",
+          "confidence": "alta",
+          "score": 1.0,
+          "reason": "match_nombre",
+          "publication_rows": 0,
+          "commitment": {
+            "row": 10,
+            "publications_per_month_contract": 4.0,
+            "contract_start": "2025-09-11 00:00:00",
+            "contract_end": "2025-12-11 00:00:00",
+            "renewal_status": "Renovar Contrato",
+            "current_month_publications": 0,
+            "pending_vs_contract": 4,
+            "year_publications_done": 0,
+            "year_publications_contract": "Renovar Contrato (12)"
+          }
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Confirmar alias antes de calcular CO/PQ"
+    }
+  ]
+}

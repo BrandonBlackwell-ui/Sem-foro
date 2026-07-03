@@ -53,6 +53,19 @@ type WaGroup = {
   active: boolean
 }
 
+type OperationalScore = {
+  account_id: string
+  account_name: string | null
+  period_year: number
+  period_month: number
+  delivered_publications_count: number
+  committed_publications_count: number | null
+  co_publications_score: number | null
+  co_score: number | null
+  status: string
+  synced_at: string | null
+}
+
 type WaTask = {
   monday_item_id: string | null
   action: string
@@ -82,6 +95,7 @@ type AccountSummary = {
   name: string
   groups: GroupSummary[]
   score: AccountScore | null
+  operational: OperationalScore | null
   analyzedToday: boolean
   hasMessagesToday: boolean
   latestAnalysis: DailyAnalysis | null
@@ -107,6 +121,15 @@ async function supabaseGet<T>(path: string): Promise<T> {
   }
 
   return response.json()
+}
+
+async function supabaseGetOptional<T>(path: string, fallback: T): Promise<T> {
+  try {
+    return await supabaseGet<T>(path)
+  } catch (err) {
+    console.warn(`Optional Supabase resource unavailable: ${path}`, err)
+    return fallback
+  }
 }
 
 type JsonRecord = Record<string, unknown>
@@ -160,6 +183,15 @@ function normalizeSatisfaction(value: string) {
   return normalized || 'unknown'
 }
 
+function lookupKey(value: string | null | undefined) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+}
+
 
 function scoreLabel(score: number | null | undefined) {
   if (score == null) return 'Pendiente'
@@ -177,19 +209,26 @@ function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
 
-function buildWeightedScore(waScore: number | null | undefined) {
+function buildWeightedScore(waScore: number | null | undefined, operational?: OperationalScore | null) {
   const normalizedWa = waScore == null ? null : clampScore(Number(waScore))
+  const coScore = operational?.co_score == null ? null : clampScore(Number(operational.co_score))
+  const coIntoGlobal = coScore == null ? 0 : coScore * 0.375
   const waIntoSc = normalizedWa == null ? 0 : normalizedWa * 0.4
   const waIntoGlobal = waIntoSc * 0.375
+  const coCaption = operational
+    ? coScore == null
+      ? `${operational.delivered_publications_count} publicaciones registradas · meta pendiente`
+      : `CO ${roundScore(coScore)}/100`
+    : 'Cumplimiento operativo'
   const components = [
     {
       key: 'co',
       label: 'CO',
-      caption: 'Cumplimiento operativo',
-      value: null as number | null,
+      caption: coCaption,
+      value: coScore == null ? null : roundScore(coIntoGlobal),
       max: 37.5,
-      contribution: 0,
-      status: 'pendiente',
+      contribution: coIntoGlobal,
+      status: coScore == null ? (operational ? 'conectado' : 'pendiente') : 'conectado',
     },
     {
       key: 'pq',
@@ -239,7 +278,7 @@ function buildWeightedScore(waScore: number | null | undefined) {
   ]
 
   return {
-    globalPartial: normalizedWa == null ? null : roundScore(waIntoGlobal),
+    globalPartial: normalizedWa == null && coScore == null ? null : roundScore(waIntoGlobal + coIntoGlobal),
     waScore: normalizedWa,
     components,
   }
@@ -284,6 +323,7 @@ export default function App() {
   const [rawMessages, setRawMessages] = useState<WaMessage[]>([])
   const [detailMessages, setDetailMessages] = useState<WaMessage[]>([])
   const [groups, setGroups] = useState<WaGroup[]>([])
+  const [operationalScores, setOperationalScores] = useState<OperationalScore[]>([])
   const [tasks, setTasks] = useState<WaTask[]>([])
   const [selectedAccountId, setSelectedAccountId] = useState<string | null>(null)
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
@@ -368,14 +408,18 @@ export default function App() {
       setError(null)
 
       try {
-        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows] = await Promise.all([
+        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, operationalRows] = await Promise.all([
           supabaseGet<DailyAnalysis[]>('/rest/v1/wa_daily_analysis?select=*&order=analyzed_at.desc&limit=200'),
           supabaseGet<AccountScore[]>('/rest/v1/wa_account_scores?select=*&order=current_score.desc'),
           supabaseGet<WaGroup[]>('/rest/v1/wa_groups?select=jid,name,account_id,active&order=name.asc'),
           supabaseGet<WaMessage[]>(
             '/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,speaker_label,speaker_team,body,msg_type,sent_at&order=sent_at.desc&limit=500',
           ),
-          supabaseGet<any[]>('/rest/v1/wa_tasks?select=*&order=created_at.desc').catch(() => [])
+          supabaseGet<any[]>('/rest/v1/wa_tasks?select=*&order=created_at.desc').catch(() => []),
+          supabaseGetOptional<OperationalScore[]>(
+            '/rest/v1/account_operational_scores?select=*&order=period_year.desc,period_month.desc',
+            [],
+          ),
         ])
         const taskRows = await fetch('/api/monday-tasks')
           .then(r => r.ok ? r.json() : [])
@@ -385,6 +429,7 @@ export default function App() {
         setScores(scoreRows)
         setGroups(groupRows)
         setRawMessages(rawRows)
+        setOperationalScores(operationalRows)
         setTasks(taskRows)
         setDbTasks(taskDbRows)
       } catch (err) {
@@ -422,6 +467,25 @@ export default function App() {
   const scoreByAccount = useMemo(() => {
     return new Map(scores.map((score) => [score.account_id, score]))
   }, [scores])
+
+  const operationalLookup = useMemo(() => {
+    const byId = new Map<string, OperationalScore>()
+    const byName = new Map<string, OperationalScore>()
+    for (const row of operationalScores) {
+      const current = byId.get(row.account_id)
+      const rowKey = `${row.period_year}-${String(row.period_month).padStart(2, '0')}`
+      const currentKey = current ? `${current.period_year}-${String(current.period_month).padStart(2, '0')}` : ''
+      if (!current || rowKey > currentKey) byId.set(row.account_id, row)
+    }
+    for (const row of byId.values()) {
+      const names = [row.account_name, row.account_id]
+      for (const name of names) {
+        const key = lookupKey(name)
+        if (key && !byName.has(key)) byName.set(key, row)
+      }
+    }
+    return { byId, byName }
+  }, [operationalScores])
 
   const groupSummaries = useMemo<GroupSummary[]>(() => {
     const messageStats = new Map<string, { count: number; last: string | null; name: string | null; account: string | null }>()
@@ -503,11 +567,18 @@ export default function App() {
         .sort((a, b) => b.analyzed_at.localeCompare(a.analyzed_at))[0] ?? null
       const analyzedToday = grps.some(g => g.analysis?.analysis_date === todayStr)
       const hasMessagesToday = grps.some(g => g.last_message_at && g.last_message_at.slice(0, 10) >= todayStr)
+      const operational =
+        operationalLookup.byId.get(key) ??
+        operationalLookup.byId.get(mainGroup.score?.account_id ?? '') ??
+        operationalLookup.byName.get(lookupKey(mainGroup.score?.account_name)) ??
+        operationalLookup.byName.get(lookupKey(mainGroup.name)) ??
+        null
       result.push({
         account_id: key,
         name: mainGroup.name,
         groups: grps,
         score: mainGroup.score,
+        operational,
         analyzedToday,
         hasMessagesToday,
         latestAnalysis,
@@ -519,7 +590,7 @@ export default function App() {
       const bLast = b.groups.map(g => g.last_message_at ?? '').sort().reverse()[0] ?? ''
       return bLast.localeCompare(aLast)
     })
-  }, [groupSummaries])
+  }, [groupSummaries, operationalLookup])
 
   const selectedAccount = selectedAccountId ? accountSummaries.find(a => a.account_id === selectedAccountId) ?? null : null
 
@@ -568,7 +639,7 @@ export default function App() {
   const selectedDayAnalysis = selectedHistory.find((analysis) => analysis.id === selectedHistoryId) ?? null
   const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
   const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
-  const weightedScore = buildWeightedScore(selectedScore)
+  const weightedScore = buildWeightedScore(selectedScore, selectedAccount?.operational ?? null)
   const displayScore = weightedScore.globalPartial
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
   const selectedTasks = selectedGroup
@@ -1586,7 +1657,9 @@ function ScoreBreakdown({ components }: { components: ReturnType<typeof buildWei
           const fill = component.value == null
             ? 0
             : Math.min(100, (Number(component.value) / component.max) * 100)
-          const valueText = component.value == null ? 'pendiente' : `${component.value}/${component.max}`
+          const valueText = component.value == null
+            ? component.status === 'conectado' ? 'meta pendiente' : 'pendiente'
+            : `${component.value}/${component.max}`
           return (
             <div className={`lb-score-bar-row ${component.status}`} key={component.key}>
               <div className="lb-score-bar-label">

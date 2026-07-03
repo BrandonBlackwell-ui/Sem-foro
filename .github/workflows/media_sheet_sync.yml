@@ -1,0 +1,42 @@
+name: Media Sheet CO sync
+
+on:
+  schedule:
+    # Refresh executed publications once a day before business hours in Mexico City.
+    - cron: "30 12 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  sync-media-sheet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create environment
+        run: |
+          cat > .env << EOF
+          SUPABASE_URL=${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }}
+          MEDIA_SHEET_ID=${{ vars.MEDIA_SHEET_ID || '1PAcofO80aMuTNdclclqCrKS-uij0S8iI' }}
+          MEDIA_SHEET_GENERAL_GID=${{ vars.MEDIA_SHEET_GENERAL_GID || '905402375' }}
+          EOF
+
+      - name: Sync media Sheet to Supabase
+        run: python scripts/sync/sync_media_sheet.py
+
+      - name: Clean environment
+        if: always()
+        run: rm -f .env

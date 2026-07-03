@@ -2511,6 +2511,15 @@ body[data-grid="on"] {
   background: linear-gradient(90deg, #b07d1e, #178bff);
 }
 
+.lb-score-bar-row.conectado .lb-score-bar-track {
+  background: linear-gradient(90deg, rgba(47,172,111,.12), rgba(23,139,255,.08));
+  outline: 1px solid rgba(47, 172, 111, 0.16);
+}
+
+.lb-score-bar-row.conectado .lb-score-bar-value {
+  color: #2f7d57;
+}
+
 .lb-score-bar-value {
   font-family: 'Libre Franklin', sans-serif;
   font-size: 11px;
