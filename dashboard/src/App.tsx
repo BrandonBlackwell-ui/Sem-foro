@@ -365,13 +365,6 @@ function explicitLinkedKeys(values: Array<string | null | undefined>) {
 }
 
 
-function scoreLabel(score: number | null | undefined) {
-  if (score == null) return 'Pendiente'
-  if (score >= 80) return 'Sano'
-  if (score >= 65) return 'Estable'
-  if (score >= 50) return 'Observar'
-  return 'Atencion'
-}
 
 function clampScore(value: number) {
   return Math.max(0, Math.min(100, value))
