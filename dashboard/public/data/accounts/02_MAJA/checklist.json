@@ -104,6 +104,29 @@
           "Realizar una sesión de alineación de expectativas para cerrar la brecha entre la percepción del cliente y los resultados entregados."
         ]
       }
+    },
+    "2026-06": {
+      "transcripciones": {
+        "status": "ok",
+        "score": 100,
+        "sesion_score": 100,
+        "attended": true,
+        "attended_on_time": true,
+        "participation_level": "alta",
+        "tone": "positivo",
+        "positive_comments": true,
+        "shared_strategic_info": true,
+        "negative_signals": false,
+        "checklist": [
+          "Si: El cliente participó activamente en la definición de la estrategia de la nueva tienda laboratorio.",
+          "Si: El cliente compartió información estratégica sobre el funcionamiento interno de las cámaras y micrófonos en tienda.",
+          "Si: El cliente validó positivamente el contenido presentado diciendo 'Lo veo bien. Adelante'.",
+          "Si: El cliente colaboró en la gestión de calendarios y logística de entrevistas con medios.",
+          "No: No se detectaron señales de insatisfacción, quejas o tono defensivo durante la sesión."
+        ],
+        "reasoning": "El cliente mostró un alto nivel de compromiso y colaboración, aportando contexto estratégico sobre sus operaciones y validando las propuestas del equipo. La sesión fluyó de manera constructiva, cumpliendo con todos los criterios de satisfacción y participación activa.",
+        "accionables": []
+      }
     }
   }
 }
