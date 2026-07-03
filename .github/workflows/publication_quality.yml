@@ -1,0 +1,71 @@
+name: Publication quality analysis
+
+on:
+  workflow_dispatch:
+    inputs:
+      account_id:
+        description: "Optional account_id to analyze, for example tello."
+        required: false
+        default: ""
+      period:
+        description: "Optional period YYYY-MM, for example 2026-06."
+        required: false
+        default: ""
+      limit:
+        description: "Maximum links to analyze in this run."
+        required: false
+        default: "10"
+      force:
+        description: "Reanalyze links even if they already exist."
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  analyze-publications:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create environment
+        run: |
+          cat > .env << EOF
+          SUPABASE_URL=${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }}
+          OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL=${{ vars.OPENROUTER_MODEL || 'google/gemini-3.1-flash-lite' }}
+          OPENROUTER_SITE_URL=https://github.com/BrandonBlackwell-ui/Sem-foro
+          OPENROUTER_APP_NAME=Blackwell Semaforo
+          MEDIA_SHEET_ID=${{ vars.MEDIA_SHEET_ID || '1PAcofO80aMuTNdclclqCrKS-uij0S8iI' }}
+          MEDIA_SHEET_GENERAL_GID=${{ vars.MEDIA_SHEET_GENERAL_GID || '905402375' }}
+          EOF
+
+      - name: Analyze publication quality
+        run: |
+          args=(--limit "${{ github.event.inputs.limit }}")
+          if [ -n "${{ github.event.inputs.account_id }}" ]; then
+            args+=(--account-id "${{ github.event.inputs.account_id }}")
+          fi
+          if [ -n "${{ github.event.inputs.period }}" ]; then
+            args+=(--period "${{ github.event.inputs.period }}")
+          fi
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            args+=(--force)
+          fi
+          python scripts/sync/analyze_publication_quality.py "${args[@]}"
+
+      - name: Clean environment
+        if: always()
+        run: rm -f .env

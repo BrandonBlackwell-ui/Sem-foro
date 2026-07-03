@@ -84,6 +84,19 @@ type AccountPublication = {
   synced_at: string | null
 }
 
+type PublicationQualityScore = {
+  account_id: string
+  account_name: string | null
+  period_year: number
+  period_month: number
+  publication_count: number
+  analyzed_count: number
+  scored_count: number
+  pq_score: number | null
+  status: string
+  updated_at: string | null
+}
+
 type WaTask = {
   monday_item_id: string | null
   action: string
@@ -114,6 +127,7 @@ type AccountSummary = {
   groups: GroupSummary[]
   score: AccountScore | null
   operational: OperationalScore | null
+  publicationQuality: PublicationQualityScore | null
   analyzedToday: boolean
   hasMessagesToday: boolean
   latestAnalysis: DailyAnalysis | null
@@ -312,10 +326,12 @@ function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
 
-function buildWeightedScore(waScore: number | null | undefined, operational?: OperationalScore | null) {
+function buildWeightedScore(waScore: number | null | undefined, operational?: OperationalScore | null, publicationQuality?: PublicationQualityScore | null) {
   const normalizedWa = waScore == null ? null : clampScore(Number(waScore))
   const coScore = operational?.co_score == null ? null : clampScore(Number(operational.co_score))
+  const pqScore = publicationQuality?.pq_score == null ? null : clampScore(Number(publicationQuality.pq_score))
   const coIntoGlobal = coScore == null ? 0 : coScore * 0.375
+  const pqIntoGlobal = pqScore == null ? 0 : pqScore * 0.25
   const waIntoSc = normalizedWa == null ? 0 : normalizedWa * 0.4
   const waIntoGlobal = waIntoSc * 0.375
   const coCaption = operational
@@ -323,6 +339,11 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       ? `${operational.delivered_publications_count} publicaciones registradas · meta pendiente`
       : `CO ${roundScore(coScore)}/100`
     : 'Cumplimiento operativo'
+  const pqCaption = publicationQuality
+    ? pqScore == null
+      ? `${publicationQuality.analyzed_count} notas analizadas · tiers pendientes`
+      : `PQ ${roundScore(pqScore)}/100`
+    : 'Calidad de publicaciones'
   const components = [
     {
       key: 'co',
@@ -336,11 +357,11 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
     {
       key: 'pq',
       label: 'PQ',
-      caption: 'Calidad de publicaciones',
-      value: null as number | null,
+      caption: pqCaption,
+      value: pqScore == null ? null : roundScore(pqIntoGlobal),
       max: 25,
-      contribution: 0,
-      status: 'pendiente',
+      contribution: pqIntoGlobal,
+      status: pqScore == null ? (publicationQuality ? 'conectado' : 'pendiente') : 'conectado',
     },
     {
       key: 'sc',
@@ -381,7 +402,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
   ]
 
   return {
-    globalPartial: normalizedWa == null && coScore == null ? null : roundScore(waIntoGlobal + coIntoGlobal),
+    globalPartial: normalizedWa == null && coScore == null && pqScore == null ? null : roundScore(waIntoGlobal + coIntoGlobal + pqIntoGlobal),
     waScore: normalizedWa,
     components,
   }
@@ -428,6 +449,7 @@ export default function App() {
   const [groups, setGroups] = useState<WaGroup[]>([])
   const [operationalScores, setOperationalScores] = useState<OperationalScore[]>([])
   const [publications, setPublications] = useState<AccountPublication[]>([])
+  const [publicationQualityScores, setPublicationQualityScores] = useState<PublicationQualityScore[]>([])
   const [tasks, setTasks] = useState<WaTask[]>([])
   const [selectedAccountId, setSelectedAccountId] = useState<string | null>(null)
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
@@ -512,7 +534,7 @@ export default function App() {
       setError(null)
 
       try {
-        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, mediaRows] = await Promise.all([
+        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, mediaRows, pqRows] = await Promise.all([
           supabaseGet<DailyAnalysis[]>('/rest/v1/wa_daily_analysis?select=*&order=analyzed_at.desc&limit=200'),
           supabaseGet<AccountScore[]>('/rest/v1/wa_account_scores?select=*&order=current_score.desc'),
           supabaseGet<WaGroup[]>('/rest/v1/wa_groups?select=jid,name,account_id,active&order=name.asc'),
@@ -521,6 +543,10 @@ export default function App() {
           ),
           supabaseGet<any[]>('/rest/v1/wa_tasks?select=*&order=created_at.desc').catch(() => []),
           loadMediaPublicationsFallback(),
+          supabaseGetOptional<PublicationQualityScore[]>(
+            '/rest/v1/publication_quality_scores?select=*&order=period_year.desc,period_month.desc',
+            [],
+          ),
         ])
         const taskRows = await fetch('/api/monday-tasks')
           .then(r => r.ok ? r.json() : [])
@@ -532,6 +558,7 @@ export default function App() {
         setRawMessages(rawRows)
         setOperationalScores(mediaRows.operationalScores)
         setPublications(mediaRows.publications)
+        setPublicationQualityScores(pqRows)
         setTasks(taskRows)
         setDbTasks(taskDbRows)
       } catch (err) {
@@ -588,6 +615,24 @@ export default function App() {
     }
     return { byId, byName }
   }, [operationalScores])
+
+  const publicationQualityLookup = useMemo(() => {
+    const byId = new Map<string, PublicationQualityScore>()
+    const byName = new Map<string, PublicationQualityScore>()
+    for (const row of publicationQualityScores) {
+      const current = byId.get(row.account_id)
+      const rowKey = `${row.period_year}-${String(row.period_month).padStart(2, '0')}`
+      const currentKey = current ? `${current.period_year}-${String(current.period_month).padStart(2, '0')}` : ''
+      if (!current || rowKey > currentKey) byId.set(row.account_id, row)
+    }
+    for (const row of byId.values()) {
+      for (const name of [row.account_name, row.account_id]) {
+        const key = lookupKey(name)
+        if (key && !byName.has(key)) byName.set(key, row)
+      }
+    }
+    return { byId, byName }
+  }, [publicationQualityScores])
 
   const groupSummaries = useMemo<GroupSummary[]>(() => {
     const messageStats = new Map<string, { count: number; last: string | null; name: string | null; account: string | null }>()
@@ -684,12 +729,21 @@ export default function App() {
         operationalLookup.byName.get(lookupKey(mainGroup.name)) ??
         Array.from(explicitKeys).map((aliasKey) => operationalLookup.byName.get(aliasKey)).find(Boolean) ??
         null
+      const publicationQuality =
+        publicationQualityLookup.byId.get(key) ??
+        publicationQualityLookup.byId.get(mainGroup.score?.account_id ?? '') ??
+        Array.from(explicitKeys).map((aliasKey) => publicationQualityLookup.byId.get(aliasKey)).find(Boolean) ??
+        publicationQualityLookup.byName.get(lookupKey(mainGroup.score?.account_name)) ??
+        publicationQualityLookup.byName.get(lookupKey(mainGroup.name)) ??
+        Array.from(explicitKeys).map((aliasKey) => publicationQualityLookup.byName.get(aliasKey)).find(Boolean) ??
+        null
       result.push({
         account_id: key,
         name: mainGroup.name,
         groups: grps,
         score: mainGroup.score,
         operational,
+        publicationQuality,
         analyzedToday,
         hasMessagesToday,
         latestAnalysis,
@@ -701,7 +755,7 @@ export default function App() {
       const bLast = b.groups.map(g => g.last_message_at ?? '').sort().reverse()[0] ?? ''
       return bLast.localeCompare(aLast)
     })
-  }, [groupSummaries, operationalLookup])
+  }, [groupSummaries, operationalLookup, publicationQualityLookup])
 
   const selectedAccount = selectedAccountId ? accountSummaries.find(a => a.account_id === selectedAccountId) ?? null : null
 
@@ -787,7 +841,14 @@ export default function App() {
             row.period_month === month &&
             Array.from(rowKeys).some((key) => accountKeys.has(key))
         }) ?? null
-      const score = buildWeightedScore(analysis.new_score, operationalForMonth).globalPartial
+      const publicationQualityForMonth =
+        publicationQualityScores.find((row) => {
+          const rowKeys = explicitLinkedKeys([row.account_id, row.account_name])
+          return row.period_year === year &&
+            row.period_month === month &&
+            Array.from(rowKeys).some((key) => accountKeys.has(key))
+        }) ?? null
+      const score = buildWeightedScore(analysis.new_score, operationalForMonth, publicationQualityForMonth).globalPartial
       const delta = score == null || previousScore == null ? 0 : roundScore(score - previousScore)
       if (score != null) previousScore = score
       return {
@@ -799,14 +860,14 @@ export default function App() {
         summary: analysis.summary,
       }
     })
-  }, [operationalScores, selectedAccount, selectedHistory])
+  }, [operationalScores, publicationQualityScores, selectedAccount, selectedHistory])
 
   const latestSelectedAnalysis = selectedJid ? latestAnalysisByGroup.get(selectedJid) ?? null : null
   const selectedDayAnalysis = selectedHistory.find((analysis) => analysis.id === selectedHistoryId) ?? null
   const selectedDayScore = selectedHistoricalScores.find((analysis) => analysis.id === selectedHistoryId) ?? null
   const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
   const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
-  const weightedScore = buildWeightedScore(selectedScore, selectedAccount?.operational ?? null)
+  const weightedScore = buildWeightedScore(selectedScore, selectedAccount?.operational ?? null, selectedAccount?.publicationQuality ?? null)
   const displayScore = weightedScore.globalPartial
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
   const selectedTasks = selectedGroup

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "notes": "PQ uses fixed account aliases and fixed media tiers. Do not let the LLM invent tiers.",
+  "default_alias_policy": "Use sheet_client_name, legal_name and account_name as aliases when no explicit aliases exist.",
+  "accounts": {
+    "tello": {
+      "aliases": ["Miguel Tello", "Tello"],
+      "media_tiers": {}
+    },
+    "nuvoil": {
+      "aliases": ["Nuvoil", "Nuvoil Energy"],
+      "media_tiers": {}
+    },
+    "azvi": {
+      "aliases": ["Azvi", "Grupo Azvi"],
+      "media_tiers": {}
+    },
+    "credix": {
+      "aliases": ["Credix", "Covalto", "Credijusto", "Covalto -Credijusto"],
+      "media_tiers": {}
+    }
+  },
+  "tier_points": {
+    "tier_1": 50,
+    "tier_2": 30,
+    "tier_3": 15
+  },
+  "editorial_points": {
+    "exclusiva": 30,
+    "reactiva": 20,
+    "mencion_principal": 10,
+    "mencion_secundaria": 5,
+    "sin_mencion": 0
+  },
+  "focus_points": {
+    "narrativa_propia": 20,
+    "neutral": 10,
+    "defensivo": 5,
+    "no_aplica": 0
+  }
+}
