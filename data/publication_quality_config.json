@@ -5,7 +5,18 @@
   "accounts": {
     "tello": {
       "aliases": ["Miguel Tello", "Tello"],
-      "media_tiers": {}
+      "media_tiers": {
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Heraldo": "tier_1",
+        "Excelsior": "tier_1",
+        "Infobae": "tier_1",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2"
+      }
     },
     "nuvoil": {
       "aliases": ["Nuvoil", "Nuvoil Energy"],

@@ -411,15 +411,15 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
   const pqScore = publicationQuality?.pq_score == null ? null : clampScore(Number(publicationQuality.pq_score))
   const coIntoGlobal = coScore == null ? 0 : coScore * 0.30
 
-  // SC (Escenario B sin survey): SC = WA×0.55 + Sesión×0.45, tope 70
+  // SC sin survey: SC = WA×0.55 + Sesión×0.45 (pesos rebalanceados, sin tope)
   let scScore: number | null = null
-  let scCaption = 'Falta WhatsApp, Meets y survey'
+  let scCaption = 'Falta WhatsApp y Meets'
   if (normalizedWa != null && sesionScore != null) {
-    scScore = Math.min(70, normalizedWa * 0.55 + sesionScore * 0.45)
-    scCaption = `WA ${roundScore(normalizedWa)} × 55% + Sesión ${roundScore(sesionScore)} × 45% · tope 70 sin survey`
+    scScore = normalizedWa * 0.55 + sesionScore * 0.45
+    scCaption = `WA ${roundScore(normalizedWa)} × 55% + Sesión ${roundScore(sesionScore)} × 45%`
   } else if (normalizedWa != null) {
-    scScore = normalizedWa * 0.4
-    scCaption = `Parcial: WA ${roundScore(normalizedWa)}/100`
+    scScore = normalizedWa * 0.55
+    scCaption = `Parcial: WA ${roundScore(normalizedWa)}/100 · falta Meet`
   } else if (sesionScore != null) {
     scScore = sesionScore * 0.45
     scCaption = `Parcial: Sesión ${roundScore(sesionScore)}/100`
@@ -481,15 +481,6 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       max: 100,
       contribution: sesionScore ?? 0,
       status: sesionScore == null ? 'pendiente' : 'conectado',
-    },
-    {
-      key: 'survey',
-      label: 'Survey',
-      caption: 'Tipo A/B pendiente',
-      value: null as number | null,
-      max: 100,
-      contribution: 0,
-      status: 'pendiente',
     },
   ]
 
