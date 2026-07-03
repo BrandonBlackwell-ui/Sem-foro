@@ -97,6 +97,31 @@ type PublicationQualityScore = {
   updated_at: string | null
 }
 
+type PublicationQualityAnalysis = {
+  id: number
+  account_id: string
+  account_name: string | null
+  publication_id: number | null
+  url: string
+  article_title: string | null
+  matched_aliases: unknown
+  title_match: boolean | null
+  body_match: boolean | null
+  title_evidence: string | null
+  body_evidence: string | null
+  tier: string | null
+  tier_points: number | null
+  editorial_quality: string | null
+  editorial_points: number | null
+  focus: string | null
+  focus_points: number | null
+  content_score: number | null
+  pq_score: number | null
+  status: string | null
+  evidence: unknown
+  analyzed_at: string | null
+}
+
 type WaTask = {
   monday_item_id: string | null
   action: string
@@ -231,6 +256,31 @@ function badgeClass(value: string) {
   if (['negative', 'unsatisfied', 'high', 'atencion'].includes(normalized)) return 'red'
   if (['client'].includes(normalized)) return 'gray'
   return 'gray'
+}
+
+function qualityText(value: string | null | undefined, fallback = 'Pendiente') {
+  if (!value) return fallback
+  return value
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, (letter) => letter.toUpperCase())
+}
+
+function qualityScoreText(quality: PublicationQualityAnalysis | null) {
+  if (!quality) return 'Sin analisis'
+  if (quality.pq_score != null) return `${roundScore(Number(quality.pq_score))} PQ`
+  if (quality.content_score != null) return `${roundScore(Number(quality.content_score))} contenido`
+  if (quality.status === 'needs_tier') return 'Tier pendiente'
+  return qualityText(quality.status, 'Pendiente')
+}
+
+function qualityTone(quality: PublicationQualityAnalysis | null, ok?: boolean | null) {
+  if (!quality) return 'muted'
+  if (quality.status === 'fetch_error') return 'bad'
+  if (ok === true) return 'good'
+  if (ok === false) return 'warn'
+  if (quality.pq_score != null || quality.content_score != null) return 'good'
+  if (quality.status === 'needs_tier') return 'warn'
+  return 'muted'
 }
 
 function normalizeSatisfaction(value: string) {
@@ -450,6 +500,7 @@ export default function App() {
   const [operationalScores, setOperationalScores] = useState<OperationalScore[]>([])
   const [publications, setPublications] = useState<AccountPublication[]>([])
   const [publicationQualityScores, setPublicationQualityScores] = useState<PublicationQualityScore[]>([])
+  const [publicationQualityAnalyses, setPublicationQualityAnalyses] = useState<PublicationQualityAnalysis[]>([])
   const [tasks, setTasks] = useState<WaTask[]>([])
   const [selectedAccountId, setSelectedAccountId] = useState<string | null>(null)
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
@@ -534,7 +585,7 @@ export default function App() {
       setError(null)
 
       try {
-        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, mediaRows, pqRows] = await Promise.all([
+        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, mediaRows, pqRows, pqAnalysisRows] = await Promise.all([
           supabaseGet<DailyAnalysis[]>('/rest/v1/wa_daily_analysis?select=*&order=analyzed_at.desc&limit=200'),
           supabaseGet<AccountScore[]>('/rest/v1/wa_account_scores?select=*&order=current_score.desc'),
           supabaseGet<WaGroup[]>('/rest/v1/wa_groups?select=jid,name,account_id,active&order=name.asc'),
@@ -545,6 +596,10 @@ export default function App() {
           loadMediaPublicationsFallback(),
           supabaseGetOptional<PublicationQualityScore[]>(
             '/rest/v1/publication_quality_scores?select=*&order=period_year.desc,period_month.desc',
+            [],
+          ),
+          supabaseGetOptional<PublicationQualityAnalysis[]>(
+            '/rest/v1/publication_quality_analyses?select=*&order=analyzed_at.desc&limit=1000',
             [],
           ),
         ])
@@ -559,6 +614,7 @@ export default function App() {
         setOperationalScores(mediaRows.operationalScores)
         setPublications(mediaRows.publications)
         setPublicationQualityScores(pqRows)
+        setPublicationQualityAnalyses(pqAnalysisRows)
         setTasks(taskRows)
         setDbTasks(taskDbRows)
       } catch (err) {
@@ -633,6 +689,14 @@ export default function App() {
     }
     return { byId, byName }
   }, [publicationQualityScores])
+
+  const publicationQualityByUrl = useMemo(() => {
+    const map = new Map<string, PublicationQualityAnalysis>()
+    for (const row of publicationQualityAnalyses) {
+      if (row.url && !map.has(row.url)) map.set(row.url, row)
+    }
+    return map
+  }, [publicationQualityAnalyses])
 
   const groupSummaries = useMemo<GroupSummary[]>(() => {
     const messageStats = new Map<string, { count: number; last: string | null; name: string | null; account: string | null }>()
@@ -1592,9 +1656,17 @@ export default function App() {
 
           {selectedAccountPublications.length ? (
             <div className="lb-publication-list">
-              {selectedAccountPublications.map((publication) => (
+              {selectedAccountPublications.map((publication) => {
+                const quality = publication.url ? publicationQualityByUrl.get(publication.url) ?? null : null
+                const matchedAliases = Array.isArray(quality?.matched_aliases)
+                  ? quality?.matched_aliases.filter(Boolean).join(', ')
+                  : ''
+                const evidence = [quality?.title_evidence, quality?.body_evidence].filter(Boolean).join(' / ')
+                const canOpenPublication = Boolean(publication.url?.startsWith('http'))
+
+                return (
                 <article className="lb-publication-card" key={publication.id}>
-                  <div>
+                  <div className="lb-publication-main">
                     <div className="lb-publication-title">{publication.media_name || 'Medio sin nombre'}</div>
                     <div className="lb-publication-meta">
                       {publication.publication_date ? shortDateOnly(publication.publication_date) : 'Sin fecha'}
@@ -1606,14 +1678,53 @@ export default function App() {
                         {[publication.provider, publication.columnist, publication.comments].filter(Boolean).join(' · ')}
                       </p>
                     )}
+                    <div className={`lb-publication-quality ${quality ? '' : 'is-empty'}`}>
+                      {quality ? (
+                        <>
+                          <div className="lb-publication-quality-head">
+                            <strong>Calidad de nota</strong>
+                            <span className={`lb-quality-chip ${qualityTone(quality)}`}>
+                              {qualityScoreText(quality)}
+                            </span>
+                          </div>
+                          <div className="lb-publication-quality-grid">
+                            <span className={`lb-quality-chip ${qualityTone(quality, quality.title_match)}`}>
+                              {quality.title_match ? 'Cliente en titulo' : 'Titulo sin cliente'}
+                            </span>
+                            <span className={`lb-quality-chip ${qualityTone(quality, quality.body_match)}`}>
+                              {quality.body_match ? 'Cliente en cuerpo' : 'Cuerpo sin cliente'}
+                            </span>
+                            <span className="lb-quality-chip muted">
+                              {qualityText(quality.editorial_quality, 'Editorial pendiente')}
+                            </span>
+                            <span className="lb-quality-chip muted">
+                              {qualityText(quality.focus, 'Enfoque pendiente')}
+                            </span>
+                          </div>
+                          {quality.article_title && (
+                            <p className="lb-quality-evidence">Titulo leido: {quality.article_title}</p>
+                          )}
+                          {(matchedAliases || evidence) && (
+                            <p className="lb-quality-evidence">
+                              {matchedAliases ? `Match: ${matchedAliases}` : ''}
+                              {matchedAliases && evidence ? ' · ' : ''}
+                              {evidence ? `Evidencia: ${evidence}` : ''}
+                            </p>
+                          )}
+                        </>
+                      ) : (
+                        <span>Sin analisis PQ todavia para este link.</span>
+                      )}
+                    </div>
                   </div>
-                  {publication.url && (
+                  {canOpenPublication && publication.url && (
                     <a className="lb-publication-link" href={publication.url} target="_blank" rel="noreferrer">
                       Abrir nota
                     </a>
                   )}
                 </article>
-              ))}
+                )
+              })}
             </div>
           ) : (
             <p className="lb-subtext" style={{ textAlign: 'center', padding: '32px 0' }}>

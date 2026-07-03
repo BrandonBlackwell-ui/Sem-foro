@@ -2582,11 +2582,15 @@ body[data-grid="on"] {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 16px;
-  align-items: center;
+  align-items: start;
   padding: 18px 20px;
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(29, 29, 31, 0.08);
   border-radius: 20px;
+}
+
+.lb-publication-main {
+  min-width: 0;
 }
 
 .lb-publication-title {
@@ -2623,6 +2627,87 @@ body[data-grid="on"] {
   font-weight: 800;
   text-decoration: none;
   box-shadow: 0 10px 22px rgba(23, 139, 255, 0.22);
+}
+
+.lb-publication-quality {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(246, 248, 252, 0.9);
+  border: 1px solid rgba(29, 29, 31, 0.06);
+}
+
+.lb-publication-quality.is-empty {
+  color: rgba(29, 29, 31, 0.54);
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 13px;
+}
+
+.lb-publication-quality-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.lb-publication-quality-head strong {
+  color: #171b27;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.lb-publication-quality-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lb-quality-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  background: rgba(255, 255, 255, 0.82);
+  color: rgba(29, 29, 31, 0.68);
+}
+
+.lb-quality-chip.good {
+  color: #217a4c;
+  background: rgba(52, 199, 89, 0.14);
+  border-color: rgba(52, 199, 89, 0.26);
+}
+
+.lb-quality-chip.warn {
+  color: #9b6a13;
+  background: rgba(255, 204, 0, 0.18);
+  border-color: rgba(255, 204, 0, 0.28);
+}
+
+.lb-quality-chip.bad {
+  color: #a32d2d;
+  background: rgba(255, 59, 48, 0.12);
+  border-color: rgba(255, 59, 48, 0.24);
+}
+
+.lb-quality-chip.muted {
+  color: rgba(29, 29, 31, 0.58);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.lb-publication-card p.lb-quality-evidence {
+  margin-top: 10px;
+  color: rgba(29, 29, 31, 0.64);
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 /* Resumen grid */

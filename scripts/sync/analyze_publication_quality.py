@@ -207,6 +207,7 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
 
 
 def _error_row(publication: dict[str, Any], model: str, exc: Exception) -> dict[str, Any]:
+    error_message = str(exc)
     return {
         "account_id": publication.get("account_id"),
         "account_name": publication.get("account_name"),
@@ -216,8 +217,24 @@ def _error_row(publication: dict[str, Any], model: str, exc: Exception) -> dict[
         "publication_year": publication.get("publication_year"),
         "publication_month": publication.get("publication_month"),
         "url": publication.get("url"),
+        "article_title": None,
+        "article_excerpt": None,
+        "matched_aliases": [],
+        "title_match": False,
+        "body_match": False,
+        "title_evidence": None,
+        "body_evidence": error_message,
+        "tier": None,
+        "tier_points": None,
+        "editorial_quality": None,
+        "editorial_points": None,
+        "focus": None,
+        "focus_points": None,
+        "content_score": None,
+        "pq_score": None,
         "status": "fetch_error",
-        "raw_analysis": {"error": str(exc), "source_row_number": publication.get("source_row_number")},
+        "evidence": [],
+        "raw_analysis": {"error": error_message, "source_row_number": publication.get("source_row_number")},
         "model": model,
         "analyzed_at": datetime.now(timezone.utc).isoformat(),
         "updated_at": datetime.now(timezone.utc).isoformat(),
