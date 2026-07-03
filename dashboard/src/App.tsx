@@ -832,25 +832,36 @@ export default function App() {
   const [accountChecklistData, setAccountChecklistData] = useState<any>(null)
   useEffect(() => {
     if (!selectedAccount) { setAccountChecklistData(null); return }
-    const name = selectedAccount.name.toUpperCase().replace(/\s+/g, '_')
-    // Try fetching checklist by scanning common account numbers (01-20)
+    const aid = selectedAccount.account_id.toLowerCase()
+    const nameVariant = selectedAccount.name.toUpperCase().replace(/\s+/g, '_')
+    // Scan all account folders (01-20) and match by account_id, account_name, or folder name
     const tryFetch = async () => {
-      for (let n = 1; n <= 20; n++) {
-        const num = String(n).padStart(2, '0')
-        const url = `/data/accounts/${num}_${name}/checklist.json`
-        try {
-          const r = await fetch(url)
-          if (r.ok) {
-            const data = await r.json()
-            setAccountChecklistData(data)
-            return
+      const results = await Promise.all(
+        Array.from({ length: 20 }, (_, i) => i + 1).map(async (n) => {
+          const num = String(n).padStart(2, '0')
+          // Try known name variants: account_id and WhatsApp group name
+          const candidates = [aid.toUpperCase(), nameVariant]
+          for (const cand of candidates) {
+            try {
+              const r = await fetch(`/data/accounts/${num}_${cand}/checklist.json`)
+              if (r.ok) { const d = await r.json(); return d }
+            } catch { /* skip */ }
           }
-        } catch { /* continue */ }
-      }
-      setAccountChecklistData(null)
+          return null
+        })
+      )
+      // Also match by account_id or account_name field inside checklist
+      const match = results.find(d =>
+        d &&
+        (d.account_id?.toLowerCase() === aid ||
+         d.account_name?.toLowerCase() === aid ||
+         d.account_name?.toLowerCase().includes(aid) ||
+         aid.includes(d.account_name?.toLowerCase() ?? '___'))
+      ) ?? results.find(Boolean)
+      setAccountChecklistData(match ?? null)
     }
     tryFetch()
-  }, [selectedAccount?.name])
+  }, [selectedAccount?.account_id, selectedAccount?.name])
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
@@ -2161,7 +2172,7 @@ function ScoreBreakdown({ components }: { components: ReturnType<typeof buildWei
     <div className="lb-score-breakdown" aria-label="Componentes del score global">
       <div className="lb-score-breakdown-head">
         <span>Ponderación conectada</span>
-        <strong>Global = CO 37.5% · PQ 25% · SC 37.5%</strong>
+        <strong>Global = CO 30% · PQ 25% · SC 45%</strong>
       </div>
       <div className="lb-score-bars">
         {components.map((component) => {
