@@ -150,6 +150,31 @@ async function supabaseGetOptional<T>(path: string, fallback: T): Promise<T> {
   }
 }
 
+async function loadMediaPublicationsFallback() {
+  try {
+    const response = await fetch('/api/media-publications', { cache: 'no-store' })
+    if (!response.ok) throw new Error(`Media Sheet API ${response.status}`)
+    const payload = await response.json()
+    return {
+      publications: (payload.publications || []) as AccountPublication[],
+      operationalScores: (payload.operationalScores || []) as OperationalScore[],
+    }
+  } catch (err) {
+    console.warn('Google Sheets media API unavailable, falling back to Supabase mirrors.', err)
+    const [operationalScores, publications] = await Promise.all([
+      supabaseGetOptional<OperationalScore[]>(
+        '/rest/v1/account_operational_scores?select=*&order=period_year.desc,period_month.desc',
+        [],
+      ),
+      supabaseGetOptional<AccountPublication[]>(
+        '/rest/v1/account_publications?select=id,account_id,account_name,sheet_client_name,media_name,provider,columnist,legal_name,publication_date,publication_year,publication_month,url,service,comments,synced_at&order=publication_date.desc&limit=1000',
+        [],
+      ),
+    ])
+    return { publications, operationalScores }
+  }
+}
+
 type JsonRecord = Record<string, unknown>
 
 function asArray(value: unknown): unknown[] {
@@ -487,7 +512,7 @@ export default function App() {
       setError(null)
 
       try {
-        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, operationalRows, publicationRows] = await Promise.all([
+        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, mediaRows] = await Promise.all([
           supabaseGet<DailyAnalysis[]>('/rest/v1/wa_daily_analysis?select=*&order=analyzed_at.desc&limit=200'),
           supabaseGet<AccountScore[]>('/rest/v1/wa_account_scores?select=*&order=current_score.desc'),
           supabaseGet<WaGroup[]>('/rest/v1/wa_groups?select=jid,name,account_id,active&order=name.asc'),
@@ -495,14 +520,7 @@ export default function App() {
             '/rest/v1/wa_messages?select=id,account_id,group_name,group_jid,push_name,author,speaker_label,speaker_team,body,msg_type,sent_at&order=sent_at.desc&limit=500',
           ),
           supabaseGet<any[]>('/rest/v1/wa_tasks?select=*&order=created_at.desc').catch(() => []),
-          supabaseGetOptional<OperationalScore[]>(
-            '/rest/v1/account_operational_scores?select=*&order=period_year.desc,period_month.desc',
-            [],
-          ),
-          supabaseGetOptional<AccountPublication[]>(
-            '/rest/v1/account_publications?select=id,account_id,account_name,sheet_client_name,media_name,provider,columnist,legal_name,publication_date,publication_year,publication_month,url,service,comments,synced_at&order=publication_date.desc&limit=1000',
-            [],
-          ),
+          loadMediaPublicationsFallback(),
         ])
         const taskRows = await fetch('/api/monday-tasks')
           .then(r => r.ok ? r.json() : [])
@@ -512,8 +530,8 @@ export default function App() {
         setScores(scoreRows)
         setGroups(groupRows)
         setRawMessages(rawRows)
-        setOperationalScores(operationalRows)
-        setPublications(publicationRows)
+        setOperationalScores(mediaRows.operationalScores)
+        setPublications(mediaRows.publications)
         setTasks(taskRows)
         setDbTasks(taskDbRows)
       } catch (err) {

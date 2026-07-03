@@ -1,0 +1,241 @@
+import fs from 'node:fs'
+import path from 'node:path'
+
+const SHEET_ID = process.env.MEDIA_SHEET_ID || '1PAcofO80aMuTNdclclqCrKS-uij0S8iI'
+const GENERAL_GID = process.env.MEDIA_SHEET_GENERAL_GID || '905402375'
+
+function normalize(value) {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9$]+/g, ' ')
+    .trim()
+}
+
+function clean(value) {
+  return String(value || '').replace(/\s+/g, ' ').trim()
+}
+
+function parseCsv(text) {
+  const rows = []
+  let row = []
+  let cell = ''
+  let quoted = false
+
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i]
+    const next = text[i + 1]
+    if (quoted) {
+      if (char === '"' && next === '"') {
+        cell += '"'
+        i += 1
+      } else if (char === '"') {
+        quoted = false
+      } else {
+        cell += char
+      }
+    } else if (char === '"') {
+      quoted = true
+    } else if (char === ',') {
+      row.push(cell)
+      cell = ''
+    } else if (char === '\n') {
+      row.push(cell)
+      rows.push(row)
+      row = []
+      cell = ''
+    } else if (char !== '\r') {
+      cell += char
+    }
+  }
+  row.push(cell)
+  rows.push(row)
+  return rows
+}
+
+function uniqueHeaders(headers) {
+  const seen = new Map()
+  return headers.map((header) => {
+    const key = clean(header) || 'columna'
+    const count = (seen.get(key) || 0) + 1
+    seen.set(key, count)
+    return count === 1 ? key : `${key} ${count}`
+  })
+}
+
+function findHeaderIndex(rows) {
+  const index = rows.slice(0, 20).findIndex((row) => {
+    const cells = new Set(row.map(normalize))
+    return cells.has('medio') && cells.has('cliente') && cells.has('link')
+  })
+  if (index < 0) throw new Error('No se encontro el header del Sheet GENERAL.')
+  return index
+}
+
+function recordField(record, name, preferText = false) {
+  const target = normalize(name)
+  if (preferText && target === 'mes') {
+    const textMonth = Object.entries(record).find(([key, value]) => normalize(key).startsWith('mes') && !parseIntSafe(value))
+    if (textMonth) return clean(textMonth[1])
+  }
+  const exact = Object.entries(record).find(([key]) => normalize(key) === target)
+  if (exact) return clean(exact[1])
+  const prefixed = Object.entries(record).find(([key]) => normalize(key).startsWith(`${target} `))
+  return prefixed ? clean(prefixed[1]) : ''
+}
+
+function parseIntSafe(value) {
+  const match = String(value || '').replace(/,/g, '').match(/-?\d+/)
+  return match ? Number.parseInt(match[0], 10) : null
+}
+
+function parseNumber(value) {
+  const cleaned = String(value || '').replace(/,/g, '').replace(/[^0-9.-]/g, '')
+  if (!cleaned) return null
+  const num = Number.parseFloat(cleaned)
+  return Number.isFinite(num) ? num : null
+}
+
+function parseDate(value) {
+  const text = clean(value)
+  if (!text) return null
+  const parts = text.split(/[/-]/).map((part) => Number.parseInt(part, 10))
+  if (parts.length !== 3 || parts.some((part) => !Number.isFinite(part))) return null
+  const [a, b, c] = parts
+  const year = a > 1900 ? a : c
+  const month = a > 1900 ? b : b
+  const day = a > 1900 ? c : a
+  if (!year || !month || !day) return null
+  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+}
+
+function loadCrosswalk() {
+  const file = path.join(process.cwd(), 'data', 'account_crosswalk_candidates.json')
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'))
+  const bySheetName = new Map()
+  for (const row of data.rows || []) {
+    const accountId = clean(row.account_id)
+    if (!accountId) continue
+    const accountName = clean(row.dashboard_name) || accountId
+    for (const candidate of row.sheet_candidates || []) {
+      const sheetName = clean(candidate.sheet_client_name)
+      if (!sheetName) continue
+      bySheetName.set(normalize(sheetName), {
+        account_id: accountId,
+        account_name: accountName,
+        sheet_client_name: sheetName,
+        crosswalk_status: clean(row.status) || 'revisar',
+      })
+    }
+  }
+  return bySheetName
+}
+
+function toRecords(csvText) {
+  const rows = parseCsv(csvText).filter((row) => row.some((cell) => clean(cell)))
+  const headerIndex = findHeaderIndex(rows)
+  const headers = uniqueHeaders(rows[headerIndex])
+  return rows.slice(headerIndex + 1).map((values, index) => {
+    const record = { _source_row_number: String(headerIndex + index + 2) }
+    headers.forEach((header, cellIndex) => {
+      record[header] = clean(values[cellIndex])
+    })
+    return record
+  })
+}
+
+function buildPublications(records, crosswalk) {
+  const publications = []
+  for (const record of records) {
+    const sheetClient = recordField(record, 'cliente')
+    const link = recordField(record, 'link')
+    const mapped = crosswalk.get(normalize(sheetClient))
+    if (!mapped || !link) continue
+
+    const publicationDate = parseDate(recordField(record, 'fecha'))
+    const year = parseIntSafe(recordField(record, 'ano')) || (publicationDate ? Number(publicationDate.slice(0, 4)) : null)
+    const month = parseIntSafe(recordField(record, 'mes')) || (publicationDate ? Number(publicationDate.slice(5, 7)) : null)
+    if (!year || !month) continue
+
+    publications.push({
+      id: Number.parseInt(record._source_row_number, 10),
+      account_id: mapped.account_id,
+      account_name: mapped.account_name,
+      sheet_client_name: sheetClient,
+      media_name: recordField(record, 'medio'),
+      provider: recordField(record, 'proveedor'),
+      columnist: recordField(record, 'columnista'),
+      legal_name: recordField(record, 'razon social'),
+      publication_date: publicationDate,
+      publication_year: year,
+      publication_month: month,
+      publication_month_name: recordField(record, 'mes', true),
+      url: link,
+      service: recordField(record, 'servicio'),
+      cost: parseNumber(recordField(record, 'costo')),
+      cost_status: recordField(record, 'estatus costo'),
+      commission: parseNumber(recordField(record, 'comision $')),
+      commission_status: recordField(record, 'estatus comision'),
+      comments: recordField(record, 'comentarios'),
+      source_row_number: Number.parseInt(record._source_row_number, 10),
+      crosswalk_status: mapped.crosswalk_status,
+      synced_at: new Date().toISOString(),
+    })
+  }
+  return publications.sort((a, b) => String(b.publication_date || '').localeCompare(String(a.publication_date || '')))
+}
+
+function buildOperationalScores(publications) {
+  const map = new Map()
+  for (const pub of publications) {
+    const key = `${pub.account_id}:${pub.publication_year}:${pub.publication_month}`
+    const current = map.get(key) || {
+      account_id: pub.account_id,
+      account_name: pub.account_name,
+      period_year: pub.publication_year,
+      period_month: pub.publication_month,
+      delivered_publications_count: 0,
+      committed_publications_count: null,
+      co_publications_score: null,
+      co_score: null,
+      status: 'needs_commitment',
+      synced_at: new Date().toISOString(),
+    }
+    current.delivered_publications_count += 1
+    map.set(key, current)
+  }
+  return Array.from(map.values()).sort((a, b) => {
+    const ak = `${a.period_year}-${String(a.period_month).padStart(2, '0')}`
+    const bk = `${b.period_year}-${String(b.period_month).padStart(2, '0')}`
+    return bk.localeCompare(ak)
+  })
+}
+
+export default async function handler(req, res) {
+  if (req.method !== 'GET') return res.status(405).end()
+
+  try {
+    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GENERAL_GID}&cachebust=${Date.now()}`
+    const response = await fetch(url, { cache: 'no-store' })
+    if (!response.ok) throw new Error(`Google Sheets CSV error: ${response.status}`)
+
+    const csvText = await response.text()
+    const crosswalk = loadCrosswalk()
+    const publications = buildPublications(toRecords(csvText), crosswalk)
+    const operationalScores = buildOperationalScores(publications)
+
+    res.setHeader('Cache-Control', 'no-store, max-age=0')
+    return res.status(200).json({
+      source: 'google_sheets_csv_api',
+      sheet_id: SHEET_ID,
+      gid: GENERAL_GID,
+      synced_at: new Date().toISOString(),
+      publications,
+      operationalScores,
+    })
+  } catch (err) {
+    console.error('[media-publications]', err)
+    return res.status(500).json({ error: err instanceof Error ? err.message : 'Unknown media Sheet error' })
+  }
+}
