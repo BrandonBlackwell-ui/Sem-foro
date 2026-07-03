@@ -213,7 +213,7 @@ export default function App() {
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
-  const [clientTab, setClientTab] = useState<'resumen' | 'historico' | 'mensajes'>('resumen')
+  const [clientTab, setClientTab] = useState<'whatsapp' | 'historico' | 'mensajes' | 'meet'>('whatsapp')
   const [chartRange, setChartRange] = useState<'7d' | '30d' | '365d'>('30d')
   const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
   const [messagesOpen, setMessagesOpen] = useState(false)
@@ -229,7 +229,7 @@ export default function App() {
 
   // Group Gemini tasks into meetings dynamically from Supabase dbTasks
   const meetings = useMemo(() => {
-    const map = new Map<string, { id: string; title: string; date: string; duration: number; summary: string; action_items: string[] }>()
+    const map = new Map<string, { id: string; title: string; date: string; duration: number; summary: string; action_items: string[]; tasks: any[] }>()
     
     // Sort dbTasks by created_at desc so that we get the latest first
     const sortedTasks = [...dbTasks].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
@@ -259,12 +259,14 @@ export default function App() {
           date: task.created_at || new Date().toISOString(),
           duration: 1800, // 30 minutes default duration
           summary: `Minuta importada de Gemini desde Gmail. Sincronizada automáticamente.`,
-          action_items: []
+          action_items: [],
+          tasks: []
         });
       }
       
       const meeting = map.get(key)!;
       meeting.action_items.push(`${task.owner || 'Sin asignar'}: ${task.action}`);
+      meeting.tasks.push(task);
     }
     
     const meetingsList = Array.from(map.values());
@@ -447,6 +449,39 @@ export default function App() {
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
+  const selectedAccountMeetings = useMemo(() => {
+    if (!selectedAccount) return []
+
+    const candidates = [
+      selectedAccount.account_id,
+      selectedAccount.name,
+      ...selectedAccount.groups.map(group => group.name),
+    ]
+      .filter(Boolean)
+      .map(value => String(value).toLowerCase())
+
+    return meetings.filter(meeting => {
+      const title = meeting.title.toLowerCase()
+
+      return meeting.tasks.some(task => {
+        const taskText = [
+          task.account_id,
+          task.monday_client_label,
+          task.client_label,
+          task.raw_action?.monday_client_label,
+          task.raw_action?.client_label,
+          task.raw_action?.email_subject,
+          task.action,
+        ]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase()
+
+        return candidates.some(candidate => taskText.includes(candidate) || title.includes(candidate))
+      })
+    })
+  }, [meetings, selectedAccount])
+
   const selectedHistory = useMemo(() => {
     if (!selectedGroup) return []
     return analyses
@@ -468,7 +503,7 @@ export default function App() {
 
   useEffect(() => {
     setMessagesOpen(false)
-    setClientTab('resumen')
+    setClientTab('whatsapp')
     setSelectedHistoryId(null)
   }, [selectedJid])
 
@@ -544,8 +579,8 @@ export default function App() {
     )
   }
 
-  if (viewMode === 'reuniones') {
-    const activeMeeting = meetings.find(m => m.id === (selectedMeetingId || meetings[0]?.id))
+  if (false && viewMode === 'reuniones') {
+    const activeMeeting = (meetings.find(m => m.id === (selectedMeetingId || meetings[0]?.id)) ?? meetings[0])!
     return (
       <div className="lb-shell">
         <div className="lb-book">
@@ -564,7 +599,7 @@ export default function App() {
                   <p className="lb-subtext">Tareas extraídas de llamadas y reuniones vía Gemini (Gmail / Meet).</p>
                   
                   {/* Conmutador de vistas */}
-                  <div style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>
+                  <div style={{ display: 'none', gap: '8px', marginTop: '16px' }}>
                     <button
                       onClick={() => setViewMode('semaforo')}
                       style={{
@@ -755,7 +790,7 @@ export default function App() {
                   <p className="lb-subtext">Vista rápida de salud, actividad y análisis diario por cuenta.</p>
                   
                   {/* Conmutador de vistas */}
-                  <div style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>
+                  <div style={{ display: 'none', gap: '8px', marginTop: '16px' }}>
                     <button
                       onClick={() => setViewMode('semaforo')}
                       style={{
@@ -903,7 +938,7 @@ export default function App() {
           <p className="lb-subtext">{selectedHistory.length ? `${selectedHistory.length} día(s) analizados en el histórico` : 'Grupo pendiente de análisis diario.'}</p>
           
           {/* Conmutador de vistas */}
-          <div style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>
+          <div style={{ display: 'none', gap: '8px', marginTop: '16px' }}>
             <button
               onClick={() => { setSelectedAccountId(null); setSelectedJid(null); setViewMode('semaforo') }}
               style={{
@@ -962,12 +997,13 @@ export default function App() {
       )}
 
       <nav className="lb-tabs" aria-label="Secciones del cliente">
-        <button className={`lb-tab${clientTab === 'resumen' ? ' active' : ''}`} onClick={() => setClientTab('resumen')}>Resumen</button>
+        <button className={`lb-tab${clientTab === 'whatsapp' ? ' active' : ''}`} onClick={() => setClientTab('whatsapp')}>WhatsApp</button>
         <button className={`lb-tab${clientTab === 'historico' ? ' active' : ''}`} onClick={() => setClientTab('historico')}>Histórico</button>
         <button className={`lb-tab${clientTab === 'mensajes' ? ' active' : ''}`} onClick={() => setClientTab('mensajes')}>Mensajes</button>
+        <button className={`lb-tab${clientTab === 'meet' ? ' active' : ''}`} onClick={() => setClientTab('meet')}>Meet</button>
       </nav>
 
-      {clientTab === 'resumen' && (
+      {clientTab === 'whatsapp' && (
         <div className="lb-resumen" style={{marginTop:24}}>
           {/* Score + summary hero */}
           <div style={{display:'flex', gap:22, flexWrap:'wrap', alignItems:'flex-start'}}>
@@ -1151,6 +1187,113 @@ export default function App() {
           )}
         </div>
       )}
+
+      {clientTab === 'meet' && (() => {
+        const activeMeeting = selectedAccountMeetings.find(m => m.id === selectedMeetingId) ?? selectedAccountMeetings[0] ?? null
+
+        return (
+          <div style={{marginTop:22}}>
+            <div className="lb-section-head" style={{marginBottom:18}}>
+              <div>
+                <div className="lb-section-title">Meet</div>
+                <div className="lb-section-sub">{selectedAccountMeetings.length} minutas ligadas a este cliente</div>
+              </div>
+              <button
+                onClick={handleSyncMeetings}
+                disabled={meetingsLoading}
+                className="lb-btn-outline"
+                style={{fontSize:14, padding:'7px 16px'}}
+              >
+                {meetingsLoading ? 'Actualizando...' : 'Actualizar'}
+              </button>
+            </div>
+
+            {selectedAccountMeetings.length === 0 ? (
+              <p className="lb-subtext" style={{textAlign:'center', padding:'32px 0'}}>Sin minutas de Meet para este cliente.</p>
+            ) : (
+              <div style={{ display: 'grid', gridTemplateColumns: 'minmax(220px, 320px) 1fr', gap: '24px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxHeight: '62vh', overflowY: 'auto', paddingRight: '4px' }}>
+                  {selectedAccountMeetings.map((meeting) => {
+                    const isSelected = activeMeeting?.id === meeting.id
+                    return (
+                      <button
+                        key={meeting.id}
+                        onClick={() => setSelectedMeetingId(meeting.id)}
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '6px',
+                          padding: '12px 16px',
+                          background: isSelected ? '#fffdf0' : '#fff',
+                          border: `1px solid ${isSelected ? '#d4c87a' : '#ece9e0'}`,
+                          borderRadius: '8px',
+                          cursor: 'pointer',
+                          textAlign: 'left',
+                          transition: 'all .12s'
+                        }}
+                      >
+                        <span style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--ink-900)' }}>{meeting.title}</span>
+                        <span style={{ fontSize: '11px', color: '#9aa0a6', fontFamily: 'var(--mono)' }}>
+                          {new Date(meeting.date).toLocaleDateString('es-MX', { day: '2-digit', month: 'short' })}
+                        </span>
+                      </button>
+                    )
+                  })}
+                </div>
+
+                <div>
+                  {activeMeeting && (
+                    <>
+                      <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: '12px', padding: '24px' }}>
+                        <h2 className="lb-h2" style={{ marginTop: 0, fontSize: '30px' }}>{activeMeeting.title}</h2>
+                        <div style={{ fontSize: '12px', color: '#666', marginTop: '4px', marginBottom: '18px' }}>
+                          Fecha de importacion: {new Date(activeMeeting.date).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })}
+                        </div>
+                        <div style={{ borderTop: '1px solid var(--rule-soft)', paddingTop: '18px' }}>
+                          <div style={{ fontWeight: 700, fontSize: '13px', letterSpacing: '.05em', textTransform: 'uppercase', color: '#9aa0a6', marginBottom: '8px' }}>Resumen ejecutivo</div>
+                          <p className="lb-summary-text" style={{ margin: 0, lineHeight: '1.6' }}>{activeMeeting.summary}</p>
+                        </div>
+                      </div>
+
+                      <div className="lb-section-head" style={{ marginTop: 24 }}>
+                        <div className="lb-section-title">Tareas detectadas</div>
+                        <span className="lb-section-count">{activeMeeting.action_items?.length || 0}</span>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        {activeMeeting.action_items?.length ? (
+                          activeMeeting.action_items.map((item: string, idx: number) => {
+                            const match = item.match(/^([^:-]+)[:|-]\s*(.+)$/)
+                            const speaker = match ? match[1].trim() : null
+                            const taskText = match ? match[2].trim() : item
+
+                            return (
+                              <article key={idx} className="lb-task" style={{ borderLeft: '4px solid #00a884', background: 'rgba(0,168,132,0.02)' }}>
+                                <div className="lb-task-header">
+                                  <div className="lb-task-title">{taskText}</div>
+                                  {speaker && (
+                                    <span className="lb-task-tag blackwell" style={{ background: 'rgba(0,168,132,0.1)', color: '#00a884', border: '1px solid rgba(0,168,132,0.25)' }}>
+                                      {speaker}
+                                    </span>
+                                  )}
+                                </div>
+                                <div className="lb-task-footer" style={{ marginTop: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                  <span style={{ fontSize: '11px', color: '#9aa0a6' }}>Fuente: Notas Gemini (Gmail / Meet)</span>
+                                </div>
+                              </article>
+                            )
+                          })
+                        ) : (
+                          <p className="lb-subtext">No se detectaron tareas pendientes en esta minuta.</p>
+                        )}
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        )
+      })()}
 
           </div>
         </div>
