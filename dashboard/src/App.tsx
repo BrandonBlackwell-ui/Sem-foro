@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
 type DailyAnalysis = {
   id: number
@@ -930,42 +930,43 @@ export default function App() {
 
   const selectedAccount = selectedAccountId ? accountSummaries.find(a => a.account_id === selectedAccountId) ?? null : null
 
-  // Load per-account checklist.json (SC evidence, scores by period)
-  const [accountChecklistData, setAccountChecklistData] = useState<any>(null)
+  // Load ALL per-account checklist.json once (SC evidence, contract, scores by period)
+  const [allChecklists, setAllChecklists] = useState<{ folder: string; data: any }[]>([])
   useEffect(() => {
-    if (!selectedAccount) { setAccountChecklistData(null); return }
-    const aid = selectedAccount.account_id.toLowerCase()
-    const nameNorm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
-    const tryFetch = async () => {
-      // Load manifest to get all folder names
-      let folders: string[] = []
+    (async () => {
       try {
         const mr = await fetch('/data/accounts/manifest.json')
-        if (mr.ok) folders = await mr.json()
-      } catch { /* fallback: empty */ }
+        if (!mr.ok) return
+        const folders: string[] = await mr.json()
+        const results = await Promise.all(
+          folders.map(async (folder) => {
+            try {
+              const r = await fetch(`/data/accounts/${folder}/checklist.json`)
+              if (r.ok) return { folder, data: await r.json() }
+            } catch { /* skip */ }
+            return null
+          })
+        )
+        setAllChecklists(results.filter(Boolean) as { folder: string; data: any }[])
+      } catch { /* offline */ }
+    })()
+  }, [])
 
-      // Fetch all checklists in parallel and pick the best match
-      const results = await Promise.all(
-        folders.map(async (folder) => {
-          try {
-            const r = await fetch(`/data/accounts/${folder}/checklist.json`)
-            if (r.ok) return { folder, data: await r.json() }
-          } catch { /* skip */ }
-          return null
-        })
-      )
+  const findChecklist = useCallback((accountId: string) => {
+    const aid = accountId.toLowerCase()
+    const nameNorm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
+    return (
+      allChecklists.find(x => x.data.account_id?.toLowerCase() === aid) ??
+      allChecklists.find(x => nameNorm(x.data.account_name ?? '').includes(nameNorm(aid))) ??
+      allChecklists.find(x => nameNorm(aid).includes(nameNorm(x.data.account_name ?? '').slice(0, 4) || '___')) ??
+      allChecklists.find(x => nameNorm(x.folder).includes(nameNorm(aid)))
+    )?.data ?? null
+  }, [allChecklists])
 
-      const valid = results.filter(Boolean) as { folder: string; data: any }[]
-      // Match priority: account_id field → account_name contains aid → folder name contains aid
-      const match =
-        valid.find(x => x.data.account_id?.toLowerCase() === aid) ??
-        valid.find(x => nameNorm(x.data.account_name ?? '').includes(nameNorm(aid))) ??
-        valid.find(x => nameNorm(aid).includes(nameNorm(x.data.account_name ?? '').slice(0, 4) || '___')) ??
-        valid.find(x => nameNorm(x.folder).includes(nameNorm(aid)))
-      setAccountChecklistData(match?.data ?? null)
-    }
-    tryFetch()
-  }, [selectedAccount?.account_id, selectedAccount?.name])
+  const accountChecklistData = useMemo(
+    () => (selectedAccount ? findChecklist(selectedAccount.account_id) : null),
+    [selectedAccount?.account_id, findChecklist]
+  )
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
@@ -1455,12 +1456,33 @@ export default function App() {
                   if (groupFilter === 'analyzed') return account.analyzedToday
                   if (groupFilter === 'inactive') return !account.analyzedToday && !account.hasMessagesToday
                   return true
-                }).map((account, gi) => {
-                  const scoreValue = account.analyzedToday ? (account.latestAnalysis?.new_score ?? null) : null
-                  const status = account.analyzedToday ? scoreLabel(scoreValue) : account.hasMessagesToday ? 'En proceso' : 'Pendiente'
-                  const stampColor = account.analyzedToday
-                    ? (scoreValue != null && scoreValue >= 85 ? '#3f7050' : scoreValue != null && scoreValue >= 70 ? '#b07d1e' : '#a8453b')
-                    : account.hasMessagesToday ? '#3a6ea5' : '#9aa0a6'
+                }).map(account => {
+                  // Global ponderado solo para cuentas con checklist completo (contrato + meet)
+                  const checklist = findChecklist(account.account_id)
+                  let globalScore: number | null = null
+                  if (checklist?.contract?.vigencia) {
+                    const waForGlobal = account.score?.current_score ?? account.latestAnalysis?.new_score ?? null
+                    const weighted = buildWeightedScore(waForGlobal, account.operational, account.publicationQuality, checklist)
+                    const core = weighted.components.filter(c => ['co', 'pq', 'sc', 'meet'].includes(c.key))
+                    if (core.every(c => c.value != null)) globalScore = weighted.globalPartial
+                  }
+                  return { account, globalScore }
+                }).sort((a, b) => {
+                  if (a.globalScore != null && b.globalScore == null) return -1
+                  if (a.globalScore == null && b.globalScore != null) return 1
+                  if (a.globalScore != null && b.globalScore != null) return b.globalScore - a.globalScore
+                  return 0
+                }).map(({ account, globalScore }, gi) => {
+                  const isGlobal = globalScore != null
+                  const scoreValue = isGlobal ? globalScore : account.analyzedToday ? (account.latestAnalysis?.new_score ?? null) : null
+                  const status = isGlobal
+                    ? (globalScore >= 80 ? 'Sano' : globalScore >= 65 ? 'Atención' : 'Riesgo')
+                    : account.analyzedToday ? scoreLabel(scoreValue) : account.hasMessagesToday ? 'En proceso' : 'Pendiente'
+                  const stampColor = isGlobal
+                    ? (globalScore >= 80 ? '#3f7050' : globalScore >= 65 ? '#b07d1e' : '#a8453b')
+                    : account.analyzedToday
+                      ? (scoreValue != null && scoreValue >= 85 ? '#3f7050' : scoreValue != null && scoreValue >= 70 ? '#b07d1e' : '#a8453b')
+                      : account.hasMessagesToday ? '#3a6ea5' : '#9aa0a6'
                   const r = 26
                   const circ = 2 * Math.PI * r
                   const offset = scoreValue != null ? circ * (1 - scoreValue / 100) : circ
@@ -1475,10 +1497,27 @@ export default function App() {
                             strokeDasharray={`${circ}`} strokeDashoffset={offset}
                             style={{transition:'stroke-dashoffset 1s ease', transform:'rotate(-90deg)', transformOrigin:'center'}} />
                         </svg>
-                        <div className="lb-score-ring-val" style={{color: stampColor}}>{scoreValue ?? '--'}</div>
+                        <div className="lb-score-ring-val" style={{color: stampColor}}>{scoreValue != null ? Math.round(scoreValue) : '--'}</div>
                       </div>
                       <div className="lb-account-main">
-                        <div className="lb-account-name">{account.name}</div>
+                        <div className="lb-account-name">
+                          {account.name}
+                          {isGlobal && (
+                            <span style={{
+                              marginLeft: 8,
+                              fontSize: 10,
+                              fontWeight: 700,
+                              letterSpacing: 0.6,
+                              textTransform: 'uppercase',
+                              color: '#3f7050',
+                              background: 'rgba(63,112,80,0.10)',
+                              border: '1px solid rgba(63,112,80,0.35)',
+                              borderRadius: 999,
+                              padding: '2px 8px',
+                              verticalAlign: 'middle',
+                            }}>Score global</span>
+                          )}
+                        </div>
                         <div className="lb-account-summary">{account.latestAnalysis?.summary || 'Sin análisis diario guardado todavía.'}</div>
                       </div>
                       <div className="lb-account-side">
