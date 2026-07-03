@@ -210,6 +210,28 @@ function lookupKey(value: string | null | undefined) {
     .trim()
 }
 
+const MATCH_STOPWORDS = new Set(['blackwell', 'grupo', 'interno', 'bws', 'bw', 'whatsapp', 'team', 'cliente'])
+
+function matchTokens(value: string | null | undefined) {
+  return lookupKey(value)
+    .split(' ')
+    .filter((token) => token.length > 2 && !MATCH_STOPWORDS.has(token))
+}
+
+function keysMatch(left: string | null | undefined, right: string | null | undefined) {
+  const a = lookupKey(left)
+  const b = lookupKey(right)
+  if (!a || !b) return false
+  if (a === b || a.includes(b) || b.includes(a)) return true
+
+  const aTokens = new Set(matchTokens(a))
+  return matchTokens(b).some((token) => aTokens.has(token))
+}
+
+function anyKeyMatches(left: Array<string | null | undefined>, right: Array<string | null | undefined>) {
+  return left.some((a) => right.some((b) => keysMatch(a, b)))
+}
+
 
 function scoreLabel(score: number | null | undefined) {
   if (score == null) return 'Pendiente'
@@ -508,7 +530,7 @@ export default function App() {
         if (key && !byName.has(key)) byName.set(key, row)
       }
     }
-    return { byId, byName }
+    return { byId, byName, latestRows: Array.from(byId.values()) }
   }, [operationalScores])
 
   const groupSummaries = useMemo<GroupSummary[]>(() => {
@@ -596,6 +618,12 @@ export default function App() {
         operationalLookup.byId.get(mainGroup.score?.account_id ?? '') ??
         operationalLookup.byName.get(lookupKey(mainGroup.score?.account_name)) ??
         operationalLookup.byName.get(lookupKey(mainGroup.name)) ??
+        operationalLookup.latestRows.find((row) =>
+          anyKeyMatches(
+            [key, mainGroup.score?.account_id, mainGroup.score?.account_name, mainGroup.name, ...grps.map((g) => g.name)],
+            [row.account_id, row.account_name],
+          ),
+        ) ??
         null
       result.push({
         account_id: key,
@@ -662,8 +690,6 @@ export default function App() {
       selectedAccount.score?.account_name,
       ...selectedAccount.groups.map(group => group.name),
     ]
-      .filter(Boolean)
-      .map(value => lookupKey(String(value)))
 
     return publications.filter((publication) => {
       const pubKeys = [
@@ -671,9 +697,7 @@ export default function App() {
         publication.account_name,
         publication.sheet_client_name,
       ]
-        .filter(Boolean)
-        .map(value => lookupKey(String(value)))
-      return pubKeys.some(pubKey => keys.includes(pubKey))
+      return anyKeyMatches(keys, pubKeys)
     })
   }, [publications, selectedAccount])
 
