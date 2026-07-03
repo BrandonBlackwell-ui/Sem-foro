@@ -381,18 +381,55 @@ function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
 
-function buildWeightedScore(waScore: number | null | undefined, operational?: OperationalScore | null, publicationQuality?: PublicationQualityScore | null) {
+function buildWeightedScore(waScore: number | null | undefined, operational?: OperationalScore | null, publicationQuality?: PublicationQualityScore | null, checklist?: any) {
   const normalizedWa = waScore == null ? null : clampScore(Number(waScore))
-  const coScore = operational?.co_score == null ? null : clampScore(Number(operational.co_score))
+
+  // Meet: último sesion_score guardado en checklist.json (análisis LLM de transcripción)
+  let sesionScore: number | null = null
+  let meetPeriod: string | null = null
+  if (checklist?.scores) {
+    const meetEntries = Object.entries(checklist.scores as Record<string, any>)
+      .filter(([, v]) => v?.transcripciones?.sesion_score != null)
+      .sort(([a], [b]) => b.localeCompare(a))
+    if (meetEntries.length) {
+      meetPeriod = meetEntries[0][0]
+      sesionScore = clampScore(Number(meetEntries[0][1].transcripciones.sesion_score))
+    }
+  }
+
+  // CO: si Supabase no trae co_score, cruzar entregado vs meta del contrato (checklist.json)
+  let coScore = operational?.co_score == null ? null : clampScore(Number(operational.co_score))
+  let coMetaCaption: string | null = null
+  const fase = checklist?.contract?.fase_actual as string | undefined
+  const pubItem = checklist?.schema?.items?.publicaciones_web
+  const pubMeta = pubItem ? (fase === 'fase_2' ? pubItem.meta_fase2 : pubItem.meta_fase1) ?? null : null
+  if (coScore == null && pubMeta && operational?.delivered_publications_count != null) {
+    coScore = clampScore(Math.round((operational.delivered_publications_count / pubMeta) * 100))
+    coMetaCaption = `${operational.delivered_publications_count}/${pubMeta} publicaciones vs meta contrato (${fase === 'fase_2' ? 'Fase 2' : 'Fase 1'})`
+  }
+
   const pqScore = publicationQuality?.pq_score == null ? null : clampScore(Number(publicationQuality.pq_score))
   const coIntoGlobal = coScore == null ? 0 : coScore * 0.30
+
+  // SC (Escenario B sin survey): SC = WA×0.55 + Sesión×0.45, tope 70
+  let scScore: number | null = null
+  let scCaption = 'Falta WhatsApp, Meets y survey'
+  if (normalizedWa != null && sesionScore != null) {
+    scScore = Math.min(70, normalizedWa * 0.55 + sesionScore * 0.45)
+    scCaption = `WA ${roundScore(normalizedWa)} × 55% + Sesión ${roundScore(sesionScore)} × 45% · tope 70 sin survey`
+  } else if (normalizedWa != null) {
+    scScore = normalizedWa * 0.4
+    scCaption = `Parcial: WA ${roundScore(normalizedWa)}/100`
+  } else if (sesionScore != null) {
+    scScore = sesionScore * 0.45
+    scCaption = `Parcial: Sesión ${roundScore(sesionScore)}/100`
+  }
+  const scIntoGlobal = scScore == null ? 0 : scScore * 0.45
   const pqIntoGlobal = pqScore == null ? 0 : pqScore * 0.25
-  const waIntoSc = normalizedWa == null ? 0 : normalizedWa * 0.4
-  const waIntoGlobal = waIntoSc * 0.45
   const coCaption = operational
     ? coScore == null
       ? `${operational.delivered_publications_count} publicaciones registradas · meta pendiente`
-      : `CO ${roundScore(coScore)}/100`
+      : coMetaCaption ?? `CO ${roundScore(coScore)}/100`
     : 'Cumplimiento operativo'
   const pqCaption = publicationQuality
     ? pqScore == null
@@ -421,11 +458,11 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
     {
       key: 'sc',
       label: 'SC',
-      caption: normalizedWa == null ? 'Falta WhatsApp, Meets y survey' : `Parcial: WA ${roundScore(normalizedWa)}/100`,
-      value: normalizedWa == null ? null : roundScore(waIntoGlobal),
+      caption: scCaption,
+      value: scScore == null ? null : roundScore(scIntoGlobal),
       max: 45,
-      contribution: waIntoGlobal,
-      status: normalizedWa == null ? 'pendiente' : 'parcial',
+      contribution: scIntoGlobal,
+      status: scScore == null ? 'pendiente' : (normalizedWa != null && sesionScore != null) ? 'conectado' : 'parcial',
     },
     {
       key: 'wa',
@@ -439,11 +476,11 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
     {
       key: 'meet',
       label: 'Meet',
-      caption: 'Pendiente de clasificar minutas',
-      value: null as number | null,
+      caption: sesionScore == null ? 'Pendiente de clasificar minutas' : `Sesión ${meetPeriod}: análisis LLM de transcripción`,
+      value: sesionScore == null ? null : roundScore(sesionScore),
       max: 100,
-      contribution: 0,
-      status: 'pendiente',
+      contribution: sesionScore ?? 0,
+      status: sesionScore == null ? 'pendiente' : 'conectado',
     },
     {
       key: 'survey',
@@ -457,7 +494,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
   ]
 
   return {
-    globalPartial: normalizedWa == null && coScore == null && pqScore == null ? null : roundScore(waIntoGlobal + coIntoGlobal + pqIntoGlobal),
+    globalPartial: scScore == null && coScore == null && pqScore == null ? null : roundScore(scIntoGlobal + coIntoGlobal + pqIntoGlobal),
     waScore: normalizedWa,
     components,
   }
@@ -973,7 +1010,7 @@ export default function App() {
   const selectedDayScore = selectedHistoricalScores.find((analysis) => analysis.id === selectedHistoryId) ?? null
   const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
   const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
-  const weightedScore = buildWeightedScore(selectedScore, selectedAccount?.operational ?? null, selectedAccount?.publicationQuality ?? null)
+  const weightedScore = buildWeightedScore(selectedScore, selectedAccount?.operational ?? null, selectedAccount?.publicationQuality ?? null, accountChecklistData)
   const displayScore = weightedScore.globalPartial
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
   const selectedTasks = selectedGroup
