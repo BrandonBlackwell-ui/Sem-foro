@@ -66,6 +66,24 @@ type OperationalScore = {
   synced_at: string | null
 }
 
+type AccountPublication = {
+  id: number
+  account_id: string
+  account_name: string | null
+  sheet_client_name: string | null
+  media_name: string | null
+  provider: string | null
+  columnist: string | null
+  legal_name: string | null
+  publication_date: string | null
+  publication_year: number | null
+  publication_month: number | null
+  url: string | null
+  service: string | null
+  comments: string | null
+  synced_at: string | null
+}
+
 type WaTask = {
   monday_item_id: string | null
   action: string
@@ -324,12 +342,13 @@ export default function App() {
   const [detailMessages, setDetailMessages] = useState<WaMessage[]>([])
   const [groups, setGroups] = useState<WaGroup[]>([])
   const [operationalScores, setOperationalScores] = useState<OperationalScore[]>([])
+  const [publications, setPublications] = useState<AccountPublication[]>([])
   const [tasks, setTasks] = useState<WaTask[]>([])
   const [selectedAccountId, setSelectedAccountId] = useState<string | null>(null)
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
-  const [clientTab, setClientTab] = useState<'whatsapp' | 'historico' | 'mensajes' | 'meet'>('whatsapp')
+  const [clientTab, setClientTab] = useState<'whatsapp' | 'historico' | 'mensajes' | 'meet' | 'publicaciones'>('whatsapp')
   const [chartRange, setChartRange] = useState<'7d' | '30d' | '365d'>('30d')
   const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
   const [messagesOpen, setMessagesOpen] = useState(false)
@@ -408,7 +427,7 @@ export default function App() {
       setError(null)
 
       try {
-        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, operationalRows] = await Promise.all([
+        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, operationalRows, publicationRows] = await Promise.all([
           supabaseGet<DailyAnalysis[]>('/rest/v1/wa_daily_analysis?select=*&order=analyzed_at.desc&limit=200'),
           supabaseGet<AccountScore[]>('/rest/v1/wa_account_scores?select=*&order=current_score.desc'),
           supabaseGet<WaGroup[]>('/rest/v1/wa_groups?select=jid,name,account_id,active&order=name.asc'),
@@ -418,6 +437,10 @@ export default function App() {
           supabaseGet<any[]>('/rest/v1/wa_tasks?select=*&order=created_at.desc').catch(() => []),
           supabaseGetOptional<OperationalScore[]>(
             '/rest/v1/account_operational_scores?select=*&order=period_year.desc,period_month.desc',
+            [],
+          ),
+          supabaseGetOptional<AccountPublication[]>(
+            '/rest/v1/account_publications?select=id,account_id,account_name,sheet_client_name,media_name,provider,columnist,legal_name,publication_date,publication_year,publication_month,url,service,comments,synced_at&order=publication_date.desc&limit=1000',
             [],
           ),
         ])
@@ -430,6 +453,7 @@ export default function App() {
         setGroups(groupRows)
         setRawMessages(rawRows)
         setOperationalScores(operationalRows)
+        setPublications(publicationRows)
         setTasks(taskRows)
         setDbTasks(taskDbRows)
       } catch (err) {
@@ -628,6 +652,30 @@ export default function App() {
       })
     })
   }, [meetings, selectedAccount])
+
+  const selectedAccountPublications = useMemo(() => {
+    if (!selectedAccount) return []
+    const keys = [
+      selectedAccount.account_id,
+      selectedAccount.name,
+      selectedAccount.score?.account_id,
+      selectedAccount.score?.account_name,
+      ...selectedAccount.groups.map(group => group.name),
+    ]
+      .filter(Boolean)
+      .map(value => lookupKey(String(value)))
+
+    return publications.filter((publication) => {
+      const pubKeys = [
+        publication.account_id,
+        publication.account_name,
+        publication.sheet_client_name,
+      ]
+        .filter(Boolean)
+        .map(value => lookupKey(String(value)))
+      return pubKeys.some(pubKey => keys.includes(pubKey))
+    })
+  }, [publications, selectedAccount])
 
   const selectedHistory = useMemo(() => {
     if (!selectedGroup) return []
@@ -1150,6 +1198,7 @@ export default function App() {
         <button className={`lb-tab${clientTab === 'historico' ? ' active' : ''}`} onClick={() => setClientTab('historico')}>Histórico</button>
         <button className={`lb-tab${clientTab === 'mensajes' ? ' active' : ''}`} onClick={() => setClientTab('mensajes')}>Mensajes</button>
         <button className={`lb-tab${clientTab === 'meet' ? ' active' : ''}`} onClick={() => setClientTab('meet')}>Meet</button>
+        <button className={`lb-tab${clientTab === 'publicaciones' ? ' active' : ''}`} onClick={() => setClientTab('publicaciones')}>Publicaciones</button>
       </nav>
 
       {clientTab === 'whatsapp' && (
@@ -1335,6 +1384,61 @@ export default function App() {
                 )
               })}
             </div>
+          )}
+        </div>
+      )}
+
+      {clientTab === 'publicaciones' && (
+        <div className="lb-publications">
+          <div className="lb-section-head">
+            <div>
+              <div className="lb-section-title">Publicaciones logradas</div>
+              <div className="lb-section-sub">
+                Datos del Sheet sincronizados a Supabase. El porcentaje CO se activara cuando carguemos las metas del contrato.
+              </div>
+            </div>
+            <span className="lb-section-count">{selectedAccountPublications.length}</span>
+          </div>
+
+          {selectedAccount?.operational && (
+            <div className="lb-co-mini">
+              <strong>{selectedAccount.operational.delivered_publications_count}</strong>
+              <span>
+                publicaciones registradas en {String(selectedAccount.operational.period_month).padStart(2, '0')}/{selectedAccount.operational.period_year}
+              </span>
+              <em>Meta pendiente</em>
+            </div>
+          )}
+
+          {selectedAccountPublications.length ? (
+            <div className="lb-publication-list">
+              {selectedAccountPublications.map((publication) => (
+                <article className="lb-publication-card" key={publication.id}>
+                  <div>
+                    <div className="lb-publication-title">{publication.media_name || 'Medio sin nombre'}</div>
+                    <div className="lb-publication-meta">
+                      {publication.publication_date ? shortDateOnly(publication.publication_date) : 'Sin fecha'}
+                      {publication.sheet_client_name ? ` · ${publication.sheet_client_name}` : ''}
+                      {publication.service ? ` · ${publication.service}` : ''}
+                    </div>
+                    {(publication.provider || publication.columnist || publication.comments) && (
+                      <p>
+                        {[publication.provider, publication.columnist, publication.comments].filter(Boolean).join(' · ')}
+                      </p>
+                    )}
+                  </div>
+                  {publication.url && (
+                    <a className="lb-publication-link" href={publication.url} target="_blank" rel="noreferrer">
+                      Abrir nota
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="lb-subtext" style={{ textAlign: 'center', padding: '32px 0' }}>
+              Aun no hay publicaciones sincronizadas para este cliente.
+            </p>
           )}
         </div>
       )}
