@@ -832,13 +832,25 @@ export default function App() {
   const [accountChecklistData, setAccountChecklistData] = useState<any>(null)
   useEffect(() => {
     if (!selectedAccount) { setAccountChecklistData(null); return }
-    const num = String(selectedAccount.number || '').padStart(2, '0')
     const name = selectedAccount.name.toUpperCase().replace(/\s+/g, '_')
-    fetch(`/data/accounts/${num}_${name}/checklist.json`)
-      .then(r => r.ok ? r.json() : null)
-      .catch(() => null)
-      .then(setAccountChecklistData)
-  }, [selectedAccount?.number, selectedAccount?.name])
+    // Try fetching checklist by scanning common account numbers (01-20)
+    const tryFetch = async () => {
+      for (let n = 1; n <= 20; n++) {
+        const num = String(n).padStart(2, '0')
+        const url = `/data/accounts/${num}_${name}/checklist.json`
+        try {
+          const r = await fetch(url)
+          if (r.ok) {
+            const data = await r.json()
+            setAccountChecklistData(data)
+            return
+          }
+        } catch { /* continue */ }
+      }
+      setAccountChecklistData(null)
+    }
+    tryFetch()
+  }, [selectedAccount?.name])
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
