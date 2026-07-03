@@ -2710,6 +2710,38 @@ body[data-grid="on"] {
   line-height: 1.45;
 }
 
+.lb-quality-checklist {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lb-quality-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.lb-quality-checklist-icon {
+  flex-shrink: 0;
+  font-size: 11px;
+  margin-top: 1px;
+  font-weight: 600;
+}
+
+.lb-quality-checklist-item.positive {
+  color: #217a4c;
+}
+
+.lb-quality-checklist-item.negative {
+  color: #a32d2d;
+}
+
 /* Resumen grid */
 .lb-resumen-grid {
   display: grid;

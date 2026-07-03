@@ -118,7 +118,11 @@ type PublicationQualityAnalysis = {
   content_score: number | null
   pq_score: number | null
   status: string | null
-  evidence: unknown
+  evidence: {
+    items: { quote: string; why_it_matters: string }[]
+    checklist: string[]
+    reasoning: string
+  } | null
   analyzed_at: string | null
 }
 
@@ -267,6 +271,7 @@ function qualityText(value: string | null | undefined, fallback = 'Pendiente') {
 
 function qualityScoreText(quality: PublicationQualityAnalysis | null) {
   if (!quality) return 'Sin analisis'
+  if (quality.status === 'fetch_error') return 'Sin link'
   if (quality.pq_score != null) return `${roundScore(Number(quality.pq_score))} PQ`
   if (quality.content_score != null) return `${roundScore(Number(quality.content_score))} contenido`
   if (quality.status === 'needs_tier') return 'Tier pendiente'
@@ -275,7 +280,7 @@ function qualityScoreText(quality: PublicationQualityAnalysis | null) {
 
 function qualityTone(quality: PublicationQualityAnalysis | null, ok?: boolean | null) {
   if (!quality) return 'muted'
-  if (quality.status === 'fetch_error') return 'bad'
+  if (quality.status === 'fetch_error') return 'muted'
   if (ok === true) return 'good'
   if (ok === false) return 'warn'
   if (quality.pq_score != null || quality.content_score != null) return 'good'
@@ -380,10 +385,10 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
   const normalizedWa = waScore == null ? null : clampScore(Number(waScore))
   const coScore = operational?.co_score == null ? null : clampScore(Number(operational.co_score))
   const pqScore = publicationQuality?.pq_score == null ? null : clampScore(Number(publicationQuality.pq_score))
-  const coIntoGlobal = coScore == null ? 0 : coScore * 0.375
+  const coIntoGlobal = coScore == null ? 0 : coScore * 0.30
   const pqIntoGlobal = pqScore == null ? 0 : pqScore * 0.25
   const waIntoSc = normalizedWa == null ? 0 : normalizedWa * 0.4
-  const waIntoGlobal = waIntoSc * 0.375
+  const waIntoGlobal = waIntoSc * 0.45
   const coCaption = operational
     ? coScore == null
       ? `${operational.delivered_publications_count} publicaciones registradas · meta pendiente`
@@ -400,7 +405,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       label: 'CO',
       caption: coCaption,
       value: coScore == null ? null : roundScore(coIntoGlobal),
-      max: 37.5,
+      max: 30,
       contribution: coIntoGlobal,
       status: coScore == null ? (operational ? 'conectado' : 'pendiente') : 'conectado',
     },
@@ -418,7 +423,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       label: 'SC',
       caption: normalizedWa == null ? 'Falta WhatsApp, Meets y survey' : `Parcial: WA ${roundScore(normalizedWa)}/100`,
       value: normalizedWa == null ? null : roundScore(waIntoGlobal),
-      max: 37.5,
+      max: 45,
       contribution: waIntoGlobal,
       status: normalizedWa == null ? 'pendiente' : 'parcial',
     },
@@ -822,6 +827,18 @@ export default function App() {
   }, [groupSummaries, operationalLookup, publicationQualityLookup])
 
   const selectedAccount = selectedAccountId ? accountSummaries.find(a => a.account_id === selectedAccountId) ?? null : null
+
+  // Load per-account checklist.json (SC evidence, scores by period)
+  const [accountChecklistData, setAccountChecklistData] = useState<any>(null)
+  useEffect(() => {
+    if (!selectedAccount) { setAccountChecklistData(null); return }
+    const num = String(selectedAccount.number || '').padStart(2, '0')
+    const name = selectedAccount.name.toUpperCase().replace(/\s+/g, '_')
+    fetch(`/data/accounts/${num}_${name}/checklist.json`)
+      .then(r => r.ok ? r.json() : null)
+      .catch(() => null)
+      .then(setAccountChecklistData)
+  }, [selectedAccount?.number, selectedAccount?.name])
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
@@ -1704,12 +1721,25 @@ export default function App() {
                           {quality.article_title && (
                             <p className="lb-quality-evidence">Titulo leido: {quality.article_title}</p>
                           )}
-                          {(matchedAliases || evidence) && (
+                          {quality.status !== 'fetch_error' && (matchedAliases || evidence) && (
                             <p className="lb-quality-evidence">
                               {matchedAliases ? `Match: ${matchedAliases}` : ''}
                               {matchedAliases && evidence ? ' · ' : ''}
                               {evidence ? `Evidencia: ${evidence}` : ''}
                             </p>
+                          )}
+                          {Array.isArray(quality.evidence?.checklist) && quality.evidence.checklist.length > 0 && (
+                            <ul className="lb-quality-checklist">
+                              {quality.evidence.checklist.map((item, i) => {
+                                const isPositive = item.toLowerCase().startsWith('si:')
+                                return (
+                                  <li key={i} className={`lb-quality-checklist-item ${isPositive ? 'positive' : 'negative'}`}>
+                                    <span className="lb-quality-checklist-icon">{isPositive ? '✓' : '✗'}</span>
+                                    <span>{item.replace(/^(si|no):\s*/i, '')}</span>
+                                  </li>
+                                )
+                              })}
+                            </ul>
                           )}
                         </>
                       ) : (
@@ -1753,6 +1783,71 @@ export default function App() {
                 {meetingsLoading ? 'Actualizando...' : 'Actualizar'}
               </button>
             </div>
+
+            {/* SC Session Analyses from checklist.json */}
+            {(() => {
+              const allScores: [string, any][] = Object.entries(accountChecklistData?.scores ?? {})
+                .filter(([, v]: [string, any]) => v?.transcripciones?.sesion_score != null)
+                .sort(([a], [b]) => b.localeCompare(a))
+              if (!allScores.length) return null
+              const [latestPeriod, latestData] = allScores[0]
+              const sc = latestData.transcripciones
+              const scoreColor = sc.sesion_score >= 80 ? '#217a4c' : sc.sesion_score >= 50 ? '#b07d1e' : '#a32d2d'
+              const scoreBg = sc.sesion_score >= 80 ? 'rgba(33,122,76,0.07)' : sc.sesion_score >= 50 ? 'rgba(239,180,18,0.08)' : 'rgba(163,45,45,0.07)'
+              return (
+                <div style={{ border: `1px solid ${scoreColor}30`, borderLeft: `4px solid ${scoreColor}`, borderRadius: 8, padding: '16px 20px', marginBottom: 24, background: scoreBg }}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 10 }}>
+                    <span style={{ fontSize: 22, fontWeight: 700, color: scoreColor, fontVariantNumeric: 'tabular-nums' }}>{sc.sesion_score}/100</span>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-900)' }}>SC Sesión</span>
+                    <span style={{ fontSize: 11, color: 'var(--muted)', fontFamily: 'var(--mono)', marginLeft: 'auto' }}>{latestPeriod}</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 10 }}>
+                    {[
+                      { label: `Asistencia: ${sc.attended_on_time ? 'Puntual' : sc.attended ? 'Tardó' : 'No asistió'}`, ok: sc.attended_on_time },
+                      { label: `Participación: ${sc.participation_level ?? '—'}`, ok: sc.participation_level === 'alta' || sc.participation_level === 'media' },
+                      { label: `Tono: ${sc.tone ?? '—'}`, ok: sc.tone === 'positivo' },
+                      { label: `Info estratégica: ${sc.shared_strategic_info ? 'Sí' : 'No'}`, ok: sc.shared_strategic_info },
+                    ].map((tag, i) => (
+                      <span key={i} style={{ fontSize: 11, padding: '2px 8px', borderRadius: 999, fontFamily: 'var(--mono)', background: tag.ok ? 'rgba(33,122,76,0.10)' : 'rgba(120,128,140,0.10)', color: tag.ok ? '#217a4c' : 'var(--char)', border: `1px solid ${tag.ok ? 'rgba(33,122,76,0.20)' : 'var(--rule)'}` }}>
+                        {tag.label}
+                      </span>
+                    ))}
+                  </div>
+                  {Array.isArray(sc.checklist) && sc.checklist.length > 0 && (
+                    <ul style={{ margin: '8px 0', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 5 }}>
+                      {sc.checklist.map((item: string, i: number) => {
+                        const isPos = item.toLowerCase().startsWith('si:')
+                        return (
+                          <li key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 13, color: 'var(--ink-900)' }}>
+                            <span style={{ flexShrink: 0, fontWeight: 700, color: isPos ? '#217a4c' : '#a32d2d' }}>{isPos ? '✓' : '✗'}</span>
+                            <span>{item.replace(/^(si|no):\s*/i, '')}</span>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  )}
+                  {sc.reasoning && (
+                    <p style={{ margin: '10px 0 0', fontSize: 12.5, color: 'var(--char)', lineHeight: 1.6, fontStyle: 'italic' }}>{sc.reasoning}</p>
+                  )}
+                  {Array.isArray(sc.accionables) && sc.accionables.length > 0 && (
+                    <div style={{ marginTop: 10 }}>
+                      <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.05em', color: 'var(--muted)', marginBottom: 5 }}>Accionables</div>
+                      {sc.accionables.map((a: string, i: number) => (
+                        <div key={i} style={{ fontSize: 12.5, color: 'var(--char)', padding: '3px 0 3px 12px', borderLeft: '2px solid var(--rule)' }}>→ {a}</div>
+                      ))}
+                    </div>
+                  )}
+                  {sc.survey && (
+                    <div style={{ marginTop: 12, paddingTop: 10, borderTop: '1px solid var(--rule-soft)', display: 'flex', flexDirection: 'column', gap: 4 }}>
+                      <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.05em', color: 'var(--muted)', marginBottom: 4 }}>Survey aplicado</div>
+                      {sc.survey.tipo_a && <div style={{ fontSize: 12.5, color: 'var(--char)' }}><strong>Tipo A</strong> — {sc.survey.tipo_a.pregunta} <span style={{ color: scoreColor, fontWeight: 600 }}>→ {sc.survey.tipo_a.respuesta}</span></div>}
+                      {sc.survey.tipo_b && <div style={{ fontSize: 12.5, color: 'var(--char)' }}><strong>Tipo B</strong> — {sc.survey.tipo_b.pregunta} <span style={{ color: 'var(--char)', fontStyle: 'italic' }}>"{sc.survey.tipo_b.respuesta}"</span></div>}
+                      {sc.survey.tipo_c && <div style={{ fontSize: 12.5, color: 'var(--char)' }}><strong>Accionable C</strong> — {sc.survey.tipo_c.respuesta}</div>}
+                    </div>
+                  )}
+                </div>
+              )
+            })()}
 
             {selectedAccountMeetings.length === 0 ? (
               <p className="lb-subtext" style={{textAlign:'center', padding:'32px 0'}}>Sin minutas de Meet para este cliente.</p>

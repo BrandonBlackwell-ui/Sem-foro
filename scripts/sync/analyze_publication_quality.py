@@ -193,7 +193,11 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
         "content_score": content_score,
         "pq_score": pq_score,
         "status": status,
-        "evidence": llm.get("evidence") if isinstance(llm.get("evidence"), list) else [],
+        "evidence": {
+            "items": llm.get("evidence") if isinstance(llm.get("evidence"), list) else [],
+            "checklist": llm.get("checklist") if isinstance(llm.get("checklist"), list) else [],
+            "reasoning": llm.get("reasoning") or "",
+        },
         "raw_analysis": {
             "llm": llm,
             "mention_detection": mention,
@@ -398,34 +402,49 @@ Tier fijo configurado: {tier or 'SIN_TIER_CONFIGURADO'}
 Deteccion deterministica previa:
 {json.dumps(mention, ensure_ascii=False)}
 
-Titulo extraido:
+Titulo / encabezado extraido:
 {article.get('title') or '(sin titulo)'}
 
 Texto de la nota:
 {article.get('text')[:12000]}
 
-Clasifica la nota con estas reglas PQ:
-- editorial_quality:
-  - "exclusiva": Blackwell/cliente origina la narrativa o el cliente es fuente central/protagonista claro.
-  - "reactiva": nota responde a coyuntura, entrevista, declaracion o gestion de una situacion.
-  - "mencion_principal": cliente/personaje aparece como actor principal, pero no necesariamente origen/exclusiva.
-  - "mencion_secundaria": cliente/personaje aparece marginalmente.
-  - "sin_mencion": no hay mencion verificable de los aliases oficiales.
-- focus:
-  - "narrativa_propia": posiciona al cliente en la narrativa deseada o lo presenta favorablemente/proactivamente.
-  - "neutral": menciona hechos sin posicionamiento claro.
-  - "defensivo": crisis, aclaracion, reclamo, investigacion, daño reputacional o postura defensiva.
+PASO 1 — Verifica el titulo/encabezado:
+Busca EXACTAMENTE si alguno de los aliases oficiales aparece en el titulo/encabezado de arriba.
+Esto determina title_in_headline (true/false). Es independiente de si aparece en el cuerpo.
+El titulo en el encabezado tiene peso extra en la calidad editorial.
+
+PASO 2 — Clasifica la nota con estas reglas PQ:
+- editorial_quality (elige UNO):
+  - "exclusiva": el equipo de Blackwell genero la historia proactivamente y la coloco en el medio. La iniciativa fue del equipo.
+  - "reactiva": el periodista o medio busco al cliente como fuente o para entrevistarlo. La iniciativa fue del periodista, no del equipo.
+  - "mencion_principal": el cliente aparece como actor relevante o protagonista de la nota, pero la historia no fue colocada por Blackwell ni fue iniciativa del periodista hacia el cliente.
+  - "mencion_secundaria": el cliente aparece de forma marginal, en una lista, o como referencia de fondo sin ser protagonista.
+  - "sin_mencion": no hay mencion verificable de ninguno de los aliases oficiales en titulo ni cuerpo.
+- focus (elige UNO):
+  - "narrativa_propia": la nota posiciona al cliente en la narrativa deseada o lo presenta favorablemente/proactivamente.
+  - "neutral": menciona hechos sin posicionamiento claro, cobertura informativa sin angulo estrategico.
+  - "defensivo": crisis, aclaracion, reclamo, investigacion, dano reputacional o postura defensiva.
   - "no_aplica": no hay mencion verificable.
+
+PASO 3 — Genera el checklist de calificacion:
+Lista de 3 a 5 frases cortas que explican POR QUE le pusiste esa calificacion. Cada frase debe empezar con "Si:" o "No:" segun aplique. Ejemplos:
+  "Si: el cliente aparece mencionado en el titulo/encabezado"
+  "No: el cliente no aparece en el titular, solo en el cuerpo"
+  "Si: la nota es una entrevista al cliente (periodista busco al cliente)"
+  "No: Blackwell no genero la historia, fue iniciativa del periodista"
+  "Si: el enfoque posiciona al cliente favorablemente"
 
 Devuelve JSON:
 {{
+  "title_in_headline": true,
   "editorial_quality": "exclusiva|reactiva|mencion_principal|mencion_secundaria|sin_mencion",
   "focus": "narrativa_propia|neutral|defensivo|no_aplica",
-  "reasoning": "explicacion breve",
-  "evidence": [{{"quote":"fragmento corto", "why_it_matters":"por que importa"}}]
+  "reasoning": "explicacion breve en 1-2 oraciones",
+  "checklist": ["Si/No: razon 1", "Si/No: razon 2", "Si/No: razon 3"],
+  "evidence": [{{"quote":"fragmento corto del texto", "why_it_matters":"por que importa"}}]
 }}
 """.strip()
-    text = _openrouter_chat_completion(model, system, prompt, max_tokens=900)
+    text = _openrouter_chat_completion(model, system, prompt, max_tokens=1200)
     return _parse_json(text)
 
 

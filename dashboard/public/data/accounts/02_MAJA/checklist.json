@@ -53,5 +53,32 @@
       "na": null
     }
   },
-  "scores": {}
+  "scores": {
+    "2026-05": {
+      "transcripciones": {
+        "status": "partial",
+        "score": 55,
+        "sesion_score": 55,
+        "attended": true,
+        "attended_on_time": true,
+        "participation_level": "alta",
+        "tone": "mixto",
+        "positive_comments": false,
+        "shared_strategic_info": true,
+        "negative_signals": true,
+        "checklist": [
+          "Si: El cliente participó activamente aportando contexto sobre la estrategia de comunicación y crisis.",
+          "Si: El cliente compartió información estratégica sobre prioridades de temporalidad (Día del Padre) y cierre de campaña.",
+          "No: El cliente no emitió comentarios positivos explícitos sobre el desempeño del equipo.",
+          "No: El cliente manifestó una percepción de insatisfacción respecto a la velocidad y cantidad de propuestas entregadas."
+        ],
+        "reasoning": "El score se basa en una participación alta y estratégica del cliente (sumando 15 puntos por asistencia y 5 por participación media-alta), pero se ve afectado negativamente por la crítica explícita al servicio. Aunque reconoce que el trabajo mueve la aguja, la expectativa no cumplida sobre la proactividad del equipo genera una fricción que impide una calificación superior.",
+        "accionables": [
+          "Desarrollar y presentar un plan de acción para incrementar la proactividad en la generación de propuestas de medios.",
+          "Presentar una estrategia específica para la temporalidad del Día del Padre antes de la próxima sesión.",
+          "Realizar una sesión de alineación de expectativas para cerrar la brecha entre la percepción del cliente y los resultados entregados."
+        ]
+      }
+    }
+  }
 }

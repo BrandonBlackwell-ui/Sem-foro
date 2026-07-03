@@ -347,7 +347,7 @@ export function buildAccounts(opts: BuildAccountsOptions): ComputedAccount[] {
         pq = Math.round(onDemandScore('entregables'))
         sc = Math.round(onDemandScore('whatsapp'))
       } else {
-        const raw = co * 0.375 + pq * 0.25 + sc * 0.375
+        const raw = co * 0.30 + pq * 0.25 + sc * 0.45
         let capped = (co < 45 || sc < 50) ? Math.min(raw, 64) : raw
         if (contractStatusInfo?.status) {
           const cs = contractStatusInfo.status

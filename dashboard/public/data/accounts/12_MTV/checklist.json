@@ -1,33 +1,39 @@
 {
   "account_number": "12",
   "account_name": "MTV",
+  "account_id": "tello",
+  "contract": {
+    "fase_actual": "fase_2",
+    "vigencia": "2026-01-01/2026-12-31",
+    "nota": "Fase 1 = Q1-Q2 (2 pubs/mes + 1 entrevista/mes + portada anual + foro/podcast). Fase 2 = Q3-Q4 (4 pubs/mes + vinculacion + voceria)."
+  },
   "schema": {
     "items": {
       "contrato": {
         "label": "Contrato u OC",
         "w_pq": 0.0,
-        "w_co": 0.1,
+        "w_co": 0.05,
         "w_sc": 0.0,
         "w_sf": 0.0
       },
       "entregables": {
         "label": "Entregables semanales",
         "w_pq": 0.5,
-        "w_co": 0.4,
+        "w_co": 0.2,
         "w_sc": 0.2,
         "w_sf": 0.0
       },
       "reporte": {
         "label": "Reporte de avance",
         "w_pq": 0.4,
-        "w_co": 0.2,
+        "w_co": 0.15,
         "w_sc": 0.2,
         "w_sf": 0.0
       },
       "whatsapp": {
         "label": "WhatsApp actualizado",
         "w_pq": 0.0,
-        "w_co": 0.1,
+        "w_co": 0.05,
         "w_sc": 0.3,
         "w_sf": 0.6
       },
@@ -41,9 +47,49 @@
       "agenda": {
         "label": "Agenda de trabajos",
         "w_pq": 0.1,
-        "w_co": 0.15,
+        "w_co": 0.1,
         "w_sc": 0.0,
         "w_sf": 0.0
+      },
+      "publicaciones_web": {
+        "label": "Publicaciones web en medios nacionales",
+        "w_pq": 0.0,
+        "w_co": 0.25,
+        "w_sc": 0.0,
+        "w_sf": 0.0,
+        "meta_fase1": 2,
+        "meta_fase2": 4,
+        "unidad": "publicaciones/mes",
+        "trackable": false,
+        "nota": "NA hasta conectar hoja de notas. Fase 1: 2/mes. Fase 2: 4/mes."
+      },
+      "monitoreo_medios": {
+        "label": "Monitoreo de medios L-V 7:30-8:30am",
+        "w_pq": 0.0,
+        "w_co": 0.05,
+        "w_sc": 0.0,
+        "w_sf": 0.0,
+        "unidad": "días/semana",
+        "trackable": false,
+        "nota": "NA por ahora. Meta: cobertura diaria L-V."
+      },
+      "documentos_estrategicos": {
+        "label": "Documentos estratégicos (líneas, Q&A, argumentarios)",
+        "w_pq": 0.0,
+        "w_co": 0.05,
+        "w_sc": 0.0,
+        "w_sf": 0.0,
+        "trackable": false,
+        "nota": "NA por ahora."
+      },
+      "vinculacion_medios": {
+        "label": "Vinculación con medios nacionales (Fase 2)",
+        "w_pq": 0.0,
+        "w_co": 0.05,
+        "w_sc": 0.0,
+        "w_sf": 0.0,
+        "trackable": false,
+        "nota": "NA por ahora. Solo aplica Fase 2 (Q3-Q4)."
       }
     },
     "statusScore": {
@@ -53,5 +99,28 @@
       "na": null
     }
   },
-  "scores": {}
+  "scores": {
+    "2026-06": {
+      "transcripciones": {
+        "status": "ok",
+        "score": 100,
+        "sesion_score": 100,
+        "attended": true,
+        "attended_on_time": true,
+        "participation_level": "alta",
+        "tone": "positivo",
+        "positive_comments": true,
+        "shared_strategic_info": true,
+        "negative_signals": false,
+        "checklist": [
+          "Si: El cliente participó activamente definiendo la estrategia de comunicación y el formato de los materiales.",
+          "Si: El cliente compartió directrices claras sobre el enfoque nacional del debate, demostrando confianza en la colaboración.",
+          "Si: El cliente agradeció explícitamente el trabajo del equipo al cierre de la sesión.",
+          "No: No se detectaron señales de insatisfacción, quejas o tono defensivo durante la junta."
+        ],
+        "reasoning": "El cliente mostró un alto nivel de involucramiento, aportando dirección estratégica y validando el trabajo del equipo. La sesión fue productiva, con una comunicación fluida y un cierre positivo que refleja una relación de trabajo sólida y alineada.",
+        "accionables": []
+      }
+    }
+  }
 }
