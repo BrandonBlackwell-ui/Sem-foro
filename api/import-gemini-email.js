@@ -15,8 +15,11 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'SUPABASE_SERVICE_KEY is not configured on the server.' });
   }
 
-  const { subject, body } = req.body || {};
-  if (!body) {
+  const payload = req.body || {};
+  const subject = payload.subject || '';
+  const body = payload.body || payload.plainBody || '';
+  const htmlBody = payload.htmlBody || '';
+  if (!body && !htmlBody) {
     return res.status(400).json({ error: 'Email body is required.' });
   }
 
@@ -63,7 +66,8 @@ export default async function handler(req, res) {
   console.log(`[import-gemini-email] Matched meeting title "${meetingTitle}" to account_id: "${accountId}" (${matchedAccountName})`);
 
   // 3. Parse tasks from the email body
-  const lines = body.split('\n');
+  const bodyForParsing = body || htmlBody.replace(/<[^>]+>/g, '\n');
+  const lines = bodyForParsing.split('\n');
   const parsedTasks = [];
   let currentTask = null;
 
@@ -106,6 +110,14 @@ export default async function handler(req, res) {
     raw_action: {
       source: 'gemini_meet_email_sync',
       email_subject: subject || '',
+      email_from: payload.from || '',
+      email_to: payload.to || '',
+      email_cc: payload.cc || '',
+      email_reply_to: payload.replyTo || '',
+      email_date: payload.date || null,
+      email_message_id: payload.messageId || '',
+      email_thread_id: payload.threadId || '',
+      email_attachments: Array.isArray(payload.attachments) ? payload.attachments : [],
       created_at: now
     },
     created_at: now,
