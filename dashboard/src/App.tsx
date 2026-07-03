@@ -983,6 +983,40 @@ export default function App() {
     [selectedAccount?.account_id, selectedAccount?.name, findChecklist]
   )
 
+  // Cuentas con checklist completo (contrato) pero sin grupo de WhatsApp registrado (ej. Maja):
+  // se agregan como filas sintéticas para que aparezcan en la lista con su score global.
+  const accountSummariesAll = useMemo<AccountSummary[]>(() => {
+    const result = [...accountSummaries]
+    for (const { data } of allChecklists) {
+      if (!data?.contract?.vigencia || data.account_number == null) continue
+      const num = String(Number(data.account_number))
+      const exists = result.some(a => /^\d+$/.test(a.account_id.trim()) && String(Number(a.account_id.trim())) === num)
+      if (exists) continue
+      const waRow = scores.find(s => /^\d+$/.test(String(s.account_id).trim()) && String(Number(String(s.account_id).trim())) === num) ?? null
+      const aid = String(data.account_id ?? '').toLowerCase()
+      const operational =
+        (aid ? operationalLookup.byId.get(aid) : undefined) ??
+        operationalLookup.byName.get(lookupKey(data.account_name)) ??
+        null
+      const publicationQuality =
+        (aid ? publicationQualityLookup.byId.get(aid) : undefined) ??
+        publicationQualityLookup.byName.get(lookupKey(data.account_name)) ??
+        null
+      result.push({
+        account_id: String(data.account_number).padStart(2, '0'),
+        name: data.account_name ?? `Cuenta ${num}`,
+        groups: [],
+        score: waRow,
+        operational,
+        publicationQuality,
+        analyzedToday: false,
+        hasMessagesToday: false,
+        latestAnalysis: null,
+      })
+    }
+    return result
+  }, [accountSummaries, allChecklists, scores, operationalLookup, publicationQualityLookup])
+
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
   const selectedAccountMeetings = useMemo(() => {
@@ -1366,7 +1400,7 @@ export default function App() {
     const pendingAnalysis = accountSummaries.filter(a => !a.analyzedToday && a.hasMessagesToday)
     const trulyQuiet = accountSummaries.filter(a => !a.analyzedToday && !a.hasMessagesToday)
     // Promedio de scores globales ponderados (solo cuentas completas)
-    const globalScores = accountSummaries
+    const globalScores = accountSummariesAll
       .map(a => {
         const checklist = findChecklist(a.account_id, a.name)
         if (!checklist?.contract?.vigencia) return null
@@ -1475,7 +1509,7 @@ export default function App() {
                 </div>
               )}
               <div className="lb-account-list">
-                {accountSummaries.filter(account => {
+                {accountSummariesAll.filter(account => {
                   if (groupFilter === 'analyzed') return account.analyzedToday
                   if (groupFilter === 'inactive') return !account.analyzedToday && !account.hasMessagesToday
                   return true
@@ -1511,7 +1545,7 @@ export default function App() {
                   const mainGroup = account.groups.find(g => !g.name.toLowerCase().includes('interno')) ?? account.groups[0]
                   const lastMsgAt = account.groups.map(g => g.last_message_at ?? '').sort().reverse()[0] || null
                   return (
-                    <button className="lb-account-row" key={account.account_id} style={{borderLeft: `5px solid ${stampColor}`, animationDelay: `${gi * 40}ms`, opacity: isGlobal ? 1 : 0.55, filter: isGlobal ? 'none' : 'grayscale(0.4)'}} onClick={() => { setSelectedAccountId(account.account_id); setSelectedJid(mainGroup?.jid ?? null) }}>
+                    <button className="lb-account-row" key={account.account_id} style={{borderLeft: `5px solid ${stampColor}`, animationDelay: `${gi * 40}ms`, opacity: isGlobal ? 1 : 0.55, filter: isGlobal ? 'none' : 'grayscale(0.4)'}} onClick={() => { if (!mainGroup) return; setSelectedAccountId(account.account_id); setSelectedJid(mainGroup.jid) }}>
                       <div className="lb-score-ring">
                         <svg width="62" height="62" viewBox="0 0 62 62">
                           <circle cx="31" cy="31" r={r} fill="none" stroke="#e8e4d8" strokeWidth="5" />
@@ -1540,7 +1574,7 @@ export default function App() {
                             }}>Score global</span>
                           )}
                         </div>
-                        <div className="lb-account-summary">{account.latestAnalysis?.summary || 'Sin análisis diario guardado todavía.'}</div>
+                        <div className="lb-account-summary">{account.latestAnalysis?.summary || (account.groups.length === 0 ? 'Cuenta sin grupo de WhatsApp conectado; score global desde checklist, Sheet y Meet.' : 'Sin análisis diario guardado todavía.')}</div>
                       </div>
                       <div className="lb-account-side">
                         <span className="lb-stamp" style={{color: stampColor, borderColor: stampColor, '--sr': gi % 2 === 0 ? '-4deg' : '3deg'} as React.CSSProperties}>{status}</span>
