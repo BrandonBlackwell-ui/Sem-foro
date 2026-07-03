@@ -387,13 +387,15 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
   // Meet: último sesion_score guardado en checklist.json (análisis LLM de transcripción)
   let sesionScore: number | null = null
   let meetPeriod: string | null = null
+  let meetEvidence: any = null
   if (checklist?.scores) {
     const meetEntries = Object.entries(checklist.scores as Record<string, any>)
       .filter(([, v]) => v?.transcripciones?.sesion_score != null)
       .sort(([a], [b]) => b.localeCompare(a))
     if (meetEntries.length) {
       meetPeriod = meetEntries[0][0]
-      sesionScore = clampScore(Number(meetEntries[0][1].transcripciones.sesion_score))
+      meetEvidence = meetEntries[0][1].transcripciones
+      sesionScore = clampScore(Number(meetEvidence.sesion_score))
     }
   }
 
@@ -436,6 +438,65 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       ? `${publicationQuality.analyzed_count} notas analizadas · tiers pendientes`
       : `PQ ${roundScore(pqScore)}/100`
     : 'Calidad de publicaciones'
+  const coDetails: string[] = []
+  if (operational) {
+    coDetails.push(`Publicaciones entregadas (Sheet de medios): ${operational.delivered_publications_count}`)
+    if (pubMeta) coDetails.push(`Meta del contrato (${fase === 'fase_2' ? 'Fase 2, Q3-Q4' : 'Fase 1, Q1-Q2'}): ${pubMeta} publicaciones/mes`)
+    if (coScore != null && pubMeta) coDetails.push(`Cálculo: ${operational.delivered_publications_count} entregadas ÷ ${pubMeta} meta × 100 = ${roundScore(coScore)}/100 (tope 100)`)
+    if (coScore != null) coDetails.push(`Aporte al global: ${roundScore(coScore)} × 30% = ${roundScore(coIntoGlobal)} pts`)
+    if (coScore == null) coDetails.push('Falta definir la meta de publicaciones comprometidas del contrato para calcular el score.')
+  } else {
+    coDetails.push('Sin datos operativos sincronizados del Sheet de medios.')
+  }
+
+  const pqDetails: string[] = []
+  if (publicationQuality) {
+    pqDetails.push(`Publicaciones del periodo: ${publicationQuality.publication_count} · analizadas por LLM: ${publicationQuality.analyzed_count} · con score: ${publicationQuality.scored_count}`)
+    pqDetails.push('Cada nota se puntúa: tier del medio (tier 1 = 50, tier 2 = 30, tier 3 = 15 pts) + calidad editorial (exclusiva 30, reactiva 20, mención principal 10, secundaria 5) + enfoque narrativo (narrativa propia 20, neutral 10, defensivo 5).')
+    if (pqScore != null) {
+      pqDetails.push(`PQ del periodo = promedio de las notas con score: ${roundScore(pqScore)}/100`)
+      pqDetails.push(`Aporte al global: ${roundScore(pqScore)} × 25% = ${roundScore(pqIntoGlobal)} pts`)
+    } else {
+      pqDetails.push('Faltan tiers de medios por asignar para completar el score.')
+    }
+    pqDetails.push('El desglose por nota (tier, calidad editorial, evidencia leída) está en la pestaña Publicaciones.')
+  } else {
+    pqDetails.push('Sin análisis de calidad de publicaciones para este periodo.')
+  }
+
+  const scDetails: string[] = []
+  if (scScore != null) {
+    if (normalizedWa != null) scDetails.push(`WhatsApp (WA): ${roundScore(normalizedWa)}/100 × 55% = ${roundScore(normalizedWa * 0.55)} pts`)
+    if (sesionScore != null) scDetails.push(`Sesión Meet: ${roundScore(sesionScore)}/100 × 45% = ${roundScore(sesionScore * 0.45)} pts`)
+    scDetails.push(`SC total: ${roundScore(scScore)}/100`)
+    scDetails.push(`Aporte al global: ${roundScore(scScore)} × 45% = ${roundScore(scIntoGlobal)} pts`)
+    if (normalizedWa == null) scDetails.push('Falta el subscore de WhatsApp (55% del SC).')
+    if (sesionScore == null) scDetails.push('Falta el análisis de sesión Meet (45% del SC).')
+  } else {
+    scDetails.push('Sin WhatsApp ni Meet analizados: no hay base para calcular SC.')
+  }
+
+  const waDetails: string[] = []
+  if (normalizedWa != null) {
+    waDetails.push(`Score del análisis LLM diario de la conversación de WhatsApp: ${roundScore(normalizedWa)}/100.`)
+    waDetails.push('Evalúa tono del cliente, señales de satisfacción o fricción, tiempos de respuesta y pendientes detectados.')
+    waDetails.push('El resumen, las señales positivas y las citas textuales del chat están en las pestañas WhatsApp e Histórico.')
+    waDetails.push(`Pesa 55% dentro del SC: ${roundScore(normalizedWa)} × 55% = ${roundScore(normalizedWa * 0.55)} pts del SC.`)
+  } else {
+    waDetails.push('Sin análisis de WhatsApp disponible todavía.')
+  }
+
+  const meetDetails: string[] = []
+  if (sesionScore != null && meetEvidence) {
+    meetDetails.push(`Sesión analizada: ${meetPeriod} · score ${roundScore(sesionScore)}/100 (base 50 ± ajustes por asistencia, participación, comentarios y quejas).`)
+    if (meetEvidence.attended != null) meetDetails.push(`Asistencia: ${meetEvidence.attended ? 'sí' : 'no'}${meetEvidence.attended_on_time ? ' y puntual (+15)' : ''} · Participación: ${meetEvidence.participation_level ?? 'n/d'} · Tono: ${meetEvidence.tone ?? 'n/d'}`)
+    if (Array.isArray(meetEvidence.checklist)) meetEvidence.checklist.forEach((c: string) => meetDetails.push(c))
+    if (meetEvidence.reasoning) meetDetails.push(`Razonamiento: ${meetEvidence.reasoning}`)
+    meetDetails.push(`Pesa 45% dentro del SC: ${roundScore(sesionScore)} × 45% = ${roundScore(sesionScore * 0.45)} pts del SC.`)
+  } else {
+    meetDetails.push('Aún no hay transcripción de Meet analizada para este cliente.')
+  }
+
   const components = [
     {
       key: 'co',
@@ -445,6 +506,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       max: 30,
       contribution: coIntoGlobal,
       status: coScore == null ? (operational ? 'conectado' : 'pendiente') : 'conectado',
+      details: coDetails,
     },
     {
       key: 'pq',
@@ -454,6 +516,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       max: 25,
       contribution: pqIntoGlobal,
       status: pqScore == null ? (publicationQuality ? 'conectado' : 'pendiente') : 'conectado',
+      details: pqDetails,
     },
     {
       key: 'sc',
@@ -463,6 +526,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       max: 45,
       contribution: scIntoGlobal,
       status: scScore == null ? 'pendiente' : (normalizedWa != null && sesionScore != null) ? 'conectado' : 'parcial',
+      details: scDetails,
     },
     {
       key: 'wa',
@@ -472,6 +536,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       max: 100,
       contribution: normalizedWa ?? 0,
       status: normalizedWa == null ? 'pendiente' : 'conectado',
+      details: waDetails,
     },
     {
       key: 'meet',
@@ -481,6 +546,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       max: 100,
       contribution: sesionScore ?? 0,
       status: sesionScore == null ? 'pendiente' : 'conectado',
+      details: meetDetails,
     },
   ]
 
@@ -2198,6 +2264,7 @@ function getStatusConfig(status: string) {
 }
 
 function ScoreBreakdown({ components }: { components: ReturnType<typeof buildWeightedScore>['components'] }) {
+  const [expanded, setExpanded] = useState<string | null>(null)
   return (
     <div className="lb-score-breakdown" aria-label="Componentes del score global">
       <div className="lb-score-breakdown-head">
@@ -2212,16 +2279,49 @@ function ScoreBreakdown({ components }: { components: ReturnType<typeof buildWei
           const valueText = component.value == null
             ? component.status === 'conectado' ? 'meta pendiente' : 'pendiente'
             : `${component.value}/${component.max}`
+          const details: string[] = (component as any).details ?? []
+          const isOpen = expanded === component.key
           return (
-            <div className={`lb-score-bar-row ${component.status}`} key={component.key}>
-              <div className="lb-score-bar-label">
-                <strong>{component.label}</strong>
-                <span>{component.caption}</span>
+            <div key={component.key}>
+              <div
+                className={`lb-score-bar-row ${component.status}`}
+                onClick={() => details.length && setExpanded(isOpen ? null : component.key)}
+                style={details.length ? { cursor: 'pointer' } : undefined}
+                title={details.length ? 'Clic para ver el desglose' : undefined}
+              >
+                <div className="lb-score-bar-label">
+                  <strong>{component.label}{details.length ? <span style={{ marginLeft: 5, fontSize: 11, color: '#78808c' }}>{isOpen ? '▾' : '▸'}</span> : null}</strong>
+                  <span>{component.caption}</span>
+                </div>
+                <div className="lb-score-bar-track">
+                  <div className="lb-score-bar-fill" style={{ width: `${fill}%` }} />
+                </div>
+                <div className="lb-score-bar-value">{valueText}</div>
               </div>
-              <div className="lb-score-bar-track">
-                <div className="lb-score-bar-fill" style={{ width: `${fill}%` }} />
-              </div>
-              <div className="lb-score-bar-value">{valueText}</div>
+              {isOpen && details.length > 0 && (
+                <div style={{
+                  margin: '2px 0 10px 0',
+                  padding: '10px 14px',
+                  background: 'rgba(120,128,140,0.06)',
+                  borderRadius: 8,
+                  borderLeft: '3px solid rgba(120,128,140,0.35)',
+                }}>
+                  {details.map((d, i) => {
+                    const isSi = d.toLowerCase().startsWith('si:') || d.toLowerCase().startsWith('sí:')
+                    const isNo = d.toLowerCase().startsWith('no:')
+                    return (
+                      <p key={i} style={{
+                        margin: '4px 0',
+                        fontSize: 13,
+                        lineHeight: 1.45,
+                        color: isSi ? '#217a4c' : isNo ? '#a32d2d' : '#3d434c',
+                      }}>
+                        {isSi ? '✓ ' : isNo ? '✗ ' : '· '}{d}
+                      </p>
+                    )
+                  })}
+                </div>
+              )}
             </div>
           )
         })}
