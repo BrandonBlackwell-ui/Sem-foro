@@ -407,11 +407,17 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
   const pubMeta = pubItem ? (fase === 'fase_2' ? pubItem.meta_fase2 : pubItem.meta_fase1) ?? null : null
   if (coScore == null && pubMeta && operational?.delivered_publications_count != null) {
     coScore = clampScore(Math.round((operational.delivered_publications_count / pubMeta) * 100))
-    coMetaCaption = `${operational.delivered_publications_count}/${pubMeta} publicaciones vs meta contrato (${fase === 'fase_2' ? 'Fase 2' : 'Fase 1'})`
+    const coPeriodInline = operational ? new Date(operational.period_year, operational.period_month - 1, 1).toLocaleDateString('es-MX', { month: 'long' }) : ''
+    coMetaCaption = `${coPeriodInline}: ${operational.delivered_publications_count}/${pubMeta} publicaciones vs meta mensual${fase ? ` (${fase === 'fase_2' ? 'Fase 2' : 'Fase 1'})` : ''}`
   }
 
   const pqScore = publicationQuality?.pq_score == null ? null : clampScore(Number(publicationQuality.pq_score))
   const coIntoGlobal = coScore == null ? 0 : coScore * 0.30
+
+  const periodLabel = (row?: { period_year: number; period_month: number } | null) =>
+    row ? new Date(row.period_year, row.period_month - 1, 1).toLocaleDateString('es-MX', { month: 'long', year: 'numeric' }) : null
+  const coPeriod = periodLabel(operational)
+  const pqPeriod = periodLabel(publicationQuality)
 
   // SC sin survey: SC = WA×0.55 + Sesión×0.45 (pesos rebalanceados, sin tope)
   let scScore: number | null = null
@@ -436,11 +442,12 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
   const pqCaption = publicationQuality
     ? pqScore == null
       ? `${publicationQuality.analyzed_count} notas analizadas · tiers pendientes`
-      : `PQ ${roundScore(pqScore)}/100`
+      : `PQ ${pqPeriod ?? ''}: ${roundScore(pqScore)}/100 (${publicationQuality.scored_count} notas del mes)`
     : 'Calidad de publicaciones'
   const coDetails: string[] = []
   if (operational) {
-    coDetails.push(`Publicaciones entregadas (Sheet de medios): ${operational.delivered_publications_count}`)
+    if (coPeriod) coDetails.push(`Periodo evaluado: ${coPeriod} (solo el mes más reciente, no acumulado anual).`)
+    coDetails.push(`Publicaciones entregadas en el mes (Sheet de medios): ${operational.delivered_publications_count}`)
     if (pubMeta) coDetails.push(`Meta del contrato (${fase === 'fase_2' ? 'Fase 2, Q3-Q4' : 'Fase 1, Q1-Q2'}): ${pubMeta} publicaciones/mes`)
     if (coScore != null && pubMeta) coDetails.push(`Cálculo: ${operational.delivered_publications_count} entregadas ÷ ${pubMeta} meta × 100 = ${roundScore(coScore)}/100 (tope 100)`)
     if (coScore != null) coDetails.push(`Aporte al global: ${roundScore(coScore)} × 30% = ${roundScore(coIntoGlobal)} pts`)
@@ -451,7 +458,8 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
 
   const pqDetails: string[] = []
   if (publicationQuality) {
-    pqDetails.push(`Publicaciones del periodo: ${publicationQuality.publication_count} · analizadas por LLM: ${publicationQuality.analyzed_count} · con score: ${publicationQuality.scored_count}`)
+    if (pqPeriod) pqDetails.push(`Periodo evaluado: ${pqPeriod} (solo el mes más reciente, no acumulado anual).`)
+    pqDetails.push(`Publicaciones del mes: ${publicationQuality.publication_count} · analizadas por LLM: ${publicationQuality.analyzed_count} · con score: ${publicationQuality.scored_count}`)
     pqDetails.push('Cada nota se puntúa: tier del medio (tier 1 = 50, tier 2 = 30, tier 3 = 15 pts) + calidad editorial (exclusiva 30, reactiva 20, mención principal 10, secundaria 5) + enfoque narrativo (narrativa propia 20, neutral 10, defensivo 5).')
     if (pqScore != null) {
       pqDetails.push(`PQ del periodo = promedio de las notas con score: ${roundScore(pqScore)}/100`)
