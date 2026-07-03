@@ -766,8 +766,44 @@ export default function App() {
       .filter((analysis) => analysis.group_jid === selectedGroup.jid)
       .sort((a, b) => a.analysis_date.localeCompare(b.analysis_date))
   }, [analyses, selectedGroup])
+
+  const selectedHistoricalScores = useMemo<HistoricalScoreItem[]>(() => {
+    if (!selectedAccount) return []
+    const accountKeys = explicitLinkedKeys([
+      selectedAccount.account_id,
+      selectedAccount.name,
+      selectedAccount.score?.account_id,
+      selectedAccount.score?.account_name,
+      ...selectedAccount.groups.map((group) => group.name),
+    ])
+
+    let previousScore: number | null = null
+    return selectedHistory.map((analysis) => {
+      const [year, month] = analysis.analysis_date.split('-').map((part) => Number.parseInt(part, 10))
+      const operationalForMonth =
+        operationalScores.find((row) => {
+          const rowKeys = explicitLinkedKeys([row.account_id, row.account_name])
+          return row.period_year === year &&
+            row.period_month === month &&
+            Array.from(rowKeys).some((key) => accountKeys.has(key))
+        }) ?? null
+      const score = buildWeightedScore(analysis.new_score, operationalForMonth).globalPartial
+      const delta = score == null || previousScore == null ? 0 : roundScore(score - previousScore)
+      if (score != null) previousScore = score
+      return {
+        id: analysis.id,
+        analysis_date: analysis.analysis_date,
+        score,
+        delta,
+        wa_score: analysis.new_score,
+        summary: analysis.summary,
+      }
+    })
+  }, [operationalScores, selectedAccount, selectedHistory])
+
   const latestSelectedAnalysis = selectedJid ? latestAnalysisByGroup.get(selectedJid) ?? null : null
   const selectedDayAnalysis = selectedHistory.find((analysis) => analysis.id === selectedHistoryId) ?? null
+  const selectedDayScore = selectedHistoricalScores.find((analysis) => analysis.id === selectedHistoryId) ?? null
   const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
   const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
   const weightedScore = buildWeightedScore(selectedScore, selectedAccount?.operational ?? null)
@@ -1339,11 +1375,11 @@ export default function App() {
       {clientTab === 'historico' && (() => {
         const rangeDays = chartRange === '7d' ? 7 : chartRange === '30d' ? 30 : 365
         const cutoff = new Date(new Date(`${todayMexicoStr()}T12:00:00`).getTime() - (rangeDays - 1) * 86400000).toISOString().slice(0, 10)
-        const filteredHistory = selectedHistory.filter(a => a.analysis_date >= cutoff)
+        const filteredHistory = selectedHistoricalScores.filter(a => a.analysis_date >= cutoff)
         return (
         <div className="lb-historico">
           <div className="lb-section-head">
-            <div className="lb-section-title">Histórico de puntos</div>
+            <div className="lb-section-title">Histórico de score global</div>
             <div style={{display:'flex', alignItems:'center', gap:6}}>
               {(['7d','30d','365d'] as const).map(r => (
                 <button key={r} onClick={() => setChartRange(r)} style={{
@@ -1360,7 +1396,7 @@ export default function App() {
             </div>
           </div>
           <div className="lb-chart-wrap">
-            <ScoreGraph items={selectedHistory} startDate={cutoff} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
+            <ScoreGraph items={selectedHistoricalScores} startDate={cutoff} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
           </div>
           <div style={{display:'flex', flexDirection:'column', gap:10, marginTop:18}}>
             {filteredHistory.length
@@ -1374,14 +1410,14 @@ export default function App() {
                     border: `1px solid ${selectedHistoryId === item.id ? '#d4c87a' : '#ece9e0'}`,
                     borderRadius:8, cursor:'pointer', textAlign:'left', transition:'all .12s'
                   }}>
-                  <div style={{width:42, height:42, borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', background: item.new_score != null && item.new_score >= 85 ? '#d4eedd' : item.new_score != null && item.new_score >= 70 ? '#fdf1ad' : '#fde8e6', fontFamily:"'Libre Franklin',sans-serif", fontWeight:800, fontSize:14, color: item.new_score != null && item.new_score >= 85 ? '#3f7050' : item.new_score != null && item.new_score >= 70 ? '#b07d1e' : '#a8453b', flexShrink:0}}>{item.new_score ?? '--'}</div>
+                  <div style={{width:42, height:42, borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', background: item.score != null && item.score >= 30 ? '#d4eedd' : item.score != null && item.score >= 15 ? '#fdf1ad' : '#fde8e6', fontFamily:"'Libre Franklin',sans-serif", fontWeight:800, fontSize:14, color: item.score != null && item.score >= 30 ? '#3f7050' : item.score != null && item.score >= 15 ? '#b07d1e' : '#a8453b', flexShrink:0}}>{item.score ?? '--'}</div>
                   <div style={{flex:1}}>
                     <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                       <div>
                         <span style={{fontFamily:"'Caveat',cursive", fontSize:20, fontWeight:700, color:'#1d1d1f'}}>{fmtShortDate(item.analysis_date)}</span>
                         <span style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:11, color:'#9aa0a6', marginLeft:8}}>{item.analysis_date}</span>
                       </div>
-                      <span style={{fontFamily:"'Caveat',cursive", fontWeight:700, fontSize:19, color: item.score_delta >= 0 ? '#3f7050' : '#a8453b'}}>{item.score_delta > 0 ? '+' : ''}{item.score_delta}</span>
+                      <span style={{fontFamily:"'Caveat',cursive", fontWeight:700, fontSize:19, color: item.delta >= 0 ? '#3f7050' : '#a8453b'}}>{item.delta > 0 ? '+' : ''}{item.delta}</span>
                     </div>
                     <p style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#5f636a', margin:'3px 0 0'}}>{item.summary || 'Sin resumen guardado.'}</p>
                   </div>
@@ -1397,7 +1433,7 @@ export default function App() {
                   <div className="lb-section-title">Detalle del día</div>
                   <div className="lb-section-sub">{selectedDayAnalysis.analysis_date}</div>
                 </div>
-                <span style={{fontFamily:"'Libre Franklin',sans-serif", fontWeight:800, fontSize:22, color: selectedDayAnalysis.score_delta >= 0 ? '#3f7050' : '#a8453b'}}>{selectedDayAnalysis.score_delta > 0 ? '+' : ''}{selectedDayAnalysis.score_delta}</span>
+                <span style={{fontFamily:"'Libre Franklin',sans-serif", fontWeight:800, fontSize:22, color: (selectedDayScore?.delta ?? 0) >= 0 ? '#3f7050' : '#a8453b'}}>{(selectedDayScore?.delta ?? 0) > 0 ? '+' : ''}{selectedDayScore?.delta ?? 0}</span>
               </div>
               <p className="lb-summary-text" style={{marginBottom:20}}>{selectedDayAnalysis.summary || 'Sin resumen guardado.'}</p>
               <div className="lb-resumen-grid">
@@ -1654,11 +1690,20 @@ type ChartPoint = {
   filled: boolean  // true = day had no messages, score carried forward
 }
 
+type HistoricalScoreItem = {
+  id: number
+  analysis_date: string
+  score: number | null
+  delta: number
+  wa_score: number | null
+  summary: string | null
+}
+
 function todayMexicoStr() {
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Mexico_City' }).format(new Date())
 }
 
-function buildChartPoints(items: DailyAnalysis[], startDate?: string): ChartPoint[] {
+function buildChartPoints(items: HistoricalScoreItem[], startDate?: string): ChartPoint[] {
   if (!items.length) return []
 
   const byDate = new Map(items.map(i => [i.analysis_date, i]))
@@ -1671,9 +1716,9 @@ function buildChartPoints(items: DailyAnalysis[], startDate?: string): ChartPoin
   const end   = new Date(`${today}T12:00:00`)
 
   // Carry-forward score from before the window
-  let lastScore = Number(sorted[0].new_score ?? 0)
+  let lastScore = Number(sorted[0].score ?? 0)
   for (const item of sorted) {
-    if (item.analysis_date < startStr) lastScore = Number(item.new_score ?? lastScore)
+    if (item.analysis_date < startStr) lastScore = Number(item.score ?? lastScore)
   }
 
   const result: ChartPoint[] = []
@@ -1682,8 +1727,8 @@ function buildChartPoints(items: DailyAnalysis[], startDate?: string): ChartPoin
     const dateStr = cur.toISOString().slice(0, 10)
     const analysis = byDate.get(dateStr)
     if (analysis) {
-      lastScore = Number(analysis.new_score ?? lastScore)
-      result.push({ id: analysis.id, date: dateStr, score: lastScore, delta: analysis.score_delta, summary: analysis.summary, filled: false })
+      lastScore = Number(analysis.score ?? lastScore)
+      result.push({ id: analysis.id, date: dateStr, score: lastScore, delta: analysis.delta, summary: analysis.summary, filled: false })
     } else {
       result.push({ id: null, date: dateStr, score: lastScore, delta: 0, summary: null, filled: true })
     }
@@ -1692,7 +1737,7 @@ function buildChartPoints(items: DailyAnalysis[], startDate?: string): ChartPoin
   return result
 }
 
-function ScoreGraph({ items, selectedId, onSelect, startDate }: { items: DailyAnalysis[]; selectedId: number | null; onSelect: (id: number) => void; startDate?: string }) {
+function ScoreGraph({ items, selectedId, onSelect, startDate }: { items: HistoricalScoreItem[]; selectedId: number | null; onSelect: (id: number) => void; startDate?: string }) {
   const chartPoints = buildChartPoints(items, startDate)
   const width = 760
   const chartH = 180
@@ -1759,7 +1804,7 @@ function ScoreGraph({ items, selectedId, onSelect, startDate }: { items: DailyAn
           const isSelected = !point.filled && selectedId === point.id
           const tooltip = point.filled
             ? `Sin mensajes · ${fmtShortDate(point.date)}`
-            : `${fmtShortDate(point.date)} · score ${point.score}${point.delta !== 0 ? ` (${point.delta > 0 ? '+' : ''}${point.delta})` : ''}${point.summary ? '\n' + point.summary : ''}`
+            : `${fmtShortDate(point.date)} · score global ${point.score}${point.delta !== 0 ? ` (${point.delta > 0 ? '+' : ''}${point.delta})` : ''}${point.summary ? '\n' + point.summary : ''}`
           const showScoreLabel = !point.filled && (point.x - lastLabelX) >= 38
           if (showScoreLabel) lastLabelX = point.x
           return (
