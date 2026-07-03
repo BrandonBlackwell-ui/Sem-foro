@@ -210,26 +210,64 @@ function lookupKey(value: string | null | undefined) {
     .trim()
 }
 
-const MATCH_STOPWORDS = new Set(['blackwell', 'grupo', 'interno', 'bws', 'bw', 'whatsapp', 'team', 'cliente'])
+const ACCOUNT_LINKS = [
+  {
+    accountId: 'azvi',
+    dashboardNames: ['Grupo Azvi'],
+    sheetNames: ['Azvi'],
+    whatsappNames: ['Azvi + Blackwell', 'Interno Azvi'],
+    supabaseAccountIds: ['09'],
+  },
+  {
+    accountId: 'tello',
+    dashboardNames: ['Tello (MTV)'],
+    sheetNames: ['Miguel Tello'],
+    whatsappNames: ['Tello + Blackwell', 'Interno Tello'],
+    supabaseAccountIds: ['12'],
+  },
+  {
+    accountId: 'nuvoil',
+    dashboardNames: ['Nuvoil'],
+    sheetNames: ['Nuvoil'],
+    whatsappNames: ['Nuvoil-Blackwell', 'INTERNO NUVOIL'],
+    supabaseAccountIds: ['21'],
+  },
+  {
+    accountId: 'credix',
+    dashboardNames: ['Credix'],
+    sheetNames: ['Covalto -Credijusto', 'Credix'],
+    whatsappNames: ['Credix/BWS'],
+    supabaseAccountIds: ['05'],
+  },
+] as const
 
-function matchTokens(value: string | null | undefined) {
-  return lookupKey(value)
-    .split(' ')
-    .filter((token) => token.length > 2 && !MATCH_STOPWORDS.has(token))
+type AccountLink = (typeof ACCOUNT_LINKS)[number]
+
+function linkValues(link: AccountLink) {
+  return [
+    link.accountId,
+    ...link.dashboardNames,
+    ...link.sheetNames,
+    ...link.whatsappNames,
+    ...link.supabaseAccountIds,
+  ]
 }
 
-function keysMatch(left: string | null | undefined, right: string | null | undefined) {
-  const a = lookupKey(left)
-  const b = lookupKey(right)
-  if (!a || !b) return false
-  if (a === b || a.includes(b) || b.includes(a)) return true
-
-  const aTokens = new Set(matchTokens(a))
-  return matchTokens(b).some((token) => aTokens.has(token))
+function findAccountLink(values: Array<string | null | undefined>) {
+  const normalized = new Set(values.map(lookupKey).filter(Boolean))
+  return ACCOUNT_LINKS.find((link) => linkValues(link).some((value) => normalized.has(lookupKey(value)))) ?? null
 }
 
-function anyKeyMatches(left: Array<string | null | undefined>, right: Array<string | null | undefined>) {
-  return left.some((a) => right.some((b) => keysMatch(a, b)))
+function explicitLinkedKeys(values: Array<string | null | undefined>) {
+  const keys = new Set(values.map(lookupKey).filter(Boolean))
+  const link = findAccountLink(values)
+  if (link) {
+    for (const value of linkValues(link)) {
+      const key = lookupKey(value)
+      if (key) keys.add(key)
+    }
+  }
+  return keys
 }
 
 
@@ -530,7 +568,7 @@ export default function App() {
         if (key && !byName.has(key)) byName.set(key, row)
       }
     }
-    return { byId, byName, latestRows: Array.from(byId.values()) }
+    return { byId, byName }
   }, [operationalScores])
 
   const groupSummaries = useMemo<GroupSummary[]>(() => {
@@ -613,17 +651,20 @@ export default function App() {
         .sort((a, b) => b.analyzed_at.localeCompare(a.analyzed_at))[0] ?? null
       const analyzedToday = grps.some(g => g.analysis?.analysis_date === todayStr)
       const hasMessagesToday = grps.some(g => g.last_message_at && g.last_message_at.slice(0, 10) >= todayStr)
+      const explicitKeys = explicitLinkedKeys([
+        key,
+        mainGroup.score?.account_id,
+        mainGroup.score?.account_name,
+        mainGroup.name,
+        ...grps.map((g) => g.name),
+      ])
       const operational =
         operationalLookup.byId.get(key) ??
         operationalLookup.byId.get(mainGroup.score?.account_id ?? '') ??
+        Array.from(explicitKeys).map((aliasKey) => operationalLookup.byId.get(aliasKey)).find(Boolean) ??
         operationalLookup.byName.get(lookupKey(mainGroup.score?.account_name)) ??
         operationalLookup.byName.get(lookupKey(mainGroup.name)) ??
-        operationalLookup.latestRows.find((row) =>
-          anyKeyMatches(
-            [key, mainGroup.score?.account_id, mainGroup.score?.account_name, mainGroup.name, ...grps.map((g) => g.name)],
-            [row.account_id, row.account_name],
-          ),
-        ) ??
+        Array.from(explicitKeys).map((aliasKey) => operationalLookup.byName.get(aliasKey)).find(Boolean) ??
         null
       result.push({
         account_id: key,
@@ -683,21 +724,21 @@ export default function App() {
 
   const selectedAccountPublications = useMemo(() => {
     if (!selectedAccount) return []
-    const keys = [
+    const keys = explicitLinkedKeys([
       selectedAccount.account_id,
       selectedAccount.name,
       selectedAccount.score?.account_id,
       selectedAccount.score?.account_name,
       ...selectedAccount.groups.map(group => group.name),
-    ]
+    ])
 
     return publications.filter((publication) => {
       const pubKeys = [
         publication.account_id,
         publication.account_name,
         publication.sheet_client_name,
-      ]
-      return anyKeyMatches(keys, pubKeys)
+      ].map(lookupKey).filter(Boolean)
+      return pubKeys.some((pubKey) => keys.has(pubKey))
     })
   }, [publications, selectedAccount])
 
