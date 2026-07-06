@@ -657,6 +657,7 @@ function buildWeightedScore(
 
   return {
     globalPartial: scScore == null && coScore == null && pqScore == null ? null : roundScore(scIntoGlobal + coIntoGlobal + pqIntoGlobal),
+    globalPartialRaw: scScore == null && coScore == null && pqScore == null ? null : (scIntoGlobal + coIntoGlobal + pqIntoGlobal),
     waScore: normalizedWa,
     components,
   }
@@ -1652,7 +1653,8 @@ export default function App() {
         )
         // Same filter as the account list circles: all core components must be present
         const core = weighted.components.filter(c => ['co', 'pq', 'sc', 'meet'].includes(c.key))
-        return core.every(c => c.value != null) ? weighted.globalPartial : null
+        // Use raw (unrounded) value so the average isn't skewed by double-rounding
+        return core.every(c => c.value != null) ? weighted.globalPartialRaw : null
       })
       .filter((s): s is number => s != null)
     const averageScore = globalScores.length
