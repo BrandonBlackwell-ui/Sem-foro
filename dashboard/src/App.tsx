@@ -669,6 +669,7 @@ export default function App() {
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
   const [clientTab, setClientTab] = useState<'resumen' | 'whatsapp' | 'historico' | 'mensajes' | 'meet' | 'publicaciones'>('resumen')
+  const [resumenSubTab, setResumenSubTab] = useState<'diagnostico' | 'tareas' | 'metodologia'>('diagnostico')
   const [chartRange, setChartRange] = useState<'7d' | '30d' | '365d'>('30d')
   const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
   const [messagesOpen, setMessagesOpen] = useState(false)
@@ -1233,6 +1234,7 @@ export default function App() {
   useEffect(() => {
     setMessagesOpen(false)
     setClientTab('resumen')
+    setResumenSubTab('diagnostico')
     setSelectedHistoryId(null)
   }, [selectedJid])
 
@@ -1780,114 +1782,149 @@ export default function App() {
 
       {clientTab === 'resumen' && (
         <div className="lb-resumen" style={{marginTop:24}}>
-          {/* Score + summary hero */}
-          <div style={{display:'flex', gap:22, flexWrap:'wrap', alignItems:'flex-start'}}>
-            <div className="lb-score-postit" style={{background: displayScore != null && displayScore >= 80 ? '#d4eedd' : displayScore != null && displayScore >= 45 ? '#fdf1ad' : '#fde8e6'}}>
-              <div className="lb-score-postit-val" style={{color: displayScore != null && displayScore >= 80 ? '#3f7050' : displayScore != null && displayScore >= 45 ? '#b07d1e' : '#a8453b'}}>{displayScore ?? '--'}</div>
-              <div className="lb-score-postit-label">Score global parcial</div>
-              <div className="lb-score-postit-note">WA real: {selectedScore ?? '--'} / 100</div>
-              {latestSelectedAnalysis && (
-                <div style={{marginTop:10, display:'flex', gap:6, flexWrap:'wrap', justifyContent:'center'}}>
-                  <span className={`lb-pill ${badgeClass(latestSelectedAnalysis.sentiment) === 'green' ? 'lb-pill-green' : badgeClass(latestSelectedAnalysis.sentiment) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{latestSelectedAnalysis.sentiment}</span>
-                  <span className={`lb-pill ${badgeClass(selectedSatisfaction) === 'green' ? 'lb-pill-green' : badgeClass(selectedSatisfaction) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{selectedSatisfaction}</span>
-                </div>
+          {/* Internal folder-style sub-tabs */}
+          <div className="lb-folder-tabs">
+            <button
+              className={`lb-folder-tab${resumenSubTab === 'diagnostico' ? ' active' : ''}`}
+              onClick={() => setResumenSubTab('diagnostico')}
+            >
+              📁 Diagnóstico y Contrato
+            </button>
+            <button
+              className={`lb-folder-tab${resumenSubTab === 'tareas' ? ' active' : ''}`}
+              onClick={() => setResumenSubTab('tareas')}
+            >
+              📋 Tareas y Señales
+              {allActions.length > 0 && (
+                <span className="lb-folder-tab-badge">{allActions.length}</span>
               )}
-            </div>
-            <div className="lb-summary-card" style={{flex:1}}>
-              <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
-              <p className="lb-summary-text">
-                {selectedHistory.length
-                  ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
-                  : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
-              </p>
-              <ContractTimeline contract={accountChecklistData?.contract} history={accountChecklistData?.contracts_history} />
-              <ScoreBreakdown components={weightedScore.components} />
-            </div>
+            </button>
+            <button
+              className={`lb-folder-tab${resumenSubTab === 'metodologia' ? ' active' : ''}`}
+              onClick={() => setResumenSubTab('metodologia')}
+            >
+              🔬 Metodologías AI
+              {selectedMethodologyBullets.length > 0 && (
+                <span className="lb-folder-tab-badge">{selectedMethodologyBullets.length}</span>
+              )}
+            </button>
           </div>
 
-          {/* Tasks + signals grid */}
-          <div className="lb-resumen-grid" style={{marginTop:28}}>
-            <div>
-              <div className="lb-section-head" style={{marginTop:0}}>
-                <div className="lb-section-title">Compilado de tareas</div>
-                <span className="lb-section-count">{allActions.length}</span>
-              </div>
-              <div style={{display:'flex', flexDirection:'column', gap:12}}>
-                {allActions.length
-                  ? allActions.slice(-6).map((item, index) => <TaskCard item={item} key={index} />)
-                  : <p className="lb-subtext">No hay tareas acumuladas.</p>}
-              </div>
-
-            </div>
-            <div>
-              <div className="lb-section-head" style={{marginTop:0}}>
-                <div className="lb-section-title">Señales</div>
-                <span className="lb-section-count">{positiveSignals.length + negativeSignals.length}</span>
-              </div>
-              <SignalList title="A favor" items={positiveSignals} tone="green" />
-              <SignalList title="A revisar" items={negativeSignals} tone="red" />
-            </div>
-          </div>
-          <div className="lb-methodology-card">
-            <div className="lb-section-head" style={{ marginTop: 0 }}>
-              <div>
-                <div className="lb-section-title">Metodologias cosas por hacer</div>
-                <div className="lb-section-sub">
-                  {selectedMethodologyAnalysis
-                    ? `${shortDateOnly(selectedMethodologyAnalysis.analysis_date)} · ${selectedMethodologyAnalysis.model || 'modelo configurado'}`
-                    : 'Pendiente de analisis diario.'}
-                </div>
-              </div>
-              <span className="lb-section-count">{selectedMethodologyBullets.length}</span>
-            </div>
-            {selectedMethodologyAnalysis ? (
-              <>
-                <div className="lb-methodology-status-row">
-                  <span className={`lb-pill ${
-                    badgeClass(selectedMethodologyAnalysis.overall_status || 'neutral') === 'green'
-                      ? 'lb-pill-green'
-                      : badgeClass(selectedMethodologyAnalysis.overall_status || 'neutral') === 'red'
-                        ? 'lb-pill-red'
-                        : 'lb-pill-amber'
-                  }`}>
-                    {selectedMethodologyAnalysis.overall_status || 'neutral'}
-                  </span>
-                  <p className="lb-subtext">{selectedMethodologyAnalysis.summary || 'Sin resumen metodologico.'}</p>
-                </div>
-                <div className="lb-methodology-list">
-                  {selectedMethodologyBullets.map((item, index) => (
-                    <div className="lb-methodology-item" key={`${item.methodology}-${item.dimension}-${index}`}>
-                      <div className="lb-methodology-item-head">
-                        <span className="lb-methodology-chip">{item.methodology}</span>
-                        <span className={`lb-methodology-state ${badgeClass(item.status)}`}>{item.status}</span>
-                      </div>
-                      <div className="lb-methodology-dimension">{item.dimension}</div>
-                      <p className="lb-methodology-bullet">{item.bullet}</p>
-                      {item.why && <p className="lb-methodology-why">Por que: {item.why}</p>}
+          <div className="lb-folder-body">
+            {resumenSubTab === 'diagnostico' && (
+              <div style={{display:'flex', gap:22, flexWrap:'wrap', alignItems:'flex-start'}}>
+                <div className="lb-score-postit" style={{background: displayScore != null && displayScore >= 80 ? '#d4eedd' : displayScore != null && displayScore >= 45 ? '#fdf1ad' : '#fde8e6', width: 210, margin: 0}}>
+                  <div className="lb-score-postit-val" style={{color: displayScore != null && displayScore >= 80 ? '#3f7050' : displayScore != null && displayScore >= 45 ? '#b07d1e' : '#a8453b'}}>{displayScore ?? '--'}</div>
+                  <div className="lb-score-postit-label">Score global parcial</div>
+                  <div className="lb-score-postit-note">WA real: {selectedScore ?? '--'} / 100</div>
+                  {latestSelectedAnalysis && (
+                    <div style={{marginTop:10, display:'flex', gap:6, flexWrap:'wrap', justifyContent:'center'}}>
+                      <span className={`lb-pill ${badgeClass(latestSelectedAnalysis.sentiment) === 'green' ? 'lb-pill-green' : badgeClass(latestSelectedAnalysis.sentiment) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{latestSelectedAnalysis.sentiment}</span>
+                      <span className={`lb-pill ${badgeClass(selectedSatisfaction) === 'green' ? 'lb-pill-green' : badgeClass(selectedSatisfaction) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{selectedSatisfaction}</span>
                     </div>
-                  ))}
-                </div>
-                <div className="lb-methodology-actions">
-                  <div className="lb-section-title">Acciones recomendadas</div>
-                  {selectedMethodologyActions.length ? (
-                    selectedMethodologyActions.map((item, index) => (
-                      <div className="lb-methodology-action" key={`${item.action}-${index}`}>
-                        <span className="lb-methodology-priority">{item.priority}</span>
-                        <div>
-                          <strong>{item.action}</strong>
-                          <div>{item.owner} · {item.methodology}</div>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    <p className="lb-subtext" style={{ margin: 0 }}>Sin acciones nuevas recomendadas.</p>
                   )}
                 </div>
-              </>
-            ) : (
-              <p className="lb-subtext" style={{ margin: 0 }}>
-                Aqui aparecera el analisis diario por metodologia: Blackwell R3, Chris Lehane y Agente IA Crisis.
-              </p>
+                <div className="lb-summary-card" style={{flex:1, border:'none', boxShadow:'none', padding:0, background:'transparent', minWidth:320}}>
+                  <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
+                  <p className="lb-summary-text">
+                    {selectedHistory.length
+                      ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
+                      : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
+                  </p>
+                  <ContractTimeline contract={accountChecklistData?.contract} history={accountChecklistData?.contracts_history} />
+                  <ScoreBreakdown components={weightedScore.components} />
+                </div>
+              </div>
+            )}
+
+            {resumenSubTab === 'tareas' && (
+              <div className="lb-resumen-grid" style={{marginTop:0}}>
+                <div>
+                  <div className="lb-section-head" style={{marginTop:0}}>
+                    <div className="lb-section-title">Compilado de tareas</div>
+                    <span className="lb-section-count">{allActions.length}</span>
+                  </div>
+                  <div style={{display:'flex', flexDirection:'column', gap:12}}>
+                    {allActions.length
+                      ? allActions.slice(-6).map((item, index) => <TaskCard item={item} key={index} />)
+                      : <p className="lb-subtext">No hay tareas acumuladas.</p>}
+                  </div>
+                </div>
+                <div>
+                  <div className="lb-section-head" style={{marginTop:0}}>
+                    <div className="lb-section-title">Señales</div>
+                    <span className="lb-section-count">{positiveSignals.length + negativeSignals.length}</span>
+                  </div>
+                  <SignalList title="A favor" items={positiveSignals} tone="green" />
+                  <div style={{marginTop:16}} />
+                  <SignalList title="A revisar" items={negativeSignals} tone="red" />
+                </div>
+              </div>
+            )}
+
+            {resumenSubTab === 'metodologia' && (
+              <div className="lb-methodology-card" style={{marginTop:0, border:'none', boxShadow:'none', padding:0, background:'transparent', boxShadow:'none'}}>
+                <div className="lb-section-head" style={{ marginTop: 0 }}>
+                  <div>
+                    <div className="lb-section-title">Metodologías cosas por hacer</div>
+                    <div className="lb-section-sub">
+                      {selectedMethodologyAnalysis
+                        ? `${shortDateOnly(selectedMethodologyAnalysis.analysis_date)} · ${selectedMethodologyAnalysis.model || 'modelo configurado'}`
+                        : 'Pendiente de análisis diario.'}
+                    </div>
+                  </div>
+                  <span className="lb-section-count">{selectedMethodologyBullets.length}</span>
+                </div>
+                {selectedMethodologyAnalysis ? (
+                  <>
+                    <div className="lb-methodology-status-row" style={{margin: '16px 0 18px'}}>
+                      <span className={`lb-pill ${
+                        badgeClass(selectedMethodologyAnalysis.overall_status || 'neutral') === 'green'
+                          ? 'lb-pill-green'
+                          : badgeClass(selectedMethodologyAnalysis.overall_status || 'neutral') === 'red'
+                            ? 'lb-pill-red'
+                            : 'lb-pill-amber'
+                      }`}>
+                        {selectedMethodologyAnalysis.overall_status || 'neutral'}
+                      </span>
+                      <p className="lb-subtext" style={{margin: 0, maxWidth: 920}}>{selectedMethodologyAnalysis.summary || 'Sin resumen metodológico.'}</p>
+                    </div>
+                    <div className="lb-methodology-list">
+                      {selectedMethodologyBullets.map((item, index) => (
+                        <div className="lb-methodology-item" key={`${item.methodology}-${item.dimension}-${index}`}>
+                          <div className="lb-methodology-item-head">
+                            <span className="lb-methodology-chip">{item.methodology}</span>
+                            <span className={`lb-methodology-state ${badgeClass(item.status)}`}>{item.status}</span>
+                          </div>
+                          <div className="lb-methodology-dimension">{item.dimension}</div>
+                          <p className="lb-methodology-bullet">{item.bullet}</p>
+                          {item.why && <p className="lb-methodology-why">Por qué: {item.why}</p>}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="lb-methodology-actions">
+                      <div className="lb-section-title">Acciones recomendadas</div>
+                      {selectedMethodologyActions.length ? (
+                        selectedMethodologyActions.map((item, index) => (
+                          <div className="lb-methodology-action" key={`${item.action}-${index}`}>
+                            <span className="lb-methodology-priority">{item.priority}</span>
+                            <div>
+                              <strong>{item.action}</strong>
+                              <div>{item.owner} · {item.methodology}</div>
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <p className="lb-subtext" style={{ margin: 0 }}>Sin acciones nuevas recomendadas.</p>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <p className="lb-subtext" style={{ margin: 0 }}>
+                    Aquí aparecerá el análisis diario por metodología: Blackwell R3, Chris Lehane y Agente IA Crisis.
+                  </p>
+                )}
+              </div>
             )}
           </div>
         </div>
