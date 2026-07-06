@@ -1932,6 +1932,31 @@ export default function App() {
 
       {clientTab === 'whatsapp' && (
         <div className="lb-resumen" style={{marginTop:24}}>
+          {/* Calendario de días */}
+          {selectedHistory.length > 0 && (
+            <div style={{ marginBottom: 24 }}>
+              <div className="lb-section-title" style={{ fontSize: 22, marginBottom: 10 }}>Día de Análisis</div>
+              <div className="lb-date-strip" style={{ overflowX: 'auto', paddingBottom: 8, whiteSpace: 'nowrap', display: 'flex', gap: 8 }}>
+                {[...selectedHistory].reverse().map((analysis) => {
+                  const isActive = selectedHistoryId === analysis.id || (selectedHistoryId === null && analysis.id === latestSelectedAnalysis?.id)
+                  return (
+                    <button
+                      key={analysis.id}
+                      className={`lb-date-btn${isActive ? ' active' : ''}`}
+                      onClick={() => setSelectedHistoryId(analysis.id)}
+                      style={{
+                        fontVariantNumeric: 'tabular-nums',
+                        flexShrink: 0
+                      }}
+                    >
+                      {fmtShortDate(analysis.analysis_date)}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          )}
+
           <div className="lb-whatsapp-grid">
             <div className="lb-summary-card">
               <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
@@ -1942,15 +1967,15 @@ export default function App() {
               </p>
             </div>
             <div className="lb-summary-card">
-              <div className="lb-section-title" style={{marginBottom:10}}>Resumen</div>
+              <div className="lb-section-title" style={{marginBottom:10}}>Resumen diario</div>
               <p className="lb-summary-text">
-                {activeDayAnalysis?.summary || latestSelectedAnalysis?.summary || 'No hay resumen del dia seleccionado.'}
+                {activeDayAnalysis?.summary || 'No hay resumen del dia seleccionado.'}
               </p>
-              {latestSelectedAnalysis && (
+              {activeDayAnalysis && (
                 <div style={{marginTop:14, display:'flex', gap:8, flexWrap:'wrap'}}>
-                  <span className={`lb-pill ${badgeClass(latestSelectedAnalysis.sentiment) === 'green' ? 'lb-pill-green' : badgeClass(latestSelectedAnalysis.sentiment) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{latestSelectedAnalysis.sentiment}</span>
-                  <span className={`lb-pill ${badgeClass(selectedSatisfaction) === 'green' ? 'lb-pill-green' : badgeClass(selectedSatisfaction) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{selectedSatisfaction}</span>
-                  <span className="lb-pill lb-pill-amber">WA {selectedScore ?? '--'} / 100</span>
+                  <span className={`lb-pill ${badgeClass(activeDayAnalysis.sentiment) === 'green' ? 'lb-pill-green' : badgeClass(activeDayAnalysis.sentiment) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{activeDayAnalysis.sentiment}</span>
+                  <span className={`lb-pill ${badgeClass(normalizeSatisfaction(activeDayAnalysis.satisfaction)) === 'green' ? 'lb-pill-green' : badgeClass(normalizeSatisfaction(activeDayAnalysis.satisfaction)) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{normalizeSatisfaction(activeDayAnalysis.satisfaction)}</span>
+                  <span className="lb-pill lb-pill-amber">WA {activeDayAnalysis.new_score ?? '--'} / 100</span>
                 </div>
               )}
             </div>
