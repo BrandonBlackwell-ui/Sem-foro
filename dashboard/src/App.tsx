@@ -1825,8 +1825,25 @@ export default function App() {
                   )}
                 </div>
                 <div className="lb-summary-card" style={{flex:1, border:'none', boxShadow:'none', padding:0, background:'transparent', minWidth:320}}>
+                  <div className="lb-methodology-actions" style={{marginBottom:24}}>
+                    <div className="lb-section-title" style={{marginBottom:12}}>Acciones recomendadas</div>
+                    {selectedMethodologyActions.length ? (
+                      selectedMethodologyActions.map((item, index) => (
+                        <div className="lb-methodology-action" key={`diag-action-${item.action}-${index}`}>
+                          <span className="lb-methodology-priority">{item.priority}</span>
+                          <div>
+                            <strong>{item.action}</strong>
+                            <div>{item.owner} · {item.methodology}</div>
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <p className="lb-subtext" style={{ margin: 0 }}>Sin acciones nuevas recomendadas.</p>
+                    )}
+                  </div>
+
                   <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
-                  <p className="lb-summary-text">
+                  <p className="lb-summary-text" style={{marginBottom:20}}>
                     {selectedHistory.length
                       ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
                       : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
