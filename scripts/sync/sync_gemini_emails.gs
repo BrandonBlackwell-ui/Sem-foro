@@ -45,7 +45,8 @@ function syncGeminiEmails() {
         try {
           var payload = {
             subject: subject,
-            body: body
+            body: body,
+            from: Session.getActiveUser().getEmail()
           };
           
           var options = {
