@@ -1329,6 +1329,7 @@ export default function App() {
       const [year, month] = analysis.analysis_date.split('-').map((part) => Number.parseInt(part, 10))
       const operationalForMonth = findBestOperational(year, month)
       const publicationQualityForMonth = findBestPublicationQuality(year, month)
+      const waScore = analysis.new_score != null ? clampScore(Number(analysis.new_score)) : null
       const score = buildWeightedScore(
         analysis.new_score,
         operationalForMonth,
@@ -1336,12 +1337,13 @@ export default function App() {
         accountChecklistData,
         analysis.raw_analysis
       ).globalPartial
-      const delta = score == null || previousScore == null ? 0 : roundScore(score - previousScore)
-      if (score != null) previousScore = score
+      const delta = waScore == null || previousScore == null ? 0 : roundScore(waScore - previousScore)
+      if (waScore != null) previousScore = waScore
       return {
         id: analysis.id,
         analysis_date: analysis.analysis_date,
-        score,
+        score: waScore,          // chart plots daily WA score (real daily variation)
+        global_score: score,     // full weighted score for detail cards
         delta,
         wa_score: analysis.new_score,
         summary: analysis.summary,
@@ -1648,8 +1650,7 @@ export default function App() {
           checklist,
           a.latestAnalysis?.raw_analysis
         )
-        const core = weighted.components.filter(c => ['co', 'pq', 'sc', 'meet'].includes(c.key))
-        return core.every(c => c.value != null) ? weighted.globalPartial : null
+        return weighted.globalPartial  // include any account that has a partial global
       })
       .filter((s): s is number => s != null)
     const averageScore = globalScores.length
@@ -2634,7 +2635,8 @@ type ChartPoint = {
 type HistoricalScoreItem = {
   id: number
   analysis_date: string
-  score: number | null
+  score: number | null       // daily WA score — used for chart
+  global_score: number | null // weighted global — used for detail cards
   delta: number
   wa_score: number | null
   summary: string | null
