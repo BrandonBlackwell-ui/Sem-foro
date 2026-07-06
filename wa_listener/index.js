@@ -28,6 +28,8 @@ import WebSocket from "ws";
 import { readFileSync, existsSync, rmSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import mammoth from "mammoth";
+import pdfParse from "pdf-parse";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 
@@ -308,6 +310,33 @@ function getAudioMessage(message) {
   return unwrapped?.audioMessage || null;
 }
 
+function getDocumentMessage(message) {
+  const unwrapped = unwrapMessage(message);
+  return unwrapped?.documentMessage || null;
+}
+
+async function parseDocumentMessage(documentMessage) {
+  if (!documentMessage) return null;
+  const mime = documentMessage.mimetype || "";
+  const fileName = documentMessage.fileName || "documento";
+  try {
+    const stream = await downloadContentFromMessage(documentMessage, "document");
+    const buffer = await streamToBuffer(stream);
+    if (!buffer.length) return null;
+
+    if (mime.includes("officedocument.wordprocessingml.document") || fileName.endsWith(".docx")) {
+      const result = await mammoth.extractRawText({ buffer });
+      return result.value ? `[Contenido de documento ${fileName}]:\n${result.value.trim()}` : null;
+    } else if (mime.includes("pdf") || fileName.endsWith(".pdf")) {
+      const data = await pdfParse(buffer);
+      return data.text ? `[Contenido de documento ${fileName}]:\n${data.text.trim()}` : null;
+    }
+  } catch (error) {
+    console.warn(`Failed to parse document ${fileName}:`, error?.message || error);
+  }
+  return null;
+}
+
 async function streamToBuffer(stream) {
   const chunks = [];
   for await (const chunk of stream) {
@@ -381,11 +410,17 @@ async function buildMessageRow(msg, mapping) {
   const status = msg.status == null ? null : Number(msg.status);
   const isSystem = Boolean(msg.messageStubType) || Boolean(body && isSystemBody(body));
   const audioMessage = getAudioMessage(msg.message);
+  const documentMessage = getDocumentMessage(msg.message);
 
   if (!body && audioMessage) {
     const transcript = await transcribeAudioMessage(audioMessage);
     if (transcript) {
       body = `[Audio transcrito] ${transcript}`;
+    }
+  } else if (documentMessage) {
+    const docText = await parseDocumentMessage(documentMessage);
+    if (docText) {
+      body = body ? `${body}\n\n${docText}` : docText;
     }
   }
 
