@@ -1,10 +1,9 @@
 name: Media Sheet CO sync
 
 on:
-  schedule:
-    # Refresh executed publications once a day before business hours in Mexico City.
-    - cron: "30 12 * * *"
-
+  # Manual only. The dashboard now reads the public Google Sheet directly via
+  # /api/media-publications; this mirror is useful only if we want Supabase as
+  # a cached copy later.
   workflow_dispatch:
 
 jobs:
