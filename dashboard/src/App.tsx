@@ -1863,7 +1863,7 @@ export default function App() {
             )}
 
             {resumenSubTab === 'metodologia' && (
-              <div className="lb-methodology-card" style={{marginTop:0, border:'none', boxShadow:'none', padding:0, background:'transparent', boxShadow:'none'}}>
+              <div className="lb-methodology-card" style={{marginTop:0, border:'none', padding:0, background:'transparent', boxShadow:'none'}}>
                 <div className="lb-section-head" style={{ marginTop: 0 }}>
                   <div>
                     <div className="lb-section-title">Metodologías cosas por hacer</div>
