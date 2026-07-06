@@ -1,71 +1,82 @@
 /**
  * Google Apps Script para sincronizar Notas de Gemini con Blackwell Semaforo.
- * 
- * INSTRUCCIONES DE USO:
- * 1. Abre https://script.google.com/
- * 2. Crea un proyecto nuevo.
- * 3. Copia y pega este código en el editor.
- * 4. Cambia la variable `DASHBOARD_URL` por la URL de tu despliegue de Vercel.
- * 5. Haz clic en el botón de "Guardar" y luego ejecuta la función `syncGeminiEmails` una vez para conceder permisos de lectura de Gmail y conexiones externas.
- * 6. En el menú izquierdo de Apps Script, ve a "Activadores" (icono de reloj).
- * 7. Crea un activador nuevo:
- *    - Función a ejecutar: `syncGeminiEmails`
- *    - Evento: Basado en el tiempo → Temporizador de minutos → Cada 15 minutos.
+ *
+ * Ya configurado y activo en producción:
+ *   - URL: https://sem-foro-eta.vercel.app
+ *   - Trigger: cada 15 minutos
+ *   - Fuente: gemini-notes@google.com (Notas automáticas de Google Meet)
+ *
+ * Flujo:
+ *   1. Busca correos no leídos de gemini-notes@google.com con subject "Notas:"
+ *   2. Envía el cuerpo completo al endpoint /api/import-gemini-email en Vercel
+ *   3. Vercel extrae tareas, las vincula a la cuenta correcta y las guarda en Supabase wa_tasks
+ *   4. Marca el correo como leído + añade etiqueta "Semaforo-Sync"
  */
 
-// REEMPLAZA ESTO CON LA URL DE TU DESPLIEGUE EN VERCEL
-const DASHBOARD_URL = "https://tu-dominio-de-vercel.vercel.app";
+const DASHBOARD_URL = "https://sem-foro-eta.vercel.app";
 
 function syncGeminiEmails() {
-  // Buscamos correos no leídos que provengan de gemini-notes@google.com
   const searchQuery = 'from:gemini-notes@google.com subject:"Notas:" is:unread';
-  const threads = GmailApp.search(searchQuery, 0, 10); // Límite de 10 hilos por ejecución
-  
+  const threads = GmailApp.search(searchQuery, 0, 10);
+
   if (threads.length === 0) {
     Logger.log("No se encontraron correos nuevos de Gemini Notes.");
     return;
   }
-  
+
   Logger.log("Se encontraron " + threads.length + " hilos de correo nuevos.");
-  
+
   for (var i = 0; i < threads.length; i++) {
     var thread = threads[i];
     var messages = thread.getMessages();
-    
+
     for (var j = 0; j < messages.length; j++) {
       var message = messages[j];
-      
-      // Solo procesar si el mensaje individual no ha sido leído
+
       if (message.isUnread()) {
         var subject = message.getSubject();
-        var body = message.getPlainBody(); // Obtenemos la versión de texto plano
-        
+        var plainBody = message.getPlainBody();
+        var htmlBody = message.getBody();
+
         Logger.log("Procesando correo: " + subject);
-        
+
         try {
           var payload = {
+            source: "gemini_notes_email",
             subject: subject,
-            body: body
+            plainBody: plainBody,
+            htmlBody: htmlBody,
+            from: message.getFrom(),
+            to: message.getTo(),
+            cc: message.getCc(),
+            bcc: message.getBcc(),
+            replyTo: message.getReplyTo(),
+            date: message.getDate().toISOString(),
+            messageId: message.getId(),
+            threadId: thread.getId(),
+            attachments: message.getAttachments().map(function(file) {
+              return {
+                name: file.getName(),
+                contentType: file.getContentType(),
+                size: file.getBytes().length
+              };
+            })
           };
-          
+
           var options = {
-            method: 'post',
-            contentType: 'application/json',
+            method: "post",
+            contentType: "application/json",
             payload: JSON.stringify(payload),
             muteHttpExceptions: true
           };
-          
-          // Enviamos el correo al endpoint de Vercel
+
           var response = UrlFetchApp.fetch(DASHBOARD_URL + "/api/import-gemini-email", options);
           var responseText = response.getContentText();
           var statusCode = response.getResponseCode();
-          
+
           if (statusCode === 200) {
             Logger.log("Sincronización exitosa para: " + subject + ". Respuesta: " + responseText);
-            // Marcamos como leído para no volver a procesarlo
             message.markRead();
-            
-            // Opcional: Agregar una etiqueta para organización visual en Gmail
             getOrCreateLabel("Semaforo-Sync").addToThread(thread);
           } else {
             Logger.log("Error al enviar el correo a Vercel. Status: " + statusCode + ", Respuesta: " + responseText);
