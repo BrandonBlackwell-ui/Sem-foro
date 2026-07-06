@@ -2750,6 +2750,27 @@ body[data-grid="on"] {
   margin-top: 30px;
 }
 
+.lb-whatsapp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.lb-messages-panel,
+.lb-methodology-card {
+  margin-top: 26px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 20px 48px rgba(29, 29, 31, 0.08);
+}
+
+.lb-methodology-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.88), rgba(246,248,252,0.8));
+}
+
 .lb-section-count {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 800;
@@ -2937,6 +2958,7 @@ body[data-grid="on"] {
 @media (max-width: 860px) {
   .lb-content { padding: 28px 24px 48px 80px; }
   .lb-h1 { font-size: 56px; }
+  .lb-whatsapp-grid { grid-template-columns: 1fr; }
   .lb-resumen-grid { grid-template-columns: 1fr; }
   .lb-score-postit { width: 100%; }
 }

@@ -613,7 +613,7 @@ export default function App() {
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
-  const [clientTab, setClientTab] = useState<'whatsapp' | 'historico' | 'mensajes' | 'meet' | 'publicaciones'>('whatsapp')
+  const [clientTab, setClientTab] = useState<'resumen' | 'whatsapp' | 'historico' | 'mensajes' | 'meet' | 'publicaciones'>('resumen')
   const [chartRange, setChartRange] = useState<'7d' | '30d' | '365d'>('30d')
   const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
   const [messagesOpen, setMessagesOpen] = useState(false)
@@ -1138,7 +1138,7 @@ export default function App() {
 
   useEffect(() => {
     setMessagesOpen(false)
-    setClientTab('whatsapp')
+    setClientTab('resumen')
     setSelectedHistoryId(null)
   }, [selectedJid])
 
@@ -1677,14 +1677,14 @@ export default function App() {
       )}
 
       <nav className="lb-tabs" aria-label="Secciones del cliente">
+        <button className={`lb-tab${clientTab === 'resumen' ? ' active' : ''}`} onClick={() => setClientTab('resumen')}>Resumen</button>
         <button className={`lb-tab${clientTab === 'whatsapp' ? ' active' : ''}`} onClick={() => setClientTab('whatsapp')}>WhatsApp</button>
         <button className={`lb-tab${clientTab === 'historico' ? ' active' : ''}`} onClick={() => setClientTab('historico')}>Histórico</button>
-        <button className={`lb-tab${clientTab === 'mensajes' ? ' active' : ''}`} onClick={() => setClientTab('mensajes')}>Mensajes</button>
         <button className={`lb-tab${clientTab === 'meet' ? ' active' : ''}`} onClick={() => setClientTab('meet')}>Meet</button>
         <button className={`lb-tab${clientTab === 'publicaciones' ? ' active' : ''}`} onClick={() => setClientTab('publicaciones')}>Publicaciones</button>
       </nav>
 
-      {clientTab === 'whatsapp' && (
+      {clientTab === 'resumen' && (
         <div className="lb-resumen" style={{marginTop:24}}>
           {/* Score + summary hero */}
           <div style={{display:'flex', gap:22, flexWrap:'wrap', alignItems:'flex-start'}}>
@@ -1733,6 +1733,73 @@ export default function App() {
               <SignalList title="A favor" items={positiveSignals} tone="green" />
               <SignalList title="A revisar" items={negativeSignals} tone="red" />
             </div>
+          </div>
+          <div className="lb-methodology-card">
+            <div className="lb-section-head" style={{ marginTop: 0 }}>
+              <div>
+                <div className="lb-section-title">Metodologias cosas por hacer</div>
+                <div className="lb-section-sub">Pendiente de configuracion.</div>
+              </div>
+              <span className="lb-section-count">0</span>
+            </div>
+            <p className="lb-subtext" style={{ margin: 0 }}>Aqui vamos a colocar las metodologias y pendientes cuando definamos como llenarlo.</p>
+          </div>
+        </div>
+      )}
+
+      {clientTab === 'whatsapp' && (
+        <div className="lb-resumen" style={{marginTop:24}}>
+          <div className="lb-whatsapp-grid">
+            <div className="lb-summary-card">
+              <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
+              <p className="lb-summary-text">
+                {selectedHistory.length
+                  ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
+                  : 'Este grupo existe en Supabase, pero todavia no tiene resumen acumulado.'}
+              </p>
+            </div>
+            <div className="lb-summary-card">
+              <div className="lb-section-title" style={{marginBottom:10}}>Resumen</div>
+              <p className="lb-summary-text">
+                {activeDayAnalysis?.summary || latestSelectedAnalysis?.summary || 'No hay resumen del dia seleccionado.'}
+              </p>
+              {latestSelectedAnalysis && (
+                <div style={{marginTop:14, display:'flex', gap:8, flexWrap:'wrap'}}>
+                  <span className={`lb-pill ${badgeClass(latestSelectedAnalysis.sentiment) === 'green' ? 'lb-pill-green' : badgeClass(latestSelectedAnalysis.sentiment) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{latestSelectedAnalysis.sentiment}</span>
+                  <span className={`lb-pill ${badgeClass(selectedSatisfaction) === 'green' ? 'lb-pill-green' : badgeClass(selectedSatisfaction) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{selectedSatisfaction}</span>
+                  <span className="lb-pill lb-pill-amber">WA {selectedScore ?? '--'} / 100</span>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="lb-messages-panel">
+            <div className="lb-section-head" style={{marginBottom:18, marginTop:0}}>
+              <div>
+                <div className="lb-section-title">Mensajes</div>
+                <div className="lb-section-sub">{detailLoading ? 'Cargando...' : `${detailMessages.length} mensajes del periodo visible`}</div>
+              </div>
+            </div>
+            {detailLoading ? (
+              <p className="lb-subtext" style={{textAlign:'center', padding:'32px 0'}}>Cargando mensajes...</p>
+            ) : detailMessages.length === 0 ? (
+              <p className="lb-subtext" style={{textAlign:'center', padding:'32px 0'}}>Sin mensajes disponibles para este grupo.</p>
+            ) : (
+              <div className="lb-messages" style={{maxWidth:'100%'}}>
+                {detailMessages.map((message) => {
+                  const isTeam = message.speaker_team === 'blackwell'
+                  return (
+                    <div className={`lb-bubble-wrap ${isTeam ? 'right' : 'left'}`} key={message.id}>
+                      <div className={`lb-bubble ${isTeam ? 'right' : 'left'}`}>
+                        <div className="lb-bubble-name" style={{color: isTeam ? '#3a6ea5' : '#3f7050'}}>{message.speaker_label || message.push_name || message.author || 'Sin autor'}</div>
+                        <div className="lb-bubble-text">{message.body || '(sin texto)'}</div>
+                        <div className="lb-bubble-time">{shortDate(message.sent_at)} Â· {message.msg_type}</div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
           </div>
         </div>
       )}
