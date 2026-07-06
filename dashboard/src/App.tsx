@@ -1684,7 +1684,7 @@ export default function App() {
       })
       .filter((s): s is number => s != null)
     const averageScore = globalScores.length
-      ? Math.round(globalScores.reduce((t, s) => t + s, 0) / globalScores.length)
+      ? roundScore(globalScores.reduce((t, s) => t + s, 0) / globalScores.length)
       : null
 
     return (
@@ -1752,7 +1752,7 @@ export default function App() {
               <div className="lb-stats-row">
                 <div className="lb-postit lb-postit-green" style={{animationDelay:'0ms'}}>
                   <div className="lb-postit-label">Score promedio</div>
-                  <div className="lb-postit-value" style={{color: averageScore && averageScore >= 85 ? '#3f7050' : averageScore && averageScore >= 70 ? '#b07d1e' : '#a8453b'}}>{averageScore ?? '--'}</div>
+                  <div className="lb-postit-value" style={{color: averageScore && averageScore >= 85 ? '#3f7050' : averageScore && averageScore >= 70 ? '#b07d1e' : '#a8453b'}}>{averageScore != null ? averageScore.toFixed(1) : '--'}</div>
                   <div className="lb-postit-detail">{averageScore ? '' : 'Sin puntajes'}</div>
                 </div>
                 <div className="lb-postit lb-postit-yellow" style={{animationDelay:'80ms', cursor:'pointer', outline: groupFilter === 'analyzed' ? '2px solid #b07d1e' : 'none', outlineOffset:3}} onClick={() => setGroupFilter(f => f === 'analyzed' ? 'all' : 'analyzed')}>
@@ -1832,7 +1832,7 @@ export default function App() {
                             strokeDasharray={`${circ}`} strokeDashoffset={offset}
                             style={{transition:'stroke-dashoffset 1s ease', transform:'rotate(-90deg)', transformOrigin:'center'}} />
                         </svg>
-                        <div className="lb-score-ring-val" style={{color: stampColor}}>{scoreValue != null ? Math.round(scoreValue) : '--'}</div>
+                        <div className="lb-score-ring-val" style={{color: stampColor, fontSize: '15px'}}>{scoreValue != null ? scoreValue.toFixed(1) : '--'}</div>
                       </div>
                       <div className="lb-account-main">
                         <div className="lb-account-name">
@@ -1997,9 +1997,9 @@ export default function App() {
             {resumenSubTab === 'diagnostico' && (
               <div style={{display:'flex', gap:22, flexWrap:'wrap', alignItems:'flex-start'}}>
                 <div className="lb-score-postit" style={{background: displayScore != null && displayScore >= 80 ? '#d4eedd' : displayScore != null && displayScore >= 45 ? '#fdf1ad' : '#fde8e6', width: 210, margin: 0}}>
-                  <div className="lb-score-postit-val" style={{color: displayScore != null && displayScore >= 80 ? '#3f7050' : displayScore != null && displayScore >= 45 ? '#b07d1e' : '#a8453b'}}>{displayScore ?? '--'}</div>
+                  <div className="lb-score-postit-val" style={{color: displayScore != null && displayScore >= 80 ? '#3f7050' : displayScore != null && displayScore >= 45 ? '#b07d1e' : '#a8453b'}}>{displayScore != null ? displayScore.toFixed(1) : '--'}</div>
                   <div className="lb-score-postit-label">Score global parcial</div>
-                  <div className="lb-score-postit-note">WA real: {selectedScore ?? '--'} / 100</div>
+                  <div className="lb-score-postit-note">WA real: {selectedScore != null ? Number(selectedScore).toFixed(1) : '--'} / 100</div>
                   {latestSelectedAnalysis && (
                     <div style={{marginTop:10, display:'flex', gap:6, flexWrap:'wrap', justifyContent:'center'}}>
                       <span className={`lb-pill ${badgeClass(latestSelectedAnalysis.sentiment) === 'green' ? 'lb-pill-green' : badgeClass(latestSelectedAnalysis.sentiment) === 'red' ? 'lb-pill-red' : 'lb-pill-amber'}`}>{latestSelectedAnalysis.sentiment}</span>
