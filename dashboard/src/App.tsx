@@ -126,6 +126,35 @@ type PublicationQualityAnalysis = {
   analyzed_at: string | null
 }
 
+type MethodologyBullet = {
+  methodology: string
+  dimension: string
+  status: string
+  bullet: string
+  why: string
+}
+
+type RecommendedMethodologyAction = {
+  priority: string
+  owner: string
+  action: string
+  methodology: string
+}
+
+type MethodologyDailyAnalysis = {
+  id: number
+  account_id: string
+  account_name: string | null
+  analysis_date: string
+  overall_status: string | null
+  summary: string | null
+  methodology_bullets: unknown
+  recommended_actions: unknown
+  input_snapshot: unknown
+  model: string | null
+  analyzed_at: string | null
+}
+
 type WaTask = {
   monday_item_id: string | null
   action: string
@@ -597,6 +626,31 @@ function actionDetail(item: unknown) {
   }
 }
 
+function methodologyBullets(value: unknown): MethodologyBullet[] {
+  return asArray(value)
+    .filter(isRecord)
+    .map((item) => ({
+      methodology: fieldText(item.methodology, 'Metodologia'),
+      dimension: fieldText(item.dimension, 'Diagnostico'),
+      status: fieldText(item.status, 'neutral'),
+      bullet: fieldText(item.bullet, ''),
+      why: fieldText(item.why, ''),
+    }))
+    .filter((item) => item.bullet || item.why)
+}
+
+function methodologyActions(value: unknown): RecommendedMethodologyAction[] {
+  return asArray(value)
+    .filter(isRecord)
+    .map((item) => ({
+      priority: fieldText(item.priority, 'media'),
+      owner: fieldText(item.owner, 'Blackwell'),
+      action: fieldText(item.action, ''),
+      methodology: fieldText(item.methodology, 'Metodologia'),
+    }))
+    .filter((item) => item.action)
+}
+
 
 export default function App() {
   const [analyses, setAnalyses] = useState<DailyAnalysis[]>([])
@@ -608,6 +662,7 @@ export default function App() {
   const [publications, setPublications] = useState<AccountPublication[]>([])
   const [publicationQualityScores, setPublicationQualityScores] = useState<PublicationQualityScore[]>([])
   const [publicationQualityAnalyses, setPublicationQualityAnalyses] = useState<PublicationQualityAnalysis[]>([])
+  const [methodologyAnalyses, setMethodologyAnalyses] = useState<MethodologyDailyAnalysis[]>([])
   const [tasks, setTasks] = useState<WaTask[]>([])
   const [selectedAccountId, setSelectedAccountId] = useState<string | null>(null)
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
@@ -692,7 +747,7 @@ export default function App() {
       setError(null)
 
       try {
-        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, mediaRows, pqRows, pqAnalysisRows] = await Promise.all([
+        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, mediaRows, pqRows, pqAnalysisRows, methodologyRows] = await Promise.all([
           supabaseGet<DailyAnalysis[]>('/rest/v1/wa_daily_analysis?select=*&order=analyzed_at.desc&limit=200'),
           supabaseGet<AccountScore[]>('/rest/v1/wa_account_scores?select=*&order=current_score.desc'),
           supabaseGet<WaGroup[]>('/rest/v1/wa_groups?select=jid,name,account_id,active&order=name.asc'),
@@ -709,6 +764,10 @@ export default function App() {
             '/rest/v1/publication_quality_analyses?select=*&order=analyzed_at.desc&limit=1000',
             [],
           ),
+          supabaseGetOptional<MethodologyDailyAnalysis[]>(
+            '/rest/v1/account_methodology_daily_analysis?select=*&order=analysis_date.desc,analyzed_at.desc&limit=100',
+            [],
+          ),
         ])
         const taskRows = await fetch('/api/monday-tasks')
           .then(r => r.ok ? r.json() : [])
@@ -722,6 +781,7 @@ export default function App() {
         setPublications(mediaRows.publications)
         setPublicationQualityScores(pqRows)
         setPublicationQualityAnalyses(pqAnalysisRows)
+        setMethodologyAnalyses(methodologyRows)
         setTasks(taskRows)
         setDbTasks(taskDbRows)
       } catch (err) {
@@ -1071,6 +1131,40 @@ export default function App() {
       return pubKeys.some((pubKey) => keys.has(pubKey))
     })
   }, [publications, selectedAccount])
+
+  const selectedMethodologyAnalysis = useMemo(() => {
+    if (!selectedAccount) return null
+    const keys = explicitLinkedKeys([
+      selectedAccount.account_id,
+      selectedAccount.name,
+      selectedAccount.score?.account_id,
+      selectedAccount.score?.account_name,
+      ...selectedAccount.groups.map(group => group.name),
+    ])
+
+    const matches = methodologyAnalyses
+      .filter((analysis) => {
+        const analysisKeys = explicitLinkedKeys([analysis.account_id, analysis.account_name])
+        return Array.from(analysisKeys).some((key) => keys.has(key))
+      })
+      .sort((a, b) => {
+        const dateOrder = b.analysis_date.localeCompare(a.analysis_date)
+        if (dateOrder !== 0) return dateOrder
+        return (b.analyzed_at || '').localeCompare(a.analyzed_at || '')
+      })
+
+    return matches[0] ?? null
+  }, [methodologyAnalyses, selectedAccount])
+
+  const selectedMethodologyBullets = useMemo(
+    () => methodologyBullets(selectedMethodologyAnalysis?.methodology_bullets),
+    [selectedMethodologyAnalysis],
+  )
+
+  const selectedMethodologyActions = useMemo(
+    () => methodologyActions(selectedMethodologyAnalysis?.recommended_actions),
+    [selectedMethodologyAnalysis],
+  )
 
   const selectedHistory = useMemo(() => {
     if (!selectedGroup) return []
@@ -1738,11 +1832,63 @@ export default function App() {
             <div className="lb-section-head" style={{ marginTop: 0 }}>
               <div>
                 <div className="lb-section-title">Metodologias cosas por hacer</div>
-                <div className="lb-section-sub">Pendiente de configuracion.</div>
+                <div className="lb-section-sub">
+                  {selectedMethodologyAnalysis
+                    ? `${shortDateOnly(selectedMethodologyAnalysis.analysis_date)} · ${selectedMethodologyAnalysis.model || 'modelo configurado'}`
+                    : 'Pendiente de analisis diario.'}
+                </div>
               </div>
-              <span className="lb-section-count">0</span>
+              <span className="lb-section-count">{selectedMethodologyBullets.length}</span>
             </div>
-            <p className="lb-subtext" style={{ margin: 0 }}>Aqui vamos a colocar las metodologias y pendientes cuando definamos como llenarlo.</p>
+            {selectedMethodologyAnalysis ? (
+              <>
+                <div className="lb-methodology-status-row">
+                  <span className={`lb-pill ${
+                    badgeClass(selectedMethodologyAnalysis.overall_status || 'neutral') === 'green'
+                      ? 'lb-pill-green'
+                      : badgeClass(selectedMethodologyAnalysis.overall_status || 'neutral') === 'red'
+                        ? 'lb-pill-red'
+                        : 'lb-pill-amber'
+                  }`}>
+                    {selectedMethodologyAnalysis.overall_status || 'neutral'}
+                  </span>
+                  <p className="lb-subtext">{selectedMethodologyAnalysis.summary || 'Sin resumen metodologico.'}</p>
+                </div>
+                <div className="lb-methodology-list">
+                  {selectedMethodologyBullets.map((item, index) => (
+                    <div className="lb-methodology-item" key={`${item.methodology}-${item.dimension}-${index}`}>
+                      <div className="lb-methodology-item-head">
+                        <span className="lb-methodology-chip">{item.methodology}</span>
+                        <span className={`lb-methodology-state ${badgeClass(item.status)}`}>{item.status}</span>
+                      </div>
+                      <div className="lb-methodology-dimension">{item.dimension}</div>
+                      <p className="lb-methodology-bullet">{item.bullet}</p>
+                      {item.why && <p className="lb-methodology-why">Por que: {item.why}</p>}
+                    </div>
+                  ))}
+                </div>
+                <div className="lb-methodology-actions">
+                  <div className="lb-section-title">Acciones recomendadas</div>
+                  {selectedMethodologyActions.length ? (
+                    selectedMethodologyActions.map((item, index) => (
+                      <div className="lb-methodology-action" key={`${item.action}-${index}`}>
+                        <span className="lb-methodology-priority">{item.priority}</span>
+                        <div>
+                          <strong>{item.action}</strong>
+                          <div>{item.owner} · {item.methodology}</div>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="lb-subtext" style={{ margin: 0 }}>Sin acciones nuevas recomendadas.</p>
+                  )}
+                </div>
+              </>
+            ) : (
+              <p className="lb-subtext" style={{ margin: 0 }}>
+                Aqui aparecera el analisis diario por metodologia: Blackwell R3, Chris Lehane y Agente IA Crisis.
+              </p>
+            )}
           </div>
         </div>
       )}

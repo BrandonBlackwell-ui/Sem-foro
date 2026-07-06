@@ -2771,6 +2771,139 @@ body[data-grid="on"] {
   background: linear-gradient(135deg, rgba(255,255,255,0.88), rgba(246,248,252,0.8));
 }
 
+.lb-methodology-status-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 16px 0 18px;
+}
+
+.lb-methodology-status-row .lb-subtext {
+  margin: 0;
+  max-width: 920px;
+}
+
+.lb-methodology-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.lb-methodology-item {
+  min-height: 190px;
+  padding: 18px;
+  border-radius: 20px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.96), rgba(245,248,252,0.82));
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  box-shadow: 0 16px 32px rgba(29, 29, 31, 0.07);
+}
+
+.lb-methodology-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.lb-methodology-chip,
+.lb-methodology-state,
+.lb-methodology-priority {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+.lb-methodology-chip {
+  color: #1d1d1f;
+  background: rgba(0, 122, 255, 0.1);
+  border: 1px solid rgba(0, 122, 255, 0.18);
+}
+
+.lb-methodology-state {
+  color: #6b7280;
+  background: rgba(107, 114, 128, 0.1);
+}
+
+.lb-methodology-state.green {
+  color: #2f7d51;
+  background: rgba(52, 199, 89, 0.14);
+}
+
+.lb-methodology-state.yellow {
+  color: #a66d00;
+  background: rgba(255, 204, 0, 0.18);
+}
+
+.lb-methodology-state.red {
+  color: #b42318;
+  background: rgba(255, 59, 48, 0.12);
+}
+
+.lb-methodology-dimension {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.lb-methodology-bullet,
+.lb-methodology-why {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
+  margin: 0;
+}
+
+.lb-methodology-why {
+  margin-top: 10px;
+  color: #6b7280;
+}
+
+.lb-methodology-actions {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(29, 29, 31, 0.16);
+}
+
+.lb-methodology-action {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(29, 29, 31, 0.07);
+}
+
+.lb-methodology-action strong {
+  display: block;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.lb-methodology-action div {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.lb-methodology-priority {
+  flex: none;
+  color: #0b57d0;
+  background: rgba(0, 122, 255, 0.1);
+}
+
 .lb-section-count {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 800;
@@ -2960,5 +3093,7 @@ body[data-grid="on"] {
   .lb-h1 { font-size: 56px; }
   .lb-whatsapp-grid { grid-template-columns: 1fr; }
   .lb-resumen-grid { grid-template-columns: 1fr; }
+  .lb-methodology-list { grid-template-columns: 1fr; }
+  .lb-methodology-status-row { flex-direction: column; }
   .lb-score-postit { width: 100%; }
 }

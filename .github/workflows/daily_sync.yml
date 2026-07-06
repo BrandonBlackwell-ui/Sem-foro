@@ -74,6 +74,15 @@ jobs:
       - name: Mirror Monday task state to Supabase
         run: python scripts/sync/wa_monday_to_supabase.py
 
+      - name: Analyze account methodologies
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 13 * * *'
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python scripts/sync/account_methodology_analyzer.py --date "${{ github.event.inputs.date }}" --accounts maja,tello
+          else
+            python scripts/sync/account_methodology_analyzer.py --date "$(TZ=America/Mexico_City date +%F)" --accounts maja,tello
+          fi
+
       - name: Clean environment
         if: always()
         run: rm -f .env
