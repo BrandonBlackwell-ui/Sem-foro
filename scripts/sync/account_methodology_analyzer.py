@@ -183,6 +183,13 @@ def _build_snapshot(sb: Any, account: dict[str, Any], target_date: date) -> dict
         if any(_contains_account(row, name) for name in account["names"])
     ][:8]
 
+    milestones = _fetch_optional(sb, "account_milestones", "account_id,account_name,event_date,event_type,title,description,impact_level")
+    account_milestones = [
+        row for row in milestones
+        if str(row.get("account_id")) in ids or _key(row.get("account_name")) in names
+    ]
+    account_milestones = sorted(account_milestones, key=lambda r: str(r.get("event_date") or ""), reverse=True)[:15]
+
     return {
         "account": account,
         "analysis_date": target_date.isoformat(),
@@ -195,6 +202,7 @@ def _build_snapshot(sb: Any, account: dict[str, Any], target_date: date) -> dict
         "publication_quality_scores": account_publication_scores,
         "publication_quality_details": account_publication_details,
         "meet_notes": account_meetings,
+        "key_milestones": account_milestones,
     }
 
 
@@ -238,7 +246,7 @@ Reglas:
 - Blackwell R3 siempre debe aparecer.
 - Agente IA Crisis siempre debe aparecer con nivel 0-4, aunque sea Nivel 0.
 - Chris Lehane solo debe activarse si hay adversario, narrativa negativa, conflicto o crisis; si no aplica, incluye un bullet status no_aplica explicando por que.
-- Cita el por que desde evidencia: WhatsApp, tareas, publicaciones, Meet o score.
+- Cita el por que desde evidencia: WhatsApp, tareas, publicaciones, Meet, hitos historicos (key_milestones) o score.
 - Maximo 9 bullets y maximo 5 acciones.
 """
     text = _openrouter_chat_completion(model, system, prompt, 2500)
@@ -273,6 +281,7 @@ def _compact_snapshot(snapshot: dict[str, Any]) -> dict[str, Any]:
         "publication_quality_scores": snapshot.get("publication_quality_scores"),
         "publication_count": len(snapshot.get("publication_quality_details") or []),
         "meet_count": len(snapshot.get("meet_notes") or []),
+        "milestone_count": len(snapshot.get("key_milestones") or []),
     }
 
 

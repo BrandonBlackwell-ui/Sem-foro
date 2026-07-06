@@ -127,6 +127,18 @@ type PublicationQualityAnalysis = {
   analyzed_at: string | null
 }
 
+type AccountMilestone = {
+  id: number
+  account_id: string
+  account_name: string | null
+  event_date: string
+  event_type: string // 'crisis' | 'oportunidad' | 'hito' | 'cambio_estrategico'
+  title: string
+  description: string | null
+  impact_level: string // 'low' | 'medium' | 'high'
+  created_at: string
+}
+
 type MethodologyBullet = {
   methodology: string
   dimension: string
@@ -720,6 +732,16 @@ export default function App() {
   const [publicationQualityAnalyses, setPublicationQualityAnalyses] = useState<PublicationQualityAnalysis[]>([])
   const [methodologyAnalyses, setMethodologyAnalyses] = useState<MethodologyDailyAnalysis[]>([])
   const [tasks, setTasks] = useState<WaTask[]>([])
+  const [milestones, setMilestones] = useState<AccountMilestone[]>([])
+
+  // States for milestones form
+  const [showAddMilestone, setShowAddMilestone] = useState(false)
+  const [newMilestoneTitle, setNewMilestoneTitle] = useState('')
+  const [newMilestoneDescription, setNewMilestoneDescription] = useState('')
+  const [newMilestoneDate, setNewMilestoneDate] = useState(new Date().toISOString().split('T')[0])
+  const [newMilestoneType, setNewMilestoneType] = useState('hito')
+  const [newMilestoneImpact, setNewMilestoneImpact] = useState('medium')
+
   const [selectedAccountId, setSelectedAccountId] = useState<string | null>(null)
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate] = useState<string>('latest')
@@ -804,7 +826,7 @@ export default function App() {
       setError(null)
 
       try {
-        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, mediaRows, pqRows, pqAnalysisRows, methodologyRows] = await Promise.all([
+        const [analysisRows, scoreRows, groupRows, rawRows, taskDbRows, mediaRows, pqRows, pqAnalysisRows, methodologyRows, milestoneRows] = await Promise.all([
           supabaseGet<DailyAnalysis[]>('/rest/v1/wa_daily_analysis?select=*&order=analyzed_at.desc&limit=200'),
           supabaseGet<AccountScore[]>('/rest/v1/wa_account_scores?select=*&order=current_score.desc'),
           supabaseGet<WaGroup[]>('/rest/v1/wa_groups?select=jid,name,account_id,active&order=name.asc'),
@@ -825,6 +847,10 @@ export default function App() {
             '/rest/v1/account_methodology_daily_analysis?select=*&order=analysis_date.desc,analyzed_at.desc&limit=100',
             [],
           ),
+          supabaseGetOptional<AccountMilestone[]>(
+            '/rest/v1/account_milestones?select=*&order=event_date.desc',
+            [],
+          ),
         ])
         const taskRows = await fetch('/api/monday-tasks')
           .then(r => r.ok ? r.json() : [])
@@ -841,6 +867,7 @@ export default function App() {
         setMethodologyAnalyses(methodologyRows)
         setTasks(taskRows)
         setDbTasks(taskDbRows)
+        setMilestones(milestoneRows)
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Error desconocido')
       } finally {
@@ -1046,6 +1073,82 @@ export default function App() {
   }, [groupSummaries, operationalLookup, publicationQualityLookup])
 
   const selectedAccount = selectedAccountId ? accountSummaries.find(a => a.account_id === selectedAccountId) ?? null : null
+
+  async function handleAddMilestone(e: React.FormEvent) {
+    e.preventDefault()
+    if (!selectedAccount || !newMilestoneTitle.trim()) return
+
+    const newMil = {
+      account_id: selectedAccount.account_id,
+      account_name: selectedAccount.name,
+      event_date: newMilestoneDate,
+      event_type: newMilestoneType,
+      title: newMilestoneTitle.trim(),
+      description: newMilestoneDescription.trim() || null,
+      impact_level: newMilestoneImpact,
+    }
+
+    try {
+      setLoading(true)
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/account_milestones`, {
+        method: 'POST',
+        headers: {
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+          Prefer: 'return=representation',
+        },
+        body: JSON.stringify(newMil),
+      })
+      if (!res.ok) {
+        throw new Error(await res.text())
+      }
+      const inserted: AccountMilestone[] = await res.json()
+      setMilestones(prev => [inserted[0], ...prev])
+      setShowAddMilestone(false)
+      setNewMilestoneTitle('')
+      setNewMilestoneDescription('')
+      setNewMilestoneImpact('medium')
+      setNewMilestoneType('hito')
+    } catch (err) {
+      alert(`Error al guardar el hito: ${err instanceof Error ? err.message : String(err)}`)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  async function handleDeleteMilestone(id: number) {
+    if (!window.confirm('¿Estás seguro de que quieres eliminar este hito histórico?')) return
+    try {
+      setLoading(true)
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/account_milestones?id=eq.${id}`, {
+        method: 'DELETE',
+        headers: {
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+      })
+      if (!res.ok) {
+        throw new Error(await res.text())
+      }
+      setMilestones(prev => prev.filter(m => m.id !== id))
+    } catch (err) {
+      alert(`Error al eliminar: ${err instanceof Error ? err.message : String(err)}`)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const selectedAccountMilestones = useMemo(() => {
+    if (!selectedAccount) return []
+    const ids = [selectedAccount.account_id]
+    const names = [selectedAccount.name.toLowerCase(), selectedAccount.account_id.toLowerCase()]
+    return milestones.filter(m => {
+      const matchId = ids.includes(m.account_id) || ids.map(Number).includes(Number(m.account_id))
+      const matchName = m.account_name ? names.some(n => m.account_name!.toLowerCase().includes(n) || n.includes(m.account_name!.toLowerCase())) : false
+      return matchId || matchName
+    }).sort((a, b) => b.event_date.localeCompare(a.event_date))
+  }, [milestones, selectedAccount])
 
   // Load ALL per-account checklist.json once (SC evidence, contract, scores by period)
   const [allChecklists, setAllChecklists] = useState<{ folder: string; data: any }[]>([])
@@ -1929,6 +2032,7 @@ export default function App() {
                       : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
                   </p>
                   <ContractTimeline contract={accountChecklistData?.contract} history={accountChecklistData?.contracts_history} />
+                  <MilestonesTimeline milestones={selectedAccountMilestones} onAddClick={() => setShowAddMilestone(true)} onDeleteClick={handleDeleteMilestone} />
                   <ScoreBreakdown components={weightedScore.components} />
                 </div>
               </div>
@@ -2534,6 +2638,118 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      {showAddMilestone && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0,0,0,0.5)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000,
+            padding: 20,
+          }}
+        >
+          <div
+            style={{
+              background: '#fff',
+              borderRadius: 12,
+              width: '100%',
+              maxWidth: 480,
+              padding: 24,
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            }}
+          >
+            <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600, color: '#1a202c' }}>Registrar Hito de la Cuenta</h3>
+            <form onSubmit={handleAddMilestone}>
+              <div style={{ marginBottom: 14 }}>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Título del evento *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="ej. Crisis FerrizTV: reporte de nota negativa"
+                  value={newMilestoneTitle}
+                  onChange={(e) => setNewMilestoneTitle(e.target.value)}
+                  style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px' }}
+                />
+              </div>
+
+              <div style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
+                <div style={{ flex: 1 }}>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Tipo de hito</label>
+                  <select
+                    value={newMilestoneType}
+                    onChange={(e) => setNewMilestoneType(e.target.value)}
+                    style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px', background: '#fff' }}
+                  >
+                    <option value="hito">Hito General</option>
+                    <option value="crisis">Crisis</option>
+                    <option value="oportunidad">Oportunidad</option>
+                    <option value="cambio_estrategico">Cambio Estratégico</option>
+                  </select>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Impacto</label>
+                  <select
+                    value={newMilestoneImpact}
+                    onChange={(e) => setNewMilestoneImpact(e.target.value)}
+                    style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px', background: '#fff' }}
+                  >
+                    <option value="low">Bajo</option>
+                    <option value="medium">Medio</option>
+                    <option value="high">Alto</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
+                <div style={{ flex: 1 }}>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Fecha *</label>
+                  <input
+                    type="date"
+                    required
+                    value={newMilestoneDate}
+                    onChange={(e) => setNewMilestoneDate(e.target.value)}
+                    style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px' }}
+                  />
+                </div>
+              </div>
+
+              <div style={{ marginBottom: 18 }}>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Descripción / Detalles</label>
+                <textarea
+                  rows={3}
+                  placeholder="Detalles sobre lo ocurrido, adversarios involucrados, acciones inmediatas, etc."
+                  value={newMilestoneDescription}
+                  onChange={(e) => setNewMilestoneDescription(e.target.value)}
+                  style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px', resize: 'vertical' }}
+                />
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10 }}>
+                <button
+                  type="button"
+                  onClick={() => setShowAddMilestone(false)}
+                  style={{ padding: '8px 16px', background: '#e2e8f0', border: 'none', borderRadius: 6, fontSize: '13px', cursor: 'pointer', fontWeight: 500 }}
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  style={{ padding: '8px 16px', background: 'var(--bws-active, #d44d5c)', color: '#fff', border: 'none', borderRadius: 6, fontSize: '13px', cursor: 'pointer', fontWeight: 500 }}
+                >
+                  Guardar Hito
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -2844,6 +3060,158 @@ function ContractHistoryList({ entries }: { entries: ContractHistoryEntry[] }) {
       })}
     </div>
   )
+}
+
+function MilestonesTimeline({
+  milestones,
+  onAddClick,
+  onDeleteClick,
+}: {
+  milestones: AccountMilestone[]
+  onAddClick: () => void
+  onDeleteClick: (id: number) => void
+}) {
+  return (
+    <div style={{ marginTop: 24, marginBottom: 24 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+        <div className="lb-section-title" style={{ margin: 0 }}>Historial de Hitos y Crisis</div>
+        <button
+          onClick={onAddClick}
+          className="lb-btn-sm"
+          style={{
+            background: 'var(--bws-active, #d44d5c)',
+            color: '#fff',
+            border: 'none',
+            borderRadius: 4,
+            padding: '4px 10px',
+            fontSize: '11px',
+            cursor: 'pointer',
+            fontWeight: 500,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 4
+          }}
+        >
+          <span>+ Registrar hito</span>
+        </button>
+      </div>
+
+      {milestones.length === 0 ? (
+        <p className="lb-subtext" style={{ margin: 0, fontStyle: 'italic' }}>
+          Sin hitos registrados para esta cuenta.
+        </p>
+      ) : (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, borderLeft: '2px solid #e2e8f0', paddingLeft: 16, marginLeft: 8 }}>
+          {milestones.map((m) => {
+            const isCrisis = m.event_type === 'crisis';
+            const isOportunidad = m.event_type === 'oportunidad';
+            const isCambio = m.event_type === 'cambio_estrategico';
+            
+            let color = '#718096'; // grey for normal hito
+            let bg = '#edf2f7';
+            if (isCrisis) {
+              color = '#e53e3e'; // red
+              bg = '#fff5f5';
+            } else if (isOportunidad) {
+              color = '#319795'; // teal
+              bg = '#e6fffa';
+            } else if (isCambio) {
+              color = '#805ad5'; // purple
+              bg = '#faf5ff';
+            }
+
+            return (
+              <div
+                key={m.id}
+                style={{
+                  position: 'relative',
+                  background: bg,
+                  borderRadius: 6,
+                  padding: '10px 14px',
+                  border: `1px solid ${color}30`
+                }}
+              >
+                {/* Dot indicator on timeline */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: -22,
+                    top: 14,
+                    width: 10,
+                    height: 10,
+                    borderRadius: '50%',
+                    background: color,
+                    border: '2px solid #fff'
+                  }}
+                />
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 10 }}>
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
+                      <strong style={{ fontSize: '13px', color: '#1a202c' }}>{m.title}</strong>
+                      <span
+                        style={{
+                          fontSize: '9px',
+                          textTransform: 'uppercase',
+                          fontWeight: 'bold',
+                          padding: '1px 5px',
+                          borderRadius: 3,
+                          background: color,
+                          color: '#fff'
+                        }}
+                      >
+                        {m.event_type.replace('_', ' ')}
+                      </span>
+                      {m.impact_level === 'high' && (
+                        <span
+                          style={{
+                            fontSize: '9px',
+                            fontWeight: 'bold',
+                            padding: '1px 5px',
+                            borderRadius: 3,
+                            background: '#e53e3e',
+                            color: '#fff'
+                          }}
+                        >
+                          Impacto Alto
+                        </span>
+                      )}
+                    </div>
+                    <span style={{ fontSize: '11px', color: '#718096', display: 'block', marginTop: 2 }}>
+                      Fecha del hito: {new Date(m.event_date + 'T00:00:00').toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    </span>
+                    {m.description && (
+                      <p style={{ margin: '6px 0 0 0', fontSize: '12px', color: '#4a5568', lineHeight: 1.4 }}>
+                        {m.description}
+                      </p>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => onDeleteClick(m.id)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: '#a0aec0',
+                      cursor: 'pointer',
+                      fontSize: '14px',
+                      padding: 2,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontWeight: 'bold'
+                    }}
+                    title="Eliminar hito"
+                  >
+                    &times;
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
 }
 
 function ScoreBreakdown({ components }: { components: ReturnType<typeof buildWeightedScore>['components'] }) {
