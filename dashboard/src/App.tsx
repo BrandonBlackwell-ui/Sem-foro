@@ -1330,22 +1330,22 @@ export default function App() {
       const operationalForMonth = findBestOperational(year, month)
       const publicationQualityForMonth = findBestPublicationQuality(year, month)
       const waScore = analysis.new_score != null ? clampScore(Number(analysis.new_score)) : null
-      const score = buildWeightedScore(
+      const globalPartial = buildWeightedScore(
         analysis.new_score,
         operationalForMonth,
         publicationQualityForMonth,
         accountChecklistData,
         analysis.raw_analysis
       ).globalPartial
-      const delta = waScore == null || previousScore == null ? 0 : roundScore(waScore - previousScore)
-      if (waScore != null) previousScore = waScore
+      const delta = globalPartial == null || previousScore == null ? 0 : roundScore(globalPartial - previousScore)
+      if (globalPartial != null) previousScore = globalPartial
       return {
         id: analysis.id,
         analysis_date: analysis.analysis_date,
-        score: waScore,          // chart plots daily WA score (real daily variation)
-        global_score: score,     // full weighted score for detail cards
+        score: globalPartial,        // chart uses the same weighted global as Diagnóstico
+        global_score: globalPartial,
         delta,
-        wa_score: analysis.new_score,
+        wa_score: waScore,
         summary: analysis.summary,
       }
     })
@@ -1637,7 +1637,7 @@ export default function App() {
     const analyzedCount = accountSummaries.filter(a => a.analyzedToday).length
     const pendingAnalysis = accountSummaries.filter(a => !a.analyzedToday && a.hasMessagesToday)
     const trulyQuiet = accountSummaries.filter(a => !a.analyzedToday && !a.hasMessagesToday)
-    // Promedio de scores globales ponderados (solo cuentas completas)
+    // Promedio de scores globales — misma lógica que los círculos de la lista
     const globalScores = accountSummariesAll
       .map(a => {
         const checklist = findChecklist(a.account_id, a.name)
@@ -1650,7 +1650,9 @@ export default function App() {
           checklist,
           a.latestAnalysis?.raw_analysis
         )
-        return weighted.globalPartial  // include any account that has a partial global
+        // Same filter as the account list circles: all core components must be present
+        const core = weighted.components.filter(c => ['co', 'pq', 'sc', 'meet'].includes(c.key))
+        return core.every(c => c.value != null) ? weighted.globalPartial : null
       })
       .filter((s): s is number => s != null)
     const averageScore = globalScores.length
