@@ -734,13 +734,7 @@ export default function App() {
   const [tasks, setTasks] = useState<WaTask[]>([])
   const [milestones, setMilestones] = useState<AccountMilestone[]>([])
 
-  // States for milestones form
-  const [showAddMilestone, setShowAddMilestone] = useState(false)
-  const [newMilestoneTitle, setNewMilestoneTitle] = useState('')
-  const [newMilestoneDescription, setNewMilestoneDescription] = useState('')
-  const [newMilestoneDate, setNewMilestoneDate] = useState(new Date().toISOString().split('T')[0])
-  const [newMilestoneType, setNewMilestoneType] = useState('hito')
-  const [newMilestoneImpact, setNewMilestoneImpact] = useState('medium')
+
 
   const [selectedAccountId, setSelectedAccountId] = useState<string | null>(null)
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
@@ -1074,48 +1068,7 @@ export default function App() {
 
   const selectedAccount = selectedAccountId ? accountSummaries.find(a => a.account_id === selectedAccountId) ?? null : null
 
-  async function handleAddMilestone(e: React.FormEvent) {
-    e.preventDefault()
-    if (!selectedAccount || !newMilestoneTitle.trim()) return
 
-    const newMil = {
-      account_id: selectedAccount.account_id,
-      account_name: selectedAccount.name,
-      event_date: newMilestoneDate,
-      event_type: newMilestoneType,
-      title: newMilestoneTitle.trim(),
-      description: newMilestoneDescription.trim() || null,
-      impact_level: newMilestoneImpact,
-    }
-
-    try {
-      setLoading(true)
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/account_milestones`, {
-        method: 'POST',
-        headers: {
-          apikey: SUPABASE_ANON_KEY,
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-          'Content-Type': 'application/json',
-          Prefer: 'return=representation',
-        },
-        body: JSON.stringify(newMil),
-      })
-      if (!res.ok) {
-        throw new Error(await res.text())
-      }
-      const inserted: AccountMilestone[] = await res.json()
-      setMilestones(prev => [inserted[0], ...prev])
-      setShowAddMilestone(false)
-      setNewMilestoneTitle('')
-      setNewMilestoneDescription('')
-      setNewMilestoneImpact('medium')
-      setNewMilestoneType('hito')
-    } catch (err) {
-      alert(`Error al guardar el hito: ${err instanceof Error ? err.message : String(err)}`)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   async function handleDeleteMilestone(id: number) {
     if (!window.confirm('¿Estás seguro de que quieres eliminar este hito histórico?')) return
@@ -2032,7 +1985,6 @@ export default function App() {
                       : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
                   </p>
                   <ContractTimeline contract={accountChecklistData?.contract} history={accountChecklistData?.contracts_history} />
-                  <MilestonesTimeline milestones={selectedAccountMilestones} onAddClick={() => setShowAddMilestone(true)} onDeleteClick={handleDeleteMilestone} />
                   <ScoreBreakdown components={weightedScore.components} />
                 </div>
               </div>
@@ -2239,6 +2191,11 @@ export default function App() {
           <div className="lb-chart-wrap">
             <ScoreGraph items={selectedHistoricalScores} startDate={cutoff} selectedId={selectedHistoryId} onSelect={setSelectedHistoryId} />
           </div>
+
+          <div style={{ padding: '0 8px' }}>
+            <MilestonesTimeline milestones={selectedAccountMilestones} onDeleteClick={handleDeleteMilestone} />
+          </div>
+
           <div style={{display:'flex', flexDirection:'column', gap:10, marginTop:18}}>
             {filteredHistory.length
               ? filteredHistory.map((item) => (
@@ -2639,117 +2596,7 @@ export default function App() {
         </div>
       </div>
 
-      {showAddMilestone && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0,0,0,0.5)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000,
-            padding: 20,
-          }}
-        >
-          <div
-            style={{
-              background: '#fff',
-              borderRadius: 12,
-              width: '100%',
-              maxWidth: 480,
-              padding: 24,
-              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-            }}
-          >
-            <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600, color: '#1a202c' }}>Registrar Hito de la Cuenta</h3>
-            <form onSubmit={handleAddMilestone}>
-              <div style={{ marginBottom: 14 }}>
-                <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Título del evento *</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="ej. Crisis FerrizTV: reporte de nota negativa"
-                  value={newMilestoneTitle}
-                  onChange={(e) => setNewMilestoneTitle(e.target.value)}
-                  style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px' }}
-                />
-              </div>
 
-              <div style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
-                <div style={{ flex: 1 }}>
-                  <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Tipo de hito</label>
-                  <select
-                    value={newMilestoneType}
-                    onChange={(e) => setNewMilestoneType(e.target.value)}
-                    style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px', background: '#fff' }}
-                  >
-                    <option value="hito">Hito General</option>
-                    <option value="crisis">Crisis</option>
-                    <option value="oportunidad">Oportunidad</option>
-                    <option value="cambio_estrategico">Cambio Estratégico</option>
-                  </select>
-                </div>
-                <div style={{ flex: 1 }}>
-                  <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Impacto</label>
-                  <select
-                    value={newMilestoneImpact}
-                    onChange={(e) => setNewMilestoneImpact(e.target.value)}
-                    style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px', background: '#fff' }}
-                  >
-                    <option value="low">Bajo</option>
-                    <option value="medium">Medio</option>
-                    <option value="high">Alto</option>
-                  </select>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
-                <div style={{ flex: 1 }}>
-                  <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Fecha *</label>
-                  <input
-                    type="date"
-                    required
-                    value={newMilestoneDate}
-                    onChange={(e) => setNewMilestoneDate(e.target.value)}
-                    style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px' }}
-                  />
-                </div>
-              </div>
-
-              <div style={{ marginBottom: 18 }}>
-                <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#4a5568', marginBottom: 4 }}>Descripción / Detalles</label>
-                <textarea
-                  rows={3}
-                  placeholder="Detalles sobre lo ocurrido, adversarios involucrados, acciones inmediatas, etc."
-                  value={newMilestoneDescription}
-                  onChange={(e) => setNewMilestoneDescription(e.target.value)}
-                  style={{ width: '100%', padding: '8px 12px', border: '1px solid #cbd5e0', borderRadius: 6, fontSize: '13px', resize: 'vertical' }}
-                />
-              </div>
-
-              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10 }}>
-                <button
-                  type="button"
-                  onClick={() => setShowAddMilestone(false)}
-                  style={{ padding: '8px 16px', background: '#e2e8f0', border: 'none', borderRadius: 6, fontSize: '13px', cursor: 'pointer', fontWeight: 500 }}
-                >
-                  Cancelar
-                </button>
-                <button
-                  type="submit"
-                  style={{ padding: '8px 16px', background: 'var(--bws-active, #d44d5c)', color: '#fff', border: 'none', borderRadius: 6, fontSize: '13px', cursor: 'pointer', fontWeight: 500 }}
-                >
-                  Guardar Hito
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
@@ -3064,36 +2911,15 @@ function ContractHistoryList({ entries }: { entries: ContractHistoryEntry[] }) {
 
 function MilestonesTimeline({
   milestones,
-  onAddClick,
   onDeleteClick,
 }: {
   milestones: AccountMilestone[]
-  onAddClick: () => void
   onDeleteClick: (id: number) => void
 }) {
   return (
     <div style={{ marginTop: 24, marginBottom: 24 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
         <div className="lb-section-title" style={{ margin: 0 }}>Historial de Hitos y Crisis</div>
-        <button
-          onClick={onAddClick}
-          className="lb-btn-sm"
-          style={{
-            background: 'var(--bws-active, #d44d5c)',
-            color: '#fff',
-            border: 'none',
-            borderRadius: 4,
-            padding: '4px 10px',
-            fontSize: '11px',
-            cursor: 'pointer',
-            fontWeight: 500,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 4
-          }}
-        >
-          <span>+ Registrar hito</span>
-        </button>
       </div>
 
       {milestones.length === 0 ? (
