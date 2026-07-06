@@ -1,0 +1,7 @@
+{
+  "_comment": "Aliases por account_id para matching flexible de títulos de reuniones de Google Meet. Agrega tantas variantes como necesites — no distingue mayúsculas ni acentos.",
+  "tello": ["tello", "senador tello", "tello blackwell", "t+b", "t + b"],
+  "maja": ["maja", "ma ja", "maja a+", "maja blackwell", "maja bws", "maja ops"],
+  "nuvoil": ["nuvoil", "nuvOil", "nuv oil"],
+  "00_INTERNAL": ["interno blackwell", "interno", "blackwell interno", "teamback", "team back", "team blackwell"]
+}
