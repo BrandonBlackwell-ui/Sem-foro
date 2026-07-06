@@ -1296,23 +1296,39 @@ export default function App() {
       ...selectedAccount.groups.map((group) => group.name),
     ])
 
+    // Helper: find the most recent operational/PQ row at-or-before the given year/month
+    const findBestOperational = (year: number, month: number) => {
+      const candidates = operationalScores.filter((row) => {
+        const rowKeys = explicitLinkedKeys([row.account_id, row.account_name])
+        return Array.from(rowKeys).some((key) => accountKeys.has(key))
+      })
+      // prefer exact match, else most recent row that is <= the analysis month
+      const exact = candidates.find(r => r.period_year === year && r.period_month === month)
+      if (exact) return exact
+      const prior = candidates
+        .filter(r => r.period_year < year || (r.period_year === year && r.period_month <= month))
+        .sort((a, b) => b.period_year !== a.period_year ? b.period_year - a.period_year : b.period_month - a.period_month)
+      return prior[0] ?? null
+    }
+
+    const findBestPublicationQuality = (year: number, month: number) => {
+      const candidates = publicationQualityScores.filter((row) => {
+        const rowKeys = explicitLinkedKeys([row.account_id, row.account_name])
+        return Array.from(rowKeys).some((key) => accountKeys.has(key))
+      })
+      const exact = candidates.find(r => r.period_year === year && r.period_month === month)
+      if (exact) return exact
+      const prior = candidates
+        .filter(r => r.period_year < year || (r.period_year === year && r.period_month <= month))
+        .sort((a, b) => b.period_year !== a.period_year ? b.period_year - a.period_year : b.period_month - a.period_month)
+      return prior[0] ?? null
+    }
+
     let previousScore: number | null = null
     return selectedHistory.map((analysis) => {
       const [year, month] = analysis.analysis_date.split('-').map((part) => Number.parseInt(part, 10))
-      const operationalForMonth =
-        operationalScores.find((row) => {
-          const rowKeys = explicitLinkedKeys([row.account_id, row.account_name])
-          return row.period_year === year &&
-            row.period_month === month &&
-            Array.from(rowKeys).some((key) => accountKeys.has(key))
-        }) ?? null
-      const publicationQualityForMonth =
-        publicationQualityScores.find((row) => {
-          const rowKeys = explicitLinkedKeys([row.account_id, row.account_name])
-          return row.period_year === year &&
-            row.period_month === month &&
-            Array.from(rowKeys).some((key) => accountKeys.has(key))
-        }) ?? null
+      const operationalForMonth = findBestOperational(year, month)
+      const publicationQualityForMonth = findBestPublicationQuality(year, month)
       const score = buildWeightedScore(
         analysis.new_score,
         operationalForMonth,
