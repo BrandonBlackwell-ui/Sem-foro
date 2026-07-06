@@ -20,6 +20,7 @@ type DailyAnalysis = {
   evidence: unknown
   model: string | null
   analyzed_at: string
+  raw_analysis?: any
 }
 
 type AccountScore = {
@@ -410,7 +411,13 @@ function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
 
-function buildWeightedScore(waScore: number | null | undefined, operational?: OperationalScore | null, publicationQuality?: PublicationQualityScore | null, checklist?: any) {
+function buildWeightedScore(
+  waScore: number | null | undefined,
+  operational?: OperationalScore | null,
+  publicationQuality?: PublicationQualityScore | null,
+  checklist?: any,
+  rawAnalysis?: any
+) {
   const normalizedWa = waScore == null ? null : clampScore(Number(waScore))
 
   // Meet: último sesion_score guardado en checklist.json (análisis LLM de transcripción)
@@ -448,21 +455,50 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
   const coPeriod = periodLabel(operational)
   const pqPeriod = periodLabel(publicationQuality)
 
-  // SC sin survey: SC = WA×0.55 + Sesión×0.45 (pesos rebalanceados, sin tope)
+  // Extract survey from rawAnalysis
+  let rawAnalysisObj: any = null
+  if (rawAnalysis) {
+    try {
+      rawAnalysisObj = typeof rawAnalysis === 'string' ? JSON.parse(rawAnalysis) : rawAnalysis
+    } catch {
+      rawAnalysisObj = rawAnalysis
+    }
+  }
+  const survey = rawAnalysisObj?.survey || rawAnalysisObj?.raw_analysis?.survey
+  const tipoAScore = (survey?.question_a?.score != null) ? clampScore(Number(survey.question_a.score)) : null
+  const tipoBScore = (survey?.question_b?.score != null) ? clampScore(Number(survey.question_b.score)) : null
+  const hasSurvey = tipoAScore != null || tipoBScore != null
+
+  // SC Calculation
   let scScore: number | null = null
   let scCaption = 'Falta WhatsApp y Meets'
-  if (normalizedWa != null && sesionScore != null) {
-    scScore = normalizedWa * 0.55 + sesionScore * 0.45
-    scCaption = `WA ${roundScore(normalizedWa)} × 55% + Sesión ${roundScore(sesionScore)} × 45%`
-  } else if (normalizedWa != null) {
-    scScore = normalizedWa * 0.55
-    scCaption = `Parcial: WA ${roundScore(normalizedWa)}/100 · falta Meet`
-  } else if (sesionScore != null) {
-    scScore = sesionScore * 0.45
-    scCaption = `Parcial: Sesión ${roundScore(sesionScore)}/100`
+  const actualSesion = sesionScore ?? 40
+
+  if (hasSurvey) {
+    // Escenario A: Con survey
+    const waPart = (normalizedWa ?? 50) * 0.40
+    const sesionPart = actualSesion * 0.30
+    const tipoAPart = (tipoAScore ?? 0) * 0.20
+    const tipoBPart = (tipoBScore ?? 0) * 0.10
+    scScore = waPart + sesionPart + tipoAPart + tipoBPart
+    scCaption = `Survey: WA ${roundScore(normalizedWa ?? 50)}×40% + Sesión ${roundScore(actualSesion)}×30% + TipoA ${roundScore(tipoAScore ?? 0)}×20% + TipoB ${roundScore(tipoBScore ?? 0)}×10%`
+  } else {
+    // Escenario B: Sin survey (Tope 70)
+    if (normalizedWa != null && sesionScore != null) {
+      scScore = Math.min(70, normalizedWa * 0.55 + sesionScore * 0.45)
+      scCaption = `Sin Survey (Tope 70): WA ${roundScore(normalizedWa)}×55% + Sesión ${roundScore(sesionScore)}×45%`
+    } else if (normalizedWa != null) {
+      scScore = Math.min(70, normalizedWa * 0.55)
+      scCaption = `Sin Survey (Tope 70) Parcial: WA ${roundScore(normalizedWa)}/100 · falta Meet`
+    } else if (sesionScore != null) {
+      scScore = Math.min(70, sesionScore * 0.45)
+      scCaption = `Sin Survey (Tope 70) Parcial: Sesión ${roundScore(sesionScore)}/100`
+    }
   }
+
   const scIntoGlobal = scScore == null ? 0 : scScore * 0.45
   const pqIntoGlobal = pqScore == null ? 0 : pqScore * 0.25
+
   const coCaption = operational
     ? coScore == null
       ? `${operational.delivered_publications_count} publicaciones registradas · meta pendiente`
@@ -473,6 +509,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       ? `${publicationQuality.analyzed_count} notas analizadas · tiers pendientes`
       : `PQ ${pqPeriod ?? ''}: ${roundScore(pqScore)}/100 (${publicationQuality.scored_count} notas del mes)`
     : 'Calidad de publicaciones'
+
   const coDetails: string[] = []
   if (operational) {
     if (coPeriod) coDetails.push(`Periodo evaluado: ${coPeriod} (solo el mes más reciente, no acumulado anual).`)
@@ -496,19 +533,23 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
     } else {
       pqDetails.push('Faltan tiers de medios por asignar para completar el score.')
     }
-    pqDetails.push('El desglose por nota (tier, calidad editorial, evidencia leída) está en la pestaña Publicaciones.')
   } else {
     pqDetails.push('Sin análisis de calidad de publicaciones para este periodo.')
   }
 
   const scDetails: string[] = []
   if (scScore != null) {
-    if (normalizedWa != null) scDetails.push(`WhatsApp (WA): ${roundScore(normalizedWa)}/100 × 55% = ${roundScore(normalizedWa * 0.55)} pts`)
-    if (sesionScore != null) scDetails.push(`Sesión Meet: ${roundScore(sesionScore)}/100 × 45% = ${roundScore(sesionScore * 0.45)} pts`)
+    if (hasSurvey) {
+      if (normalizedWa != null) scDetails.push(`WhatsApp (WA) (40%): ${roundScore(normalizedWa)}/100 × 40% = ${roundScore(normalizedWa * 0.40)} pts`)
+      scDetails.push(`Sesión Meet/WhatsApp (30%): ${roundScore(actualSesion)}/100 × 30% = ${roundScore(actualSesion * 0.30)} pts`)
+      if (tipoAScore != null) scDetails.push(`Pregunta Tipo A (General) (20%): ${roundScore(tipoAScore)}/100 × 20% = ${roundScore(tipoAScore * 0.20)} pts`)
+      if (tipoBScore != null) scDetails.push(`Pregunta Tipo B (Objetivo) (10%): ${roundScore(tipoBScore)}/100 × 10% = ${roundScore(tipoBScore * 0.10)} pts`)
+    } else {
+      if (normalizedWa != null) scDetails.push(`WhatsApp (WA): ${roundScore(normalizedWa)}/100 × 55% = ${roundScore(normalizedWa * 0.55)} pts (Tope 70)`)
+      if (sesionScore != null) scDetails.push(`Sesión Meet: ${roundScore(sesionScore)}/100 × 45% = ${roundScore(sesionScore * 0.45)} pts (Tope 70)`)
+    }
     scDetails.push(`SC total: ${roundScore(scScore)}/100`)
     scDetails.push(`Aporte al global: ${roundScore(scScore)} × 45% = ${roundScore(scIntoGlobal)} pts`)
-    if (normalizedWa == null) scDetails.push('Falta el subscore de WhatsApp (55% del SC).')
-    if (sesionScore == null) scDetails.push('Falta el análisis de sesión Meet (45% del SC).')
   } else {
     scDetails.push('Sin WhatsApp ni Meet analizados: no hay base para calcular SC.')
   }
@@ -517,19 +558,15 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
   if (normalizedWa != null) {
     waDetails.push(`Score del análisis LLM diario de la conversación de WhatsApp: ${roundScore(normalizedWa)}/100.`)
     waDetails.push('Evalúa tono del cliente, señales de satisfacción o fricción, tiempos de respuesta y pendientes detectados.')
-    waDetails.push('El resumen, las señales positivas y las citas textuales del chat están en las pestañas WhatsApp e Histórico.')
-    waDetails.push(`Pesa 55% dentro del SC: ${roundScore(normalizedWa)} × 55% = ${roundScore(normalizedWa * 0.55)} pts del SC.`)
+    waDetails.push(`Pesa ${hasSurvey ? '40%' : '55%'} dentro del SC.`)
   } else {
     waDetails.push('Sin análisis de WhatsApp disponible todavía.')
   }
 
   const meetDetails: string[] = []
   if (sesionScore != null && meetEvidence) {
-    meetDetails.push(`Sesión analizada: ${meetPeriod} · score ${roundScore(sesionScore)}/100 (base 50 ± ajustes por asistencia, participación, comentarios y quejas).`)
-    if (meetEvidence.attended != null) meetDetails.push(`Asistencia: ${meetEvidence.attended ? 'sí' : 'no'}${meetEvidence.attended_on_time ? ' y puntual (+15)' : ''} · Participación: ${meetEvidence.participation_level ?? 'n/d'} · Tono: ${meetEvidence.tone ?? 'n/d'}`)
-    if (Array.isArray(meetEvidence.checklist)) meetEvidence.checklist.forEach((c: string) => meetDetails.push(c))
-    if (meetEvidence.reasoning) meetDetails.push(`Razonamiento: ${meetEvidence.reasoning}`)
-    meetDetails.push(`Pesa 45% dentro del SC: ${roundScore(sesionScore)} × 45% = ${roundScore(sesionScore * 0.45)} pts del SC.`)
+    meetDetails.push(`Sesión analizada: ${meetPeriod} · score ${roundScore(sesionScore)}/100`)
+    meetDetails.push(`Pesa ${hasSurvey ? '30%' : '45%'} dentro del SC.`)
   } else {
     meetDetails.push('Aún no hay transcripción de Meet analizada para este cliente.')
   }
@@ -562,7 +599,7 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       value: scScore == null ? null : roundScore(scIntoGlobal),
       max: 45,
       contribution: scIntoGlobal,
-      status: scScore == null ? 'pendiente' : (normalizedWa != null && sesionScore != null) ? 'conectado' : 'parcial',
+      status: scScore == null ? 'pendiente' : hasSurvey ? 'conectado' : 'parcial',
       details: scDetails,
     },
     {
@@ -585,6 +622,25 @@ function buildWeightedScore(waScore: number | null | undefined, operational?: Op
       status: sesionScore == null ? 'pendiente' : 'conectado',
       details: meetDetails,
     },
+    {
+      key: 'survey',
+      label: 'Survey',
+      caption: hasSurvey
+        ? `Tipo A: ${tipoAScore ?? '--'}/100 · Tipo B: ${tipoBScore ?? '--'}/100`
+        : 'Pendiente de aplicar preguntas bimestrales (Tope SC a 70)',
+      value: hasSurvey ? roundScore(((tipoAScore ?? 0) * 2 + (tipoBScore ?? 0)) / 3) : null,
+      max: 100,
+      contribution: hasSurvey ? ((tipoAScore ?? 0) * 0.20 + (tipoBScore ?? 0) * 0.10) : 0,
+      status: hasSurvey ? 'conectado' : 'pendiente',
+      details: [
+        `Pregunta Tipo A (General): ${survey?.question_a?.question || 'no formulada'}`,
+        `Respuesta Tipo A: ${survey?.question_a?.answer || 'sin respuesta'}`,
+        `Calificación Tipo A: ${tipoAScore ?? 0}/100`,
+        `Pregunta Tipo B (Objetivo): ${survey?.question_b?.question || 'no formulada'}`,
+        `Respuesta Tipo B: ${survey?.question_b?.answer || 'sin respuesta'}`,
+        `Calificación Tipo B: ${tipoBScore ?? 0}/100`,
+      ],
+    }
   ]
 
   return {
@@ -1201,7 +1257,13 @@ export default function App() {
             row.period_month === month &&
             Array.from(rowKeys).some((key) => accountKeys.has(key))
         }) ?? null
-      const score = buildWeightedScore(analysis.new_score, operationalForMonth, publicationQualityForMonth, accountChecklistData).globalPartial
+      const score = buildWeightedScore(
+        analysis.new_score,
+        operationalForMonth,
+        publicationQualityForMonth,
+        accountChecklistData,
+        analysis.raw_analysis
+      ).globalPartial
       const delta = score == null || previousScore == null ? 0 : roundScore(score - previousScore)
       if (score != null) previousScore = score
       return {
@@ -1220,7 +1282,13 @@ export default function App() {
   const selectedDayScore = selectedHistoricalScores.find((analysis) => analysis.id === selectedHistoryId) ?? null
   const activeDayAnalysis = selectedDayAnalysis ?? latestSelectedAnalysis
   const selectedScore = selectedGroup?.score?.current_score ?? latestSelectedAnalysis?.new_score ?? null
-  const weightedScore = buildWeightedScore(selectedScore, selectedAccount?.operational ?? null, selectedAccount?.publicationQuality ?? null, accountChecklistData)
+  const weightedScore = buildWeightedScore(
+    selectedScore,
+    selectedAccount?.operational ?? null,
+    selectedAccount?.publicationQuality ?? null,
+    accountChecklistData,
+    activeDayAnalysis?.raw_analysis
+  )
   const displayScore = weightedScore.globalPartial
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
   const selectedTasks = selectedGroup
@@ -1501,7 +1569,13 @@ export default function App() {
         const checklist = findChecklist(a.account_id, a.name)
         if (!checklist?.contract?.vigencia) return null
         const wa = a.score?.current_score ?? a.latestAnalysis?.new_score ?? null
-        const weighted = buildWeightedScore(wa, a.operational, a.publicationQuality, checklist)
+        const weighted = buildWeightedScore(
+          wa,
+          a.operational,
+          a.publicationQuality,
+          checklist,
+          a.latestAnalysis?.raw_analysis
+        )
         const core = weighted.components.filter(c => ['co', 'pq', 'sc', 'meet'].includes(c.key))
         return core.every(c => c.value != null) ? weighted.globalPartial : null
       })
@@ -1615,7 +1689,13 @@ export default function App() {
                   let globalScore: number | null = null
                   if (checklist?.contract?.vigencia) {
                     const waForGlobal = account.score?.current_score ?? account.latestAnalysis?.new_score ?? null
-                    const weighted = buildWeightedScore(waForGlobal, account.operational, account.publicationQuality, checklist)
+                    const weighted = buildWeightedScore(
+                      waForGlobal,
+                      account.operational,
+                      account.publicationQuality,
+                      checklist,
+                      account.latestAnalysis?.raw_analysis
+                    )
                     const core = weighted.components.filter(c => ['co', 'pq', 'sc', 'meet'].includes(c.key))
                     if (core.every(c => c.value != null)) globalScore = weighted.globalPartial
                   }

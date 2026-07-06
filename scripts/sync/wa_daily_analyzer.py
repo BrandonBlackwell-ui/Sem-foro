@@ -328,8 +328,28 @@ Devuelve este JSON:
   "positive_signals": ["..."],
   "negative_signals": ["..."],
   "action_items": [{{"action":"...", "owner":"...", "owner_type":"client|blackwell|shared|unknown", "urgency":"low|medium|high", "due_date":"YYYY-MM-DD|null", "work_type":"Reunión / Seguimiento|Campaña|Nota a cliente|Crisis|Media training|Análisis|Reporte|Otro"}}],
-  "evidence": [{{"quote":"fragmento corto", "why_it_matters":"..."}}]
+  "evidence": [{{"quote":"fragmento corto", "why_it_matters":"..."}}],
+  "survey": {{
+    "question_a": {{
+      "question": "texto de la pregunta tipo A o null si no se hizo",
+      "answer": "respuesta textual del cliente o null",
+      "score": 100|75|50|25|0|null
+    }},
+    "question_b": {{
+      "question": "texto de la pregunta tipo B o null si no se hizo",
+      "answer": "respuesta textual del cliente o null",
+      "score": 100|60|20|0|null
+    }}
+  }}
 }}
+
+Reglas obligatorias para survey (preguntas directas de satisfacción):
+- Identifica si en los mensajes se formularon y respondieron preguntas de satisfacción del cliente:
+  - Tipo A (Satisfacción General): Ejemplos: "¿cómo calificarías el servicio?", "¿qué tan satisfecho estás con la atención?", "¿qué tan bien entendemos tus objetivos?".
+    - Si se responde con escala numérica (1 a 10), mapea la respuesta: 9-10 -> score 100, 7-8 -> score 75, 5-6 -> score 50, 3-4 -> score 25, 1-2 -> score 0.
+  - Tipo B (Impacto en Objetivo): Ejemplos: "¿el trabajo movió la aguja?", "¿la cobertura refuerza la narrativa?", "¿la estrategia está alineada con prioridades?", "¿la gestión de crisis protegió la reputación?".
+    - Mapea la respuesta: "Sí claramente/Sí" -> score 100, "En proceso/parcialmente" -> score 60, "Poco" -> score 20, "No" -> score 0.
+- Si no se identifican estas preguntas hechas al cliente directo y sus respuestas en la conversación del día, pon tanto "question_a" como "question_b" en null (o sus campos internos en null).
 
 Reglas obligatorias para action_items:
 - Ademas de action, owner, owner_type, urgency, due_date y work_type, incluye evidence_speaker, evidence_quote y evidence_reason en cada tarea.
