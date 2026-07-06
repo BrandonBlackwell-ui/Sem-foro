@@ -302,6 +302,8 @@ Reglas criticas sobre contexto:
 - action_items debe incluir solo tareas nuevas o actualizaciones claras que surjan de MENSAJES NUEVOS NO ANALIZADOS.
 - score_delta debe medir solamente el impacto incremental de los MENSAJES NUEVOS NO ANALIZADOS.
 - Si el mensaje nuevo es "ok" o similar, usa el contexto para decidir si confirma algo positivo.
+- Si el mensaje contiene un reporte de monitoreo de medios, síntesis informativa o el contenido extraído de un archivo adjunto (ej. '[Contenido de documento ...]'), distingue entre el contenido del reporte y la conversación real. Las críticas políticas o notas negativas reportadas sobre el cliente NO deben bajar el score de WhatsApp (ya que representan el servicio proactivo de Blackwell). Evalúa el tono y respuesta del cliente ante dicho reporte.
+
 
 Reglas de score_delta — usa EXACTAMENTE esta tabla de señales WA:
 NO uses un score base. Devuelve la SUMA de los ajustes que apliquen segun lo observado:
