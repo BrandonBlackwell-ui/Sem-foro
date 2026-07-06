@@ -1201,7 +1201,7 @@ export default function App() {
             row.period_month === month &&
             Array.from(rowKeys).some((key) => accountKeys.has(key))
         }) ?? null
-      const score = buildWeightedScore(analysis.new_score, operationalForMonth, publicationQualityForMonth).globalPartial
+      const score = buildWeightedScore(analysis.new_score, operationalForMonth, publicationQualityForMonth, accountChecklistData).globalPartial
       const delta = score == null || previousScore == null ? 0 : roundScore(score - previousScore)
       if (score != null) previousScore = score
       return {
@@ -1213,7 +1213,7 @@ export default function App() {
         summary: analysis.summary,
       }
     })
-  }, [operationalScores, publicationQualityScores, selectedAccount, selectedHistory])
+  }, [operationalScores, publicationQualityScores, selectedAccount, selectedHistory, accountChecklistData])
 
   const latestSelectedAnalysis = selectedJid ? latestAnalysisByGroup.get(selectedJid) ?? null : null
   const selectedDayAnalysis = selectedHistory.find((analysis) => analysis.id === selectedHistoryId) ?? null
