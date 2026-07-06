@@ -140,6 +140,29 @@ def main() -> None:
         else:
             sb.table("wa_daily_analysis").insert(daily_row).execute()
 
+        # Insert key milestone if detected by LLM
+        mil_data = analysis.get("milestone")
+        if mil_data and mil_data.get("title") and mil_data.get("event_type"):
+            mil_row = {
+                "account_id": batch.account_id,
+                "account_name": batch.group_name,
+                "event_date": target_date.isoformat(),
+                "event_type": mil_data["event_type"],
+                "title": mil_data["title"],
+                "description": mil_data.get("description"),
+                "impact_level": mil_data.get("impact_level") or "medium",
+                "created_at": datetime.now(timezone.utc).isoformat(),
+                "updated_at": datetime.now(timezone.utc).isoformat()
+            }
+            try:
+                # Check for duplicates on same date and title to prevent double-insertions on re-runs
+                dup_check = sb.table("account_milestones").select("id").eq("account_id", batch.account_id).eq("event_date", target_date.isoformat()).eq("title", mil_data["title"]).execute()
+                if not dup_check.data:
+                    sb.table("account_milestones").insert(mil_row).execute()
+                    logger.info("Automatically inserted milestone: %s", mil_data["title"])
+            except Exception as mil_err:
+                logger.error("Error inserting automatic milestone: %s", mil_err)
+
         total_delta = _load_total_delta(sb, batch.account_id)
         base_score = float(score_state.get("base_score") or DEFAULT_BASE_SCORE)
         current_score = _clamp(base_score + total_delta, 0, 100)
@@ -340,6 +363,12 @@ Devuelve este JSON:
       "answer": "respuesta textual del cliente o null",
       "score": 100|60|20|0|null
     }}
+  }},
+  "milestone": {{
+    "title": "título corto del hito o crisis importante detectado hoy o null",
+    "event_type": "crisis|oportunidad|hito|cambio_estrategico|null",
+    "description": "descripción breve del suceso importante o null",
+    "impact_level": "high|medium|low|null"
   }}
 }}
 
@@ -350,6 +379,14 @@ Reglas obligatorias para survey (preguntas directas de satisfacción):
   - Tipo B (Impacto en Objetivo): Ejemplos: "¿el trabajo movió la aguja?", "¿la cobertura refuerza la narrativa?", "¿la estrategia está alineada con prioridades?", "¿la gestión de crisis protegió la reputación?".
     - Mapea la respuesta: "Sí claramente/Sí" -> score 100, "En proceso/parcialmente" -> score 60, "Poco" -> score 20, "No" -> score 0.
 - Si no se identifican estas preguntas hechas al cliente directo y sus respuestas en la conversación del día, pon tanto "question_a" como "question_b" en null (o sus campos internos en null).
+
+Reglas obligatorias para milestone (hitos y crisis de la cuenta):
+- Evalúa si en la conversación de hoy (incluyendo el texto de documentos adjuntos cargados) ocurrió un evento crítico o de alto impacto para la cuenta, tales como:
+  - Crisis reputacional (ej. notas negativas críticas como reportes de FerrizTV, quejas directas graves, acusaciones).
+  - Oportunidad o logro estratégico relevante.
+  - Cambio en la dirección estratégica acordado con el cliente.
+- Si detectas uno, llénalo con el título del evento (ej: "Crisis FerrizTV: reporte de nota negativa"), tipo, descripción breve y nivel de impacto.
+- Si no hay ningún evento de esta relevancia (lo cual es lo común), pon el objeto "milestone" en null. No inventes hitos para días normales o rutinarios.
 
 Reglas obligatorias para action_items:
 - Ademas de action, owner, owner_type, urgency, due_date y work_type, incluye evidence_speaker, evidence_quote y evidence_reason en cada tarea.
