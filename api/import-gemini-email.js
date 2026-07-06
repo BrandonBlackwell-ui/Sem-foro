@@ -129,6 +129,39 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true, count: 0, message: 'No tasks extracted from body.' });
   }
 
+  // 3.5 Check for duplicate tasks already imported on this date
+  let tasksToInsert = [...tasks];
+  try {
+    const checkResponse = await fetch(
+      `${SB_URL}/rest/v1/wa_tasks?select=action,owner&analysis_date=eq.${encodeURIComponent(analysis_date)}`,
+      {
+        headers: {
+          apikey: SB_SERVICE_KEY,
+          Authorization: `Bearer ${SB_SERVICE_KEY}`
+        }
+      }
+    );
+    if (checkResponse.ok) {
+      const existingTasks = await checkResponse.json();
+      const existingKeys = new Set(existingTasks.map(t => `${t.owner || ''}::${t.action || ''}`.toLowerCase().trim()));
+      tasksToInsert = tasks.filter(t => {
+        const key = `${t.owner || ''}::${t.action || ''}`.toLowerCase().trim();
+        return !existingKeys.has(key);
+      });
+    }
+  } catch (err) {
+    console.error('[import-gemini-email] Error checking for existing tasks:', err);
+  }
+
+  if (tasksToInsert.length === 0) {
+    console.log('[import-gemini-email] All tasks have already been imported (skipping duplicate email import)');
+    return res.status(200).json({
+      success: true,
+      count: 0,
+      message: 'All tasks from this meeting were already imported from another participant.'
+    });
+  }
+
   // 4. Save to Supabase
   try {
     const response = await fetch(`${SB_URL}/rest/v1/wa_tasks`, {
@@ -139,7 +172,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
         'Prefer': 'return=minimal'
       },
-      body: JSON.stringify(tasks)
+      body: JSON.stringify(tasksToInsert)
     });
 
     if (!response.ok) {
