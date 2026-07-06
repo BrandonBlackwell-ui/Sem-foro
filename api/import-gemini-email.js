@@ -45,18 +45,63 @@ export default async function handler(req, res) {
 
     if (accResponse.ok) {
       const accounts = await accResponse.json();
-      const titleLower = meetingTitle.toLowerCase();
-      
-      // Look for a substring match in account_name only (avoiding numeric ID date matching like '2026' -> '02')
+
+      // Normalize: lowercase, remove accents, collapse spaces and special chars
+      const normalize = (str) =>
+        (str || '')
+          .toLowerCase()
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // strip accents
+          .replace(/[^a-z0-9\s]/g, ' ')                    // keep only alphanumeric + space
+          .replace(/\s+/g, ' ')                            // collapse multiple spaces
+          .trim();
+
+      const titleNorm = normalize(meetingTitle);
+
+      let bestMatch = null;
+      let bestScore = 0;
+
       for (const acc of accounts) {
-        const name = (acc.account_name || '').toLowerCase().trim();
-        if (name && name.length >= 2) {
-          if (titleLower.includes(name)) {
-            accountId = acc.account_id;
-            matchedAccountName = acc.account_name;
-            break;
+        const nameNorm = normalize(acc.account_name);
+        if (!nameNorm || nameNorm.length < 2) continue;
+
+        // Skip purely numeric or internal-sounding names
+        if (/^\d+$/.test(nameNorm)) continue;
+
+        let score = 0;
+
+        // 1. Exact full-name substring match (highest confidence)
+        if (titleNorm.includes(nameNorm)) {
+          score = 100;
+        } else {
+          // 2. Word-level match: score based on how many significant words from the
+          //    account name appear individually in the title (handles "Ma Ja" → "maja", etc.)
+          const nameWords = nameNorm.split(' ').filter(w => w.length >= 3 && !['blackwell', 'bws', 'the', 'and', 'los', 'las', 'del', 'con'].includes(w));
+          const titleWords = new Set(titleNorm.split(' '));
+
+          // Also try collapsing consecutive title words (handles spaced-out names like "ma ja" → "maja")
+          const titleCollapsed = titleNorm.replace(/\s/g, '');
+
+          let matched = 0;
+          for (const w of nameWords) {
+            if (titleWords.has(w) || titleCollapsed.includes(w)) matched++;
+          }
+
+          if (nameWords.length > 0) {
+            const ratio = matched / nameWords.length;
+            if (ratio >= 0.5) score = Math.round(ratio * 80); // max 80 for word match
           }
         }
+
+        if (score > bestScore) {
+          bestScore = score;
+          bestMatch = acc;
+        }
+      }
+
+      // Accept match only if confidence is meaningful (at least 1 word matched)
+      if (bestMatch && bestScore >= 40) {
+        accountId = bestMatch.account_id;
+        matchedAccountName = bestMatch.account_name;
       }
     }
   } catch (err) {
