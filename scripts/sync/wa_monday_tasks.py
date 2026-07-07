@@ -332,11 +332,20 @@ def main() -> None:
             )
             
             # Create update if there is any meeting summary or detail
-            evidence_text = task.get("summary") or task.get("raw_action", {}).get("summary") or ""
-            if not evidence_text and task.get("raw_action", {}).get("email_subject"):
-                evidence_text = f"Reunión: {task.get('raw_action', {}).get('email_subject')}\nFecha: {task.get('analysis_date')}"
-            if evidence_text:
-                _create_monday_update(api_key, str(created["id"]), evidence_text)
+            source = task.get("raw_action", {}).get("source") or "gemini_meet_notes"
+            source_label = "Google Meet (Gemini Notes desde Gmail)" if source == "gemini_meet_email_sync" else "Minuta de Google Meet"
+            meeting_date = task.get("analysis_date") or task.get("created_at")[:10]
+            
+            evidence_text = (
+                f"Origen: {source_label}\n"
+                f"Fecha del origen: {meeting_date}\n\n"
+            )
+            detail_summary = task.get("summary") or task.get("raw_action", {}).get("summary") or ""
+            if not detail_summary and task.get("raw_action", {}).get("email_subject"):
+                detail_summary = f"Reunión: {task.get('raw_action', {}).get('email_subject')}"
+            
+            evidence_text += detail_summary
+            _create_monday_update(api_key, str(created["id"]), evidence_text)
                 
             # Update Supabase wa_tasks
             payload = {
@@ -755,7 +764,10 @@ def _evidence_text(row: dict[str, Any], item: dict[str, Any]) -> str:
     urgency = _normalize_urgency(item.get("urgency"))
     urgency_label = {"high": "Alta", "medium": "Media", "low": "Baja"}.get(urgency, "Media")
     evidence_speaker = str(item.get("evidence_speaker") or "").strip()
+    analysis_date = row.get("analysis_date")
     lines = [
+        f"Origen: Análisis diario de WhatsApp",
+        f"Fecha del origen: {analysis_date}",
         f"Quién lo mencionó: {evidence_speaker or 'No inferido'}",
         f"Urgencia: {urgency_label}",
         "",
