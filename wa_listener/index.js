@@ -54,6 +54,7 @@ const PAIRING_MODE = (process.env.WA_PAIRING_MODE || "qr").toLowerCase();
 const PAIRING_PHONE_NUMBER =
   PAIRING_MODE === "code" ? process.env.WA_PAIRING_PHONE_NUMBER?.replace(/\D/g, "") : "";
 const AUTH_DIR = process.env.AUTH_DIR || join(__dir, "auth_state");
+const GROUP_REFRESH_INTERVAL_MS = Number(process.env.WA_GROUP_REFRESH_INTERVAL_MS || 10 * 60 * 1000);
 const RECONNECT_DELAY_MS = 5_000;
 const PAIRING_RETRY_DELAY_MS = Number(process.env.WA_PAIRING_RETRY_DELAY_MS || 90_000);
 const MAX_RECONNECTS = 120;
@@ -78,6 +79,12 @@ let latestQrAt = null;
 let latestPairingCode = null;
 let latestPairingAt = null;
 let isWhatsAppConnected = false;
+let groupRefreshTimer = null;
+
+const AUTO_ACCOUNT_RULES = [
+  { pattern: /maja/i, accountId: "02" },
+  { pattern: /\bcima\b|grupo\s+cima/i, accountId: "13" },
+];
 
 function startStatusServer() {
   if (!PORT) return;
@@ -150,6 +157,70 @@ async function loadGroupMappings() {
   }
 
   console.log(`${groupCache.size} mapped WhatsApp groups loaded from Supabase`);
+}
+
+function accountIdForGroupName(name) {
+  const rule = AUTO_ACCOUNT_RULES.find((r) => r.pattern.test(name || ""));
+  return rule ? rule.accountId : "00_UNMAPPED";
+}
+
+async function registerGroup(jid, name) {
+  if (!jid || groupCache.has(jid)) return groupCache.get(jid) || null;
+
+  const row = {
+    jid,
+    name: name || jid,
+    account_id: accountIdForGroupName(name),
+    active: true,
+  };
+  const { error } = await supabase
+    .from("wa_groups")
+    .upsert(row, { onConflict: "jid", ignoreDuplicates: true });
+
+  if (error) {
+    console.error(`Could not auto-register group '${row.name}':`, error.message);
+    return null;
+  }
+
+  const mapping = { accountId: row.account_id, name: row.name };
+  groupCache.set(jid, mapping);
+  console.log(`Auto-registered group '${row.name}' -> account ${row.account_id}`);
+  if (row.account_id === "00_UNMAPPED") {
+    console.log("New group saved as 00_UNMAPPED. Assign account_id in Supabase wa_groups when needed.");
+  }
+  return mapping;
+}
+
+async function refreshParticipatingGroups(sock) {
+  await loadGroupMappings();
+
+  const groups = await sock.groupFetchAllParticipating().catch((error) => {
+    console.warn("Could not fetch participating WhatsApp groups:", error?.message || error);
+    return {};
+  });
+  const unmapped = [];
+  for (const [jid, meta] of Object.entries(groups)) {
+    if (!groupCache.has(jid)) unmapped.push({ jid, name: meta.subject });
+  }
+
+  for (const group of unmapped) {
+    await registerGroup(group.jid, group.name);
+  }
+
+  if (unmapped.length) {
+    console.log(`Group refresh registered ${unmapped.length} new WhatsApp group(s).`);
+  }
+}
+
+async function mappingForMessageGroup(sock, remoteJid) {
+  const cached = groupCache.get(remoteJid);
+  if (cached) return cached;
+
+  const meta = await sock.groupMetadata(remoteJid).catch((error) => {
+    console.warn(`Could not fetch metadata for unknown group ${remoteJid}:`, error?.message || error);
+    return null;
+  });
+  return registerGroup(remoteJid, meta?.subject || remoteJid);
 }
 
 async function insertMessages(rows) {
@@ -504,6 +575,10 @@ async function connectToWhatsApp() {
 
     if (connection === "close") {
       isWhatsAppConnected = false;
+      if (groupRefreshTimer) {
+        clearInterval(groupRefreshTimer);
+        groupRefreshTimer = null;
+      }
       const statusCode = lastDisconnect?.error?.output?.statusCode;
       const shouldReconnect = statusCode !== DisconnectReason.loggedOut;
 
@@ -545,41 +620,14 @@ async function connectToWhatsApp() {
       latestPairingCode = null;
       latestPairingAt = null;
       console.log("WhatsApp connected.");
-      await loadGroupMappings();
-
-      const groups = await sock.groupFetchAllParticipating().catch(() => ({}));
-      const unmapped = [];
-      for (const [jid, meta] of Object.entries(groups)) {
-        if (!groupCache.has(jid)) unmapped.push({ jid, name: meta.subject });
-      }
-
-      if (unmapped.length > 0) {
-        // Reglas de auto-mapeo por nombre de grupo -> account_id.
-        const AUTO_ACCOUNT_RULES = [
-          { pattern: /maja/i, accountId: "02" },
-        ];
-        const rowsToInsert = unmapped.map((g) => {
-          const rule = AUTO_ACCOUNT_RULES.find((r) => r.pattern.test(g.name || ""));
-          return {
-            jid: g.jid,
-            name: g.name || g.jid,
-            account_id: rule ? rule.accountId : "00_UNMAPPED",
-            active: true,
-          };
+      await refreshParticipatingGroups(sock);
+      if (groupRefreshTimer) clearInterval(groupRefreshTimer);
+      groupRefreshTimer = setInterval(() => {
+        refreshParticipatingGroups(sock).catch((error) => {
+          console.warn("Periodic WhatsApp group refresh failed:", error?.message || error);
         });
-        const { error: insertError } = await supabase
-          .from("wa_groups")
-          .upsert(rowsToInsert, { onConflict: "jid", ignoreDuplicates: true });
-        if (insertError) {
-          console.error("Could not auto-register unmapped groups:", insertError.message);
-        } else {
-          for (const row of rowsToInsert) {
-            groupCache.set(row.jid, { accountId: row.account_id, name: row.name });
-            console.log(`Auto-registered group '${row.name}' -> account ${row.account_id}`);
-          }
-          console.log("Unmapped groups saved as 00_UNMAPPED. Assign account_id in Supabase wa_groups when needed.\n");
-        }
-      }
+      }, GROUP_REFRESH_INTERVAL_MS);
+      groupRefreshTimer.unref?.();
     }
   });
 
@@ -593,7 +641,7 @@ async function connectToWhatsApp() {
       const remoteJid = msg.key?.remoteJid;
       if (!remoteJid || !isJidGroup(remoteJid)) continue;
 
-      const mapping = groupCache.get(remoteJid);
+      const mapping = await mappingForMessageGroup(sock, remoteJid);
       if (!mapping) continue;
 
       const row = await buildMessageRow(msg, mapping);
