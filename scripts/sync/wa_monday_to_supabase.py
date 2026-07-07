@@ -28,6 +28,58 @@ MONDAY_API_URL = "https://api.monday.com/v2"
 logger = logging.getLogger("wa_monday_to_supabase")
 
 
+def _get_board_info(api_key: str, board_id: str) -> dict[str, Any]:
+    query = """
+    query GetBoardInfo($boardId: [ID!]!) {
+      boards(ids: $boardId) {
+        columns {
+          id
+          title
+          type
+        }
+      }
+    }
+    """
+    try:
+        payload = _monday_request(api_key, query, {"boardId": [board_id]})
+        boards = payload.get("data", {}).get("boards", [])
+        if not boards:
+            return {"columns": {}}
+        
+        cols = boards[0].get("columns", [])
+        mapping = {}
+        for col in cols:
+            col_id = col["id"]
+            title = col["title"].lower().strip()
+            col_type = col["type"]
+            
+            if title == "estado":
+                mapping["estado"] = col_id
+            elif "tipo de" in title or "work type" in title:
+                mapping["tipo_trabajo"] = col_id
+            elif "link" in title or col_type == "link":
+                mapping["link_entregable"] = col_id
+            elif title in ("responsable", "responsables", "assignee", "person", "assigned to") or col_type in ("person", "multiple-person"):
+                if not mapping.get("responsable") or title == "responsable":
+                    mapping["responsable"] = col_id
+            elif "fecha" in title or "due" in title or col_type == "date":
+                if not mapping.get("fecha_entrega") or "entrega" in title:
+                    mapping["fecha_entrega"] = col_id
+
+        status_cols = [c for c in cols if c["type"] == "status"]
+        if "estado" not in mapping and status_cols:
+            non_work_status = [c for c in status_cols if "tipo" not in c["title"].lower()]
+            if non_work_status:
+                mapping["estado"] = non_work_status[0]["id"]
+            else:
+                mapping["estado"] = status_cols[0]["id"]
+
+        return {"columns": mapping}
+    except Exception as e:
+        logger.error("Error fetching board columns for board %s: %s", board_id, e)
+        return {"columns": {}}
+
+
 def main() -> None:
     _setup_logging()
     args = _parse_args()
@@ -40,7 +92,7 @@ def main() -> None:
         logger.info("No Supabase wa_tasks with monday_item_id found.")
         return
 
-    columns = _column_ids()
+    board_info_cache = {}
     synced = 0
     for chunk in _chunks(tasks, 50):
         ids = [str(task["monday_item_id"]) for task in chunk if task.get("monday_item_id")]
@@ -52,7 +104,18 @@ def main() -> None:
             if not monday_item:
                 logger.warning("Monday item %s was not returned by API.", monday_id)
                 continue
-            payload = _supabase_payload_from_monday(monday_item, columns)
+
+            board_id = str(monday_item.get("board", {}).get("id") or "")
+            if not board_id:
+                logger.warning("No board ID returned for Monday item %s.", monday_id)
+                continue
+
+            if board_id not in board_info_cache:
+                board_info_cache[board_id] = _get_board_info(api_key, board_id)
+
+            board_columns = board_info_cache[board_id]["columns"]
+            payload = _supabase_payload_from_monday(monday_item, board_columns)
+            
             if args.dry_run:
                 logger.info("[dry-run] Would update wa_tasks Monday %s: %s", monday_id, payload)
                 synced += 1
@@ -91,6 +154,9 @@ def _fetch_monday_items(api_key: str, ids: list[str]) -> list[dict[str, Any]]:
         name
         created_at
         updated_at
+        board {
+          id
+        }
         column_values {
           id
           text
@@ -105,11 +171,11 @@ def _fetch_monday_items(api_key: str, ids: list[str]) -> list[dict[str, Any]]:
 
 def _supabase_payload_from_monday(item: dict[str, Any], columns: dict[str, str]) -> dict[str, Any]:
     values = {str(col.get("id")): col for col in item.get("column_values") or [] if isinstance(col, dict)}
-    status = _column_text(values, columns["status"])
-    due_date = _column_date(values, columns["due_date"])
-    responsible = _column_text(values, columns["responsible"])
-    work_type = _column_text(values, columns["work_type"])
-    client_label = _column_text(values, columns["client"])
+    status = _column_text(values, columns.get("estado"))
+    due_date = _column_date(values, columns.get("fecha_entrega"))
+    responsible = _column_text(values, columns.get("responsable"))
+    work_type = _column_text(values, columns.get("tipo_trabajo"))
+    client_label = _column_text(values, columns.get("link_entregable"))
 
     payload: dict[str, Any] = {
         "monday_item_name": item.get("name"),
@@ -127,14 +193,14 @@ def _supabase_payload_from_monday(item: dict[str, Any], columns: dict[str, str])
     return {key: value for key, value in payload.items() if value is not None}
 
 
-def _column_text(values: dict[str, dict[str, Any]], column_id: str) -> str | None:
+def _column_text(values: dict[str, dict[str, Any]], column_id: str | None) -> str | None:
     if not column_id:
         return None
     text = values.get(column_id, {}).get("text")
     return str(text).strip() if text else None
 
 
-def _column_date(values: dict[str, dict[str, Any]], column_id: str) -> str | None:
+def _column_date(values: dict[str, dict[str, Any]], column_id: str | None) -> str | None:
     if not column_id:
         return None
     raw = values.get(column_id, {}).get("value")
@@ -237,18 +303,7 @@ def _supabase_request(
     return json.loads(raw) if raw else None
 
 
-def _column_ids() -> dict[str, str]:
-    return {
-        "status": os.getenv("MONDAY_TASKS_STATUS_COLUMN_ID", "color_mm452en1").strip(),
-        "due_date": os.getenv("MONDAY_TASKS_DUE_DATE_COLUMN_ID", "date_mm45ncq9").strip(),
-        "responsible": os.getenv("MONDAY_TASKS_RESPONSIBLE_COLUMN_ID", "multiple_person_mm453tee").strip(),
-        "work_type": os.getenv("MONDAY_TASKS_WORK_TYPE_COLUMN_ID", "color_mm4513mj").strip(),
-        "client": (
-            os.getenv("MONDAY_TASKS_GROUP_COLUMN_ID", "").strip()
-            or os.getenv("MONDAY_TASKS_CLIENT_COLUMN_ID", "").strip()
-            or "color_mm4ecz6r"
-        ),
-    }
+
 
 
 def _chunks(items: list[dict[str, Any]], size: int):

@@ -36,41 +36,337 @@ MONDAY_API_URL = "https://api.monday.com/v2"
 logger = logging.getLogger("wa_monday_tasks")
 
 
+def normalize(s: str) -> str:
+    s = s.lower()
+    s = unicodedata.normalize("NFD", s)
+    s = "".join(ch for ch in s if not (0x0300 <= ord(ch) <= 0x036F))
+    s = re.sub(r"[^a-z0-9]+", " ", s)
+    return s.strip()
+
+
+def _fetch_all_monday_boards(api_key: str) -> list[dict[str, Any]]:
+    query = """
+    query {
+      boards(limit: 250) {
+        id
+        name
+        workspace {
+          id
+          name
+        }
+      }
+    }
+    """
+    try:
+        payload = _monday_request(api_key, query, {})
+        return payload.get("data", {}).get("boards", []) or []
+    except Exception as e:
+        logger.error("Error fetching Monday boards: %s", e)
+        return []
+
+
+def _fetch_account_names() -> dict[str, str]:
+    try:
+        rows = _supabase_request("GET", "wa_account_scores", params={"select": "account_id,account_name"}) or []
+        mapping = {}
+        for r in rows:
+            acc_id = str(r.get("account_id") or "").strip()
+            acc_name = str(r.get("account_name") or "").strip()
+            if acc_id and acc_name:
+                mapping[acc_id] = acc_name
+        return mapping
+    except Exception as e:
+        logger.error("Error fetching account names: %s", e)
+        return {}
+
+
+def _find_board_by_name(boards: list[dict[str, Any]], account_name: str) -> dict[str, Any] | None:
+    acc_name_norm = normalize(account_name)
+    acc_words = set(acc_name_norm.split())
+    STOP = {"blackwell", "bws", "strategy", "consultoria", "cuentas", "grupo", "de", "y", "a", "a+", "la", "el"}
+    acc_words = {w for w in acc_words if w not in STOP and len(w) >= 2}
+    
+    if not acc_words:
+        acc_words = set(acc_name_norm.split())
+
+    best_match = None
+    best_score = 0
+    
+    for board in boards:
+        board_name = board["name"]
+        board_name_norm = normalize(board_name)
+        board_words = set(board_name_norm.split())
+        board_words = {w for w in board_words if w not in STOP}
+        
+        ws_name = (board.get("workspace") or {}).get("name", "").lower()
+        is_correct_ws = "consultoria" in ws_name or "cuentas" in ws_name
+        
+        clean_board_name = re.sub(r'^\d+[\s\.\-_]+', '', board_name_norm).strip()
+        clean_acc_name = re.sub(r'^\d+[\s\.\-_]+', '', acc_name_norm).strip()
+        
+        clean_board_name = clean_board_name.replace("blackwell", "").replace("bws", "").strip()
+        clean_acc_name = clean_acc_name.replace("blackwell", "").replace("bws", "").strip()
+        
+        if clean_board_name == clean_acc_name:
+            score = 100
+        elif clean_board_name in clean_acc_name or clean_acc_name in clean_board_name:
+            score = 90
+        else:
+            matched_words = acc_words.intersection(board_words)
+            if matched_words:
+                score = (len(matched_words) / len(acc_words)) * 80
+            else:
+                score = 0
+                
+        if is_correct_ws and score > 0:
+            score += 15
+            
+        if score > best_score:
+            best_score = score
+            best_match = board
+            
+    if best_match and best_score >= 40:
+        return best_match
+    return None
+
+
+def _resolve_board(
+    boards_config: dict[str, Any],
+    account_id: str,
+    account_names: dict[str, str],
+    monday_boards: list[dict[str, Any]],
+) -> dict[str, Any] | None:
+    boards = boards_config.get("boards", {})
+    mapped = boards.get(account_id) or boards.get(account_id.lstrip("0"))
+    if mapped:
+        return {
+            "board_id": str(mapped["board_id"]),
+            "board_name": mapped.get("board_name", account_id),
+            "central": False,
+        }
+        
+    account_name = account_names.get(account_id) or account_names.get(account_id.lstrip("0"))
+    if account_name and monday_boards:
+        matched = _find_board_by_name(monday_boards, account_name)
+        if matched:
+            return {
+                "board_id": str(matched["id"]),
+                "board_name": matched["name"],
+                "central": False,
+            }
+            
+    return None
+
+
+def _get_board_info(api_key: str, board_id: str) -> dict[str, Any]:
+    query = """
+    query GetBoardInfo($boardId: [ID!]!) {
+      boards(ids: $boardId) {
+        groups {
+          id
+          title
+        }
+        columns {
+          id
+          title
+          type
+        }
+      }
+    }
+    """
+    try:
+        payload = _monday_request(api_key, query, {"boardId": [board_id]})
+        boards = payload.get("data", {}).get("boards", [])
+        if not boards:
+            return {"columns": {}, "group_id": "topics"}
+        
+        groups = boards[0].get("groups", [])
+        group_id = "topics"
+        if groups:
+            matched_group = next((g for g in groups if "tareas de la cuenta" in g["title"].lower().strip()), None)
+            if matched_group:
+                group_id = matched_group["id"]
+            else:
+                group_id = groups[0]["id"]
+                
+        cols = boards[0].get("columns", [])
+        mapping = {}
+        for col in cols:
+            col_id = col["id"]
+            title = col["title"].lower().strip()
+            col_type = col["type"]
+            
+            if title == "estado":
+                mapping["estado"] = col_id
+            elif "tipo de" in title or "work type" in title:
+                mapping["tipo_trabajo"] = col_id
+            elif "link" in title or col_type == "link":
+                mapping["link_entregable"] = col_id
+            elif title in ("responsable", "responsables", "assignee", "person", "assigned to") or col_type in ("person", "multiple-person"):
+                if not mapping.get("responsable") or title == "responsable":
+                    mapping["responsable"] = col_id
+            elif "fecha" in title or "due" in title or col_type == "date":
+                if not mapping.get("fecha_entrega") or "entrega" in title:
+                    mapping["fecha_entrega"] = col_id
+
+        status_cols = [c for c in cols if c["type"] == "status"]
+        if "estado" not in mapping and status_cols:
+            non_work_status = [c for c in status_cols if "tipo" not in c["title"].lower()]
+            if non_work_status:
+                mapping["estado"] = non_work_status[0]["id"]
+            else:
+                mapping["estado"] = status_cols[0]["id"]
+
+        return {"columns": mapping, "group_id": group_id}
+    except Exception as e:
+        logger.error("Error fetching board info for board %s: %s", board_id, e)
+        return {"columns": {}, "group_id": "topics"}
+
+
+def _fetch_pending_wa_tasks() -> list[dict[str, Any]]:
+    params = {
+        "select": "id,account_id,group_name,group_jid,analysis_date,action,owner,owner_type,urgency,due_date,work_type,client_label,raw_action,created_at",
+        "monday_item_id": "is.null",
+        "order": "created_at.asc",
+    }
+    return _supabase_request("GET", "wa_tasks", params=params) or []
+
+
 def main() -> None:
     _setup_logging()
     args = _parse_args()
     target_date = _resolve_target_date(args.date)
     boards_config = _load_boards_config()
     monday_users = _load_monday_users()
-    analyses = _fetch_daily_analyses(target_date, args.account_id)
-
-    if args.limit is not None:
-        analyses = analyses[: args.limit]
-
-    if not analyses:
-        logger.info("No wa_daily_analysis rows found for %s.", target_date.isoformat())
-        return
-
+    
     api_key = _monday_api_key()
     if not api_key and not args.dry_run:
         logger.info("MONDAY_API_KEY is not set. Skipping Monday sync.")
         return
 
+    # Fetch all Monday boards
+    monday_boards = []
+    if api_key:
+        monday_boards = _fetch_all_monday_boards(api_key)
+        
+    # Fetch account names map
+    account_names = _fetch_account_names()
+    
+    board_info_cache = {}
+
+    # Step 1: Sync WhatsApp daily analysis tasks
+    logger.info("Step 1: Syncing WhatsApp daily analysis tasks for %s...", target_date.isoformat())
+    analyses = _fetch_daily_analyses(target_date, args.account_id)
+    if args.limit is not None:
+        analyses = analyses[: args.limit]
+
     totals = {"created": 0, "skipped": 0, "unmapped": 0, "empty": 0}
     for row in analyses:
-        row_totals = _sync_analysis_row(row, boards_config, monday_users, api_key, args.dry_run)
+        row_totals = _sync_analysis_row(
+            row,
+            boards_config,
+            monday_users,
+            api_key,
+            args.dry_run,
+            account_names,
+            monday_boards,
+            board_info_cache
+        )
         for key, value in row_totals.items():
             totals[key] += value
 
+    # Step 2: Sync other pending tasks in wa_tasks (Meet / Session tasks)
+    logger.info("Step 2: Syncing other pending tasks in wa_tasks (Meet, Notes, etc.)...")
+    pending_tasks = _fetch_pending_wa_tasks()
+    if args.account_id:
+        pending_tasks = [t for t in pending_tasks if str(t.get("account_id")) == str(args.account_id)]
+        
+    meet_totals = {"created": 0, "skipped": 0, "unmapped": 0}
+    for task in pending_tasks:
+        # Determine board
+        account_id = _account_id(task)
+        board = _resolve_board(boards_config, account_id, account_names, monday_boards)
+        if not board:
+            logger.warning("No board found for pending task %s (account: %s).", task.get("id"), account_id)
+            meet_totals["unmapped"] += 1
+            continue
+            
+        board_id = str(board["board_id"])
+        if board_id not in board_info_cache and api_key:
+            board_info_cache[board_id] = _get_board_info(api_key, board_id)
+        board_info = board_info_cache.get(board_id, {"columns": {}, "group_id": "topics"})
+        
+        # Prepare task item dict for _column_values and _evidence_text
+        item = {
+            "action": task.get("action"),
+            "owner": task.get("owner"),
+            "owner_type": task.get("owner_type") or "unknown",
+            "urgency": task.get("urgency"),
+            "due_date": task.get("due_date"),
+            "work_type": task.get("work_type"),
+            "delivery_link": task.get("raw_action", {}).get("delivery_link") or task.get("raw_action", {}).get("link"),
+        }
+        
+        sync_key = task.get("monday_sync_key") or f"meet-{task.get('id')}"
+        item_name = task.get("action")[:255]
+        column_values = _column_values(boards_config, task, item, board, monday_users, board_info)
+        
+        if args.dry_run:
+            logger.info(
+                "[dry-run] Would create Monday item for pending task %s on board %s (%s): %s",
+                task["id"],
+                board["board_id"],
+                board["board_name"],
+                item_name,
+            )
+            meet_totals["created"] += 1
+            continue
+            
+        try:
+            created = _create_monday_item(
+                api_key=api_key,
+                board_id=board_id,
+                group_id=board_info["group_id"],
+                item_name=item_name,
+                column_values=column_values,
+            )
+            
+            # Create update if there is any meeting summary or detail
+            evidence_text = task.get("summary") or task.get("raw_action", {}).get("summary") or ""
+            if not evidence_text and task.get("raw_action", {}).get("email_subject"):
+                evidence_text = f"Reunión: {task.get('raw_action', {}).get('email_subject')}\nFecha: {task.get('analysis_date')}"
+            if evidence_text:
+                _create_monday_update(api_key, str(created["id"]), evidence_text)
+                
+            # Update Supabase wa_tasks
+            payload = {
+                "monday_item_id": created["id"],
+                "monday_item_name": created.get("name") or item_name,
+                "monday_created_at": created.get("created_at") or datetime.now(timezone.utc).isoformat(),
+                "monday_status": "Por hacer",
+                "monday_due_date": task.get("due_date") or _due_date_for_item(item, "medium").isoformat(),
+                "monday_work_type": task.get("work_type"),
+                "last_synced_to_monday_at": datetime.now(timezone.utc).isoformat(),
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+            }
+            _supabase_request("PATCH", "wa_tasks", params={"id": f"eq.{task['id']}"}, body=payload)
+            meet_totals["created"] += 1
+            logger.info("Synced pending task %s to Monday item %s.", task["id"], created["id"])
+        except Exception as e:
+            logger.error("Error syncing pending task %s: %s", task["id"], e)
+            meet_totals["skipped"] += 1
+
     mode = "dry-run" if args.dry_run else "live"
     logger.info(
-        "Monday sync %s complete for %s: created=%d skipped=%d unmapped=%d empty=%d",
+        "Monday sync %s complete. WhatsApp tasks: created=%d skipped=%d unmapped=%d empty=%d. Meet/Session tasks: created=%d skipped=%d unmapped=%d",
         mode,
-        target_date.isoformat(),
         totals["created"],
         totals["skipped"],
         totals["unmapped"],
         totals["empty"],
+        meet_totals["created"],
+        meet_totals["skipped"],
+        meet_totals["unmapped"],
     )
 
 
@@ -80,6 +376,9 @@ def _sync_analysis_row(
     monday_users: dict[str, dict[str, Any]],
     api_key: str,
     dry_run: bool,
+    account_names: dict[str, str],
+    monday_boards: list[dict[str, Any]],
+    board_info_cache: dict[str, dict[str, Any]],
 ) -> dict[str, int]:
     totals = {"created": 0, "skipped": 0, "unmapped": 0, "empty": 0}
     action_items = row.get("action_items") if isinstance(row.get("action_items"), list) else []
@@ -88,16 +387,21 @@ def _sync_analysis_row(
         return totals
 
     account_id = _account_id(row)
-    board = _board_for_row(boards_config, account_id)
+    board = _resolve_board(boards_config, account_id, account_names, monday_boards)
     if not board:
         logger.warning(
-            "No Monday board configured for account %s (%s). Skipping %d task(s).",
+            "No Monday board configured/found for account %s (%s). Skipping %d task(s).",
             account_id,
             row.get("group_name") or row.get("group_jid"),
             len(action_items),
         )
         totals["unmapped"] += len(action_items)
         return totals
+
+    board_id = str(board["board_id"])
+    if board_id not in board_info_cache and api_key:
+        board_info_cache[board_id] = _get_board_info(api_key, board_id)
+    board_info = board_info_cache.get(board_id, {"columns": {}, "group_id": "topics"})
 
     updated_items: list[dict[str, Any]] = []
     changed = False
@@ -121,7 +425,7 @@ def _sync_analysis_row(
 
         sync_key = item.get("monday_sync_key") or _sync_key(row, index, action)
         item_name = _monday_item_name(row, item)
-        column_values = _column_values(boards_config, row, item, board, monday_users)
+        column_values = _column_values(boards_config, row, item, board, monday_users, board_info)
 
         if dry_run:
             logger.info(
@@ -136,25 +440,30 @@ def _sync_analysis_row(
             totals["created"] += 1
             continue
 
-        created = _create_monday_item(
-            api_key=api_key,
-            board_id=str(board["board_id"]),
-            group_id=str(boards_config["defaults"].get("group_active", "topics")),
-            item_name=item_name,
-            column_values=column_values,
-        )
-        _create_monday_update(api_key, str(created["id"]), _evidence_text(row, item))
-        updated = dict(item)
-        updated["monday_item_id"] = created["id"]
-        updated["monday_item_name"] = created.get("name") or item_name
-        updated["monday_created_at"] = created.get("created_at")
-        updated["monday_sync_key"] = sync_key
-        updated["monday_synced_at"] = datetime.now(timezone.utc).isoformat()
-        updated_items.append(updated)
-        _upsert_wa_task(row, updated, sync_key=sync_key)
-        changed = True
-        totals["created"] += 1
-        logger.info("Created Monday item %s for %s.", created["id"], item_name)
+        try:
+            created = _create_monday_item(
+                api_key=api_key,
+                board_id=board_id,
+                group_id=board_info["group_id"],
+                item_name=item_name,
+                column_values=column_values,
+            )
+            _create_monday_update(api_key, str(created["id"]), _evidence_text(row, item))
+            updated = dict(item)
+            updated["monday_item_id"] = created["id"]
+            updated["monday_item_name"] = created.get("name") or item_name
+            updated["monday_created_at"] = created.get("created_at")
+            updated["monday_sync_key"] = sync_key
+            updated["monday_synced_at"] = datetime.now(timezone.utc).isoformat()
+            updated_items.append(updated)
+            _upsert_wa_task(row, updated, sync_key=sync_key)
+            changed = True
+            totals["created"] += 1
+            logger.info("Created Monday item %s for %s.", created["id"], item_name)
+        except Exception as e:
+            logger.error("Failed to sync item %s to board %s: %s", item_name, board_id, e)
+            updated_items.append(item)
+            totals["skipped"] += 1
 
     if changed:
         _patch_analysis_action_items(str(row["id"]), updated_items)
