@@ -741,6 +741,7 @@ export default function App() {
   const [selectedJid, setSelectedJid] = useState<string | null>(null)
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
+  const [accountSearchQuery, setAccountSearchQuery] = useState('')
   const [clientTab, setClientTab] = useState<'resumen' | 'whatsapp' | 'historico' | 'mensajes' | 'meet' | 'publicaciones'>('resumen')
   const [resumenSubTab, setResumenSubTab] = useState<'diagnostico' | 'tareas' | 'metodologia'>('diagnostico')
   const [chartRange, setChartRange] = useState<'7d' | '30d' | '365d'>('30d')
@@ -1660,6 +1661,23 @@ export default function App() {
     const averageScore = globalScores.length
       ? roundScore(globalScores.reduce((t, s) => t + s, 0) / globalScores.length)
       : null
+    const normalizedAccountSearch = accountSearchQuery.trim().toLowerCase()
+    const visibleAccounts = accountSummariesAll.filter(account => {
+      if (groupFilter === 'analyzed' && !account.analyzedToday) return false
+      if (groupFilter === 'inactive' && (account.analyzedToday || account.hasMessagesToday)) return false
+      if (!normalizedAccountSearch) return true
+
+      const searchable = [
+        account.account_id,
+        account.name,
+        ...account.groups.map(group => group.name),
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase()
+
+      return searchable.includes(normalizedAccountSearch)
+    })
 
     return (
       <div className="lb-shell">
@@ -1745,6 +1763,25 @@ export default function App() {
 
 
               {/* Account list */}
+              <div className="lb-account-search" role="search">
+                <span className="lb-account-search-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <circle cx="11" cy="11" r="6.5" />
+                    <path d="M16 16l4 4" />
+                  </svg>
+                </span>
+                <input
+                  value={accountSearchQuery}
+                  onChange={(event) => setAccountSearchQuery(event.target.value)}
+                  placeholder="Buscar cliente"
+                  aria-label="Buscar cliente por nombre"
+                />
+                {accountSearchQuery && (
+                  <button type="button" onClick={() => setAccountSearchQuery('')} aria-label="Limpiar busqueda">
+                    Limpiar
+                  </button>
+                )}
+              </div>
               {groupFilter !== 'all' && (
                 <div style={{display:'flex', alignItems:'center', gap:10, margin:'8px 0 4px', padding:'8px 14px', background: groupFilter === 'analyzed' ? 'rgba(176,125,30,.10)' : 'rgba(58,110,165,.10)', borderRadius:8}}>
                   <span style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, fontWeight:600, color: groupFilter === 'analyzed' ? '#8a6010' : '#3a5a8a'}}>
@@ -1756,11 +1793,12 @@ export default function App() {
                 </div>
               )}
               <div className="lb-account-list">
-                {accountSummariesAll.filter(account => {
-                  if (groupFilter === 'analyzed') return account.analyzedToday
-                  if (groupFilter === 'inactive') return !account.analyzedToday && !account.hasMessagesToday
-                  return true
-                }).map(account => {
+                {visibleAccounts.length === 0 && (
+                  <div className="lb-account-empty">
+                    No hay clientes que coincidan con "{accountSearchQuery.trim()}".
+                  </div>
+                )}
+                {visibleAccounts.map(account => {
                   // Global ponderado solo para cuentas con checklist completo (contrato + meet)
                   const checklist = findChecklist(account.account_id, account.name)
                   let globalScore: number | null = null

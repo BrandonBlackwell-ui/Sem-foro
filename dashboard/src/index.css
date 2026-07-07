@@ -2230,6 +2230,79 @@ body[data-grid="on"] {
 .lb-date-btn:not(.active) { background: #fff; color: #4b5563; }
 
 /* Account rows */
+.lb-account-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(520px, 100%);
+  margin-top: 26px;
+  padding: 9px 12px 9px 14px;
+  background: #ffffff;
+  border: 1px solid #ece9e0;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+}
+
+.lb-account-search-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #7a8088;
+  flex: none;
+}
+
+.lb-account-search-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+.lb-account-search input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #1d1d1f;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.lb-account-search input::placeholder {
+  color: #9aa0a6;
+  font-weight: 500;
+}
+
+.lb-account-search button {
+  flex: none;
+  border: 1px solid #d0ccc4;
+  border-radius: 999px;
+  background: #fdfcf8;
+  color: #6b7280;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+}
+
+.lb-account-empty {
+  padding: 26px 20px;
+  background: #ffffff;
+  border: 1px dashed #d0ccc4;
+  border-radius: 9px;
+  color: #7a8088;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
 .lb-account-list { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
 
 .lb-account-row {
