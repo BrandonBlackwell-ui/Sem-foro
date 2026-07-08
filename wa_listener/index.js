@@ -83,8 +83,28 @@ let groupRefreshTimer = null;
 let statusServer = null;
 
 const AUTO_ACCOUNT_RULES = [
+  { pattern: /\bturbofin\b/i, accountId: "01" },
   { pattern: /maja/i, accountId: "02" },
+  { pattern: /\bcredix\b/i, accountId: "05" },
+  { pattern: /\bapollo\b/i, accountId: "07" },
+  { pattern: /\bazvi\b/i, accountId: "09" },
+  { pattern: /\bascenso\b|\bf.tbol\b/i, accountId: "11" },
+  { pattern: /\btello\b|\bmtv\b(?!\s*linkedin)/i, accountId: "12" },
   { pattern: /\bcima\b|grupo\s+cima/i, accountId: "13" },
+  { pattern: /\bdalinde\b/i, accountId: "14" },
+  { pattern: /\bnuvoil\b/i, accountId: "21" },
+  { pattern: /\bbernardo\b|\bbv seguimiento\b/i, accountId: "26" },
+  { pattern: /\bcoast\s*oil\b/i, accountId: "29" },
+  { pattern: /\bsupply\s*pay\b|\bsupply_pay\b|\bharvest\s*ai\b/i, accountId: "34" },
+  { pattern: /\bpepe\s*aguilar\b|\bppa\b/i, accountId: "35" },
+  { pattern: /\bkarpower\b|\bkps\b/i, accountId: "38" },
+  { pattern: /\bismerely\b/i, accountId: "39" },
+  { pattern: /\baustria\b/i, accountId: "40" },
+  { pattern: /\bifa\b|\bceltics\b/i, accountId: "41" },
+  { pattern: /\bmtv\s*linkedin\b|\bmario\s*q\b/i, accountId: "42" },
+  { pattern: /\biran\s*guerrero\b/i, accountId: "43" },
+  { pattern: /\blch\b|\bluxury\s*travel\b/i, accountId: "44" },
+  { pattern: /\binovamedik\b/i, accountId: "45" },
 ];
 
 function startStatusServer() {
