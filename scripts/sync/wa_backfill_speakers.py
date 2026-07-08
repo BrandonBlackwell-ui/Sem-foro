@@ -12,6 +12,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -100,7 +101,7 @@ def _lookup_participant(value: str, participants: dict[str, dict[str, Any]]) -> 
 def _load_participants() -> dict[str, dict[str, Any]]:
     if not PARTICIPANTS_PATH.exists():
         return {}
-    rows = json.loads(PARTICIPANTS_PATH.read_text(encoding="utf-8"))
+    rows = json.loads(_strip_json_comments(PARTICIPANTS_PATH.read_text(encoding="utf-8")))
     participants: dict[str, dict[str, Any]] = {}
     for row in rows if isinstance(rows, list) else []:
         if not isinstance(row, dict):
@@ -112,6 +113,10 @@ def _load_participants() -> dict[str, dict[str, Any]]:
         if len(phone) >= 10:
             participants[phone[-10:]] = row
     return participants
+
+
+def _strip_json_comments(text: str) -> str:
+    return re.sub(r"^\s*//.*$", "", text, flags=re.MULTILINE)
 
 
 def _speaker_team_label(team: str) -> str | None:

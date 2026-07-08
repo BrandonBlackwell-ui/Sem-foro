@@ -298,7 +298,7 @@ function loadParticipantMappings() {
   for (const path of candidates) {
     if (!existsSync(path)) continue;
     try {
-      const rows = JSON.parse(readFileSync(path, "utf8"));
+      const rows = JSON.parse(stripJsonComments(readFileSync(path, "utf8")));
       const mappings = new Map();
       for (const row of Array.isArray(rows) ? rows : []) {
         const phone = phoneDigits(row?.phone);
@@ -314,6 +314,45 @@ function loadParticipantMappings() {
   }
 
   return new Map();
+}
+
+function stripJsonComments(text) {
+  let output = "";
+  let inString = false;
+  let escaped = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    const next = text[i + 1];
+
+    if (inString) {
+      output += char;
+      if (escaped) {
+        escaped = false;
+      } else if (char === "\\") {
+        escaped = true;
+      } else if (char === '"') {
+        inString = false;
+      }
+      continue;
+    }
+
+    if (char === '"') {
+      inString = true;
+      output += char;
+      continue;
+    }
+
+    if (char === "/" && next === "/") {
+      while (i < text.length && text[i] !== "\n") i++;
+      output += "\n";
+      continue;
+    }
+
+    output += char;
+  }
+
+  return output;
 }
 
 function phoneDigits(value) {

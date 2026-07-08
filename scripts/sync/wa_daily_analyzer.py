@@ -18,6 +18,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -510,7 +511,7 @@ def _load_participants() -> dict[str, dict[str, Any]]:
     if not PARTICIPANTS_PATH.exists():
         return {}
     try:
-        rows = json.loads(PARTICIPANTS_PATH.read_text(encoding="utf-8"))
+        rows = json.loads(_strip_json_comments(PARTICIPANTS_PATH.read_text(encoding="utf-8")))
     except json.JSONDecodeError as exc:
         logger.warning("Could not parse %s: %s", PARTICIPANTS_PATH, exc)
         return {}
@@ -526,6 +527,10 @@ def _load_participants() -> dict[str, dict[str, Any]]:
         if len(phone) >= 10:
             participants[phone[-10:]] = row
     return participants
+
+
+def _strip_json_comments(text: str) -> str:
+    return re.sub(r"^\s*//.*$", "", text, flags=re.MULTILINE)
 
 
 def _phone_digits(value: str) -> str:
