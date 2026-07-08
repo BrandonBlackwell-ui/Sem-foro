@@ -80,6 +80,7 @@ let latestPairingCode = null;
 let latestPairingAt = null;
 let isWhatsAppConnected = false;
 let groupRefreshTimer = null;
+let statusServer = null;
 
 const AUTO_ACCOUNT_RULES = [
   { pattern: /maja/i, accountId: "02" },
@@ -135,10 +136,30 @@ function startStatusServer() {
     res.end("Not found");
   });
 
+  statusServer = server;
   server.listen(PORT, () => {
     console.log(`Status server listening on port ${PORT}. Open /qr to scan WhatsApp.`);
   });
 }
+
+function shutdown(signal) {
+  console.log(`${signal} received. Shutting down WA listener gracefully.`);
+  if (groupRefreshTimer) {
+    clearInterval(groupRefreshTimer);
+    groupRefreshTimer = null;
+  }
+
+  if (statusServer) {
+    statusServer.close(() => process.exit(0));
+    setTimeout(() => process.exit(0), 5_000).unref?.();
+    return;
+  }
+
+  process.exit(0);
+}
+
+process.on("SIGTERM", () => shutdown("SIGTERM"));
+process.on("SIGINT", () => shutdown("SIGINT"));
 
 async function loadGroupMappings() {
   const { data, error } = await supabase
@@ -634,24 +655,32 @@ async function connectToWhatsApp() {
   sock.ev.on("creds.update", saveCreds);
 
   sock.ev.on("messages.upsert", async ({ messages, type }) => {
-    if (type !== "notify") return;
+    try {
+      if (type !== "notify") return;
 
-    const rows = [];
-    for (const msg of messages) {
-      const remoteJid = msg.key?.remoteJid;
-      if (!remoteJid || !isJidGroup(remoteJid)) continue;
+      const rows = [];
+      for (const msg of messages) {
+        try {
+          const remoteJid = msg.key?.remoteJid;
+          if (!remoteJid || !isJidGroup(remoteJid)) continue;
 
-      const mapping = await mappingForMessageGroup(sock, remoteJid);
-      if (!mapping) continue;
+          const mapping = await mappingForMessageGroup(sock, remoteJid);
+          if (!mapping) continue;
 
-      const row = await buildMessageRow(msg, mapping);
-      if (!row.msg_id || !row.remote_jid || !row.key) continue;
+          const row = await buildMessageRow(msg, mapping);
+          if (!row.msg_id || !row.remote_jid || !row.key) continue;
 
-      console.log(`[${row.account_id}] ${row.author ?? "unknown"}: ${row.body?.slice(0, 60) ?? `(${row.msg_type})`}`);
-      rows.push(row);
+          console.log(`[${row.account_id}] ${row.author ?? "unknown"}: ${row.body?.slice(0, 60) ?? `(${row.msg_type})`}`);
+          rows.push(row);
+        } catch (error) {
+          console.error("Error processing WhatsApp message:", error?.message || error);
+        }
+      }
+
+      await insertMessages(rows);
+    } catch (error) {
+      console.error("Error handling messages.upsert:", error?.message || error);
     }
-
-    await insertMessages(rows);
   });
 
   sock.ev.on("groups.update", async () => {
