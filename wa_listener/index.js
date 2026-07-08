@@ -83,28 +83,28 @@ let groupRefreshTimer = null;
 let statusServer = null;
 
 const AUTO_ACCOUNT_RULES = [
-  { pattern: /\bturbofin\b/i, accountId: "01" },
-  { pattern: /maja/i, accountId: "02" },
-  { pattern: /\bcredix\b/i, accountId: "05" },
-  { pattern: /\bapollo\b/i, accountId: "07" },
-  { pattern: /\bazvi\b/i, accountId: "09" },
-  { pattern: /\bascenso\b|\bf.tbol\b/i, accountId: "11" },
-  { pattern: /\btello\b|\bmtv\b(?!\s*linkedin)/i, accountId: "12" },
-  { pattern: /\bcima\b|grupo\s+cima/i, accountId: "13" },
-  { pattern: /\bdalinde\b/i, accountId: "14" },
-  { pattern: /\bnuvoil\b/i, accountId: "21" },
-  { pattern: /\bbernardo\b|\bbv seguimiento\b/i, accountId: "26" },
-  { pattern: /\bcoast\s*oil\b/i, accountId: "29" },
-  { pattern: /\bsupply\s*pay\b|\bsupply_pay\b|\bharvest\s*ai\b/i, accountId: "34" },
-  { pattern: /\bpepe\s*aguilar\b|\bppa\b/i, accountId: "35" },
-  { pattern: /\bkarpower\b|\bkps\b/i, accountId: "38" },
-  { pattern: /\bismerely\b/i, accountId: "39" },
-  { pattern: /\baustria\b/i, accountId: "40" },
-  { pattern: /\bifa\b|\bceltics\b/i, accountId: "41" },
-  { pattern: /\bmtv\s*linkedin\b|\bmario\s*q\b/i, accountId: "42" },
-  { pattern: /\biran\s*guerrero\b/i, accountId: "43" },
-  { pattern: /\blch\b|\bluxury\s*travel\b/i, accountId: "44" },
-  { pattern: /\binovamedik\b/i, accountId: "45" },
+  { pattern: /\bturbofin\b/i, accountId: "01", projectUid: "TU01" },
+  { pattern: /maja/i, accountId: "02", projectUid: "MA02" },
+  { pattern: /\bcredix\b/i, accountId: "05", projectUid: "CR05" },
+  { pattern: /\bapollo\b/i, accountId: "07", projectUid: "AP07" },
+  { pattern: /\bazvi\b/i, accountId: "09", projectUid: "GA09" },
+  { pattern: /\bascenso\b|\bf.tbol\b/i, accountId: "11", projectUid: "AD11" },
+  { pattern: /\btello\b|\bmtv\b(?!\s*linkedin)/i, accountId: "12", projectUid: "MT12" },
+  { pattern: /\bcima\b|grupo\s+cima/i, accountId: "13", projectUid: "GC13" },
+  { pattern: /\bdalinde\b/i, accountId: "14", projectUid: "DA14" },
+  { pattern: /\bnuvoil\b/i, accountId: "21", projectUid: "NU21" },
+  { pattern: /\bbernardo\b|\bbv seguimiento\b/i, accountId: "26", projectUid: "BV26" },
+  { pattern: /\bcoast\s*oil\b/i, accountId: "29", projectUid: "CO29" },
+  { pattern: /\bsupply\s*pay\b|\bsupply_pay\b|\bharvest\s*ai\b/i, accountId: "34", projectUid: "SP34" },
+  { pattern: /\bpepe\s*aguilar\b|\bppa\b/i, accountId: "35", projectUid: "PA35" },
+  { pattern: /\bkarpower\b|\bkps\b/i, accountId: "38", projectUid: "KP38" },
+  { pattern: /\bismerely\b/i, accountId: "39", projectUid: "IS39" },
+  { pattern: /\baustria\b/i, accountId: "40", projectUid: "AU40" },
+  { pattern: /\bifa\b|\bceltics\b/i, accountId: "41", projectUid: "IC41" },
+  { pattern: /\bmtv\s*linkedin\b|\bmario\s*q\b/i, accountId: "42", projectUid: "ML42" },
+  { pattern: /\biran\s*guerrero\b/i, accountId: "43", projectUid: "IG43" },
+  { pattern: /\blch\b|\bluxury\s*travel\b/i, accountId: "44", projectUid: "LL44" },
+  { pattern: /\binovamedik\b/i, accountId: "45", projectUid: "IN45" },
 ];
 
 function startStatusServer() {
@@ -200,30 +200,47 @@ async function loadGroupMappings() {
   console.log(`${groupCache.size} mapped WhatsApp groups loaded from Supabase`);
 }
 
-function accountIdForGroupName(name) {
+function projectMappingForGroupName(name) {
   const rule = AUTO_ACCOUNT_RULES.find((r) => r.pattern.test(name || ""));
-  return rule ? rule.accountId : "00_UNMAPPED";
+  return rule ? { accountId: rule.accountId, projectUid: rule.projectUid } : { accountId: "00_UNMAPPED", projectUid: null };
 }
 
 async function registerGroup(jid, name) {
   if (!jid || groupCache.has(jid)) return groupCache.get(jid) || null;
 
+  const projectMapping = projectMappingForGroupName(name);
   const row = {
     jid,
     name: name || jid,
-    account_id: accountIdForGroupName(name),
+    account_id: projectMapping.accountId,
     active: true,
   };
+  if (projectMapping.projectUid) {
+    row.project_uid = projectMapping.projectUid;
+  }
   const { error } = await supabase
     .from("wa_groups")
     .upsert(row, { onConflict: "jid", ignoreDuplicates: true });
 
   if (error) {
+    if (row.project_uid && /project_uid|schema cache|column/i.test(error.message || "")) {
+      delete row.project_uid;
+      const retry = await supabase
+        .from("wa_groups")
+        .upsert(row, { onConflict: "jid", ignoreDuplicates: true });
+      if (!retry.error) {
+        const mapping = { accountId: row.account_id, name: row.name, projectUid: null };
+        groupCache.set(jid, mapping);
+        console.log(`Auto-registered group '${row.name}' -> account ${row.account_id}`);
+        console.log("project_uid column is not available yet; run migration 011_blackwell_project_uid.sql.");
+        return mapping;
+      }
+    }
     console.error(`Could not auto-register group '${row.name}':`, error.message);
     return null;
   }
 
-  const mapping = { accountId: row.account_id, name: row.name };
+  const mapping = { accountId: row.account_id, name: row.name, projectUid: projectMapping.projectUid };
   groupCache.set(jid, mapping);
   console.log(`Auto-registered group '${row.name}' -> account ${row.account_id}`);
   if (row.account_id === "00_UNMAPPED") {
