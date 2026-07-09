@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 type DailyAnalysis = {
   id: number
@@ -309,6 +309,32 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
     ...order.filter(o => byConsultant.has(o)),
     ...[...byConsultant.keys()].filter(k => !order.includes(k)),
   ]
+
+  // Modo kiosko: rota páginas de columnas (las que quepan) cada 8s. Se pausa al
+  // pasar el cursor. Puntos abajo para saltar manualmente.
+  const COL_W = 228 // 210 columna + 18 gap
+  const wrapRef = useRef<HTMLDivElement | null>(null)
+  const [perPage, setPerPage] = useState(4)
+  const [page, setPage] = useState(0)
+  const [paused, setPaused] = useState(false)
+  useEffect(() => {
+    const calc = () => {
+      const w = wrapRef.current?.clientWidth || window.innerWidth
+      setPerPage(Math.max(1, Math.min(consultants.length || 1, Math.floor(w / COL_W))))
+    }
+    calc()
+    window.addEventListener('resize', calc)
+    return () => window.removeEventListener('resize', calc)
+  }, [consultants.length])
+  const pageCount = Math.max(1, Math.ceil(consultants.length / perPage))
+  useEffect(() => { if (page >= pageCount) setPage(0) }, [pageCount, page])
+  useEffect(() => {
+    if (paused || pageCount <= 1) return
+    const t = setInterval(() => setPage(p => (p + 1) % pageCount), 8000)
+    return () => clearInterval(t)
+  }, [paused, pageCount])
+  const visible = consultants.slice(page * perPage, page * perPage + perPage)
+
   const done = clients.filter(c => c.pct >= 100).length
   const partial = clients.filter(c => c.pct === 50).length
   const pending = clients.filter(c => c.pct === 0).length
@@ -337,38 +363,60 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: 18, overflowX: 'auto', paddingBottom: 12, marginTop: 20, alignItems: 'flex-start' }}>
-              {consultants.map(consultant => {
-                const list = (byConsultant.get(consultant) ?? []).sort((a, b) => b.pct - a.pct)
-                return (
-                  <div key={consultant} style={{ minWidth: 210, flex: '0 0 210px', background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, padding: 12 }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, paddingBottom: 8, borderBottom: '1px solid var(--rule-soft)' }}>
-                      <span style={{ fontWeight: 700, fontSize: 14, color: 'var(--ink-900)' }}>{consultant}</span>
-                      <span style={{ fontSize: 11, color: '#9aa0a6', fontFamily: 'var(--mono)' }}>{list.length}</span>
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                      {list.map(c => {
-                        const color = surveyColor(c.pct)
-                        return (
-                          <div key={c.account_number} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 10px', borderRadius: 8, border: `1px solid ${color}33`, background: `${color}0d` }}>
-                            <div style={{ width: 30, height: 30, flexShrink: 0, borderRadius: 7, background: color, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 700 }}>{surveyIcon(c.pct)}</div>
-                            <div style={{ flex: 1, minWidth: 0 }}>
-                              <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-900)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</div>
-                              <div style={{ fontSize: 10.5, color: '#9aa0a6' }}>
-                                <span style={{ color: c.tipoA ? '#3f7050' : '#bbb' }}>A {c.tipoA ? '✓' : '·'}</span>
-                                {'  '}
-                                <span style={{ color: c.tipoB ? '#3f7050' : '#bbb' }}>B {c.tipoB ? '✓' : '·'}</span>
-                                {c.source ? ` · ${c.source}` : ''}
+            <div
+              ref={wrapRef}
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              style={{ marginTop: 20 }}
+            >
+              <div style={{ display: 'flex', gap: 18, alignItems: 'flex-start' }}>
+                {visible.map(consultant => {
+                  const list = (byConsultant.get(consultant) ?? []).sort((a, b) => b.pct - a.pct)
+                  return (
+                    <div key={consultant} style={{ width: 210, flex: '0 0 210px', background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, padding: 12 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, paddingBottom: 8, borderBottom: '1px solid var(--rule-soft)' }}>
+                        <span style={{ fontWeight: 700, fontSize: 14, color: 'var(--ink-900)' }}>{consultant}</span>
+                        <span style={{ fontSize: 11, color: '#9aa0a6', fontFamily: 'var(--mono)' }}>{list.length}</span>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                        {list.map(c => {
+                          const color = surveyColor(c.pct)
+                          return (
+                            <div key={c.account_number} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 10px', borderRadius: 8, border: `1px solid ${color}33`, background: `${color}0d` }}>
+                              <div style={{ width: 30, height: 30, flexShrink: 0, borderRadius: 7, background: color, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 700 }}>{surveyIcon(c.pct)}</div>
+                              <div style={{ flex: 1, minWidth: 0 }}>
+                                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-900)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</div>
+                                <div style={{ fontSize: 10.5, color: '#9aa0a6' }}>
+                                  <span style={{ color: c.tipoA ? '#3f7050' : '#bbb' }}>A {c.tipoA ? '✓' : '·'}</span>
+                                  {'  '}
+                                  <span style={{ color: c.tipoB ? '#3f7050' : '#bbb' }}>B {c.tipoB ? '✓' : '·'}</span>
+                                  {c.source ? ` · ${c.source}` : ''}
+                                </div>
                               </div>
+                              <div style={{ fontSize: 15, fontWeight: 800, color, fontFamily: 'var(--mono)' }}>{c.pct}</div>
                             </div>
-                            <div style={{ fontSize: 15, fontWeight: 800, color, fontFamily: 'var(--mono)' }}>{c.pct}</div>
-                          </div>
-                        )
-                      })}
+                          )
+                        })}
+                      </div>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
+              {pageCount > 1 && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 20 }}>
+                  {Array.from({ length: pageCount }).map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setPage(i)}
+                      aria-label={`Página ${i + 1}`}
+                      style={{ width: i === page ? 24 : 9, height: 9, borderRadius: 999, border: 'none', padding: 0, cursor: 'pointer', background: i === page ? '#3a3a44' : '#d0ccc4', transition: 'all .25s' }}
+                    />
+                  ))}
+                  <span style={{ marginLeft: 10, fontSize: 11, color: '#9aa0a6', fontFamily: 'var(--mono)' }}>
+                    {paused ? '⏸ pausado (cursor encima)' : '▶ rotando cada 8s'}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>
