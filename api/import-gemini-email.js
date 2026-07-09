@@ -305,70 +305,85 @@ export default async function handler(req, res) {
   const titleWords = new Set(titleNorm.split(' '));
   const titleBigrams = bigrams(titleNorm);
 
-  // 4. Fetch accounts from Supabase
   let accountId = '00_INTERNAL';
   let matchedAccountName = 'Interno Blackwell';
   let matchMethod = 'default';
+  let projectUid = null;
 
+  // 4. Load the project registry (folio ⇄ número ⇄ nombre) from Supabase.
+  const byUid = new Map();     // "CO29" -> { number, name }
+  const byNumber = new Map();  // 29 -> { uid, name }
   try {
-    const accResponse = await fetch(`${SB_URL}/rest/v1/wa_account_scores?select=account_id,account_name`, {
+    const projResp = await fetch(`${SB_URL}/rest/v1/blackwell_projects?select=project_uid,project_number,project_name`, {
       headers: { apikey: SB_SERVICE_KEY, Authorization: `Bearer ${SB_SERVICE_KEY}` }
     });
-
-    if (accResponse.ok) {
-      const accounts = await accResponse.json();
-      let bestScore = 0;
-      let bestMatch = null;
-      let bestMethod = 'none';
-
-      for (const acc of accounts) {
-        // Skip internal bucket itself
-        if (acc.account_id === '00_INTERNAL') continue;
-
-        const nameNorm = normalize(acc.account_name);
-        const nameWords = nameNorm.split(' ');
-
-        // A. Alias check (highest priority)
-        const accAliases = (aliases[acc.account_id] || []).map(normalize);
-        let aliasHit = false;
-        for (const alias of accAliases) {
-          if (
-            titleNorm.includes(alias) ||
-            titleCollapsed.includes(collapse(alias)) ||
-            bigramSimilarity(titleNorm, alias) > 0.7
-          ) {
-            aliasHit = true;
-            break;
-          }
-        }
-        if (aliasHit && 100 > bestScore) {
-          bestScore = 100;
-          bestMatch = acc;
-          bestMethod = 'alias';
-          continue;
-        }
-
-        // B. Multi-signal score
-        const score = matchScore(titleNorm, nameNorm, nameWords, titleWords, titleCollapsed, titleBigrams);
-        if (score > bestScore) {
-          bestScore = score;
-          bestMatch = acc;
-          bestMethod = `score(${score})`;
-        }
-      }
-
-      // Minimum confidence threshold: 40/100
-      if (bestMatch && bestScore >= 40) {
-        accountId = bestMatch.account_id;
-        matchedAccountName = bestMatch.account_name;
-        matchMethod = bestMethod;
+    if (projResp.ok) {
+      for (const p of await projResp.json()) {
+        byUid.set(String(p.project_uid).toUpperCase(), { number: p.project_number, name: p.project_name });
+        const n = parseInt(p.project_number, 10);
+        if (!Number.isNaN(n)) byNumber.set(n, { uid: p.project_uid, name: p.project_name });
       }
     }
   } catch (err) {
-    console.error('[import-gemini-email] Error fetching accounts:', err);
+    console.error('[import-gemini-email] Error fetching blackwell_projects:', err);
   }
 
-  console.log(`[import-gemini-email] "${meetingTitle}" → account_id: "${accountId}" (${matchedAccountName}) via ${matchMethod}`);
+  // 4a. FOLIO FIRST — el equipo escribe el código (ej. "CO29") en el título de la
+  //     reunión de Meet. Se extrae y sólo se acepta si es un folio real del registro.
+  const folioCandidates = [...`${subject} ${meetingTitle}`.matchAll(/\b([A-Za-z]{2})[\s-]?(\d{2})\b/g)]
+    .map(m => (m[1] + m[2]).toUpperCase());
+  for (const cand of folioCandidates) {
+    if (byUid.has(cand)) {
+      const p = byUid.get(cand);
+      accountId = p.number;
+      matchedAccountName = p.name || cand;
+      matchMethod = `folio(${cand})`;
+      projectUid = cand;
+      break;
+    }
+  }
+
+  // 4b. Fallback: fuzzy name matching sólo si NO se encontró folio.
+  if (matchMethod === 'default') {
+    try {
+      const accResponse = await fetch(`${SB_URL}/rest/v1/wa_account_scores?select=account_id,account_name`, {
+        headers: { apikey: SB_SERVICE_KEY, Authorization: `Bearer ${SB_SERVICE_KEY}` }
+      });
+      if (accResponse.ok) {
+        const accounts = await accResponse.json();
+        let bestScore = 0;
+        let bestMatch = null;
+        let bestMethod = 'none';
+        for (const acc of accounts) {
+          if (acc.account_id === '00_INTERNAL') continue;
+          const nameNorm = normalize(acc.account_name);
+          const nameWords = nameNorm.split(' ');
+          const accAliases = (aliases[acc.account_id] || []).map(normalize);
+          let aliasHit = false;
+          for (const alias of accAliases) {
+            if (titleNorm.includes(alias) || titleCollapsed.includes(collapse(alias)) || bigramSimilarity(titleNorm, alias) > 0.7) { aliasHit = true; break; }
+          }
+          if (aliasHit && 100 > bestScore) { bestScore = 100; bestMatch = acc; bestMethod = 'alias'; continue; }
+          const score = matchScore(titleNorm, nameNorm, nameWords, titleWords, titleCollapsed, titleBigrams);
+          if (score > bestScore) { bestScore = score; bestMatch = acc; bestMethod = `score(${score})`; }
+        }
+        if (bestMatch && bestScore >= 40) {
+          accountId = bestMatch.account_id;
+          matchedAccountName = bestMatch.account_name;
+          matchMethod = bestMethod;
+        }
+      }
+    } catch (err) {
+      console.error('[import-gemini-email] Error fetching accounts:', err);
+    }
+  }
+
+  // 4c. Resolve project_uid for stamping (if matched by name, look it up by number).
+  if (!projectUid && /^[0-9]+$/.test(accountId)) {
+    projectUid = byNumber.get(parseInt(accountId, 10))?.uid ?? null;
+  }
+
+  console.log(`[import-gemini-email] "${meetingTitle}" → account_id: "${accountId}" uid: "${projectUid}" (${matchedAccountName}) via ${matchMethod}`);
 
   // 5. Build the transcript text and a content-hash dedup key. The hash is
   //    stable across mailboxes, so the same Gemini notes forwarded by several
@@ -427,6 +442,7 @@ export default async function handler(req, res) {
       .filter(it => it && String(it.action || '').trim())
       .map(it => ({
         account_id: accountId,
+        project_uid: projectUid,
         action: String(it.action).trim(),
         owner: it.owner || null,
         owner_type: it.owner_type || null,
@@ -467,6 +483,7 @@ export default async function handler(req, res) {
     if (currentTask) parsedTasks.push(currentTask);
     tasks = parsedTasks.map(t => ({
       account_id: accountId,
+      project_uid: projectUid,
       action: `${t.title}: ${t.detail}`,
       owner: t.owner,
       analysis_date,
@@ -491,6 +508,7 @@ export default async function handler(req, res) {
   if (llm) {
     const analysisRow = {
       account_id: accountId,
+      project_uid: projectUid,
       account_name: matchedAccountName,
       period,
       meeting_title: meetingTitle,
