@@ -509,10 +509,16 @@ function buildWeightedScore(
       rawAnalysisObj = rawAnalysis
     }
   }
-  let survey = rawAnalysisObj?.survey || rawAnalysisObj?.raw_analysis?.survey
+  // The WhatsApp analysis always includes a `survey` object, but it's empty
+  // (all-null questions) when no survey was asked in chat. Only treat it as a
+  // real survey when it has at least one scored question — otherwise it would
+  // mask the Meet survey and the SC would show "pendiente" despite Meet data.
+  const waSurvey = rawAnalysisObj?.survey || rawAnalysisObj?.raw_analysis?.survey
+  const waSurveyHasScores = !!(waSurvey && (waSurvey.question_a?.score != null || waSurvey.question_b?.score != null))
+  let survey = waSurveyHasScores ? waSurvey : null
   let surveySource = survey ? 'WhatsApp' : ''
 
-  // Fallback to Meet transcript survey if WhatsApp survey is not present
+  // Fallback to Meet transcript survey if WhatsApp survey has no scored questions
   if (!survey && checklist?.scores) {
     const meetEntries = Object.entries(checklist.scores as Record<string, any>)
       .filter(([, v]) => v?.transcripciones?.survey?.question_a?.score != null || v?.transcripciones?.survey?.question_b?.score != null)
