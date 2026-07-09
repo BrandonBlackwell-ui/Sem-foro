@@ -22,7 +22,6 @@ create table if not exists drive_account_intel (
   tipo_acuerdo           text,           -- contrato|ODC|propuesta|convenio_intercambio|anexo
   vigencia_inicio        date,
   vigencia_fin           date,
-  monto                  text,
   periodicidad_pago      text,
   objetivos              jsonb not null default '[]'::jsonb,
   servicios              jsonb not null default '[]'::jsonb,

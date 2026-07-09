@@ -1019,7 +1019,7 @@ export default function App() {
   useEffect(() => {
     (async () => {
       const rows = await supabaseGetOptional<any[]>(
-        '/rest/v1/drive_account_intel?select=account_number,project_uid,client_name,docs_total,resumen,tiene_contrato_firmado,tipo_acuerdo,vigencia_inicio,vigencia_fin,monto,periodicidad_pago,objetivos,meta_entregables,renovacion,faltantes,synced_at',
+        '/rest/v1/drive_account_intel?select=account_number,project_uid,client_name,docs_total,resumen,tiene_contrato_firmado,tipo_acuerdo,vigencia_inicio,vigencia_fin,objetivos,meta_entregables,renovacion,faltantes,synced_at',
         [],
       )
       setDriveIntel(rows)
@@ -1509,8 +1509,12 @@ export default function App() {
   // Merge Supabase Meet analyses into each account's checklist scores so the SC
   // formula and "Survey aplicado" block read live data. Supabase wins per period;
   // periods without a Supabase row keep the static checklist.json value.
+  // También fusiona la inteligencia del Drive (drive_account_intel): si el
+  // checklist estático no trae contrato/vigencia pero el contrato firmado ya
+  // está en Drive, se activa (gate del score global); y si falta la meta de
+  // publicaciones para el CO, se toma de los entregables comprometidos.
   const mergedChecklists = useMemo(() => {
-    if (!meetAnalyses.length) return allChecklists
+    if (!meetAnalyses.length && !driveIntel.length) return allChecklists
     // Rows arrive created_at.desc → first seen per (account, period) is the latest.
     const latestByAcctPeriod = new Map<string, any>()
     for (const row of meetAnalyses) {
@@ -1519,12 +1523,44 @@ export default function App() {
       const key = `${acctNum}::${row.period}`
       if (!latestByAcctPeriod.has(key)) latestByAcctPeriod.set(key, row)
     }
+    const intelByNum = new Map<number, any>()
+    for (const r of driveIntel) {
+      const n = Number(r.account_number)
+      if (!Number.isNaN(n)) intelByNum.set(n, r)
+    }
     return allChecklists.map(entry => {
       const acctNum = Number(entry.data?.account_number ?? NaN)
       if (Number.isNaN(acctNum)) return entry
       const rowsForAcct = [...latestByAcctPeriod.values()].filter(r => Number(r.account_id) === acctNum)
-      if (!rowsForAcct.length) return entry
+      const intel = intelByNum.get(acctNum)
+      if (!rowsForAcct.length && !intel) return entry
       const data = { ...entry.data, scores: { ...(entry.data.scores || {}) } }
+      // Drive intel → contrato (vigencia) y meta de publicaciones (CO)
+      if (intel) {
+        const hasVigencia = !!data.contract?.vigencia
+        if (!hasVigencia && intel.tiene_contrato_firmado === true && (intel.vigencia_inicio || intel.vigencia_fin)) {
+          data.contract = {
+            ...(data.contract || {}),
+            vigencia: `${intel.vigencia_inicio ?? '¿?'} a ${intel.vigencia_fin ?? 'indefinida'}`,
+            nota: 'Contrato detectado en Drive (carpeta 01)',
+          }
+        }
+        const pubItem = data.schema?.items?.publicaciones_web
+        const hasMeta = pubItem && (pubItem.meta_fase1 != null || pubItem.meta_fase2 != null)
+        if (!hasMeta && intel.meta_entregables) {
+          // Meta numérica: primer "N publicaciones/notas/boletines..." del texto
+          const m = String(intel.meta_entregables).match(/(\d+)\s*(?:publicacion|nota|bolet[ií]n|contenido|comunicado|art[ií]culo|columna|entregable)/i)
+          if (m) {
+            data.schema = {
+              ...(data.schema || {}),
+              items: {
+                ...(data.schema?.items || {}),
+                publicaciones_web: { ...(pubItem || {}), meta_fase1: Number(m[1]) },
+              },
+            }
+          }
+        }
+      }
       for (const row of rowsForAcct) {
         const score = row.sesion_score
         const prev = data.scores[row.period] || {}
@@ -1552,7 +1588,7 @@ export default function App() {
       }
       return { ...entry, data }
     })
-  }, [allChecklists, meetAnalyses])
+  }, [allChecklists, meetAnalyses, driveIntel])
 
   const findChecklist = useCallback((accountId: string, accountName?: string) => {
     const nameNorm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
@@ -3348,7 +3384,6 @@ function DriveIntelCard({ intel }: { intel: any | null }) {
         {(intel.vigencia_inicio || intel.vigencia_fin) && (
           <span><strong>Vigencia:</strong> {fmt(intel.vigencia_inicio) ?? '¿?'} → {fmt(intel.vigencia_fin) ?? '¿?'}</span>
         )}
-        {intel.monto && <span><strong>Monto:</strong> {intel.monto}{intel.periodicidad_pago === 'mensual' ? '' : ''}</span>}
         {intel.meta_entregables && <span style={{ flexBasis: '100%' }}><strong>Entregables comprometidos:</strong> {intel.meta_entregables}</span>}
         {intel.renovacion && <span style={{ flexBasis: '100%' }}><strong>Renovación:</strong> {intel.renovacion}</span>}
       </div>
