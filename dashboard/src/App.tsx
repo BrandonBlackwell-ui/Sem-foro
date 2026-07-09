@@ -1690,14 +1690,20 @@ export default function App() {
         const pubItem = data.schema?.items?.publicaciones_web
         const hasMeta = pubItem && (pubItem.meta_fase1 != null || pubItem.meta_fase2 != null)
         if (!hasMeta && intel.meta_entregables) {
-          // Meta numérica: primer "N publicaciones/notas/boletines..." del texto
-          const m = String(intel.meta_entregables).match(/(\d+)\s*(?:publicacion|nota|bolet[ií]n|contenido|comunicado|art[ií]culo|columna|entregable)/i)
+          // Meta numérica: primer "N publicaciones/notas/boletines..." del texto.
+          // El CO mide por MES: si la meta viene trimestral/semanal se normaliza.
+          const metaText = String(intel.meta_entregables)
+          const m = metaText.match(/(\d+)\s*(?:publicacion|nota|bolet[ií]n|contenido|comunicado|art[ií]culo|columna|entregable)/i)
           if (m) {
+            let metaMensual = Number(m[1])
+            const window = metaText.slice(Math.max(0, m.index! - 20), m.index! + m[0].length + 30)
+            if (/trimestr/i.test(window)) metaMensual = Math.max(1, Math.round(metaMensual / 3))
+            else if (/semana/i.test(window)) metaMensual = metaMensual * 4
             data.schema = {
               ...(data.schema || {}),
               items: {
                 ...(data.schema?.items || {}),
-                publicaciones_web: { ...(pubItem || {}), meta_fase1: Number(m[1]) },
+                publicaciones_web: { ...(pubItem || {}), meta_fase1: metaMensual },
               },
             }
           }
