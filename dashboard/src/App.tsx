@@ -1352,11 +1352,13 @@ export default function App() {
   }, [meetAnalyses, analyses])
 
   const surveyClients = useMemo<SurveyClient[]>(() => {
-    return CLIENT_ROSTER.map(({ num, name, consultant }) => {
-      const liveName = rosterByNumber.get(String(Number(num)))?.name
-      const sv = surveyByAccount.get(num) ?? { answered: 0, pct: 0, tipoA: false, tipoB: false, source: '' }
-      return { account_number: num, name: liveName || name, consultant, ...sv }
-    })
+    return CLIENT_ROSTER
+      .filter(({ num }) => num !== '08')
+      .map(({ num, name, consultant }) => {
+        const liveName = rosterByNumber.get(String(Number(num)))?.name
+        const sv = surveyByAccount.get(num) ?? { answered: 0, pct: 0, tipoA: false, tipoB: false, source: '' }
+        return { account_number: num, name: liveName || name, consultant, ...sv }
+      })
   }, [surveyByAccount, rosterByNumber])
 
   const accountSummaries = useMemo<AccountSummary[]>(() => {
