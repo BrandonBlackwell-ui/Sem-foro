@@ -1,0 +1,39 @@
+name: Drive roster sync
+
+on:
+  # Twice a day, Mexico City (UTC-6): 07:30 and 15:30 local.
+  schedule:
+    - cron: "30 13 * * *"
+    - cron: "30 21 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync-drive-roster:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create environment
+        run: |
+          cat > .env << EOF
+          SUPABASE_URL=${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }}
+          DRIVE_ROOT_FOLDER_ID=${{ vars.DRIVE_ROOT_FOLDER_ID || '1lC48ni6Rg4e_uGtASQfC-QdBd3647LJ_' }}
+          EOF
+
+      - name: Sync Drive roster to Supabase
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: python scripts/sync/drive_roster_sync.py

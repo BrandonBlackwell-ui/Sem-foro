@@ -20,3 +20,9 @@ SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY", "")
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "").strip()
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "google/gemini-3.1-flash-lite")
+
+# Google Drive roster sync (drive_roster_sync.py). GOOGLE_SERVICE_ACCOUNT_JSON is
+# the full service-account key JSON (raw string); the service account must have
+# read access to the Drive root folder below (share the folder with its email).
+GOOGLE_SERVICE_ACCOUNT_JSON = os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON", "")
+DRIVE_ROOT_FOLDER_ID = os.getenv("DRIVE_ROOT_FOLDER_ID", "1lC48ni6Rg4e_uGtASQfC-QdBd3647LJ_")

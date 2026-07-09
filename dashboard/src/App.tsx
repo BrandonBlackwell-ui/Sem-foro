@@ -1053,10 +1053,20 @@ export default function App() {
     })
   }, [groups, overviewAnalysisByGroup, rawMessages, scoreByAccount])
 
-  // Client roster from the Drive crawl (accounts_status.json): number → client name + status.
+  // Client roster. Primary source: Supabase drive_account_roster (refreshed 2×/day
+  // by the drive_roster_sync GitHub Action from Google Drive). Fallback: the static
+  // accounts_status.json snapshot (used until the first Drive sync populates Supabase).
+  const [driveRoster, setDriveRoster] = useState<any[]>([])
   const [accountsStatus, setAccountsStatus] = useState<any | null>(null)
   useEffect(() => {
     (async () => {
+      const rows = await supabaseGetOptional<any[]>(
+        '/rest/v1/drive_account_roster?select=account_number,client_name,folder_title,status,status_label&order=account_number.asc',
+        [],
+      )
+      setDriveRoster(rows)
+    })()
+    ;(async () => {
       try {
         const r = await fetch('/data/accounts_status.json')
         if (r.ok) setAccountsStatus(await r.json())
@@ -1066,6 +1076,19 @@ export default function App() {
 
   const rosterByNumber = useMemo(() => {
     const m = new Map<string, { name: string; statusLabel: string | null }>()
+    if (driveRoster.length) {
+      // Supabase (live Drive) — preferred.
+      for (const r of driveRoster) {
+        if (r?.account_number == null) continue
+        const num = String(Number(r.account_number))
+        if (num === 'NaN') continue
+        const name = r.client_name || rosterCleanName(r.folder_title)
+        const label = r.status_label ?? ROSTER_STATUS_LABEL[r.status] ?? null
+        m.set(num, { name: name || String(r.folder_title || ''), statusLabel: label })
+      }
+      return m
+    }
+    // Fallback: static snapshot.
     const list = Array.isArray(accountsStatus?.accounts) ? accountsStatus.accounts : []
     for (const s of list) {
       if (s?.number == null) continue
@@ -1076,7 +1099,7 @@ export default function App() {
       m.set(num, { name: name || String(s.folderTitle || ''), statusLabel: ROSTER_STATUS_LABEL[status] ?? null })
     }
     return m
-  }, [accountsStatus])
+  }, [driveRoster, accountsStatus])
 
   const rosterFor = useCallback((accountId: string) => {
     const id = String(accountId || '').trim()
