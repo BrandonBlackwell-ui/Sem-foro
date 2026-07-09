@@ -1,66 +1,63 @@
--- Propaga el folio de cliente (blackwell_projects.project_uid, ej. CO29) a todas
--- las tablas de cliente como columna de ENLACE, para saber a qué cliente pertenece
+-- Propaga el folio de cliente (blackwell_projects.project_uid, ej. CO29) a las
+-- tablas de cliente como columna de ENLACE, para saber a qué cliente pertenece
 -- cada registro (tareas, análisis, CO/Sheets, roster, etc.) sin reemplazar las
--- PKs actuales (que romperían el pipeline y el front). Backfill por número.
--- Requisitos: correr PRIMERO 011_blackwell_project_uid.sql. Correr en SQL Editor.
+-- PKs actuales. Backfill por número.
+--
+-- Idempotente y tolerante: cada tabla se procesa sólo si existe (to_regclass),
+-- así no truena si alguna migración previa (p. ej. 007) no se corrió. Se puede
+-- re-correr completo las veces que haga falta.
+-- Requisito: correr PRIMERO 011_blackwell_project_uid.sql. Correr en SQL Editor.
 
--- account_id es texto "01".."45"; enlazamos con project_number vía entero para
--- tolerar ceros a la izquierda. Sólo filas cuyo account_id es numérico.
+do $$
+declare
+  t record;
+  -- tabla -> columna con el número de cuenta ("01".."45")
+  targets text[][] := array[
+    ['wa_account_scores',            'account_id'],
+    ['wa_daily_analysis',            'account_id'],
+    ['wa_tasks',                     'account_id'],
+    ['meet_transcription_analyses',  'account_id'],
+    ['account_publications',         'account_id'],
+    ['account_operational_scores',   'account_id'],
+    ['publication_quality_analyses', 'account_id'],
+    ['publication_quality_scores',   'account_id'],
+    ['drive_account_roster',         'account_number']
+  ];
+  i int;
+  tbl text;
+  col text;
+begin
+  for i in 1 .. array_length(targets, 1) loop
+    tbl := targets[i][1];
+    col := targets[i][2];
 
--- wa_account_scores
-alter table wa_account_scores add column if not exists project_uid text references blackwell_projects(project_uid);
-update wa_account_scores x set project_uid = bp.project_uid
-  from blackwell_projects bp
- where x.project_uid is null and x.account_id ~ '^[0-9]+$' and bp.project_number::int = x.account_id::int;
-create index if not exists wa_account_scores_project_uid on wa_account_scores(project_uid);
+    if to_regclass('public.' || tbl) is null then
+      raise notice 'Skipping % (no existe)', tbl;
+      continue;
+    end if;
 
--- wa_daily_analysis
-alter table wa_daily_analysis add column if not exists project_uid text references blackwell_projects(project_uid);
-update wa_daily_analysis x set project_uid = bp.project_uid
-  from blackwell_projects bp
- where x.project_uid is null and x.account_id ~ '^[0-9]+$' and bp.project_number::int = x.account_id::int;
-create index if not exists wa_daily_analysis_project_uid on wa_daily_analysis(project_uid);
+    -- 1) columna de enlace
+    execute format(
+      'alter table %I add column if not exists project_uid text references blackwell_projects(project_uid)',
+      tbl
+    );
 
--- wa_tasks (incluye la vinculación con Monday, que vive en esta misma tabla)
-alter table wa_tasks add column if not exists project_uid text references blackwell_projects(project_uid);
-update wa_tasks x set project_uid = bp.project_uid
-  from blackwell_projects bp
- where x.project_uid is null and x.account_id ~ '^[0-9]+$' and bp.project_number::int = x.account_id::int;
-create index if not exists wa_tasks_project_uid on wa_tasks(project_uid);
+    -- 2) backfill por número (sólo filas con clave numérica)
+    execute format(
+      'update %1$I x set project_uid = bp.project_uid
+         from blackwell_projects bp
+        where x.project_uid is null
+          and x.%2$I ~ ''^[0-9]+$''
+          and bp.project_number::int = x.%2$I::int',
+      tbl, col
+    );
 
--- meet_transcription_analyses (survey + sesión)
-alter table meet_transcription_analyses add column if not exists project_uid text references blackwell_projects(project_uid);
-update meet_transcription_analyses x set project_uid = bp.project_uid
-  from blackwell_projects bp
- where x.project_uid is null and x.account_id ~ '^[0-9]+$' and bp.project_number::int = x.account_id::int;
-create index if not exists meet_transcription_analyses_project_uid on meet_transcription_analyses(project_uid);
+    -- 3) índice
+    execute format(
+      'create index if not exists %I on %I (project_uid)',
+      tbl || '_project_uid', tbl
+    );
 
--- account_publications (fuente Sheets / CO)
-alter table account_publications add column if not exists project_uid text references blackwell_projects(project_uid);
-update account_publications x set project_uid = bp.project_uid
-  from blackwell_projects bp
- where x.project_uid is null and x.account_id ~ '^[0-9]+$' and bp.project_number::int = x.account_id::int;
-create index if not exists account_publications_project_uid on account_publications(project_uid);
-
--- account_operational_scores (score CO)
-alter table account_operational_scores add column if not exists project_uid text references blackwell_projects(project_uid);
-update account_operational_scores x set project_uid = bp.project_uid
-  from blackwell_projects bp
- where x.project_uid is null and x.account_id ~ '^[0-9]+$' and bp.project_number::int = x.account_id::int;
-
--- publication_quality (PQ)
-alter table publication_quality_analyses add column if not exists project_uid text references blackwell_projects(project_uid);
-update publication_quality_analyses x set project_uid = bp.project_uid
-  from blackwell_projects bp
- where x.project_uid is null and x.account_id ~ '^[0-9]+$' and bp.project_number::int = x.account_id::int;
-
-alter table publication_quality_scores add column if not exists project_uid text references blackwell_projects(project_uid);
-update publication_quality_scores x set project_uid = bp.project_uid
-  from blackwell_projects bp
- where x.project_uid is null and x.account_id ~ '^[0-9]+$' and bp.project_number::int = x.account_id::int;
-
--- drive_account_roster (usa account_number)
-alter table drive_account_roster add column if not exists project_uid text references blackwell_projects(project_uid);
-update drive_account_roster x set project_uid = bp.project_uid
-  from blackwell_projects bp
- where x.project_uid is null and x.account_number ~ '^[0-9]+$' and bp.project_number::int = x.account_number::int;
+    raise notice 'OK % (enlazado por %)', tbl, col;
+  end loop;
+end $$;

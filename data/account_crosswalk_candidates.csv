@@ -1,0 +1,29 @@
+﻿account_id,dashboard_name,dashboard_drive_name,status,best_sheet_client,sheet_confidence,sheet_publication_rows,sheet_publications_per_month_contract,best_whatsapp_group,whatsapp_jid,whatsapp_confidence,all_sheet_candidates,all_whatsapp_candidates
+stprm,STPRM,18. STPRM,revisar,Sindicato de Pemex - Vicky - Aldana,alta,22,,,,pendiente,"Sindicato de Pemex - Vicky - Aldana (alta, rows=22)",
+ipc,IPC,,revisar,,pendiente,0,,,,pendiente,,
+azvi,Grupo Azvi,09. GRUPO AZVI,confirmado,Azvi,alta,33,6.0,Azvi + Blackwell,120363422319641078@g.us,alta,"Azvi (alta, rows=33)","Azvi + Blackwell (alta, 120363422319641078@g.us) | Interno Azvi (alta, 120363401172777738@g.us)"
+tello,Tello (MTV),12. MTV,confirmado,Miguel Tello,alta,19,,Interno Tello,120363425422565127@g.us,alta,"Miguel Tello (alta, rows=19)","Interno Tello (alta, 120363425422565127@g.us) | Tello + Blackwell (alta, 120363395710402156@g.us)"
+nuvoil,Nuvoil,,confirmado,Nuvoil,alta,6,,INTERNO NUVOIL,120363426896666810@g.us,alta,"Nuvoil (alta, rows=6)","INTERNO NUVOIL (alta, 120363426896666810@g.us) | Nuvoil-Blackwell (alta, 120363425481127093@g.us)"
+cima,Grupo CIMA,13. GRUPO CIMA,revisar,Grupo Cimarrón,alta,33,2.0,,,pendiente,"Grupo Cimarrón (alta, rows=33)",
+apollo,Apollo (Química),07. APOLLO,revisar,Quimica Apollo,alta,12,,,,pendiente,"Quimica Apollo (alta, rows=12) | Apollo unbranding (alta, rows=0)",
+armor,Armor Life Lab,15.ARMOR LIFE LAB / terminanción anticipada,confirmado,Armor Life Lab,alta,37,3.0,LAB-BWS OPERATIVO,120363407983026702@g.us,alta,"Armor Life Lab (alta, rows=37)","LAB-BWS OPERATIVO (alta, 120363407983026702@g.us)"
+jack,Jack Levi,10. JACK LEVI/ Detenido,revisar,Jack Levy,alta,1,4.0,,,pendiente,"Jack Levy (alta, rows=1)",
+maja,MAJA Sportswear,02. MAJA,revisar,Maja Sportswear,alta,103,,,,pendiente,"Maja Sportswear (alta, rows=103)",
+turbofin,Turbofin,01. TURBOFIN,revisar,Turbofin,alta,13,4.0,,,pendiente,"Turbofin (alta, rows=13)",
+pujol,Pujol (Casa Mata),19. Casa Mata,revisar,,pendiente,0,,,,pendiente,,
+rocha,Rocha (RR),06. RR,revisar,Raúl Rocha,alta,3,,,,pendiente,"Raúl Rocha (alta, rows=3)",
+futbol,Futbol (Ascenso y Descenso),11. ASCENSO Y DESCENSO,revisar,,pendiente,0,,Interno Futbol,120363418761598661@g.us,alta,,"Interno Futbol (alta, 120363418761598661@g.us) | Ascenso 4T (alta, 120363406215553737@g.us)"
+dalinde,Dalinde,14. DALINDE,revisar,Dalinde,alta,28,1.0,,,pendiente,"Dalinde (alta, rows=28)",
+andy,Andy,,revisar,InstaCoachAndy,alta,12,,,,pendiente,"InstaCoachAndy (alta, rows=12)",
+veracruz,Veracruz (AH),20. Veracruz,revisar,,pendiente,0,,,,pendiente,,
+luca,Luca,,revisar,Luca Edu,alta,3,,,,pendiente,"Luca Edu (alta, rows=3) | Ceron-Toluca (alta, rows=2)",
+bernardo,Bernardo,,revisar,Bernardo Gil,alta,0,1.0,,,pendiente,"Bernardo Gil (alta, rows=0) | Bernardo Voguel (alta, rows=0)",
+uldis,Uldis,08. ULDIS,revisar,Uldis,alta,3,,,,pendiente,"Uldis (alta, rows=3)",
+credix,Credix,05. CREDIX,confirmado,Covalto -Credijusto,alta,11,,Credix/BWS,120363422964135599@g.us,alta,"Covalto -Credijusto (alta, rows=11) | Credix (alta, rows=1)","Credix/BWS (alta, 120363422964135599@g.us)"
+erikrubi,Erik Rubi,,revisar,,pendiente,0,,,,pendiente,,
+totalplay,TotalPlay,,revisar,Total Play,alta,14,,,,pendiente,"Total Play (alta, rows=14)",
+gicsa,GICSA,,revisar,GICSA,alta,22,,,,pendiente,"GICSA (alta, rows=22)",
+aduanas,Aduanas (ANAM),03. ADUANAS,revisar,Aduanas,alta,0,14.0,,,pendiente,"Aduanas (alta, rows=0)",
+mapelly,Mapelly (SafeLink),16.Mapelly,revisar,Safelink,alta,4,,,,pendiente,"Safelink (alta, rows=4) | Jose Carlos Mapelli (alta, rows=2)",
+irugami,Irugami,17. Irugami,revisar,,pendiente,0,,,,pendiente,,
+idlayr,IDLayr,04. IDLAYR /proyecto concluido,revisar,IDLAYR,alta,0,4.0,,,pendiente,"IDLAYR (alta, rows=0)",

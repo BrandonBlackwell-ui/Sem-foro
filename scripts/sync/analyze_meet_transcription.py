@@ -84,6 +84,14 @@ PASO 5 — SEÑALES NEGATIVAS
 o comentarios que indiquen insatisfacción? Detecta frases como "sigo esperando", \
 "no entiendo por qué", "eso no es lo que pedí", escalamientos o tono defensivo del cliente.
 
+PASO 5.5 — EVALUACIÓN DE ENCUESTA (SURVEY)
+Identifica si durante la junta se formularon y respondieron de viva voz preguntas directas de satisfacción (encuesta) del cliente:
+- Tipo A (Satisfacción General): Ejemplos: "¿cómo calificarías el servicio?", "¿qué tan satisfecho estás con la atención?".
+  Si se responde con escala numérica (1 a 10), mapea: 9-10 -> score 100, 7-8 -> score 75, 5-6 -> score 50, 3-4 -> score 25, 1-2 -> score 0.
+- Tipo B (Impacto en Objetivo): Ejemplos: "¿el trabajo movió la aguja?", "¿la cobertura refuerza la narrativa?".
+  Mapea la respuesta: "Sí claramente/Sí" -> score 100, "En proceso/parcialmente" -> score 60, "Poco" -> score 20, "No" -> score 0.
+Si no se hicieron estas preguntas directas y no hay respuesta en la transcripción, pon tanto "question_a" como "question_b" en null.
+
 PASO 6 — CALCULA EL SESION_SCORE
 Aplica la siguiente tabla de ajustes partiendo de base=50:
   +25  si hay comentarios positivos explícitos del cliente
@@ -114,7 +122,19 @@ RESPONDE con este JSON exacto:
   "sesion_score": número_entero_0_a_100,
   "checklist": ["Si: ...", "No: ...", ...],
   "reasoning": "explicación breve de 2-3 oraciones del score asignado",
-  "accionables": ["accionable 1 si hay Tipo C o señales negativas", ...]
+  "accionables": ["accionable 1 si hay Tipo C o señales negativas", ...],
+  "survey": {{
+    "question_a": {{
+      "question": "texto de la pregunta tipo A o null",
+      "answer": "respuesta del cliente o null",
+      "score": 100|75|50|25|0|null
+    }},
+    "question_b": {{
+      "question": "texto de la pregunta tipo B o null",
+      "answer": "respuesta del cliente o null",
+      "score": 100|60|20|0|null
+    }}
+  }}
 }}
 """
 
@@ -269,6 +289,7 @@ def _update_checklist_score(account_folder: str, period: str, sesion_score: int,
             "checklist": llm.get("checklist", []),
             "reasoning": llm.get("reasoning", ""),
             "accionables": llm.get("accionables", []),
+            "survey": llm.get("survey"),
         }
         cl_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
         log.info("Updated checklist score transcripciones=%s in %s", status, cl_path)
