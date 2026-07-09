@@ -682,6 +682,7 @@ def _column_values(
     item: dict[str, Any],
     board: dict[str, Any],
     monday_users: dict[str, dict[str, Any]],
+    board_info: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     if board.get("central"):
         urgency = _normalize_urgency(item.get("urgency"))
@@ -708,7 +709,19 @@ def _column_values(
             }
         return values
 
-    columns = boards_config["column_ids_template"]
+    columns = dict(boards_config["column_ids_template"])
+    if board_info and "columns" in board_info:
+        info_cols = board_info["columns"]
+        if "estado" in info_cols:
+            columns["estado"] = info_cols["estado"]
+        if "fecha_entrega" in info_cols:
+            columns["date"] = info_cols["fecha_entrega"]
+        if "tipo_trabajo" in info_cols:
+            columns["work_type"] = info_cols["tipo_trabajo"]
+        if "responsable" in info_cols:
+            columns["person"] = info_cols["responsable"]
+            columns["owner"] = info_cols["responsable"]
+
     defaults = boards_config["defaults"]
     urgency = _normalize_urgency(item.get("urgency"))
     due_date = _due_date_for_item(item, urgency, int(defaults.get("due_days_from_sync", 5)))
@@ -722,6 +735,19 @@ def _column_values(
         columns["impacto_score"]: _score_note(row),
         columns["evidencia"]: _evidence_text(row, item),
     }
+
+    # Add work type column if configured (new boards require this)
+    work_type_column = columns.get("work_type")
+    if work_type_column:
+        values[work_type_column] = {"label": _normalize_work_type(item.get("work_type"))}
+
+    owner_column = columns.get("owner")
+    if owner_column:
+        monday_user = _resolve_monday_user(item, monday_users)
+        if monday_user:
+            values[owner_column] = {
+                "personsAndTeams": [{"id": int(monday_user["monday_id"]), "kind": "person"}]
+            }
 
     assignee_id = defaults.get("assignee_user_id")
     if assignee_id and columns.get("person"):
