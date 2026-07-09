@@ -195,6 +195,7 @@ type GroupSummary = {
 type AccountSummary = {
   account_id: string
   name: string
+  statusLabel?: string | null
   groups: GroupSummary[]
   score: AccountScore | null
   operational: OperationalScore | null
@@ -202,6 +203,38 @@ type AccountSummary = {
   analyzedToday: boolean
   hasMessagesToday: boolean
   latestAnalysis: DailyAnalysis | null
+}
+
+// Client roster status (from Google Drive folder labels, Playbook §5). Mirrors
+// hooks/useAccounts.ts so the Cuentas list shows client names + a status badge
+// instead of raw WhatsApp group names.
+const ROSTER_STATUS_LABEL: Record<string, string | null> = {
+  active: null,
+  concluded: 'Concluido',
+  terminated_early: 'Terminación anticipada',
+  paused: 'Pausa',
+  event_single: 'Evento único',
+  historical: 'Histórico',
+}
+const ROSTER_EXCLUSION: { re: RegExp; status: string }[] = [
+  { re: /(terminaci[oó]n\s+anticipada|terminanci[oó]n\s+anticipada|early\s+termination)/i, status: 'terminated_early' },
+  { re: /(proyecto\s+conclu[ií]d[oa]|conclu[ií]d[oa]|concluded)/i, status: 'concluded' },
+  { re: /(evento\s+[uú]nico|one[\s-]?off)/i, status: 'event_single' },
+  { re: /(pausa|paused|detenido)/i, status: 'paused' },
+  { re: /(hist[oó]rico|historical)/i, status: 'historical' },
+]
+/** Client status from the Drive folder title label (after "/" or in parens), else derivedStatus. */
+function rosterStatusFrom(folderTitle?: string | null, derivedStatus?: string): string {
+  const t = folderTitle || ''
+  const afterSlash = t.includes('/') ? t.slice(t.indexOf('/')) : ''
+  const paren = t.match(/\(([^)]*)\)/)?.[1] || ''
+  const scope = `${afterSlash} ${paren}`
+  for (const { re, status } of ROSTER_EXCLUSION) if (re.test(scope)) return status
+  return derivedStatus || 'active'
+}
+/** Clean client name from Drive folder title: "03. ADUANAS/proyecto concluido" → "ADUANAS". */
+function rosterCleanName(folderTitle?: string | null): string {
+  return String(folderTitle || '').replace(/^\d+\.\s*/, '').split('/')[0].trim()
 }
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://vqgfkfvywbpjldreuplb.supabase.co'
@@ -476,7 +509,20 @@ function buildWeightedScore(
       rawAnalysisObj = rawAnalysis
     }
   }
-  const survey = rawAnalysisObj?.survey || rawAnalysisObj?.raw_analysis?.survey
+  let survey = rawAnalysisObj?.survey || rawAnalysisObj?.raw_analysis?.survey
+  let surveySource = survey ? 'WhatsApp' : ''
+
+  // Fallback to Meet transcript survey if WhatsApp survey is not present
+  if (!survey && checklist?.scores) {
+    const meetEntries = Object.entries(checklist.scores as Record<string, any>)
+      .filter(([, v]) => v?.transcripciones?.survey?.question_a?.score != null || v?.transcripciones?.survey?.question_b?.score != null)
+      .sort(([a], [b]) => b.localeCompare(a))
+    if (meetEntries.length) {
+      survey = meetEntries[0][1].transcripciones.survey
+      surveySource = `Meet ${meetEntries[0][0]}`
+    }
+  }
+
   const tipoAScore = (survey?.question_a?.score != null) ? clampScore(Number(survey.question_a.score)) : null
   const tipoBScore = (survey?.question_b?.score != null) ? clampScore(Number(survey.question_b.score)) : null
   const hasSurvey = tipoAScore != null || tipoBScore != null
@@ -638,7 +684,7 @@ function buildWeightedScore(
       key: 'survey',
       label: 'Survey',
       caption: hasSurvey
-        ? `Tipo A: ${tipoAScore ?? '--'}/100 · Tipo B: ${tipoBScore ?? '--'}/100`
+        ? `Tipo A: ${tipoAScore ?? '--'}/100 · Tipo B: ${tipoBScore ?? '--'}/100 (${surveySource})`
         : 'Pendiente de aplicar preguntas bimestrales (Tope SC a 70)',
       value: hasSurvey ? roundScore(((tipoAScore ?? 0) * 2 + (tipoBScore ?? 0)) / 3) : null,
       max: 100,
@@ -1007,6 +1053,36 @@ export default function App() {
     })
   }, [groups, overviewAnalysisByGroup, rawMessages, scoreByAccount])
 
+  // Client roster from the Drive crawl (accounts_status.json): number → client name + status.
+  const [accountsStatus, setAccountsStatus] = useState<any | null>(null)
+  useEffect(() => {
+    (async () => {
+      try {
+        const r = await fetch('/data/accounts_status.json')
+        if (r.ok) setAccountsStatus(await r.json())
+      } catch { /* offline */ }
+    })()
+  }, [])
+
+  const rosterByNumber = useMemo(() => {
+    const m = new Map<string, { name: string; statusLabel: string | null }>()
+    const list = Array.isArray(accountsStatus?.accounts) ? accountsStatus.accounts : []
+    for (const s of list) {
+      if (s?.number == null) continue
+      const num = String(Number(s.number))
+      if (num === 'NaN') continue
+      const name = rosterCleanName(s.folderTitle)
+      const status = rosterStatusFrom(s.folderTitle, s.derivedStatus)
+      m.set(num, { name: name || String(s.folderTitle || ''), statusLabel: ROSTER_STATUS_LABEL[status] ?? null })
+    }
+    return m
+  }, [accountsStatus])
+
+  const rosterFor = useCallback((accountId: string) => {
+    const id = String(accountId || '').trim()
+    return /^\d+$/.test(id) ? rosterByNumber.get(String(Number(id))) : undefined
+  }, [rosterByNumber])
+
   const accountSummaries = useMemo<AccountSummary[]>(() => {
     const todayStr = todayMexicoStr()
     const map = new Map<string, GroupSummary[]>()
@@ -1048,9 +1124,11 @@ export default function App() {
         publicationQualityLookup.byName.get(lookupKey(mainGroup.name)) ??
         Array.from(explicitKeys).map((aliasKey) => publicationQualityLookup.byName.get(aliasKey)).find(Boolean) ??
         null
+      const roster = rosterFor(key)
       result.push({
         account_id: key,
-        name: mainGroup.name,
+        name: roster?.name || mainGroup.name,
+        statusLabel: roster?.statusLabel ?? null,
         groups: grps,
         score: mainGroup.score,
         operational,
@@ -1066,7 +1144,7 @@ export default function App() {
       const bLast = b.groups.map(g => g.last_message_at ?? '').sort().reverse()[0] ?? ''
       return bLast.localeCompare(aLast)
     })
-  }, [groupSummaries, operationalLookup, publicationQualityLookup])
+  }, [groupSummaries, operationalLookup, publicationQualityLookup, rosterFor])
 
   const selectedAccount = selectedAccountId ? accountSummaries.find(a => a.account_id === selectedAccountId) ?? null : null
 
@@ -1107,6 +1185,9 @@ export default function App() {
 
   // Load ALL per-account checklist.json once (SC evidence, contract, scores by period)
   const [allChecklists, setAllChecklists] = useState<{ folder: string; data: any }[]>([])
+  // Meet/session analyses (survey + sesion_score) from Supabase — produced live by
+  // the Gemini-notes email pipeline. Overrides the static checklist.json transcripciones.
+  const [meetAnalyses, setMeetAnalyses] = useState<any[]>([])
   useEffect(() => {
     (async () => {
       try {
@@ -1127,31 +1208,91 @@ export default function App() {
     })()
   }, [])
 
+  // Load Meet/session analyses from Supabase (survey + sesion_score). Optional so
+  // the dashboard keeps working before migration 012 is applied.
+  useEffect(() => {
+    (async () => {
+      const rows = await supabaseGetOptional<any[]>(
+        '/rest/v1/meet_transcription_analyses?select=account_id,period,sesion_score,survey,attended,attended_on_time,participation_level,positive_comments,shared_strategic_info,negative_signals,negative_detail,tone,reasoning,checklist,action_items,created_at&order=created_at.desc',
+        [],
+      )
+      setMeetAnalyses(rows)
+    })()
+  }, [])
+
+  // Merge Supabase Meet analyses into each account's checklist scores so the SC
+  // formula and "Survey aplicado" block read live data. Supabase wins per period;
+  // periods without a Supabase row keep the static checklist.json value.
+  const mergedChecklists = useMemo(() => {
+    if (!meetAnalyses.length) return allChecklists
+    // Rows arrive created_at.desc → first seen per (account, period) is the latest.
+    const latestByAcctPeriod = new Map<string, any>()
+    for (const row of meetAnalyses) {
+      const acctNum = Number(row.account_id)
+      if (Number.isNaN(acctNum)) continue
+      const key = `${acctNum}::${row.period}`
+      if (!latestByAcctPeriod.has(key)) latestByAcctPeriod.set(key, row)
+    }
+    return allChecklists.map(entry => {
+      const acctNum = Number(entry.data?.account_number ?? NaN)
+      if (Number.isNaN(acctNum)) return entry
+      const rowsForAcct = [...latestByAcctPeriod.values()].filter(r => Number(r.account_id) === acctNum)
+      if (!rowsForAcct.length) return entry
+      const data = { ...entry.data, scores: { ...(entry.data.scores || {}) } }
+      for (const row of rowsForAcct) {
+        const score = row.sesion_score
+        const prev = data.scores[row.period] || {}
+        data.scores[row.period] = {
+          ...prev,
+          transcripciones: {
+            ...(prev.transcripciones || {}),
+            status: score >= 80 ? 'ok' : score >= 50 ? 'partial' : 'missing',
+            score,
+            sesion_score: score,
+            attended: row.attended,
+            attended_on_time: row.attended_on_time,
+            participation_level: row.participation_level,
+            tone: row.tone,
+            positive_comments: row.positive_comments,
+            shared_strategic_info: row.shared_strategic_info,
+            negative_signals: row.negative_signals,
+            checklist: row.checklist || [],
+            reasoning: row.reasoning || '',
+            accionables: row.action_items || [],
+            survey: row.survey || null,
+            _source: 'supabase',
+          },
+        }
+      }
+      return { ...entry, data }
+    })
+  }, [allChecklists, meetAnalyses])
+
   const findChecklist = useCallback((accountId: string, accountName?: string) => {
     const nameNorm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
     // El account_id de la app es el número de cuenta ('02', '12') — match directo por account_number
     const asNumber = /^\d+$/.test(accountId.trim()) ? String(Number(accountId.trim())) : null
     if (asNumber) {
-      const byNumber = allChecklists.find(x => String(Number(x.data.account_number ?? -1)) === asNumber)
+      const byNumber = mergedChecklists.find(x => String(Number(x.data.account_number ?? -1)) === asNumber)
       if (byNumber) return byNumber.data
     }
     const keys = [accountId, accountName].filter(Boolean).map(k => nameNorm(String(k)))
     for (const key of keys) {
       if (key.length < 3) continue
       const match =
-        allChecklists.find(x => nameNorm(x.data.account_id ?? '') === key) ??
-        allChecklists.find(x => {
+        mergedChecklists.find(x => nameNorm(x.data.account_id ?? '') === key) ??
+        mergedChecklists.find(x => {
           const cn = nameNorm(x.data.account_name ?? '')
           return cn.length >= 3 && (cn.includes(key) || key.includes(cn))
         }) ??
-        allChecklists.find(x => {
+        mergedChecklists.find(x => {
           const fn = nameNorm(x.folder.replace(/^\d+/, ''))
           return fn.length >= 3 && (fn.includes(key) || key.includes(fn))
         })
       if (match) return match.data
     }
     return null
-  }, [allChecklists])
+  }, [mergedChecklists])
 
   const accountChecklistData = useMemo(
     () => (selectedAccount ? findChecklist(selectedAccount.account_id, selectedAccount.name) : null),
@@ -1177,9 +1318,11 @@ export default function App() {
         (aid ? publicationQualityLookup.byId.get(aid) : undefined) ??
         publicationQualityLookup.byName.get(lookupKey(data.account_name)) ??
         null
+      const roster = rosterByNumber.get(num)
       result.push({
         account_id: String(data.account_number).padStart(2, '0'),
-        name: data.account_name ?? `Cuenta ${num}`,
+        name: roster?.name || data.account_name || `Cuenta ${num}`,
+        statusLabel: roster?.statusLabel ?? null,
         groups: [],
         score: waRow,
         operational,
@@ -1190,7 +1333,7 @@ export default function App() {
       })
     }
     return result
-  }, [accountSummaries, allChecklists, scores, operationalLookup, publicationQualityLookup])
+  }, [accountSummaries, allChecklists, scores, operationalLookup, publicationQualityLookup, rosterByNumber])
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
@@ -1849,6 +1992,21 @@ export default function App() {
                       <div className="lb-account-main">
                         <div className="lb-account-name">
                           {account.name}
+                          {account.statusLabel && (
+                            <span style={{
+                              marginLeft: 8,
+                              fontSize: 10,
+                              fontWeight: 700,
+                              letterSpacing: 0.6,
+                              textTransform: 'uppercase',
+                              color: '#8a5a10',
+                              background: 'rgba(138,90,16,0.10)',
+                              border: '1px solid rgba(138,90,16,0.35)',
+                              borderRadius: 999,
+                              padding: '2px 8px',
+                              verticalAlign: 'middle',
+                            }}>{account.statusLabel}</span>
+                          )}
                           {isGlobal && (
                             <span style={{
                               marginLeft: 8,
