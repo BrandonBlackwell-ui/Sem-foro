@@ -237,6 +237,146 @@ function rosterCleanName(folderTitle?: string | null): string {
   return String(folderTitle || '').replace(/^\d+\.\s*/, '').split('/')[0].trim()
 }
 
+// Consultor asignado por cuenta — fuente: "Relación proyectos-grupo de WA.xlsx".
+// account_number → { nombre de cliente (fallback), consultor }. Editar aquí si
+// cambia una asignación (dato manual, no viene de Drive/WhatsApp).
+const CLIENT_ROSTER: { num: string; name: string; consultant: string }[] = [
+  { num: '01', name: 'Turbofin', consultant: 'Mariana' },
+  { num: '02', name: 'Maja', consultant: 'Angel' },
+  { num: '05', name: 'Credix', consultant: 'Mariana' },
+  { num: '06', name: 'RR', consultant: 'Daniel M.' },
+  { num: '07', name: 'Apollo', consultant: 'Daniel M.' },
+  { num: '08', name: 'Uldis', consultant: 'Sin asignar' },
+  { num: '09', name: 'AZVI', consultant: 'Uriel' },
+  { num: '12', name: 'MTV', consultant: 'Uriel' },
+  { num: '13', name: 'Grupo CIMA', consultant: 'Uriel' },
+  { num: '14', name: 'Dalinde', consultant: 'Mariana' },
+  { num: '17', name: 'Irugami', consultant: 'Atenas' },
+  { num: '18', name: 'STPRM', consultant: 'Angel' },
+  { num: '19', name: 'Pujol', consultant: 'Mariana' },
+  { num: '20', name: 'Veracruz', consultant: 'Ivan' },
+  { num: '21', name: 'Nuvoil', consultant: 'Daniel M.' },
+  { num: '26', name: 'Bernardo V.', consultant: 'Uriel' },
+  { num: '27', name: 'Cuernavaca', consultant: 'Atenas' },
+  { num: '28', name: 'Queretaro', consultant: 'Atenas' },
+  { num: '29', name: 'Coast Oil', consultant: 'Daniel M.' },
+  { num: '30', name: 'Erick Rubi', consultant: 'Johana' },
+  { num: '33', name: 'Nezahualcoyotl', consultant: 'Atenas' },
+  { num: '34', name: 'Supply Pay', consultant: 'Uriel' },
+  { num: '35', name: 'PP Aguilar', consultant: 'Angel' },
+  { num: '38', name: 'KPS', consultant: 'Daniel M.' },
+  { num: '39', name: 'Ismerely', consultant: 'Johana' },
+  { num: '40', name: 'Austria', consultant: 'Johana' },
+  { num: '41', name: 'IFA', consultant: 'Sol' },
+  { num: '42', name: 'MTV Linkedin', consultant: 'Sol' },
+  { num: '43', name: 'IRAN Guerrero', consultant: 'Atenas' },
+  { num: '44', name: 'LCH Luxury Travel', consultant: 'Sol' },
+]
+
+type SurveyClient = {
+  account_number: string
+  name: string
+  consultant: string
+  answered: number      // 0, 1 o 2 preguntas respondidas
+  pct: number           // 0 / 50 / 100
+  tipoA: boolean
+  tipoB: boolean
+  source: string        // 'WhatsApp' | 'Meet' | ''
+}
+
+function surveyColor(pct: number): string {
+  if (pct >= 100) return '#3f7050'
+  if (pct >= 50) return '#b07d1e'
+  return '#a8453b'
+}
+function surveyIcon(pct: number): string {
+  if (pct >= 100) return '✓'
+  if (pct >= 50) return '½'
+  return '✗'
+}
+
+// Vista "Survey por consultor": columnas por consultor, un cuadrito por cliente
+// con ✓/½/✗ y el % (0 = ninguna pregunta, 50 = 1, 100 = las 2).
+function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () => void }) {
+  const order = ['Daniel M.', 'Uriel', 'Mariana', 'Angel', 'Atenas', 'Johana', 'Sol', 'Ivan', 'Sin asignar']
+  const byConsultant = new Map<string, SurveyClient[]>()
+  for (const c of clients) {
+    const arr = byConsultant.get(c.consultant) ?? []
+    arr.push(c)
+    byConsultant.set(c.consultant, arr)
+  }
+  const consultants = [
+    ...order.filter(o => byConsultant.has(o)),
+    ...[...byConsultant.keys()].filter(k => !order.includes(k)),
+  ]
+  const done = clients.filter(c => c.pct >= 100).length
+  const partial = clients.filter(c => c.pct === 50).length
+  const pending = clients.filter(c => c.pct === 0).length
+
+  return (
+    <div className="lb-shell">
+      <div className="lb-book">
+        <div className="lb-page">
+          <div className="lb-lines" />
+          <div className="lb-margin" />
+          <div className="lb-spine">
+            <div className="lb-rings">{Array.from({ length: 9 }).map((_, i) => <div className="lb-ring" key={i} />)}</div>
+          </div>
+          <div className="lb-content">
+            <div className="lb-header-row">
+              <div>
+                <button onClick={onBack} style={{ background: 'transparent', border: '1px solid #d0ccc4', borderRadius: 999, padding: '4px 12px', fontSize: 12, color: '#666', cursor: 'pointer', marginBottom: 10 }}>← Cuentas</button>
+                <span className="lb-eyebrow">Aplicación de encuesta</span>
+                <h1 className="lb-h1">Survey por consultor</h1>
+                <p className="lb-subtext">Cada cuadro es un cliente. ✓ = las 2 preguntas hechas (100%), ½ = falta 1 (50%), ✗ = ninguna (0%).</p>
+              </div>
+              <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+                <div style={{ textAlign: 'center' }}><div style={{ fontSize: 26, fontWeight: 800, color: '#3f7050' }}>{done}</div><div style={{ fontSize: 11, color: '#9aa0a6' }}>completos</div></div>
+                <div style={{ textAlign: 'center' }}><div style={{ fontSize: 26, fontWeight: 800, color: '#b07d1e' }}>{partial}</div><div style={{ fontSize: 11, color: '#9aa0a6' }}>parciales</div></div>
+                <div style={{ textAlign: 'center' }}><div style={{ fontSize: 26, fontWeight: 800, color: '#a8453b' }}>{pending}</div><div style={{ fontSize: 11, color: '#9aa0a6' }}>pendientes</div></div>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', gap: 18, overflowX: 'auto', paddingBottom: 12, marginTop: 20, alignItems: 'flex-start' }}>
+              {consultants.map(consultant => {
+                const list = (byConsultant.get(consultant) ?? []).sort((a, b) => b.pct - a.pct)
+                return (
+                  <div key={consultant} style={{ minWidth: 210, flex: '0 0 210px', background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, padding: 12 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, paddingBottom: 8, borderBottom: '1px solid var(--rule-soft)' }}>
+                      <span style={{ fontWeight: 700, fontSize: 14, color: 'var(--ink-900)' }}>{consultant}</span>
+                      <span style={{ fontSize: 11, color: '#9aa0a6', fontFamily: 'var(--mono)' }}>{list.length}</span>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                      {list.map(c => {
+                        const color = surveyColor(c.pct)
+                        return (
+                          <div key={c.account_number} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 10px', borderRadius: 8, border: `1px solid ${color}33`, background: `${color}0d` }}>
+                            <div style={{ width: 30, height: 30, flexShrink: 0, borderRadius: 7, background: color, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 700 }}>{surveyIcon(c.pct)}</div>
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                              <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-900)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</div>
+                              <div style={{ fontSize: 10.5, color: '#9aa0a6' }}>
+                                <span style={{ color: c.tipoA ? '#3f7050' : '#bbb' }}>A {c.tipoA ? '✓' : '·'}</span>
+                                {'  '}
+                                <span style={{ color: c.tipoB ? '#3f7050' : '#bbb' }}>B {c.tipoB ? '✓' : '·'}</span>
+                                {c.source ? ` · ${c.source}` : ''}
+                              </div>
+                            </div>
+                            <div style={{ fontSize: 15, fontWeight: 800, color, fontFamily: 'var(--mono)' }}>{c.pct}</div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://vqgfkfvywbpjldreuplb.supabase.co'
 const SUPABASE_ANON_KEY =
   import.meta.env.VITE_SUPABASE_ANON_KEY ||
@@ -804,7 +944,10 @@ export default function App() {
   const [error, setError] = useState<string | null>(null)
 
   // Gemini Meetings Integration States
-  const [viewMode, setViewMode] = useState<'semaforo' | 'reuniones'>('semaforo')
+  const [viewMode, setViewMode] = useState<'semaforo' | 'reuniones' | 'survey'>('semaforo')
+  // Meet/session analyses (survey + sesion_score) from Supabase — produced live by
+  // the Gemini-notes email pipeline. Overrides the static checklist.json transcripciones.
+  const [meetAnalyses, setMeetAnalyses] = useState<any[]>([])
   const [dbTasks, setDbTasks] = useState<any[]>([])
   const [selectedMeetingId, setSelectedMeetingId] = useState<string | null>(null)
   const [meetingsLoading, setMeetingsLoading] = useState(false)
@@ -1112,6 +1255,44 @@ export default function App() {
     return /^\d+$/.test(id) ? rosterByNumber.get(String(Number(id))) : undefined
   }, [rosterByNumber])
 
+  // Survey completion per account: how many of the 2 questions are answered.
+  // Priority mirrors the SC logic: a WhatsApp survey with scores wins, else Meet.
+  const surveyByAccount = useMemo(() => {
+    const meetByAcct = new Map<string, any>()
+    for (const r of meetAnalyses) { // fetched created_at desc → first seen = latest
+      const num = String(Number(r.account_id))
+      if (num === 'NaN' || meetByAcct.has(num)) continue
+      meetByAcct.set(num, r.survey)
+    }
+    const waByAcct = new Map<string, any>()
+    const waSorted = [...analyses].sort((a, b) => (b.analyzed_at || '').localeCompare(a.analyzed_at || ''))
+    for (const a of waSorted) {
+      const num = String(Number(a.account_id))
+      if (num === 'NaN' || waByAcct.has(num)) continue
+      const s = a.raw_analysis?.survey
+      if (s && (s.question_a?.score != null || s.question_b?.score != null)) waByAcct.set(num, s)
+    }
+    const out = new Map<string, { answered: number; pct: number; tipoA: boolean; tipoB: boolean; source: string }>()
+    for (const { num } of CLIENT_ROSTER) {
+      const key = String(Number(num))
+      const wa = waByAcct.get(key)
+      const survey = wa || meetByAcct.get(key) || null
+      const tipoA = survey?.question_a?.score != null
+      const tipoB = survey?.question_b?.score != null
+      const answered = (tipoA ? 1 : 0) + (tipoB ? 1 : 0)
+      out.set(num, { answered, pct: answered * 50, tipoA, tipoB, source: wa ? 'WhatsApp' : (meetByAcct.get(key) ? 'Meet' : '') })
+    }
+    return out
+  }, [meetAnalyses, analyses])
+
+  const surveyClients = useMemo<SurveyClient[]>(() => {
+    return CLIENT_ROSTER.map(({ num, name, consultant }) => {
+      const liveName = rosterByNumber.get(String(Number(num)))?.name
+      const sv = surveyByAccount.get(num) ?? { answered: 0, pct: 0, tipoA: false, tipoB: false, source: '' }
+      return { account_number: num, name: liveName || name, consultant, ...sv }
+    })
+  }, [surveyByAccount, rosterByNumber])
+
   const accountSummaries = useMemo<AccountSummary[]>(() => {
     const todayStr = todayMexicoStr()
     const map = new Map<string, GroupSummary[]>()
@@ -1214,9 +1395,6 @@ export default function App() {
 
   // Load ALL per-account checklist.json once (SC evidence, contract, scores by period)
   const [allChecklists, setAllChecklists] = useState<{ folder: string; data: any }[]>([])
-  // Meet/session analyses (survey + sesion_score) from Supabase — produced live by
-  // the Gemini-notes email pipeline. Overrides the static checklist.json transcripciones.
-  const [meetAnalyses, setMeetAnalyses] = useState<any[]>([])
   useEffect(() => {
     (async () => {
       try {
@@ -1808,6 +1986,9 @@ export default function App() {
   }
 
   if (!selectedAccount) {
+    if (viewMode === 'survey') {
+      return <SurveyBoard clients={surveyClients} onBack={() => setViewMode('semaforo')} />
+    }
     const analyzedCount = accountSummaries.filter(a => a.analyzedToday).length
     const pendingAnalysis = accountSummaries.filter(a => !a.analyzedToday && a.hasMessagesToday)
     const trulyQuiet = accountSummaries.filter(a => !a.analyzedToday && !a.hasMessagesToday)
@@ -1907,8 +2088,16 @@ export default function App() {
                     </button>
                   </div>
                 </div>
-                <div style={{fontFamily:'var(--caveat)', fontSize:36, fontWeight:700, color:'#3a3a44', lineHeight:1, textAlign:'right'}}>
-                  {new Date().toLocaleDateString('es-MX', {day:'numeric', month:'long', year:'numeric', timeZone:'America/Mexico_City'})}
+                <div style={{display:'flex', flexDirection:'column', alignItems:'flex-end', gap:10}}>
+                  <div style={{fontFamily:'var(--caveat)', fontSize:36, fontWeight:700, color:'#3a3a44', lineHeight:1, textAlign:'right'}}>
+                    {new Date().toLocaleDateString('es-MX', {day:'numeric', month:'long', year:'numeric', timeZone:'America/Mexico_City'})}
+                  </div>
+                  <button
+                    onClick={() => setViewMode('survey')}
+                    style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:12.5, fontWeight:600, padding:'7px 14px', borderRadius:999, cursor:'pointer', background:'#3a3a44', color:'#fdfcf8', border:'1px solid #3a3a44'}}
+                  >
+                    📋 Vista Survey por consultor
+                  </button>
                 </div>
               </div>
 
