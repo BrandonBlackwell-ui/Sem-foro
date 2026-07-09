@@ -1,6 +1,10 @@
 name: Publication quality analysis
 
 on:
+  # Corre diario a las 10:00 CDMX (16:00 UTC) para analizar notas nuevas del Sheet.
+  schedule:
+    - cron: "0 16 * * *"
+
   workflow_dispatch:
     inputs:
       account_id:
@@ -54,7 +58,8 @@ jobs:
 
       - name: Analyze publication quality
         run: |
-          args=(--limit "${{ github.event.inputs.limit }}")
+          # En corridas agendadas (cron) los inputs vienen vacíos → limit 40.
+          args=(--limit "${{ github.event.inputs.limit || '40' }}")
           if [ -n "${{ github.event.inputs.account_id }}" ]; then
             args+=(--account-id "${{ github.event.inputs.account_id }}")
           fi

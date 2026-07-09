@@ -262,6 +262,28 @@ async function analyzeTranscript(transcript, accountName, period) {
 }
 
 // ---------------------------------------------------------------------------
+// Bitácora de correos recibidos (gemini_email_log) — best effort, nunca rompe
+// el flujo si la tabla no existe todavía.
+// ---------------------------------------------------------------------------
+
+async function logEmail(row) {
+  try {
+    await fetch(`${SB_URL}/rest/v1/gemini_email_log`, {
+      method: 'POST',
+      headers: {
+        apikey: SB_SERVICE_KEY,
+        Authorization: `Bearer ${SB_SERVICE_KEY}`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify(row),
+    });
+  } catch (err) {
+    console.error('[import-gemini-email] email log failed (non-fatal):', err?.message || err);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main handler
 // ---------------------------------------------------------------------------
 
@@ -413,6 +435,15 @@ export default async function handler(req, res) {
       const dup = await dupResp.json();
       if (Array.isArray(dup) && dup.length > 0) {
         console.log(`[import-gemini-email] Duplicate notes (dedup_key hit) — skipping LLM. account_id="${dup[0].account_id}"`);
+        await logEmail({
+          subject, meeting_title: meetingTitle,
+          email_from: payload.from || null, email_to: payload.to || null,
+          email_date: payload.date || null,
+          email_message_id: payload.messageId || null, email_thread_id: payload.threadId || null,
+          matched_account_id: accountId, project_uid: projectUid, matched_account_name: matchedAccountName,
+          match_method: matchMethod,
+          outcome: 'duplicate_skipped', llm_used: false,
+        });
         return res.status(200).json({
           success: true,
           duplicate: true,
@@ -594,6 +625,19 @@ export default async function handler(req, res) {
 
   const surveyDetected = !!(llm && llm.survey && (llm.survey.question_a?.score != null || llm.survey.question_b?.score != null));
   console.log(`[import-gemini-email] account_id="${accountId}" period=${period} analysis_recorded=${analysisRecorded} survey=${surveyDetected} tasks_inserted=${tasksInserted}`);
+
+  await logEmail({
+    subject, meeting_title: meetingTitle,
+    email_from: payload.from || null, email_to: payload.to || null,
+    email_date: payload.date || null,
+    email_message_id: payload.messageId || null, email_thread_id: payload.threadId || null,
+    matched_account_id: accountId, project_uid: projectUid, matched_account_name: matchedAccountName,
+    match_method: matchMethod,
+    outcome: llm ? 'analyzed' : 'llm_fallback_regex',
+    llm_used: !!llm, survey_detected: surveyDetected,
+    sesion_score: llm && Number.isFinite(Number(llm.sesion_score)) ? Math.round(Number(llm.sesion_score)) : null,
+    tasks_inserted: tasksInserted,
+  });
 
   return res.status(200).json({
     success: true,

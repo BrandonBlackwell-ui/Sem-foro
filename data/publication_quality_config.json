@@ -4,7 +4,12 @@
   "default_alias_policy": "Use sheet_client_name, legal_name and account_name as aliases when no explicit aliases exist.",
   "accounts": {
     "maja": {
-      "aliases": ["Maja", "MAJA", "Maja Sportswear", "MAJA Sportswear"],
+      "aliases": [
+        "Maja",
+        "MAJA",
+        "Maja Sportswear",
+        "MAJA Sportswear"
+      ],
       "media_tiers": {
         "Reforma": "tier_1",
         "El universal": "tier_1",
@@ -21,7 +26,10 @@
       }
     },
     "tello": {
-      "aliases": ["Miguel Tello", "Tello"],
+      "aliases": [
+        "Miguel Tello",
+        "Tello"
+      ],
       "media_tiers": {
         "Milenio Notas": "tier_1",
         "Milenio": "tier_1",
@@ -36,16 +44,533 @@
       }
     },
     "nuvoil": {
-      "aliases": ["Nuvoil", "Nuvoil Energy"],
-      "media_tiers": {}
+      "aliases": [
+        "Nuvoil",
+        "Nuvoil Energy"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
     },
     "azvi": {
-      "aliases": ["Azvi", "Grupo Azvi"],
-      "media_tiers": {}
+      "aliases": [
+        "Azvi",
+        "Grupo Azvi"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
     },
     "credix": {
-      "aliases": ["Credix", "Covalto", "Credijusto", "Covalto -Credijusto"],
-      "media_tiers": {}
+      "aliases": [
+        "Credix",
+        "Covalto",
+        "Credijusto",
+        "Covalto -Credijusto"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "andy": {
+      "aliases": [
+        "Andy",
+        "Andycoach",
+        "Insta Coach Andy"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "apollo": {
+      "aliases": [
+        "Apollo",
+        "Química Apollo",
+        "Quimica Apollo"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "armor": {
+      "aliases": [
+        "Armor Life Lab",
+        "Armor"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "cima": {
+      "aliases": [
+        "CIMA",
+        "Grupo CIMA"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "dalinde": {
+      "aliases": [
+        "Dalinde",
+        "San Ángel Inn",
+        "San Angel Inn",
+        "DSAI",
+        "Hospital Dalinde"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "gicsa": {
+      "aliases": [
+        "GICSA"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "jack": {
+      "aliases": [
+        "Jack Levi"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "luca": {
+      "aliases": [
+        "LUCA"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "mapelly": {
+      "aliases": [
+        "Mapelly"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "rocha": {
+      "aliases": [
+        "RR",
+        "Rocha"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "stprm": {
+      "aliases": [
+        "STPRM",
+        "Sindicato de Trabajadores Petroleros",
+        "petroleros"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "totalplay": {
+      "aliases": [
+        "Totalplay",
+        "Total Play"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "turbofin": {
+      "aliases": [
+        "Turbofin"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
+    },
+    "uldis": {
+      "aliases": [
+        "Uldis"
+      ],
+      "media_tiers": {
+        "Reforma": "tier_1",
+        "El universal": "tier_1",
+        "Milenio Notas": "tier_1",
+        "Milenio": "tier_1",
+        "Excelsior": "tier_1",
+        "Heraldo": "tier_1",
+        "Infobae": "tier_1",
+        "TV Azteca": "tier_1",
+        "El Financiero": "tier_1",
+        "El Economista": "tier_1",
+        "Proceso": "tier_1",
+        "Dinero en imagen": "tier_1",
+        "Quadratin": "tier_2",
+        "Crónica": "tier_2",
+        "Publimetro": "tier_2",
+        "Sdp": "tier_2",
+        "Mundo Ejecutivo": "tier_2",
+        "Jonathan Montara": "tier_2",
+        "Reporte Indigo": "tier_2",
+        "La Razón": "tier_2",
+        "Consultoria": "tier_3",
+        "Sandra Cortes": "tier_3",
+        "Chris": "tier_3"
+      }
     }
   },
   "tier_points": {
