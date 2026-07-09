@@ -1014,6 +1014,17 @@ export default function App() {
   // Meet/session analyses (survey + sesion_score) from Supabase — produced live by
   // the Gemini-notes email pipeline. Overrides the static checklist.json transcripciones.
   const [meetAnalyses, setMeetAnalyses] = useState<any[]>([])
+  // Inteligencia documental del Drive por cliente (contratos, objetivos, faltantes).
+  const [driveIntel, setDriveIntel] = useState<any[]>([])
+  useEffect(() => {
+    (async () => {
+      const rows = await supabaseGetOptional<any[]>(
+        '/rest/v1/drive_account_intel?select=account_number,project_uid,client_name,docs_total,resumen,tiene_contrato_firmado,tipo_acuerdo,vigencia_inicio,vigencia_fin,monto,periodicidad_pago,objetivos,meta_entregables,renovacion,faltantes,synced_at',
+        [],
+      )
+      setDriveIntel(rows)
+    })()
+  }, [])
   const [dbTasks, setDbTasks] = useState<any[]>([])
   const [selectedMeetingId, setSelectedMeetingId] = useState<string | null>(null)
   const [meetingsLoading, setMeetingsLoading] = useState(false)
@@ -2487,6 +2498,11 @@ export default function App() {
                       ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
                       : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
                   </p>
+                  <DriveIntelCard intel={
+                    /^\d+$/.test(selectedAccount.account_id.trim())
+                      ? driveIntel.find(d => String(Number(d.account_number)) === String(Number(selectedAccount.account_id.trim()))) ?? null
+                      : null
+                  } />
                   <ContractTimeline contract={accountChecklistData?.contract} history={accountChecklistData?.contracts_history} />
                   <ScoreBreakdown components={weightedScore.components} />
                 </div>
@@ -3307,6 +3323,54 @@ function getStatusConfig(status: string) {
 }
 
 type ContractHistoryEntry = { nombre?: string; vigencia?: string; estatus?: string; nota?: string }
+
+// Tarjeta de inteligencia documental del Drive (tabla drive_account_intel):
+// estado del contrato, vigencia, objetivos, entregables comprometidos y faltantes.
+function DriveIntelCard({ intel }: { intel: any | null }) {
+  if (!intel) return null
+  const chip = intel.tiene_contrato_firmado === true
+    ? { label: 'Contrato firmado', color: '#3f7050' }
+    : intel.tiene_contrato_firmado === false
+      ? { label: `${intel.tipo_acuerdo === 'propuesta' ? 'Propuesta' : intel.tipo_acuerdo || 'Acuerdo'} sin firma`, color: '#b07d1e' }
+      : { label: 'Sin documentos de contrato', color: '#a8453b' }
+  const fmt = (d?: string | null) => d ? new Date(`${d}T12:00:00`).toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' }) : null
+  const objetivos: string[] = Array.isArray(intel.objetivos) ? intel.objetivos : []
+  const faltantes: string[] = Array.isArray(intel.faltantes) ? intel.faltantes : []
+  return (
+    <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, padding: 18, marginBottom: 20 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', marginBottom: 10 }}>
+        <div className="lb-section-title" style={{ margin: 0 }}>Contrato & Drive</div>
+        <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: .5, textTransform: 'uppercase', color: chip.color, background: `${chip.color}1a`, border: `1px solid ${chip.color}55`, borderRadius: 999, padding: '3px 10px' }}>{chip.label}</span>
+        <span style={{ fontSize: 11, color: '#9aa0a6', fontFamily: 'var(--mono)', marginLeft: 'auto' }}>{intel.docs_total ?? 0} docs en Drive</span>
+      </div>
+      {intel.resumen && <p className="lb-summary-text" style={{ margin: '0 0 12px' }}>{intel.resumen}</p>}
+      <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', fontSize: 12.5, color: 'var(--char)', marginBottom: objetivos.length || faltantes.length ? 12 : 0 }}>
+        {(intel.vigencia_inicio || intel.vigencia_fin) && (
+          <span><strong>Vigencia:</strong> {fmt(intel.vigencia_inicio) ?? '¿?'} → {fmt(intel.vigencia_fin) ?? '¿?'}</span>
+        )}
+        {intel.monto && <span><strong>Monto:</strong> {intel.monto}{intel.periodicidad_pago === 'mensual' ? '' : ''}</span>}
+        {intel.meta_entregables && <span style={{ flexBasis: '100%' }}><strong>Entregables comprometidos:</strong> {intel.meta_entregables}</span>}
+        {intel.renovacion && <span style={{ flexBasis: '100%' }}><strong>Renovación:</strong> {intel.renovacion}</span>}
+      </div>
+      {objetivos.length > 0 && (
+        <div style={{ marginBottom: faltantes.length ? 12 : 0 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: .5, color: '#9aa0a6', marginBottom: 6 }}>Objetivos del contrato</div>
+          <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12.5, color: 'var(--char)', display: 'flex', flexDirection: 'column', gap: 3 }}>
+            {objetivos.map((o, i) => <li key={i}>{o}</li>)}
+          </ul>
+        </div>
+      )}
+      {faltantes.length > 0 && (
+        <div style={{ background: 'rgba(168,69,59,0.06)', border: '1px solid rgba(168,69,59,0.25)', borderRadius: 8, padding: '10px 12px' }}>
+          <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: .5, color: '#a8453b', marginBottom: 6 }}>Faltantes documentales</div>
+          <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12.5, color: '#7a3a33', display: 'flex', flexDirection: 'column', gap: 3 }}>
+            {faltantes.map((f, i) => <li key={i}>{f}</li>)}
+          </ul>
+        </div>
+      )}
+    </div>
+  )
+}
 
 function ContractTimeline({ contract, history }: { contract?: { vigencia?: string; nota?: string; fase_actual?: string } | null; history?: ContractHistoryEntry[] | null }) {
   const [showHistory, setShowHistory] = useState(false)
