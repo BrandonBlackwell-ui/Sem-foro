@@ -310,22 +310,21 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
     ...[...byConsultant.keys()].filter(k => !order.includes(k)),
   ]
 
-  // Modo kiosko: rota páginas de columnas (las que quepan) cada 8s. Se pausa al
-  // pasar el cursor. Puntos abajo para saltar manualmente.
-  const COL_W = 228 // 210 columna + 18 gap
+  // Modo kiosko: carrusel que se desliza a la izquierda cada 8s. Todas las
+  // columnas viven en una sola fila (altura constante = la más alta → sin
+  // descuadre); sólo se desplaza el track. Se pausa al pasar el cursor.
+  const COL = 210, GAP = 18, COL_W = COL + GAP
   const wrapRef = useRef<HTMLDivElement | null>(null)
-  const [perPage, setPerPage] = useState(4)
+  const [avail, setAvail] = useState(1200)
   const [page, setPage] = useState(0)
   const [paused, setPaused] = useState(false)
   useEffect(() => {
-    const calc = () => {
-      const w = wrapRef.current?.clientWidth || window.innerWidth
-      setPerPage(Math.max(1, Math.min(consultants.length || 1, Math.floor(w / COL_W))))
-    }
+    const calc = () => setAvail(wrapRef.current?.clientWidth || window.innerWidth)
     calc()
     window.addEventListener('resize', calc)
     return () => window.removeEventListener('resize', calc)
-  }, [consultants.length])
+  }, [])
+  const perPage = Math.max(1, Math.min(consultants.length || 1, Math.floor(avail / COL_W)))
   const pageCount = Math.max(1, Math.ceil(consultants.length / perPage))
   useEffect(() => { if (page >= pageCount) setPage(0) }, [pageCount, page])
   useEffect(() => {
@@ -333,7 +332,24 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
     const t = setInterval(() => setPage(p => (p + 1) % pageCount), 8000)
     return () => clearInterval(t)
   }, [paused, pageCount])
-  const visible = consultants.slice(page * perPage, page * perPage + perPage)
+  // Carousel geometry: show exactly `perPage` columns; slide by whole pages,
+  // clamped so the last page sits flush-right (no trailing blank).
+  const viewportW = perPage * COL + (perPage - 1) * GAP
+  const totalW = consultants.length * COL + Math.max(0, consultants.length - 1) * GAP
+  const maxTranslate = Math.max(0, totalW - viewportW)
+  const translate = Math.min(page * perPage * COL_W, maxTranslate)
+
+  // Fullscreen (pantalla proyectada todo el día).
+  const [isFs, setIsFs] = useState(false)
+  useEffect(() => {
+    const h = () => setIsFs(!!document.fullscreenElement)
+    document.addEventListener('fullscreenchange', h)
+    return () => document.removeEventListener('fullscreenchange', h)
+  }, [])
+  const toggleFs = () => {
+    if (document.fullscreenElement) document.exitFullscreen?.()
+    else document.documentElement.requestFullscreen?.()
+  }
 
   const done = clients.filter(c => c.pct >= 100).length
   const partial = clients.filter(c => c.pct === 50).length
@@ -351,7 +367,10 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
           <div className="lb-content">
             <div className="lb-header-row">
               <div>
-                <button onClick={onBack} style={{ background: 'transparent', border: '1px solid #d0ccc4', borderRadius: 999, padding: '4px 12px', fontSize: 12, color: '#666', cursor: 'pointer', marginBottom: 10 }}>← Cuentas</button>
+                <div style={{ display: 'flex', gap: 8, marginBottom: 10 }}>
+                  <button onClick={onBack} style={{ background: 'transparent', border: '1px solid #d0ccc4', borderRadius: 999, padding: '4px 12px', fontSize: 12, color: '#666', cursor: 'pointer' }}>← Cuentas</button>
+                  <button onClick={toggleFs} style={{ background: isFs ? '#3a3a44' : 'transparent', border: '1px solid #d0ccc4', borderRadius: 999, padding: '4px 12px', fontSize: 12, color: isFs ? '#fdfcf8' : '#666', cursor: 'pointer' }}>{isFs ? '⛶ Salir de pantalla completa' : '⛶ Pantalla completa'}</button>
+                </div>
                 <span className="lb-eyebrow">Aplicación de encuesta</span>
                 <h1 className="lb-h1">Survey por consultor</h1>
                 <p className="lb-subtext">Cada cuadro es un cliente. ✓ = las 2 preguntas hechas (100%), ½ = falta 1 (50%), ✗ = ninguna (0%).</p>
@@ -369,8 +388,9 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
               onMouseLeave={() => setPaused(false)}
               style={{ marginTop: 20 }}
             >
-              <div style={{ display: 'flex', gap: 18, alignItems: 'flex-start' }}>
-                {visible.map(consultant => {
+              <div style={{ overflow: 'hidden', width: viewportW, maxWidth: '100%' }}>
+                <div style={{ display: 'flex', gap: GAP, alignItems: 'flex-start', transform: `translateX(-${translate}px)`, transition: 'transform .7s cubic-bezier(.4,0,.2,1)' }}>
+                {consultants.map(consultant => {
                   const list = (byConsultant.get(consultant) ?? []).sort((a, b) => b.pct - a.pct)
                   return (
                     <div key={consultant} style={{ width: 210, flex: '0 0 210px', background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, padding: 12 }}>
@@ -401,6 +421,7 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
                     </div>
                   )
                 })}
+                </div>
               </div>
               {pageCount > 1 && (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 20 }}>
@@ -412,9 +433,6 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
                       style={{ width: i === page ? 24 : 9, height: 9, borderRadius: 999, border: 'none', padding: 0, cursor: 'pointer', background: i === page ? '#3a3a44' : '#d0ccc4', transition: 'all .25s' }}
                     />
                   ))}
-                  <span style={{ marginLeft: 10, fontSize: 11, color: '#9aa0a6', fontFamily: 'var(--mono)' }}>
-                    {paused ? '⏸ pausado (cursor encima)' : '▶ rotando cada 8s'}
-                  </span>
                 </div>
               )}
             </div>
