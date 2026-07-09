@@ -443,6 +443,122 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
   )
 }
 
+// Panel de administración: bitácora de correos de notas de Meet (gemini_email_log).
+// Gate de contraseña simple para uso interno (los datos ya son de lectura pública
+// vía anon key; esto es una puerta de UI, no seguridad criptográfica).
+const ADMIN_PASSWORD = 'admin2026'
+
+function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack }: {
+  authed: boolean
+  onLogin: (pass: string) => boolean
+  logs: any[]
+  loading: boolean
+  onRefresh: () => void
+  onBack: () => void
+}) {
+  const [pass, setPass] = useState('')
+  const [error, setError] = useState(false)
+  const OUTCOME: Record<string, { label: string; color: string }> = {
+    analyzed: { label: 'Analizado', color: '#3f7050' },
+    duplicate_skipped: { label: 'Duplicado (saltado)', color: '#b07d1e' },
+    llm_fallback_regex: { label: 'Fallback regex', color: '#a8453b' },
+    error: { label: 'Error', color: '#a8453b' },
+  }
+  const fmtDate = (s?: string | null) => s ? new Date(s).toLocaleString('es-MX', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'America/Mexico_City' }) : '--'
+  const cleanFrom = (s?: string | null) => (s || '').replace(/^.*</, '').replace(/>.*$/, '') || '(desconocido)'
+
+  return (
+    <div className="lb-shell">
+      <div className="lb-book">
+        <div className="lb-page">
+          <div className="lb-lines" />
+          <div className="lb-margin" />
+          <div className="lb-spine">
+            <div className="lb-rings">{Array.from({ length: 9 }).map((_, i) => <div className="lb-ring" key={i} />)}</div>
+          </div>
+          <div className="lb-content">
+            <div className="lb-header-row">
+              <div>
+                <button onClick={onBack} style={{ background: 'transparent', border: '1px solid #d0ccc4', borderRadius: 999, padding: '4px 12px', fontSize: 12, color: '#666', cursor: 'pointer', marginBottom: 10 }}>← Cuentas</button>
+                <span className="lb-eyebrow">Administración</span>
+                <h1 className="lb-h1">Bitácora de Meets</h1>
+                <p className="lb-subtext">Cada correo de notas de Gemini que llega a la app: de quién viene, a qué cliente se asignó y qué pasó con él.</p>
+              </div>
+              {authed && (
+                <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                  <button onClick={onRefresh} style={{ background: 'transparent', border: '1px solid #3a3a44', borderRadius: 999, padding: '6px 14px', fontSize: 12.5, fontWeight: 600, color: '#3a3a44', cursor: 'pointer' }}>{loading ? 'Actualizando…' : '🔄 Actualizar'}</button>
+                  <a href="https://github.com/BrandonBlackwell-ui/Sem-foro/actions/workflows/publication_quality.yml" target="_blank" rel="noreferrer" style={{ background: '#3a3a44', border: '1px solid #3a3a44', borderRadius: 999, padding: '6px 14px', fontSize: 12.5, fontWeight: 600, color: '#fdfcf8', textDecoration: 'none' }}>▶ Correr análisis PQ</a>
+                </div>
+              )}
+            </div>
+
+            {!authed ? (
+              <div style={{ maxWidth: 380, margin: '48px auto', background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, padding: 28, textAlign: 'center' }}>
+                <div style={{ fontSize: 34, marginBottom: 8 }}>🔐</div>
+                <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: 'var(--ink-900)' }}>Acceso de administrador</div>
+                <input
+                  type="password"
+                  value={pass}
+                  placeholder="Contraseña"
+                  onChange={e => { setPass(e.target.value); setError(false) }}
+                  onKeyDown={e => { if (e.key === 'Enter') { if (!onLogin(pass)) setError(true) } }}
+                  style={{ width: '100%', padding: '10px 14px', fontSize: 14, border: `1px solid ${error ? '#a8453b' : '#d0ccc4'}`, borderRadius: 8, marginBottom: 10, boxSizing: 'border-box' }}
+                />
+                {error && <div style={{ color: '#a8453b', fontSize: 12, marginBottom: 10 }}>Contraseña incorrecta</div>}
+                <button
+                  onClick={() => { if (!onLogin(pass)) setError(true) }}
+                  style={{ width: '100%', padding: '10px 14px', fontSize: 14, fontWeight: 700, background: '#3a3a44', color: '#fdfcf8', border: 'none', borderRadius: 8, cursor: 'pointer' }}
+                >Entrar</button>
+              </div>
+            ) : (
+              <div style={{ marginTop: 20 }}>
+                {logs.length === 0 ? (
+                  <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, padding: 28, textAlign: 'center', color: '#9aa0a6', fontSize: 13.5 }}>
+                    {loading ? 'Cargando bitácora…' : 'Sin registros todavía. Los correos nuevos de notas de Gemini aparecerán aquí en cuanto lleguen (requiere migración 016 aplicada en Supabase).'}
+                  </div>
+                ) : (
+                  <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, overflow: 'hidden' }}>
+                    <div style={{ overflowX: 'auto' }}>
+                      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12.5 }}>
+                        <thead>
+                          <tr style={{ background: '#faf8f2', textAlign: 'left' }}>
+                            {['Recibido', 'De', 'Reunión', 'Cliente', 'Match', 'Resultado', 'Survey', 'Tareas'].map(hd => (
+                              <th key={hd} style={{ padding: '10px 12px', fontSize: 10.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: .5, color: '#9aa0a6', borderBottom: '1px solid #ece9e0', whiteSpace: 'nowrap' }}>{hd}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {logs.map((l, i) => {
+                            const oc = OUTCOME[l.outcome] || { label: l.outcome, color: '#9aa0a6' }
+                            return (
+                              <tr key={l.id ?? i} style={{ borderBottom: '1px solid #f3f1ea' }}>
+                                <td style={{ padding: '9px 12px', whiteSpace: 'nowrap', fontFamily: 'var(--mono)', fontSize: 11.5 }}>{fmtDate(l.received_at)}</td>
+                                <td style={{ padding: '9px 12px', whiteSpace: 'nowrap' }}>{cleanFrom(l.email_from)}</td>
+                                <td style={{ padding: '9px 12px', maxWidth: 260, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} title={l.meeting_title || ''}>{l.meeting_title || '--'}</td>
+                                <td style={{ padding: '9px 12px', whiteSpace: 'nowrap', fontWeight: 600 }}>{l.project_uid ? `${l.project_uid} · ` : ''}{l.matched_account_name || l.matched_account_id || '--'}</td>
+                                <td style={{ padding: '9px 12px', whiteSpace: 'nowrap', fontFamily: 'var(--mono)', fontSize: 11, color: '#666' }}>{l.match_method || '--'}</td>
+                                <td style={{ padding: '9px 12px', whiteSpace: 'nowrap' }}>
+                                  <span style={{ fontSize: 10.5, fontWeight: 700, color: oc.color, background: `${oc.color}1a`, border: `1px solid ${oc.color}55`, borderRadius: 999, padding: '2px 9px' }}>{oc.label}</span>
+                                </td>
+                                <td style={{ padding: '9px 12px', textAlign: 'center' }}>{l.survey_detected === true ? '✓' : l.survey_detected === false ? '·' : '--'}</td>
+                                <td style={{ padding: '9px 12px', textAlign: 'center', fontFamily: 'var(--mono)' }}>{l.tasks_inserted ?? '--'}</td>
+                              </tr>
+                            )
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://vqgfkfvywbpjldreuplb.supabase.co'
 const SUPABASE_ANON_KEY =
   import.meta.env.VITE_SUPABASE_ANON_KEY ||
@@ -1010,7 +1126,33 @@ export default function App() {
   const [error, setError] = useState<string | null>(null)
 
   // Gemini Meetings Integration States
-  const [viewMode, setViewMode] = useState<'semaforo' | 'reuniones' | 'survey'>('semaforo')
+  const [viewMode, setViewMode] = useState<'semaforo' | 'reuniones' | 'survey' | 'admin'>('semaforo')
+  // Admin: gate + bitácora de correos de Meet (gemini_email_log)
+  const [adminAuthed, setAdminAuthed] = useState(() => {
+    try { return sessionStorage.getItem('bw_admin') === '1' } catch { return false }
+  })
+  const [emailLogs, setEmailLogs] = useState<any[]>([])
+  const [emailLogsLoading, setEmailLogsLoading] = useState(false)
+  const loadEmailLogs = useCallback(async () => {
+    setEmailLogsLoading(true)
+    const rows = await supabaseGetOptional<any[]>(
+      '/rest/v1/gemini_email_log?select=id,received_at,subject,meeting_title,email_from,matched_account_id,project_uid,matched_account_name,match_method,outcome,llm_used,survey_detected,sesion_score,tasks_inserted&order=received_at.desc&limit=200',
+      [],
+    )
+    setEmailLogs(rows)
+    setEmailLogsLoading(false)
+  }, [])
+  useEffect(() => {
+    if (viewMode === 'admin' && adminAuthed) loadEmailLogs()
+  }, [viewMode, adminAuthed, loadEmailLogs])
+  const handleAdminLogin = useCallback((pass: string) => {
+    if (pass === ADMIN_PASSWORD) {
+      setAdminAuthed(true)
+      try { sessionStorage.setItem('bw_admin', '1') } catch { /* private mode */ }
+      return true
+    }
+    return false
+  }, [])
   // Meet/session analyses (survey + sesion_score) from Supabase — produced live by
   // the Gemini-notes email pipeline. Overrides the static checklist.json transcripciones.
   const [meetAnalyses, setMeetAnalyses] = useState<any[]>([])
@@ -2104,6 +2246,18 @@ export default function App() {
     if (viewMode === 'survey') {
       return <SurveyBoard clients={surveyClients} onBack={() => setViewMode('semaforo')} />
     }
+    if (viewMode === 'admin') {
+      return (
+        <AdminPanel
+          authed={adminAuthed}
+          onLogin={handleAdminLogin}
+          logs={emailLogs}
+          loading={emailLogsLoading}
+          onRefresh={loadEmailLogs}
+          onBack={() => setViewMode('semaforo')}
+        />
+      )
+    }
     const analyzedCount = accountSummaries.filter(a => a.analyzedToday).length
     const pendingAnalysis = accountSummaries.filter(a => !a.analyzedToday && a.hasMessagesToday)
     const trulyQuiet = accountSummaries.filter(a => !a.analyzedToday && !a.hasMessagesToday)
@@ -2207,12 +2361,20 @@ export default function App() {
                   <div style={{fontFamily:'var(--caveat)', fontSize:36, fontWeight:700, color:'#3a3a44', lineHeight:1, textAlign:'right'}}>
                     {new Date().toLocaleDateString('es-MX', {day:'numeric', month:'long', year:'numeric', timeZone:'America/Mexico_City'})}
                   </div>
-                  <button
-                    onClick={() => setViewMode('survey')}
-                    style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:12.5, fontWeight:600, padding:'7px 14px', borderRadius:999, cursor:'pointer', background:'#3a3a44', color:'#fdfcf8', border:'1px solid #3a3a44'}}
-                  >
-                    📋 Vista Survey por consultor
-                  </button>
+                  <div style={{display:'flex', gap:8}}>
+                    <button
+                      onClick={() => setViewMode('survey')}
+                      style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:12.5, fontWeight:600, padding:'7px 14px', borderRadius:999, cursor:'pointer', background:'#3a3a44', color:'#fdfcf8', border:'1px solid #3a3a44'}}
+                    >
+                      📋 Vista Survey por consultor
+                    </button>
+                    <button
+                      onClick={() => setViewMode('admin')}
+                      style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:12.5, fontWeight:600, padding:'7px 14px', borderRadius:999, cursor:'pointer', background:'transparent', color:'#666', border:'1px solid #d0ccc4'}}
+                    >
+                      🔐 Admin
+                    </button>
+                  </div>
                 </div>
               </div>
 

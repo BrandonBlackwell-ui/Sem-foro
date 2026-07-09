@@ -65,6 +65,16 @@ def main() -> None:
     logger.info("Loaded %d candidate publication(s).", len(publications))
 
     sb = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
+
+    if args.contract_window:
+        windows = _contract_windows(sb)
+        before = len(publications)
+        publications = _filter_by_contract(publications, windows)
+        logger.info(
+            "Contract-window filter: %d -> %d publication(s) (solo dentro de la vigencia del contrato).",
+            before, len(publications),
+        )
+
     existing_urls = _existing_urls(sb) if not args.force else set()
 
     analyzed: list[dict[str, Any]] = []
@@ -112,7 +122,61 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=10)
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--contract-window",
+        action="store_true",
+        help="Solo analizar publicaciones cuya fecha caiga dentro de la vigencia del contrato del cliente (drive_account_intel).",
+    )
     return parser.parse_args()
+
+
+# Mapa slug del pipeline de medios -> número de cuenta (carpeta Drive).
+# Mismo mapa que dashboard/src/hooks/useAccounts.ts (NUMBER_TO_ID invertido).
+SLUG_TO_NUMBER = {
+    "turbofin": "01", "maja": "02", "aduanas": "03", "idlayr": "04", "credix": "05",
+    "rocha": "06", "apollo": "07", "uldis": "08", "azvi": "09", "jack": "10",
+    "futbol": "11", "tello": "12", "cima": "13", "dalinde": "14", "armor": "15",
+    "mapelly": "16", "irugami": "17", "stprm": "18", "pujol": "19", "veracruz": "20",
+    "nuvoil": "21", "totalplay": "22", "luca": "23", "gicsa": "24", "andy": "25",
+    "bernardo": "26", "cuernavaca": "27", "queretaro": "28", "coastoil": "29",
+    "erikrubi": "30", "sasil": "31", "cojab": "32", "neza": "33", "supplypay": "34",
+    "pepe": "35", "terry": "36", "leadsales": "37", "karpowership": "38",
+}
+
+
+def _contract_windows(sb: Any) -> dict[str, tuple[str | None, str | None]]:
+    """Vigencias de contrato por slug de cuenta, desde drive_account_intel."""
+    try:
+        res = sb.table("drive_account_intel").select("account_number,vigencia_inicio,vigencia_fin").execute()
+    except Exception as exc:
+        logger.warning("No pude leer drive_account_intel; sin filtro de contrato: %s", exc)
+        return {}
+    by_number = {str(row.get("account_number")): (row.get("vigencia_inicio"), row.get("vigencia_fin")) for row in (res.data or [])}
+    return {slug: by_number[num] for slug, num in SLUG_TO_NUMBER.items() if num in by_number}
+
+
+def _filter_by_contract(
+    publications: list[dict[str, Any]],
+    windows: dict[str, tuple[str | None, str | None]],
+) -> list[dict[str, Any]]:
+    """Deja pasar solo publicaciones dentro de la vigencia del contrato.
+    Cuentas sin fechas de contrato conocidas se dejan pasar completas."""
+    kept = []
+    for row in publications:
+        slug = str(row.get("account_id") or "")
+        start, end = windows.get(slug, (None, None))
+        if not start:
+            kept.append(row)
+            continue
+        pub_date = str(row.get("publication_date") or "")
+        if not pub_date:
+            continue
+        if pub_date < str(start):
+            continue
+        if end and pub_date > str(end):
+            continue
+        kept.append(row)
+    return kept
 
 
 def _setup_logging() -> None:
