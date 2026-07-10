@@ -1,5 +1,5 @@
-import fs from 'node:fs'
-import path from 'node:path'
+import fs from 'fs'
+import path from 'path'
 
 const SHEET_ID = process.env.MEDIA_SHEET_ID || '1PAcofO80aMuTNdclclqCrKS-uij0S8iI'
 const GENERAL_GID = process.env.MEDIA_SHEET_GENERAL_GID || '905402375'
