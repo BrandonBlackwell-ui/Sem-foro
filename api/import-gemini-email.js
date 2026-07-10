@@ -1,6 +1,6 @@
-import { createRequire } from 'module';
+import fs from 'node:fs';
+import path from 'node:path';
 import crypto from 'node:crypto';
-const require = createRequire(import.meta.url);
 
 const SB_URL = process.env.SUPABASE_URL || 'https://vqgfkfvywbpjldreuplb.supabase.co';
 const SB_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY || '';
@@ -317,9 +317,12 @@ export default async function handler(req, res) {
   // 2. Load aliases (fail-silently)
   let aliases = {};
   try {
-    aliases = require('./account_aliases.json');
-  } catch {
-    console.warn('[import-gemini-email] No account_aliases.json found, proceeding without aliases.');
+    const aliasesPath = path.join(process.cwd(), 'api', 'account_aliases.json');
+    if (fs.existsSync(aliasesPath)) {
+      aliases = JSON.parse(fs.readFileSync(aliasesPath, 'utf8'));
+    }
+  } catch (err) {
+    console.warn('[import-gemini-email] Error loading account_aliases.json, proceeding without aliases:', err.message);
   }
 
   // 3. Prepare title tokens
