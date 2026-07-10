@@ -1833,7 +1833,11 @@ export default function App() {
             negative_signals: row.negative_signals,
             checklist: row.checklist || [],
             reasoning: row.reasoning || '',
-            accionables: row.action_items || [],
+            // action_items de Supabase son objetos {owner, action, ...}; el render
+            // espera strings, así que se normalizan a "Owner: acción".
+            accionables: (row.action_items || []).map((a: any) =>
+              typeof a === 'string' ? a : `${a?.owner ? a.owner + ': ' : ''}${a?.action ?? ''}`.trim()
+            ).filter(Boolean),
             survey: row.survey || null,
             _source: 'supabase',
           },
