@@ -1,0 +1,13 @@
+# Nixpacks config for the daily WhatsApp analyzer Cron service.
+# Forces the Python provider so the shared package.json at repo root
+# does not trigger a Node build for this service.
+providers = ["python"]
+
+[phases.setup]
+nixPkgs = ["python311"]
+
+[phases.install]
+cmds = ["python -m pip install --upgrade pip", "python -m pip install -r requirements.txt"]
+
+[start]
+cmd = "python scripts/sync/wa_daily_analyzer.py"
