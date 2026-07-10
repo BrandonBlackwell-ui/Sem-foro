@@ -99,3 +99,60 @@ function getOrCreateLabel(name) {
   }
   return label;
 }
+
+/**
+ * Función manual para re-procesar correos antiguos que fallaron.
+ * Buscará los últimos 30 correos de notas y los enviará a Vercel.
+ * Si ya fueron analizados correctamente, se saltarán (evitando duplicar).
+ * Si estaban en modo fallback regex, ahora se procesarán con la IA.
+ */
+function reprocessHistoricalEmails() {
+  const searchQuery = 'from:gemini-notes@google.com subject:"Notas:"';
+  const threads = GmailApp.search(searchQuery, 0, 30);
+
+  Logger.log("Reprocesando " + threads.length + " hilos de correo históricos.");
+
+  for (var i = 0; i < threads.length; i++) {
+    var thread = threads[i];
+    var messages = thread.getMessages();
+
+    for (var j = 0; j < messages.length; j++) {
+      var message = messages[j];
+      var subject = message.getSubject();
+      var plainBody = message.getPlainBody();
+      var htmlBody = message.getBody();
+
+      Logger.log("Re-enviando correo: " + subject);
+
+      try {
+        var payload = {
+          source: "gemini_notes_email",
+          subject: subject,
+          plainBody: plainBody,
+          htmlBody: htmlBody,
+          from: message.getFrom(),
+          to: message.getTo(),
+          cc: message.getCc(),
+          bcc: message.getBcc(),
+          replyTo: message.getReplyTo(),
+          date: message.getDate().toISOString(),
+          messageId: message.getId(),
+          threadId: thread.getId(),
+          attachments: []
+        };
+
+        var options = {
+          method: "post",
+          contentType: "application/json",
+          payload: JSON.stringify(payload),
+          muteHttpExceptions: true
+        };
+
+        var response = UrlFetchApp.fetch(DASHBOARD_URL + "/api/import-gemini-email", options);
+        Logger.log("Resultado para " + subject + ": " + response.getContentText());
+      } catch (error) {
+        Logger.log("Error al re-procesar: " + error.toString());
+      }
+    }
+  }
+}
