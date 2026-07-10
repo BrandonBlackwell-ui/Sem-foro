@@ -332,7 +332,7 @@ export default async function handler(req, res) {
   const titleBigrams = bigrams(titleNorm);
 
   let accountId = '00_INTERNAL';
-  let matchedAccountName = 'Interno Blackwell';
+  let matchedAccountName = 'Sin asignar';
   let matchMethod = 'default';
   let projectUid = null;
 
@@ -468,6 +468,7 @@ export default async function handler(req, res) {
   let model = null;
   let analysisRecorded = false;
   let tasks = [];
+  let llmError = null;
 
   try {
     const out = await analyzeTranscript(transcript, matchedAccountName, period);
@@ -501,6 +502,7 @@ export default async function handler(req, res) {
       }));
   } catch (err) {
     console.error('[import-gemini-email] LLM analysis failed, falling back to regex tasks:', err);
+    llmError = err.message || String(err);
     const parsedTasks = [];
     let currentTask = null;
     for (let line of transcript.split('\n')) {
@@ -649,6 +651,7 @@ export default async function handler(req, res) {
     period,
     analysis_recorded: analysisRecorded,
     llm_used: !!llm,
+    llm_error: llmError,
     sesion_score: llm ? llm.sesion_score : null,
     survey_detected: surveyDetected,
     survey: llm ? (llm.survey ?? null) : null,
