@@ -652,11 +652,6 @@ export default async function handler(req, res) {
     analysis_recorded: analysisRecorded,
     llm_used: !!llm,
     llm_error: llmError,
-    env_debug: {
-      has_key: !!process.env.OPENROUTER_API_KEY,
-      key_len: process.env.OPENROUTER_API_KEY ? process.env.OPENROUTER_API_KEY.length : 0,
-      key_first: process.env.OPENROUTER_API_KEY ? process.env.OPENROUTER_API_KEY.slice(0, 8) : '',
-    },
     sesion_score: llm ? llm.sesion_score : null,
     survey_detected: surveyDetected,
     survey: llm ? (llm.survey ?? null) : null,
