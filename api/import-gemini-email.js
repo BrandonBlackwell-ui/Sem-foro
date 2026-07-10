@@ -288,7 +288,8 @@ async function logEmail(row) {
 // ---------------------------------------------------------------------------
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).end();
+  try {
+    if (req.method !== 'POST') return res.status(405).end();
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
@@ -651,4 +652,12 @@ export default async function handler(req, res) {
     tasks_inserted: tasksInserted,
     tasks_imported: tasksToInsert.map(t => ({ owner: t.owner, action: t.action })),
   });
+  } catch (globalErr) {
+    console.error('[import-gemini-email] CRITICAL RUNTIME ERROR:', globalErr);
+    return res.status(500).json({
+      error: 'CRITICAL RUNTIME ERROR',
+      message: globalErr.message,
+      stack: globalErr.stack
+    });
+  }
 }
