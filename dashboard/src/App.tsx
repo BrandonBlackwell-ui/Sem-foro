@@ -522,7 +522,7 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack }: {
                       <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12.5 }}>
                         <thead>
                           <tr style={{ background: '#faf8f2', textAlign: 'left' }}>
-                            {['Recibido', 'De', 'Reunión', 'Cliente', 'Match', 'Resultado', 'Survey', 'Tareas'].map(hd => (
+                            {['Recibido', 'Buzón', 'Reunión', 'Cliente', 'Match', 'Resultado', 'Survey', 'Tareas'].map(hd => (
                               <th key={hd} style={{ padding: '10px 12px', fontSize: 10.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: .5, color: '#9aa0a6', borderBottom: '1px solid #ece9e0', whiteSpace: 'nowrap' }}>{hd}</th>
                             ))}
                           </tr>
@@ -533,7 +533,7 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack }: {
                             return (
                               <tr key={l.id ?? i} style={{ borderBottom: '1px solid #f3f1ea' }}>
                                 <td style={{ padding: '9px 12px', whiteSpace: 'nowrap', fontFamily: 'var(--mono)', fontSize: 11.5 }}>{fmtDate(l.received_at)}</td>
-                                <td style={{ padding: '9px 12px', whiteSpace: 'nowrap' }}>{cleanFrom(l.email_from)}</td>
+                                <td style={{ padding: '9px 12px', whiteSpace: 'nowrap' }} title={l.email_to ? `De: ${l.email_from}` : ''}>{cleanFrom(l.email_to || l.email_from)}</td>
                                 <td style={{ padding: '9px 12px', maxWidth: 260, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} title={l.meeting_title || ''}>{l.meeting_title || '--'}</td>
                                 <td style={{ padding: '9px 12px', whiteSpace: 'nowrap', fontWeight: 600 }}>{l.project_uid ? `${l.project_uid} · ` : ''}{l.matched_account_name || l.matched_account_id || '--'}</td>
                                 <td style={{ padding: '9px 12px', whiteSpace: 'nowrap', fontFamily: 'var(--mono)', fontSize: 11, color: '#666' }}>{l.match_method || '--'}</td>
@@ -1241,7 +1241,7 @@ export default function App() {
   const loadEmailLogs = useCallback(async () => {
     setEmailLogsLoading(true)
     const rows = await supabaseGetOptional<any[]>(
-      '/rest/v1/gemini_email_log?select=id,received_at,subject,meeting_title,email_from,matched_account_id,project_uid,matched_account_name,match_method,outcome,llm_used,survey_detected,sesion_score,tasks_inserted&order=received_at.desc&limit=200',
+      '/rest/v1/gemini_email_log?select=id,received_at,subject,meeting_title,email_from,email_to,matched_account_id,project_uid,matched_account_name,match_method,outcome,llm_used,survey_detected,sesion_score,tasks_inserted&order=received_at.desc&limit=200',
       [],
     )
     setEmailLogs(rows)
