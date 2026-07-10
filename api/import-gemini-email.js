@@ -1,6 +1,6 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import crypto from 'node:crypto';
+import fs from 'fs';
+import path from 'path';
+import crypto from 'crypto';
 
 const SB_URL = process.env.SUPABASE_URL || 'https://vqgfkfvywbpjldreuplb.supabase.co';
 const SB_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY || '';
