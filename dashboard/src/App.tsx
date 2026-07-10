@@ -3325,14 +3325,23 @@ export default function App() {
                       ))}
                     </div>
                   )}
-                  {sc.survey && (
-                    <div style={{ marginTop: 12, paddingTop: 10, borderTop: '1px solid var(--rule-soft)', display: 'flex', flexDirection: 'column', gap: 4 }}>
-                      <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.05em', color: 'var(--muted)', marginBottom: 4 }}>Survey aplicado</div>
-                      {sc.survey.tipo_a && <div style={{ fontSize: 12.5, color: 'var(--char)' }}><strong>Tipo A</strong> — {sc.survey.tipo_a.pregunta} <span style={{ color: scoreColor, fontWeight: 600 }}>→ {sc.survey.tipo_a.respuesta}</span></div>}
-                      {sc.survey.tipo_b && <div style={{ fontSize: 12.5, color: 'var(--char)' }}><strong>Tipo B</strong> — {sc.survey.tipo_b.pregunta} <span style={{ color: 'var(--char)', fontStyle: 'italic' }}>"{sc.survey.tipo_b.respuesta}"</span></div>}
-                      {sc.survey.tipo_c && <div style={{ fontSize: 12.5, color: 'var(--char)' }}><strong>Accionable C</strong> — {sc.survey.tipo_c.respuesta}</div>}
-                    </div>
-                  )}
+                  {sc.survey && (() => {
+                    // Soporta ambos formatos: Supabase (question_a/question_b con score)
+                    // y el viejo del checklist estático (tipo_a/tipo_b/tipo_c).
+                    const qa = sc.survey.question_a ?? (sc.survey.tipo_a ? { question: sc.survey.tipo_a.pregunta, answer: sc.survey.tipo_a.respuesta } : null)
+                    const qb = sc.survey.question_b ?? (sc.survey.tipo_b ? { question: sc.survey.tipo_b.pregunta, answer: sc.survey.tipo_b.respuesta } : null)
+                    const hasA = qa && (qa.score != null || qa.question || qa.answer)
+                    const hasB = qb && (qb.score != null || qb.question || qb.answer)
+                    if (!hasA && !hasB && !sc.survey.tipo_c) return null
+                    return (
+                      <div style={{ marginTop: 12, paddingTop: 10, borderTop: '1px solid var(--rule-soft)', display: 'flex', flexDirection: 'column', gap: 4 }}>
+                        <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.05em', color: 'var(--muted)', marginBottom: 4 }}>Survey aplicado</div>
+                        {hasA && <div style={{ fontSize: 12.5, color: 'var(--char)' }}><strong>Tipo A</strong> — {qa.question || 'Satisfacción general'} <span style={{ color: scoreColor, fontWeight: 600 }}>→ {qa.answer ?? '—'}{qa.score != null ? ` (${qa.score}/100)` : ''}</span></div>}
+                        {hasB && <div style={{ fontSize: 12.5, color: 'var(--char)' }}><strong>Tipo B</strong> — {qb.question || 'Impacto en objetivo'} <span style={{ color: scoreColor, fontWeight: 600 }}>→ {qb.answer ?? '—'}{qb.score != null ? ` (${qb.score}/100)` : ''}</span></div>}
+                        {sc.survey.tipo_c && <div style={{ fontSize: 12.5, color: 'var(--char)' }}><strong>Accionable C</strong> — {sc.survey.tipo_c.respuesta}</div>}
+                      </div>
+                    )
+                  })()}
                 </div>
               )
             })()}
