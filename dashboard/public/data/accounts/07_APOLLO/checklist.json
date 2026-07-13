@@ -1,6 +1,11 @@
 {
   "account_number": "07",
   "account_name": "APOLLO",
+  "contract": {
+    "fase_actual": "fase_1",
+    "vigencia": "2026-04-01/2027-09-30",
+    "nota": "Contrato detectado en Drive (carpeta 01). Meta: 2 impactos mensuales en medios nacionales. Activado manualmente 2026-07-13."
+  },
   "schema": {
     "items": {
       "contrato": {
@@ -44,6 +49,18 @@
         "w_co": 0.15,
         "w_sc": 0.0,
         "w_sf": 0.0
+      },
+      "publicaciones_web": {
+        "label": "Publicaciones web en medios nacionales",
+        "w_pq": 0.0,
+        "w_co": 0.25,
+        "w_sc": 0.0,
+        "w_sf": 0.0,
+        "meta_fase1": 2,
+        "meta_fase2": 2,
+        "unidad": "publicaciones/mes",
+        "trackable": true,
+        "nota": "Meta del contrato (Drive carpeta 01). CO = notas entregadas (hoja de medios) / meta."
       }
     },
     "statusScore": {
