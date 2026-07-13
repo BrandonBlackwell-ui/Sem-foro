@@ -237,6 +237,15 @@ function rosterCleanName(folderTitle?: string | null): string {
   return String(folderTitle || '').replace(/^\d+\.\s*/, '').split('/')[0].trim()
 }
 
+// Texto legible de "qué falta" por componente del score global, para el tooltip
+// de las cuentas que aún no están activadas (sin score ponderado).
+const MISSING_LABEL: Record<string, string> = {
+  co: 'CO (Cumplimiento Operativo): faltan publicaciones/meta en el Sheet de medios',
+  pq: 'PQ (Calidad de Publicaciones): falta análisis de notas del mes',
+  sc: 'SC (Satisfacción): falta WhatsApp y/o Meet analizado',
+  meet: 'Meet: falta transcripción de sesión analizada',
+}
+
 // Consultor asignado por cuenta — fuente: "Relación proyectos-grupo de WA.xlsx".
 // account_number → { nombre de cliente (fallback), consultor }. Editar aquí si
 // cambia una asignación (dato manual, no viene de Drive/WhatsApp).
@@ -1933,6 +1942,51 @@ export default function App() {
     return result
   }, [accountSummaries, allChecklists, scores, operationalLookup, publicationQualityLookup, rosterByNumber])
 
+  // Lista de la vista "Cuentas": SOLO clientes con carpeta en Drive. Se excluyen
+  // los grupos de WhatsApp sin cuenta (00_UNMAPPED, p.ej. "HH / Tebo", "AI Team"),
+  // que en accountSummaries entran con clave = jid (no numérica). Se incluyen las
+  // carpetas marcadas como concluido/terminación anticipada (traen statusLabel) y
+  // las que aún no tienen grupo de WhatsApp (aparecen en gris, sin ponderar).
+  const clientAccounts = useMemo<AccountSummary[]>(() => {
+    // Números válidos = carpetas de Drive (roster en vivo, incluye concluidos)
+    // ∪ roster curado (fallback siempre disponible si Drive no cargó).
+    const validNums = new Set<string>()
+    for (const k of rosterByNumber.keys()) validNums.add(k)
+    const curatedName = new Map<string, string>()
+    for (const { num, name } of CLIENT_ROSTER) {
+      const n = String(Number(num))
+      validNums.add(n)
+      curatedName.set(n, name)
+    }
+
+    const byNum = new Map<string, AccountSummary>()
+    for (const a of accountSummariesAll) {
+      const id = String(a.account_id || '').trim()
+      if (!/^\d+$/.test(id)) continue        // descarta grupos WhatsApp sin cuenta (clave = jid)
+      const num = String(Number(id))
+      if (!validNums.has(num)) continue        // descarta números sin carpeta de Drive
+      if (!byNum.has(num)) byNum.set(num, a)   // dedup (gana el primero = el que tiene grupos)
+    }
+    // Carpetas de Drive todavía sin grupo/checklist (incl. concluidas): fila en gris.
+    for (const num of validNums) {
+      if (byNum.has(num)) continue
+      const roster = rosterByNumber.get(num)
+      byNum.set(num, {
+        account_id: num.padStart(2, '0'),
+        name: roster?.name || curatedName.get(num) || `Cuenta ${num}`,
+        statusLabel: roster?.statusLabel ?? null,
+        groups: [],
+        score: null,
+        operational: null,
+        publicationQuality: null,
+        analyzedToday: false,
+        hasMessagesToday: false,
+        latestAnalysis: null,
+      })
+    }
+    return [...byNum.values()]
+  }, [accountSummariesAll, rosterByNumber])
+
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
   const selectedAccountMeetings = useMemo(() => {
@@ -2392,11 +2446,11 @@ export default function App() {
         />
       )
     }
-    const analyzedCount = accountSummaries.filter(a => a.analyzedToday).length
-    const pendingAnalysis = accountSummaries.filter(a => !a.analyzedToday && a.hasMessagesToday)
-    const trulyQuiet = accountSummaries.filter(a => !a.analyzedToday && !a.hasMessagesToday)
+    const analyzedCount = clientAccounts.filter(a => a.analyzedToday).length
+    const pendingAnalysis = clientAccounts.filter(a => !a.analyzedToday && a.hasMessagesToday)
+    const trulyQuiet = clientAccounts.filter(a => !a.analyzedToday && !a.hasMessagesToday)
     // Promedio de scores globales — misma lógica que los círculos de la lista
-    const globalScores = accountSummariesAll
+    const globalScores = clientAccounts
       .map(a => {
         const checklist = findChecklist(a.account_id, a.name)
         if (!checklist?.contract?.vigencia) return null
@@ -2408,17 +2462,18 @@ export default function App() {
           checklist,
           a.latestAnalysis?.raw_analysis
         )
-        // Same filter as the account list circles: all core components must be present
-        const core = weighted.components.filter(c => ['co', 'pq', 'sc', 'meet'].includes(c.key))
+        // Activada si tiene CO (Cumplimiento Operativo); SC/PQ/Meet pueden ir parciales.
+        // Mismo criterio que los círculos de la lista.
+        const coComp = weighted.components.find(c => c.key === 'co')
         // Use raw (unrounded) value so the average isn't skewed by double-rounding
-        return core.every(c => c.value != null) ? weighted.globalPartialRaw : null
+        return coComp?.value != null ? weighted.globalPartialRaw : null
       })
       .filter((s): s is number => s != null)
     const averageScore = globalScores.length
       ? roundScore(globalScores.reduce((t, s) => t + s, 0) / globalScores.length)
       : null
     const normalizedAccountSearch = accountSearchQuery.trim().toLowerCase()
-    const visibleAccounts = accountSummariesAll.filter(account => {
+    const visibleAccounts = clientAccounts.filter(account => {
       if (groupFilter === 'analyzed' && !account.analyzedToday) return false
       if (groupFilter === 'inactive' && (account.analyzedToday || account.hasMessagesToday)) return false
       if (!normalizedAccountSearch) return true
@@ -2521,7 +2576,7 @@ export default function App() {
                 </div>
                 <div className="lb-postit lb-postit-yellow" style={{animationDelay:'80ms', cursor:'pointer', outline: groupFilter === 'analyzed' ? '2px solid #b07d1e' : 'none', outlineOffset:3}} onClick={() => setGroupFilter(f => f === 'analyzed' ? 'all' : 'analyzed')}>
                   <div className="lb-postit-label">Analizados hoy {groupFilter === 'analyzed' && <span style={{fontSize:13}}>✕</span>}</div>
-                  <div className="lb-postit-value" style={{color:'#b07d1e'}}>{analyzedCount}<span style={{fontSize:24,fontWeight:400}}> / {accountSummaries.length}</span></div>
+                  <div className="lb-postit-value" style={{color:'#b07d1e'}}>{analyzedCount}<span style={{fontSize:24,fontWeight:400}}> / {clientAccounts.length}</span></div>
                   <div className="lb-postit-detail" style={{color:'#8a6010'}}>
                     {pendingAnalysis.length > 0 ? `${pendingAnalysis.length} con mensajes, esperando análisis` : 'Todas las cuentas revisadas'}
                   </div>
@@ -2574,6 +2629,7 @@ export default function App() {
                   // Global ponderado solo para cuentas con checklist completo (contrato + meet)
                   const checklist = findChecklist(account.account_id, account.name)
                   let globalScore: number | null = null
+                  const missing: string[] = []
                   if (checklist?.contract?.vigencia) {
                     const waForGlobal = account.score?.current_score ?? account.latestAnalysis?.new_score ?? null
                     const weighted = buildWeightedScore(
@@ -2583,16 +2639,22 @@ export default function App() {
                       checklist,
                       account.latestAnalysis?.raw_analysis
                     )
-                    const core = weighted.components.filter(c => ['co', 'pq', 'sc', 'meet'].includes(c.key))
-                    if (core.every(c => c.value != null)) globalScore = weighted.globalPartial
+                    // Activada si tiene CO (Cumplimiento Operativo), aunque el score
+                    // salga bajo por SC/PQ/Meet parciales. Solo se queda "Sin ponderar"
+                    // si le falta el CO.
+                    const coComp = weighted.components.find(c => c.key === 'co')
+                    if (coComp?.value != null) globalScore = weighted.globalPartial
+                    else missing.push(MISSING_LABEL.co)
+                  } else {
+                    missing.push('Contrato/checklist vigente (sin él no se pondera el score global)')
                   }
-                  return { account, globalScore }
+                  return { account, globalScore, missing }
                 }).sort((a, b) => {
                   if (a.globalScore != null && b.globalScore == null) return -1
                   if (a.globalScore == null && b.globalScore != null) return 1
                   if (a.globalScore != null && b.globalScore != null) return b.globalScore - a.globalScore
                   return 0
-                }).map(({ account, globalScore }, gi) => {
+                }).map(({ account, globalScore, missing }, gi) => {
                   const isGlobal = globalScore != null
                   // Cuentas sin score global completo aparecen desactivadas (sin número, en gris)
                   const scoreValue = isGlobal ? globalScore : null
@@ -2607,8 +2669,11 @@ export default function App() {
                   const offset = scoreValue != null ? circ * (1 - scoreValue / 100) : circ
                   const mainGroup = account.groups.find(g => !g.name.toLowerCase().includes('interno')) ?? account.groups[0]
                   const lastMsgAt = account.groups.map(g => g.last_message_at ?? '').sort().reverse()[0] || null
+                  const missingTip = !isGlobal && missing.length
+                    ? `Para activarse (mostrar score global) falta:\n• ${missing.join('\n• ')}`
+                    : undefined
                   return (
-                    <button className="lb-account-row" key={account.account_id} style={{borderLeft: `5px solid ${stampColor}`, animationDelay: `${gi * 40}ms`, opacity: isGlobal ? 1 : 0.55, filter: isGlobal ? 'none' : 'grayscale(0.4)'}} onClick={() => { if (!mainGroup) return; setSelectedAccountId(account.account_id); setSelectedJid(mainGroup.jid) }}>
+                    <button className="lb-account-row" key={account.account_id} title={missingTip} style={{borderLeft: `5px solid ${stampColor}`, animationDelay: `${gi * 40}ms`, opacity: isGlobal ? 1 : 0.55, filter: isGlobal ? 'none' : 'grayscale(0.4)', cursor: isGlobal ? 'pointer' : 'help'}} onClick={() => { if (!mainGroup) return; setSelectedAccountId(account.account_id); setSelectedJid(mainGroup.jid) }}>
                       <div className="lb-score-ring">
                         <svg width="62" height="62" viewBox="0 0 62 62">
                           <circle cx="31" cy="31" r={r} fill="none" stroke="#e8e4d8" strokeWidth="5" />
