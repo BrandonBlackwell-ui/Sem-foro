@@ -26,6 +26,23 @@ function collapse(str) {
   return str.replace(/\s/g, '');
 }
 
+function cleanSubject(sub) {
+  return (sub || '')
+    .replace(/^(fwd|re|rv|fw|respuesta|transmitido|fwd\[\d+\])\s*:\s*/i, '')
+    .replace(/\s*\d{10,}\s*$/g, '')
+    .trim();
+}
+
+function hashNormalize(str) {
+  return (str || '')
+    .toLowerCase()
+    .replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, '') // remove email addresses
+    .replace(/https?:\/\/[^\s]+/g, '')                             // remove URLs
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')               // remove accents and normalize
+    .replace(/[^a-z0-9]+/g, '')                                     // keep only alphanumeric
+    .trim();
+}
+
 /** Generate character bigrams from a string */
 function bigrams(str) {
   const s = collapse(str); // compare without spaces
@@ -309,8 +326,10 @@ export default async function handler(req, res) {
 
   console.log(`[import-gemini-email] Subject: "${subject}"`);
 
+  const cleanSub = cleanSubject(subject);
+
   // 1. Extract meeting title from subject
-  let meetingTitle = subject || 'Reunión sin título';
+  let meetingTitle = cleanSub || 'Reunión sin título';
   const subjectMatch = meetingTitle.match(/Notas:\s*"([^"]+)"/i);
   if (subjectMatch) meetingTitle = subjectMatch[1];
 
@@ -417,7 +436,7 @@ export default async function handler(req, res) {
   const transcript = (body && body.trim()) ? body : htmlBody.replace(/<[^>]+>/g, '\n');
   const dedupKey = crypto
     .createHash('sha256')
-    .update(`${normalize(subject)}\n${normalize(transcript)}`)
+    .update(`${hashNormalize(cleanSub)}\n${hashNormalize(transcript)}`)
     .digest('hex');
 
   const now = new Date().toISOString();
