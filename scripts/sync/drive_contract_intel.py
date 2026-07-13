@@ -272,6 +272,12 @@ def process_account(service, folder: dict) -> dict | None:
         "subfolders": subfolders,
         "contract_docs": [{"name": f.get("name"), "id": f.get("id")} for f in files if CONTRACT_DOC_RX.search(f.get("name", ""))],
         "analyzed_docs": analyzed,
+        # columnas NOT NULL default '[]' — deben ir en TODAS las filas (el upsert
+        # batch manda null si una fila las omite y otra no).
+        "objetivos": [],
+        "servicios": [],
+        "contratos_previos": [],
+        "faltantes": [],
         "model": OPENROUTER_MODEL,
         "synced_at": now,
     }
