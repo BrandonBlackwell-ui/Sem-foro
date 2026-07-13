@@ -252,7 +252,7 @@ const MISSING_LABEL: Record<string, string> = {
 const CLIENT_ROSTER: { num: string; name: string; consultant: string }[] = [
   { num: '01', name: 'Turbofin', consultant: 'Mariana' },
   { num: '02', name: 'Maja', consultant: 'Angel' },
-  { num: '05', name: 'Credix', consultant: 'Mariana' },
+  { num: '05', name: 'Credix', consultant: 'Daniel M.' },
   { num: '06', name: 'RR', consultant: 'Daniel M.' },
   { num: '07', name: 'Apollo', consultant: 'Daniel M.' },
   { num: '08', name: 'Uldis', consultant: 'Sin asignar' },
@@ -274,7 +274,7 @@ const CLIENT_ROSTER: { num: string; name: string; consultant: string }[] = [
   { num: '34', name: 'Supply Pay', consultant: 'Uriel' },
   { num: '35', name: 'PP Aguilar', consultant: 'Angel' },
   { num: '38', name: 'KPS', consultant: 'Daniel M.' },
-  { num: '39', name: 'Ismerely', consultant: 'Johana' },
+  { num: '39', name: 'Ismerely', consultant: 'Uriel' },
   { num: '40', name: 'Austria', consultant: 'Johana' },
   { num: '41', name: 'IFA', consultant: 'Sol' },
   { num: '42', name: 'MTV Linkedin', consultant: 'Sol' },
