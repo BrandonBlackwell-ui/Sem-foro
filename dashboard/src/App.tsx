@@ -352,9 +352,9 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
     else document.documentElement.requestFullscreen?.()
   }
 
-  const done = clients.filter(c => c.pct >= 100).length
-  const partial = clients.filter(c => c.pct === 50).length
-  const pending = clients.filter(c => c.pct === 0).length
+  const done = clients.filter(c => c.answered >= 2).length
+  const partial = clients.filter(c => c.answered === 1).length
+  const pending = clients.filter(c => c.answered === 0).length
 
   return (
     <div className="lb-shell">
@@ -401,7 +401,7 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
                       </div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                         {list.map(c => {
-                          const color = surveyColor(c.pct)
+                          const color = surveyColor(c.answered * 50)
                           const dateFormatted = c.date ? c.date.split('-').reverse().join('/') : ''
                           const tooltipText = c.date
                             ? `Última encuesta contestada: ${dateFormatted} vía ${c.source}`
@@ -412,7 +412,7 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
                               title={tooltipText}
                               style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 10px', borderRadius: 8, border: `1px solid ${color}33`, background: `${color}0d`, cursor: 'help' }}
                             >
-                              <div style={{ width: 30, height: 30, flexShrink: 0, borderRadius: 7, background: color, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 700 }}>{surveyIcon(c.pct)}</div>
+                              <div style={{ width: 30, height: 30, flexShrink: 0, borderRadius: 7, background: color, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 700 }}>{surveyIcon(c.answered * 50)}</div>
                               <div style={{ flex: 1, minWidth: 0 }}>
                                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-900)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</div>
                                 <div style={{ fontSize: 10.5, color: '#9aa0a6' }}>
@@ -1623,7 +1623,10 @@ export default function App() {
       const answered = (tipoA ? 1 : 0) + (tipoB ? 1 : 0)
       const date = entry?.date || ''
       const source = wa ? 'WhatsApp' : (meet ? 'Meet' : '')
-      out.set(num, { answered, pct: answered * 50, tipoA, tipoB, source, date })
+      const sA = tipoA ? Math.max(0, Math.min(100, Number(survey.question_a.score))) : 0
+      const sB = tipoB ? Math.max(0, Math.min(100, Number(survey.question_b.score))) : 0
+      const pct = answered > 0 ? Math.round((sA + sB) / 2) : 0
+      out.set(num, { answered, pct, tipoA, tipoB, source, date })
     }
     return out
   }, [meetAnalyses, analyses])
