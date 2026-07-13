@@ -282,6 +282,7 @@ type SurveyClient = {
   tipoA: boolean
   tipoB: boolean
   source: string        // 'WhatsApp' | 'Meet' | ''
+  date: string          // 'YYYY-MM-DD'
 }
 
 function surveyColor(pct: number): string {
@@ -401,8 +402,16 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                         {list.map(c => {
                           const color = surveyColor(c.pct)
+                          const dateFormatted = c.date ? c.date.split('-').reverse().join('/') : ''
+                          const tooltipText = c.date
+                            ? `Última encuesta contestada: ${dateFormatted} vía ${c.source}`
+                            : 'Sin encuestas contestadas'
                           return (
-                            <div key={c.account_number} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 10px', borderRadius: 8, border: `1px solid ${color}33`, background: `${color}0d` }}>
+                            <div
+                              key={c.account_number}
+                              title={tooltipText}
+                              style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 10px', borderRadius: 8, border: `1px solid ${color}33`, background: `${color}0d`, cursor: 'help' }}
+                            >
                               <div style={{ width: 30, height: 30, flexShrink: 0, borderRadius: 7, background: color, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 700 }}>{surveyIcon(c.pct)}</div>
                               <div style={{ flex: 1, minWidth: 0 }}>
                                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-900)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</div>
@@ -1582,32 +1591,39 @@ export default function App() {
   // Survey completion per account: how many of the 2 questions are answered.
   // Priority mirrors the SC logic: a WhatsApp survey with scores wins, else Meet.
   const surveyByAccount = useMemo(() => {
-    const meetByAcct = new Map<string, any>()
+    const meetByAcct = new Map<string, { survey: any; date: string }>()
     for (const r of meetAnalyses) { // fetched created_at desc → first seen = latest
       const num = String(Number(r.account_id))
       if (num === 'NaN' || meetByAcct.has(num)) continue
       const s = r.survey
       if (s && (s.question_a?.score != null || s.question_b?.score != null)) {
-        meetByAcct.set(num, s)
+        const dStr = r.created_at ? r.created_at.slice(0, 10) : ''
+        meetByAcct.set(num, { survey: s, date: dStr })
       }
     }
-    const waByAcct = new Map<string, any>()
+    const waByAcct = new Map<string, { survey: any; date: string }>()
     const waSorted = [...analyses].sort((a, b) => (b.analyzed_at || '').localeCompare(a.analyzed_at || ''))
     for (const a of waSorted) {
       const num = String(Number(a.account_id))
       if (num === 'NaN' || waByAcct.has(num)) continue
       const s = a.raw_analysis?.survey
-      if (s && (s.question_a?.score != null || s.question_b?.score != null)) waByAcct.set(num, s)
+      if (s && (s.question_a?.score != null || s.question_b?.score != null)) {
+        waByAcct.set(num, { survey: s, date: a.analysis_date || '' })
+      }
     }
-    const out = new Map<string, { answered: number; pct: number; tipoA: boolean; tipoB: boolean; source: string }>()
+    const out = new Map<string, { answered: number; pct: number; tipoA: boolean; tipoB: boolean; source: string; date: string }>()
     for (const { num } of CLIENT_ROSTER) {
       const key = String(Number(num))
       const wa = waByAcct.get(key)
-      const survey = wa || meetByAcct.get(key) || null
+      const meet = meetByAcct.get(key)
+      const entry = wa || meet || null
+      const survey = entry?.survey || null
       const tipoA = survey?.question_a?.score != null
       const tipoB = survey?.question_b?.score != null
       const answered = (tipoA ? 1 : 0) + (tipoB ? 1 : 0)
-      out.set(num, { answered, pct: answered * 50, tipoA, tipoB, source: wa ? 'WhatsApp' : (meetByAcct.get(key) ? 'Meet' : '') })
+      const date = entry?.date || ''
+      const source = wa ? 'WhatsApp' : (meet ? 'Meet' : '')
+      out.set(num, { answered, pct: answered * 50, tipoA, tipoB, source, date })
     }
     return out
   }, [meetAnalyses, analyses])
@@ -1617,7 +1633,7 @@ export default function App() {
       .filter(({ num }) => num !== '08')
       .map(({ num, name, consultant }) => {
         const liveName = rosterByNumber.get(String(Number(num)))?.name
-        const sv = surveyByAccount.get(num) ?? { answered: 0, pct: 0, tipoA: false, tipoB: false, source: '' }
+        const sv = surveyByAccount.get(num) ?? { answered: 0, pct: 0, tipoA: false, tipoB: false, source: '', date: '' }
         return { account_number: num, name: liveName || name, consultant, ...sv }
       })
   }, [surveyByAccount, rosterByNumber])
