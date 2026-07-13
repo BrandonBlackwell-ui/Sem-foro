@@ -239,19 +239,26 @@ def process_account(service, folder: dict) -> dict | None:
     client = clean_name(title)
     log.info("→ [%s] %s", number, client)
 
+    subs = list_children(service, folder["id"], only_folders=True)
+    subfolders = [s.get("name") for s in subs]
     contract_folder = find_contract_folder(service, folder["id"])
-    subfolders = [s.get("name") for s in list_children(service, folder["id"], only_folders=True)]
 
-    files: list[dict] = []
+    # Recolectar candidatos de varias fuentes (dedup por id):
+    #  1) todo lo que haya en la carpeta "01"/Contrato,
+    #  2) documentos con nombre de contrato en la raíz de la cuenta y en CADA
+    #     subcarpeta (por si el contrato no está en "01" o tiene otro acomodo).
+    cand: dict[str, dict] = {}
     if contract_folder:
-        files = [f for f in list_children(service, contract_folder["id"])
-                 if f.get("mimeType") != "application/vnd.google-apps.folder"]
-    if not files:
-        # fallback: documentos de contrato sueltos en la carpeta del cliente
-        files = [f for f in list_children(service, folder["id"])
-                 if f.get("mimeType") in (GDOC, PDF, DOCX) and CONTRACT_DOC_RX.search(f.get("name", ""))]
+        for f in list_children(service, contract_folder["id"]):
+            if f.get("mimeType") != "application/vnd.google-apps.folder":
+                cand[f["id"]] = f
+    for parent in [folder, *subs]:
+        for f in list_children(service, parent["id"]):
+            if f.get("mimeType") in (GDOC, PDF, DOCX) and CONTRACT_DOC_RX.search(f.get("name", "")):
+                cand.setdefault(f["id"], f)
 
-    # priorizar los que parecen contrato; leer hasta N
+    files = list(cand.values())
+    # priorizar los que parecen contrato y los de la carpeta "01"; leer hasta N
     files.sort(key=lambda f: (0 if CONTRACT_DOC_RX.search(f.get("name", "")) else 1,
                               f.get("name", "")))
     readable = [f for f in files if f.get("mimeType") in (GDOC, PDF, DOCX)]
