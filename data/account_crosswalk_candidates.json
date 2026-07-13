@@ -22,7 +22,7 @@
         {
           "sheet_client_name": "Sindicato de Pemex - Vicky - Aldana",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 22,
           "commitment": null
@@ -49,12 +49,12 @@
         {
           "sheet_client_name": "Azvi",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 33,
           "commitment": {
             "row": 13,
-            "publications_per_month_contract": 6.0,
+            "publications_per_month_contract": 6,
             "contract_start": "2025-08-25 00:00:00",
             "contract_end": "2026-08-25 00:00:00",
             "renewal_status": "Vigente",
@@ -72,7 +72,7 @@
           "supabase_account_id": "09",
           "active": true,
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_wa:Azvi,sheet:Azvi"
         },
         {
@@ -81,7 +81,7 @@
           "supabase_account_id": "09",
           "active": true,
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_wa:Azvi,sheet:Azvi"
         }
       ],
@@ -96,7 +96,7 @@
         {
           "sheet_client_name": "Miguel Tello",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 19,
           "commitment": null
@@ -109,7 +109,7 @@
           "supabase_account_id": "12",
           "active": true,
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_wa:Tello,sheet:Miguel Tello"
         },
         {
@@ -118,7 +118,7 @@
           "supabase_account_id": "12",
           "active": true,
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_wa:Tello,sheet:Miguel Tello"
         }
       ],
@@ -133,7 +133,7 @@
         {
           "sheet_client_name": "Nuvoil",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 6,
           "commitment": null
@@ -146,7 +146,7 @@
           "supabase_account_id": "21",
           "active": true,
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_wa:Nuvoil,alias_wa:Nuvoil-Blackwell,sheet:Nuvoil"
         },
         {
@@ -155,7 +155,7 @@
           "supabase_account_id": "21",
           "active": true,
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_wa:Nuvoil,alias_wa:Nuvoil-Blackwell,sheet:Nuvoil"
         }
       ],
@@ -170,12 +170,12 @@
         {
           "sheet_client_name": "Grupo Cimarrón",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 33,
           "commitment": {
             "row": 34,
-            "publications_per_month_contract": 2.0,
+            "publications_per_month_contract": 2,
             "contract_start": "2025-06-25 00:00:00",
             "contract_end": "2025-09-25 00:00:00",
             "renewal_status": "Renovar Cont",
@@ -198,7 +198,7 @@
         {
           "sheet_client_name": "Quimica Apollo",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 12,
           "commitment": {
@@ -244,12 +244,12 @@
         {
           "sheet_client_name": "Armor Life Lab",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 37,
           "commitment": {
             "row": 14,
-            "publications_per_month_contract": 3.0,
+            "publications_per_month_contract": 3,
             "contract_start": "2025-09-25 00:00:00",
             "contract_end": "2026-09-25 00:00:00",
             "renewal_status": "Vigente",
@@ -282,12 +282,12 @@
         {
           "sheet_client_name": "Jack Levy",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 1,
           "commitment": {
             "row": 16,
-            "publications_per_month_contract": 4.0,
+            "publications_per_month_contract": 4,
             "contract_start": "2025-10-01 00:00:00",
             "contract_end": "2026-10-01 00:00:00",
             "renewal_status": "Vigente",
@@ -310,7 +310,7 @@
         {
           "sheet_client_name": "Maja Sportswear",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 103,
           "commitment": null
@@ -328,12 +328,12 @@
         {
           "sheet_client_name": "Turbofin",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 13,
           "commitment": {
             "row": 12,
-            "publications_per_month_contract": 4.0,
+            "publications_per_month_contract": 4,
             "contract_start": "2025-09-25 00:00:00",
             "contract_end": "2026-03-25 00:00:00",
             "renewal_status": "Renovar Contrato",
@@ -365,7 +365,7 @@
         {
           "sheet_client_name": "Raúl Rocha",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 3,
           "commitment": null
@@ -387,7 +387,7 @@
           "supabase_account_id": "11",
           "active": true,
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_wa:Futbol"
         },
         {
@@ -411,12 +411,12 @@
         {
           "sheet_client_name": "Dalinde",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 28,
           "commitment": {
             "row": 35,
-            "publications_per_month_contract": 1.0,
+            "publications_per_month_contract": 1,
             "contract_start": "2024-10-24 00:00:00",
             "contract_end": "2025-10-24 00:00:00",
             "renewal_status": "Renovar Cont",
@@ -439,7 +439,7 @@
         {
           "sheet_client_name": "InstaCoachAndy",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 12,
           "commitment": null
@@ -466,17 +466,9 @@
         {
           "sheet_client_name": "Luca Edu",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 3,
-          "commitment": null
-        },
-        {
-          "sheet_client_name": "Ceron-Toluca",
-          "confidence": "alta",
-          "score": 0.86,
-          "reason": "match_nombre",
-          "publication_rows": 2,
           "commitment": null
         }
       ],
@@ -497,7 +489,7 @@
           "publication_rows": 0,
           "commitment": {
             "row": 24,
-            "publications_per_month_contract": 1.0,
+            "publications_per_month_contract": 1,
             "contract_start": "2025-08-31 00:00:00",
             "contract_end": "2025-09-30 00:00:00",
             "renewal_status": "Renovar Cont",
@@ -515,7 +507,7 @@
           "publication_rows": 0,
           "commitment": {
             "row": 21,
-            "publications_per_month_contract": 7.0,
+            "publications_per_month_contract": 7,
             "contract_start": "2025-10-01 00:00:00",
             "contract_end": "2026-01-01 00:00:00",
             "renewal_status": "Renovar Cont",
@@ -538,7 +530,7 @@
         {
           "sheet_client_name": "Uldis",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 3,
           "commitment": null
@@ -556,7 +548,7 @@
         {
           "sheet_client_name": "Covalto -Credijusto",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 11,
           "commitment": null
@@ -564,7 +556,7 @@
         {
           "sheet_client_name": "Credix",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 1,
           "commitment": {
@@ -587,7 +579,7 @@
           "supabase_account_id": "05",
           "active": true,
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_wa:Credix,sheet:Credix"
         }
       ],
@@ -611,7 +603,7 @@
         {
           "sheet_client_name": "Total Play",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 14,
           "commitment": null
@@ -629,7 +621,7 @@
         {
           "sheet_client_name": "GICSA",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 22,
           "commitment": null
@@ -647,12 +639,12 @@
         {
           "sheet_client_name": "Aduanas",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "match_nombre",
           "publication_rows": 0,
           "commitment": {
             "row": 18,
-            "publications_per_month_contract": 14.0,
+            "publications_per_month_contract": 14,
             "contract_start": "2025-08-01 00:00:00",
             "contract_end": "2025-11-01 00:00:00",
             "renewal_status": "Renovar Contrato",
@@ -675,7 +667,7 @@
         {
           "sheet_client_name": "Safelink",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 4,
           "commitment": null
@@ -683,7 +675,7 @@
         {
           "sheet_client_name": "Jose Carlos Mapelli",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "alias_manual",
           "publication_rows": 2,
           "commitment": null
@@ -710,12 +702,12 @@
         {
           "sheet_client_name": "IDLAYR",
           "confidence": "alta",
-          "score": 1.0,
+          "score": 1,
           "reason": "match_nombre",
           "publication_rows": 0,
           "commitment": {
             "row": 10,
-            "publications_per_month_contract": 4.0,
+            "publications_per_month_contract": 4,
             "contract_start": "2025-09-11 00:00:00",
             "contract_end": "2025-12-11 00:00:00",
             "renewal_status": "Renovar Contrato",
@@ -728,6 +720,222 @@
       ],
       "whatsapp_candidates": [],
       "notes": "Confirmar alias antes de calcular CO/PQ"
+    },
+    {
+      "account_id": "38",
+      "dashboard_name": "KPS",
+      "dashboard_drive_name": "38. KARPOWERSHIP",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "KPS",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "20",
+      "dashboard_name": "Veracruz (AH)",
+      "dashboard_drive_name": "20. Veracruz / Haddad",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Grupo Haddad",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "28",
+      "dashboard_name": "Queretaro",
+      "dashboard_drive_name": "28. QUERETARO",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Ceron-Queretaro",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "27",
+      "dashboard_name": "Cuernavaca",
+      "dashboard_drive_name": "27. CUERNAVACA",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Ceron-Cuernavaca",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "33",
+      "dashboard_name": "Nezahualcoyotl",
+      "dashboard_drive_name": "33. NEZA",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Ceron-Nezahualcoyotl",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "31",
+      "dashboard_name": "Sasil",
+      "dashboard_drive_name": "31. SASIL",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Sasil de Leon",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "37",
+      "dashboard_name": "LeadSales",
+      "dashboard_drive_name": "37. LEADSALES",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "LeadSales",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "45",
+      "dashboard_name": "Inovamedik",
+      "dashboard_drive_name": "45. INOVAMEDIK /proyecto concluido",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Eugenio Gomez Rivero - Inovamedik",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "34",
+      "dashboard_name": "Supply Pay",
+      "dashboard_drive_name": "34. SUPPLY_PAY",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Supply Pay",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "32",
+      "dashboard_name": "Cojab",
+      "dashboard_drive_name": "32. COJAB",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Marcos Cojab",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "39",
+      "dashboard_name": "Ismerely",
+      "dashboard_drive_name": "39. ISMERELY",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Ismerely",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "29",
+      "dashboard_name": "Coast Oil",
+      "dashboard_drive_name": "29. COAST OIL",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Coastoil Dynamic",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado manualmente (2026-07-13)"
     }
   ]
 }
