@@ -1586,7 +1586,10 @@ export default function App() {
     for (const r of meetAnalyses) { // fetched created_at desc → first seen = latest
       const num = String(Number(r.account_id))
       if (num === 'NaN' || meetByAcct.has(num)) continue
-      meetByAcct.set(num, r.survey)
+      const s = r.survey
+      if (s && (s.question_a?.score != null || s.question_b?.score != null)) {
+        meetByAcct.set(num, s)
+      }
     }
     const waByAcct = new Map<string, any>()
     const waSorted = [...analyses].sort((a, b) => (b.analyzed_at || '').localeCompare(a.analyzed_at || ''))
@@ -1762,14 +1765,6 @@ export default function App() {
   // publicaciones para el CO, se toma de los entregables comprometidos.
   const mergedChecklists = useMemo(() => {
     if (!meetAnalyses.length && !driveIntel.length) return allChecklists
-    // Rows arrive created_at.desc → first seen per (account, period) is the latest.
-    const latestByAcctPeriod = new Map<string, any>()
-    for (const row of meetAnalyses) {
-      const acctNum = Number(row.account_id)
-      if (Number.isNaN(acctNum)) continue
-      const key = `${acctNum}::${row.period}`
-      if (!latestByAcctPeriod.has(key)) latestByAcctPeriod.set(key, row)
-    }
     const intelByNum = new Map<number, any>()
     for (const r of driveIntel) {
       const n = Number(r.account_number)
@@ -1778,7 +1773,10 @@ export default function App() {
     return allChecklists.map(entry => {
       const acctNum = Number(entry.data?.account_number ?? NaN)
       if (Number.isNaN(acctNum)) return entry
-      const rowsForAcct = [...latestByAcctPeriod.values()].filter(r => Number(r.account_id) === acctNum)
+      // Filter meetings for this account and sort them earliest-first so the latest one wins/overwrites fields at the end
+      const rowsForAcct = meetAnalyses
+        .filter(r => Number(r.account_id) === acctNum)
+        .sort((a, b) => (a.created_at || '').localeCompare(b.created_at || ''))
       const intel = intelByNum.get(acctNum)
       if (!rowsForAcct.length && !intel) return entry
       const data = { ...entry.data, scores: { ...(entry.data.scores || {}) } }
@@ -1817,6 +1815,8 @@ export default function App() {
       for (const row of rowsForAcct) {
         const score = row.sesion_score
         const prev = data.scores[row.period] || {}
+        const rowHasSurvey = row.survey && (row.survey.question_a?.score != null || row.survey.question_b?.score != null)
+        const prevSurvey = prev.transcripciones?.survey
         data.scores[row.period] = {
           ...prev,
           transcripciones: {
@@ -1838,7 +1838,7 @@ export default function App() {
             accionables: (row.action_items || []).map((a: any) =>
               typeof a === 'string' ? a : `${a?.owner ? a.owner + ': ' : ''}${a?.action ?? ''}`.trim()
             ).filter(Boolean),
-            survey: row.survey || null,
+            survey: rowHasSurvey ? row.survey : (prevSurvey || row.survey || null),
             _source: 'supabase',
           },
         }
