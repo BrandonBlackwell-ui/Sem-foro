@@ -1802,33 +1802,48 @@ export default function App() {
       const data = { ...entry.data, scores: { ...(entry.data.scores || {}) } }
       // Drive intel → contrato (vigencia) y meta de publicaciones (CO)
       if (intel) {
+        // Meta mensual parseada del texto del contrato (insumo del CO). Se calcula
+        // una vez y sirve tanto para el gate como para la meta de publicaciones.
+        let intelMetaNum: number | null = null
+        if (intel.meta_entregables) {
+          const metaText = String(intel.meta_entregables)
+          const m = metaText.match(/(\d+)\s*(?:publicacion|nota|bolet[ií]n|contenido|comunicado|art[ií]culo|columna|entregable|impacto|colocaci|acci[oó]n)/i)
+          if (m) {
+            let metaMensual = Number(m[1])
+            const win = metaText.slice(Math.max(0, m.index! - 25), m.index! + m[0].length + 35)
+            if (/cuatrimestr/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 4))
+            else if (/trimestr/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 3))
+            else if (/semana/i.test(win)) metaMensual = metaMensual * 4
+            intelMetaNum = metaMensual
+          }
+        }
+
         const hasVigencia = !!data.contract?.vigencia
-        if (!hasVigencia && intel.tiene_contrato_firmado === true && (intel.vigencia_inicio || intel.vigencia_fin)) {
+        const intelDates = intel.vigencia_inicio || intel.vigencia_fin
+        // Vencido = terminó hace más de ~4 meses (excluye contratos viejos, p.ej. RR).
+        const cutoff = (() => { const d = new Date(todayMexicoStr()); d.setMonth(d.getMonth() - 4); return d.toISOString().slice(0, 10) })()
+        const stale = !!intel.vigencia_fin && String(intel.vigencia_fin) < cutoff
+        // Activa el contrato (gate del score global) si YA está firmado, o si hay
+        // vigencia + meta (acuerdo con fechas y entregables), y no está vencido.
+        if (!hasVigencia && intelDates && !stale && (intel.tiene_contrato_firmado === true || intelMetaNum != null)) {
           data.contract = {
             ...(data.contract || {}),
             vigencia: `${intel.vigencia_inicio ?? '¿?'} a ${intel.vigencia_fin ?? 'indefinida'}`,
-            nota: 'Contrato detectado en Drive (carpeta 01)',
+            nota: intel.tiene_contrato_firmado === true
+              ? 'Contrato detectado en Drive (carpeta 01)'
+              : 'Acuerdo con vigencia + meta detectado en Drive (carpeta 01)',
           }
         }
+
         const pubItem = data.schema?.items?.publicaciones_web
         const hasMeta = pubItem && (pubItem.meta_fase1 != null || pubItem.meta_fase2 != null)
-        if (!hasMeta && intel.meta_entregables) {
-          // Meta numérica: primer "N publicaciones/notas/boletines..." del texto.
-          // El CO mide por MES: si la meta viene trimestral/semanal se normaliza.
-          const metaText = String(intel.meta_entregables)
-          const m = metaText.match(/(\d+)\s*(?:publicacion|nota|bolet[ií]n|contenido|comunicado|art[ií]culo|columna|entregable)/i)
-          if (m) {
-            let metaMensual = Number(m[1])
-            const window = metaText.slice(Math.max(0, m.index! - 20), m.index! + m[0].length + 30)
-            if (/trimestr/i.test(window)) metaMensual = Math.max(1, Math.round(metaMensual / 3))
-            else if (/semana/i.test(window)) metaMensual = metaMensual * 4
-            data.schema = {
-              ...(data.schema || {}),
-              items: {
-                ...(data.schema?.items || {}),
-                publicaciones_web: { ...(pubItem || {}), meta_fase1: metaMensual },
-              },
-            }
+        if (!hasMeta && intelMetaNum != null) {
+          data.schema = {
+            ...(data.schema || {}),
+            items: {
+              ...(data.schema?.items || {}),
+              publicaciones_web: { ...(pubItem || {}), meta_fase1: intelMetaNum },
+            },
           }
         }
       }
