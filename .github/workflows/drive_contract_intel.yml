@@ -1,0 +1,52 @@
+name: Drive contract intel
+
+on:
+  # Manual (workflow_dispatch). Lee los contratos de la carpeta 01 de cada
+  # cliente y llena drive_account_intel (vigencia + meta para el CO).
+  workflow_dispatch:
+    inputs:
+      accounts:
+        description: "Números de cuenta a escanear (ej. 5,8,17). Vacío = todas."
+        required: false
+        default: ""
+      only_missing:
+        description: "Solo cuentas sin contrato firmado (true/false)"
+        required: false
+        default: "false"
+
+jobs:
+  scan-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create environment
+        run: |
+          cat > .env << EOF
+          SUPABASE_URL=${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }}
+          OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL=${{ vars.OPENROUTER_MODEL || 'google/gemini-3.1-flash-lite' }}
+          DRIVE_ROOT_FOLDER_ID=${{ vars.DRIVE_ROOT_FOLDER_ID || '1lC48ni6Rg4e_uGtASQfC-QdBd3647LJ_' }}
+          EOF
+
+      - name: Scan contracts to Supabase
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.accounts }}" ]; then ARGS="$ARGS --accounts ${{ github.event.inputs.accounts }}"; fi
+          if [ "${{ github.event.inputs.only_missing }}" = "true" ]; then ARGS="$ARGS --only-missing"; fi
+          python scripts/sync/drive_contract_intel.py $ARGS

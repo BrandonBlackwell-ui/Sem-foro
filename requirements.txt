@@ -6,3 +6,7 @@ supabase>=2.3.0
 # Google Drive roster sync (drive_roster_sync.py)
 google-api-python-client>=2.100.0
 google-auth>=2.23.0
+
+# Drive contract intel (drive_contract_intel.py) — lee PDFs/Word de los contratos
+pypdf>=4.0.0
+python-docx>=1.1.0
