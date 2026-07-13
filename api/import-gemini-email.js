@@ -430,6 +430,46 @@ export default async function handler(req, res) {
 
   console.log(`[import-gemini-email] "${meetingTitle}" → account_id: "${accountId}" uid: "${projectUid}" (${matchedAccountName}) via ${matchMethod}`);
 
+  // 4d. TIME WINDOW & FUZZY TITLE DEDUP
+  // Check if there is already a meeting analysis for this account with a highly similar title
+  // created within the last 2 hours. This prevents duplication when multiple teammates forward notes.
+  try {
+    const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString();
+    const recentResp = await fetch(
+      `${SB_URL}/rest/v1/meet_transcription_analyses?select=id,meeting_title,created_at&account_id=eq.${encodeURIComponent(accountId)}&created_at=gte.${encodeURIComponent(twoHoursAgo)}`,
+      { headers: { apikey: SB_SERVICE_KEY, Authorization: `Bearer ${SB_SERVICE_KEY}` } }
+    );
+    if (recentResp.ok) {
+      const recents = await recentResp.json();
+      for (const r of recents) {
+        const titleA = (meetingTitle || '').toLowerCase().trim();
+        const titleB = (r.meeting_title || '').toLowerCase().trim();
+        const sim = bigramSimilarity(titleA, titleB);
+        if (sim >= 0.85 || titleA === titleB) {
+          console.log(`[import-gemini-email] Duplicate detected by time window + title similarity (${Math.round(sim * 100)}% match) — skipping. ID=${r.id}`);
+          await logEmail({
+            subject, meeting_title: meetingTitle,
+            email_from: payload.from || null, email_to: payload.to || null,
+            email_date: payload.date || null,
+            email_message_id: payload.messageId || null, email_thread_id: payload.threadId || null,
+            matched_account_id: accountId, project_uid: projectUid, matched_account_name: matchedAccountName,
+            match_method: matchMethod,
+            outcome: 'duplicate_skipped_time_window', llm_used: false,
+          });
+          return res.status(200).json({
+            success: true,
+            duplicate: true,
+            skipped_llm: true,
+            message: `Esta reunión ya fue analizada hace menos de 2 horas (coincidencia de título: ${Math.round(sim * 100)}%). No se volvió a llamar al LLM.`,
+            matched_account: { id: accountId, name: matchedAccountName, match_method: matchMethod },
+          });
+        }
+      }
+    }
+  } catch (err) {
+    console.error('[import-gemini-email] Time-window dedup check failed (continuing):', err);
+  }
+
   // 5. Build the transcript text and a content-hash dedup key. The hash is
   //    stable across mailboxes, so the same Gemini notes forwarded by several
   //    teammates (or re-sent another day) is analyzed & billed only once.
