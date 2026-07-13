@@ -170,10 +170,11 @@ EXTRACTION_INSTRUCTIONS = (
     "{\n"
     '  "tiene_contrato_firmado": boolean,  // true si es un contrato/OC/convenio (no una simple propuesta sin firmar)\n'
     '  "tipo_acuerdo": "contrato|ODC|propuesta|convenio_intercambio|anexo|null",\n'
-    '  "vigencia_inicio": "YYYY-MM-DD o null",\n'
-    '  "vigencia_fin": "YYYY-MM-DD o null",\n'
+    '  "vigencia_inicio": "YYYY-MM-DD exacto, o null (nunca texto)",\n'
+    '  "vigencia_fin": "YYYY-MM-DD exacto, o null (nunca texto)",\n'
     '  "periodicidad_pago": "texto o null",\n'
-    '  "meta_entregables": "descripción de publicaciones/notas/boletines comprometidos POR MES (o el periodo que indique). Sé literal y conciso.",\n'
+    '  "meta_mensual_num": <ENTERO o null>,  // publicaciones/notas/colocaciones/impactos comprometidos POR MES, como NÚMERO. Convierte semanal→×4, trimestral→÷3, cuatrimestral→÷4, o "N en M semanas"→ redondea a N/(M/4.33). Si viene en letra ("cuatro"→4) o entre paréntesis ("(4)"→4), usa el dígito. Si es rango, usa el mínimo garantizado. Si el servicio es solo monitoreo/reportes sin número fijo de notas, null.\n'
+    '  "meta_entregables": "descripción breve y literal de los entregables comprometidos.",\n'
     '  "objetivos": ["..."],\n'
     '  "servicios": ["..."],\n'
     '  "resumen": "1-2 frases",\n'
@@ -306,6 +307,24 @@ def process_account(service, folder: dict) -> dict | None:
         base.update({"notas": f"Extracción LLM falló: {exc}", "faltantes": ["Extracción LLM pendiente"]})
         return base
 
+    # Meta: preferir el número mensual limpio del LLM. Se guarda en formato
+    # canónico "N publicaciones/mes" para que el dashboard lo parsee sin ambigüedad
+    # (nada de "semanas"/paréntesis/letras cerca del número). El detalle textual
+    # se preserva en notas.
+    meta_num = llm.get("meta_mensual_num")
+    try:
+        meta_num = int(round(float(meta_num))) if meta_num not in (None, "", "null") else None
+    except (TypeError, ValueError):
+        meta_num = None
+    desc = (llm.get("meta_entregables") or "").strip()
+    notas = llm.get("notas") or None
+    if meta_num and meta_num > 0:
+        meta_field = f"{meta_num} publicaciones/mes"
+        if desc:
+            notas = (f"Meta (detalle): {desc}" + (f" · {notas}" if notas else ""))
+    else:
+        meta_field = desc
+
     base.update({
         "resumen": llm.get("resumen"),
         "tiene_contrato_firmado": bool(llm.get("tiene_contrato_firmado")),
@@ -315,9 +334,9 @@ def process_account(service, folder: dict) -> dict | None:
         "periodicidad_pago": llm.get("periodicidad_pago") or None,
         "objetivos": as_list(llm.get("objetivos")),
         "servicios": as_list(llm.get("servicios")),
-        "meta_entregables": llm.get("meta_entregables") or "",
+        "meta_entregables": meta_field,
         "faltantes": as_list(llm.get("faltantes")),
-        "notas": llm.get("notas") or None,
+        "notas": notas,
         "intel": llm,
     })
     return base
