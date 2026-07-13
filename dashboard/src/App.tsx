@@ -237,14 +237,6 @@ function rosterCleanName(folderTitle?: string | null): string {
   return String(folderTitle || '').replace(/^\d+\.\s*/, '').split('/')[0].trim()
 }
 
-// Texto legible de "qué falta" por componente del score global, para el tooltip
-// de las cuentas que aún no están activadas (sin score ponderado).
-const MISSING_LABEL: Record<string, string> = {
-  co: 'CO (Cumplimiento Operativo): faltan publicaciones/meta en el Sheet de medios',
-  pq: 'PQ (Calidad de Publicaciones): falta análisis de notas del mes',
-  sc: 'SC (Satisfacción): falta WhatsApp y/o Meet analizado',
-  meet: 'Meet: falta transcripción de sesión analizada',
-}
 
 // Consultor asignado por cuenta — fuente: "Relación proyectos-grupo de WA.xlsx".
 // account_number → { nombre de cliente (fallback), consultor }. Editar aquí si
@@ -2643,10 +2635,24 @@ export default function App() {
                     // salga bajo por SC/PQ/Meet parciales. Solo se queda "Sin ponderar"
                     // si le falta el CO.
                     const coComp = weighted.components.find(c => c.key === 'co')
-                    if (coComp?.value != null) globalScore = weighted.globalPartial
-                    else missing.push(MISSING_LABEL.co)
+                    if (coComp?.value != null) {
+                      globalScore = weighted.globalPartial
+                    } else {
+                      // CO ausente: decir EXACTAMENTE qué parte falta — la meta del
+                      // contrato (carpeta 01) o las notas entregadas (hoja de medios).
+                      const pubItem = checklist?.schema?.items?.publicaciones_web
+                      const fase = checklist?.contract?.fase_actual
+                      const pubMeta = pubItem ? (fase === 'fase_2' ? pubItem.meta_fase2 : pubItem.meta_fase1) ?? null : null
+                      const delivered = account.operational?.delivered_publications_count ?? null
+                      if (pubMeta == null && delivered == null)
+                        missing.push('CO: falta la META de notas del contrato (carpeta 01 en Drive) y las NOTAS entregadas (hoja de medios)')
+                      else if (pubMeta == null)
+                        missing.push('CO: falta la META de notas del contrato (carpeta 01 en Drive)')
+                      else
+                        missing.push('CO: faltan NOTAS entregadas en la hoja de medios (ninguna nota mapeada a esta cuenta en el periodo)')
+                    }
                   } else {
-                    missing.push('Contrato/checklist vigente (sin él no se pondera el score global)')
+                    missing.push('Falta el CONTRATO vigente (carpeta 01 en Drive): sin él no se calcula el CO ni el score global')
                   }
                   return { account, globalScore, missing }
                 }).sort((a, b) => {
