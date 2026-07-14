@@ -669,9 +669,13 @@ export default async function handler(req, res) {
   }
 
   // 9. Mirror action items into wa_tasks, deduped against today's rows.
+  //    Las reuniones del equipo interno (00_INTERNAL, p.ej. "AI Status") se
+  //    analizan y registran, pero sus action items NO se guardan como tareas
+  //    (por tanto tampoco llegan a Monday). Las cuentas de cliente sí.
   let tasksInserted = 0;
   let tasksToInsert = tasks;
-  if (tasks.length > 0) {
+  const skipTaskSave = accountId === '00_INTERNAL';
+  if (tasks.length > 0 && !skipTaskSave) {
     try {
       const checkResponse = await fetch(
         `${SB_URL}/rest/v1/wa_tasks?select=action,owner&analysis_date=eq.${encodeURIComponent(analysis_date)}`,
