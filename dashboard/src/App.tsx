@@ -468,9 +468,16 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack }: {
 }) {
   const [pass, setPass] = useState('')
   const [error, setError] = useState(false)
+  // Por defecto la bitácora muestra solo correos que generaron análisis; los
+  // duplicados (mismo Meet reenviado por varios buzones) se ocultan tras un toggle.
+  const [showDuplicates, setShowDuplicates] = useState(false)
+  const isDuplicate = (l: any) => String(l?.outcome || '').startsWith('duplicate')
+  const duplicateCount = logs.filter(isDuplicate).length
+  const visibleLogs = showDuplicates ? logs : logs.filter(l => !isDuplicate(l))
   const OUTCOME: Record<string, { label: string; color: string }> = {
     analyzed: { label: 'Analizado', color: '#3f7050' },
     duplicate_skipped: { label: 'Duplicado (saltado)', color: '#b07d1e' },
+    duplicate_skipped_time_window: { label: 'Duplicado (misma sesión)', color: '#b07d1e' },
     llm_fallback_regex: { label: 'Fallback regex', color: '#a8453b' },
     error: { label: 'Error', color: '#a8453b' },
   }
@@ -522,7 +529,11 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack }: {
               </div>
             ) : (
               <div style={{ marginTop: 20 }}>
-                {logs.length === 0 ? (
+                <label style={{ display: 'inline-flex', alignItems: 'center', gap: 7, marginBottom: 10, fontSize: 12.5, color: '#666', cursor: 'pointer', userSelect: 'none' }}>
+                  <input type="checkbox" checked={showDuplicates} onChange={e => setShowDuplicates(e.target.checked)} />
+                  Mostrar duplicados saltados ({duplicateCount})
+                </label>
+                {visibleLogs.length === 0 ? (
                   <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, padding: 28, textAlign: 'center', color: '#9aa0a6', fontSize: 13.5 }}>
                     {loading ? 'Cargando bitácora…' : 'Sin registros todavía. Los correos nuevos de notas de Gemini aparecerán aquí en cuanto lleguen (requiere migración 016 aplicada en Supabase).'}
                   </div>
@@ -538,7 +549,7 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack }: {
                           </tr>
                         </thead>
                         <tbody>
-                          {logs.map((l, i) => {
+                          {visibleLogs.map((l, i) => {
                             const oc = OUTCOME[l.outcome] || { label: l.outcome, color: '#9aa0a6' }
                             return (
                               <tr key={l.id ?? i} style={{ borderBottom: '1px solid #f3f1ea' }}>

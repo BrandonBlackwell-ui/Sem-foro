@@ -1,0 +1,46 @@
+name: Monday cleanup duplicates
+
+on:
+  # Manual. Limpia items duplicados creados por el bug del write-back y sella
+  # tareas pendientes con su item existente. dry_run=true solo reporta.
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Solo reportar, sin borrar (true/false)"
+        required: false
+        default: "true"
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create environment
+        run: |
+          cat > .env << EOF
+          SUPABASE_URL=${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }}
+          MONDAY_API_KEY=${{ secrets.MONDAY_API_KEY }}
+          MONDAY_TASKS_BOARD_ID=${{ vars.MONDAY_TASKS_BOARD_ID || '18418418634' }}
+          EOF
+
+      - name: Run cleanup
+        env:
+          MONDAY_API_KEY: ${{ secrets.MONDAY_API_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then ARGS="--dry-run"; fi
+          python scripts/sync/monday_cleanup_duplicates.py $ARGS
