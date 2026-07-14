@@ -303,11 +303,13 @@ def _needs_micro_context(messages: list[dict[str, Any]]) -> bool:
 # account_id (número) -> texto inyectado al prompt.
 CLIENT_IDENTITY_HINTS: dict[str, str] = {
     "35": (
-        "IDENTIDADES DEL CLIENTE (cuenta Pepe Aguilar): el CLIENTE y su círculo son "
-        "«Shazam» (es Pepe Aguilar, el cliente principal), «Aneliz» (su esposa), y su "
-        "equipo «Lauri Álvarez» y «Krystell Anell». Trata los mensajes de ESTAS personas "
-        "como del CLIENTE y evalúa su sentimiento/satisfacción. Los demás (BWS/Blackwell) "
-        "son la agencia; su tono no define la satisfacción del cliente."
+        "IDENTIDADES (cuenta Pepe Aguilar). CLIENTE y su círculo: «Shaman»/«Shazam» "
+        "(es Pepe Aguilar, el cliente principal), «Aneliz» (su esposa), «Lauri Álvarez», "
+        "«Krystell Anell» y «Yenny» (su equipo). Evalúa la satisfacción/sentimiento SOLO "
+        "de estas personas. AGENCIA (Blackwell, NO son el cliente): «Sol Guerrero» "
+        "(Marisol Guerrero), «Ángel Alcántara», «Daniel Padilla», «Daniel Alba» y «Sarah "
+        "Duru». No confundas a Sol Guerrero con la clienta; su tono no define la "
+        "satisfacción del cliente."
     ),
 }
 
