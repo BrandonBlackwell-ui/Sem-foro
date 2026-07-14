@@ -298,6 +298,28 @@ def _needs_micro_context(messages: list[dict[str, Any]]) -> bool:
     return False
 
 
+# Pistas de identidad del cliente por cuenta, para que el LLM sepa a quién
+# corresponde el "cliente" cuando el push_name/teléfono no lo deja claro.
+# account_id (número) -> texto inyectado al prompt.
+CLIENT_IDENTITY_HINTS: dict[str, str] = {
+    "35": (
+        "IDENTIDADES DEL CLIENTE (cuenta Pepe Aguilar): el CLIENTE y su círculo son "
+        "«Shazam» (es Pepe Aguilar, el cliente principal), «Aneliz» (su esposa), y su "
+        "equipo «Lauri Álvarez» y «Krystell Anell». Trata los mensajes de ESTAS personas "
+        "como del CLIENTE y evalúa su sentimiento/satisfacción. Los demás (BWS/Blackwell) "
+        "son la agencia; su tono no define la satisfacción del cliente."
+    ),
+}
+
+
+def _client_identity_hint(account_id: str) -> str:
+    key = str(account_id or "").strip()
+    if key.isdigit():
+        key = str(int(key))
+    hint = CLIENT_IDENTITY_HINTS.get(key)
+    return f"\nIdentidad del cliente:\n- {hint}\n" if hint else ""
+
+
 def _analyze_group_day(model: str, target_date: date, batch: GroupBatch, previous_score: float) -> dict:
     participants = _load_participants()
     context_transcript = _format_transcript(batch.context_messages, participants)
@@ -313,7 +335,7 @@ def _analyze_group_day(model: str, target_date: date, batch: GroupBatch, previou
 Cuenta: {batch.account_id}
 Grupo: {batch.group_name or batch.group_jid}
 Fecha analizada: {target_date.isoformat()}
-
+{_client_identity_hint(batch.account_id)}
 Analiza solamente los MENSAJES NUEVOS NO ANALIZADOS.
 El contexto principal es el resumen previo y las tareas ya detectadas.
 El MICRO-CONTEXTO opcional solo aparece cuando los mensajes nuevos son ambiguos.

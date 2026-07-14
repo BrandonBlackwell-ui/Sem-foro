@@ -904,14 +904,27 @@ function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
 
+// Cuentas donde el CO (Cumplimiento Operativo) no aplica — su 30% se traslada a
+// la Satisfacción del Cliente (SC). Ej. figuras públicas sin meta de notas.
+const NO_CO_ACCOUNTS = new Set(['35'])
+function coAppliesFor(accountId?: string | null): boolean {
+  const id = String(accountId ?? '').trim()
+  const num = /^\d+$/.test(id) ? String(Number(id)) : id
+  return !NO_CO_ACCOUNTS.has(num)
+}
+
 function buildWeightedScore(
   waScore: number | null | undefined,
   operational?: OperationalScore | null,
   publicationQuality?: PublicationQualityScore | null,
   checklist?: any,
-  rawAnalysis?: any
+  rawAnalysis?: any,
+  coApplies: boolean = true
 ) {
   const normalizedWa = waScore == null ? null : clampScore(Number(waScore))
+  // Pesos del global. Sin CO, su 30% se suma al de SC (0.45 → 0.75).
+  const coWeight = coApplies ? 0.30 : 0
+  const scWeight = coApplies ? 0.45 : 0.75
 
   // Meet: último sesion_score guardado en checklist.json (análisis LLM de transcripción)
   let sesionScore: number | null = null
@@ -941,7 +954,7 @@ function buildWeightedScore(
   }
 
   const pqScore = publicationQuality?.pq_score == null ? null : clampScore(Number(publicationQuality.pq_score))
-  const coIntoGlobal = coScore == null ? 0 : coScore * 0.30
+  const coIntoGlobal = (coScore == null || !coApplies) ? 0 : coScore * coWeight
 
   const periodLabel = (row?: { period_year: number; period_month: number } | null) =>
     row ? new Date(row.period_year, row.period_month - 1, 1).toLocaleDateString('es-MX', { month: 'long', year: 'numeric' }) : null
@@ -1008,7 +1021,7 @@ function buildWeightedScore(
     }
   }
 
-  const scIntoGlobal = scScore == null ? 0 : scScore * 0.45
+  const scIntoGlobal = scScore == null ? 0 : scScore * scWeight
   const pqIntoGlobal = pqScore == null ? 0 : pqScore * 0.25
 
   const coCaption = operational
@@ -1087,12 +1100,12 @@ function buildWeightedScore(
     {
       key: 'co',
       label: 'CO',
-      caption: coCaption,
-      value: coScore == null ? null : roundScore(coIntoGlobal),
-      max: 30,
+      caption: coApplies ? coCaption : 'No aplica para esta cuenta (su peso pasa a SC)',
+      value: !coApplies ? null : (coScore == null ? null : roundScore(coIntoGlobal)),
+      max: coApplies ? 30 : 0,
       contribution: coIntoGlobal,
-      status: coScore == null ? (operational ? 'conectado' : 'pendiente') : 'conectado',
-      details: coDetails,
+      status: !coApplies ? 'na' : (coScore == null ? (operational ? 'conectado' : 'pendiente') : 'conectado'),
+      details: coApplies ? coDetails : ['CO desactivado para esta cuenta: su 30% se reasigna a Satisfacción del Cliente (SC).'],
     },
     {
       key: 'pq',
@@ -1109,7 +1122,7 @@ function buildWeightedScore(
       label: 'SC',
       caption: scCaption,
       value: scScore == null ? null : roundScore(scIntoGlobal),
-      max: 45,
+      max: coApplies ? 45 : 75,
       contribution: scIntoGlobal,
       status: scScore == null ? 'pendiente' : hasSurvey ? 'conectado' : 'parcial',
       details: scDetails,
@@ -2150,7 +2163,8 @@ export default function App() {
         operationalForMonth,
         publicationQualityForMonth,
         accountChecklistData,
-        analysis.raw_analysis
+        analysis.raw_analysis,
+        coAppliesFor(selectedAccount?.account_id)
       ).globalPartial
       const delta = globalPartial == null || previousScore == null ? 0 : roundScore(globalPartial - previousScore)
       if (globalPartial != null) previousScore = globalPartial
@@ -2176,7 +2190,8 @@ export default function App() {
     selectedAccount?.operational ?? null,
     selectedAccount?.publicationQuality ?? null,
     accountChecklistData,
-    activeDayAnalysis?.raw_analysis
+    activeDayAnalysis?.raw_analysis,
+    coAppliesFor(selectedAccount?.account_id)
   )
   const displayScore = weightedScore.globalPartial
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
@@ -2471,20 +2486,23 @@ export default function App() {
     const globalScores = clientAccounts
       .map(a => {
         const checklist = findChecklist(a.account_id, a.name)
-        if (!checklist?.contract?.vigencia) return null
+        const coApplies = coAppliesFor(a.account_id)
+        // Cuentas sin CO se puntúan por SC (no requieren contrato vigente).
+        if (!checklist?.contract?.vigencia && coApplies) return null
         const wa = a.score?.current_score ?? a.latestAnalysis?.new_score ?? null
         const weighted = buildWeightedScore(
           wa,
           a.operational,
           a.publicationQuality,
           checklist,
-          a.latestAnalysis?.raw_analysis
+          a.latestAnalysis?.raw_analysis,
+          coApplies
         )
-        // Activada si tiene CO (Cumplimiento Operativo); SC/PQ/Meet pueden ir parciales.
+        // Activada si tiene su eje base: CO si aplica, o SC si la cuenta no lleva CO.
         // Mismo criterio que los círculos de la lista.
-        const coComp = weighted.components.find(c => c.key === 'co')
+        const gateComp = weighted.components.find(c => c.key === (coApplies ? 'co' : 'sc'))
         // Use raw (unrounded) value so the average isn't skewed by double-rounding
-        return coComp?.value != null ? weighted.globalPartialRaw : null
+        return gateComp?.value != null ? weighted.globalPartialRaw : null
       })
       .filter((s): s is number => s != null)
     const averageScore = globalScores.length
@@ -2648,21 +2666,24 @@ export default function App() {
                   const checklist = findChecklist(account.account_id, account.name)
                   let globalScore: number | null = null
                   const missing: string[] = []
-                  if (checklist?.contract?.vigencia) {
+                  const coApplies = coAppliesFor(account.account_id)
+                  if (checklist?.contract?.vigencia || !coApplies) {
                     const waForGlobal = account.score?.current_score ?? account.latestAnalysis?.new_score ?? null
                     const weighted = buildWeightedScore(
                       waForGlobal,
                       account.operational,
                       account.publicationQuality,
                       checklist,
-                      account.latestAnalysis?.raw_analysis
+                      account.latestAnalysis?.raw_analysis,
+                      coApplies
                     )
-                    // Activada si tiene CO (Cumplimiento Operativo), aunque el score
-                    // salga bajo por SC/PQ/Meet parciales. Solo se queda "Sin ponderar"
-                    // si le falta el CO.
-                    const coComp = weighted.components.find(c => c.key === 'co')
-                    if (coComp?.value != null) {
+                    // Cuentas con CO: se activan cuando hay CO. Cuentas sin CO
+                    // (su peso pasó a SC): se activan cuando hay Satisfacción del Cliente.
+                    const gateComp = weighted.components.find(c => c.key === (coApplies ? 'co' : 'sc'))
+                    if (gateComp?.value != null) {
                       globalScore = weighted.globalPartial
+                    } else if (!coApplies) {
+                      missing.push('SC: falta la satisfacción del cliente (WhatsApp y/o Meet analizado). Esta cuenta no usa CO.')
                     } else {
                       // CO ausente: decir EXACTAMENTE qué parte falta — la meta del
                       // contrato (carpeta 01) o las notas entregadas (hoja de medios).
