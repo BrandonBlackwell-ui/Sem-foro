@@ -285,6 +285,12 @@ def main() -> None:
     for task in pending_tasks:
         # Determine board
         account_id = _account_id(task)
+        # Las tareas internas (00_INTERNAL) NO se empujan a Monday: el matcher
+        # fuzzy las mandaba al board "Equipo interno", que no es su destino.
+        # Definir board explícito en monday_boards.json antes de reactivarlas.
+        if str(account_id).startswith("00_"):
+            meet_totals["skipped"] += 1
+            continue
         board = _resolve_board(boards_config, account_id, account_names, monday_boards)
         if not board:
             logger.warning("No board found for pending task %s (account: %s).", task.get("id"), account_id)
@@ -330,12 +336,35 @@ def main() -> None:
                 item_name=item_name,
                 column_values=column_values,
             )
-            
+
+            # CRÍTICO: guardar monday_item_id INMEDIATAMENTE después de crear el
+            # item, con el payload mínimo. Si este write-back falla, la tarea
+            # queda "pendiente" y cada corrida vuelve a crear el item en Monday
+            # (así se duplicaron miles de items en el board interno).
+            _supabase_request(
+                "PATCH", "wa_tasks",
+                params={"id": f"eq.{task['id']}"},
+                body={
+                    "monday_item_id": created["id"],
+                    "updated_at": datetime.now(timezone.utc).isoformat(),
+                },
+            )
+        except Exception as e:
+            logger.error("Error syncing pending task %s: %s", task["id"], e)
+            meet_totals["skipped"] += 1
+            continue
+
+        meet_totals["created"] += 1
+        logger.info("Synced pending task %s to Monday item %s.", task["id"], created["id"])
+
+        # Lo que sigue es best-effort: si falla, el item ya quedó registrado y
+        # NO se re-creará en la próxima corrida.
+        try:
             # Create update if there is any meeting summary or detail
             source = task.get("raw_action", {}).get("source") or "gemini_meet_notes"
             source_label = "Google Meet (Gemini Notes desde Gmail)" if source == "gemini_meet_email_sync" else "Minuta de Google Meet"
-            meeting_date = task.get("analysis_date") or task.get("created_at")[:10]
-            
+            meeting_date = task.get("analysis_date") or (task.get("created_at") or "")[:10]
+
             evidence_text = (
                 f"Origen: {source_label}\n"
                 f"Fecha del origen: {meeting_date}\n\n"
@@ -343,27 +372,26 @@ def main() -> None:
             detail_summary = task.get("summary") or task.get("raw_action", {}).get("summary") or ""
             if not detail_summary and task.get("raw_action", {}).get("email_subject"):
                 detail_summary = f"Reunión: {task.get('raw_action', {}).get('email_subject')}"
-            
+
             evidence_text += detail_summary
             _create_monday_update(api_key, str(created["id"]), evidence_text)
-                
-            # Update Supabase wa_tasks
-            payload = {
-                "monday_item_id": created["id"],
-                "monday_item_name": created.get("name") or item_name,
-                "monday_created_at": created.get("created_at") or datetime.now(timezone.utc).isoformat(),
-                "monday_status": "Por hacer",
-                "monday_due_date": task.get("due_date") or _due_date_for_item(item, "medium").isoformat(),
-                "monday_work_type": task.get("work_type"),
-                "last_synced_to_monday_at": datetime.now(timezone.utc).isoformat(),
-                "updated_at": datetime.now(timezone.utc).isoformat(),
-            }
-            _supabase_request("PATCH", "wa_tasks", params={"id": f"eq.{task['id']}"}, body=payload)
-            meet_totals["created"] += 1
-            logger.info("Synced pending task %s to Monday item %s.", task["id"], created["id"])
+
+            # Metadatos restantes (sin monday_created_at: esa columna no existe
+            # en wa_tasks y hacía fallar el PATCH completo).
+            _supabase_request(
+                "PATCH", "wa_tasks",
+                params={"id": f"eq.{task['id']}"},
+                body={
+                    "monday_item_name": created.get("name") or item_name,
+                    "monday_status": "Por hacer",
+                    "monday_due_date": task.get("due_date") or _due_date_for_item(item, "medium").isoformat(),
+                    "monday_work_type": task.get("work_type"),
+                    "last_synced_to_monday_at": datetime.now(timezone.utc).isoformat(),
+                    "updated_at": datetime.now(timezone.utc).isoformat(),
+                },
+            )
         except Exception as e:
-            logger.error("Error syncing pending task %s: %s", task["id"], e)
-            meet_totals["skipped"] += 1
+            logger.warning("Post-sync metadata for task %s failed (item %s already registered): %s", task["id"], created["id"], e)
 
     mode = "dry-run" if args.dry_run else "live"
     logger.info(
