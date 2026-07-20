@@ -118,6 +118,11 @@ type PublicationQualityAnalysis = {
   focus_points: number | null
   content_score: number | null
   pq_score: number | null
+  deliverable_type: string | null
+  note_type: string | null
+  badge: string | null
+  type_source: string | null
+  is_managed: boolean | null
   status: string | null
   evidence: {
     items: { quote: string; why_it_matters: string }[]
@@ -3325,6 +3330,11 @@ export default function App() {
                         <>
                           <div className="lb-publication-quality-head">
                             <strong>Calidad de nota</strong>
+                            {quality.badge && (
+                              <span className="lb-quality-chip type" title={quality.type_source === 'authored' ? 'Nota propia: el cliente es el autor/firma' : quality.type_source === 'inferred' ? 'Tipo inferido del link' : 'Tipo tomado del Sheet (Servicio)'}>
+                                {quality.badge}
+                              </span>
+                            )}
                             <span className={`lb-quality-chip ${qualityTone(quality)}`}>
                               {qualityScoreText(quality)}
                             </span>
@@ -3336,12 +3346,16 @@ export default function App() {
                             <span className={`lb-quality-chip ${qualityTone(quality, quality.body_match)}`}>
                               {quality.body_match ? 'Cliente en cuerpo' : 'Cuerpo sin cliente'}
                             </span>
-                            <span className="lb-quality-chip muted">
-                              {qualityText(quality.editorial_quality, 'Editorial pendiente')}
-                            </span>
-                            <span className="lb-quality-chip muted">
-                              {qualityText(quality.focus, 'Enfoque pendiente')}
-                            </span>
+                            {(!quality.deliverable_type || quality.deliverable_type === 'nota') && (
+                              <>
+                                <span className="lb-quality-chip muted">
+                                  {qualityText(quality.editorial_quality, 'Editorial pendiente')}
+                                </span>
+                                <span className="lb-quality-chip muted">
+                                  {qualityText(quality.focus, 'Enfoque pendiente')}
+                                </span>
+                              </>
+                            )}
                           </div>
                           {quality.article_title && (
                             <p className="lb-quality-evidence">Titulo leido: {quality.article_title}</p>

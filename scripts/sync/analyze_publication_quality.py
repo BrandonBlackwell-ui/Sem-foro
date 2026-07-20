@@ -88,7 +88,7 @@ def main() -> None:
             row = _analyze_publication(publication, config, args.model)
         except Exception as exc:  # keep the batch moving
             logger.warning("Could not analyze %s: %s", url, exc)
-            row = _error_row(publication, args.model, exc)
+            row = _error_row(publication, args.model, exc, config)
         analyzed.append(row)
         logger.info(
             "Analyzed %s | %s | status=%s score=%s",
@@ -217,20 +217,168 @@ def _existing_urls(sb: Any) -> set[str]:
         return set()
 
 
+def _resolve_deliverable_type(service: Any, config: dict[str, Any]) -> tuple[str | None, str]:
+    """Mapea la columna 'Servicio' del Sheet a un tipo canonico.
+
+    Devuelve (tipo, origen). Si el Servicio viene vacio o 'Elegir:' devuelve
+    (None, 'empty') para que el tipo se infiera leyendo el link.
+    """
+    dt = config.get("deliverable_types") or {}
+    val = _normalize(str(service or ""))
+    empties = {_normalize(x) for x in dt.get("empty_service_values", [])}
+    if not val or val in empties:
+        return None, "empty"
+    for key, canonical in (dt.get("service_aliases") or {}).items():
+        if _normalize(key) == val:
+            return canonical, "sheet"
+    # Servicio con texto no catalogado (Nota, Nota + RRSS, Trascendido, etc.) -> nota.
+    return dt.get("default_type", "nota"), "sheet"
+
+
+def _canonical_type(value: Any, config: dict[str, Any]) -> str | None:
+    types = (config.get("deliverable_types") or {}).get("types") or {}
+    normalized = _normalize(str(value or "")).replace(" ", "_")
+    return normalized if normalized in types else None
+
+
+def _nota_variant(
+    editorial_quality: str,
+    focus: str,
+    mention: dict[str, Any],
+    config: dict[str, Any],
+) -> tuple[str, str, float]:
+    """Resuelve la variante de una nota informativa leyendo el link (como ya se hacia).
+
+    Devuelve (note_type, badge, pq) segun la tabla de aceptacion BW-07-SEM-0002.
+    """
+    variants = config["deliverable_types"]["nota_variants"]
+    if editorial_quality == "exclusiva":
+        v = variants["exclusiva"]
+        bonus = float((v.get("focus_bonus") or {}).get(focus, 0))
+        pq = min(float(v["pq_max"]), float(v["pq_base"]) + bonus)
+        return "exclusiva", v["badge"], pq
+    if mention.get("title_match"):
+        v = variants["cliente_titulo"]
+        return "cliente_titulo", v["badge"], float(v["pq"])
+    if editorial_quality in {"reactiva", "mencion_principal"} or mention.get("body_match"):
+        v = variants["cliente_cuerpo"]
+        return "cliente_cuerpo", v["badge"], float(v["pq"])
+    v = variants["mencion"]
+    return "mencion", v["badge"], float(v["pq"])
+
+
+def _vinculacion_is_derived(publication: dict[str, Any], meta: dict[str, Any]) -> bool:
+    """La vinculacion sube de 30 a 50 PQ si el Sheet indica que derivo en nota publicada.
+
+    Hoy el Sheet no tiene una columna dedicada, asi que se leen los comentarios de la
+    fila (fuente autoritativa) buscando las palabras clave configuradas.
+    """
+    keywords = [_normalize(k) for k in (meta.get("result_keywords") or [])]
+    haystack = _normalize(" ".join([
+        str(publication.get("comments") or ""),
+        str(publication.get("service") or ""),
+    ]))
+    return any(k and k in haystack for k in keywords)
+
+
+def _score_deliverable(
+    effective_type: str,
+    editorial_quality: str,
+    focus: str,
+    mention: dict[str, Any],
+    publication: dict[str, Any],
+    config: dict[str, Any],
+) -> tuple[str, str | None, float, str]:
+    """Devuelve (note_type, badge, pq_score, score_mode) para el tipo efectivo."""
+    types = config["deliverable_types"]["types"]
+    meta = types.get(effective_type) or {}
+    scoring = meta.get("scoring", "nota_llm")
+    if scoring == "anchor":
+        return effective_type, meta.get("badge"), float(meta["pq"]), "anchor"
+    if scoring == "vinculacion":
+        if _vinculacion_is_derived(publication, meta):
+            return "vinculacion_con_resultado", meta.get("badge_with_result"), float(meta["pq_with_result"]), "vinculacion"
+        return "vinculacion", meta.get("badge"), float(meta["pq"]), "vinculacion"
+    note_type, badge, pq = _nota_variant(editorial_quality, focus, mention, config)
+    return note_type, badge, pq, "nota_llm"
+
+
+# Hallazgo 01: como toda fila proviene del archivo de medios Blackwell, la gestion
+# esta confirmada por definicion. Nunca dejamos que el checklist niegue la gestion.
+_BANNED_CHECKLIST = [
+    "sin evidencia", "no hay evidencia", "no es una exclusiva", "no gestionada",
+    "no fue gestionada", "no se puede confirmar que blackwell", "no hay senales de exclusiv",
+    "no es exclusiva gestionada", "no parece gestionada",
+]
+
+
+def _sanitize_checklist(items: Any) -> list[str]:
+    out: list[str] = []
+    for item in items if isinstance(items, list) else []:
+        if not isinstance(item, str):
+            continue
+        normalized = _normalize(item)
+        if any(banned in normalized for banned in _BANNED_CHECKLIST):
+            continue
+        out.append(item)
+    return out
+
+
 def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], model: str) -> dict[str, Any]:
-    article = _fetch_article(str(publication["url"]))
+    url = str(publication["url"])
     aliases = _aliases_for_publication(publication, config)
-    mention = _detect_mentions(article, aliases)
     tier, tier_points = _tier_for_publication(publication, config)
-    llm = _classify_with_llm(publication, article, aliases, mention, tier, model)
+    declared_type, type_source = _resolve_deliverable_type(publication.get("service"), config)
+
+    # Se lee el link como ya se hacia. Si falla y el tipo viene declarado en el Sheet
+    # (columna/entrevista/foro/vinculacion), igual se puede puntuar desde el tipo.
+    article = {"title": "", "text": ""}
+    fetch_error: str | None = None
+    try:
+        article = _fetch_article(url)
+    except Exception as exc:  # noqa: BLE001 - se maneja abajo
+        fetch_error = str(exc)
+
+    mention = _detect_mentions(article, aliases)
+    llm = _classify_with_llm(publication, article, aliases, mention, tier, model, declared_type) if fetch_error is None else {}
 
     editorial_quality = _canonical(llm.get("editorial_quality"), config["editorial_points"], "sin_mencion")
     focus = _canonical(llm.get("focus"), config["focus_points"], "no_aplica")
     editorial_points = float(config["editorial_points"][editorial_quality])
     focus_points = float(config["focus_points"][focus])
     content_score = editorial_points + focus_points
-    pq_score = None if tier_points is None else float(tier_points) + content_score
-    status = "scored" if pq_score is not None else "needs_tier"
+
+    # Tipo efectivo: el valor del Sheet manda; si viene vacio, se infiere del link.
+    detected_type = _canonical_type(llm.get("detected_type"), config)
+    if declared_type:
+        effective_type = declared_type
+    elif detected_type:
+        effective_type, type_source = detected_type, "inferred"
+    else:
+        effective_type, type_source = config["deliverable_types"].get("default_type", "nota"), "default"
+
+    # Autoria del cliente gana sobre "Nota": si el cliente ESCRIBIO/firma la pieza, es
+    # contenido propio (columna de opinion) aunque no se mencione a si mismo en el texto
+    # y aunque el Sheet la haya registrado como Nota generica.
+    client_is_author = bool(llm.get("client_is_author"))
+    if effective_type == "nota" and (client_is_author or detected_type == "columna_opinion"):
+        effective_type, type_source = "columna_opinion", "authored"
+
+    note_type, badge, pq_score, _score_mode = _score_deliverable(
+        effective_type, editorial_quality, focus, mention, publication, config
+    )
+
+    # Solo las notas genericas dependen del contenido para puntuar. Si el fetch fallo
+    # pero el tipo tiene ancla propia (columna/entrevista/foro/vinculacion), se puntua igual.
+    if fetch_error is not None and pq_score is None:
+        return _error_row(publication, model, RuntimeError(fetch_error), config)
+
+    if fetch_error is not None:
+        status = "scored_from_sheet"
+    elif pq_score is not None:
+        status = "scored"
+    else:
+        status = "needs_review"
 
     return {
         "account_id": publication.get("account_id"),
@@ -256,16 +404,25 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
         "focus_points": focus_points,
         "content_score": content_score,
         "pq_score": pq_score,
+        "deliverable_type": effective_type,
+        "note_type": note_type,
+        "badge": badge,
+        "type_source": type_source,
+        "is_managed": True,
         "status": status,
         "evidence": {
             "items": llm.get("evidence") if isinstance(llm.get("evidence"), list) else [],
-            "checklist": llm.get("checklist") if isinstance(llm.get("checklist"), list) else [],
+            "checklist": _sanitize_checklist(llm.get("checklist")),
             "reasoning": llm.get("reasoning") or "",
         },
         "raw_analysis": {
             "llm": llm,
             "mention_detection": mention,
             "aliases": aliases,
+            "declared_type": declared_type,
+            "detected_type": detected_type,
+            "service": publication.get("service"),
+            "fetch_error": fetch_error,
             "source_row_number": publication.get("source_row_number"),
         },
         "model": model,
@@ -274,8 +431,9 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
     }
 
 
-def _error_row(publication: dict[str, Any], model: str, exc: Exception) -> dict[str, Any]:
+def _error_row(publication: dict[str, Any], model: str, exc: Exception, config: dict[str, Any]) -> dict[str, Any]:
     error_message = str(exc)
+    declared_type, type_source = _resolve_deliverable_type(publication.get("service"), config)
     return {
         "account_id": publication.get("account_id"),
         "account_name": publication.get("account_name"),
@@ -300,9 +458,14 @@ def _error_row(publication: dict[str, Any], model: str, exc: Exception) -> dict[
         "focus_points": None,
         "content_score": None,
         "pq_score": None,
+        "deliverable_type": declared_type,
+        "note_type": None,
+        "badge": None,
+        "type_source": type_source,
+        "is_managed": True,
         "status": "fetch_error",
         "evidence": [],
-        "raw_analysis": {"error": error_message, "source_row_number": publication.get("source_row_number")},
+        "raw_analysis": {"error": error_message, "service": publication.get("service"), "source_row_number": publication.get("source_row_number")},
         "model": model,
         "analyzed_at": datetime.now(timezone.utc).isoformat(),
         "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -450,6 +613,7 @@ def _classify_with_llm(
     mention: dict[str, Any],
     tier: str | None,
     model: str,
+    declared_type: str | None = None,
 ) -> dict[str, Any]:
     system = (
         "Eres analista de calidad editorial para Blackwell Strategy. "
@@ -462,6 +626,7 @@ Medio: {publication.get('media_name')}
 URL: {publication.get('url')}
 Aliases oficiales para buscar: {aliases}
 Tier fijo configurado: {tier or 'SIN_TIER_CONFIGURADO'}
+Tipo declarado en el Sheet (columna Servicio): {declared_type or 'NO DECLARADO'}
 
 Deteccion deterministica previa:
 {json.dumps(mention, ensure_ascii=False)}
@@ -472,6 +637,21 @@ Titulo / encabezado extraido:
 Texto de la nota:
 {article.get('text')[:12000]}
 
+PASO 0 — Tipo de entregable (detected_type):
+Si "Tipo declarado en el Sheet" viene con un valor, respetalo y confirmalo. Si viene NO DECLARADO,
+infiere el tipo leyendo el link. detected_type debe ser UNO de:
+- "columna_opinion": el cliente FIRMA el texto como autor (byline), tipicamente en seccion de
+  opinion/colaboradores/voces/invitados/tribuna. El cliente toma la voz editorial, no es solo el sujeto.
+- "entrevista": formato Q&A o dialogo, o el cliente es la fuente principal con citas directas extensas.
+- "foro_panel": el cliente aparece acreditado como ponente, panelista o speaker de un foro/evento.
+- "vinculacion": gestion/reunion con el medio, no una nota publicada.
+- "nota": cobertura informativa estandar (default).
+client_is_author=true cuando el cliente ES el autor/firma de la pieza (la escribio el),
+AUNQUE no se mencione a si mismo en el cuerpo y AUNQUE la seccion no diga "opinion". Una
+nota firmada por el cliente es contenido propio: en ese caso detected_type debe ser
+"columna_opinion". Pista: el nombre del cliente aparece como autor/byline (encabezado, "Por
+<cliente>", firma al final), no como sujeto del que habla un tercero.
+
 PASO 1 — Verifica el titulo/encabezado:
 Busca EXACTAMENTE si alguno de los aliases oficiales aparece en el titulo/encabezado de arriba.
 Esto determina title_in_headline (true/false). Es independiente de si aparece en el cuerpo.
@@ -479,9 +659,10 @@ El titulo en el encabezado tiene peso extra en la calidad editorial.
 
 PASO 2 — Clasifica la nota con estas reglas PQ:
 - editorial_quality (elige UNO):
-  - "exclusiva": el equipo de Blackwell genero la historia proactivamente y la coloco en el medio. La iniciativa fue del equipo.
-  - "reactiva": el periodista o medio busco al cliente como fuente o para entrevistarlo. La iniciativa fue del periodista, no del equipo.
-  - "mencion_principal": el cliente aparece como actor relevante o protagonista de la nota, pero la historia no fue colocada por Blackwell ni fue iniciativa del periodista hacia el cliente.
+  - "exclusiva": el equipo de Blackwell genero la historia proactivamente o coloco la nota en el medio.
+    NOTA CLAVE: Dado que todas las notas evaluadas provienen del Excel de control de Blackwell, significa que Blackwell las gestiono y coloco. Por lo tanto, si el cliente es protagonista o actor relevante de la nota, y la narrativa es favorable o neutral, debes clasificarla como "exclusiva". No busques el nombre "Blackwell" en el texto (las agencias de relaciones publicas trabajan detras de escena).
+  - "reactiva": el periodista o medio busco al cliente como fuente o para entrevistarlo (iniciativa del periodista, pero coordinada por Blackwell).
+  - "mencion_principal": el cliente aparece como protagonista o actor relevante de la nota, pero el texto demuestra de forma inequivoca que fue un esfuerzo totalmente ajeno o no gestionado por Blackwell (caso sumamente raro en este control).
   - "mencion_secundaria": el cliente aparece de forma marginal, en una lista, o como referencia de fondo sin ser protagonista.
   - "sin_mencion": no hay mencion verificable de ninguno de los aliases oficiales en titulo ni cuerpo.
 - focus (elige UNO):
@@ -491,15 +672,18 @@ PASO 2 — Clasifica la nota con estas reglas PQ:
   - "no_aplica": no hay mencion verificable.
 
 PASO 3 — Genera el checklist de calificacion:
-Lista de 3 a 5 frases cortas que explican POR QUE le pusiste esa calificacion. Cada frase debe empezar con "Si:" o "No:" segun aplique. Ejemplos:
+Lista de 3 a 5 frases cortas que explican POR QUE le pusiste esa calificacion. Cada frase debe empezar con "Si:" o "No:" segun aplique.
+NOTA DE CONTEXTO: Nunca digas que "no hay evidencia de que Blackwell haya gestionado la nota" u oraciones similares en el checklist. El hecho de estar en esta evaluacion garantiza que Blackwell la gestiono.
+Ejemplos de frases permitidas:
   "Si: el cliente aparece mencionado en el titulo/encabezado"
   "No: el cliente no aparece en el titular, solo en el cuerpo"
-  "Si: la nota es una entrevista al cliente (periodista busco al cliente)"
-  "No: Blackwell no genero la historia, fue iniciativa del periodista"
+  "Si: la nota es una colocacion proactiva del equipo de Blackwell"
   "Si: el enfoque posiciona al cliente favorablemente"
 
 Devuelve JSON:
 {{
+  "detected_type": "nota|columna_opinion|entrevista|foro_panel|vinculacion",
+  "client_is_author": false,
   "title_in_headline": true,
   "editorial_quality": "exclusiva|reactiva|mencion_principal|mencion_secundaria|sin_mencion",
   "focus": "narrativa_propia|neutral|defensivo|no_aplica",

@@ -2776,6 +2776,12 @@ body[data-grid="on"] {
   background: rgba(255, 255, 255, 0.74);
 }
 
+.lb-quality-chip.type {
+  color: #3b4bb3;
+  background: rgba(88, 86, 214, 0.12);
+  border-color: rgba(88, 86, 214, 0.28);
+}
+
 .lb-publication-card p.lb-quality-evidence {
   margin-top: 10px;
   color: rgba(29, 29, 31, 0.64);
