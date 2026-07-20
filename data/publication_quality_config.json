@@ -606,11 +606,19 @@
       "participacion en foro": "foro_panel",
       "participacion en foro o panel": "foro_panel",
       "vinculacion": "vinculacion",
-      "vinculaciones": "vinculacion"
+      "vinculaciones": "vinculacion",
+      "trascendido": "trascendido",
+      "nota": "nota",
+      "nota rrss": "nota",
+      "nota web y print": "nota",
+      "nota backlink": "nota",
+      "nota web mencion tv": "nota",
+      "replica audiovisual": "nota",
+      "mencion en radio": "nota"
     },
     "types": {
       "columna_opinion": {
-        "badge": "Columna de opinion",
+        "badge": "Columna de opinión",
         "pq": 85,
         "scoring": "anchor",
         "confirm_signal": "El cliente firma la columna (byline/autor), no es solo el sujeto de la nota."
@@ -622,24 +630,28 @@
         "confirm_signal": "Formato Q&A/dialogo o el cliente es la fuente principal con citas directas extensas."
       },
       "foro_panel": {
-        "badge": "Participacion en foro",
+        "badge": "Participación en foro",
         "pq": 70,
         "scoring": "anchor",
         "confirm_signal": "El cliente aparece acreditado como ponente, panelista o speaker."
       },
       "vinculacion": {
-        "badge": "Vinculacion",
+        "badge": "Vinculación",
         "pq": 30,
         "scoring": "vinculacion",
-        "badge_with_result": "Vinculacion con resultado",
         "pq_with_result": 50,
         "confirm_signal": "Reunion o presentacion con periodista/editor/medio; antecede a la cobertura.",
         "result_keywords": ["nota publicada", "derivo en nota", "derivo en publicacion", "salio la nota", "genero nota", "resulto en nota", "con nota derivada", "nota derivada", "ya publico", "publicada"]
       },
       "nota": {
-        "badge": null,
+        "badge": "Nota",
         "scoring": "nota_llm",
-        "confirm_signal": "Nota informativa: el PQ y el badge se resuelven leyendo el link."
+        "confirm_signal": "Nota informativa: el badge es 'Nota'; el PQ se resuelve leyendo el link."
+      },
+      "trascendido": {
+        "badge": "Trascendido",
+        "scoring": "nota_llm",
+        "confirm_signal": "Trascendido: el badge es 'Trascendido'; el PQ se resuelve leyendo el link como una nota."
       }
     },
     "nota_variants": {

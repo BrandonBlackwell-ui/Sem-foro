@@ -293,13 +293,18 @@ def _score_deliverable(
     types = config["deliverable_types"]["types"]
     meta = types.get(effective_type) or {}
     scoring = meta.get("scoring", "nota_llm")
+    badge = meta.get("badge")
     if scoring == "anchor":
-        return effective_type, meta.get("badge"), float(meta["pq"]), "anchor"
+        return effective_type, badge, float(meta["pq"]), "anchor"
     if scoring == "vinculacion":
+        # Badge homologado unico "Vinculacion"; el 30 vs 50 solo cambia el puntaje.
         if _vinculacion_is_derived(publication, meta):
-            return "vinculacion_con_resultado", meta.get("badge_with_result"), float(meta["pq_with_result"]), "vinculacion"
-        return "vinculacion", meta.get("badge"), float(meta["pq"]), "vinculacion"
-    note_type, badge, pq = _nota_variant(editorial_quality, focus, mention, config)
+            return "vinculacion_con_resultado", badge, float(meta["pq_with_result"]), "vinculacion"
+        return "vinculacion", badge, float(meta["pq"]), "vinculacion"
+    # nota_llm: el badge es el tipo homologado (Nota / Trascendido). La variante leida del
+    # link (exclusiva/cliente_titulo/cliente_cuerpo/mencion) NO se muestra como badge; solo
+    # define el PQ. note_type conserva la variante para referencia.
+    note_type, _variant_badge, pq = _nota_variant(editorial_quality, focus, mention, config)
     return note_type, badge, pq, "nota_llm"
 
 
