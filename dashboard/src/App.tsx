@@ -1,4 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { PepeReportsTab } from './components/PepeReportsTab'
+import { PepeSimuladorTab } from './components/PepeSimuladorTab'
+import { PEPE_ACCOUNT_ID } from './lib/pepeReports'
 
 type DailyAnalysis = {
   id: number
@@ -1260,7 +1263,7 @@ export default function App() {
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
   const [accountSearchQuery, setAccountSearchQuery] = useState('')
-  const [clientTab, setClientTab] = useState<'resumen' | 'whatsapp' | 'historico' | 'mensajes' | 'meet' | 'publicaciones'>('resumen')
+  const [clientTab, setClientTab] = useState<'resumen' | 'whatsapp' | 'historico' | 'mensajes' | 'meet' | 'publicaciones' | 'reportes' | 'simulador'>('resumen')
   const [resumenSubTab, setResumenSubTab] = useState<'diagnostico' | 'tareas' | 'metodologia'>('diagnostico')
   const [chartRange, setChartRange] = useState<'7d' | '30d' | '365d'>('30d')
   const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
@@ -2883,6 +2886,12 @@ export default function App() {
         <button className={`lb-tab${clientTab === 'historico' ? ' active' : ''}`} onClick={() => setClientTab('historico')}>Histórico</button>
         <button className={`lb-tab${clientTab === 'meet' ? ' active' : ''}`} onClick={() => setClientTab('meet')}>Meet</button>
         <button className={`lb-tab${clientTab === 'publicaciones' ? ' active' : ''}`} onClick={() => setClientTab('publicaciones')}>Publicaciones</button>
+        {selectedAccount?.account_id === PEPE_ACCOUNT_ID && (
+          <button className={`lb-tab${clientTab === 'reportes' ? ' active' : ''}`} onClick={() => setClientTab('reportes')}>Reportes</button>
+        )}
+        {selectedAccount?.account_id === PEPE_ACCOUNT_ID && (
+          <button className={`lb-tab${clientTab === 'simulador' ? ' active' : ''}`} onClick={() => setClientTab('simulador')}>🎮 Simulador</button>
+        )}
       </nav>
 
       {clientTab === 'resumen' && (
@@ -3401,6 +3410,13 @@ export default function App() {
             </p>
           )}
         </div>
+      )}
+
+      {clientTab === 'reportes' && selectedAccount?.account_id === PEPE_ACCOUNT_ID && (
+        <PepeReportsTab />
+      )}
+      {clientTab === 'simulador' && selectedAccount?.account_id === PEPE_ACCOUNT_ID && (
+        <PepeSimuladorTab />
       )}
 
       {clientTab === 'meet' && (() => {
