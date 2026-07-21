@@ -24,9 +24,10 @@ feat/semaforo-tipos-entregable). Los marcados [NEGOCIO] requieren decisión del 
 4. [RESUELTO] 71 publicaciones con link descartadas por crosswalk incompleto (incluía
    Pepe Aguilar y LCH, cuentas existentes; Ceron-Toluca = LUCA según Cuentas.csv).
    Fix: crosswalk ampliado + el sync ahora loguea la LISTA de clientes no mapeados.
-   [NEGOCIO] Ceron-Acapulco (27 notas), Ceron-Paz, GGS, Gabriel Castañeda, Crisol,
-   Freemium, Cruzalo, Liga Premier, Almeraz, Gustavo Tomé no existen como cuenta:
-   ¿se dan de alta o no se rastrean?
+   [RESUELTO-NEGOCIO 2026-07-21] Ceron-Acapulco (27 notas), Ceron-Paz, GGS, Gabriel
+   Castañeda, Crisol, Freemium, Cruzalo, etc.: el equipo confirmó que NO se rastrean
+   y los van a quitar del Sheet. No se agregan al crosswalk (se quedan descartados; el
+   sync ya loguea la lista para visibilidad).
 5. [RESUELTO] `api/account_aliases.json` con claves slug pero lookup por número: los
    aliases nunca aplicaban y "interno blackwell" no podía reclamar juntas internas
    (causa raíz de la junta interna atribuida a CIMA). Fix: claves numéricas + el
@@ -73,8 +74,8 @@ feat/semaforo-tipos-entregable). Los marcados [NEGOCIO] requieren decisión del 
 - [PENDIENTE] `session_quality_analyses` (herramienta manual) se escribe y nadie la lee.
 - [PENDIENTE] Milestones dedupean por título redactado por el LLM (posible duplicado
   con reformulación).
-- [NEGOCIO] ¿"Grupo Cimarrón" es realmente Grupo CIMA? 33 publicaciones dependen de ese
-  alias (status `revisar` desde 2026-07-13 y el status no se aplica en código).
+- [RESUELTO-NEGOCIO 2026-07-21] "Grupo Cimarrón" = Grupo CIMA: confirmado por el equipo.
+  Las 33 publicaciones se atribuyen bien a CIMA; el alias pasó a status `confirmado`.
 
 ## Patrón transversal
 
