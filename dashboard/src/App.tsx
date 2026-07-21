@@ -697,9 +697,32 @@ function qualityText(value: string | null | undefined, fallback = 'Pendiente') {
     .replace(/\b\w/g, (letter) => letter.toUpperCase())
 }
 
+// status='fetch_error' agrupa causas MUY distintas: link caído (403/404/SSL), celda que
+// no es URL, muro de pago, o el LLM que devolvió JSON inválido con el LINK OK. "Sin link"
+// era engañoso; devolvemos el motivo real (label corto + detalle para tooltip).
+function fetchErrorInfo(quality: PublicationQualityAnalysis | null): { label: string; detail: string; retryable: boolean } | null {
+  if (!quality || quality.status !== 'fetch_error') return null
+  const err = String(quality.body_evidence ?? '').toLowerCase()
+  if (/llm_json_parse|expecting value|unterminated string|"choices"|json/.test(err))
+    return { label: 'Error de análisis', detail: 'El link cargó bien y tiene contenido, pero el modelo devolvió una respuesta inválida. Se reintenta en la próxima corrida.', retryable: true }
+  if (/paywall|softwall|suscrip|cookies/.test(err))
+    return { label: 'Muro de pago', detail: 'La página pide suscripción o aceptar cookies; no se pudo leer el artículo.', retryable: false }
+  if (/403|forbidden/.test(err))
+    return { label: 'Acceso bloqueado', detail: 'El medio bloquea la lectura automática (HTTP 403). El link puede abrir bien en el navegador.', retryable: false }
+  if (/404|not found|410|gone/.test(err))
+    return { label: 'Link roto', detail: 'El link ya no existe en el medio (HTTP 404/410).', retryable: false }
+  if (/ssl|certificate/.test(err))
+    return { label: 'Error de certificado', detail: 'El sitio tiene un problema de certificado SSL y no se pudo leer.', retryable: false }
+  if (/unknown url type|control character|can.t contain|impreso|facebook|instagram|tiktok/.test(err))
+    return { label: 'Link no válido', detail: 'La celda del Sheet no es una URL http legible (texto, red social o "IMPRESO").', retryable: false }
+  if (/timed out|timeout|10013|urlopen|connection/.test(err))
+    return { label: 'No respondió', detail: 'El sitio no respondió a tiempo o rechazó la conexión. Se reintenta en la próxima corrida.', retryable: true }
+  return { label: 'No se pudo leer', detail: quality.body_evidence ? `Motivo: ${quality.body_evidence}` : 'No se pudo leer el artículo.', retryable: true }
+}
+
 function qualityScoreText(quality: PublicationQualityAnalysis | null) {
   if (!quality) return 'Sin analisis'
-  if (quality.status === 'fetch_error') return 'Sin link'
+  if (quality.status === 'fetch_error') return fetchErrorInfo(quality)?.label ?? 'No se pudo leer'
   if (quality.pq_score != null) return `${roundScore(Number(quality.pq_score))} PQ`
   if (quality.content_score != null) return `${roundScore(Number(quality.content_score))} contenido`
   if (quality.status === 'needs_tier') return 'Tier pendiente'
@@ -3425,28 +3448,37 @@ export default function App() {
                                 {quality.badge}
                               </span>
                             )}
-                            <span className={`lb-quality-chip ${qualityTone(quality)}`}>
+                            <span
+                              className={`lb-quality-chip ${qualityTone(quality)}`}
+                              title={fetchErrorInfo(quality)?.detail ?? undefined}
+                            >
                               {qualityScoreText(quality)}
                             </span>
                           </div>
-                          <div className="lb-publication-quality-grid">
-                            <span className={`lb-quality-chip ${qualityTone(quality, quality.title_match)}`}>
-                              {quality.title_match ? 'Cliente en titulo' : 'Titulo sin cliente'}
-                            </span>
-                            <span className={`lb-quality-chip ${qualityTone(quality, quality.body_match)}`}>
-                              {quality.body_match ? 'Cliente en cuerpo' : 'Cuerpo sin cliente'}
-                            </span>
-                            {(!quality.deliverable_type || quality.deliverable_type === 'nota') && (
-                              <>
-                                <span className="lb-quality-chip muted">
-                                  {qualityText(quality.editorial_quality, 'Editorial pendiente')}
-                                </span>
-                                <span className="lb-quality-chip muted">
-                                  {qualityText(quality.focus, 'Enfoque pendiente')}
-                                </span>
-                              </>
-                            )}
-                          </div>
+                          {/* Cuando la nota no se pudo leer, los chips título/cuerpo/editorial
+                              engañan (no se leyó nada): mostramos solo el motivo real. */}
+                          {quality.status === 'fetch_error' ? (
+                            <p className="lb-quality-evidence">{fetchErrorInfo(quality)?.detail}</p>
+                          ) : (
+                            <div className="lb-publication-quality-grid">
+                              <span className={`lb-quality-chip ${qualityTone(quality, quality.title_match)}`}>
+                                {quality.title_match ? 'Cliente en titulo' : 'Titulo sin cliente'}
+                              </span>
+                              <span className={`lb-quality-chip ${qualityTone(quality, quality.body_match)}`}>
+                                {quality.body_match ? 'Cliente en cuerpo' : 'Cuerpo sin cliente'}
+                              </span>
+                              {(!quality.deliverable_type || quality.deliverable_type === 'nota') && (
+                                <>
+                                  <span className="lb-quality-chip muted">
+                                    {qualityText(quality.editorial_quality, 'Editorial pendiente')}
+                                  </span>
+                                  <span className="lb-quality-chip muted">
+                                    {qualityText(quality.focus, 'Enfoque pendiente')}
+                                  </span>
+                                </>
+                              )}
+                            </div>
+                          )}
                           {quality.article_title && (
                             <p className="lb-quality-evidence">Titulo leido: {quality.article_title}</p>
                           )}

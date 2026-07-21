@@ -787,8 +787,18 @@ Devuelve JSON:
   "evidence": [{{"quote":"fragmento corto del texto", "why_it_matters":"por que importa"}}]
 }}
 """.strip()
-    text = _openrouter_chat_completion(model, system, prompt, max_tokens=1200)
-    return _parse_json(text)
+    # El modelo a veces devuelve JSON malformado (control chars, truncado, texto extra).
+    # Antes eso lanzaba y la nota caia a fetch_error "Sin link" AUNQUE el link cargo bien.
+    # Reintentamos una vez con recordatorio de JSON valido antes de rendirnos.
+    last_exc: Exception | None = None
+    for attempt in range(2):
+        sys_msg = system if attempt == 0 else system + " IMPORTANTE: devuelve UNICAMENTE un objeto JSON valido, sin texto antes ni despues, sin saltos de linea dentro de los strings."
+        text = _openrouter_chat_completion(model, sys_msg, prompt, max_tokens=1200)
+        try:
+            return _parse_json(text)
+        except (json.JSONDecodeError, ValueError) as exc:
+            last_exc = exc
+    raise RuntimeError(f"llm_json_parse: el modelo devolvio JSON invalido tras 2 intentos ({last_exc})")
 
 
 def _openrouter_chat_completion(model: str, system: str, prompt: str, max_tokens: int) -> str:
@@ -823,13 +833,25 @@ def _openrouter_chat_completion(model: str, system: str, prompt: str, max_tokens
 
 
 def _parse_json(text: str) -> dict[str, Any]:
+    raw = (text or "").strip()
+    # Quita cercas de codigo ```json ... ``` que algunos modelos agregan.
+    if raw.startswith("```"):
+        raw = re.sub(r"^```[a-zA-Z]*\s*", "", raw)
+        raw = re.sub(r"\s*```$", "", raw).strip()
     try:
-        return json.loads(text)
+        return json.loads(raw)
     except json.JSONDecodeError:
-        match = re.search(r"\{.*\}", text, re.S)
-        if not match:
-            raise
-        return json.loads(match.group(0))
+        pass
+    match = re.search(r"\{.*\}", raw, re.S)
+    if not match:
+        raise json.JSONDecodeError("no JSON object found", raw, 0)
+    candidate = match.group(0)
+    try:
+        return json.loads(candidate)
+    except json.JSONDecodeError:
+        # Ultimo intento: quita comas colgantes antes de } o ] y reintenta.
+        cleaned = re.sub(r",\s*([}\]])", r"\1", candidate)
+        return json.loads(cleaned)
 
 
 def _canonical(value: Any, allowed: dict[str, Any], fallback: str) -> str:
