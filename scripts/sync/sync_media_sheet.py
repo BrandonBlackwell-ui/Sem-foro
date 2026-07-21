@@ -59,10 +59,40 @@ def main() -> None:
     sb = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
     if publications:
         _upsert_chunks(sb, "account_publications", publications, "source_sheet_id,source_row_number")
+        _reconcile_stale_rows(sb, args.sheet_id, publications)
     summaries = _summary_payloads(publications, args.sheet_id, args.gid)
     if summaries:
         _upsert_chunks(sb, "account_operational_scores", summaries, "account_id,period_year,period_month")
     logger.info("Synced %d publication(s) and %d CO period summary row(s).", len(publications), len(summaries))
+
+
+def _reconcile_stale_rows(sb: Any, sheet_id: str, publications: list[dict[str, Any]]) -> None:
+    """Borra filas de account_publications que ya no existen en el Sheet.
+
+    La llave es la POSICIÓN de la fila (source_row_number): si el equipo borra filas
+    a la mitad del Sheet, todo se recorre y las últimas posiciones quedan huérfanas
+    con contenido que ya no existe — para siempre, porque el upsert nunca borra.
+    Tras cada sync eliminamos las posiciones que este run no escribió.
+    """
+    current = {int(p["source_row_number"]) for p in publications}
+    try:
+        res = (
+            sb.table("account_publications")
+            .select("id,source_row_number")
+            .eq("source_sheet_id", sheet_id)
+            .limit(10000)
+            .execute()
+        )
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("No pude leer filas existentes para reconciliar: %s", exc)
+        return
+    stale_ids = [row["id"] for row in (res.data or []) if int(row.get("source_row_number") or 0) not in current]
+    if not stale_ids:
+        return
+    for start in range(0, len(stale_ids), 200):
+        chunk = stale_ids[start : start + 200]
+        sb.table("account_publications").delete().in_("id", chunk).execute()
+    logger.info("Reconciliación: %d fila(s) huérfana(s) eliminadas (posiciones que ya no están en el Sheet).", len(stale_ids))
 
 
 def _parse_args() -> argparse.Namespace:
