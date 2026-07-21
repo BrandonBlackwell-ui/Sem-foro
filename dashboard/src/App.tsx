@@ -1361,14 +1361,29 @@ export default function App() {
       if (subjectMatch) {
         title = subjectMatch[1];
       }
-      
-      const key = emailSubject;
-      
+
+      // Título base: quita sufijos volátiles que la misma junta trae al reimportarse
+      // (fecha/hora "_ 2026_07_07 09_00 CST" o un epoch "1783705426959"), para que no
+      // aparezca como 2-3 tarjetas casi idénticas.
+      const baseTitle = (title
+        .replace(/[\s_]+\d{4}[_/-]\d{1,2}[_/-]\d{1,2}([\s_].*)?$/i, '')
+        .replace(/[\s_]+\d{6,}$/, '')
+        .replace(/[\s_·.-]+$/, '')
+        .trim()) || title.trim()
+
+      // Día de la reunión (email_date es el mejor indicador; luego created_at).
+      const meetingDate = task.raw_action?.email_date || task.created_at || new Date().toISOString()
+      const day = String(meetingDate).slice(0, 10)
+
+      // Clave = título base + día → mismo día + misma junta se colapsan; dos días
+      // distintos (aunque compartan título) siguen separados.
+      const key = `${baseTitle.toLowerCase()}|${day}`
+
       if (!map.has(key)) {
         map.set(key, {
           id: key,
-          title: title,
-          date: task.created_at || new Date().toISOString(),
+          title: baseTitle,
+          date: meetingDate,
           duration: 1800, // 30 minutes default duration
           summary: `Minuta importada de Gemini desde Gmail. Sincronizada automáticamente.`,
           action_items: [],
