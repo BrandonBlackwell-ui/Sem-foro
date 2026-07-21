@@ -314,6 +314,10 @@ _BANNED_CHECKLIST = [
     "sin evidencia", "no hay evidencia", "no es una exclusiva", "no gestionada",
     "no fue gestionada", "no se puede confirmar que blackwell", "no hay senales de exclusiv",
     "no es exclusiva gestionada", "no parece gestionada",
+    # Que el cliente sea el SUJETO (no el autor) es normal en una nota informativa,
+    # no un defecto: no lo marcamos como negativo. La autoria solo se señala en positivo.
+    "no es el autor", "no es autor", "no es quien escribe", "no escribio la nota",
+    "sino el sujeto", "sujeto de la cobertura", "sujeto de la nota",
 ]
 
 
@@ -385,6 +389,11 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
     else:
         status = "needs_review"
 
+    checklist = _sanitize_checklist(llm.get("checklist"))
+    # Autoria del cliente => señal POSITIVA de nota propia (no una X por "no es autor").
+    if effective_type == "columna_opinion" and not any("propia" in _normalize(c) for c in checklist):
+        checklist = ["Si: nota escrita/firmada por el propio cliente (cuenta como propia)"] + checklist
+
     return {
         "account_id": publication.get("account_id"),
         "account_name": publication.get("account_name"),
@@ -417,7 +426,7 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
         "status": status,
         "evidence": {
             "items": llm.get("evidence") if isinstance(llm.get("evidence"), list) else [],
-            "checklist": _sanitize_checklist(llm.get("checklist")),
+            "checklist": checklist,
             "reasoning": llm.get("reasoning") or "",
         },
         "raw_analysis": {
@@ -679,6 +688,7 @@ PASO 2 — Clasifica la nota con estas reglas PQ:
 PASO 3 — Genera el checklist de calificacion:
 Lista de 3 a 5 frases cortas que explican POR QUE le pusiste esa calificacion. Cada frase debe empezar con "Si:" o "No:" segun aplique.
 NOTA DE CONTEXTO: Nunca digas que "no hay evidencia de que Blackwell haya gestionado la nota" u oraciones similares en el checklist. El hecho de estar en esta evaluacion garantiza que Blackwell la gestiono.
+AUTORIA: NO marques como negativo que "el cliente no es el autor" o que "es el sujeto y no el autor de la nota": eso es NORMAL en una nota informativa, no un defecto. Solo menciona la autoria en POSITIVO cuando el cliente SI escribio/firmo la pieza (ej. "Si: la firma el propio cliente").
 Ejemplos de frases permitidas:
   "Si: el cliente aparece mencionado en el titulo/encabezado"
   "No: el cliente no aparece en el titular, solo en el cuerpo"
