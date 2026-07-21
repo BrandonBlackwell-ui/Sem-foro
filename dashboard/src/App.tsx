@@ -1860,7 +1860,11 @@ export default function App() {
         if (!hasVigencia && intelDates && !stale && (intel.tiene_contrato_firmado === true || intelMetaNum != null)) {
           data.contract = {
             ...(data.contract || {}),
-            vigencia: `${intel.vigencia_inicio ?? '¿?'} a ${intel.vigencia_fin ?? 'indefinida'}`,
+            // Formato "inicio/fin" cuando hay ambas fechas → dibuja la barra de vigencia
+            // (ContractTimeline parte por "/"). Si falta el fin, texto legible sin barra.
+            vigencia: (intel.vigencia_inicio && intel.vigencia_fin)
+              ? `${intel.vigencia_inicio}/${intel.vigencia_fin}`
+              : `${intel.vigencia_inicio ?? '¿?'} a ${intel.vigencia_fin ?? 'indefinida'}`,
             nota: intel.tiene_contrato_firmado === true
               ? 'Contrato detectado en Drive (carpeta 01)'
               : 'Acuerdo con vigencia + meta detectado en Drive (carpeta 01)',
