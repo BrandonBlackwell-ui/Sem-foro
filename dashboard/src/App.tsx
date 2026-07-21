@@ -2074,32 +2074,42 @@ export default function App() {
   const selectedAccountMeetings = useMemo(() => {
     if (!selectedAccount) return []
 
-    const candidates = [
-      selectedAccount.account_id,
-      selectedAccount.name,
-      ...selectedAccount.groups.map(group => group.name),
-    ]
+    // Señal FUERTE de atribución: el account_id de la tarea (lo pone el matcher del
+    // import). Antes se usaba el número crudo como SUBCADENA (taskText.includes("13")),
+    // que enganchaba cualquier reunión con "13" en una fecha/hora/folio → aparecían
+    // clientes ajenos. Ahora el número se compara EXACTO.
+    const idTrim = String(selectedAccount.account_id ?? '').trim()
+    const selNum = /^\d+$/.test(idTrim) ? String(Number(idTrim)) : null
+    const selSlug = selNum ? null : idTrim.toLowerCase()
+
+    // Fallback por nombre/etiqueta: solo cadenas ≥4 chars, comparadas como frase con
+    // límite de palabra (nada de subcadenas sueltas como "rr" o "cima" en "décima").
+    const nameNeedles = [selectedAccount.name, ...selectedAccount.groups.map(group => group.name)]
       .filter(Boolean)
-      .map(value => String(value).toLowerCase())
+      .map(value => String(value).toLowerCase().trim())
+      .filter(value => value.length >= 4)
+    const wordMatch = (haystack: string, needle: string) => {
+      const esc = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+      return new RegExp(`(^|\\W)${esc}(\\W|$)`).test(haystack)
+    }
 
     return meetings.filter(meeting => {
       const title = meeting.title.toLowerCase()
-
       return meeting.tasks.some(task => {
-        const taskText = [
-          task.account_id,
+        const taskIdTrim = String(task.account_id ?? '').trim()
+        // 1) account_id exacto (número o slug) — la vía correcta.
+        if (selNum && /^\d+$/.test(taskIdTrim) && String(Number(taskIdTrim)) === selNum) return true
+        if (selSlug && taskIdTrim.toLowerCase() === selSlug) return true
+        // 2) Etiqueta de cliente explícita que iguala el nombre de la cuenta.
+        const labels = [
           task.monday_client_label,
           task.client_label,
           task.raw_action?.monday_client_label,
           task.raw_action?.client_label,
-          task.raw_action?.email_subject,
-          task.action,
-        ]
-          .filter(Boolean)
-          .join(' ')
-          .toLowerCase()
-
-        return candidates.some(candidate => taskText.includes(candidate) || title.includes(candidate))
+        ].filter(Boolean).map(v => String(v).toLowerCase().trim())
+        if (labels.some(l => nameNeedles.some(n => l === n || wordMatch(l, n)))) return true
+        // 3) Fallback: el título de la reunión contiene el nombre completo como palabra.
+        return nameNeedles.some(n => wordMatch(title, n))
       })
     })
   }, [meetings, selectedAccount])
