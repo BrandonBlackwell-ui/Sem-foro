@@ -705,8 +705,45 @@ def _merge_existing_daily_row(existing: dict[str, Any], incremental: dict[str, A
         "raw_analysis": {
             "previous_raw_analysis": existing.get("raw_analysis"),
             "incremental_raw_analysis": incremental.get("raw_analysis"),
+            # El survey debe sobrevivir en el NIVEL SUPERIOR: el dashboard solo lee
+            # raw_analysis.survey, así que sin esto una encuesta contestada en la
+            # mañana desaparecía cuando la corrida de la tarde re-empaquetaba el row
+            # (el SC regresaba al tope 70 "sin survey").
+            "survey": _pick_survey(_dig_survey(incremental.get("raw_analysis")), _dig_survey(existing.get("raw_analysis"))),
         },
     }
+
+
+def _survey_has_scores(s: Any) -> bool:
+    if not isinstance(s, dict):
+        return False
+    for key in ("question_a", "question_b"):
+        q = s.get(key)
+        if isinstance(q, dict) and q.get("score") is not None:
+            return True
+    return False
+
+
+def _dig_survey(raw: Any) -> Any:
+    """Encuentra un survey con scores en raw_analysis, incluso anidado por merges previos."""
+    if not isinstance(raw, dict):
+        return None
+    if _survey_has_scores(raw.get("survey")):
+        return raw.get("survey")
+    for key in ("incremental_raw_analysis", "previous_raw_analysis"):
+        found = _dig_survey(raw.get(key))
+        if found is not None:
+            return found
+    return None
+
+
+def _pick_survey(new_survey: Any, old_survey: Any) -> Any:
+    """Prefiere el survey CON respuestas; si ambos tienen, gana el más reciente."""
+    if _survey_has_scores(new_survey):
+        return new_survey
+    if _survey_has_scores(old_survey):
+        return old_survey
+    return new_survey or old_survey
 
 
 def _supabase_client():

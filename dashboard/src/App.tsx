@@ -681,10 +681,12 @@ function shortDateOnly(value: string | null | undefined) {
 
 function badgeClass(value: string) {
   const normalized = value.toLowerCase()
-  if (['positive', 'satisfied', 'low', 'estable', 'blackwell'].includes(normalized)) return 'green'
-  if (['neutral', 'unknown', 'mixed', 'medium', 'pendiente', 'shared'].includes(normalized)) return 'yellow'
-  if (['negative', 'unsatisfied', 'high', 'atencion'].includes(normalized)) return 'red'
-  if (['client'].includes(normalized)) return 'gray'
+  if (['positive', 'positivo', 'satisfied', 'low', 'estable', 'blackwell'].includes(normalized)) return 'green'
+  if (['neutral', 'unknown', 'mixed', 'medium', 'pendiente', 'shared', 'alerta'].includes(normalized)) return 'yellow'
+  // 'riesgo' y 'crisis' son los estados más graves del análisis de metodología: antes
+  // caían al gris default y se veían igual que "neutral".
+  if (['negative', 'negativo', 'unsatisfied', 'high', 'atencion', 'riesgo', 'crisis'].includes(normalized)) return 'red'
+  if (['client', 'no_aplica'].includes(normalized)) return 'gray'
   return 'gray'
 }
 
@@ -908,6 +910,15 @@ function clampScore(value: number) {
   return Math.max(0, Math.min(100, value))
 }
 
+// Un survey solo cuenta si trae EVIDENCIA: score + respuesta textual real. Bloquea
+// surveys alucinados por el LLM (score sin respuesta) y los fabricados por fallback,
+// que quitarían el tope de 70 del SC sin que el cliente haya contestado nada.
+function surveyQuestionValid(q: any): boolean {
+  if (!q || q.score == null) return false
+  const answer = String(q.answer ?? '').trim()
+  return answer.length > 0 && !/regex fallback/i.test(answer)
+}
+
 function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
@@ -982,15 +993,18 @@ function buildWeightedScore(
   // (all-null questions) when no survey was asked in chat. Only treat it as a
   // real survey when it has at least one scored question — otherwise it would
   // mask the Meet survey and the SC would show "pendiente" despite Meet data.
+  // Busca el survey también en los niveles anidados que dejaban los merges viejos
+  // ({previous_raw_analysis, incremental_raw_analysis}) para no perder encuestas legacy.
   const waSurvey = rawAnalysisObj?.survey || rawAnalysisObj?.raw_analysis?.survey
-  const waSurveyHasScores = !!(waSurvey && (waSurvey.question_a?.score != null || waSurvey.question_b?.score != null))
+    || rawAnalysisObj?.incremental_raw_analysis?.survey || rawAnalysisObj?.previous_raw_analysis?.survey
+  const waSurveyHasScores = !!(waSurvey && (surveyQuestionValid(waSurvey.question_a) || surveyQuestionValid(waSurvey.question_b)))
   let survey = waSurveyHasScores ? waSurvey : null
   let surveySource = survey ? 'WhatsApp' : ''
 
   // Fallback to Meet transcript survey if WhatsApp survey has no scored questions
   if (!survey && checklist?.scores) {
     const meetEntries = Object.entries(checklist.scores as Record<string, any>)
-      .filter(([, v]) => v?.transcripciones?.survey?.question_a?.score != null || v?.transcripciones?.survey?.question_b?.score != null)
+      .filter(([, v]) => surveyQuestionValid(v?.transcripciones?.survey?.question_a) || surveyQuestionValid(v?.transcripciones?.survey?.question_b))
       .sort(([a], [b]) => b.localeCompare(a))
     if (meetEntries.length) {
       survey = meetEntries[0][1].transcripciones.survey
@@ -998,8 +1012,8 @@ function buildWeightedScore(
     }
   }
 
-  const tipoAScore = (survey?.question_a?.score != null) ? clampScore(Number(survey.question_a.score)) : null
-  const tipoBScore = (survey?.question_b?.score != null) ? clampScore(Number(survey.question_b.score)) : null
+  const tipoAScore = surveyQuestionValid(survey?.question_a) ? clampScore(Number(survey.question_a.score)) : null
+  const tipoBScore = surveyQuestionValid(survey?.question_b) ? clampScore(Number(survey.question_b.score)) : null
   const hasSurvey = tipoAScore != null || tipoBScore != null
 
   // SC Calculation
@@ -1073,8 +1087,15 @@ function buildWeightedScore(
   const scDetails: string[] = []
   if (scScore != null) {
     if (hasSurvey) {
-      if (normalizedWa != null) scDetails.push(`WhatsApp (WA) (40%): ${roundScore(normalizedWa)}/100 × 40% = ${roundScore(normalizedWa * 0.40)} pts`)
-      scDetails.push(`Sesión Meet/WhatsApp (30%): ${roundScore(actualSesion)}/100 × 30% = ${roundScore(actualSesion * 0.30)} pts`)
+      // Los defaults (WA 50, Sesión 40) se imprimen SIEMPRE y marcados como base:
+      // antes la línea de WA se omitía cuando faltaba dato pero sus 20 pts sí sumaban,
+      // y el 40 de sesión parecía una sesión medida que salió mal.
+      scDetails.push(normalizedWa != null
+        ? `WhatsApp (WA) (40%): ${roundScore(normalizedWa)}/100 × 40% = ${roundScore(normalizedWa * 0.40)} pts`
+        : `WhatsApp (WA) (40%): 50/100 (base, sin dato) × 40% = 20 pts`)
+      scDetails.push(sesionScore != null
+        ? `Sesión Meet/WhatsApp (30%): ${roundScore(actualSesion)}/100 × 30% = ${roundScore(actualSesion * 0.30)} pts`
+        : `Sesión Meet/WhatsApp (30%): 40/100 (base, sin sesión registrada) × 30% = 12 pts`)
       if (tipoAScore != null) scDetails.push(`Pregunta Tipo A (General) (20%): ${roundScore(tipoAScore)}/100 × 20% = ${roundScore(tipoAScore * 0.20)} pts`)
       if (tipoBScore != null) scDetails.push(`Pregunta Tipo B (Objetivo) (10%): ${roundScore(tipoBScore)}/100 × 10% = ${roundScore(tipoBScore * 0.10)} pts`)
     } else {
@@ -1629,7 +1650,7 @@ export default function App() {
       const num = String(Number(r.account_id))
       if (num === 'NaN' || meetByAcct.has(num)) continue
       const s = r.survey
-      if (s && (s.question_a?.score != null || s.question_b?.score != null)) {
+      if (s && (surveyQuestionValid(s.question_a) || surveyQuestionValid(s.question_b))) {
         const dStr = r.created_at ? r.created_at.slice(0, 10) : ''
         meetByAcct.set(num, { survey: s, date: dStr })
       }
@@ -1640,7 +1661,7 @@ export default function App() {
       const num = String(Number(a.account_id))
       if (num === 'NaN' || waByAcct.has(num)) continue
       const s = a.raw_analysis?.survey
-      if (s && (s.question_a?.score != null || s.question_b?.score != null)) {
+      if (s && (surveyQuestionValid(s.question_a) || surveyQuestionValid(s.question_b))) {
         waByAcct.set(num, { survey: s, date: a.analysis_date || '' })
       }
     }
@@ -1651,8 +1672,8 @@ export default function App() {
       const meet = meetByAcct.get(key)
       const entry = wa || meet || null
       const survey = entry?.survey || null
-      const tipoA = survey?.question_a?.score != null
-      const tipoB = survey?.question_b?.score != null
+      const tipoA = surveyQuestionValid(survey?.question_a)
+      const tipoB = surveyQuestionValid(survey?.question_b)
       const answered = (tipoA ? 1 : 0) + (tipoB ? 1 : 0)
       const date = entry?.date || ''
       const source = wa ? 'WhatsApp' : (meet ? 'Meet' : '')
@@ -1801,7 +1822,9 @@ export default function App() {
   useEffect(() => {
     (async () => {
       const rows = await supabaseGetOptional<any[]>(
-        '/rest/v1/meet_transcription_analyses?select=account_id,period,sesion_score,survey,attended,attended_on_time,participation_level,positive_comments,shared_strategic_info,negative_signals,negative_detail,tone,reasoning,checklist,action_items,created_at&order=created_at.desc',
+        // model!=regex_fallback: filas fabricadas por el extractor de emergencia (score
+        // 80 + survey 80/80 inventados) no deben entrar al SC ni a la vista de surveys.
+        '/rest/v1/meet_transcription_analyses?select=account_id,period,sesion_score,survey,attended,attended_on_time,participation_level,positive_comments,shared_strategic_info,negative_signals,negative_detail,tone,reasoning,checklist,action_items,model,created_at&model=neq.regex_fallback&order=created_at.desc',
         [],
       )
       setMeetAnalyses(rows)
@@ -1845,6 +1868,9 @@ export default function App() {
             const win = metaText.slice(Math.max(0, m.index! - 25), m.index! + m[0].length + 35)
             if (/cuatrimestr/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 4))
             else if (/trimestr/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 3))
+            else if (/semestr/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 6))
+            // "24 publicaciones anuales" antes producía meta 24/MES (CO imposible).
+            else if (/anual|al a[nñ]o|por a[nñ]o/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 12))
             else if (/semana/i.test(win)) metaMensual = metaMensual * 4
             intelMetaNum = metaMensual
           }
@@ -1886,7 +1912,7 @@ export default function App() {
       for (const row of rowsForAcct) {
         const score = row.sesion_score
         const prev = data.scores[row.period] || {}
-        const rowHasSurvey = row.survey && (row.survey.question_a?.score != null || row.survey.question_b?.score != null)
+        const rowHasSurvey = row.survey && (surveyQuestionValid(row.survey.question_a) || surveyQuestionValid(row.survey.question_b))
         const prevSurvey = prev.transcripciones?.survey
         data.scores[row.period] = {
           ...prev,
@@ -3383,11 +3409,11 @@ export default function App() {
                           {Array.isArray(quality.evidence?.checklist) && quality.evidence.checklist.length > 0 && (
                             <ul className="lb-quality-checklist">
                               {quality.evidence.checklist.map((item, i) => {
-                                const isPositive = item.toLowerCase().startsWith('si:')
+                                const isPositive = /^s[ií]:/i.test(item)
                                 return (
                                   <li key={i} className={`lb-quality-checklist-item ${isPositive ? 'positive' : 'negative'}`}>
                                     <span className="lb-quality-checklist-icon">{isPositive ? '✓' : '✗'}</span>
-                                    <span>{item.replace(/^(si|no):\s*/i, '')}</span>
+                                    <span>{item.replace(/^(s[ií]|no):\s*/i, '')}</span>
                                   </li>
                                 )
                               })}
@@ -3475,11 +3501,11 @@ export default function App() {
                   {Array.isArray(sc.checklist) && sc.checklist.length > 0 && (
                     <ul style={{ margin: '8px 0', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 5 }}>
                       {sc.checklist.map((item: string, i: number) => {
-                        const isPos = item.toLowerCase().startsWith('si:')
+                        const isPos = /^s[ií]:/i.test(item)
                         return (
                           <li key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 13, color: 'var(--ink-900)' }}>
                             <span style={{ flexShrink: 0, fontWeight: 700, color: isPos ? '#217a4c' : '#a32d2d' }}>{isPos ? '✓' : '✗'}</span>
-                            <span>{item.replace(/^(si|no):\s*/i, '')}</span>
+                            <span>{item.replace(/^(s[ií]|no):\s*/i, '')}</span>
                           </li>
                         )
                       })}

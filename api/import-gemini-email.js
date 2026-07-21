@@ -614,26 +614,11 @@ export default async function handler(req, res) {
     }));
   }
 
-  // 8. Persist the analysis (survey + session). If the LLM failed, we save
-  //    a fallback/default analysis row so the meeting is still registered.
-  const analysisData = llm || {
-    attended: true,
-    attended_on_time: true,
-    participation_level: 'media',
-    positive_comments: true,
-    shared_strategic_info: false,
-    negative_signals: false,
-    negative_detail: null,
-    tone: 'neutro',
-    sesion_score: 80,
-    checklist: ['Si: Registro exitoso de minuta (regex fallback).'],
-    reasoning: 'Análisis generado por extractor de emergencia (regex fallback).',
-    action_items: tasks.map(t => ({ action: t.action, owner: t.owner })),
-    survey: {
-      question_a: { question: 'Satisfacción', answer: 'N/A (regex fallback)', score: 80 },
-      question_b: { question: 'Recomendación', answer: 'N/A (regex fallback)', score: 80 }
-    }
-  };
+  // 8. Persist the analysis (survey + session). Si el LLM falló NO fabricamos un
+  //    análisis (antes se inventaba sesión 80 + survey 80/80 que entraba al SC como
+  //    real y el dedup_key lo volvía permanente). Sin fila de análisis, el correo es
+  //    reintentable en el próximo envío; las tareas extraídas por regex sí se guardan.
+  const analysisData = llm || null;
 
   // Si el LLM determina que fue una junta PURAMENTE INTERNA de Blackwell (sin cliente),
   // no la atribuimos a un cliente aunque el título traiga su nombre (evita que juntas
@@ -647,52 +632,56 @@ export default async function handler(req, res) {
     matchMethod = 'internal_no_client';
   }
 
-  const analysisRow = {
-    account_id: accountId,
-    project_uid: projectUid,
-    account_name: matchedAccountName,
-    period,
-    meeting_title: meetingTitle,
-    meeting_date: payload.date || null,
-    dedup_key: dedupKey,
-    sesion_score: Number.isFinite(Number(analysisData.sesion_score)) ? Math.round(Number(analysisData.sesion_score)) : null,
-    attended: analysisData.attended ?? null,
-    attended_on_time: analysisData.attended_on_time ?? null,
-    participation_level: analysisData.participation_level || null,
-    positive_comments: analysisData.positive_comments ?? null,
-    shared_strategic_info: analysisData.shared_strategic_info ?? null,
-    negative_signals: analysisData.negative_signals ?? null,
-    negative_detail: analysisData.negative_detail || null,
-    tone: analysisData.tone || null,
-    survey: analysisData.survey ?? null,
-    action_items: Array.isArray(analysisData.action_items) ? analysisData.action_items : [],
-    checklist: Array.isArray(analysisData.checklist) ? analysisData.checklist : [],
-    reasoning: analysisData.reasoning || null,
-    source: 'gemini_meet_email',
-    email_message_id: payload.messageId || null,
-    email_thread_id: payload.threadId || null,
-    email_from: payload.from || null,
-    model: model || 'regex_fallback',
-    raw_analysis: analysisData,
-    created_at: now,
-    updated_at: now,
-  };
+  if (analysisData) {
+    const analysisRow = {
+      account_id: accountId,
+      project_uid: projectUid,
+      account_name: matchedAccountName,
+      period,
+      meeting_title: meetingTitle,
+      meeting_date: payload.date || null,
+      dedup_key: dedupKey,
+      sesion_score: Number.isFinite(Number(analysisData.sesion_score)) ? Math.round(Number(analysisData.sesion_score)) : null,
+      attended: analysisData.attended ?? null,
+      attended_on_time: analysisData.attended_on_time ?? null,
+      participation_level: analysisData.participation_level || null,
+      positive_comments: analysisData.positive_comments ?? null,
+      shared_strategic_info: analysisData.shared_strategic_info ?? null,
+      negative_signals: analysisData.negative_signals ?? null,
+      negative_detail: analysisData.negative_detail || null,
+      tone: analysisData.tone || null,
+      survey: analysisData.survey ?? null,
+      action_items: Array.isArray(analysisData.action_items) ? analysisData.action_items : [],
+      checklist: Array.isArray(analysisData.checklist) ? analysisData.checklist : [],
+      reasoning: analysisData.reasoning || null,
+      source: 'gemini_meet_email',
+      email_message_id: payload.messageId || null,
+      email_thread_id: payload.threadId || null,
+      email_from: payload.from || null,
+      model,
+      raw_analysis: analysisData,
+      created_at: now,
+      updated_at: now,
+    };
 
-  try {
-    const resp = await fetch(`${SB_URL}/rest/v1/meet_transcription_analyses?on_conflict=dedup_key`, {
-      method: 'POST',
-      headers: {
-        apikey: SB_SERVICE_KEY,
-        Authorization: `Bearer ${SB_SERVICE_KEY}`,
-        'Content-Type': 'application/json',
-        'Prefer': 'resolution=ignore-duplicates,return=minimal',
-      },
-      body: JSON.stringify(analysisRow),
-    });
-    if (resp.ok) analysisRecorded = true;
-    else console.error(`[import-gemini-email] Analysis insert failed (${resp.status}): ${await resp.text()}`);
-  } catch (err) {
-    console.error('[import-gemini-email] Error inserting analysis:', err);
+    try {
+      const resp = await fetch(`${SB_URL}/rest/v1/meet_transcription_analyses?on_conflict=dedup_key`, {
+        method: 'POST',
+        headers: {
+          apikey: SB_SERVICE_KEY,
+          Authorization: `Bearer ${SB_SERVICE_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'resolution=ignore-duplicates,return=minimal',
+        },
+        body: JSON.stringify(analysisRow),
+      });
+      if (resp.ok) analysisRecorded = true;
+      else console.error(`[import-gemini-email] Analysis insert failed (${resp.status}): ${await resp.text()}`);
+    } catch (err) {
+      console.error('[import-gemini-email] Error inserting analysis:', err);
+    }
+  } else {
+    console.warn('[import-gemini-email] LLM falló: no se registra análisis (reintentable); solo tareas regex.');
   }
 
   // 9. Mirror action items into wa_tasks, deduped against today's rows.
@@ -704,8 +693,12 @@ export default async function handler(req, res) {
   const skipTaskSave = accountId === '00_INTERNAL';
   if (tasks.length > 0 && !skipTaskSave) {
     try {
+      // Dedup con scope por CUENTA y ventana de 7 días: antes era solo "hoy" y sin
+      // cuenta, así que un retry en otro día duplicaba, y una tarea idéntica de OTRA
+      // cuenta se descartaba indebidamente.
+      const since = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
       const checkResponse = await fetch(
-        `${SB_URL}/rest/v1/wa_tasks?select=action,owner&analysis_date=eq.${encodeURIComponent(analysis_date)}`,
+        `${SB_URL}/rest/v1/wa_tasks?select=action,owner&account_id=eq.${encodeURIComponent(accountId)}&analysis_date=gte.${encodeURIComponent(since)}&limit=2000`,
         { headers: { apikey: SB_SERVICE_KEY, Authorization: `Bearer ${SB_SERVICE_KEY}` } }
       );
       if (checkResponse.ok) {
