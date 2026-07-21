@@ -357,6 +357,14 @@ _POSITIVE_ABSENCE_RX = re.compile(
     r"insatisfacci|presion\s+negativa|dano\s+reputacional)"
 )
 
+# "El cliente no es el autor / es el sujeto de la cobertura" NO es un defecto en una nota
+# informativa. Los substrings exactos de _BANNED_CHECKLIST no cubrian todas las redacciones
+# ("no figura como autor", "sujeto central de la cobertura"); esta regex las descarta todas.
+_AUTHOR_NEGATIVE_RX = re.compile(
+    r"\bno\b[^.]*\bautor|sujeto\s+(central\s+|principal\s+)?de\s+la\s+(cobertura|nota|informaci|pieza|publicaci)"
+    r"|\bsino\b[^.]*\bsujeto|no\s+(escribi|redact|firm)"
+)
+
 
 def _sanitize_checklist(items: Any) -> list[str]:
     out: list[str] = []
@@ -365,6 +373,8 @@ def _sanitize_checklist(items: Any) -> list[str]:
             continue
         normalized = _normalize(item)
         if any(banned in normalized for banned in _BANNED_CHECKLIST):
+            continue
+        if _AUTHOR_NEGATIVE_RX.search(normalized):
             continue
         # Corrige la polaridad: "No: <ausencia de algo malo>" -> "Si: ..."
         if normalized.startswith("no ") and _POSITIVE_ABSENCE_RX.search(normalized):

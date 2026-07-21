@@ -955,6 +955,17 @@ function checklistItemPositive(item: string): boolean {
   return POSITIVE_ABSENCE_RE.test(norm)
 }
 
+// Que el cliente sea el SUJETO y no el AUTOR es NORMAL en una nota informativa, no un
+// defecto: esas líneas no deben aparecer (y menos como ✗ rojo). El analyzer ya las
+// descarta al generar, pero las notas viejas las tienen guardadas; el front las oculta.
+const AUTHOR_NEGATIVE_RE =
+  /\bno\b[^.]*\bautor|sujeto\s+(central\s+|principal\s+)?de\s+la\s+(cobertura|nota|informaci|pieza|publicaci)|\bsino\b[^.]*\bsujeto|no\s+(escribi|redact|firm)/
+function checklistItemHidden(item: string): boolean {
+  const content = String(item ?? '').replace(/^(s[ií]|no):\s*/i, '')
+  const norm = content.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+  return AUTHOR_NEGATIVE_RE.test(norm)
+}
+
 function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
@@ -3489,19 +3500,24 @@ export default function App() {
                               {evidence ? `Evidencia: ${evidence}` : ''}
                             </p>
                           )}
-                          {Array.isArray(quality.evidence?.checklist) && quality.evidence.checklist.length > 0 && (
-                            <ul className="lb-quality-checklist">
-                              {quality.evidence.checklist.map((item, i) => {
-                                const isPositive = checklistItemPositive(item)
-                                return (
-                                  <li key={i} className={`lb-quality-checklist-item ${isPositive ? 'positive' : 'negative'}`}>
-                                    <span className="lb-quality-checklist-icon">{isPositive ? '✓' : '✗'}</span>
-                                    <span>{item.replace(/^(s[ií]|no):\s*/i, '')}</span>
-                                  </li>
-                                )
-                              })}
-                            </ul>
-                          )}
+                          {(() => {
+                            const visibleChecklist = (Array.isArray(quality.evidence?.checklist) ? quality.evidence.checklist : [])
+                              .filter(item => !checklistItemHidden(item))
+                            if (!visibleChecklist.length) return null
+                            return (
+                              <ul className="lb-quality-checklist">
+                                {visibleChecklist.map((item, i) => {
+                                  const isPositive = checklistItemPositive(item)
+                                  return (
+                                    <li key={i} className={`lb-quality-checklist-item ${isPositive ? 'positive' : 'negative'}`}>
+                                      <span className="lb-quality-checklist-icon">{isPositive ? '✓' : '✗'}</span>
+                                      <span>{item.replace(/^(s[ií]|no):\s*/i, '')}</span>
+                                    </li>
+                                  )
+                                })}
+                              </ul>
+                            )
+                          })()}
                         </>
                       ) : (
                         <span>{canOpenPublication ? 'Sin analisis PQ todavia para este link.' : 'No hay link en el Sheet para esta fila.'}</span>
