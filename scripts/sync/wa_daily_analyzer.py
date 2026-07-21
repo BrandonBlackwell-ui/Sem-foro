@@ -314,12 +314,29 @@ CLIENT_IDENTITY_HINTS: dict[str, str] = {
 }
 
 
+# Regla general de identidad para TODAS las cuentas (no solo las que tienen hint
+# especifico): evita que el LLM etiquete a alguien de Blackwell como "el cliente"
+# o invente un nombre propio para el cliente (bug: "El cliente (Sol Guerrero)").
+_IDENTITY_BASE_RULE = (
+    "Regla de identidad: NO pongas el nombre propio de una persona entre parentesis "
+    "despues de 'el cliente' ni afirmes que una persona concreta ES el cliente salvo "
+    "que el transcript lo marque como (Cliente). Si dudas quien es el cliente, escribe "
+    "solo 'el cliente' sin nombre. Las personas marcadas (Blackwell) o del equipo/agencia "
+    "(BWS) NO son el cliente: no atribuyas sus mensajes ni su tono a la satisfaccion del "
+    "cliente. Nunca uses etiquetas vagas como 'o quien opera la cuenta'."
+)
+
+
 def _client_identity_hint(account_id: str) -> str:
     key = str(account_id or "").strip()
     if key.isdigit():
         key = str(int(key))
     hint = CLIENT_IDENTITY_HINTS.get(key)
-    return f"\nIdentidad del cliente:\n- {hint}\n" if hint else ""
+    lines = [_IDENTITY_BASE_RULE]
+    if hint:
+        lines.append(hint)
+    body = "\n- ".join(lines)
+    return f"\nIdentidad del cliente:\n- {body}\n"
 
 
 def _analyze_group_day(model: str, target_date: date, batch: GroupBatch, previous_score: float) -> dict:
@@ -372,7 +389,7 @@ Devuelve este JSON:
   "sentiment": "positive|neutral|negative|mixed",
   "satisfaction": "satisfied|neutral|unsatisfied|unknown",
   "risk_level": "low|medium|high",
-  "summary": "resumen breve del dia en este grupo",
+  "summary": "resumen COHERENTE de TODO el dia en este grupo: integra el resumen previo con lo nuevo en UNA sola narrativa, sin contradicciones. Si algo cambio durante el dia, dilo con marco temporal ('por la manana... mas tarde...'), no como hechos sueltos que se contradicen. No es un compilado de parrafos por corrida.",
   "positive_signals": ["..."],
   "negative_signals": ["..."],
   "action_items": [{{"action":"...", "owner":"...", "owner_type":"client|blackwell|shared|unknown", "urgency":"low|medium|high", "due_date":"YYYY-MM-DD|null", "work_type":"Reunión / Seguimiento|Campaña|Nota a cliente|Crisis|Media training|Análisis|Reporte|Otro"}}],
@@ -950,8 +967,15 @@ def _normalize_choice(value: Any, allowed: set[str], default: str, aliases: dict
 
 
 def _merge_summary(previous: str | None, current: str) -> str:
-    parts = [p for p in [previous, current] if p]
-    return "\n\n".join(parts)[-6000:]
+    # El prompt pide que `current` YA sea un resumen coherente de todo el dia
+    # (integrando el resumen previo que recibe como contexto). Antes se CONCATENABAN
+    # las corridas con "\n\n" y el resultado se contradecia ("no ha respondido" +
+    # "agradecio") y parecia un compilado sin acomodar. Nos quedamos con el ultimo
+    # resumen coherente; si por algo viene vacio, conservamos el previo.
+    current = (current or "").strip()
+    if current:
+        return current[:6000]
+    return (previous or "").strip()[:6000]
 
 
 def _resolve_target_date(raw: str | None) -> date:

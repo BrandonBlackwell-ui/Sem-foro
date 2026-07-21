@@ -682,6 +682,8 @@ _CODE_SHELL_MARKERS = (
     "function(", "function ", "=>", "addeventlistener(", "<script", "var _", "var now",
     "clientsettings", "pagetimings", "typeof window", "document.getelementbyid",
     "webpackjsonp", "localstorage", "new date(", "setlswithexpiry", "getitem(", "setitem(",
+    # CSS embebido (MSN/agregadores que filtran variables de estilo en vez del cuerpo)
+    ":root{", "sans-serif", "@media", "@font-face", "px;--", "rem;", "!important",
 )
 
 

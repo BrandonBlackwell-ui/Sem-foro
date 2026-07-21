@@ -968,6 +968,34 @@ function checklistItemHidden(item: string): boolean {
   return AUTHOR_NEGATIVE_RE.test(norm)
 }
 
+// El análisis a veces pega un nombre propio a "cliente" ("El cliente (Sol Guerrero)")
+// que en realidad es del equipo BWS o inventado. Quitamos ese paréntesis con nombre
+// propio (Mayúscula inicial); conservamos roles en minúscula como "(su esposa)".
+function cleanSummaryText(text?: string | null): string {
+  if (!text) return ''
+  return String(text)
+    .replace(/\b([Cc]lient[ae])\s*\(\s*[A-ZÁÉÍÓÚÑ][^)]*\)/g, '$1')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim()
+}
+
+// "Resumen acumulado": antes unía los últimos 3 días en UN párrafo corrido
+// (se leía contradictorio y "de otros días"). Ahora cada día va fechado y separado.
+function RecentSummaries({ history, empty }: { history: any[]; empty: string }) {
+  const recent = [...(history ?? [])].filter(h => h?.summary).slice(-3).reverse()
+  if (!recent.length) return <p className="lb-summary-text">{empty}</p>
+  return (
+    <div className="lb-summary-text">
+      {recent.map((h, i) => (
+        <div key={h.id ?? i} style={{ marginBottom: i < recent.length - 1 ? 12 : 0 }}>
+          <span style={{ fontWeight: 700, color: '#3d434c', marginRight: 6 }}>{fmtShortDate(h.analysis_date)}:</span>
+          <span>{cleanSummaryText(h.summary)}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
@@ -2895,7 +2923,7 @@ export default function App() {
                             }}>Score global</span>
                           )}
                         </div>
-                        <div className="lb-account-summary">{account.latestAnalysis?.summary || (account.groups.length === 0 ? 'Cuenta sin grupo de WhatsApp conectado; score global desde checklist, Sheet y Meet.' : 'Sin análisis diario guardado todavía.')}</div>
+                        <div className="lb-account-summary">{cleanSummaryText(account.latestAnalysis?.summary) || (account.groups.length === 0 ? 'Cuenta sin grupo de WhatsApp conectado; score global desde checklist, Sheet y Meet.' : 'Sin análisis diario guardado todavía.')}</div>
                       </div>
                       <div className="lb-account-side">
                         <span className="lb-stamp" style={{color: stampColor, borderColor: stampColor, '--sr': gi % 2 === 0 ? '-4deg' : '3deg'} as React.CSSProperties}>{status}</span>
@@ -3074,11 +3102,9 @@ export default function App() {
                   </div>
 
                   <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
-                  <p className="lb-summary-text" style={{marginBottom:20}}>
-                    {selectedHistory.length
-                      ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
-                      : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
-                  </p>
+                  <div style={{marginBottom:20}}>
+                    <RecentSummaries history={selectedHistory} empty="Este grupo existe en Supabase, pero todavía no tiene resumen guardado." />
+                  </div>
                   <DriveIntelCard intel={
                     /^\d+$/.test(selectedAccount.account_id.trim())
                       ? driveIntel.find(d => String(Number(d.account_number)) === String(Number(selectedAccount.account_id.trim()))) ?? null
@@ -3213,16 +3239,12 @@ export default function App() {
           <div className="lb-whatsapp-grid">
             <div className="lb-summary-card">
               <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
-              <p className="lb-summary-text">
-                {selectedHistory.length
-                  ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
-                  : 'Este grupo existe en Supabase, pero todavia no tiene resumen acumulado.'}
-              </p>
+              <RecentSummaries history={selectedHistory} empty="Este grupo existe en Supabase, pero todavia no tiene resumen acumulado." />
             </div>
             <div className="lb-summary-card">
               <div className="lb-section-title" style={{marginBottom:10}}>Resumen diario</div>
               <p className="lb-summary-text">
-                {activeDayAnalysis?.summary || 'No hay resumen del dia seleccionado.'}
+                {cleanSummaryText(activeDayAnalysis?.summary) || 'No hay resumen del dia seleccionado.'}
               </p>
               {activeDayAnalysis && (
                 <div style={{marginTop:14, display:'flex', gap:8, flexWrap:'wrap'}}>
@@ -3317,7 +3339,7 @@ export default function App() {
                       </div>
                       <span style={{fontFamily:"'Caveat',cursive", fontWeight:700, fontSize:19, color: item.delta >= 0 ? '#3f7050' : '#a8453b'}}>{item.delta > 0 ? '+' : ''}{item.delta}</span>
                     </div>
-                    <p style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#5f636a', margin:'3px 0 0'}}>{item.summary || 'Sin resumen guardado.'}</p>
+                    <p style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#5f636a', margin:'3px 0 0'}}>{cleanSummaryText(item.summary) || 'Sin resumen guardado.'}</p>
                   </div>
                 </button>
               ))
