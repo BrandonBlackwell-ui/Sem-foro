@@ -573,6 +573,32 @@
       }
     }
   },
+  "default_media_tiers": {
+    "_nota": "Fallback para cuentas SIN entrada en accounts (p.ej. las nuevas con id numerico 20/27/28/33/34/38/39/45): antes caian a needs_tier y su PQ quedaba deprimido.",
+    "Reforma": "tier_1",
+    "El universal": "tier_1",
+    "Milenio Notas": "tier_1",
+    "Milenio": "tier_1",
+    "Excelsior": "tier_1",
+    "Heraldo": "tier_1",
+    "Infobae": "tier_1",
+    "TV Azteca": "tier_1",
+    "El Financiero": "tier_1",
+    "El Economista": "tier_1",
+    "Proceso": "tier_1",
+    "Dinero en imagen": "tier_1",
+    "Quadratin": "tier_2",
+    "Crónica": "tier_2",
+    "Publimetro": "tier_2",
+    "Sdp": "tier_2",
+    "Mundo Ejecutivo": "tier_2",
+    "Jonathan Montara": "tier_2",
+    "Reporte Indigo": "tier_2",
+    "La Razón": "tier_2",
+    "Consultoria": "tier_3",
+    "Sandra Cortes": "tier_3",
+    "Chris": "tier_3"
+  },
   "tier_points": {
     "tier_1": 50,
     "tier_2": 30,

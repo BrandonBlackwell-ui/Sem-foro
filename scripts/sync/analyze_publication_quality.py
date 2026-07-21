@@ -82,7 +82,7 @@ def main() -> None:
         if len(analyzed) >= args.limit:
             break
         url = str(publication.get("url") or "").strip()
-        if not url or url in existing_urls:
+        if not url or (url, str(publication.get("account_id"))) in existing_urls:
             continue
         try:
             row = _analyze_publication(publication, config, args.model)
@@ -105,7 +105,7 @@ def main() -> None:
         return
 
     if analyzed:
-        _upsert_chunks(sb, "publication_quality_analyses", analyzed, "url")
+        _upsert_chunks(sb, "publication_quality_analyses", analyzed, "url,account_id")
     summaries = _summaries_from_rows(sb, analyzed)
     if summaries:
         _upsert_chunks(sb, "publication_quality_scores", summaries, "account_id,period_year,period_month")
@@ -141,6 +141,8 @@ SLUG_TO_NUMBER = {
     "bernardo": "26", "cuernavaca": "27", "queretaro": "28", "coastoil": "29",
     "erikrubi": "30", "sasil": "31", "cojab": "32", "neza": "33", "supplypay": "34",
     "pepe": "35", "terry": "36", "leadsales": "37", "karpowership": "38",
+    "ismerely": "39", "austria": "40", "ifaceltics": "41", "mtvlinkedin": "42",
+    "iranguerrero": "43", "lch": "44", "inovamedik": "45", "arrendo": "46",
 }
 
 
@@ -208,14 +210,15 @@ def _filter_publications(publications: list[dict[str, Any]], args: argparse.Name
     return sorted(result, key=lambda row: (str(row.get("publication_date") or ""), int(row.get("source_row_number") or 0)), reverse=True)
 
 
-def _existing_urls(sb: Any) -> set[str]:
-    # Solo se consideran "ya analizadas" las que se pudieron leer. Las que quedaron en
-    # fetch_error (link no cargo, p.ej. fallo transitorio de red) se dejan FUERA para que
-    # el proximo run las reintente y se auto-recuperen, sin necesidad de --force.
+def _existing_urls(sb: Any) -> set[tuple[str, str]]:
+    # Llave (url, account_id): la misma URL registrada para DOS clientes distintos son
+    # dos analisis independientes (antes el segundo cliente jamas se analizaba).
+    # Solo se consideran "ya analizadas" las que se pudieron leer: las fetch_error se
+    # dejan fuera para que el proximo run las reintente sin --force.
     try:
-        res = sb.table("publication_quality_analyses").select("url,status").limit(10000).execute()
+        res = sb.table("publication_quality_analyses").select("url,account_id,status").limit(10000).execute()
         return {
-            str(row.get("url"))
+            (str(row.get("url")), str(row.get("account_id")))
             for row in (res.data or [])
             if row.get("url") and row.get("status") != "fetch_error"
         }
@@ -373,6 +376,14 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
         fetch_error = str(exc)
 
     mention = _detect_mentions(article, aliases)
+
+    # Paywall / muro de cookies / soft-404: el fetch responde 200 pero el texto NO es
+    # el articulo. Sin esto, la nota caia a "mencion" (40) con status scored — un
+    # puntaje fabricado. Solo aplica si ningun alias aparecio (si el cliente si sale,
+    # el contenido cargo bien aunque haya banners).
+    if fetch_error is None and not mention["title_match"] and not mention["body_match"] and _looks_paywalled(article):
+        fetch_error = "paywall_or_softwall: el contenido no es el articulo (suscripcion/cookies)"
+
     llm = _classify_with_llm(publication, article, aliases, mention, tier, model, declared_type) if fetch_error is None else {}
 
     editorial_quality = _canonical(llm.get("editorial_quality"), config["editorial_points"], "sin_mencion")
@@ -598,9 +609,14 @@ def _aliases_for_publication(publication: dict[str, Any], config: dict[str, Any]
 def _tier_for_publication(publication: dict[str, Any], config: dict[str, Any]) -> tuple[str | None, float | None]:
     account_id = str(publication.get("account_id") or "")
     media_name = _normalize(str(publication.get("media_name") or ""))
-    media_tiers = ((config.get("accounts") or {}).get(account_id) or {}).get("media_tiers") or {}
+    # Fallback a default_media_tiers para cuentas sin entrada propia en accounts
+    # (las nuevas con id numerico): antes quedaban en needs_tier permanente.
+    media_tiers = ((config.get("accounts") or {}).get(account_id) or {}).get("media_tiers") \
+        or (config.get("default_media_tiers") or {})
     tier = None
     for name, value in media_tiers.items():
+        if name.startswith("_"):
+            continue
         if _normalize(name) == media_name:
             tier = str(value)
             break
@@ -608,6 +624,25 @@ def _tier_for_publication(publication: dict[str, Any], config: dict[str, Any]) -
         return None, None
     key = tier.lower().replace(" ", "_").replace("-", "_")
     return key, float((config.get("tier_points") or {}).get(key, 0))
+
+
+_PAYWALL_MARKERS = [
+    "suscribete para", "hazte suscriptor", "contenido exclusivo para suscriptores",
+    "inicia sesion para continuar", "para seguir leyendo", "acceso ilimitado a",
+    "este contenido es exclusivo", "ya soy suscriptor", "planes de suscripcion",
+    "aceptar todas las cookies", "utilizamos cookies para", "politica de cookies",
+    "pagina no encontrada", "error 404", "el contenido que buscas no existe",
+]
+
+
+def _looks_paywalled(article: dict[str, str]) -> bool:
+    """True si el texto extraido parece muro de pago/cookies/404 y no un articulo."""
+    text = _normalize(article.get("text") or "")
+    if not text:
+        return True
+    hits = sum(1 for marker in _PAYWALL_MARKERS if _normalize(marker) in text)
+    # Texto corto + un marcador, o dos marcadores en cualquier tamano.
+    return (len(text) < 600 and hits >= 1) or hits >= 2
 
 
 def _detect_mentions(article: dict[str, str], aliases: list[str]) -> dict[str, Any]:

@@ -113,7 +113,9 @@ function matchScore(titleNorm, candidateNorm, candidateWords, titleWords, titleC
   if (titleCollapsed.includes(collapse(candidateNorm))) return 95;
 
   // 3. Word-level overlap (significant words, ≥3 chars, not stop words)
-  const STOP = new Set(['blackwell','bws','the','and','los','las','del','con','que','una','unos','por','para','mas','pero','como','este','esta','ese','esa']);
+  // 'grupo','casa','interno','comms','daily','estatus','status','notas','reunion','seguimiento'
+  // son genéricas: sin ellas, "Daily proyectos" matcheaba "GRUPO X" y "Casa Y" por overlap.
+  const STOP = new Set(['blackwell','bws','the','and','los','las','del','con','que','una','unos','por','para','mas','pero','como','este','esta','ese','esa','grupo','casa','interno','interna','comms','daily','estatus','status','notas','reunion','seguimiento','semanal','touchpoint']);
   const sigWords = candidateWords.filter(w => w.length >= 3 && !STOP.has(w));
   if (sigWords.length > 0) {
     let wordHits = 0;
@@ -403,8 +405,19 @@ export default async function handler(req, res) {
         let bestScore = 0;
         let bestMatch = null;
         let bestMethod = 'none';
+        // 00_INTERNAL participa SOLO por alias explícito: así una junta interna
+        // ("Daily Líderes", "AI Status") puede ser reclamada como interna en vez de
+        // caer al mejor cliente por fuzzy. Antes se saltaba por completo y sus
+        // aliases eran inalcanzables.
+        for (const alias of (aliases['00_INTERNAL'] || []).map(normalize)) {
+          if (titleNorm.includes(alias) || titleCollapsed.includes(collapse(alias))) {
+            bestScore = 100; bestMatch = { account_id: '00_INTERNAL', account_name: 'Interno Blackwell' }; bestMethod = 'alias_internal';
+            break;
+          }
+        }
         for (const acc of accounts) {
           if (acc.account_id === '00_INTERNAL') continue;
+          if (bestMethod === 'alias_internal') break;
           const nameNorm = normalize(acc.account_name);
           const nameWords = nameNorm.split(' ');
           const accAliases = (aliases[acc.account_id] || []).map(normalize);

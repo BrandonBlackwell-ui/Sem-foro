@@ -470,10 +470,18 @@
           "reason": "alias_manual",
           "publication_rows": 3,
           "commitment": null
+        },
+        {
+          "sheet_client_name": "Ceron-Toluca",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
         }
       ],
       "whatsapp_candidates": [],
-      "notes": "Confirmar alias antes de calcular CO/PQ"
+      "notes": "Alias Ceron-Toluca agregado 2026-07-21 (fuente: Cuentas.csv). Confirmar con el equipo."
     },
     {
       "account_id": "bernardo",
@@ -936,6 +944,42 @@
       ],
       "whatsapp_candidates": [],
       "notes": "Mapeo agregado manualmente (2026-07-13)"
+    },
+    {
+      "account_id": "35",
+      "dashboard_name": "Pepe Aguilar",
+      "dashboard_drive_name": "35. Pepe Aguilar",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "Pepe Aguilar",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado 2026-07-21 (auditoría: publicaciones descartadas)"
+    },
+    {
+      "account_id": "44",
+      "dashboard_name": "LCH Luxury Travel",
+      "dashboard_drive_name": "44. LCH Luxury Travel",
+      "status": "confirmado",
+      "sheet_candidates": [
+        {
+          "sheet_client_name": "LCH",
+          "confidence": "alta",
+          "score": 1,
+          "reason": "alias_manual",
+          "publication_rows": null,
+          "commitment": null
+        }
+      ],
+      "whatsapp_candidates": [],
+      "notes": "Mapeo agregado 2026-07-21 (auditoría: publicaciones descartadas)"
     }
   ]
 }

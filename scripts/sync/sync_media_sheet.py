@@ -159,12 +159,18 @@ def _publication_payloads(
 ) -> list[dict[str, Any]]:
     payloads: list[dict[str, Any]] = []
     skipped = 0
+    unmapped: dict[str, int] = {}
     for row in rows:
         sheet_client = _field(row, "cliente")
         alias = aliases.get(_normalize(sheet_client))
         link, media_name = _apply_override(_field(row, "link"), _field(row, "medio"))
         if not alias or not link:
             skipped += 1
+            # Visibilidad: un cliente CON link pero sin mapeo es una publicación real
+            # que se está tirando. Antes solo se logueaba un contador agregado y estos
+            # huecos duraron meses (Pepe Aguilar, LCH, Ceron-*).
+            if link and sheet_client and not alias:
+                unmapped[sheet_client] = unmapped.get(sheet_client, 0) + 1
             continue
 
         publication_date = _parse_date(_field(row, "fecha"))
@@ -204,6 +210,12 @@ def _publication_payloads(
         )
     if skipped:
         logger.info("Skipped %d row(s) without mapping, link, year or month.", skipped)
+    if unmapped:
+        detail = ", ".join(f"{name} ({count})" for name, count in sorted(unmapped.items(), key=lambda kv: -kv[1]))
+        logger.warning(
+            "PUBLICACIONES DESCARTADAS con link por cliente sin mapeo en account_crosswalk_candidates.json: %s",
+            detail,
+        )
     return payloads
 
 

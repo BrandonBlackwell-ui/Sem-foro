@@ -178,6 +178,7 @@ EXTRACTION_INSTRUCTIONS = (
     '  "objetivos": ["..."],\n'
     '  "servicios": ["..."],\n'
     '  "resumen": "1-2 frases",\n'
+    '  "renovacion": "condiciones de renovación/prórroga del contrato, o null",\n'
     '  "faltantes": ["huecos documentales o datos que no venían"],\n'
     '  "notas": "observaciones relevantes o null"\n'
     "}\n"
@@ -335,6 +336,9 @@ def process_account(service, folder: dict) -> dict | None:
         "objetivos": as_list(llm.get("objetivos")),
         "servicios": as_list(llm.get("servicios")),
         "meta_entregables": meta_field,
+        # renovacion: el dashboard la lee y renderiza; antes ningún escritor la llenaba
+        # (columna huérfana desde la migración 015).
+        "renovacion": (llm.get("renovacion") or None),
         "faltantes": as_list(llm.get("faltantes")),
         "notas": notas,
         "intel": llm,

@@ -1,7 +1,10 @@
 {
-  "_comment": "Aliases por account_id para matching flexible de títulos de reuniones de Google Meet. Agrega tantas variantes como necesites — no distingue mayúsculas ni acentos.",
-  "tello": ["tello", "senador tello", "tello blackwell", "t+b", "t + b"],
-  "maja": ["maja", "ma ja", "maja a+", "maja blackwell", "maja bws", "maja ops"],
-  "nuvoil": ["nuvoil", "nuvOil", "nuv oil"],
-  "00_INTERNAL": ["interno blackwell", "interno", "blackwell interno", "teamback", "team back", "team blackwell"]
+  "_comment": "Aliases por account_id NUMÉRICO (el matcher busca por wa_account_scores.account_id: '12', '02'...). Con claves slug los aliases NUNCA aplicaban. 00_INTERNAL reclama juntas internas para que el fuzzy no las asigne a un cliente.",
+  "12": ["tello", "senador tello", "tello blackwell", "t+b", "t + b", "mtv"],
+  "02": ["maja", "ma ja", "maja a+", "maja blackwell", "maja bws", "maja ops"],
+  "21": ["nuvoil", "nuv oil"],
+  "13": ["cima", "grupo cima"],
+  "35": ["pepe aguilar", "ppa"],
+  "44": ["lch", "lch luxury travel"],
+  "00_INTERNAL": ["interno blackwell", "interno", "blackwell interno", "teamback", "team back", "team blackwell", "daily proyectos", "ai status", "revision mejoras semaforo", "status semanal interno"]
 }

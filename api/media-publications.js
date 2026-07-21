@@ -104,9 +104,12 @@ function parseDate(value) {
   if (parts.length !== 3 || parts.some((part) => !Number.isFinite(part))) return null
   const [a, b, c] = parts
   const year = a > 1900 ? a : c
-  const month = a > 1900 ? b : b
-  const day = a > 1900 ? c : a
-  if (!year || !month || !day) return null
+  let month = b
+  let day = a > 1900 ? c : a
+  // Fechas capturadas en formato US (m/d/Y): sin esto "06/25/2026" producía
+  // publication_month=25 y el CO agrupaba en un periodo inexistente.
+  if (month > 12 && day <= 12) [month, day] = [day, month]
+  if (!year || !month || month > 12 || !day || day > 31) return null
   return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
 }
 

@@ -1519,13 +1519,26 @@ export default function App() {
     return { byId, byName }
   }, [publicationQualityScores])
 
+  // La misma URL puede tener un análisis POR CLIENTE (llave url+account_id desde la
+  // migración 018). Se guardan todas las filas y el lookup prefiere la de la cuenta.
   const publicationQualityByUrl = useMemo(() => {
-    const map = new Map<string, PublicationQualityAnalysis>()
+    const map = new Map<string, PublicationQualityAnalysis[]>()
     for (const row of publicationQualityAnalyses) {
-      if (row.url && !map.has(row.url)) map.set(row.url, row)
+      if (!row.url) continue
+      const list = map.get(row.url)
+      if (list) list.push(row)
+      else map.set(row.url, [row])
     }
     return map
   }, [publicationQualityAnalyses])
+
+  const qualityForPublication = (publication: AccountPublication): PublicationQualityAnalysis | null => {
+    if (!publication.url) return null
+    const rows = publicationQualityByUrl.get(publication.url)
+    if (!rows?.length) return null
+    const key = lookupKey(publication.account_id)
+    return rows.find(r => lookupKey(r.account_id) === key) ?? rows[0]
+  }
 
   const groupSummaries = useMemo<GroupSummary[]>(() => {
     const messageStats = new Map<string, { count: number; last: string | null; name: string | null; account: string | null }>()
@@ -3343,7 +3356,7 @@ export default function App() {
           {selectedAccountPublications.length ? (
             <div className="lb-publication-list">
               {selectedAccountPublications.map((publication) => {
-                const quality = publication.url ? publicationQualityByUrl.get(publication.url) ?? null : null
+                const quality = qualityForPublication(publication)
                 const matchedAliases = Array.isArray(quality?.matched_aliases)
                   ? quality?.matched_aliases.filter(Boolean).join(', ')
                   : ''
