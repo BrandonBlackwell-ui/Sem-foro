@@ -262,7 +262,10 @@ def _nota_variant(
     if editorial_quality == "exclusiva":
         v = variants["exclusiva"]
         bonus = float((v.get("focus_bonus") or {}).get(focus, 0))
-        pq = min(float(v["pq_max"]), float(v["pq_base"]) + bonus)
+        # El cliente en el encabezado sube el %; una exclusiva sin el cliente en el titulo
+        # vale menos (p.ej. narrativa propia = 100 con titulo, 90 sin titulo).
+        titulo = float(v.get("titulo_bonus", 0)) if mention.get("title_match") else 0.0
+        pq = min(float(v["pq_max"]), float(v["pq_base"]) + bonus + titulo)
         return "exclusiva", v["badge"], pq
     if mention.get("title_match"):
         v = variants["cliente_titulo"]

@@ -659,7 +659,8 @@
         "badge": "Exclusiva - Gestionada BW",
         "pq_base": 80,
         "pq_max": 100,
-        "focus_bonus": { "narrativa_propia": 20, "neutral": 10, "defensivo": 0, "no_aplica": 0 }
+        "focus_bonus": { "narrativa_propia": 10, "neutral": 5, "defensivo": 0, "no_aplica": 0 },
+        "titulo_bonus": 10
       },
       "cliente_titulo": { "badge": "Cliente en titulo - Gestionada BW", "pq": 70 },
       "cliente_cuerpo": { "badge": "Cliente en cuerpo", "pq": 55 },

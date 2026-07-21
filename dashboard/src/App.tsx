@@ -3391,7 +3391,7 @@ export default function App() {
                           )}
                         </>
                       ) : (
-                        <span>Sin analisis PQ todavia para este link.</span>
+                        <span>{canOpenPublication ? 'Sin analisis PQ todavia para este link.' : 'No hay link en el Sheet para esta fila.'}</span>
                       )}
                     </div>
                   </div>
