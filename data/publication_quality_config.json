@@ -612,9 +612,9 @@
       "nota rrss": "nota",
       "nota web y print": "nota",
       "nota backlink": "nota",
-      "nota web mencion tv": "nota",
+      "nota web mencion tv": "entrevista",
       "replica audiovisual": "nota",
-      "mencion en radio": "nota"
+      "mencion en radio": "entrevista"
     },
     "types": {
       "columna_opinion": {
