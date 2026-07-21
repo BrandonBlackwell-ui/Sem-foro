@@ -478,18 +478,29 @@ export default async function handler(req, res) {
   //    stable across mailboxes, so the same Gemini notes forwarded by several
   //    teammates (or re-sent another day) is analyzed & billed only once.
   const transcript = (body && body.trim()) ? body : htmlBody.replace(/<[^>]+>/g, '\n');
-  const dedupKey = crypto
-    .createHash('sha256')
-    .update(`${hashNormalize(cleanSub)}\n${hashNormalize(transcript)}`)
-    .digest('hex');
 
   const now = new Date().toISOString();
   const analysis_date = new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Mexico_City' });
-  // Meeting month (YYYY-MM) in Mexico City, from the email date when available.
+  // Meeting day (YYYY-MM-DD) and month (YYYY-MM) in Mexico City, from the email date.
   const meetingDate = payload.date ? new Date(payload.date) : new Date();
-  const period = (isNaN(meetingDate.getTime()) ? new Date() : meetingDate)
-    .toLocaleDateString('sv-SE', { timeZone: 'America/Mexico_City' })
-    .slice(0, 7);
+  const meetingDay = (isNaN(meetingDate.getTime()) ? new Date() : meetingDate)
+    .toLocaleDateString('sv-SE', { timeZone: 'America/Mexico_City' });
+  const period = meetingDay.slice(0, 7);
+
+  // Dedup por TÍTULO-BASE + DÍA (no por transcript). El subject de una misma reunión
+  // llega con variantes (con ID de Meet, con fecha, sin nada) y a veces con transcript
+  // parcial vs completo; keyear por titulo-base+dia colapsa esos duplicados y, a la vez,
+  // respeta reuniones recurrentes (mismo titulo, distinto dia = filas separadas).
+  const baseTitle = String(cleanSub || '')
+    .replace(/\b\d{9,}\b/g, ' ')                                   // IDs largos de Meet/timestamp
+    .replace(/[_\-\s]*\d{4}[_\-/.]\d{1,2}[_\-/.]\d{1,2}.*$/i, ' ')  // sufijo fecha YYYY-MM-DD ...
+    .replace(/[_\-\s]*\d{1,2}[_\-/.]\d{1,2}[_\-/.]\d{2,4}.*$/i, ' ')// sufijo fecha DD-MM-YYYY ...
+    .replace(/\s+/g, ' ')
+    .trim();
+  const dedupKey = crypto
+    .createHash('sha256')
+    .update(`${hashNormalize(baseTitle)}\n${meetingDay}`)
+    .digest('hex');
 
   // 6. DEDUP FILTER — runs BEFORE spending any LLM tokens. If these exact notes
   //    were already analyzed, stop here (no LLM call, no double info).
