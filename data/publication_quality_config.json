@@ -613,7 +613,7 @@
       "nota web y print": "nota",
       "nota backlink": "nota",
       "nota web mencion tv": "entrevista",
-      "replica audiovisual": "nota",
+      "replica audiovisual": "entrevista",
       "mencion en radio": "entrevista"
     },
     "types": {
