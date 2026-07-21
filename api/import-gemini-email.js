@@ -171,6 +171,9 @@ ${transcript}
 
 INSTRUCCIONES:
 
+PASO 0 — ¿ES UNA SESIÓN CON EL CLIENTE?
+Determina is_client_session. Es FALSE cuando la junta es PURAMENTE INTERNA de Blackwell (daily del equipo, alineación interna, instrucción de un líder, status entre colaboradores) y el cliente NO estaba invitado ni presente. Es TRUE cuando la junta era con el cliente (aunque el cliente haya faltado o llegado tarde: una inasistencia a una sesión AGENDADA con el cliente sigue siendo sesión de cliente). Si is_client_session=false, igual llena el resto pero el score no se usará para el cliente.
+
 PASO 1 — ASISTENCIA Y PUNTUALIDAD
 Determina si el cliente (no el equipo Blackwell) asistió a la junta.
 Si hay evidencia de que el cliente llegó a tiempo (dentro de los primeros 5 min), marca attended_on_time=true.
@@ -216,6 +219,7 @@ Extrae los compromisos accionables de la junta. Para cada uno indica el responsa
 
 RESPONDE con este JSON exacto:
 {
+  "is_client_session": true_o_false,
   "attended": true_o_false,
   "attended_on_time": true_o_false,
   "participation_level": "alta|media|baja|ninguna",
@@ -619,6 +623,18 @@ export default async function handler(req, res) {
       question_b: { question: 'Recomendación', answer: 'N/A (regex fallback)', score: 80 }
     }
   };
+
+  // Si el LLM determina que fue una junta PURAMENTE INTERNA de Blackwell (sin cliente),
+  // no la atribuimos a un cliente aunque el título traiga su nombre (evita que juntas
+  // internas contaminen el Meet del cliente). Una inasistencia del cliente a una sesión
+  // agendada NO cae aquí (is_client_session sigue true).
+  if (analysisData && analysisData.is_client_session === false && accountId !== '00_INTERNAL') {
+    console.log(`[import-gemini-email] Junta interna sin cliente -> 00_INTERNAL (era account_id="${accountId}").`);
+    accountId = '00_INTERNAL';
+    matchedAccountName = 'Interno Blackwell';
+    projectUid = null;
+    matchMethod = 'internal_no_client';
+  }
 
   const analysisRow = {
     account_id: accountId,
