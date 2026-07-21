@@ -24,6 +24,8 @@ const NUMBER_TO_ID: Record<string, string> = {
   '26': 'bernardo', '27': 'cuernavaca', '28': 'queretaro', '29': 'coastoil',
   '30': 'erikrubi', '31': 'sasil', '32': 'cojab', '33': 'neza', '34': 'supplypay',
   '35': 'pepe', '36': 'terry', '37': 'leadsales', '38': 'karpowership',
+  '39': 'ismerely', '40': 'austria', '41': 'ifaceltics', '42': 'mtvlinkedin',
+  '43': 'iranguerrero', '44': 'lch', '45': 'inovamedik', '46': 'arrendo',
 }
 
 const PREFIX_TO_ITEM: Record<string, string> = {

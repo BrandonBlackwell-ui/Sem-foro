@@ -271,7 +271,18 @@ def _sb_request(method: str, path: str, body=None, prefer: str | None = None):
 
 
 def sb_get_tasks() -> list[dict]:
-    return _sb_request("GET", "client_tasks?select=id,account_id,status,source") or []
+    # Sin limit explícito PostgREST corta a max-rows (1000): tareas existentes fuera de
+    # la página se re-upserteaban como "nuevas" con merge-duplicates y su status
+    # regresaba a por_hacer (revivía tareas ya hechas). Paginamos hasta agotar.
+    out: list[dict] = []
+    offset = 0
+    page = 1000
+    while True:
+        chunk = _sb_request("GET", f"client_tasks?select=id,account_id,status,source&limit={page}&offset={offset}") or []
+        out.extend(chunk)
+        if len(chunk) < page:
+            return out
+        offset += page
 
 
 def sb_get_assignments() -> dict[str, str]:

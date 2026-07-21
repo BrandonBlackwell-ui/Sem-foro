@@ -59,10 +59,40 @@ def main() -> None:
     sb = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
     if publications:
         _upsert_chunks(sb, "account_publications", publications, "source_sheet_id,source_row_number")
+        _reconcile_stale_rows(sb, args.sheet_id, publications)
     summaries = _summary_payloads(publications, args.sheet_id, args.gid)
     if summaries:
         _upsert_chunks(sb, "account_operational_scores", summaries, "account_id,period_year,period_month")
     logger.info("Synced %d publication(s) and %d CO period summary row(s).", len(publications), len(summaries))
+
+
+def _reconcile_stale_rows(sb: Any, sheet_id: str, publications: list[dict[str, Any]]) -> None:
+    """Borra filas de account_publications que ya no existen en el Sheet.
+
+    La llave es la POSICIÓN de la fila (source_row_number): si el equipo borra filas
+    a la mitad del Sheet, todo se recorre y las últimas posiciones quedan huérfanas
+    con contenido que ya no existe — para siempre, porque el upsert nunca borra.
+    Tras cada sync eliminamos las posiciones que este run no escribió.
+    """
+    current = {int(p["source_row_number"]) for p in publications}
+    try:
+        res = (
+            sb.table("account_publications")
+            .select("id,source_row_number")
+            .eq("source_sheet_id", sheet_id)
+            .limit(10000)
+            .execute()
+        )
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("No pude leer filas existentes para reconciliar: %s", exc)
+        return
+    stale_ids = [row["id"] for row in (res.data or []) if int(row.get("source_row_number") or 0) not in current]
+    if not stale_ids:
+        return
+    for start in range(0, len(stale_ids), 200):
+        chunk = stale_ids[start : start + 200]
+        sb.table("account_publications").delete().in_("id", chunk).execute()
+    logger.info("Reconciliación: %d fila(s) huérfana(s) eliminadas (posiciones que ya no están en el Sheet).", len(stale_ids))
 
 
 def _parse_args() -> argparse.Namespace:
@@ -132,6 +162,25 @@ def _load_aliases() -> dict[str, dict[str, str]]:
     return aliases
 
 
+# Correcciones manuales a filas del Sheet que traen TEXTO en vez de link. Debe coincidir
+# con PUBLICATION_OVERRIDES en api/media-publications.js para que el analisis quede con la
+# misma URL que muestra el dashboard (si no, no empatan y sale "sin analisis").
+_PUBLICATION_OVERRIDES = [
+    {
+        "match": "ENTREVISTA EN MILENIO PEDRO GAMBOA",
+        "url": "https://www.medialog.com.mx/mx.asp?h=653abd06a797f8de777083f55e823b22&E=YntmcXBtcHM=&X=dXlwam9mbWpu",
+        "media": "Milenio",
+    },
+]
+
+
+def _apply_override(link: str, media: str) -> tuple[str, str]:
+    for o in _PUBLICATION_OVERRIDES:
+        if _normalize(o["match"]) == _normalize(link):
+            return o["url"], (o.get("media") or media)
+    return link, media
+
+
 def _publication_payloads(
     rows: list[dict[str, str]],
     aliases: dict[str, dict[str, str]],
@@ -140,12 +189,18 @@ def _publication_payloads(
 ) -> list[dict[str, Any]]:
     payloads: list[dict[str, Any]] = []
     skipped = 0
+    unmapped: dict[str, int] = {}
     for row in rows:
         sheet_client = _field(row, "cliente")
         alias = aliases.get(_normalize(sheet_client))
-        link = _field(row, "link")
+        link, media_name = _apply_override(_field(row, "link"), _field(row, "medio"))
         if not alias or not link:
             skipped += 1
+            # Visibilidad: un cliente CON link pero sin mapeo es una publicación real
+            # que se está tirando. Antes solo se logueaba un contador agregado y estos
+            # huecos duraron meses (Pepe Aguilar, LCH, Ceron-*).
+            if link and sheet_client and not alias:
+                unmapped[sheet_client] = unmapped.get(sheet_client, 0) + 1
             continue
 
         publication_date = _parse_date(_field(row, "fecha"))
@@ -163,7 +218,7 @@ def _publication_payloads(
                 "source_sheet_id": sheet_id,
                 "source_sheet_gid": gid,
                 "source_row_number": _parse_int(row.get("_source_row_number")) or 0,
-                "media_name": _field(row, "medio"),
+                "media_name": media_name,
                 "provider": _field(row, "proveedor"),
                 "columnist": _field(row, "columnista"),
                 "total": _parse_number(_field(row, "total")),
@@ -185,6 +240,12 @@ def _publication_payloads(
         )
     if skipped:
         logger.info("Skipped %d row(s) without mapping, link, year or month.", skipped)
+    if unmapped:
+        detail = ", ".join(f"{name} ({count})" for name, count in sorted(unmapped.items(), key=lambda kv: -kv[1]))
+        logger.warning(
+            "PUBLICACIONES DESCARTADAS con link por cliente sin mapeo en account_crosswalk_candidates.json: %s",
+            detail,
+        )
     return payloads
 
 

@@ -58,9 +58,11 @@ jobs:
 
       - name: Analyze publication quality
         run: |
-          # En corridas agendadas (cron) los inputs vienen vacíos → limit 40.
-          # --contract-window: solo notas dentro de la vigencia del contrato del cliente.
-          args=(--limit "${{ github.event.inputs.limit || '40' }}" --contract-window)
+          # En corridas agendadas (cron) los inputs vienen vacíos → limit 80.
+          # Sin --contract-window: analiza cualquier nota nueva aún NO analizada
+          # (dentro o fuera de vigencia). No usa --force, así que solo toca las nuevas,
+          # nunca re-analiza las que ya tienen registro.
+          args=(--limit "${{ github.event.inputs.limit || '80' }}")
           if [ -n "${{ github.event.inputs.account_id }}" ]; then
             args+=(--account-id "${{ github.event.inputs.account_id }}")
           fi

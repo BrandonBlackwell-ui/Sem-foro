@@ -573,6 +573,32 @@
       }
     }
   },
+  "default_media_tiers": {
+    "_nota": "Fallback para cuentas SIN entrada en accounts (p.ej. las nuevas con id numerico 20/27/28/33/34/38/39/45): antes caian a needs_tier y su PQ quedaba deprimido.",
+    "Reforma": "tier_1",
+    "El universal": "tier_1",
+    "Milenio Notas": "tier_1",
+    "Milenio": "tier_1",
+    "Excelsior": "tier_1",
+    "Heraldo": "tier_1",
+    "Infobae": "tier_1",
+    "TV Azteca": "tier_1",
+    "El Financiero": "tier_1",
+    "El Economista": "tier_1",
+    "Proceso": "tier_1",
+    "Dinero en imagen": "tier_1",
+    "Quadratin": "tier_2",
+    "Crónica": "tier_2",
+    "Publimetro": "tier_2",
+    "Sdp": "tier_2",
+    "Mundo Ejecutivo": "tier_2",
+    "Jonathan Montara": "tier_2",
+    "Reporte Indigo": "tier_2",
+    "La Razón": "tier_2",
+    "Consultoria": "tier_3",
+    "Sandra Cortes": "tier_3",
+    "Chris": "tier_3"
+  },
   "tier_points": {
     "tier_1": 50,
     "tier_2": 30,
@@ -590,5 +616,92 @@
     "neutral": 10,
     "defensivo": 5,
     "no_aplica": 0
+  },
+  "deliverable_types": {
+    "notes": "Mapea la columna 'Servicio' del Sheet (tipo de entregable) a un tipo canonico, badge y PQ segun BW-07-SEM-0002. El valor del Sheet manda cuando existe; si viene vacio o 'Elegir:', el tipo se infiere leyendo el link. Todas las filas provienen del archivo de medios Blackwell => gestion confirmada por definicion (Hallazgo 01).",
+    "default_type": "nota",
+    "empty_service_values": ["", "elegir", "elegir:"],
+    "service_aliases": {
+      "columna": "columna_opinion",
+      "columna invitado": "columna_opinion",
+      "columna de invitado": "columna_opinion",
+      "entrevista": "entrevista",
+      "foro": "foro_panel",
+      "panel": "foro_panel",
+      "foro o panel": "foro_panel",
+      "participacion en foro": "foro_panel",
+      "participacion en foro o panel": "foro_panel",
+      "vinculacion": "vinculacion",
+      "vinculaciones": "vinculacion",
+      "trascendido": "trascendido",
+      "nota": "nota",
+      "nota rrss": "nota",
+      "nota web y print": "nota",
+      "nota backlink": "nota",
+      "nota web mencion tv": "entrevista",
+      "replica audiovisual": "entrevista",
+      "mencion en radio": "entrevista"
+    },
+    "types": {
+      "columna_opinion": {
+        "badge": "Columna de opinión",
+        "pq": 85,
+        "scoring": "anchor",
+        "confirm_signal": "El cliente firma la columna (byline/autor), no es solo el sujeto de la nota."
+      },
+      "entrevista": {
+        "badge": "Entrevista",
+        "pq": 75,
+        "scoring": "anchor",
+        "confirm_signal": "Formato Q&A/dialogo o el cliente es la fuente principal con citas directas extensas."
+      },
+      "foro_panel": {
+        "badge": "Participación en foro",
+        "pq": 70,
+        "scoring": "anchor",
+        "confirm_signal": "El cliente aparece acreditado como ponente, panelista o speaker."
+      },
+      "vinculacion": {
+        "badge": "Vinculación",
+        "pq": 30,
+        "scoring": "vinculacion",
+        "pq_with_result": 50,
+        "confirm_signal": "Reunion o presentacion con periodista/editor/medio; antecede a la cobertura.",
+        "result_keywords": ["nota publicada", "derivo en nota", "derivo en publicacion", "salio la nota", "genero nota", "resulto en nota", "con nota derivada", "nota derivada", "ya publico", "publicada"]
+      },
+      "nota": {
+        "badge": "Nota",
+        "scoring": "nota_llm",
+        "confirm_signal": "Nota informativa: el badge es 'Nota'; el PQ se resuelve leyendo el link."
+      },
+      "trascendido": {
+        "badge": "Trascendido",
+        "scoring": "nota_llm",
+        "confirm_signal": "Trascendido: el badge es 'Trascendido'; el PQ se resuelve leyendo el link como una nota."
+      }
+    },
+    "nota_variants": {
+      "exclusiva": {
+        "badge": "Exclusiva - Gestionada BW",
+        "pq_base": 80,
+        "pq_max": 100,
+        "focus_bonus": { "narrativa_propia": 10, "neutral": 5, "defensivo": 0, "no_aplica": 0 },
+        "titulo_bonus": 10
+      },
+      "cliente_titulo": { "badge": "Cliente en titulo - Gestionada BW", "pq": 70 },
+      "cliente_cuerpo": { "badge": "Cliente en cuerpo", "pq": 55 },
+      "mencion": { "badge": "Mencion", "pq": 40 }
+    },
+    "acceptance_scale": [
+      { "key": "columna_opinion", "badge": "Columna de opinion", "pq": 85 },
+      { "key": "nota:exclusiva", "badge": "Exclusiva - Gestionada BW", "pq": "80-100" },
+      { "key": "entrevista", "badge": "Entrevista", "pq": 75 },
+      { "key": "nota:cliente_titulo", "badge": "Cliente en titulo - Gestionada BW", "pq": 70 },
+      { "key": "foro_panel", "badge": "Participacion en foro", "pq": 70 },
+      { "key": "nota:cliente_cuerpo", "badge": "Cliente en cuerpo", "pq": 55 },
+      { "key": "vinculacion:con_resultado", "badge": "Vinculacion con resultado", "pq": 50 },
+      { "key": "nota:mencion", "badge": "Mencion", "pq": 40 },
+      { "key": "vinculacion", "badge": "Vinculacion", "pq": 30 }
+    ]
   }
 }

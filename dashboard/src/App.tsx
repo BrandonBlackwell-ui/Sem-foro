@@ -1,4 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { PepeReportsTab } from './components/PepeReportsTab'
+import { PepeSimuladorTab } from './components/PepeSimuladorTab'
+import { PEPE_ACCOUNT_ID } from './lib/pepeReports'
 
 type DailyAnalysis = {
   id: number
@@ -118,6 +121,11 @@ type PublicationQualityAnalysis = {
   focus_points: number | null
   content_score: number | null
   pq_score: number | null
+  deliverable_type: string | null
+  note_type: string | null
+  badge: string | null
+  type_source: string | null
+  is_managed: boolean | null
   status: string | null
   evidence: {
     items: { quote: string; why_it_matters: string }[]
@@ -673,10 +681,12 @@ function shortDateOnly(value: string | null | undefined) {
 
 function badgeClass(value: string) {
   const normalized = value.toLowerCase()
-  if (['positive', 'satisfied', 'low', 'estable', 'blackwell'].includes(normalized)) return 'green'
-  if (['neutral', 'unknown', 'mixed', 'medium', 'pendiente', 'shared'].includes(normalized)) return 'yellow'
-  if (['negative', 'unsatisfied', 'high', 'atencion'].includes(normalized)) return 'red'
-  if (['client'].includes(normalized)) return 'gray'
+  if (['positive', 'positivo', 'satisfied', 'low', 'estable', 'blackwell'].includes(normalized)) return 'green'
+  if (['neutral', 'unknown', 'mixed', 'medium', 'pendiente', 'shared', 'alerta'].includes(normalized)) return 'yellow'
+  // 'riesgo' y 'crisis' son los estados más graves del análisis de metodología: antes
+  // caían al gris default y se veían igual que "neutral".
+  if (['negative', 'negativo', 'unsatisfied', 'high', 'atencion', 'riesgo', 'crisis'].includes(normalized)) return 'red'
+  if (['client', 'no_aplica'].includes(normalized)) return 'gray'
   return 'gray'
 }
 
@@ -687,9 +697,34 @@ function qualityText(value: string | null | undefined, fallback = 'Pendiente') {
     .replace(/\b\w/g, (letter) => letter.toUpperCase())
 }
 
+// status='fetch_error' agrupa causas MUY distintas: link caído (403/404/SSL), celda que
+// no es URL, muro de pago, o el LLM que devolvió JSON inválido con el LINK OK. "Sin link"
+// era engañoso; devolvemos el motivo real (label corto + detalle para tooltip).
+function fetchErrorInfo(quality: PublicationQualityAnalysis | null): { label: string; detail: string; retryable: boolean } | null {
+  if (!quality || quality.status !== 'fetch_error') return null
+  const err = String(quality.body_evidence ?? '').toLowerCase()
+  if (/llm_json_parse|expecting value|unterminated string|"choices"|json/.test(err))
+    return { label: 'Error de análisis', detail: 'El link cargó bien y tiene contenido, pero el modelo devolvió una respuesta inválida. Se reintenta en la próxima corrida.', retryable: true }
+  if (/code_shell|codigo|javascript|\bjs\b/.test(err))
+    return { label: 'No legible (JS)', detail: 'El medio entrega la página como código/JavaScript (MSN y agregadores similares), no el texto del artículo. El link puede abrir bien en el navegador.', retryable: false }
+  if (/paywall|softwall|suscrip|cookies/.test(err))
+    return { label: 'Muro de pago', detail: 'La página pide suscripción o aceptar cookies; no se pudo leer el artículo.', retryable: false }
+  if (/403|forbidden/.test(err))
+    return { label: 'Acceso bloqueado', detail: 'El medio bloquea la lectura automática (HTTP 403). El link puede abrir bien en el navegador.', retryable: false }
+  if (/404|not found|410|gone/.test(err))
+    return { label: 'Link roto', detail: 'El link ya no existe en el medio (HTTP 404/410).', retryable: false }
+  if (/ssl|certificate/.test(err))
+    return { label: 'Error de certificado', detail: 'El sitio tiene un problema de certificado SSL y no se pudo leer.', retryable: false }
+  if (/unknown url type|control character|can.t contain|impreso|facebook|instagram|tiktok/.test(err))
+    return { label: 'Link no válido', detail: 'La celda del Sheet no es una URL http legible (texto, red social o "IMPRESO").', retryable: false }
+  if (/timed out|timeout|10013|urlopen|connection/.test(err))
+    return { label: 'No respondió', detail: 'El sitio no respondió a tiempo o rechazó la conexión. Se reintenta en la próxima corrida.', retryable: true }
+  return { label: 'No se pudo leer', detail: quality.body_evidence ? `Motivo: ${quality.body_evidence}` : 'No se pudo leer el artículo.', retryable: true }
+}
+
 function qualityScoreText(quality: PublicationQualityAnalysis | null) {
   if (!quality) return 'Sin analisis'
-  if (quality.status === 'fetch_error') return 'Sin link'
+  if (quality.status === 'fetch_error') return fetchErrorInfo(quality)?.label ?? 'No se pudo leer'
   if (quality.pq_score != null) return `${roundScore(Number(quality.pq_score))} PQ`
   if (quality.content_score != null) return `${roundScore(Number(quality.content_score))} contenido`
   if (quality.status === 'needs_tier') return 'Tier pendiente'
@@ -900,6 +935,67 @@ function clampScore(value: number) {
   return Math.max(0, Math.min(100, value))
 }
 
+// Un survey solo cuenta si trae EVIDENCIA: score + respuesta textual real. Bloquea
+// surveys alucinados por el LLM (score sin respuesta) y los fabricados por fallback,
+// que quitarían el tope de 70 del SC sin que el cliente haya contestado nada.
+function surveyQuestionValid(q: any): boolean {
+  if (!q || q.score == null) return false
+  const answer = String(q.answer ?? '').trim()
+  return answer.length > 0 && !/regex fallback/i.test(answer)
+}
+
+// La AUSENCIA de algo malo es un hallazgo POSITIVO. El LLM a veces la prefija con
+// "No:" por la forma gramatical ("No: la nota no presenta tono defensivo ni de crisis"),
+// lo que la pintaba con ✗ rojo aunque sea buena. Detecta esas frases para mostrarlas ✓.
+const POSITIVE_ABSENCE_RE =
+  /\b(no\s+(presenta|tiene|hay|muestra|refleja|existe|adopta|contiene|se\s+detectan?)|sin)\b[^.]*\b(defensiv|crisis|negativ|ataqu|confrontaci|hostil|riesgo\s+reputacional|insatisfacci|presion\s+negativa|dano\s+reputacional)/
+function checklistItemPositive(item: string): boolean {
+  const trimmed = String(item ?? '').trim()
+  if (/^s[ií]:/i.test(trimmed)) return true
+  const content = trimmed.replace(/^(s[ií]|no):\s*/i, '')
+  const norm = content.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+  return POSITIVE_ABSENCE_RE.test(norm)
+}
+
+// Que el cliente sea el SUJETO y no el AUTOR es NORMAL en una nota informativa, no un
+// defecto: esas líneas no deben aparecer (y menos como ✗ rojo). El analyzer ya las
+// descarta al generar, pero las notas viejas las tienen guardadas; el front las oculta.
+const AUTHOR_NEGATIVE_RE =
+  /\bno\b[^.]*\bautor|sujeto\s+(central\s+|principal\s+)?de\s+la\s+(cobertura|nota|informaci|pieza|publicaci)|\bsino\b[^.]*\bsujeto|no\s+(escribi|redact|firm)/
+function checklistItemHidden(item: string): boolean {
+  const content = String(item ?? '').replace(/^(s[ií]|no):\s*/i, '')
+  const norm = content.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+  return AUTHOR_NEGATIVE_RE.test(norm)
+}
+
+// El análisis a veces pega un nombre propio a "cliente" ("El cliente (Sol Guerrero)")
+// que en realidad es del equipo BWS o inventado. Quitamos ese paréntesis con nombre
+// propio (Mayúscula inicial); conservamos roles en minúscula como "(su esposa)".
+function cleanSummaryText(text?: string | null): string {
+  if (!text) return ''
+  return String(text)
+    .replace(/\b([Cc]lient[ae])\s*\(\s*[A-ZÁÉÍÓÚÑ][^)]*\)/g, '$1')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim()
+}
+
+// "Resumen acumulado": antes unía los últimos 3 días en UN párrafo corrido
+// (se leía contradictorio y "de otros días"). Ahora cada día va fechado y separado.
+function RecentSummaries({ history, empty }: { history: any[]; empty: string }) {
+  const recent = [...(history ?? [])].filter(h => h?.summary).slice(-3).reverse()
+  if (!recent.length) return <p className="lb-summary-text">{empty}</p>
+  return (
+    <div className="lb-summary-text">
+      {recent.map((h, i) => (
+        <div key={h.id ?? i} style={{ marginBottom: i < recent.length - 1 ? 12 : 0 }}>
+          <span style={{ fontWeight: 700, color: '#3d434c', marginRight: 6 }}>{fmtShortDate(h.analysis_date)}:</span>
+          <span>{cleanSummaryText(h.summary)}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
@@ -974,15 +1070,18 @@ function buildWeightedScore(
   // (all-null questions) when no survey was asked in chat. Only treat it as a
   // real survey when it has at least one scored question — otherwise it would
   // mask the Meet survey and the SC would show "pendiente" despite Meet data.
+  // Busca el survey también en los niveles anidados que dejaban los merges viejos
+  // ({previous_raw_analysis, incremental_raw_analysis}) para no perder encuestas legacy.
   const waSurvey = rawAnalysisObj?.survey || rawAnalysisObj?.raw_analysis?.survey
-  const waSurveyHasScores = !!(waSurvey && (waSurvey.question_a?.score != null || waSurvey.question_b?.score != null))
+    || rawAnalysisObj?.incremental_raw_analysis?.survey || rawAnalysisObj?.previous_raw_analysis?.survey
+  const waSurveyHasScores = !!(waSurvey && (surveyQuestionValid(waSurvey.question_a) || surveyQuestionValid(waSurvey.question_b)))
   let survey = waSurveyHasScores ? waSurvey : null
   let surveySource = survey ? 'WhatsApp' : ''
 
   // Fallback to Meet transcript survey if WhatsApp survey has no scored questions
   if (!survey && checklist?.scores) {
     const meetEntries = Object.entries(checklist.scores as Record<string, any>)
-      .filter(([, v]) => v?.transcripciones?.survey?.question_a?.score != null || v?.transcripciones?.survey?.question_b?.score != null)
+      .filter(([, v]) => surveyQuestionValid(v?.transcripciones?.survey?.question_a) || surveyQuestionValid(v?.transcripciones?.survey?.question_b))
       .sort(([a], [b]) => b.localeCompare(a))
     if (meetEntries.length) {
       survey = meetEntries[0][1].transcripciones.survey
@@ -990,8 +1089,8 @@ function buildWeightedScore(
     }
   }
 
-  const tipoAScore = (survey?.question_a?.score != null) ? clampScore(Number(survey.question_a.score)) : null
-  const tipoBScore = (survey?.question_b?.score != null) ? clampScore(Number(survey.question_b.score)) : null
+  const tipoAScore = surveyQuestionValid(survey?.question_a) ? clampScore(Number(survey.question_a.score)) : null
+  const tipoBScore = surveyQuestionValid(survey?.question_b) ? clampScore(Number(survey.question_b.score)) : null
   const hasSurvey = tipoAScore != null || tipoBScore != null
 
   // SC Calculation
@@ -1065,8 +1164,15 @@ function buildWeightedScore(
   const scDetails: string[] = []
   if (scScore != null) {
     if (hasSurvey) {
-      if (normalizedWa != null) scDetails.push(`WhatsApp (WA) (40%): ${roundScore(normalizedWa)}/100 × 40% = ${roundScore(normalizedWa * 0.40)} pts`)
-      scDetails.push(`Sesión Meet/WhatsApp (30%): ${roundScore(actualSesion)}/100 × 30% = ${roundScore(actualSesion * 0.30)} pts`)
+      // Los defaults (WA 50, Sesión 40) se imprimen SIEMPRE y marcados como base:
+      // antes la línea de WA se omitía cuando faltaba dato pero sus 20 pts sí sumaban,
+      // y el 40 de sesión parecía una sesión medida que salió mal.
+      scDetails.push(normalizedWa != null
+        ? `WhatsApp (WA) (40%): ${roundScore(normalizedWa)}/100 × 40% = ${roundScore(normalizedWa * 0.40)} pts`
+        : `WhatsApp (WA) (40%): 50/100 (base, sin dato) × 40% = 20 pts`)
+      scDetails.push(sesionScore != null
+        ? `Sesión Meet/WhatsApp (30%): ${roundScore(actualSesion)}/100 × 30% = ${roundScore(actualSesion * 0.30)} pts`
+        : `Sesión Meet/WhatsApp (30%): 40/100 (base, sin sesión registrada) × 30% = 12 pts`)
       if (tipoAScore != null) scDetails.push(`Pregunta Tipo A (General) (20%): ${roundScore(tipoAScore)}/100 × 20% = ${roundScore(tipoAScore * 0.20)} pts`)
       if (tipoBScore != null) scDetails.push(`Pregunta Tipo B (Objetivo) (10%): ${roundScore(tipoBScore)}/100 × 10% = ${roundScore(tipoBScore * 0.10)} pts`)
     } else {
@@ -1255,7 +1361,7 @@ export default function App() {
   const [selectedOverviewDate] = useState<string>('latest')
   const [groupFilter, setGroupFilter] = useState<'all' | 'analyzed' | 'active' | 'inactive'>('all')
   const [accountSearchQuery, setAccountSearchQuery] = useState('')
-  const [clientTab, setClientTab] = useState<'resumen' | 'whatsapp' | 'historico' | 'mensajes' | 'meet' | 'publicaciones'>('resumen')
+  const [clientTab, setClientTab] = useState<'resumen' | 'whatsapp' | 'historico' | 'mensajes' | 'meet' | 'publicaciones' | 'reportes' | 'simulador'>('resumen')
   const [resumenSubTab, setResumenSubTab] = useState<'diagnostico' | 'tareas' | 'metodologia'>('diagnostico')
   const [chartRange, setChartRange] = useState<'7d' | '30d' | '365d'>('30d')
   const [selectedHistoryId, setSelectedHistoryId] = useState<number | null>(null)
@@ -1332,14 +1438,29 @@ export default function App() {
       if (subjectMatch) {
         title = subjectMatch[1];
       }
-      
-      const key = emailSubject;
-      
+
+      // Título base: quita sufijos volátiles que la misma junta trae al reimportarse
+      // (fecha/hora "_ 2026_07_07 09_00 CST" o un epoch "1783705426959"), para que no
+      // aparezca como 2-3 tarjetas casi idénticas.
+      const baseTitle = (title
+        .replace(/[\s_]+\d{4}[_/-]\d{1,2}[_/-]\d{1,2}([\s_].*)?$/i, '')
+        .replace(/[\s_]+\d{6,}$/, '')
+        .replace(/[\s_·.-]+$/, '')
+        .trim()) || title.trim()
+
+      // Día de la reunión (email_date es el mejor indicador; luego created_at).
+      const meetingDate = task.raw_action?.email_date || task.created_at || new Date().toISOString()
+      const day = String(meetingDate).slice(0, 10)
+
+      // Clave = título base + día → mismo día + misma junta se colapsan; dos días
+      // distintos (aunque compartan título) siguen separados.
+      const key = `${baseTitle.toLowerCase()}|${day}`
+
       if (!map.has(key)) {
         map.set(key, {
           id: key,
-          title: title,
-          date: task.created_at || new Date().toISOString(),
+          title: baseTitle,
+          date: meetingDate,
           duration: 1800, // 30 minutes default duration
           summary: `Minuta importada de Gemini desde Gmail. Sincronizada automáticamente.`,
           action_items: [],
@@ -1490,13 +1611,26 @@ export default function App() {
     return { byId, byName }
   }, [publicationQualityScores])
 
+  // La misma URL puede tener un análisis POR CLIENTE (llave url+account_id desde la
+  // migración 018). Se guardan todas las filas y el lookup prefiere la de la cuenta.
   const publicationQualityByUrl = useMemo(() => {
-    const map = new Map<string, PublicationQualityAnalysis>()
+    const map = new Map<string, PublicationQualityAnalysis[]>()
     for (const row of publicationQualityAnalyses) {
-      if (row.url && !map.has(row.url)) map.set(row.url, row)
+      if (!row.url) continue
+      const list = map.get(row.url)
+      if (list) list.push(row)
+      else map.set(row.url, [row])
     }
     return map
   }, [publicationQualityAnalyses])
+
+  const qualityForPublication = (publication: AccountPublication): PublicationQualityAnalysis | null => {
+    if (!publication.url) return null
+    const rows = publicationQualityByUrl.get(publication.url)
+    if (!rows?.length) return null
+    const key = lookupKey(publication.account_id)
+    return rows.find(r => lookupKey(r.account_id) === key) ?? rows[0]
+  }
 
   const groupSummaries = useMemo<GroupSummary[]>(() => {
     const messageStats = new Map<string, { count: number; last: string | null; name: string | null; account: string | null }>()
@@ -1621,7 +1755,7 @@ export default function App() {
       const num = String(Number(r.account_id))
       if (num === 'NaN' || meetByAcct.has(num)) continue
       const s = r.survey
-      if (s && (s.question_a?.score != null || s.question_b?.score != null)) {
+      if (s && (surveyQuestionValid(s.question_a) || surveyQuestionValid(s.question_b))) {
         const dStr = r.created_at ? r.created_at.slice(0, 10) : ''
         meetByAcct.set(num, { survey: s, date: dStr })
       }
@@ -1632,7 +1766,7 @@ export default function App() {
       const num = String(Number(a.account_id))
       if (num === 'NaN' || waByAcct.has(num)) continue
       const s = a.raw_analysis?.survey
-      if (s && (s.question_a?.score != null || s.question_b?.score != null)) {
+      if (s && (surveyQuestionValid(s.question_a) || surveyQuestionValid(s.question_b))) {
         waByAcct.set(num, { survey: s, date: a.analysis_date || '' })
       }
     }
@@ -1643,8 +1777,8 @@ export default function App() {
       const meet = meetByAcct.get(key)
       const entry = wa || meet || null
       const survey = entry?.survey || null
-      const tipoA = survey?.question_a?.score != null
-      const tipoB = survey?.question_b?.score != null
+      const tipoA = surveyQuestionValid(survey?.question_a)
+      const tipoB = surveyQuestionValid(survey?.question_b)
       const answered = (tipoA ? 1 : 0) + (tipoB ? 1 : 0)
       const date = entry?.date || ''
       const source = wa ? 'WhatsApp' : (meet ? 'Meet' : '')
@@ -1793,7 +1927,9 @@ export default function App() {
   useEffect(() => {
     (async () => {
       const rows = await supabaseGetOptional<any[]>(
-        '/rest/v1/meet_transcription_analyses?select=account_id,period,sesion_score,survey,attended,attended_on_time,participation_level,positive_comments,shared_strategic_info,negative_signals,negative_detail,tone,reasoning,checklist,action_items,created_at&order=created_at.desc',
+        // model!=regex_fallback: filas fabricadas por el extractor de emergencia (score
+        // 80 + survey 80/80 inventados) no deben entrar al SC ni a la vista de surveys.
+        '/rest/v1/meet_transcription_analyses?select=account_id,period,sesion_score,survey,attended,attended_on_time,participation_level,positive_comments,shared_strategic_info,negative_signals,negative_detail,tone,reasoning,checklist,action_items,model,created_at&model=neq.regex_fallback&order=created_at.desc',
         [],
       )
       setMeetAnalyses(rows)
@@ -1837,6 +1973,9 @@ export default function App() {
             const win = metaText.slice(Math.max(0, m.index! - 25), m.index! + m[0].length + 35)
             if (/cuatrimestr/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 4))
             else if (/trimestr/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 3))
+            else if (/semestr/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 6))
+            // "24 publicaciones anuales" antes producía meta 24/MES (CO imposible).
+            else if (/anual|al a[nñ]o|por a[nñ]o/i.test(win)) metaMensual = Math.max(1, Math.round(metaMensual / 12))
             else if (/semana/i.test(win)) metaMensual = metaMensual * 4
             intelMetaNum = metaMensual
           }
@@ -1852,7 +1991,11 @@ export default function App() {
         if (!hasVigencia && intelDates && !stale && (intel.tiene_contrato_firmado === true || intelMetaNum != null)) {
           data.contract = {
             ...(data.contract || {}),
-            vigencia: `${intel.vigencia_inicio ?? '¿?'} a ${intel.vigencia_fin ?? 'indefinida'}`,
+            // Formato "inicio/fin" cuando hay ambas fechas → dibuja la barra de vigencia
+            // (ContractTimeline parte por "/"). Si falta el fin, texto legible sin barra.
+            vigencia: (intel.vigencia_inicio && intel.vigencia_fin)
+              ? `${intel.vigencia_inicio}/${intel.vigencia_fin}`
+              : `${intel.vigencia_inicio ?? '¿?'} a ${intel.vigencia_fin ?? 'indefinida'}`,
             nota: intel.tiene_contrato_firmado === true
               ? 'Contrato detectado en Drive (carpeta 01)'
               : 'Acuerdo con vigencia + meta detectado en Drive (carpeta 01)',
@@ -1874,7 +2017,7 @@ export default function App() {
       for (const row of rowsForAcct) {
         const score = row.sesion_score
         const prev = data.scores[row.period] || {}
-        const rowHasSurvey = row.survey && (row.survey.question_a?.score != null || row.survey.question_b?.score != null)
+        const rowHasSurvey = row.survey && (surveyQuestionValid(row.survey.question_a) || surveyQuestionValid(row.survey.question_b))
         const prevSurvey = prev.transcripciones?.survey
         data.scores[row.period] = {
           ...prev,
@@ -2023,32 +2166,42 @@ export default function App() {
   const selectedAccountMeetings = useMemo(() => {
     if (!selectedAccount) return []
 
-    const candidates = [
-      selectedAccount.account_id,
-      selectedAccount.name,
-      ...selectedAccount.groups.map(group => group.name),
-    ]
+    // Señal FUERTE de atribución: el account_id de la tarea (lo pone el matcher del
+    // import). Antes se usaba el número crudo como SUBCADENA (taskText.includes("13")),
+    // que enganchaba cualquier reunión con "13" en una fecha/hora/folio → aparecían
+    // clientes ajenos. Ahora el número se compara EXACTO.
+    const idTrim = String(selectedAccount.account_id ?? '').trim()
+    const selNum = /^\d+$/.test(idTrim) ? String(Number(idTrim)) : null
+    const selSlug = selNum ? null : idTrim.toLowerCase()
+
+    // Fallback por nombre/etiqueta: solo cadenas ≥4 chars, comparadas como frase con
+    // límite de palabra (nada de subcadenas sueltas como "rr" o "cima" en "décima").
+    const nameNeedles = [selectedAccount.name, ...selectedAccount.groups.map(group => group.name)]
       .filter(Boolean)
-      .map(value => String(value).toLowerCase())
+      .map(value => String(value).toLowerCase().trim())
+      .filter(value => value.length >= 4)
+    const wordMatch = (haystack: string, needle: string) => {
+      const esc = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+      return new RegExp(`(^|\\W)${esc}(\\W|$)`).test(haystack)
+    }
 
     return meetings.filter(meeting => {
       const title = meeting.title.toLowerCase()
-
       return meeting.tasks.some(task => {
-        const taskText = [
-          task.account_id,
+        const taskIdTrim = String(task.account_id ?? '').trim()
+        // 1) account_id exacto (número o slug) — la vía correcta.
+        if (selNum && /^\d+$/.test(taskIdTrim) && String(Number(taskIdTrim)) === selNum) return true
+        if (selSlug && taskIdTrim.toLowerCase() === selSlug) return true
+        // 2) Etiqueta de cliente explícita que iguala el nombre de la cuenta.
+        const labels = [
           task.monday_client_label,
           task.client_label,
           task.raw_action?.monday_client_label,
           task.raw_action?.client_label,
-          task.raw_action?.email_subject,
-          task.action,
-        ]
-          .filter(Boolean)
-          .join(' ')
-          .toLowerCase()
-
-        return candidates.some(candidate => taskText.includes(candidate) || title.includes(candidate))
+        ].filter(Boolean).map(v => String(v).toLowerCase().trim())
+        if (labels.some(l => nameNeedles.some(n => l === n || wordMatch(l, n)))) return true
+        // 3) Fallback: el título de la reunión contiene el nombre completo como palabra.
+        return nameNeedles.some(n => wordMatch(title, n))
       })
     })
   }, [meetings, selectedAccount])
@@ -2770,7 +2923,7 @@ export default function App() {
                             }}>Score global</span>
                           )}
                         </div>
-                        <div className="lb-account-summary">{account.latestAnalysis?.summary || (account.groups.length === 0 ? 'Cuenta sin grupo de WhatsApp conectado; score global desde checklist, Sheet y Meet.' : 'Sin análisis diario guardado todavía.')}</div>
+                        <div className="lb-account-summary">{cleanSummaryText(account.latestAnalysis?.summary) || (account.groups.length === 0 ? 'Cuenta sin grupo de WhatsApp conectado; score global desde checklist, Sheet y Meet.' : 'Sin análisis diario guardado todavía.')}</div>
                       </div>
                       <div className="lb-account-side">
                         <span className="lb-stamp" style={{color: stampColor, borderColor: stampColor, '--sr': gi % 2 === 0 ? '-4deg' : '3deg'} as React.CSSProperties}>{status}</span>
@@ -2878,6 +3031,12 @@ export default function App() {
         <button className={`lb-tab${clientTab === 'historico' ? ' active' : ''}`} onClick={() => setClientTab('historico')}>Histórico</button>
         <button className={`lb-tab${clientTab === 'meet' ? ' active' : ''}`} onClick={() => setClientTab('meet')}>Meet</button>
         <button className={`lb-tab${clientTab === 'publicaciones' ? ' active' : ''}`} onClick={() => setClientTab('publicaciones')}>Publicaciones</button>
+        {selectedAccount?.account_id === PEPE_ACCOUNT_ID && (
+          <button className={`lb-tab${clientTab === 'reportes' ? ' active' : ''}`} onClick={() => setClientTab('reportes')}>Reportes</button>
+        )}
+        {selectedAccount?.account_id === PEPE_ACCOUNT_ID && (
+          <button className={`lb-tab${clientTab === 'simulador' ? ' active' : ''}`} onClick={() => setClientTab('simulador')}>🎮 Simulador</button>
+        )}
       </nav>
 
       {clientTab === 'resumen' && (
@@ -2943,11 +3102,9 @@ export default function App() {
                   </div>
 
                   <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
-                  <p className="lb-summary-text" style={{marginBottom:20}}>
-                    {selectedHistory.length
-                      ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
-                      : 'Este grupo existe en Supabase, pero todavía no tiene resumen guardado.'}
-                  </p>
+                  <div style={{marginBottom:20}}>
+                    <RecentSummaries history={selectedHistory} empty="Este grupo existe en Supabase, pero todavía no tiene resumen guardado." />
+                  </div>
                   <DriveIntelCard intel={
                     /^\d+$/.test(selectedAccount.account_id.trim())
                       ? driveIntel.find(d => String(Number(d.account_number)) === String(Number(selectedAccount.account_id.trim()))) ?? null
@@ -3082,16 +3239,12 @@ export default function App() {
           <div className="lb-whatsapp-grid">
             <div className="lb-summary-card">
               <div className="lb-section-title" style={{marginBottom:10}}>Resumen acumulado</div>
-              <p className="lb-summary-text">
-                {selectedHistory.length
-                  ? selectedHistory.map((item) => item.summary).filter(Boolean).slice(-3).join(' ')
-                  : 'Este grupo existe en Supabase, pero todavia no tiene resumen acumulado.'}
-              </p>
+              <RecentSummaries history={selectedHistory} empty="Este grupo existe en Supabase, pero todavia no tiene resumen acumulado." />
             </div>
             <div className="lb-summary-card">
               <div className="lb-section-title" style={{marginBottom:10}}>Resumen diario</div>
               <p className="lb-summary-text">
-                {activeDayAnalysis?.summary || 'No hay resumen del dia seleccionado.'}
+                {cleanSummaryText(activeDayAnalysis?.summary) || 'No hay resumen del dia seleccionado.'}
               </p>
               {activeDayAnalysis && (
                 <div style={{marginTop:14, display:'flex', gap:8, flexWrap:'wrap'}}>
@@ -3186,7 +3339,7 @@ export default function App() {
                       </div>
                       <span style={{fontFamily:"'Caveat',cursive", fontWeight:700, fontSize:19, color: item.delta >= 0 ? '#3f7050' : '#a8453b'}}>{item.delta > 0 ? '+' : ''}{item.delta}</span>
                     </div>
-                    <p style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#5f636a', margin:'3px 0 0'}}>{item.summary || 'Sin resumen guardado.'}</p>
+                    <p style={{fontFamily:"'Libre Franklin',sans-serif", fontSize:13, color:'#5f636a', margin:'3px 0 0'}}>{cleanSummaryText(item.summary) || 'Sin resumen guardado.'}</p>
                   </div>
                 </button>
               ))
@@ -3299,7 +3452,7 @@ export default function App() {
           {selectedAccountPublications.length ? (
             <div className="lb-publication-list">
               {selectedAccountPublications.map((publication) => {
-                const quality = publication.url ? publicationQualityByUrl.get(publication.url) ?? null : null
+                const quality = qualityForPublication(publication)
                 const matchedAliases = Array.isArray(quality?.matched_aliases)
                   ? quality?.matched_aliases.filter(Boolean).join(', ')
                   : ''
@@ -3325,24 +3478,42 @@ export default function App() {
                         <>
                           <div className="lb-publication-quality-head">
                             <strong>Calidad de nota</strong>
-                            <span className={`lb-quality-chip ${qualityTone(quality)}`}>
+                            {quality.badge && (
+                              <span className="lb-quality-chip type" title={quality.type_source === 'authored' ? 'Nota propia: el cliente es el autor/firma' : quality.type_source === 'inferred' ? 'Tipo inferido del link' : 'Tipo tomado del Sheet (Servicio)'}>
+                                {quality.badge}
+                              </span>
+                            )}
+                            <span
+                              className={`lb-quality-chip ${qualityTone(quality)}`}
+                              title={fetchErrorInfo(quality)?.detail ?? undefined}
+                            >
                               {qualityScoreText(quality)}
                             </span>
                           </div>
-                          <div className="lb-publication-quality-grid">
-                            <span className={`lb-quality-chip ${qualityTone(quality, quality.title_match)}`}>
-                              {quality.title_match ? 'Cliente en titulo' : 'Titulo sin cliente'}
-                            </span>
-                            <span className={`lb-quality-chip ${qualityTone(quality, quality.body_match)}`}>
-                              {quality.body_match ? 'Cliente en cuerpo' : 'Cuerpo sin cliente'}
-                            </span>
-                            <span className="lb-quality-chip muted">
-                              {qualityText(quality.editorial_quality, 'Editorial pendiente')}
-                            </span>
-                            <span className="lb-quality-chip muted">
-                              {qualityText(quality.focus, 'Enfoque pendiente')}
-                            </span>
-                          </div>
+                          {/* Cuando la nota no se pudo leer, los chips título/cuerpo/editorial
+                              engañan (no se leyó nada): mostramos solo el motivo real. */}
+                          {quality.status === 'fetch_error' ? (
+                            <p className="lb-quality-evidence">{fetchErrorInfo(quality)?.detail}</p>
+                          ) : (
+                            <div className="lb-publication-quality-grid">
+                              <span className={`lb-quality-chip ${qualityTone(quality, quality.title_match)}`}>
+                                {quality.title_match ? 'Cliente en titulo' : 'Titulo sin cliente'}
+                              </span>
+                              <span className={`lb-quality-chip ${qualityTone(quality, quality.body_match)}`}>
+                                {quality.body_match ? 'Cliente en cuerpo' : 'Cuerpo sin cliente'}
+                              </span>
+                              {(!quality.deliverable_type || quality.deliverable_type === 'nota') && (
+                                <>
+                                  <span className="lb-quality-chip muted">
+                                    {qualityText(quality.editorial_quality, 'Editorial pendiente')}
+                                  </span>
+                                  <span className="lb-quality-chip muted">
+                                    {qualityText(quality.focus, 'Enfoque pendiente')}
+                                  </span>
+                                </>
+                              )}
+                            </div>
+                          )}
                           {quality.article_title && (
                             <p className="lb-quality-evidence">Titulo leido: {quality.article_title}</p>
                           )}
@@ -3353,22 +3524,27 @@ export default function App() {
                               {evidence ? `Evidencia: ${evidence}` : ''}
                             </p>
                           )}
-                          {Array.isArray(quality.evidence?.checklist) && quality.evidence.checklist.length > 0 && (
-                            <ul className="lb-quality-checklist">
-                              {quality.evidence.checklist.map((item, i) => {
-                                const isPositive = item.toLowerCase().startsWith('si:')
-                                return (
-                                  <li key={i} className={`lb-quality-checklist-item ${isPositive ? 'positive' : 'negative'}`}>
-                                    <span className="lb-quality-checklist-icon">{isPositive ? '✓' : '✗'}</span>
-                                    <span>{item.replace(/^(si|no):\s*/i, '')}</span>
-                                  </li>
-                                )
-                              })}
-                            </ul>
-                          )}
+                          {(() => {
+                            const visibleChecklist = (Array.isArray(quality.evidence?.checklist) ? quality.evidence.checklist : [])
+                              .filter(item => !checklistItemHidden(item))
+                            if (!visibleChecklist.length) return null
+                            return (
+                              <ul className="lb-quality-checklist">
+                                {visibleChecklist.map((item, i) => {
+                                  const isPositive = checklistItemPositive(item)
+                                  return (
+                                    <li key={i} className={`lb-quality-checklist-item ${isPositive ? 'positive' : 'negative'}`}>
+                                      <span className="lb-quality-checklist-icon">{isPositive ? '✓' : '✗'}</span>
+                                      <span>{item.replace(/^(s[ií]|no):\s*/i, '')}</span>
+                                    </li>
+                                  )
+                                })}
+                              </ul>
+                            )
+                          })()}
                         </>
                       ) : (
-                        <span>Sin analisis PQ todavia para este link.</span>
+                        <span>{canOpenPublication ? 'Sin analisis PQ todavia para este link.' : 'No hay link en el Sheet para esta fila.'}</span>
                       )}
                     </div>
                   </div>
@@ -3387,6 +3563,13 @@ export default function App() {
             </p>
           )}
         </div>
+      )}
+
+      {clientTab === 'reportes' && selectedAccount?.account_id === PEPE_ACCOUNT_ID && (
+        <PepeReportsTab />
+      )}
+      {clientTab === 'simulador' && selectedAccount?.account_id === PEPE_ACCOUNT_ID && (
+        <PepeSimuladorTab />
       )}
 
       {clientTab === 'meet' && (() => {
@@ -3441,11 +3624,11 @@ export default function App() {
                   {Array.isArray(sc.checklist) && sc.checklist.length > 0 && (
                     <ul style={{ margin: '8px 0', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 5 }}>
                       {sc.checklist.map((item: string, i: number) => {
-                        const isPos = item.toLowerCase().startsWith('si:')
+                        const isPos = checklistItemPositive(item)
                         return (
                           <li key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 13, color: 'var(--ink-900)' }}>
                             <span style={{ flexShrink: 0, fontWeight: 700, color: isPos ? '#217a4c' : '#a32d2d' }}>{isPos ? '✓' : '✗'}</span>
-                            <span>{item.replace(/^(si|no):\s*/i, '')}</span>
+                            <span>{item.replace(/^(s[ií]|no):\s*/i, '')}</span>
                           </li>
                         )
                       })}

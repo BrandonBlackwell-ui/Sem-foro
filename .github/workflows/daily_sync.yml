@@ -78,9 +78,9 @@ jobs:
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 13 * * *'
         run: |
           if [ -n "${{ github.event.inputs.date }}" ]; then
-            python scripts/sync/account_methodology_analyzer.py --date "${{ github.event.inputs.date }}" --accounts maja,tello
+            python scripts/sync/account_methodology_analyzer.py --date "${{ github.event.inputs.date }}" --accounts all
           else
-            python scripts/sync/account_methodology_analyzer.py --date "$(TZ=America/Mexico_City date +%F)" --accounts maja,tello
+            python scripts/sync/account_methodology_analyzer.py --date "$(TZ=America/Mexico_City date +%F)" --accounts all
           fi
 
       - name: Clean environment

@@ -1,0 +1,757 @@
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+AGENTE IA DE GESTIÓN DE
+CRISIS
+Blackwell Strategy
+
+Documento de Descripción del Producto
+Version 1.1 | 10 de marzo de 2026
+
+Preparado por Utopica para Blackwell Strategy
+
+Pagina 1 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+1. Resumen Ejecutivo
+Blackwell Strategy requiere un agente de inteligencia artificial que funcione como
+consultor de crisis 24/7, capaz de analizar conversaciones con clientes,
+monitorear noticias negativas y generar recomendaciones estratégicas basadas
+en metodologías probadas de gestión de crisis.
+El agente operará sobre la plataforma Claude (nivel enterprise, optimizado para
+datos sensibles), se integrará con WhatsApp mediante un conector open source y
+entregará análisis y escenarios de respuesta al equipo interno de Blackwell sin
+interactuar directamente con los clientes finales.
+Para asegurar la calidad de cada entregable, el sistema utiliza un proceso
+interno de dos agentes: uno genera el análisis y otro lo revisa antes de
+presentarlo al equipo humano. El cliente siempre tiene la decisión final sobre qué
+recomendaciones aplicar.
+El objetivo es reducir los tiempos de respuesta ante crisis reputacionales,
+estandarizar la calidad del análisis y permitir que el equipo humano se concentre
+en la toma de decisiones estratégicas con información ya procesada.
+
+Pagina 2 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+2. Propósito y Rol del Agente
+2.1 Definición
+Un asistente de IA especializado en gestión de crisis reputacionales que opera
+como un analista junior disponible las 24 horas del dia, los 7 dias de la semana.
+
+2.2 Rol dentro del equipo
+•​
+•​
+•​
+•​
+•​
+
+No reemplaza al consultor humano; lo potencia.
+Escucha las conversaciones con clientes (WhatsApp) sin participar en ellas.
+Analiza noticias negativas enviadas por el equipo interno de monitoreo.
+Genera diagnosticos preliminares, escenarios de respuesta y preguntas clave.
+Comunica sus hallazgos exclusivamente al equipo interno de Blackwell.
+
+2.3 Principios de diseno
+Principio
+
+Descripcion
+
+Confidencialidad
+
+Toda la informacion se procesa en entorno seguro. El
+agente nunca expone datos de un cliente a otro.
+
+No intervencion directa
+
+El agente jamas envia mensajes a clientes finales. Solo
+comunica al equipo Blackwell.
+
+Transparencia
+metodologica
+
+Cada recomendacion cita la metodologia o mejor
+practica en la que se basa.
+
+Calidad verificada
+
+Todo analisis pasa por un proceso de revision interno
+antes de llegar al equipo humano.
+
+Evolucion continua
+
+El agente mejora con cada caso real procesado y con
+feedback del equipo.
+
+Pagina 3 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+3. Capacidades Funcionales
+3.1 Monitoreo y lectura de conversaciones
+•​ Lectura automatica de conversaciones de WhatsApp cada 5-10 minutos.
+•​ Identificacion de menciones relevantes: nombres de personas, empresas,
+productos, medios.
+•​ Deteccion de cambios de tono o urgencia en las conversaciones.
+
+3.2 Analisis de noticias negativas
+•​ Procesamiento de alertas de monitoreo de medios enviadas por el equipo interno.
+•​ Clasificacion por medio, alcance estimado, tono y relevancia para cada cliente.
+•​ Correlacion con conversaciones activas de clientes.
+
+3.3 Evaluacion del nivel de crisis
+Nive
+l
+
+Denominacio
+n
+
+Criterios
+
+Tiempo
+
+0
+
+Sin crisis
+
+Mencion aislada, sin traccion
+
+Solo monitoreo
+
+1
+
+Riesgo bajo
+
+Noticia en medio menor, sin
+viralizacion
+
+24-48 horas
+
+2
+
+Crisis
+moderada
+
+Cobertura en medios relevantes,
+redes activas
+
+4-12 horas
+
+3
+
+Crisis alta
+
+Viralizacion activa, trending,
+multiples medios
+
+1-4 horas
+
+4
+
+Crisis
+severa
+
+Impacto en marca, regulatorio,
+riesgo legal
+
+Inmediato
+
+3.4 Generacion de escenarios de respuesta
+Para cada situacion, el agente propone 3-4 escenarios:
+•​ 1. Silencio estrategico — No emitir comunicado. Monitorear evolucion.
+•​ 2. Comunicado de prensa — Declaracion proactiva con mensajes clave
+controlados.
+•​ 3. Carta aclaratoria / Derecho de replica — Respuesta directa al medio que
+origino la informacion.
+•​ 4. Accion correctiva visible — Anuncio de medidas concretas (investigacion,
+disculpa publica).
+
+Cada escenario incluye:
+•​ Justificacion estrategica
+•​ Riesgos asociados
+•​ Requisitos de ejecucion
+Pagina 4 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+•​ Ejemplos de referencia
+
+Pagina 5 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+4. Ejemplo: Caso de Crisis de Principio a Fin
+CONTEXTO
+3:17 AM del martes. Un ex-empleado publica un hilo en X/Twitter con fotos internas
+alegando condiciones insalubres en una planta de produccion. El hilo acumula
+2,000 retweets en 40 minutos.
+
+Deteccion
+3:20 AM
+
+El equipo de monitoreo envia alerta. El agente la recibe y comienza el
+analisis.
+
+Clasificacion
+3:22 AM
+
+Veracidad: No verificada. Alcance: Alto y creciendo. Impacto: Salud publica.
+Resultado: Crisis Nivel 3.
+
+Generacion
+3:25 AM
+
+Diagnostico preliminar, 4 escenarios de respuesta, 5 preguntas de validacion,
+borrador de holding statement.
+
+Revision
+3:28 AM
+
+El Agente Revisor detecta: falta mencionar certificaciones de calidad y
+considerar angulo regulatorio (COFEPRIS).
+
+Notificacion
+3:30 AM
+
+13 min despues de la alerta, el equipo recibe: Alerta Nivel 3, diagnostico, 4
+escenarios, holding statement listo.
+
+Decision humana
+6:00 AM
+
+El consultor selecciona escenario 2 (comunicado proactivo). El agente genera
+la version modificada en minutos.
+
+RESULTADO: Comunicado profesional listo a las 7:00 AM, antes del
+ciclo noticioso matutino.
+
+Pagina 6 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+5. Flujo de Informacion
+ENTRADAS
+WhatsApp Clientes (lectura pasiva)
+Equipo de Monitoreo (alertas)
+Metodologias Base (3 de Blackwell + complementarias)
+
+▼
+PROCESAMIENTO
+1. Lectura y extraccion de informacion clave
+2. Correlacion noticias - conversaciones
+3. Evaluacion de nivel de crisis (0-4)
+4. Generacion de escenarios (3-4 opciones)
+5. Revision de calidad por segundo agente
+6. Priorizacion de recomendaciones
+
+▼
+SALIDAS
+Diagnostico + Escenarios
+Preguntas de validacion
+Alertas por nivel de crisis
+Documentos de soporte
+
+▼
+NUNCA se envia comunicacion directa al cliente final
+
+Pagina 7 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+6. Proceso de Calidad Interna: Generador + Revisor
+El sistema utiliza dos agentes especializados que operan en secuencia antes de
+entregar cualquier resultado al equipo humano.
+
+6.1 Agente Generador
+•​
+•​
+•​
+•​
+
+Recibe el input de crisis (alertas, conversaciones, contexto del cliente).
+Evalua la situacion segun el framework de severidad (niveles 0-4).
+Produce el borrador completo: diagnostico, escenarios, preguntas de validacion.
+Instruccion de sistema optimizada para analisis y redaccion de crisis.
+
+6.2 Agente Revisor
+Evalua el borrador contra criterios de calidad:
+Criterio
+
+Evaluacion
+
+Tono
+
+Profesional, preciso y apropiado para el nivel de crisis.
+
+Completitud
+
+Cubre todos los angulos (legal, mediatico, stakeholders).
+
+Alineacion
+
+Escenarios coherentes con el tipo y nivel de crisis.
+
+Riesgos
+
+Se identifican correctamente los riesgos de cada escenario.
+
+Contexto
+
+Se consideran antecedentes, postura previa y sector del cliente.
+
+6.3 Flujo completo
+Borrador de analisis + escenarios
+
+GENERADOR
+
+▼
+Observaciones + sugerencias de mejora
+
+REVISOR
+
+▼
+Version corregida
+
+GENERADOR
+
+▼
+EQUIPO BLACKWELL
+
+Consultor humano decide que aplicar
+▼
+
+GENERADOR
+
+Version final con ajustes del consultor
+
+Este patron — conocido como evaluator-optimizer — asegura que cada entregable
+pasa por un control de calidad automatizado antes de llegar al equipo humano.
+
+Pagina 8 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+7. Framework de Evaluacion de Crisis
+7.1 Metodologias base
+•​
+•​
+•​
+•​
+
+3 metodologias core que Blackwell proporcionara.
+Mejores practicas de gestion de crisis de empresas Fortune 500.
+Frameworks academicos reconocidos (SCCT de Coombs, entre otros).
+Casos de estudio de crisis reputacionales en Latinoamerica.
+
+7.2 Criterios de evaluacion
+Dimension
+
+Preguntas clave
+
+Veracidad
+
+Hecho confirmado o rumor? Fuentes verificables?
+
+Alcance
+
+Cuantos medios cubren el tema? Viralizacion en redes?
+
+Impacto
+reputacional
+
+Afecta percepcion de marca? Valores sensibles?
+
+Velocidad
+
+Que tan rapido esta escalando? Cual es la tendencia?
+
+Stakeholders
+
+Quienes estan involucrados? Reguladores, gobierno?
+
+Precedente
+
+Historial similar con este cliente? Como se resolvio?
+
+Riesgo legal
+
+Implicaciones legales? Procedimientos en curso?
+
+7.3 Matriz de respuesta
+Rumor no verificado
+
+Hecho confirmado
+
+Alcance bajo
+
+Monitoreo activo. No actuar.
+
+Evaluar posicionamiento
+preventivo.
+
+Alcance medio
+
+Preparar holding statement.
+Validar.
+
+Comunicado proactivo. Activar
+protocolo.
+
+Alcance alto /
+Viral
+
+Desmentido si posible.
+Comunicado de contexto.
+
+Crisis activa. War room.
+Escenarios completos.
+
+Pagina 9 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+8. Roadmap de Implementacion
+Fase 1: Fundacion
+(Semana 1-2)
+
+Configuracion de
+plataforma
+
+Alta de licencias, configuracion de workspace
+
+Carga de metodologias
+base
+
+Las 3 metodologias de Blackwell + complementarias
+
+Diseno de agentes
+
+Instrucciones del Generador y Revisor, personalidad,
+limites
+
+Mockup funcional
+
+Agente respondiendo a escenarios simulados
+
+Primeras iteraciones
+
+Ajustes diarios basados en feedback
+
+Fase 2: Integracion
+WhatsApp (Semana 2-3)
+Deploy de conector
+
+Instalacion y configuracion del conector open source
+
+Adaptaciones
+
+Lectura pasiva, filtrado de conversaciones relevantes
+
+Programacion
+
+Ciclos de lectura cada 5-10 minutos
+
+Equipo dedicado
+
+Configuracion de Mac Mini dedicado
+
+Testing
+
+Pruebas con 2-3 chats anonimizados
+
+Fase 3: Calibracion
+(Semana 3-4)
+
+Stress tests
+
+Pruebas con 15 casos reales historicos
+
+Calibracion de niveles
+
+Ajuste de umbrales de clasificacion
+
+Refinamiento
+
+Ajuste del ciclo Generador-Revisor
+
+Comparacion
+
+Validar analisis comparables a diagnosticos humanos
+
+Fase 4: Operacion
+Asistida (Semana 4-6)
+Operacion en paralelo
+
+Agente analiza junto al equipo humano
+
+Feedback loop
+
+Equipo marca aciertos y errores
+
+Ajustes de tonalidad
+
+Refinamiento del estilo de comunicacion
+
+Documentacion
+
+Registro de patrones y mejoras
+
+Pagina 10 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+Fase 5: Autonomia
+Supervisada (Semana
+6+)
+
+Operacion 24/7
+
+Monitoreo y analisis autonomo
+
+Alertas automaticas
+
+Notificaciones diferenciadas por nivel
+
+Revisiones periodicas
+
+Evaluacion semanal de calidad
+
+Expansion
+
+Nuevas funcionalidades segun necesidades
+
+Pagina 11 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+9. Lo que el Agente NO Hace
+Para generar claridad y confianza, estas son las restricciones explicitas:
+Restriccion
+
+Detalle
+
+No publica nada sin
+aprobacion humana
+
+Ningun comunicado se emite sin que un consultor
+lo autorice.
+
+No contacta medios de
+comunicacion
+
+No envia correos, hace llamadas ni interactua con
+periodistas.
+
+No toma decisiones legales,
+ni procesa documentos sin
+autorización
+
+Puede senalar riesgos legales, pero no emite
+opiniones juridicas.
+
+No interactua con clientes
+finales
+
+Nunca envia mensajes directos a los clientes de
+Blackwell.
+
+No cruza informacion entre
+clientes
+
+La informacion de cada cliente esta segregada.
+
+No reemplaza el juicio
+humano
+
+Genera opciones y analisis; la decision final es del
+consultor.
+
+No accede a sistemas
+externos
+
+Solo se conecta a fuentes expresamente
+configuradas.
+
+No almacena historiales
+completos de conversación
+
+Pagina 12 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+10. Presupuesto de Infraestructura
+Costos de referencia para herramientas e infraestructura. La consultoria de
+implementacion se cotiza por separado.
+
+10.1 Costos recurrentes (mensuales)
+Concepto
+
+Costo estimado
+
+Claude Team (por usuario)
+
+$100 USD/mes
+
+Costos de API por volumen
+
+Variable
+
+WhatsApp Business API
+
+~]
+
+10.2 Costos de infraestructura (una vez)
+Concepto
+Mac Mini (computadora dedicada)
+
+Costo estimado
+~$600-800 USD
+
+La consultoria de configuracion, prompt engineering, calibracion y capacitacion se
+cotizara en propuesta comercial separada.
+
+Pagina 13 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+11. Informacion Requerida de Blackwell
+Prioritario (antes de iniciar)
+•​ ☐ 2-3 chats anonimizados de clientes — Conversaciones reales de WhatsApp
+para entender formato, tono y tipo de informacion.
+•​ ☐ 3 metodologias core de gestion de crisis — Los frameworks propios que
+Blackwell utiliza actualmente.
+•​ ☐ Ejemplos de documentos de diagnostico — 2-3 diagnosticos o propuestas que
+el equipo genera hoy.
+
+Importante (primeras 2 semanas)
+•​
+•​
+•​
+•​
+
+☐ Proceso paso a paso ideal de gestion de crisis.
+☐ 15 casos historicos para stress testing (anonimizados).
+☐ Definicion de usuarios iniciales (para licencias de Claude).
+☐ Acceso a WhatsApp Business para configurar el conector.
+
+Pagina 14 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+12. Enfoque de Trabajo
+Principio
+
+Como se aplica
+
+Agilidad
+
+Entregas diarias. No se espera a tener todo perfecto
+para avanzar.
+
+Mockup funcional desde
+dia 1
+
+El agente estara respondiendo desde la primera
+sesion de trabajo.
+
+Iteracion sobre uso real
+
+Cada interaccion con casos reales alimenta mejoras.
+
+Calidad antes de entrega
+
+El proceso Generador-Revisor asegura control de
+calidad.
+
+Transparencia
+
+Acceso continuo al estado del agente. Feedback en
+tiempo real.
+
+Pagina 15 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+13. Seguridad y Privacidad
+Dada la naturaleza sensible de la informacion que maneja una firma de gestion de
+crisis, la seguridad es un componente central del diseno.
+
+13.1 Plataforma Claude — Garantias de Anthropic
+Garantia
+
+Detalle
+
+Datos no usados para
+entrenamiento
+
+Anthropic garantiza contractualmente que los datos no
+se utilizan para entrenar ni mejorar sus modelos.
+
+Cifrado
+
+Datos cifrados en transito (TLS 1.2+) y en reposo
+(AES-256).
+
+SOC 2 Type II
+
+Certificacion de controles de seguridad, disponibilidad
+y confidencialidad.
+
+Retencion limitada
+
+Prompts y respuestas no se retienen mas alla de lo
+necesario (0-30 dias).
+
+Controles
+administrativos
+
+Gestion de usuarios, permisos por rol, y logs de
+actividad.
+
+13.2 Medidas especificas para Blackwell
+Medida
+
+Detalle
+
+Segregacion de datos
+
+Cada cliente opera en contexto aislado.
+Conversaciones separadas y perfiles independientes.
+
+Control de acceso por
+rol
+
+Solo miembros autorizados acceden al agente y
+analisis.
+
+Sin intervencion directa
+
+El agente nunca envia mensajes a clientes finales.
+
+Politica de retencion
+
+Se definira con Blackwell cuanto tiempo se conservan
+los analisis.
+
+Auditoria completa
+
+Todas las recomendaciones registradas con
+timestamp para trazabilidad.
+
+Minimo privilegio
+
+Solo accede a fuentes expresamente configuradas.
+Sin acceso a internet abierto.
+
+Pagina 16 | Confidencial | Utopica para Blackwell Strategy
+
+Agente IA de Gestion de Crisis | Blackwell Strategy
+
+Documento preparado por Utopica
+Para preguntas o comentarios, contactar a Gael.
+
+gael@utopica.net
+
+Pagina 17 | Confidencial | Utopica para Blackwell Strategy
+
+

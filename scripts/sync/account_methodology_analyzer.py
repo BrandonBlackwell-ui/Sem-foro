@@ -31,42 +31,67 @@ except ModuleNotFoundError:
 
 logger = logging.getLogger("account_methodology_analyzer")
 
-TARGET_ACCOUNTS = {
-    "tello": {
-        "account_id": "tello",
-        "account_name": "Tello + Blackwell",
-        "supabase_ids": ["12", "tello"],
-        "names": ["Tello + Blackwell", "Interno Tello", "Miguel Tello", "Tello (MTV)"],
-    },
-    "maja": {
-        "account_id": "maja",
-        "account_name": "MAJA",
-        "supabase_ids": ["02", "maja"],
-        "names": ["MAJA", "Maja", "MAJA Sportswear", "Maja Sportswear"],
-    },
+# Nombres extra por cuenta (además del nombre de WhatsApp) para reforzar el match
+# del snapshot y del dashboard. Opcional; la lista base se arma dinámica desde WA.
+ACCOUNT_NAME_HINTS = {
+    "12": ["Tello + Blackwell", "Interno Tello", "Miguel Tello", "Tello (MTV)", "MTV"],
+    "02": ["MAJA", "Maja Sportswear", "MAJA Sportswear"],
 }
 
+
+def _load_target_accounts(sb: Any) -> dict[str, dict[str, Any]]:
+    """Arma dinámicamente las cuentas a analizar desde los datos de WhatsApp.
+
+    Cubre TODAS las cuentas con score de WA (excluye internos 00_*). Cada análisis
+    queda con account_id = número de cuenta y account_name = nombre de WA, que el
+    dashboard empata por score.account_id / score.account_name / grupos.
+    """
+    scores = sb.table("wa_account_scores").select("account_id,account_name").execute().data or []
+    groups = sb.table("wa_groups").select("account_id,name").execute().data or []
+    names_by_id: dict[str, list[str]] = {}
+    for g in groups:
+        aid = str(g.get("account_id") or "").strip()
+        name = g.get("name")
+        if aid and name:
+            names_by_id.setdefault(aid, []).append(name)
+
+    accounts: dict[str, dict[str, Any]] = {}
+    for row in scores:
+        aid = str(row.get("account_id") or "").strip()
+        if not aid or aid.startswith("00"):  # excluir Interno Blackwell / unmapped
+            continue
+        account_name = str(row.get("account_name") or aid)
+        names = list(dict.fromkeys([account_name, *names_by_id.get(aid, []), *ACCOUNT_NAME_HINTS.get(aid, [])]))
+        accounts[aid.lower()] = {
+            "account_id": aid,
+            "account_name": account_name,
+            "supabase_ids": [aid],
+            "names": names,
+        }
+    return accounts
+
 METHODOLOGY_BRIEF = """
-Metodologias disponibles:
+Metodologias Blackwell (usa estos marcos para clasificar cada hallazgo y justificar acciones):
 
-1) Blackwell R3:
-- Baseline: lectura integral del contexto, percepcion, atributos, riesgos y consistencia entre discurso, acciones y cobertura.
-- Bearing: definicion del rumbo reputacional defendible, decisiones de conversacion y posicionamiento.
-- Blueprint: arquitectura de narrativa, mensajes clave, protocolos y escenarios.
-- Build: activacion de mensajes, formatos, plataformas y construccion progresiva de credibilidad.
-- Balance: monitoreo continuo, desviaciones, recalibracion temprana y prevencion.
+1) BLACKWELL R3 — framework propio de gobernanza reputacional. Comunicacion como SISTEMA DE DECISION (no publicity, no comunicacion reactiva, no solo PR). Se aplica en 5 capas, con tres lentes: construccion reputacional, riesgos/amenazas y presencia publica.
+- Baseline: lectura y analisis integral del contexto. Mapear conversacion y percepcion actual de la marca/lider; identificar atributos reputacionales; analizar consistencia entre discurso historico, acciones y cobertura; detectar riesgos reputacionales latentes y activos por tema, vocero, canal y timing; detectar narrativas adversas con potencial de escalar; ubicar espacios donde el lider es legitimo.
+- Bearing: definir el posicionamiento reputacional deseado y DEFENDIBLE; alinear ambicion reputacional con realidad operativa; decidir estrategicamente que conversaciones abordar y cuales evitar; definir indicadores de riesgo y de exito.
+- Blueprint: arquitectura de narrativa. Disenar mensajes clave alineados al posicionamiento; construir narrativa consistente y sostenible; definir tonos, enfasis e hilos narrativos; disenar protocolos por escenario; integrar mensajes reactivos y preventivos; desarrollar contranarrativas que neutralicen conversacion negativa.
+- Build: activacion. Activar mensajes y narrativas; seleccionar formatos y plataformas; construir credibilidad y autoridad progresivamente; controlar timing, frecuencia y exposicion; ajustes tacticos ante senales tempranas de friccion.
+- Balance: monitoreo continuo. Evaluar percepcion y desempeno narrativo; identificar desviaciones entre narrativa planeada y recepcion real; correccion temprana de senales que puedan escalar; recalibrar mensajes y ajustar exposicion/postura.
+Protocolo de crisis R3: Fase 1 Flash Assessment (<=20 min: determinar si es crisis y su magnitud, capa Baseline). Fase 2 Crisis Activation (30-60 min: gobernanza -quien decide, quien habla, como se coordina-, capa Bearing; en <2h debe haber crisis clasificada, comite activado, vocero definido y narrativa preliminar). Fase 3 Strategic Response Design (60-180 min: que decir, como y por donde, capa Blueprint; al final: narrativa definida, postura institucional, mensajes clave y materiales listos).
 
-2) Chris Lehane:
-- Gestiona crisis como campana permanente: rapid response, adversario, base de apoyo, narrativa y movilizacion.
-- Usa contranarrativa ofensiva cuando existe acusador, agenda adversa, conflicto regulatorio o narrativa hostil.
-- No debe activarse si no hay crisis, adversario o riesgo publico claro; si no aplica, declararlo.
-- Riesgo del modelo: sobrerreaccion, astroturfing, agresividad que dane relaciones necesarias.
+2) CHRIS LEHANE — gestion de crisis como CAMPANA PERMANENTE (logica de campana electoral, no PR defensivo tradicional). Filosofia: "contraataca y haz que duela"; la opinion publica es el jurado y la inaccion equivale a perder la narrativa.
+- Principios: (a) Do no harm / una sola oportunidad: honestidad factica y transparencia radical; entregar TODOS los hechos duros en un unico bloque controlado e inmediato (one bite at the apple); el goteo informativo (drip, drip) es letal. (b) Contranarrativa ofensiva (counterspin): una vez fijados los hechos, exponer las motivaciones politicas/financieras/ideologicas del acusador y desacreditar su agenda. (c) Disciplina de mensaje: mensaje simple y consistente que consolide primero la BASE de apoyo propia, sin concesiones.
+- Modelo de campana: convertir a usuarios/clientes en una constituency movilizable; adversario + narrativa de legitimacion + ground game + datos; infraestructura permanente, no campanas puntuales.
+- Tacticas situacionales: federalismo inverso; movilizacion de base por interes economico propio; investigacion de oposicion asimetrica; reencuadre (de riesgo a soberania economica; de corporativo a "gente comun"/clase media).
+- CUANDO ACTIVAR: solo si hay adversario, acusador, narrativa hostil, conflicto regulatorio o crisis publica clara. Si NO aplica, declararlo (status no_aplica) y no forzarla.
+- Vulnerabilidades/limites a vigilar: la brecha organico-vs-ingeniado (astroturfing) es el mayor riesgo reputacional; el instinto combativo dana relaciones que el cliente necesita (calibrar combate<->coalicion); metricas auto-reportadas disputables; tacticas de intimidacion legal que invierten la legitimidad; efecto bumerang de las "artes oscuras"; el modelo se quiebra si los hechos colapsan o si el adversario tiene apoyo organico local masivo.
 
-3) Agente IA Crisis Blackwell:
-- Lee conversaciones, noticias negativas y contexto para clasificar riesgo nivel 0-4.
-- Niveles: 0 sin crisis, 1 riesgo bajo, 2 crisis moderada, 3 crisis alta, 4 crisis severa.
-- Propone escenarios: silencio estrategico, comunicado, replica/aclaracion, accion correctiva visible.
-- Siempre opera como soporte interno; no decide ni contacta clientes.
+3) AGENTE IA CRISIS BLACKWELL — consultor de crisis 24/7 que opera como SOPORTE INTERNO (nunca decide ni contacta al cliente final; cada recomendacion cita su metodologia).
+- Clasifica el riesgo en NIVEL 0-4: 0 sin crisis (mencion aislada sin traccion -> solo monitoreo); 1 riesgo bajo (medio menor, sin viralizacion -> 24-48h); 2 crisis moderada (medios relevantes, redes activas -> 4-12h); 3 crisis alta (viralizacion/trending/multiples medios -> 1-4h); 4 crisis severa (impacto en marca, regulatorio, riesgo legal -> inmediato).
+- Dimensiones de evaluacion: veracidad, alcance, impacto reputacional, velocidad, stakeholders, precedente, riesgo legal.
+- Propone 3-4 ESCENARIOS de respuesta, cada uno con justificacion, riesgos y requisitos: (1) Silencio estrategico (no emitir, monitorear evolucion); (2) Comunicado de prensa proactivo; (3) Carta aclaratoria / derecho de replica; (4) Accion correctiva visible (investigacion, disculpa, medida concreta).
 """
 
 
@@ -79,12 +104,19 @@ def main() -> None:
         raise RuntimeError("OPENROUTER_API_KEY is required.")
 
     target_date = date.fromisoformat(args.date) if args.date else _today_mx()
-    account_keys = [key.strip().lower() for key in args.accounts.split(",") if key.strip()]
-    accounts = [TARGET_ACCOUNTS[key] for key in account_keys if key in TARGET_ACCOUNTS]
-    if not accounts:
-        raise RuntimeError(f"No valid accounts selected. Valid: {', '.join(TARGET_ACCOUNTS)}")
-
     sb = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
+
+    all_accounts = _load_target_accounts(sb)
+    selection = (args.accounts or "").strip().lower()
+    if selection in ("", "all"):
+        accounts = list(all_accounts.values())
+    else:
+        keys = [k.strip().lower() for k in selection.split(",") if k.strip()]
+        accounts = [all_accounts[k] for k in keys if k in all_accounts]
+    if not accounts:
+        raise RuntimeError(f"No valid accounts selected. Valid: {', '.join(sorted(all_accounts)) or '(ninguna con score WA)'}")
+    logger.info("Methodology analysis for %d account(s).", len(accounts))
+
     rows = []
     for account in accounts:
         snapshot = _build_snapshot(sb, account, target_date)
@@ -105,7 +137,7 @@ def main() -> None:
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", help="YYYY-MM-DD. Defaults to today in America/Mexico_City.")
-    parser.add_argument("--accounts", default="maja,tello", help="Comma separated keys. Default: maja,tello.")
+    parser.add_argument("--accounts", default="all", help="'all' (default) o números de cuenta separados por coma, ej. 01,12.")
     parser.add_argument("--model", default=os.getenv("OPENROUTER_MODEL", OPENROUTER_MODEL))
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()

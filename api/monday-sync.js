@@ -83,7 +83,14 @@ export default async function handler(req, res) {
       fetchActiveMondayTasks(),
     ])
 
-    // Tasks whose monday_item_id no longer exists in Monday
+    // Tasks whose monday_item_id no longer exists in Monday.
+    // GUARD: si Monday devolvió CERO items (board inexistente, token sin permisos,
+    // respuesta anómala), NO archivamos nada — antes eso marcaba deleted_at en TODAS
+    // las tareas activas de un jalón.
+    if (mondayIds.size === 0 && supabaseTasks.length > 0) {
+      console.warn('[monday-sync] Monday devolvió 0 items con tareas activas locales: se omite el archivado (posible board/token inválido).')
+      return res.status(200).json({ ok: true, monday_items: 0, supabase_tasks: supabaseTasks.length, archived: 0, skipped: 'monday_empty' })
+    }
     const orphaned = supabaseTasks.filter(t => !mondayIds.has(String(t.monday_item_id)))
     const archivedCount = await archiveTasks(orphaned.map(t => t.id))
 
