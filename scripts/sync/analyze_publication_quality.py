@@ -348,6 +348,16 @@ _TYPE_CONFIRM = {
 }
 
 
+# La ausencia de algo malo es un hallazgo POSITIVO: si el LLM lo prefija con "No:" por
+# la forma gramatical ("No: la nota no presenta tono defensivo"), lo corregimos a "Si:"
+# para que el front no lo pinte como ✗ rojo en algo que es bueno.
+_POSITIVE_ABSENCE_RX = re.compile(
+    r"\b(no\s+(presenta|tiene|hay|muestra|refleja|existe|adopta|contiene|se\s+detectan?)|sin)\b"
+    r"[^.]*\b(defensiv|crisis|negativ|ataqu|confrontaci|hostil|riesgo\s+reputacional|"
+    r"insatisfacci|presion\s+negativa|dano\s+reputacional)"
+)
+
+
 def _sanitize_checklist(items: Any) -> list[str]:
     out: list[str] = []
     for item in items if isinstance(items, list) else []:
@@ -356,6 +366,9 @@ def _sanitize_checklist(items: Any) -> list[str]:
         normalized = _normalize(item)
         if any(banned in normalized for banned in _BANNED_CHECKLIST):
             continue
+        # Corrige la polaridad: "No: <ausencia de algo malo>" -> "Si: ..."
+        if normalized.startswith("no ") and _POSITIVE_ABSENCE_RX.search(normalized):
+            item = re.sub(r"^\s*no\s*:\s*", "Si: ", item, count=1, flags=re.IGNORECASE)
         out.append(item)
     return out
 
@@ -753,6 +766,7 @@ PASO 2 — Clasifica la nota con estas reglas PQ:
 
 PASO 3 — Genera el checklist de calificacion:
 Lista de 3 a 5 frases cortas que explican POR QUE le pusiste esa calificacion. Cada frase debe empezar con "Si:" o "No:" segun aplique.
+POLARIDAD: "Si:" = hallazgo BUENO para el cliente; "No:" = hallazgo MALO. Guiate por si es bueno o malo, NO por la forma gramatical. La AUSENCIA de algo malo es BUENA: usa "Si:" (ej. "Si: la nota no tiene tono defensivo ni de crisis"). Nunca escribas "No: la nota no presenta tono defensivo" — eso es bueno, va con "Si:".
 NOTA DE CONTEXTO: Nunca digas que "no hay evidencia de que Blackwell haya gestionado la nota" u oraciones similares en el checklist. El hecho de estar en esta evaluacion garantiza que Blackwell la gestiono.
 AUTORIA: NO marques como negativo que "el cliente no es el autor" o que "es el sujeto y no el autor de la nota": eso es NORMAL en una nota informativa, no un defecto. Solo menciona la autoria en POSITIVO cuando el cliente SI escribio/firmo la pieza (ej. "Si: la firma el propio cliente").
 Ejemplos de frases permitidas:

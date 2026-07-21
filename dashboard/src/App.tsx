@@ -919,6 +919,19 @@ function surveyQuestionValid(q: any): boolean {
   return answer.length > 0 && !/regex fallback/i.test(answer)
 }
 
+// La AUSENCIA de algo malo es un hallazgo POSITIVO. El LLM a veces la prefija con
+// "No:" por la forma gramatical ("No: la nota no presenta tono defensivo ni de crisis"),
+// lo que la pintaba con ✗ rojo aunque sea buena. Detecta esas frases para mostrarlas ✓.
+const POSITIVE_ABSENCE_RE =
+  /\b(no\s+(presenta|tiene|hay|muestra|refleja|existe|adopta|contiene|se\s+detectan?)|sin)\b[^.]*\b(defensiv|crisis|negativ|ataqu|confrontaci|hostil|riesgo\s+reputacional|insatisfacci|presion\s+negativa|dano\s+reputacional)/
+function checklistItemPositive(item: string): boolean {
+  const trimmed = String(item ?? '').trim()
+  if (/^s[ií]:/i.test(trimmed)) return true
+  const content = trimmed.replace(/^(s[ií]|no):\s*/i, '')
+  const norm = content.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+  return POSITIVE_ABSENCE_RE.test(norm)
+}
+
 function roundScore(value: number) {
   return Math.round(value * 10) / 10
 }
@@ -3447,7 +3460,7 @@ export default function App() {
                           {Array.isArray(quality.evidence?.checklist) && quality.evidence.checklist.length > 0 && (
                             <ul className="lb-quality-checklist">
                               {quality.evidence.checklist.map((item, i) => {
-                                const isPositive = /^s[ií]:/i.test(item)
+                                const isPositive = checklistItemPositive(item)
                                 return (
                                   <li key={i} className={`lb-quality-checklist-item ${isPositive ? 'positive' : 'negative'}`}>
                                     <span className="lb-quality-checklist-icon">{isPositive ? '✓' : '✗'}</span>
@@ -3539,7 +3552,7 @@ export default function App() {
                   {Array.isArray(sc.checklist) && sc.checklist.length > 0 && (
                     <ul style={{ margin: '8px 0', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 5 }}>
                       {sc.checklist.map((item: string, i: number) => {
-                        const isPos = /^s[ií]:/i.test(item)
+                        const isPos = checklistItemPositive(item)
                         return (
                           <li key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 13, color: 'var(--ink-900)' }}>
                             <span style={{ flexShrink: 0, fontWeight: 700, color: isPos ? '#217a4c' : '#a32d2d' }}>{isPos ? '✓' : '✗'}</span>
