@@ -377,9 +377,11 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
         effective_type, editorial_quality, focus, mention, publication, config
     )
 
-    # Solo las notas genericas dependen del contenido para puntuar. Si el fetch fallo
-    # pero el tipo tiene ancla propia (columna/entrevista/foro/vinculacion), se puntua igual.
-    if fetch_error is not None and pq_score is None:
+    # Nota/Trascendido dependen del CONTENIDO del link para puntuar. Si no se pudo leer,
+    # NO inventamos un 40 (Mencion) enganoso: se marca como no analizada (fetch_error) para
+    # que el front diga "no se pudo leer" y no un puntaje falso. Los tipos con ancla propia
+    # (columna/entrevista/foro/vinculacion) sí se puntuan aunque el link no cargue.
+    if fetch_error is not None and (pq_score is None or _score_mode == "nota_llm"):
         return _error_row(publication, model, RuntimeError(fetch_error), config)
 
     if fetch_error is not None:
