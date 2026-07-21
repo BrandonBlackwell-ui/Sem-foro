@@ -132,6 +132,25 @@ def _load_aliases() -> dict[str, dict[str, str]]:
     return aliases
 
 
+# Correcciones manuales a filas del Sheet que traen TEXTO en vez de link. Debe coincidir
+# con PUBLICATION_OVERRIDES en api/media-publications.js para que el analisis quede con la
+# misma URL que muestra el dashboard (si no, no empatan y sale "sin analisis").
+_PUBLICATION_OVERRIDES = [
+    {
+        "match": "ENTREVISTA EN MILENIO PEDRO GAMBOA",
+        "url": "https://www.medialog.com.mx/mx.asp?h=653abd06a797f8de777083f55e823b22&E=YntmcXBtcHM=&X=dXlwam9mbWpu",
+        "media": "Milenio",
+    },
+]
+
+
+def _apply_override(link: str, media: str) -> tuple[str, str]:
+    for o in _PUBLICATION_OVERRIDES:
+        if _normalize(o["match"]) == _normalize(link):
+            return o["url"], (o.get("media") or media)
+    return link, media
+
+
 def _publication_payloads(
     rows: list[dict[str, str]],
     aliases: dict[str, dict[str, str]],
@@ -143,7 +162,7 @@ def _publication_payloads(
     for row in rows:
         sheet_client = _field(row, "cliente")
         alias = aliases.get(_normalize(sheet_client))
-        link = _field(row, "link")
+        link, media_name = _apply_override(_field(row, "link"), _field(row, "medio"))
         if not alias or not link:
             skipped += 1
             continue
@@ -163,7 +182,7 @@ def _publication_payloads(
                 "source_sheet_id": sheet_id,
                 "source_sheet_gid": gid,
                 "source_row_number": _parse_int(row.get("_source_row_number")) or 0,
-                "media_name": _field(row, "medio"),
+                "media_name": media_name,
                 "provider": _field(row, "proveedor"),
                 "columnist": _field(row, "columnista"),
                 "total": _parse_number(_field(row, "total")),
