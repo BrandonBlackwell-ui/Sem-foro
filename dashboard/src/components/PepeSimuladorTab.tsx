@@ -372,12 +372,140 @@ const NOTE_GRID = [
   '.NNN.',
 ]
 
+// Conductor/host de podcast o TV: audífonos (banda + earcups), camisa y micrófono.
+const CONDUCTOR_GRID = [
+  '....HHHHHHHH....',
+  '...HHHHHHHHHH...',
+  '..PPHHHHHHHHPP..',
+  '..PPSSSSSSSSPP..',
+  '..PPSEESSEESPP..',
+  '..PPSSSSSSSSPP..',
+  '....SSsddsSS....',
+  '.....SSSSSS.....',
+  '....CCCCCCCC....',
+  '...CCCCCCCCCC...',
+  '..CCjCWWWWCjCC..',
+  '..CC.CWWWWC.CC..',
+  '..SS.CWWWWC.SM..',
+  '.....CCCCCC..M..',
+  '....NNNNNNNN....',
+  '....NNN..NNN....',
+  '....NN....NN....',
+  '...KKK....KKK...',
+]
+const CONDUCTOR_GRID_B = [
+  '....HHHHHHHH....',
+  '...HHHHHHHHHH...',
+  '..PPHHHHHHHHPP..',
+  '..PPSSSSSSSSPP..',
+  '..PPSEESSEESPP..',
+  '..PPSSSSSSSSPP..',
+  '....SSsddsSS....',
+  '.....SSSSSS.....',
+  '....CCCCCCCC....',
+  '...CCCCCCCCCC...',
+  '..CCjCWWWWCjCC..',
+  '..CC.CWWWWC.CC..',
+  '..SM.CWWWWC.SS..',
+  '..M..CCCCCC.....',
+  '....NNNNNNNN....',
+  '....NNN..NNN....',
+  '...NN......NN...',
+  '..KKK......KKK..',
+]
+const CONDUCTOR_PALETTE: Record<string, string> = {
+  H: '#2a2118', P: '#20232b', S: '#e2b48e', s: '#c99672', E: '#1c1c1c',
+  d: '#3b2b21', C: '#4a5568', j: '#d9a441', W: '#eef1f5', N: '#2b2f38',
+  M: '#c0c0c8', K: '#241c14',
+}
+
 const EXTRA_SPRITES: Record<string, { frames: string[][]; palette: Record<string, string>; px: number; tag: string }> = {
   angela: { frames: [ANGELA_GRID, ANGELA_GRID_B], palette: ANGELA_PALETTE, px: 5, tag: 'ÁNGELA' },
   emiliano: { frames: [JOVEN_GRID, JOVEN_GRID_B], palette: EMILIANO_PALETTE, px: 5, tag: 'EMILIANO' },
   leonardo: { frames: [JOVEN_GRID, JOVEN_GRID_B], palette: LEONARDO_PALETTE, px: 5, tag: 'LEONARDO' },
   fan: { frames: [FAN_GRID, FAN_GRID_B], palette: FAN_PALETTE, px: 4, tag: 'FAN' },
   abogado: { frames: [ABOGADO_GRID, ABOGADO_GRID_B], palette: ABOGADO_PALETTE, px: 4, tag: 'LIC.' },
+  conductor: { frames: [CONDUCTOR_GRID, CONDUCTOR_GRID_B], palette: CONDUCTOR_PALETTE, px: 5, tag: 'HOST' },
+}
+
+// ── Props componibles (el oráculo ensambla la escena con estas piezas) ──────────
+// Cada pieza es CSS puro (crisp, sin depender de que un LLM dibuje pixeles).
+const PROP_ZONA_LEFT: Record<string, number> = {
+  izquierda: 120, centro: 360, derecha: 560, frente: 300, fondo: 380,
+}
+
+// Caballo (rancho) — silueta charra de perfil.
+const HORSE_GRID = [
+  '.............DDD..',
+  '............DDDDD.',
+  'T..........MDDDD..',
+  'TBBBBBBBBBBMMDDO..',
+  'TBBBBBBBBBBBBBB...',
+  '.BBBBBBBBBBBBBB...',
+  '.BBBBBBBBBBBBBB...',
+  '.K..K......K..K...',
+  '.K..K......K..K...',
+  '.H..H......H..H...',
+]
+const HORSE_PALETTE: Record<string, string> = {
+  B: '#6e4a2e', D: '#5d3f27', M: '#2e1f12', T: '#2e1f12', O: '#1d1409', K: '#5a3c24', H: '#1d1409',
+}
+
+function ScenePropPiece({ pieza, zona }: { pieza: string; zona: string }) {
+  // audifonos se dibuja sobre Pepe (se maneja aparte); aquí no se renderiza.
+  if (pieza === 'audifonos') return null
+  const left = PROP_ZONA_LEFT[zona] ?? 360
+  const at = (bottom: number, z: number, dx = 0): React.CSSProperties =>
+    ({ position: 'absolute', left: left + dx, bottom, zIndex: z })
+  switch (pieza) {
+    // Frente (z4): quedan delante de Pepe → look de "sentado a la mesa/micrófono".
+    case 'mesa':
+      return <div className="pq-prop pq-prop-mesa" style={at(92, 4)} />
+    case 'microfono':
+      return <div className="pq-prop pq-prop-mic" style={at(112, 4, 20)}><i /><b /></div>
+    case 'laptop':
+      return <div className="pq-prop pq-prop-laptop" style={at(120, 4, -6)}><i /></div>
+    // Objetos a los lados (z2).
+    case 'camara':
+      return <div className="pq-prop pq-prop-camara" style={at(90, 3)}><i /><b /></div>
+    case 'planta':
+      return <div className="pq-prop pq-prop-planta" style={at(90, 2)}><i /><b /></div>
+    case 'bocina':
+      return <div className="pq-prop pq-prop-bocina" style={at(88, 2)}><i /><i /></div>
+    // Fondo/pared (z1): detrás de los actores.
+    case 'on_air':
+      return <div className="pq-prop pq-prop-onair" style={at(248, 1, 40)}>ON AIR</div>
+    case 'monitor':
+      return <div className="pq-prop pq-prop-monitor" style={at(150, 1)}><i /></div>
+    case 'sofa':
+      return <div className="pq-prop pq-prop-sofa" style={at(90, 1)} />
+    case 'tarima':
+      return <div className="pq-prop pq-prop-tarima" style={{ position: 'absolute', left: 190, bottom: 82, zIndex: 1 }} />
+    case 'alfombra':
+      return <div className="pq-prop pq-prop-alfombra" style={{ position: 'absolute', left: 0, right: 0, bottom: 46, zIndex: 1 }} />
+    case 'backdrop_logos':
+      return <div className="pq-prop pq-prop-backdrop" style={{ position: 'absolute', left: Math.max(0, left - 60), bottom: 150, zIndex: 1 }}><span>PEPE FEST</span><span>PEPE FEST</span><span>PEPE FEST</span><span>PEPE FEST</span><span>PEPE FEST</span><span>PEPE FEST</span></div>
+    case 'reflector':
+      return <div className="pq-prop pq-prop-reflector" style={at(250, 2)}><i /></div>
+    case 'caballo':
+      return <div className="pq-prop" style={at(88, 2)}><PixelSprite grid={HORSE_GRID} palette={HORSE_PALETTE} px={5} /></div>
+    case 'consola':
+      return <div className="pq-prop pq-prop-consola" style={at(92, 4)}>{Array.from({ length: 10 }, (_, i) => <i key={i} />)}</div>
+    case 'guitarra':
+      return <div className="pq-prop pq-prop-guitarra" style={at(96, 3)}><i /><b /></div>
+    case 'podio':
+      return <div className="pq-prop pq-prop-podio" style={at(88, 4)}><span /><i /><b /></div>
+    case 'maleta':
+      return <div className="pq-prop pq-prop-maleta" style={at(88, 2)}><i /></div>
+    case 'plato':
+      return <div className="pq-prop pq-prop-plato" style={at(116, 4)}><i /></div>
+    case 'bandera':
+      return <div className="pq-prop pq-prop-bandera" style={at(88, 1)}><i /><b /></div>
+    case 'cama':
+      return <div className="pq-prop pq-prop-cama" style={at(88, 1)}><i /><b /></div>
+    default:
+      return null
+  }
 }
 
 // Coche estacionado (vida urbana de fondo).
@@ -447,7 +575,9 @@ function BuildingWindows({ rows, cols, lit }: { rows: number; cols: number; lit?
 
 // Escena por defecto mientras el jugador decide (mundo vivo, no estático).
 const IDLE_ESCENA: SimEscena = {
+  fondo: 'calle',
   personajes: [],
+  props: [],
   animacion: 'idle',
   ambiente: 'dia',
   dialogos: [
@@ -486,9 +616,106 @@ function GameScene({ thinking, escena }: { thinking: boolean; escena?: SimEscena
   const anchor = dlg ? bubbleAnchor(dlg.quien) : null
 
   const ambiente = esc.ambiente ?? 'dia'
+  const fondo = esc.fondo ?? 'calle'
+  const props = thinking ? [] : (esc.props ?? [])
+  const wearsHeadphones = !thinking && props.some(p => p.pieza === 'audifonos')
+  const stage = anim === 'cantar' || fondo === 'escenario'
 
   return (
-    <div className={`pq-scene pq-amb-${ambiente}${anim === 'crisis' ? ' pq-scene-crisis' : ''}${anim === 'silencio' ? ' pq-scene-dim' : ''}`}>
+    <div className={`pq-scene pq-amb-${ambiente} pq-fondo-${fondo}${anim === 'crisis' ? ' pq-scene-crisis' : ''}${anim === 'silencio' ? ' pq-scene-dim' : ''}`}>
+      {/* Decorado por locación: cada fondo (≠ calle) tapa el mundo con su propio set */}
+      {fondo === 'estudio' && (
+        <div className="pq-set pq-set-estudio">
+          <div className="pq-set-wall" /><div className="pq-set-floor" />
+        </div>
+      )}
+      {fondo === 'foro_tv' && (
+        <div className="pq-set pq-set-tv">
+          <div className="pq-set-wall" />
+          <div className="pq-tv-strip"><span>EN VIVO</span></div>
+          <div className="pq-set-floor" />
+        </div>
+      )}
+      {fondo === 'evento' && (
+        <div className="pq-set pq-set-evento">
+          <div className="pq-evento-backdrop">
+            {Array.from({ length: 12 }, (_, i) => <span key={i}>PEPE</span>)}
+          </div>
+          <div className="pq-evento-carpet" />
+          <div className="pq-evento-rope pq-evento-rope-l" />
+          <div className="pq-evento-rope pq-evento-rope-r" />
+        </div>
+      )}
+      {fondo === 'escenario' && (
+        <div className="pq-set pq-set-escenario">
+          <div className="pq-venue" />
+          <div className="pq-crowd">{Array.from({ length: 22 }, (_, i) => <i key={i} />)}</div>
+        </div>
+      )}
+      {fondo === 'rancho' && (
+        <div className="pq-set pq-set-rancho">
+          <div className="pq-rancho-sky" />
+          <div className="pq-rancho-mtn" />
+          <div className="pq-rancho-field" />
+          <div className="pq-agave pq-agave-a" /><div className="pq-agave pq-agave-b" /><div className="pq-agave pq-agave-c" />
+          <div className="pq-rancho-fence" />
+        </div>
+      )}
+      {fondo === 'grabacion' && (
+        <div className="pq-set pq-set-grabacion">
+          <div className="pq-set-wall" />
+          <div className="pq-grab-glass" />
+          <div className="pq-set-floor" />
+        </div>
+      )}
+      {fondo === 'casa' && (
+        <div className="pq-set pq-set-casa">
+          <div className="pq-set-wall" />
+          <div className="pq-casa-window" />
+          <div className="pq-casa-frame pq-casa-frame-a" /><div className="pq-casa-frame pq-casa-frame-b" />
+          <div className="pq-set-floor" />
+        </div>
+      )}
+      {fondo === 'conferencia' && (
+        <div className="pq-set pq-set-conf">
+          <div className="pq-set-wall" />
+          <div className="pq-conf-backdrop">{Array.from({ length: 8 }, (_, i) => <span key={i}>PEPE</span>)}</div>
+          <div className="pq-set-floor" />
+        </div>
+      )}
+      {fondo === 'aeropuerto' && (
+        <div className="pq-set pq-set-aeropuerto">
+          <div className="pq-set-wall" />
+          <div className="pq-airport-window"><div className="pq-airport-plane" /></div>
+          <div className="pq-airport-board"><span>PEPE</span><span>ABORDANDO</span></div>
+          <div className="pq-set-floor" />
+        </div>
+      )}
+      {fondo === 'restaurante' && (
+        <div className="pq-set pq-set-restaurante">
+          <div className="pq-set-wall" />
+          <div className="pq-resto-window" />
+          <div className="pq-resto-lamp" />
+          <div className="pq-set-floor" />
+        </div>
+      )}
+      {fondo === 'juzgado' && (
+        <div className="pq-set pq-set-juzgado">
+          <div className="pq-set-wall" />
+          <div className="pq-court-col pq-court-col-a" /><div className="pq-court-col pq-court-col-b" />
+          <div className="pq-court-seal" />
+          <div className="pq-court-bench" />
+          <div className="pq-set-floor" />
+        </div>
+      )}
+      {fondo === 'hospital' && (
+        <div className="pq-set pq-set-hospital">
+          <div className="pq-set-wall" />
+          <div className="pq-hosp-cross" />
+          <div className="pq-hosp-window" />
+          <div className="pq-set-floor" />
+        </div>
+      )}
       {/* Noche: estrellas y luna */}
       {ambiente === 'noche' && (<><div className="pq-stars" /><div className="pq-moon" /></>)}
       {ambiente === 'atardecer' && <div className="pq-sun" />}
@@ -543,8 +770,8 @@ function GameScene({ thinking, escena }: { thinking: boolean; escena?: SimEscena
       {/* Coche estacionado */}
       <div className="pq-car"><PixelSprite grid={CAR_GRID} palette={CAR_PALETTE} px={4} /></div>
 
-      {/* Tarima y reflectores cuando hay canto */}
-      {singing && (
+      {/* Tarima y reflectores cuando hay canto o el fondo es escenario */}
+      {stage && (
         <>
           <div className="pq-spot pq-spot-a" /><div className="pq-spot pq-spot-b" />
           <div className="pq-stage" />
@@ -559,6 +786,7 @@ function GameScene({ thinking, escena }: { thinking: boolean; escena?: SimEscena
           </div>
         )}
         <AnimatedSprite frames={[PEPE_GRID, PEPE_GRID_B]} palette={PEPE_PALETTE} px={5} speed={singing ? 0.4 : 0.9} />
+        {wearsHeadphones && <div className="pq-headphones" />}
         <div className="pq-actor-tag">PEPE</div>
       </div>
 
@@ -584,6 +812,9 @@ function GameScene({ thinking, escena }: { thinking: boolean; escena?: SimEscena
         <AnimatedSprite frames={[PRESS_GRID, PRESS_GRID_B]} palette={PRESS_PALETTE} px={4} speed={anim === 'foto' ? 0.35 : 1.1} />
         <div className="pq-actor-tag">PRENSA</div>
       </div>
+
+      {/* Props ensamblados por el oráculo (mesa, mic, ON AIR, sofá, cámara…) */}
+      {props.map((p, i) => <ScenePropPiece key={`${p.pieza}-${i}`} pieza={p.pieza} zona={p.zona} />)}
 
       {/* Efectos según la animación */}
       {anim === 'foto' && <div className="pq-flash" />}
@@ -1148,4 +1379,208 @@ const PQ_CSS = `
 .pq-log-day { font-family: 'Press Start 2P', monospace; font-size: 8px; color: #d9503f; }
 .pq-log-action { font-weight: 600; }
 .pq-footnote { font-family: 'Libre Franklin', sans-serif; font-size: 11px; color: #8f8a99; margin-top: 14px; }
+
+/* ── Decorados por locación (cada fondo ≠ calle tapa el mundo) ── */
+.pq-set { position: absolute; inset: 0; z-index: 1; }
+.pq-set-wall { position: absolute; left: 0; right: 0; top: 0; height: 252px; }
+.pq-set-floor { position: absolute; left: 0; right: 0; bottom: 0; height: 88px; background: #6a4a34;
+  box-shadow: inset 0 6px 0 rgba(255,255,255,.06);
+  background-image: linear-gradient(90deg, rgba(0,0,0,.12) 2px, transparent 2px); background-size: 42px 100%; }
+
+/* Estudio de podcast: pared con paneles acústicos en cuña */
+.pq-set-estudio .pq-set-wall { background: #2a2431; background-image:
+  repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 9px, transparent 9px 18px),
+  repeating-linear-gradient(-45deg, rgba(0,0,0,.20) 0 9px, transparent 9px 18px);
+  box-shadow: inset 0 -12px 0 rgba(0,0,0,.28); }
+
+/* Foro de TV: pared con puntos + franja EN VIVO + piso de foro */
+.pq-set-tv .pq-set-wall { background-color: #2b5080;
+  background-image: radial-gradient(rgba(255,255,255,.08) 2px, transparent 3px), linear-gradient(#243b66, #37639e);
+  background-size: 26px 26px, 100% 100%; background-repeat: repeat, no-repeat;
+  box-shadow: inset 0 -12px 0 rgba(0,0,0,.3); }
+.pq-set-tv .pq-set-floor { background: #33373f; background-image: linear-gradient(90deg, rgba(255,255,255,.05) 2px, transparent 2px); background-size: 48px 100%; }
+.pq-tv-strip { position: absolute; top: 14px; left: 24px; z-index: 2; background: #b3202a; border: 3px solid #14141a;
+  padding: 5px 9px; box-shadow: 0 0 12px 2px rgba(224,49,75,.5); }
+.pq-tv-strip span { font-family: 'Press Start 2P', monospace; font-size: 8px; color: #fff; letter-spacing: 1px; }
+
+/* Alfombra roja / premiere: backdrop step-and-repeat + tapete + cordones */
+.pq-set-evento { background: #14141a; }
+.pq-evento-backdrop { position: absolute; top: 18px; left: 40px; right: 40px; height: 206px; background: #1c1230;
+  border: 4px solid #0e0e13; display: grid; grid-template-columns: repeat(4, 1fr); align-content: center; gap: 20px 8px; padding: 16px; overflow: hidden; }
+.pq-evento-backdrop span { font-family: 'Press Start 2P', monospace; font-size: 9px; color: #d9a441; opacity: .8; text-align: center; }
+.pq-evento-carpet { position: absolute; left: 0; right: 0; bottom: 0; height: 108px; background: #9a1f2a;
+  box-shadow: inset 0 6px 0 rgba(255,255,255,.12), inset 0 0 0 8px #7a1420; }
+.pq-evento-rope { position: absolute; bottom: 96px; width: 7px; height: 34px; background: #14141a; z-index: 2; }
+.pq-evento-rope::before { content: ''; position: absolute; top: -8px; left: -5px; width: 17px; height: 11px; background: #d9a441; border-radius: 3px; }
+.pq-evento-rope-l { left: 118px; } .pq-evento-rope-r { right: 118px; }
+
+/* Palenque / concierto: venue oscuro + público en silueta */
+.pq-set-escenario { background: linear-gradient(#0b0a14, #1b1830 60%, #241f38); }
+.pq-venue { position: absolute; inset: 0; box-shadow: inset 0 0 120px rgba(0,0,0,.6);
+  background-image: radial-gradient(rgba(120,90,180,.18) 1px, transparent 2px); background-size: 60px 60px; }
+.pq-crowd { position: absolute; left: 0; right: 0; bottom: 46px; height: 60px; display: flex; align-items: flex-end; justify-content: center; gap: 6px; z-index: 2; }
+.pq-crowd i { width: 16px; height: 34px; background: #0c0b12; border-radius: 8px 8px 0 0; box-shadow: 0 0 0 2px rgba(120,90,180,.12);
+  animation: pq-sway 1.6s steps(2) infinite alternate; }
+.pq-crowd i:nth-child(even) { height: 42px; animation-duration: 1.9s; }
+.pq-crowd i:nth-child(3n) { height: 30px; animation-duration: 2.2s; }
+@keyframes pq-sway { to { transform: translateY(-3px); } }
+
+/* Reposicionar actores según la locación */
+.pq-fondo-estudio .pq-pepe, .pq-fondo-foro_tv .pq-pepe,
+.pq-fondo-grabacion .pq-pepe, .pq-fondo-casa .pq-pepe, .pq-fondo-conferencia .pq-pepe,
+.pq-fondo-aeropuerto .pq-pepe, .pq-fondo-restaurante .pq-pepe, .pq-fondo-juzgado .pq-pepe, .pq-fondo-hospital .pq-pepe { left: 250px; }
+.pq-fondo-estudio .pq-press, .pq-fondo-foro_tv .pq-press,
+.pq-fondo-grabacion .pq-press, .pq-fondo-casa .pq-press,
+.pq-fondo-restaurante .pq-press, .pq-fondo-hospital .pq-press { opacity: .5; }
+.pq-fondo-escenario .pq-press { opacity: .55; }
+
+/* ── Sets extra: aeropuerto, restaurante, juzgado, hospital ── */
+.pq-set-aeropuerto .pq-set-wall { background-color: #cfd8e0; background-image: linear-gradient(#dbe3ea, #c2ccd6); box-shadow: inset 0 -12px 0 rgba(0,0,0,.12); }
+.pq-set-aeropuerto .pq-set-floor { background: #9aa4ad; background-image: linear-gradient(90deg, rgba(0,0,0,.10) 2px, transparent 2px), linear-gradient(rgba(255,255,255,.3) 2px, transparent 2px); background-size: 44px 100%, 100% 22px; }
+.pq-airport-window { position: absolute; top: 44px; left: 40px; right: 40px; height: 150px; z-index: 1; background: linear-gradient(#bfe3ea 60%, #dfeef2); border: 6px solid #8a95a0; box-shadow: inset 0 0 0 2px rgba(255,255,255,.4);
+  background-image: linear-gradient(90deg, transparent 0 24%, #8a95a0 24% 26%, transparent 26% 74%, #8a95a0 74% 76%, transparent 76%); }
+.pq-airport-plane { position: absolute; bottom: 26px; left: 40%; width: 130px; height: 24px; background: #eef1f5; border-radius: 40% 12px 12px 40%; box-shadow: -2px 0 0 #cfd8e0; }
+.pq-airport-plane::before { content: ''; position: absolute; top: -13px; left: 52px; width: 38px; height: 16px; background: #eef1f5; transform: skewX(-38deg); }
+.pq-airport-plane::after { content: ''; position: absolute; top: 8px; left: 40px; width: 44px; height: 9px; background: #4a83c6; }
+.pq-airport-board { position: absolute; top: 16px; right: 26px; z-index: 2; background: #14141a; border: 3px solid #0e0e13; padding: 5px 8px; display: flex; flex-direction: column; gap: 3px; }
+.pq-airport-board span { font-family: 'Press Start 2P', monospace; font-size: 6px; color: #57a943; }
+
+.pq-set-restaurante .pq-set-wall { background-color: #5a3a30; background-image: linear-gradient(#6a4436, #4a3026);
+  box-shadow: inset 0 -12px 0 rgba(0,0,0,.25); }
+.pq-set-restaurante .pq-set-floor { background: #3a2620; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,.14) 0 2px, transparent 2px 46px); }
+.pq-resto-window { position: absolute; top: 50px; left: 54px; width: 120px; height: 90px; z-index: 1; background: linear-gradient(#26304a, #1a2236); border: 8px solid #3a2414; box-shadow: inset 0 0 20px rgba(255,238,170,.15);
+  background-image: radial-gradient(rgba(232,200,106,.5) 1px, transparent 2px); background-size: 20px 20px; }
+.pq-resto-lamp { position: absolute; top: 0; right: 150px; width: 4px; height: 70px; background: #2c2118; z-index: 1; }
+.pq-resto-lamp::after { content: ''; position: absolute; bottom: -22px; left: -20px; width: 44px; height: 26px; background: #d9a441; border-radius: 0 0 40% 40%; box-shadow: 0 8px 30px 6px rgba(232,200,106,.45); }
+
+.pq-set-juzgado .pq-set-wall { background-color: #6a4a30; background-image: linear-gradient(#7a5638, #5a3f28);
+  box-shadow: inset 0 -12px 0 rgba(0,0,0,.28); }
+.pq-set-juzgado .pq-set-floor { background: #4a3320; }
+.pq-court-col { position: absolute; top: 0; width: 34px; height: 210px; z-index: 1; background: linear-gradient(90deg, #d9cdb6, #f0e8d6 40%, #d9cdb6);
+  box-shadow: inset -6px 0 0 rgba(0,0,0,.12); background-image: repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 6px, transparent 6px 10px); }
+.pq-court-col-a { left: 60px; } .pq-court-col-b { right: 60px; }
+.pq-court-seal { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); width: 74px; height: 74px; z-index: 1; border-radius: 50%; background: #3a2b16; box-shadow: inset 0 0 0 5px #d9a441, 0 0 0 3px #2a2010; }
+.pq-court-seal::after { content: '★'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #d9a441; }
+.pq-court-bench { position: absolute; bottom: 88px; left: 50%; transform: translateX(-50%); width: 260px; height: 40px; z-index: 1; background: #3a2414; box-shadow: inset 0 4px 0 #5a3418, 0 4px 0 rgba(0,0,0,.3); }
+
+.pq-set-hospital .pq-set-wall { background-color: #cfe0e0; background-image: linear-gradient(#dbeaea, #bcd2d2); box-shadow: inset 0 -12px 0 rgba(0,0,0,.10); }
+.pq-set-hospital .pq-set-floor { background: #aebcc0; background-image: linear-gradient(90deg, rgba(0,0,0,.08) 2px, transparent 2px); background-size: 44px 100%; }
+.pq-hosp-cross { position: absolute; top: 30px; left: 60px; width: 46px; height: 46px; z-index: 1; }
+.pq-hosp-cross::before, .pq-hosp-cross::after { content: ''; position: absolute; background: #d94f4f; }
+.pq-hosp-cross::before { top: 0; left: 17px; width: 12px; height: 46px; } .pq-hosp-cross::after { top: 17px; left: 0; width: 46px; height: 12px; }
+.pq-hosp-window { position: absolute; top: 44px; right: 50px; width: 110px; height: 92px; z-index: 1; background: linear-gradient(#bfe3ea, #9fc9d4); border: 6px solid #9aabab; box-shadow: inset 0 0 0 2px rgba(255,255,255,.4);
+  background-image: linear-gradient(90deg, transparent 47%, #9aabab 47% 53%, transparent 53%); }
+
+/* ── Props extra ── */
+.pq-prop-maleta { width: 38px; height: 44px; }
+.pq-prop-maleta i { position: absolute; bottom: 0; left: 0; width: 38px; height: 34px; background: #4a5568; border: 3px solid #20232b; border-radius: 4px; box-shadow: inset 0 0 0 2px rgba(255,255,255,.06); }
+.pq-prop-maleta i::after { content: ''; position: absolute; top: -9px; left: 11px; width: 16px; height: 10px; border: 3px solid #20232b; border-bottom: none; border-radius: 6px 6px 0 0; }
+.pq-prop-plato i { display: block; width: 34px; height: 12px; background: #eef1f5; border-radius: 50%; box-shadow: 0 3px 0 #c2ccd6, inset 0 0 0 5px rgba(180,120,80,.5); }
+.pq-prop-bandera { width: 46px; height: 150px; }
+.pq-prop-bandera b { position: absolute; bottom: 0; left: 4px; width: 5px; height: 150px; background: #6e5a2e; }
+.pq-prop-bandera i { position: absolute; top: 0; left: 9px; width: 42px; height: 30px; background: linear-gradient(90deg, #4e7a4a 33%, #f0e8d6 33% 66%, #b04555 66%); box-shadow: 0 2px 0 rgba(0,0,0,.2); }
+.pq-prop-cama { width: 130px; height: 44px; }
+.pq-prop-cama i { position: absolute; bottom: 0; left: 0; width: 130px; height: 24px; background: #cdd8dd; border: 3px solid #8a95a0; border-radius: 3px; }
+.pq-prop-cama b { position: absolute; bottom: 20px; left: 0; width: 40px; height: 20px; background: #eef1f5; border: 3px solid #8a95a0; border-radius: 4px 4px 0 0; }
+
+/* Audífonos sobre Pepe (podcast) */
+.pq-headphones { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 56px; height: 26px;
+  border: 6px solid #20232b; border-bottom: none; border-radius: 28px 28px 0 0; z-index: 4; }
+.pq-headphones::before, .pq-headphones::after { content: ''; position: absolute; bottom: -7px; width: 11px; height: 18px; background: #20232b; border-radius: 3px; }
+.pq-headphones::before { left: -6px; } .pq-headphones::after { right: -6px; }
+
+/* ── Props componibles (CSS crisp) ── */
+.pq-prop { position: absolute; image-rendering: pixelated; }
+.pq-prop-mesa { width: 250px; height: 46px; margin-left: -70px; background: #3a2e26; border: 4px solid #20232b; border-radius: 4px;
+  box-shadow: inset 0 6px 0 rgba(255,255,255,.06), 0 4px 0 #14100c; }
+.pq-prop-mic { width: 14px; height: 54px; }
+.pq-prop-mic b { position: absolute; bottom: 0; left: 5px; width: 4px; height: 34px; background: #16171c; }
+.pq-prop-mic i { position: absolute; bottom: 30px; left: 0; width: 14px; height: 20px; background: #2b2b33; border: 2px solid #14141a; border-radius: 6px;
+  background-image: repeating-linear-gradient(#4a4a55 0 2px, #2b2b33 2px 4px); }
+.pq-prop-onair { font-family: 'Press Start 2P', monospace; font-size: 10px; color: #fff; background: #b3202a;
+  border: 3px solid #14141a; border-radius: 4px; padding: 6px 8px; box-shadow: 0 0 14px 3px rgba(224,49,75,.6); letter-spacing: 1px; }
+.pq-prop-planta { width: 30px; height: 54px; }
+.pq-prop-planta i { position: absolute; bottom: 18px; left: 0; width: 30px; height: 34px; background: #4d7a52; border-radius: 50% 50% 40% 40%;
+  box-shadow: -8px 6px 0 -2px #5f8f62, 8px 4px 0 -2px #729f74; }
+.pq-prop-planta b { position: absolute; bottom: 0; left: 6px; width: 18px; height: 20px; background: #9a5a34; border: 2px solid #6e4436; }
+.pq-prop-laptop i { display: block; width: 42px; height: 26px; background: #20232b; border: 2px solid #14141a; border-radius: 2px;
+  box-shadow: 0 14px 0 -2px #3a3f4a; }
+.pq-prop-camara { width: 40px; height: 60px; }
+.pq-prop-camara i { position: absolute; bottom: 34px; left: 0; width: 40px; height: 26px; background: #26262e; border: 3px solid #14141a; border-radius: 3px; }
+.pq-prop-camara i::after { content: ''; position: absolute; top: 6px; right: -8px; width: 10px; height: 10px; border-radius: 50%; background: #4a83c6; box-shadow: 0 0 0 3px #26262e; }
+.pq-prop-camara b { position: absolute; bottom: 0; left: 14px; width: 10px; height: 34px; background: #16171c; }
+.pq-prop-sofa { width: 120px; height: 40px; background: #6d3550; border: 4px solid #20232b; border-radius: 10px 10px 4px 4px;
+  box-shadow: inset 0 -10px 0 rgba(0,0,0,.2); }
+.pq-prop-reflector i { display: block; width: 30px; height: 18px; background: #d9a441; border: 3px solid #14141a; border-radius: 3px;
+  box-shadow: 0 44px 70px 34px rgba(255,238,170,.16); }
+.pq-prop-bocina { width: 34px; height: 56px; background: #1c1c22; border: 3px solid #14141a; border-radius: 3px; display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; }
+.pq-prop-bocina i { width: 22px; height: 22px; border-radius: 50%; background: #33333d; box-shadow: inset 0 0 0 3px #14141a; }
+.pq-prop-monitor i { display: block; width: 96px; height: 58px; background: #0e0e13; border: 4px solid #20232b; border-radius: 3px;
+  background-image: linear-gradient(135deg, #1f3a5c, #2b5080); }
+.pq-prop-tarima { width: 340px; height: 12px; background: #6d4a2b; box-shadow: inset 0 3px 0 #8a6238, inset 0 -4px 0 #47331f, 0 4px 0 rgba(0,0,0,.25); }
+.pq-prop-alfombra { height: 30px; background: #9a1f2a; box-shadow: inset 0 4px 0 rgba(255,255,255,.12), inset 0 0 0 4px #7a1420; }
+.pq-prop-backdrop { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 10px; width: 170px; height: 92px; padding: 10px; background: #14141a; border: 3px solid #0e0e13; align-content: center; }
+.pq-prop-backdrop span { font-family: 'Press Start 2P', monospace; font-size: 6px; color: #d9a441; opacity: .85; }
+
+/* ── Sets nuevos ── */
+/* Rancho charro */
+.pq-set-rancho { background: #cfe3ec; }
+.pq-rancho-sky { position: absolute; inset: 0 0 40% 0; background: linear-gradient(#8fc0d8, #cfe3ec); }
+.pq-rancho-mtn { position: absolute; left: 0; right: 0; bottom: 128px; height: 90px;
+  background:
+    radial-gradient(120px 90px at 20% 100%, #7a8a6b 0 99%, transparent 100%),
+    radial-gradient(160px 110px at 55% 100%, #6b7d5c 0 99%, transparent 100%),
+    radial-gradient(130px 95px at 85% 100%, #7a8a6b 0 99%, transparent 100%); }
+.pq-rancho-field { position: absolute; left: 0; right: 0; bottom: 0; height: 132px;
+  background: linear-gradient(#9aae54, #7e8f42); box-shadow: inset 0 8px 0 rgba(255,255,255,.08); }
+.pq-rancho-fence { position: absolute; left: 0; right: 0; bottom: 118px; height: 24px;
+  background: linear-gradient(transparent 5px, #8a6238 5px 9px, transparent 9px 16px, #8a6238 16px 20px, transparent 20px); }
+.pq-rancho-fence::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0 46px, #7a5230 46px 52px); }
+.pq-agave { position: absolute; bottom: 94px; width: 40px; height: 40px; z-index: 1; }
+.pq-agave::before, .pq-agave::after { content: ''; position: absolute; bottom: 0; left: 16px; width: 8px; height: 34px; background: #4e7a4a; border-radius: 4px; transform-origin: bottom; box-shadow: 0 0 0 1px #3c6139; }
+.pq-agave::before { transform: rotate(-30deg); } .pq-agave::after { transform: rotate(30deg); }
+.pq-agave-a { left: 60px; } .pq-agave-b { left: 150px; transform: scale(.85); } .pq-agave-c { right: 90px; transform: scale(1.1); }
+
+/* Estudio de grabación */
+.pq-set-grabacion .pq-set-wall { background-color: #241f2b; background-image: linear-gradient(#2c2636, #1c1826);
+  box-shadow: inset 0 -12px 0 rgba(0,0,0,.3); }
+.pq-set-grabacion .pq-set-floor { background: #3a3340; }
+.pq-grab-glass { position: absolute; top: 40px; left: 44px; right: 44px; height: 150px; z-index: 1;
+  background: linear-gradient(120deg, rgba(120,160,200,.16), rgba(120,160,200,.04));
+  border: 4px solid #3a4a5a; box-shadow: inset 0 0 0 2px rgba(255,255,255,.05);
+  background-image: repeating-linear-gradient(115deg, rgba(255,255,255,.06) 0 2px, transparent 2px 28px); }
+
+/* Casa / sala familiar */
+.pq-set-casa .pq-set-wall { background-color: #b98a5e; background-image: linear-gradient(#c39668, #a97c50);
+  box-shadow: inset 0 -12px 0 rgba(0,0,0,.16); }
+.pq-set-casa .pq-set-floor { background: #7a4f2e; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,.10) 0 2px, transparent 2px 40px); }
+.pq-casa-window { position: absolute; top: 46px; left: 56px; width: 118px; height: 96px; z-index: 1;
+  background: linear-gradient(#bfe3ea, #8fc0d8); border: 8px solid #6e4a2e; box-shadow: inset 0 0 0 2px #5a3c24; }
+.pq-casa-window::before { content: ''; position: absolute; inset: 0; background:
+  linear-gradient(90deg, transparent 47%, #6e4a2e 47% 53%, transparent 53%),
+  linear-gradient(transparent 47%, #6e4a2e 47% 53%, transparent 53%); }
+.pq-casa-frame { position: absolute; width: 44px; height: 54px; z-index: 1; background: #d9c69c; border: 5px solid #8a6238; box-shadow: 0 3px 0 rgba(0,0,0,.2); }
+.pq-casa-frame::before { content: ''; position: absolute; inset: 6px; background: linear-gradient(135deg, #b04555, #d9a441); }
+.pq-casa-frame-a { top: 66px; right: 150px; } .pq-casa-frame-b { top: 98px; right: 82px; transform: scale(.82); }
+
+/* Conferencia de prensa */
+.pq-set-conf .pq-set-wall { background-color: #223047; background-image: linear-gradient(#28374f, #1b2740);
+  box-shadow: inset 0 -12px 0 rgba(0,0,0,.3); }
+.pq-set-conf .pq-set-floor { background: #2b2f38; }
+.pq-conf-backdrop { position: absolute; top: 26px; left: 60px; right: 60px; height: 150px; z-index: 1; background: #16305a; border: 4px solid #0e1a30;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 8px; align-content: center; padding: 14px; overflow: hidden; }
+.pq-conf-backdrop span { font-family: 'Press Start 2P', monospace; font-size: 8px; color: #cdd8ee; opacity: .7; text-align: center; }
+
+/* ── Props nuevos ── */
+.pq-prop-consola { width: 150px; height: 30px; margin-left: -50px; background: #1c1c24; border: 3px solid #14141a; border-radius: 3px;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; padding: 5px; }
+.pq-prop-consola i { background: #33333d; border-radius: 1px; box-shadow: inset 0 0 0 1px #4a4a55; }
+.pq-prop-consola i:nth-child(3n) { background: #57a943; } .pq-prop-consola i:nth-child(4n) { background: #d9a441; }
+.pq-prop-guitarra { width: 20px; height: 68px; }
+.pq-prop-guitarra i { position: absolute; bottom: 0; left: 0; width: 20px; height: 26px; background: #9a5a2e; border: 2px solid #5a3418; border-radius: 50% 50% 45% 45%; }
+.pq-prop-guitarra b { position: absolute; bottom: 22px; left: 8px; width: 5px; height: 44px; background: #3a2414; }
+.pq-prop-podio { width: 46px; height: 60px; }
+.pq-prop-podio span { position: absolute; bottom: 0; left: 4px; width: 38px; height: 44px; background: #4a5568; border: 3px solid #20232b; clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%); }
+.pq-prop-podio i { position: absolute; bottom: 44px; left: 20px; width: 4px; height: 16px; background: #16171c; }
+.pq-prop-podio b { position: absolute; bottom: 56px; left: 14px; width: 14px; height: 8px; background: #2b2b33; border: 2px solid #14141a; border-radius: 6px; }
 `

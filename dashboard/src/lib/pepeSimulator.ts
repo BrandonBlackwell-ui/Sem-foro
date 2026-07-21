@@ -22,18 +22,39 @@ export type SimScenario = {
   riesgo: 'bajo' | 'medio' | 'alto' | 'critico'
 }
 
-export const SCENE_CHARACTERS = ['angela', 'emiliano', 'leonardo', 'fan', 'abogado'] as const
+export const SCENE_CHARACTERS = ['angela', 'emiliano', 'leonardo', 'fan', 'abogado', 'conductor'] as const
 export type SceneCharacter = typeof SCENE_CHARACTERS[number]
-export const SCENE_ANIMATIONS = ['cantar', 'foto', 'entrevista', 'fiesta', 'crisis', 'silencio', 'idle'] as const
+export const SCENE_ANIMATIONS = ['cantar', 'foto', 'entrevista', 'podcast', 'fiesta', 'crisis', 'silencio', 'idle'] as const
 export type SceneAnimation = typeof SCENE_ANIMATIONS[number]
 export const SCENE_AMBIENTES = ['dia', 'atardecer', 'noche'] as const
 export type SceneAmbiente = typeof SCENE_AMBIENTES[number]
+
+// Fondo/locación: reemplaza (o mantiene) el mundo de calle por un interior o set.
+export const SCENE_FONDOS = ['calle', 'estudio', 'foro_tv', 'escenario', 'evento', 'rancho', 'grabacion', 'casa', 'conferencia', 'aeropuerto', 'restaurante', 'juzgado', 'hospital'] as const
+export type SceneFondo = typeof SCENE_FONDOS[number]
+
+// Kit de piezas (props) que el oráculo ENSAMBLA para armar cada escena a la medida.
+// Agregar una pieza nueva = un sprite más aquí y en el render; no hay sets fijos.
+export const SCENE_PROPS = [
+  'mesa', 'microfono', 'audifonos', 'on_air', 'camara', 'sofa',
+  'reflector', 'planta', 'laptop', 'tarima', 'alfombra', 'backdrop_logos', 'bocina', 'monitor',
+  'caballo', 'consola', 'guitarra', 'podio', 'maleta', 'plato', 'bandera', 'cama',
+] as const
+export type SceneProp = typeof SCENE_PROPS[number]
+
+// Zonas de colocación (evita que el modelo tenga que calcular pixeles).
+export const SCENE_ZONAS = ['izquierda', 'centro', 'derecha', 'frente', 'fondo'] as const
+export type SceneZona = typeof SCENE_ZONAS[number]
+
+export type SimPropPlaced = { pieza: SceneProp; zona: SceneZona }
 
 export type SimDialog = { quien: string; texto: string }
 
 // Dirección de escena: el oráculo dicta qué se actúa en el mundo 8-bits.
 export type SimEscena = {
+  fondo: SceneFondo // locación: calle (default), estudio de podcast, foro de TV, escenario, evento
   personajes: SceneCharacter[] // quiénes entran a escena (además de Pepe y la prensa)
+  props: SimPropPlaced[] // piezas que se ensamblan en la escena
   animacion: SceneAnimation
   ambiente: SceneAmbiente // iluminación/hora del mundo según la situación
   dialogos: SimDialog[] // líneas cortas que van diciendo los personajes
@@ -182,13 +203,21 @@ Responde SOLO con JSON válido (sin markdown, sin \`\`\`), con esta forma exacta
   ],
   "recomendacion": "consejo táctico de estratega de crisis en 1-3 frases, citando el dato que más pesa",
   "escena": {
-    "personajes": ["angela"],
-    "animacion": "cantar",
-    "ambiente": "noche",
+    "fondo": "estudio",
+    "personajes": ["conductor"],
+    "props": [
+      {"pieza": "mesa", "zona": "centro"},
+      {"pieza": "microfono", "zona": "centro"},
+      {"pieza": "audifonos", "zona": "frente"},
+      {"pieza": "on_air", "zona": "fondo"},
+      {"pieza": "planta", "zona": "izquierda"}
+    ],
+    "animacion": "podcast",
+    "ambiente": "dia",
     "dialogos": [
-      {"quien": "pepe", "texto": "¡Esta va con todo, mija!"},
-      {"quien": "angela", "texto": "¡Vamos, apá!"},
-      {"quien": "prensa", "texto": "*click* ¡exclusiva!"}
+      {"quien": "conductor", "texto": "¡Bienvenido al show, Pepe!"},
+      {"quien": "pepe", "texto": "Gracias, aquí andamos."},
+      {"quien": "prensa", "texto": "*graba el clip*"}
     ]
   }
 }
@@ -200,11 +229,13 @@ Reglas de escenarios:
 - ESPECIFICIDAD: cada "por_que" y cada señal DEBE anclar en fechas, redes, cifras y nombres/citas reales del MONITOREO. Nada de generalidades tipo "podría generar críticas": di quién, cuándo, dónde y cuánto. Si el monitoreo no trae el dato exacto, usa el más cercano que sí traiga (con su fecha).
 - Si la HISTORIA trae jugadas previas, el estado del mundo YA incorpora esos efectos: sé consistente con lo que pasó.
 
-Reglas de escena (el teatro 8-bits que acompaña la jugada):
-- "personajes": 0 a 3 de esta lista EXACTA: "angela", "emiliano", "leonardo", "fan", "abogado". Pepe y la prensa siempre están; NO los listes. Elige según la ACCIÓN (dueto con Ángela → ["angela"]; foto con Emiliano → ["emiliano"]; concierto → ["angela","fan"]).
-- "animacion": una de "cantar" (dueto/concierto/canción), "foto" (posts/fotos/anuncios en redes), "entrevista" (declaraciones/prensa), "fiesta" (celebración/triunfo), "crisis" (escándalo/pleito/funada), "silencio" (no hacer nada/esperar), "idle" (otra cosa).
-- "ambiente": "dia", "atardecer" o "noche" — la iluminación del mundo según la situación (concierto/palenque → "noche"; anuncio matutino o rueda de prensa → "dia"; momento familiar/nostálgico o cierre de jornada → "atardecer").
-- "dialogos": 3 a 5 líneas cortas (máx 45 caracteres cada una) que actúen la situación, con sabor mexicano y de videojuego. "quien" ∈ "pepe", "prensa" o un personaje listado.
+Reglas de escena (ARMAS el teatro 8-bits ENSAMBLANDO piezas; NO hay sets predeterminados, tú lo compones a la medida de la jugada):
+- "fondo": la locación. Una de EXACTA: "calle" (default: banqueta y edificios), "estudio" (cabina de podcast), "foro_tv" (foro de TV), "escenario" (palenque/concierto), "evento" (alfombra roja/premiere), "rancho" (campo charro: agaves, montañas, cerca), "grabacion" (estudio de grabación de música), "casa" (sala/hogar familiar), "conferencia" (conferencia de prensa con pódium), "aeropuerto" (terminal con ventanales y avión; paparazzi), "restaurante" (comida/salida; mesa y lámpara), "juzgado" (tribunal: estrado, bandera; asunto legal), "hospital" (cuarto de hospital; tema de salud). Elige dónde ocurre (podcast → "estudio"; concierto/palenque → "escenario"; entrevista/programa de TV → "foro_tv"; premios/premiere → "evento"; foto/vida en el rancho o charrería → "rancho"; grabar una canción → "grabacion"; momento familiar/en casa → "casa"; declaración oficial/aclaración → "conferencia"; llegada/salida o paparazzi en aeropuerto → "aeropuerto"; comida/cena/salida → "restaurante"; demanda/audiencia/asunto legal → "juzgado"; enfermedad/accidente/salud → "hospital"; algo callejero o en redes → "calle").
+- "personajes": 0 a 3 de esta lista EXACTA: "angela", "emiliano", "leonardo", "fan", "abogado", "conductor". Pepe y la prensa SIEMPRE están; NO los listes. "conductor" = host/entrevistador (úsalo en podcast y TV). Elige según la ACCIÓN (dueto con Ángela → ["angela"]; podcast → ["conductor"]; declaración legal → ["abogado"]).
+- "props": de 0 a 6 piezas que ensamblan la escena, cada una {"pieza","zona"}. pieza ∈ EXACTA: "mesa","microfono","audifonos","on_air","camara","sofa","reflector","planta","laptop","tarima","alfombra","backdrop_logos","bocina","monitor","caballo","consola","guitarra","podio","maleta","plato","bandera","cama". zona ∈ "izquierda","centro","derecha","frente","fondo". COMPÓN la escena real según la jugada: podcast → mesa+microfono+audifonos+on_air (+planta/laptop); foro_tv → sofa+camara+reflector+monitor; concierto → tarima+bocina+reflector+guitarra; premiere → alfombra+backdrop_logos; rancho → caballo (+planta); grabacion → consola+microfono+guitarra+audifonos; casa → sofa+planta; conferencia → podio+microfono (+camara); aeropuerto → maleta+camara; restaurante → mesa+plato+planta; juzgado → bandera (+podio); hospital → cama+monitor. Pon "audifonos" (zona "frente") cuando Pepe use audífonos (podcast/grabación).
+- "animacion": una de "cantar" (dueto/concierto), "foto" (posts/fotos), "entrevista" (declaraciones/prensa), "podcast" (podcast/cabina/charla larga con micrófonos), "fiesta" (celebración), "crisis" (escándalo/funada), "silencio" (esperar), "idle" (otra cosa).
+- "ambiente": "dia", "atardecer" o "noche" — la iluminación según la situación (concierto/palenque → "noche"; podcast/rueda de prensa matutina → "dia"; momento familiar/nostálgico → "atardecer").
+- "dialogos": 3 a 5 líneas cortas (máx 45 caracteres cada una) con sabor mexicano y de videojuego. "quien" ∈ "pepe", "prensa" o un personaje listado.
 
 Tono: narrador de RPG retro, pero el análisis es serio y profesional (esto lo usa un equipo real de manejo de crisis). Todo en español mexicano.`
 
@@ -298,6 +329,20 @@ function parseTurn(raw: string): SimTurn {
   // Escena: sanear a los valores soportados por el teatro 8-bits.
   const rawEscena = (obj.escena ?? {}) as Partial<SimEscena>
   obj.escena = {
+    fondo: (SCENE_FONDOS as readonly string[]).includes(String(rawEscena.fondo))
+      ? rawEscena.fondo as SceneFondo
+      : 'calle',
+    props: (Array.isArray(rawEscena.props) ? rawEscena.props : [])
+      .map(p => ({
+        pieza: String((p as Partial<SimPropPlaced>)?.pieza ?? ''),
+        zona: String((p as Partial<SimPropPlaced>)?.zona ?? 'centro'),
+      }))
+      .filter(p => (SCENE_PROPS as readonly string[]).includes(p.pieza))
+      .map(p => ({
+        pieza: p.pieza as SceneProp,
+        zona: ((SCENE_ZONAS as readonly string[]).includes(p.zona) ? p.zona : 'centro') as SceneZona,
+      }))
+      .slice(0, 6),
     personajes: (Array.isArray(rawEscena.personajes) ? rawEscena.personajes : [])
       .filter((p): p is SceneCharacter => (SCENE_CHARACTERS as readonly string[]).includes(String(p)))
       .slice(0, 3),
