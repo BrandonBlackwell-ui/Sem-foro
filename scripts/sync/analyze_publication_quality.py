@@ -318,7 +318,21 @@ _BANNED_CHECKLIST = [
     # no un defecto: no lo marcamos como negativo. La autoria solo se señala en positivo.
     "no es el autor", "no es autor", "no es quien escribe", "no escribio la nota",
     "sino el sujeto", "sujeto de la cobertura", "sujeto de la nota",
+    # El link a veces es EVIDENCIA (video, audio, captura) y no un articulo de prensa;
+    # criticar el formato no aplica (el tipo/puntaje viene del archivo BW, no del link).
+    "no dirige a una nota", "no es una nota periodistica", "no es un articulo de prensa",
+    "no un articulo de prensa", "recurso multimedia", "no se detecta contenido editorial",
+    "no es un articulo", "es un video", "archivo es un video", "no es una publicacion",
 ]
+
+# Confirmacion POSITIVA por tipo (para tipos con puntaje por tipo, no por leer el link).
+_TYPE_CONFIRM = {
+    "columna_opinion": "Si: columna de opinion firmada por el propio cliente (cuenta como propia)",
+    "entrevista": "Si: entrevista al cliente gestionada por Blackwell (registrada en el archivo BW)",
+    "foro_panel": "Si: participacion del cliente en foro/panel gestionada por Blackwell",
+    "vinculacion": "Si: vinculacion con el medio gestionada por Blackwell",
+    "vinculacion_con_resultado": "Si: vinculacion que derivo en nota publicada",
+}
 
 
 def _sanitize_checklist(items: Any) -> list[str]:
@@ -392,9 +406,13 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
         status = "needs_review"
 
     checklist = _sanitize_checklist(llm.get("checklist"))
-    # Autoria del cliente => señal POSITIVA de nota propia (no una X por "no es autor").
-    if effective_type == "columna_opinion" and not any("propia" in _normalize(c) for c in checklist):
-        checklist = ["Si: nota escrita/firmada por el propio cliente (cuenta como propia)"] + checklist
+    # Tipos con puntaje por TIPO (anclado en el archivo BW, no en leer el link): el checklist
+    # no critica el formato del link; se antepone una confirmacion POSITIVA del tipo.
+    confirm = _TYPE_CONFIRM.get(note_type)
+    if _score_mode in ("anchor", "vinculacion") and confirm:
+        already = any(_normalize(confirm)[:22] in _normalize(c) or "propia" in _normalize(c) for c in checklist)
+        if not already:
+            checklist = [confirm] + checklist
 
     return {
         "account_id": publication.get("account_id"),
