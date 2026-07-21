@@ -413,12 +413,13 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
         status = "needs_review"
 
     checklist = _sanitize_checklist(llm.get("checklist"))
-    # Tipos con puntaje por TIPO (anclado en el archivo BW, no en leer el link): el checklist
-    # no critica el formato del link; se antepone una confirmacion POSITIVA del tipo.
-    confirm = _TYPE_CONFIRM.get(note_type)
-    if _score_mode in ("anchor", "vinculacion") and confirm:
-        already = any(_normalize(confirm)[:22] in _normalize(c) or "propia" in _normalize(c) for c in checklist)
-        if not already:
+    # Tipos con puntaje por TIPO (anclado en el archivo BW, no en leer el link): el puntaje
+    # es fijo, asi que NINGUN "No:" aplica (no tiene caso criticar titulo/formato en una
+    # columna, entrevista, foro o vinculacion). El checklist queda solo confirmatorio.
+    if _score_mode in ("anchor", "vinculacion"):
+        checklist = [c for c in checklist if not _normalize(c).startswith("no ")]
+        confirm = _TYPE_CONFIRM.get(note_type)
+        if confirm and not any(_normalize(confirm)[:22] in _normalize(c) or "propia" in _normalize(c) for c in checklist):
             checklist = [confirm] + checklist
 
     return {
