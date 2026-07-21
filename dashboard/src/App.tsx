@@ -705,6 +705,8 @@ function fetchErrorInfo(quality: PublicationQualityAnalysis | null): { label: st
   const err = String(quality.body_evidence ?? '').toLowerCase()
   if (/llm_json_parse|expecting value|unterminated string|"choices"|json/.test(err))
     return { label: 'Error de análisis', detail: 'El link cargó bien y tiene contenido, pero el modelo devolvió una respuesta inválida. Se reintenta en la próxima corrida.', retryable: true }
+  if (/code_shell|codigo|javascript|\bjs\b/.test(err))
+    return { label: 'No legible (JS)', detail: 'El medio entrega la página como código/JavaScript (MSN y agregadores similares), no el texto del artículo. El link puede abrir bien en el navegador.', retryable: false }
   if (/paywall|softwall|suscrip|cookies/.test(err))
     return { label: 'Muro de pago', detail: 'La página pide suscripción o aceptar cookies; no se pudo leer el artículo.', retryable: false }
   if (/403|forbidden/.test(err))

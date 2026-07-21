@@ -407,6 +407,13 @@ def _analyze_publication(publication: dict[str, Any], config: dict[str, Any], mo
     if fetch_error is None and not mention["title_match"] and not mention["body_match"] and _looks_paywalled(article):
         fetch_error = "paywall_or_softwall: el contenido no es el articulo (suscripcion/cookies)"
 
+    # Shell de JS / codigo (MSN y otros agregadores entregan la pagina como JavaScript,
+    # no el articulo): el texto extraido es codigo, no prosa. Antes esto caia a Mencion
+    # (40) fabricado; ahora se marca no legible con motivo claro. Aunque el alias este en
+    # la URL, el CONTENIDO no se pudo leer, asi que no hay base para puntuar.
+    if fetch_error is None and _looks_like_code_shell(article):
+        fetch_error = "code_shell: el medio entrega la pagina como codigo/JS, no el articulo"
+
     llm = _classify_with_llm(publication, article, aliases, mention, tier, model, declared_type) if fetch_error is None else {}
 
     editorial_quality = _canonical(llm.get("editorial_quality"), config["editorial_points"], "sin_mencion")
@@ -666,6 +673,32 @@ def _looks_paywalled(article: dict[str, str]) -> bool:
     hits = sum(1 for marker in _PAYWALL_MARKERS if _normalize(marker) in text)
     # Texto corto + un marcador, o dos marcadores en cualquier tamano.
     return (len(text) < 600 and hits >= 1) or hits >= 2
+
+
+# Marcadores de que el "texto" extraido es en realidad codigo/JS (shell de la pagina),
+# no prosa: MSN y otros agregadores render-JS entregan esto en un fetch server-side.
+_CODE_SHELL_MARKERS = (
+    "window._", "performance.now(", "json.parse(", "document.head", "console.error(",
+    "function(", "function ", "=>", "addeventlistener(", "<script", "var _", "var now",
+    "clientsettings", "pagetimings", "typeof window", "document.getelementbyid",
+    "webpackjsonp", "localstorage", "new date(", "setlswithexpiry", "getitem(", "setitem(",
+)
+
+
+def _looks_like_code_shell(article: dict[str, str]) -> bool:
+    """True si el contenido extraido es codigo/JS (no un articulo legible)."""
+    raw_text = (article.get("text") or "")
+    low = raw_text.lower()
+    hits = sum(1 for marker in _CODE_SHELL_MARKERS if marker in low)
+    if hits >= 2:
+        return True
+    if len(raw_text) >= 40:
+        # {};=<> son casi exclusivos de codigo: la prosa en espanol practicamente no
+        # los tiene. Una densidad alta = shell de JS/login, no un articulo.
+        code_symbols = sum(low.count(ch) for ch in "{};=<>")
+        if code_symbols / len(raw_text) > 0.03:
+            return True
+    return False
 
 
 def _detect_mentions(article: dict[str, str], aliases: list[str]) -> dict[str, Any]:
