@@ -209,9 +209,16 @@ def _filter_publications(publications: list[dict[str, Any]], args: argparse.Name
 
 
 def _existing_urls(sb: Any) -> set[str]:
+    # Solo se consideran "ya analizadas" las que se pudieron leer. Las que quedaron en
+    # fetch_error (link no cargo, p.ej. fallo transitorio de red) se dejan FUERA para que
+    # el proximo run las reintente y se auto-recuperen, sin necesidad de --force.
     try:
-        res = sb.table("publication_quality_analyses").select("url").limit(10000).execute()
-        return {str(row.get("url")) for row in (res.data or []) if row.get("url")}
+        res = sb.table("publication_quality_analyses").select("url,status").limit(10000).execute()
+        return {
+            str(row.get("url"))
+            for row in (res.data or [])
+            if row.get("url") and row.get("status") != "fetch_error"
+        }
     except Exception as exc:
         logger.warning("Could not read existing publication_quality_analyses; continuing as empty: %s", exc)
         return set()
