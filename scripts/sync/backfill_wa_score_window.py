@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """
-Backfill del score WA con ventana móvil de 30 días.
+Backfill del score WA al modelo de NIVEL DIARIO (misma regla que
+wa_daily_analyzer):
 
-La fórmula vieja acumulaba TODOS los deltas históricos (con sesgo positivo),
-así que todas las cuentas saturaron en 100 y el histórico salía plano.
-Este script recalcula, fila por fila de wa_daily_analysis, con la misma regla
-que ahora usa wa_daily_analyzer:
+  new_score(fila)   = clamp(base de la cuenta + delta de la fila acotado a [-30, +15])
+  previous_score(d) = score vigente hasta ayer (promedio de niveles de la ventana)
+  current_score     = promedio de los niveles diarios de los últimos 30 días
 
-  previous_score(d) = clamp(base + suma de deltas en [d-29, d-1])
-  new_score(fila)   = clamp(previous_score(d) + delta de la fila)
-
-y deja wa_account_scores.current_score/total_delta con la ventana vigente.
+El modelo acumulado anterior saturaba a toda cuenta activa en 100 (deltas de
++10..+45 por día de actividad normal) y el histórico salía plano.
 
 Idempotente: correrlo dos veces produce el mismo resultado.
 Uso:  py -3 scripts/sync/backfill_wa_score_window.py [--dry-run]
@@ -34,11 +32,18 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger("backfill_wa_score_window")
 
 DEFAULT_BASE_SCORE = 70
-SCORE_WINDOW_DAYS = 30  # mantener en sync con wa_daily_analyzer.SCORE_WINDOW_DAYS
+# Mantener en sync con wa_daily_analyzer:
+SCORE_WINDOW_DAYS = 30
+DAY_DELTA_CAP_POS = 15
+DAY_DELTA_CAP_NEG = -30
 
 
 def _clamp(value: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, value))
+
+
+def _cap_day_delta(total: float) -> float:
+    return _clamp(total, DAY_DELTA_CAP_NEG, DAY_DELTA_CAP_POS)
 
 
 def _get_sb():
@@ -103,15 +108,20 @@ def main() -> None:
             d = date.fromisoformat(row["analysis_date"])
             delta_by_date[d] += float(row.get("score_delta") or 0)
 
-        def window_sum(end: date, days: int = SCORE_WINDOW_DAYS) -> float:
+        def day_level(d: date) -> float:
+            return _clamp(base + _cap_day_delta(delta_by_date.get(d, 0.0)), 0, 100)
+
+        def window_avg(end: date, days: int = SCORE_WINDOW_DAYS) -> float:
             start = end - timedelta(days=days - 1)
-            return sum(v for d, v in delta_by_date.items() if start <= d <= end)
+            levels = [day_level(d) for d in delta_by_date if start <= d <= end]
+            return _clamp(sum(levels) / len(levels), 0, 100) if levels else _clamp(base, 0, 100)
 
         new_scores: list[float] = []
         for row in acc_rows:
             d = date.fromisoformat(row["analysis_date"])
-            prev = _clamp(base + window_sum(d - timedelta(days=1)), 0, 100)
-            new = _clamp(prev + float(row.get("score_delta") or 0), 0, 100)
+            # previous = score vigente hasta ayer; new = nivel de ESTA fila (su delta acotado).
+            prev = round(window_avg(d - timedelta(days=1)), 1)
+            new = _clamp(base + _cap_day_delta(float(row.get("score_delta") or 0)), 0, 100)
             new_scores.append(new)
             old_prev, old_new = row.get("previous_score"), row.get("new_score")
             if old_prev == prev and old_new == new:
@@ -125,9 +135,9 @@ def main() -> None:
                     .execute()
                 )
 
-        # Score vigente de la cuenta con la ventana que termina hoy.
-        total_delta = window_sum(today)
-        current = _clamp(base + total_delta, 0, 100)
+        # Score vigente de la cuenta: promedio de niveles de la ventana a hoy.
+        current = round(window_avg(today), 1)
+        total_delta = round(current - base, 1)
         if not args.dry_run:
             (
                 sb.table("wa_account_scores")
