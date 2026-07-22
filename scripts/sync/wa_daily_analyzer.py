@@ -38,6 +38,10 @@ load_dotenv(ROOT / "wa_listener" / ".env", override=False)
 logger = logging.getLogger("wa_daily_analyzer")
 
 DEFAULT_BASE_SCORE = 70
+# Ventana móvil del score WA: solo cuentan los deltas de los últimos N días.
+# Sin ventana, la suma histórica de deltas (con sesgo positivo) saturaba a
+# todas las cuentas en 100 y el histórico salía plano.
+SCORE_WINDOW_DAYS = 30
 MAX_MESSAGES_PER_GROUP = 600
 MAX_AMBIGUOUS_CONTEXT_MESSAGES = 5
 DEFAULT_MAX_ABS_SCORE_DELTA = 3
@@ -123,9 +127,11 @@ def main() -> None:
     for batch in batches:
         score_state = _get_score_state(sb, batch.account_id)
         existing = batch.existing_analysis or {}
-        existing_delta = float(existing.get("score_delta") or 0)
-        current_score = float(score_state.get("current_score") or score_state.get("base_score") or DEFAULT_BASE_SCORE)
-        previous_score = current_score if existing else _clamp(current_score - existing_delta, 0, 100)
+        base_score = float(score_state.get("base_score") or DEFAULT_BASE_SCORE)
+        # Score "de ayer": base + deltas de la ventana móvil que termina ayer.
+        previous_score = _clamp(
+            base_score + _load_window_delta(sb, batch.account_id, target_date, include_as_of=False), 0, 100
+        )
         analysis = _analyze_group_day(model, target_date, batch, previous_score)
         score_delta = _score_delta_from_analysis(analysis)
         daily_row = _build_daily_row(target_date, batch, previous_score, score_delta, model, analysis)
@@ -164,8 +170,8 @@ def main() -> None:
             except Exception as mil_err:
                 logger.error("Error inserting automatic milestone: %s", mil_err)
 
-        total_delta = _load_total_delta(sb, batch.account_id)
-        base_score = float(score_state.get("base_score") or DEFAULT_BASE_SCORE)
+        # total_delta ahora es el delta de la ventana de 30 días, no el histórico.
+        total_delta = _load_window_delta(sb, batch.account_id, target_date, include_as_of=True)
         current_score = _clamp(base_score + total_delta, 0, 100)
         score_row = {
             "account_id": batch.account_id,
@@ -673,11 +679,22 @@ def _get_score_state(sb, account_id: str) -> dict:
     }
 
 
-def _load_total_delta(sb, account_id: str) -> float:
+def _load_window_delta(sb, account_id: str, as_of: date, include_as_of: bool = True) -> float:
+    """Suma de deltas dentro de la ventana móvil que termina en `as_of`.
+
+    Con include_as_of=False la ventana termina AYER: eso da el score previo del
+    día sin contar las corridas ya guardadas de hoy (de este u otro grupo).
+    """
+    start = as_of - timedelta(days=SCORE_WINDOW_DAYS - 1)
+    end = as_of if include_as_of else as_of - timedelta(days=1)
+    if end < start:
+        return 0.0
     res = (
         sb.table("wa_daily_analysis")
         .select("score_delta")
         .eq("account_id", account_id)
+        .gte("analysis_date", start.isoformat())
+        .lte("analysis_date", end.isoformat())
         .execute()
     )
     return sum(float(row.get("score_delta") or 0) for row in (res.data or []))
