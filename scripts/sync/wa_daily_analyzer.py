@@ -389,6 +389,7 @@ Devuelve este JSON:
   "sentiment": "positive|neutral|negative|mixed",
   "satisfaction": "satisfied|neutral|unsatisfied|unknown",
   "risk_level": "low|medium|high",
+  "crisis_level": 0,
   "summary": "resumen COHERENTE de TODO el dia en este grupo: integra el resumen previo con lo nuevo en UNA sola narrativa, sin contradicciones. Si algo cambio durante el dia, dilo con marco temporal ('por la manana... mas tarde...'), no como hechos sueltos que se contradicen. No es un compilado de parrafos por corrida.",
   "positive_signals": ["..."],
   "negative_signals": ["..."],
@@ -421,6 +422,14 @@ Reglas obligatorias para survey (preguntas directas de satisfacción):
   - Tipo B (Impacto en Objetivo): Ejemplos: "¿el trabajo movió la aguja?", "¿la cobertura refuerza la narrativa?", "¿la estrategia está alineada con prioridades?", "¿la gestión de crisis protegió la reputación?".
     - Mapea la respuesta: "Sí claramente/Sí" -> score 100, "En proceso/parcialmente" -> score 60, "Poco" -> score 20, "No" -> score 0.
 - Si no se identifican estas preguntas hechas al cliente directo y sus respuestas en la conversación del día, pon tanto "question_a" como "question_b" en null (o sus campos internos en null).
+
+Reglas obligatorias para crisis_level (framework de severidad 0-4, metodología Agente IA de Crisis):
+- 0 = Sin crisis: mención aislada o nada relevante, solo monitoreo.
+- 1 = Riesgo bajo: noticia en medio menor sin viralización; molestia leve del cliente.
+- 2 = Riesgo medio: nota negativa con algo de tracción, o cliente claramente inconforme, sin escalada pública.
+- 3 = Crisis: escalada activa y pública — viralización, convocatoria a marcha/manifestación, amenaza legal/denuncia, cobertura de medios, involucramiento de actores públicos (autoridad, sindicato, colectivo).
+- 4 = Crisis severa: daño reputacional grave y en expansión rápida — múltiples medios/actores, movilización confirmada, riesgo legal o físico real, atención nacional.
+- Evalúa el ESTADO ACTUAL del día (no el histórico). Contenido de reportes de monitoreo que Blackwell envía como servicio NO sube el nivel por sí solo; lo que importa es la situación real del cliente y su exposición. Si dudas entre dos niveles, usa el menor salvo que haya movilización/legal/viralización confirmada.
 
 Reglas obligatorias para milestone (hitos y crisis de la cuenta):
 - Evalúa si en la conversación de hoy (incluyendo el texto de documentos adjuntos cargados) ocurrió un evento crítico o de alto impacto para la cuenta, tales como:
@@ -634,6 +643,7 @@ def _build_daily_row(
             aliases={"high": "satisfied", "positive": "satisfied", "negative": "unsatisfied", "low": "unsatisfied"},
         ),
         "risk_level": _normalize_choice(analysis.get("risk_level"), {"low", "medium", "high"}, "low"),
+        "crisis_level": _clamp_int(analysis.get("crisis_level"), 0, 4),
         "summary": str(analysis.get("summary") or "")[:4000],
         "positive_signals": _json_list(analysis.get("positive_signals")),
         "negative_signals": _json_list(analysis.get("negative_signals")),
@@ -713,6 +723,8 @@ def _merge_existing_daily_row(existing: dict[str, Any], incremental: dict[str, A
         **incremental,
         "previous_score": previous_score,
         "score_delta": combined_delta,
+        # El nivel de crisis del día es el PICO observado (no baja entre corridas incrementales).
+        "crisis_level": max(_clamp_int(existing.get("crisis_level"), 0, 4), _clamp_int(incremental.get("crisis_level"), 0, 4)),
         "new_score": _clamp(previous_score + combined_delta, 0, 100),
         "summary": _merge_summary(existing.get("summary"), incremental.get("summary")),
         "positive_signals": _dedupe_json_list(_json_list(existing.get("positive_signals")) + _json_list(incremental.get("positive_signals"))),
@@ -1006,6 +1018,13 @@ def _parse_dt(value: Any) -> datetime | None:
 
 def _clamp(value: float, min_value: float, max_value: float) -> float:
     return max(min_value, min(max_value, value))
+
+
+def _clamp_int(value: Any, min_value: int, max_value: int) -> int:
+    try:
+        return max(min_value, min(max_value, int(round(float(value)))))
+    except (TypeError, ValueError):
+        return min_value
 
 
 def _setup_logging() -> None:

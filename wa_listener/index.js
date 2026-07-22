@@ -21,6 +21,7 @@ import makeWASocket, {
 } from "@whiskeysockets/baileys";
 import { createClient } from "@supabase/supabase-js";
 import http from "http";
+import * as crisis from "./crisisRuntime.js";
 import QRCode from "qrcode";
 import qrcode from "qrcode-terminal";
 import pino from "pino";
@@ -81,6 +82,7 @@ let latestPairingAt = null;
 let isWhatsAppConnected = false;
 let groupRefreshTimer = null;
 let statusServer = null;
+let crisisSock = null; // socket vigente para el runtime de crisis (sobrevive reconexiones)
 
 const AUTO_ACCOUNT_RULES = [
   { pattern: /\bturbofin\b/i, accountId: "01", projectUid: "TU01" },
@@ -728,6 +730,8 @@ async function connectToWhatsApp() {
       latestPairingCode = null;
       latestPairingAt = null;
       console.log("WhatsApp connected.");
+      crisisSock = sock;
+      crisis.startTimers(() => crisisSock); // idempotente; usa el socket vigente
       await refreshParticipatingGroups(sock);
       if (groupRefreshTimer) clearInterval(groupRefreshTimer);
       groupRefreshTimer = setInterval(() => {
@@ -765,6 +769,9 @@ async function connectToWhatsApp() {
       }
 
       await insertMessages(rows);
+      // Detección de crisis en tiempo real (portero → reeval → documento → outbox).
+      // Envuelto internamente en try/catch; nunca tumba al listener.
+      crisis.onMessages(sock, rows);
     } catch (error) {
       console.error("Error handling messages.upsert:", error?.message || error);
     }
