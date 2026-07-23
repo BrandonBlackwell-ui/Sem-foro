@@ -945,7 +945,7 @@ type PanoRow = {
 // Panorama de vinculación: mega tabla con verde (vinculado) / rojo (falta) por
 // cada dato clave de cada cuenta. Las celdas de Meta, Grupo WA, Sheet y Consultor
 // se editan in-place: clic → dropdown/entrada → guarda a Supabase (/api/admin).
-type PanoCol = 'meta' | 'wa' | 'sheet' | 'consultor'
+type PanoCol = 'meta' | 'wa' | 'sheet' | 'consultor' | 'status'
 function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
   rows: PanoRow[]
   consultants: string[]
@@ -970,6 +970,7 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
     else if (col === 'sheet') { action = 'link_sheet'; payload = { account_number: row.num, sheet_value: val } }
     else if (col === 'consultor') { action = 'set_assignment'; payload = { account_id: row.num, account_name: row.name, consultant: val } }
     else if (col === 'meta') { action = 'set_meta'; payload = { account_number: row.num, meta_entregables: val } }
+    else if (col === 'status') { action = 'set_status'; payload = { account_number: row.num, status: val } }
     const r = await adminApiPost(action, payload)
     setSaving(false)
     if (r.ok) onSaved()
@@ -1037,6 +1038,27 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
   }
 
   const statusLabels: Record<string, string> = Object.fromEntries(ADMIN_STATUS_OPTIONS.map(o => [o.value, o.label]))
+  const statusCell = (row: PanoRow) => {
+    const isEditing = edit?.num === row.num && edit?.col === 'status'
+    if (isEditing) {
+      return (
+        <td style={{ padding: '6px 10px', borderBottom: '1px solid #f3f1ea' }}>
+          <select autoFocus defaultValue={row.status} style={{ ...inputStyle, width: 190 }}
+            onChange={e => commit(row, 'status', e.target.value)}
+            onKeyDown={e => { if (e.key === 'Escape') setEdit(null) }}
+            onBlur={() => setEdit(null)}>
+            {ADMIN_STATUS_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+          </select>
+        </td>
+      )
+    }
+    return (
+      <td onClick={() => !saving && setEdit({ num: row.num, col: 'status' })} title="Clic para cambiar el status"
+        style={{ padding: '8px 10px', fontSize: 11.5, color: '#666', borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap', cursor: 'pointer' }}>
+        {statusLabels[row.status] || row.status} <span style={{ opacity: 0.35, fontSize: 10 }}>✎</span>
+      </td>
+    )
+  }
   const allStatuses = [...new Set(rows.map(r => r.status).filter(Boolean))].sort()
   const q = query.trim().toLowerCase()
   const shown = rows.filter(r =>
@@ -1091,7 +1113,7 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
                 <tr key={r.num}>
                   <td style={{ padding: '8px 10px', fontFamily: 'var(--mono)', fontSize: 11.5, borderBottom: '1px solid #f3f1ea' }}>{r.num}</td>
                   <td style={{ padding: '8px 10px', fontWeight: 600, borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap' }}>{r.name}</td>
-                  <td style={{ padding: '8px 10px', fontSize: 11, color: '#666', borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap' }}>{r.status}</td>
+                  {statusCell(r)}
                   {staticCell(r.hasContract)}
                   {editableCell(r, 'meta', r.hasMeta, r.meta)}
                   {editableCell(r, 'wa', r.hasWa, r.waName, 'pano-wa')}
