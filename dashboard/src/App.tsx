@@ -466,16 +466,19 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
 // vía anon key; esto es una puerta de UI, no seguridad criptográfica).
 const ADMIN_PASSWORD = 'admin2026'
 
-function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack }: {
+function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, accounts, onSaved }: {
   authed: boolean
   onLogin: (pass: string) => boolean
   logs: any[]
   loading: boolean
   onRefresh: () => void
   onBack: () => void
+  accounts: { account_id: string; name: string }[]
+  onSaved: () => void
 }) {
   const [pass, setPass] = useState('')
   const [error, setError] = useState(false)
+  const [adminTab, setAdminTab] = useState<'gestion' | 'bitacora'>('gestion')
   // Por defecto la bitácora muestra solo correos que generaron análisis; los
   // duplicados (mismo Meet reenviado por varios buzones) se ocultan tras un toggle.
   const [showDuplicates, setShowDuplicates] = useState(false)
@@ -537,6 +540,19 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack }: {
               </div>
             ) : (
               <div style={{ marginTop: 20 }}>
+                <div style={{ display: 'flex', gap: 8, marginBottom: 16, borderBottom: '1px solid #ece9e0' }}>
+                  {([['gestion', 'Gestión de clientes'], ['bitacora', 'Bitácora de Meets']] as const).map(([k, lbl]) => (
+                    <button key={k} onClick={() => setAdminTab(k)} style={{
+                      background: 'transparent', border: 'none', borderBottom: `2px solid ${adminTab === k ? '#3a3a44' : 'transparent'}`,
+                      padding: '8px 4px', marginBottom: -1, fontSize: 13, fontWeight: adminTab === k ? 700 : 500,
+                      color: adminTab === k ? '#3a3a44' : '#9aa0a6', cursor: 'pointer',
+                    }}>{lbl}</button>
+                  ))}
+                </div>
+
+                {adminTab === 'gestion' && <AdminGestion accounts={accounts} onSaved={onSaved} />}
+
+                {adminTab === 'bitacora' && (<>
                 <label style={{ display: 'inline-flex', alignItems: 'center', gap: 7, marginBottom: 10, fontSize: 12.5, color: '#666', cursor: 'pointer', userSelect: 'none' }}>
                   <input type="checkbox" checked={showDuplicates} onChange={e => setShowDuplicates(e.target.checked)} />
                   Mostrar duplicados saltados ({duplicateCount})
@@ -579,9 +595,334 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack }: {
                     </div>
                   </div>
                 )}
+                </>)}
               </div>
             )}
           </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Panel admin · Gestión: alta/edición manual de clientes, contratos (con
+// lectura por IA), CO, status y objetivos. Escribe vía /api/admin (service key
+// en el servidor). Todos los cambios se registran en Supabase.
+const ADMIN_STATUS_OPTIONS: { value: string; label: string }[] = [
+  { value: 'active', label: 'Activo' },
+  { value: 'active_new', label: 'Activo · nuevo' },
+  { value: 'active_crisis_high', label: 'Activo · crisis' },
+  { value: 'active_litigation', label: 'Activo · litigio' },
+  { value: 'onboarding', label: 'Onboarding' },
+  { value: 'paused', label: 'Pausa' },
+  { value: 'concluded', label: 'Concluido' },
+  { value: 'terminated_early', label: 'Terminación anticipada' },
+  { value: 'event_single', label: 'Evento único' },
+  { value: 'historical', label: 'Histórico' },
+]
+
+const aStyles = {
+  card: { background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, padding: 20, marginBottom: 16 } as React.CSSProperties,
+  h: { fontWeight: 700, fontSize: 14.5, color: 'var(--ink-900)', marginBottom: 4 } as React.CSSProperties,
+  sub: { fontSize: 12, color: '#9aa0a6', marginBottom: 14 } as React.CSSProperties,
+  label: { display: 'block', fontSize: 11.5, fontWeight: 600, color: '#666', marginBottom: 4, marginTop: 10 } as React.CSSProperties,
+  input: { width: '100%', padding: '8px 11px', fontSize: 13, border: '1px solid #d0ccc4', borderRadius: 7, boxSizing: 'border-box' as const, background: '#fff' },
+  row: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 } as React.CSSProperties,
+  btn: { padding: '9px 16px', fontSize: 13, fontWeight: 700, background: '#3a3a44', color: '#fdfcf8', border: 'none', borderRadius: 8, cursor: 'pointer' } as React.CSSProperties,
+  btnGhost: { padding: '9px 16px', fontSize: 13, fontWeight: 600, background: 'transparent', color: '#3a3a44', border: '1px solid #3a3a44', borderRadius: 8, cursor: 'pointer' } as React.CSSProperties,
+}
+
+function AdminGestion({ accounts, onSaved }: { accounts: { account_id: string; name: string }[]; onSaved: () => void }) {
+  const [token, setTok] = useState(getAdminToken())
+  const [msg, setMsg] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null)
+  const flash = (kind: 'ok' | 'err', text: string) => { setMsg({ kind, text }); if (kind === 'ok') setTimeout(() => setMsg(null), 4000) }
+
+  // Nuevo cliente
+  const [nc, setNc] = useState({ account_number: '', client_name: '', tier: '', tipo: 'Fee', ingreso_mxn: '', responsable: '' })
+  // Contrato
+  const now = new Date()
+  const [ct, setCt] = useState({
+    account_number: '', client_name: '', text: '',
+    tiene_contrato_firmado: false, tipo_acuerdo: 'propuesta',
+    vigencia_inicio: '', vigencia_fin: '', periodicidad_pago: '',
+    meta_entregables: '', objetivos: '', servicios: '', resumen: '',
+  })
+  const [reading, setReading] = useState(false)
+  // CO
+  const [co, setCo] = useState({ account_number: '', period_year: String(now.getFullYear()), period_month: String(now.getMonth() + 1), delivered_publications_count: '0', committed_publications_count: '', co_score: '' })
+  // Status
+  const [st, setSt] = useState({ account_number: '', status: 'active', note: '' })
+  // Objetivos
+  const [ob, setOb] = useState({ account_number: '', objetivos: '' })
+  // Fase 2
+  const [sheet, setSheet] = useState({ account_number: '', sheet_value: '', sheet_id: '' })
+  const [wg, setWg] = useState({ account_number: '', wa_group_name: '', wa_group_id: '' })
+  const [wn, setWn] = useState({ phone: '', display_name: '', account_number: '', role: 'cliente' })
+  const [asg, setAsg] = useState({ account_number: '', consultant: '', cell_director: '' })
+  const [busy, setBusy] = useState(false)
+
+  const saveToken = (t: string) => { setTok(t); setAdminToken(t) }
+  const accountOptions = accounts
+    .map(a => ({ num: String(Number(a.account_id)), name: a.name }))
+    .filter(a => a.num !== 'NaN')
+    .sort((x, y) => Number(x.num) - Number(y.num))
+
+  async function call(action: string, payload: Record<string, unknown>, okText: string) {
+    if (!getAdminToken()) { flash('err', 'Captura el token de escritura primero.'); return }
+    setBusy(true)
+    const r = await adminApiPost(action, payload)
+    setBusy(false)
+    if (r.ok) { flash('ok', okText); onSaved() } else { flash('err', r.error || 'Error al guardar') }
+  }
+
+  async function readContract() {
+    if (!ct.text.trim()) { flash('err', 'Pega el texto del contrato primero.'); return }
+    if (!getAdminToken()) { flash('err', 'Captura el token de escritura primero.'); return }
+    setReading(true)
+    const r = await contractReadApi(ct.text)
+    setReading(false)
+    if (!r.ok || !r.fields) { flash('err', r.error || 'No se pudo leer el contrato'); return }
+    const f = r.fields as Record<string, any>
+    setCt(prev => ({
+      ...prev,
+      tiene_contrato_firmado: !!f.tiene_contrato_firmado,
+      tipo_acuerdo: f.tipo_acuerdo || prev.tipo_acuerdo,
+      vigencia_inicio: f.vigencia_inicio || prev.vigencia_inicio,
+      vigencia_fin: f.vigencia_fin || prev.vigencia_fin,
+      periodicidad_pago: f.periodicidad_pago || prev.periodicidad_pago,
+      meta_entregables: f.meta_entregables || prev.meta_entregables,
+      objetivos: Array.isArray(f.objetivos) ? f.objetivos.join('\n') : prev.objetivos,
+      servicios: Array.isArray(f.servicios) ? f.servicios.join('\n') : prev.servicios,
+      resumen: f.resumen || prev.resumen,
+    }))
+    flash('ok', 'Campos rellenados por IA. Revisa y guarda.')
+  }
+
+  return (
+    <div style={{ marginTop: 20, maxWidth: 720 }}>
+      {msg && (
+        <div style={{ padding: '10px 14px', borderRadius: 8, marginBottom: 14, fontSize: 13, fontWeight: 600,
+          background: msg.kind === 'ok' ? '#eaf4ee' : '#fbeae8', color: msg.kind === 'ok' ? '#2f6b46' : '#a8453b',
+          border: `1px solid ${msg.kind === 'ok' ? '#bfe0cc' : '#f0c8c2'}` }}>{msg.text}</div>
+      )}
+
+      {/* Token */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Token de escritura</div>
+        <div style={aStyles.sub}>Debe coincidir con <code>ADMIN_TOKEN</code> del servidor (Vercel). Se guarda solo en esta sesión del navegador.</div>
+        <input type="password" style={aStyles.input} value={token} placeholder="ADMIN_TOKEN" onChange={e => saveToken(e.target.value)} />
+      </div>
+
+      {/* Nuevo cliente */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Vincular nuevo cliente</div>
+        <div style={aStyles.sub}>Da de alta un cliente aunque no tenga carpeta en Drive. Aparecerá activo en el semáforo.</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Número de cuenta</label><input style={aStyles.input} value={nc.account_number} placeholder="46" onChange={e => setNc({ ...nc, account_number: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Nombre</label><input style={aStyles.input} value={nc.client_name} placeholder="ARRENDO SERV" onChange={e => setNc({ ...nc, client_name: e.target.value })} /></div>
+        </div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Tier</label><input style={aStyles.input} value={nc.tier} placeholder="top / medio / bajo" onChange={e => setNc({ ...nc, tier: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Tipo</label><input style={aStyles.input} value={nc.tipo} onChange={e => setNc({ ...nc, tipo: e.target.value })} /></div>
+        </div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Ingreso mensual (MXN)</label><input style={aStyles.input} value={nc.ingreso_mxn} placeholder="250000" onChange={e => setNc({ ...nc, ingreso_mxn: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Responsable</label><input style={aStyles.input} value={nc.responsable} onChange={e => setNc({ ...nc, responsable: e.target.value })} /></div>
+        </div>
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy} onClick={() => call('upsert_account', nc, 'Cliente guardado.')}>Guardar cliente</button>
+        </div>
+      </div>
+
+      {/* Contrato + IA */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Contrato / propuesta {'(con lectura por IA)'}</div>
+        <div style={aStyles.sub}>Pega el texto del contrato y deja que la IA rellene vigencia, meta, objetivos y servicios. Revisa antes de guardar.</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Número de cuenta</label><input style={aStyles.input} value={ct.account_number} placeholder="46" onChange={e => setCt({ ...ct, account_number: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Nombre</label><input style={aStyles.input} value={ct.client_name} placeholder="ARRENDO SERV" onChange={e => setCt({ ...ct, client_name: e.target.value })} /></div>
+        </div>
+        <label style={aStyles.label}>Texto del contrato</label>
+        <textarea style={{ ...aStyles.input, minHeight: 90, fontFamily: 'var(--mono)', fontSize: 12 }} value={ct.text} placeholder="Pega aquí el texto del contrato/propuesta…" onChange={e => setCt({ ...ct, text: e.target.value })} />
+        <div style={{ marginTop: 8 }}>
+          <button style={aStyles.btnGhost} disabled={reading} onClick={readContract}>{reading ? 'Leyendo…' : '✨ Leer con IA'}</button>
+        </div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Vigencia inicio</label><input type="date" style={aStyles.input} value={ct.vigencia_inicio} onChange={e => setCt({ ...ct, vigencia_inicio: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Vigencia fin</label><input type="date" style={aStyles.input} value={ct.vigencia_fin} onChange={e => setCt({ ...ct, vigencia_fin: e.target.value })} /></div>
+        </div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Tipo de acuerdo</label><input style={aStyles.input} value={ct.tipo_acuerdo} onChange={e => setCt({ ...ct, tipo_acuerdo: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Periodicidad de pago</label><input style={aStyles.input} value={ct.periodicidad_pago} onChange={e => setCt({ ...ct, periodicidad_pago: e.target.value })} /></div>
+        </div>
+        <label style={{ ...aStyles.label, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+          <input type="checkbox" checked={ct.tiene_contrato_firmado} onChange={e => setCt({ ...ct, tiene_contrato_firmado: e.target.checked })} /> Contrato firmado
+        </label>
+        <label style={aStyles.label}>Meta de entregables (ej. "5 publicaciones/mes")</label>
+        <input style={aStyles.input} value={ct.meta_entregables} onChange={e => setCt({ ...ct, meta_entregables: e.target.value })} />
+        <label style={aStyles.label}>Objetivos (uno por línea)</label>
+        <textarea style={{ ...aStyles.input, minHeight: 60 }} value={ct.objetivos} onChange={e => setCt({ ...ct, objetivos: e.target.value })} />
+        <label style={aStyles.label}>Servicios (uno por línea)</label>
+        <textarea style={{ ...aStyles.input, minHeight: 60 }} value={ct.servicios} onChange={e => setCt({ ...ct, servicios: e.target.value })} />
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy} onClick={() => call('upsert_contract', {
+            account_number: ct.account_number, client_name: ct.client_name,
+            tiene_contrato_firmado: ct.tiene_contrato_firmado, tipo_acuerdo: ct.tipo_acuerdo,
+            vigencia_inicio: ct.vigencia_inicio, vigencia_fin: ct.vigencia_fin, periodicidad_pago: ct.periodicidad_pago,
+            meta_entregables: ct.meta_entregables, resumen: ct.resumen,
+            objetivos: ct.objetivos.split('\n').map(s => s.trim()).filter(Boolean),
+            servicios: ct.servicios.split('\n').map(s => s.trim()).filter(Boolean),
+          }, 'Contrato guardado.')}>Guardar contrato</button>
+        </div>
+      </div>
+
+      {/* CO */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Cumplimiento operativo (CO) del mes</div>
+        <div style={aStyles.sub}>Entregadas vs comprometidas del periodo. Sin esto la cuenta aparece sin CO (gris).</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Número de cuenta</label><input style={aStyles.input} value={co.account_number} placeholder="46" onChange={e => setCo({ ...co, account_number: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Año / Mes</label>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <input style={aStyles.input} value={co.period_year} onChange={e => setCo({ ...co, period_year: e.target.value })} />
+              <input style={aStyles.input} value={co.period_month} onChange={e => setCo({ ...co, period_month: e.target.value })} />
+            </div>
+          </div>
+        </div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Entregadas</label><input style={aStyles.input} value={co.delivered_publications_count} onChange={e => setCo({ ...co, delivered_publications_count: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Comprometidas</label><input style={aStyles.input} value={co.committed_publications_count} placeholder="5" onChange={e => setCo({ ...co, committed_publications_count: e.target.value })} /></div>
+        </div>
+        <label style={aStyles.label}>CO directo (0-100, opcional — si lo pones, ignora entregadas/comprometidas)</label>
+        <input style={aStyles.input} value={co.co_score} onChange={e => setCo({ ...co, co_score: e.target.value })} />
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy} onClick={() => call('upsert_operational', co, 'CO guardado.')}>Guardar CO</button>
+        </div>
+      </div>
+
+      {/* Status */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Cambiar status de un cliente</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Cuenta</label>
+            <select style={aStyles.input} value={st.account_number} onChange={e => setSt({ ...st, account_number: e.target.value })}>
+              <option value="">— elegir —</option>
+              {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
+            </select>
+          </div>
+          <div><label style={aStyles.label}>Status</label>
+            <select style={aStyles.input} value={st.status} onChange={e => setSt({ ...st, status: e.target.value })}>
+              {ADMIN_STATUS_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+            </select>
+          </div>
+        </div>
+        <label style={aStyles.label}>Nota (opcional)</label>
+        <input style={aStyles.input} value={st.note} onChange={e => setSt({ ...st, note: e.target.value })} />
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy || !st.account_number} onClick={() => call('set_status', st, 'Status actualizado.')}>Guardar status</button>
+        </div>
+      </div>
+
+      {/* Objetivos */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Objetivos del cliente</div>
+        <div style={aStyles.sub}>Úsalo cuando el contrato no traiga objetivos claros.</div>
+        <div><label style={aStyles.label}>Número de cuenta</label><input style={aStyles.input} value={ob.account_number} placeholder="46" onChange={e => setOb({ ...ob, account_number: e.target.value })} /></div>
+        <label style={aStyles.label}>Objetivos (uno por línea)</label>
+        <textarea style={{ ...aStyles.input, minHeight: 80 }} value={ob.objetivos} onChange={e => setOb({ ...ob, objetivos: e.target.value })} />
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy} onClick={() => call('set_objectives', { account_number: ob.account_number, objetivos: ob.objetivos.split('\n').map(s => s.trim()).filter(Boolean) }, 'Objetivos guardados.')}>Guardar objetivos</button>
+        </div>
+      </div>
+
+      {/* Vincular columna del Sheet */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Vincular columna del Sheet de medios</div>
+        <div style={aStyles.sub}>El valor EXACTO de la columna "cliente" del Sheet que corresponde a esta cuenta (para que las publicaciones se mapeen al CO).</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Cuenta</label>
+            <select style={aStyles.input} value={sheet.account_number} onChange={e => setSheet({ ...sheet, account_number: e.target.value })}>
+              <option value="">— elegir —</option>
+              {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
+            </select>
+          </div>
+          <div><label style={aStyles.label}>Valor en el Sheet</label><input style={aStyles.input} value={sheet.sheet_value} placeholder="Arrendo Serv" onChange={e => setSheet({ ...sheet, sheet_value: e.target.value })} /></div>
+        </div>
+        <label style={aStyles.label}>Sheet ID (opcional)</label>
+        <input style={aStyles.input} value={sheet.sheet_id} onChange={e => setSheet({ ...sheet, sheet_id: e.target.value })} />
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy || !sheet.account_number || !sheet.sheet_value} onClick={() => call('link_sheet', sheet, 'Columna del Sheet vinculada.')}>Vincular Sheet</button>
+        </div>
+      </div>
+
+      {/* Grupos de WhatsApp */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Vincular grupo de WhatsApp</div>
+        <div style={aStyles.sub}>Asocia un grupo de WhatsApp a la cuenta (para atribuir mensajes y survey).</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Cuenta</label>
+            <select style={aStyles.input} value={wg.account_number} onChange={e => setWg({ ...wg, account_number: e.target.value })}>
+              <option value="">— elegir —</option>
+              {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
+            </select>
+          </div>
+          <div><label style={aStyles.label}>Nombre del grupo</label><input style={aStyles.input} value={wg.wa_group_name} placeholder="Estrategia 2026 - Arrendo" onChange={e => setWg({ ...wg, wa_group_name: e.target.value })} /></div>
+        </div>
+        <label style={aStyles.label}>ID/JID del grupo (opcional)</label>
+        <input style={aStyles.input} value={wg.wa_group_id} onChange={e => setWg({ ...wg, wa_group_id: e.target.value })} />
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy || !wg.account_number || !wg.wa_group_name} onClick={() => call('link_wa_group', wg, 'Grupo de WhatsApp vinculado.')}>Vincular grupo</button>
+        </div>
+      </div>
+
+      {/* Número ↔ nombre */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Vincular número de WhatsApp con un nombre</div>
+        <div style={aStyles.sub}>Identifica un número (para atribuir quién habla en el survey).</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Número (solo dígitos)</label><input style={aStyles.input} value={wn.phone} placeholder="5215512345678" onChange={e => setWn({ ...wn, phone: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Nombre</label><input style={aStyles.input} value={wn.display_name} placeholder="Juan Pérez" onChange={e => setWn({ ...wn, display_name: e.target.value })} /></div>
+        </div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Cuenta (opcional)</label>
+            <select style={aStyles.input} value={wn.account_number} onChange={e => setWn({ ...wn, account_number: e.target.value })}>
+              <option value="">— ninguna —</option>
+              {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
+            </select>
+          </div>
+          <div><label style={aStyles.label}>Rol</label>
+            <select style={aStyles.input} value={wn.role} onChange={e => setWn({ ...wn, role: e.target.value })}>
+              <option value="cliente">Cliente</option>
+              <option value="consultor">Consultor</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+        </div>
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy || !wn.phone || !wn.display_name} onClick={() => call('set_wa_name', wn, 'Número vinculado.')}>Vincular número</button>
+        </div>
+      </div>
+
+      {/* Traslado de consultor */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Trasladar cuenta a otro consultor</div>
+        <div style={aStyles.sub}>Cambia el consultor responsable (afecta la vista Survey por consultor).</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Cuenta</label>
+            <select style={aStyles.input} value={asg.account_number} onChange={e => setAsg({ ...asg, account_number: e.target.value })}>
+              <option value="">— elegir —</option>
+              {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
+            </select>
+          </div>
+          <div><label style={aStyles.label}>Consultor</label><input style={aStyles.input} value={asg.consultant} placeholder="Mariana" onChange={e => setAsg({ ...asg, consultant: e.target.value })} /></div>
+        </div>
+        <label style={aStyles.label}>Director de célula (opcional)</label>
+        <input style={aStyles.input} value={asg.cell_director} onChange={e => setAsg({ ...asg, cell_director: e.target.value })} />
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy || !asg.account_number || !asg.consultant} onClick={() => {
+            const acc = accountOptions.find(a => a.num === asg.account_number)
+            call('set_assignment', { account_id: asg.account_number, account_name: acc?.name, consultant: asg.consultant, cell_director: asg.cell_director }, 'Cuenta trasladada.')
+          }}>Trasladar</button>
         </div>
       </div>
     </div>
@@ -616,6 +957,67 @@ async function supabaseGetOptional<T>(path: string, fallback: T): Promise<T> {
   } catch (err) {
     console.warn(`Optional Supabase resource unavailable: ${path}`, err)
     return fallback
+  }
+}
+
+// ── Panel admin: escritura vía la ruta serverless /api/admin (service key +
+// ADMIN_TOKEN en el servidor). El navegador nunca ve la service key; manda el
+// token que el admin captura una sola vez (sessionStorage 'bw_admin_token').
+const ADMIN_TOKEN_KEY = 'bw_admin_token'
+export function getAdminToken(): string {
+  try { return sessionStorage.getItem(ADMIN_TOKEN_KEY) || '' } catch { return '' }
+}
+export function setAdminToken(t: string) {
+  try { sessionStorage.setItem(ADMIN_TOKEN_KEY, t) } catch { /* private mode */ }
+}
+
+async function adminApiPost(action: string, payload: Record<string, unknown>): Promise<{ ok: boolean; error?: string; result?: unknown }> {
+  const token = getAdminToken()
+  if (!token) return { ok: false, error: 'Falta el token de escritura (arriba).' }
+  try {
+    const res = await fetch('/api/admin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, action, payload, set_by: 'admin' }),
+    })
+    const data = await res.json().catch(() => ({}))
+    if (!res.ok || data?.ok === false) return { ok: false, error: data?.error || `HTTP ${res.status}` }
+    return { ok: true, result: data?.result }
+  } catch (err) {
+    return { ok: false, error: String((err as Error)?.message || err) }
+  }
+}
+
+// Modo demo (solo DEV + localStorage['admin:demoArrendo']='1'): previsualiza
+// Arrendo Serv (46) activo con CO sin necesidad de escribir a Supabase.
+function demoOn(): boolean {
+  try { return import.meta.env.DEV && localStorage.getItem('admin:demoArrendo') === '1' } catch { return false }
+}
+const DEMO_MANUAL = { account_number: '46', client_name: 'ARRENDO SERV', folder_title: '46. ARRENDO SERV', tier: 'top', tipo: 'Fee', ingreso_mxn: 250000, responsable: null }
+const DEMO_INTEL = {
+  account_number: '46', client_name: 'ARRENDO SERV', docs_total: 1,
+  resumen: 'Contención de crisis reputacional y posicionamiento estratégico.',
+  tiene_contrato_firmado: false, tipo_acuerdo: 'propuesta',
+  vigencia_inicio: '2026-07-22', vigencia_fin: '2026-08-21',
+  objetivos: ['Contrarrestar la conversación adversa', 'Consolidar a Arrendo Serv como actor de referencia'],
+  meta_entregables: '5 publicaciones/mes', renovacion: null, faltantes: [], synced_at: '2026-07-22T00:00:00Z',
+}
+const DEMO_OP = { account_id: '46', account_name: 'ARRENDO SERV', period_year: 2026, period_month: 7, delivered_publications_count: 2, committed_publications_count: 5, co_publications_score: 40, co_score: 40, status: 'measured', synced_at: '2026-07-22T00:00:00Z' } as unknown as OperationalScore
+
+async function contractReadApi(text: string): Promise<{ ok: boolean; error?: string; fields?: Record<string, unknown> }> {
+  const token = getAdminToken()
+  if (!token) return { ok: false, error: 'Falta el token de escritura (arriba).' }
+  try {
+    const res = await fetch('/api/contract-read', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, text }),
+    })
+    const data = await res.json().catch(() => ({}))
+    if (!res.ok) return { ok: false, error: data?.error || `HTTP ${res.status}` }
+    return { ok: true, fields: data?.fields }
+  } catch (err) {
+    return { ok: false, error: String((err as Error)?.message || err) }
   }
 }
 
@@ -1409,7 +1811,7 @@ export default function App() {
         '/rest/v1/drive_account_intel?select=account_number,project_uid,client_name,docs_total,resumen,tiene_contrato_firmado,tipo_acuerdo,vigencia_inicio,vigencia_fin,objetivos,meta_entregables,renovacion,faltantes,synced_at',
         [],
       )
-      setDriveIntel(rows)
+      setDriveIntel(demoOn() ? [...rows.filter((x: any) => String(x.account_number) !== '46'), DEMO_INTEL] : rows)
     })()
   }, [])
   const [dbTasks, setDbTasks] = useState<any[]>([])
@@ -1530,7 +1932,7 @@ export default function App() {
         setScores(scoreRows)
         setGroups(groupRows)
         setRawMessages(rawRows)
-        setOperationalScores(mediaRows.operationalScores)
+        setOperationalScores(demoOn() ? [...mediaRows.operationalScores, DEMO_OP] : mediaRows.operationalScores)
         setPublications(mediaRows.publications)
         setPublicationQualityScores(pqRows)
         setPublicationQualityAnalyses(pqAnalysisRows)
@@ -1699,24 +2101,38 @@ export default function App() {
   // accounts_status.json snapshot (used until the first Drive sync populates Supabase).
   const [driveRoster, setDriveRoster] = useState<any[]>([])
   const [accountsStatus, setAccountsStatus] = useState<any | null>(null)
+  // Datos del panel admin (alta manual de clientes, override de status). Se
+  // superponen al roster para que un cliente cargado a mano aparezca activo.
+  const [manualAccounts, setManualAccounts] = useState<any[]>([])
+  const [statusOverrides, setStatusOverrides] = useState<any[]>([])
+  const [assignments, setAssignments] = useState<any[]>([])
+  const reloadRoster = useCallback(async () => {
+    const rows = await supabaseGetOptional<any[]>(
+      '/rest/v1/drive_account_roster?select=account_number,client_name,folder_title,status,status_label&order=account_number.asc',
+      [],
+    )
+    setDriveRoster(rows)
+    const [ma, so, asg] = await Promise.all([
+      supabaseGetOptional<any[]>('/rest/v1/manual_accounts?select=account_number,client_name,folder_title,tier,tipo,ingreso_mxn,responsable', []),
+      supabaseGetOptional<any[]>('/rest/v1/account_status_overrides?select=account_number,status,note', []),
+      supabaseGetOptional<any[]>('/rest/v1/account_assignments?select=account_id,account_name,consultant,cell_director', []),
+    ])
+    setManualAccounts(demoOn() && !ma.some((x: any) => String(x.account_number) === '46') ? [...ma, DEMO_MANUAL] : ma)
+    setStatusOverrides(so)
+    setAssignments(asg)
+  }, [])
   useEffect(() => {
-    (async () => {
-      const rows = await supabaseGetOptional<any[]>(
-        '/rest/v1/drive_account_roster?select=account_number,client_name,folder_title,status,status_label&order=account_number.asc',
-        [],
-      )
-      setDriveRoster(rows)
-    })()
+    reloadRoster()
     ;(async () => {
       try {
         const r = await fetch('/data/accounts_status.json')
         if (r.ok) setAccountsStatus(await r.json())
       } catch { /* offline */ }
     })()
-  }, [])
+  }, [reloadRoster])
 
   const rosterByNumber = useMemo(() => {
-    const m = new Map<string, { name: string; statusLabel: string | null }>()
+    const m = new Map<string, { name: string; statusLabel: string | null; status: string }>()
     if (driveRoster.length) {
       // Supabase (live Drive) — preferred.
       for (const r of driveRoster) {
@@ -1724,11 +2140,14 @@ export default function App() {
         const num = String(Number(r.account_number))
         if (num === 'NaN') continue
         const name = r.client_name || rosterCleanName(r.folder_title)
-        const label = r.status_label ?? ROSTER_STATUS_LABEL[r.status] ?? null
-        m.set(num, { name: name || String(r.folder_title || ''), statusLabel: label })
+        let status = r.status
+        if (['31', '32', '37', '45'].includes(num)) {
+          status = 'terminated_early'
+        }
+        const label = r.status_label ?? ROSTER_STATUS_LABEL[status] ?? null
+        m.set(num, { name: name || String(r.folder_title || ''), statusLabel: label, status })
       }
-      return m
-    }
+    } else {
     // Fallback: static snapshot.
     const list = Array.isArray(accountsStatus?.accounts) ? accountsStatus.accounts : []
     for (const s of list) {
@@ -1736,11 +2155,37 @@ export default function App() {
       const num = String(Number(s.number))
       if (num === 'NaN') continue
       const name = rosterCleanName(s.folderTitle)
-      const status = rosterStatusFrom(s.folderTitle, s.derivedStatus)
-      m.set(num, { name: name || String(s.folderTitle || ''), statusLabel: ROSTER_STATUS_LABEL[status] ?? null })
+      let status = rosterStatusFrom(s.folderTitle, s.derivedStatus)
+      if (['31', '32', '37', '45'].includes(num)) {
+        status = 'terminated_early'
+      }
+      m.set(num, { name: name || String(s.folderTitle || ''), statusLabel: ROSTER_STATUS_LABEL[status] ?? null, status })
     }
+    }
+
+    // Alta manual de clientes (panel admin): aparecen en el roster aunque no
+    // tengan carpeta en Drive todavía.
+    for (const ma of manualAccounts) {
+      const num = String(Number(ma.account_number))
+      if (num === 'NaN' || m.has(num)) continue
+      m.set(num, { name: ma.client_name || `Cuenta ${num}`, statusLabel: null, status: 'active' })
+    }
+    // Override manual de status (gana sobre Drive) para cualquier cuenta.
+    for (const ov of statusOverrides) {
+      const num = String(Number(ov.account_number))
+      if (num === 'NaN') continue
+      const prev = m.get(num)
+      if (prev) m.set(num, { ...prev, status: ov.status, statusLabel: ROSTER_STATUS_LABEL[ov.status] ?? prev.statusLabel })
+      else m.set(num, { name: `Cuenta ${num}`, status: ov.status, statusLabel: ROSTER_STATUS_LABEL[ov.status] ?? null })
+    }
+
+    // Demo local (solo DEV): previsualizar Arrendo sin escribir a Supabase.
+    if (import.meta.env.DEV && localStorage.getItem('admin:demoArrendo') === '1' && !m.has('46')) {
+      m.set('46', { name: 'ARRENDO SERV', statusLabel: null, status: 'active' })
+    }
+
     return m
-  }, [driveRoster, accountsStatus])
+  }, [driveRoster, accountsStatus, manualAccounts, statusOverrides])
 
   const rosterFor = useCallback((accountId: string) => {
     const id = String(accountId || '').trim()
@@ -1791,14 +2236,31 @@ export default function App() {
   }, [meetAnalyses, analyses])
 
   const surveyClients = useMemo<SurveyClient[]>(() => {
-    return CLIENT_ROSTER
+    // Override de consultor desde account_assignments (traslado manual en el
+    // panel admin) — gana sobre el consultor hardcodeado del CLIENT_ROSTER.
+    const asgByNum = new Map<string, string>()
+    for (const a of assignments) {
+      const n = String(Number(a.account_id))
+      if (n !== 'NaN' && a.consultant) asgByNum.set(n, a.consultant)
+    }
+    const base = CLIENT_ROSTER
       .filter(({ num }) => num !== '08')
       .map(({ num, name, consultant }) => {
-        const liveName = rosterByNumber.get(String(Number(num)))?.name
+        const n = String(Number(num))
+        const liveName = rosterByNumber.get(n)?.name
         const sv = surveyByAccount.get(num) ?? { answered: 0, pct: 0, tipoA: false, tipoB: false, source: '', date: '' }
-        return { account_number: num, name: liveName || name, consultant, ...sv }
+        return { account_number: num, name: liveName || name, consultant: asgByNum.get(n) || consultant, ...sv }
       })
-  }, [surveyByAccount, rosterByNumber])
+    // Cuentas manuales (panel admin) que no estén en CLIENT_ROSTER.
+    const present = new Set(base.map(c => String(Number(c.account_number))))
+    for (const m of manualAccounts) {
+      const n = String(Number(m.account_number))
+      if (n === 'NaN' || present.has(n)) continue
+      const sv = surveyByAccount.get(n) ?? { answered: 0, pct: 0, tipoA: false, tipoB: false, source: '', date: '' }
+      base.push({ account_number: n, name: rosterByNumber.get(n)?.name || m.client_name || `Cuenta ${n}`, consultant: asgByNum.get(n) || m.responsable || 'Sin asignar', ...sv })
+    }
+    return base
+  }, [surveyByAccount, rosterByNumber, assignments, manualAccounts])
 
   const accountSummaries = useMemo<AccountSummary[]>(() => {
     const todayStr = todayMexicoStr()
@@ -1950,7 +2412,7 @@ export default function App() {
       const n = Number(r.account_number)
       if (!Number.isNaN(n)) intelByNum.set(n, r)
     }
-    return allChecklists.map(entry => {
+    const mapped = allChecklists.map(entry => {
       const acctNum = Number(entry.data?.account_number ?? NaN)
       if (Number.isNaN(acctNum)) return entry
       // Filter meetings for this account and sort them earliest-first so the latest one wins/overwrites fields at the end
@@ -2047,6 +2509,43 @@ export default function App() {
       }
       return { ...entry, data }
     })
+
+    // Clientes con contrato en Supabase (drive_account_intel) pero sin
+    // checklist.json estático (altas manuales, ej. Arrendo 46): se sintetiza una
+    // entrada para que tengan vigencia + meta y el CO/timeline sean calculables.
+    const presentNums = new Set(mapped.map(e => Number(e.data?.account_number)).filter(n => !Number.isNaN(n)))
+    const synthetic: { folder: string; data: any }[] = []
+    for (const intel of driveIntel) {
+      const num = Number(intel.account_number)
+      if (Number.isNaN(num) || presentNums.has(num)) continue
+      const vig = (intel.vigencia_inicio && intel.vigencia_fin)
+        ? `${intel.vigencia_inicio}/${intel.vigencia_fin}`
+        : (intel.vigencia_inicio || intel.vigencia_fin)
+          ? `${intel.vigencia_inicio ?? '¿?'} a ${intel.vigencia_fin ?? 'indefinida'}`
+          : null
+      if (!vig) continue
+      let metaNum: number | null = null
+      if (intel.meta_entregables) {
+        const mm = String(intel.meta_entregables).match(/(\d+)/)
+        if (mm) metaNum = Number(mm[1])
+      }
+      synthetic.push({
+        folder: `${String(num).padStart(2, '0')}_MANUAL`,
+        data: {
+          account_number: num,
+          account_id: String(num),
+          account_name: intel.client_name || `Cuenta ${num}`,
+          contract: {
+            fase_actual: 'fase_1',
+            vigencia: vig,
+            nota: intel.tiene_contrato_firmado ? 'Contrato cargado (panel admin)' : 'Propuesta cargada (panel admin)',
+          },
+          schema: { items: metaNum != null ? { publicaciones_web: { meta_fase1: metaNum, unidad: 'publicaciones/mes' } } : {} },
+          scores: {},
+        },
+      })
+    }
+    return [...mapped, ...synthetic]
   }, [allChecklists, meetAnalyses, driveIntel])
 
   const findChecklist = useCallback((accountId: string, accountName?: string) => {
@@ -2113,8 +2612,31 @@ export default function App() {
         latestAnalysis: null,
       })
     }
+    // Altas manuales del panel admin (aún sin grupo/checklist): fila con sus
+    // scores operacionales (CO) y de calidad si ya se cargaron a Supabase.
+    for (const ma of manualAccounts) {
+      const num = String(Number(ma.account_number))
+      if (num === 'NaN') continue
+      const exists = result.some(a => /^\d+$/.test(a.account_id.trim()) && String(Number(a.account_id.trim())) === num)
+      if (exists) continue
+      const operational = operationalLookup.byId.get(num) ?? null
+      const publicationQuality = publicationQualityLookup.byId.get(num) ?? null
+      const roster = rosterByNumber.get(num)
+      result.push({
+        account_id: num.padStart(2, '0'),
+        name: roster?.name || ma.client_name || `Cuenta ${num}`,
+        statusLabel: roster?.statusLabel ?? null,
+        groups: [],
+        score: null,
+        operational,
+        publicationQuality,
+        analyzedToday: false,
+        hasMessagesToday: false,
+        latestAnalysis: null,
+      })
+    }
     return result
-  }, [accountSummaries, allChecklists, scores, operationalLookup, publicationQualityLookup, rosterByNumber])
+  }, [accountSummaries, allChecklists, scores, operationalLookup, publicationQualityLookup, rosterByNumber, manualAccounts])
 
   // Lista de la vista "Cuentas": SOLO clientes con carpeta en Drive. Se excluyen
   // los grupos de WhatsApp sin cuenta (00_UNMAPPED, p.ej. "HH / Tebo", "AI Team"),
@@ -2141,25 +2663,30 @@ export default function App() {
       if (!validNums.has(num)) continue        // descarta números sin carpeta de Drive
       if (!byNum.has(num)) byNum.set(num, a)   // dedup (gana el primero = el que tiene grupos)
     }
-    // Carpetas de Drive todavía sin grupo/checklist (incl. concluidas): fila en gris.
+    // Carpetas de Drive todavía sin grupo/checklist (incl. concluidas): fila en
+    // gris, PERO enganchando su CO/PQ por número si ya existen en Supabase (así
+    // una cuenta sin WhatsApp — ej. Arrendo — puede mostrar CO al cargarlo).
     for (const num of validNums) {
       if (byNum.has(num)) continue
       const roster = rosterByNumber.get(num)
+      const padded = num.padStart(2, '0')
+      const operational = operationalLookup.byId.get(num) ?? operationalLookup.byId.get(padded) ?? null
+      const publicationQuality = publicationQualityLookup.byId.get(num) ?? publicationQualityLookup.byId.get(padded) ?? null
       byNum.set(num, {
-        account_id: num.padStart(2, '0'),
+        account_id: padded,
         name: roster?.name || curatedName.get(num) || `Cuenta ${num}`,
         statusLabel: roster?.statusLabel ?? null,
         groups: [],
         score: null,
-        operational: null,
-        publicationQuality: null,
+        operational,
+        publicationQuality,
         analyzedToday: false,
         hasMessagesToday: false,
         latestAnalysis: null,
       })
     }
     return [...byNum.values()]
-  }, [accountSummariesAll, rosterByNumber])
+  }, [accountSummariesAll, rosterByNumber, operationalLookup, publicationQualityLookup])
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
@@ -2629,6 +3156,8 @@ export default function App() {
           loading={emailLogsLoading}
           onRefresh={loadEmailLogs}
           onBack={() => setViewMode('semaforo')}
+          accounts={clientAccounts.map(a => ({ account_id: a.account_id, name: a.name }))}
+          onSaved={() => { reloadRoster(); setTimeout(() => window.location.reload(), 900) }}
         />
       )
     }
@@ -2856,10 +3385,39 @@ export default function App() {
                   }
                   return { account, globalScore, missing }
                 }).sort((a, b) => {
-                  if (a.globalScore != null && b.globalScore == null) return -1
-                  if (a.globalScore == null && b.globalScore != null) return 1
-                  if (a.globalScore != null && b.globalScore != null) return b.globalScore - a.globalScore
-                  return 0
+                  const statusA = rosterFor(a.account.account_id)?.status || 'active'
+                  const statusB = rosterFor(b.account.account_id)?.status || 'active'
+
+                  // Helper function to get sorting tier:
+                  // Tier 0: Active with score
+                  // Tier 1: Active without score (Sin ponderar)
+                  // Tier 2: Paused / Event single
+                  // Tier 3: Concluded / Terminated early / Historical (absolute bottom)
+                  const getTier = (accountObj: typeof a, status: string) => {
+                    const isExcluded = ['concluded', 'terminated_early', 'historical', 'paused', 'event_single'].includes(status)
+                    if (!isExcluded) {
+                      return accountObj.globalScore != null ? 0 : 1
+                    }
+                    if (status === 'paused' || status === 'event_single') {
+                      return 2
+                    }
+                    return 3 // concluded, terminated_early, historical (absolute bottom)
+                  }
+
+                  const tierA = getTier(a, statusA)
+                  const tierB = getTier(b, statusB)
+
+                  if (tierA !== tierB) {
+                    return tierA - tierB
+                  }
+
+                  // If both are Tier 0, sort by score descending
+                  if (tierA === 0) {
+                    return (b.globalScore || 0) - (a.globalScore || 0)
+                  }
+
+                  // Otherwise, sort alphabetically by name
+                  return a.account.name.localeCompare(b.account.name)
                 }).map(({ account, globalScore, missing }, gi) => {
                   const isGlobal = globalScore != null
                   // Cuentas sin score global completo aparecen desactivadas (sin número, en gris)
