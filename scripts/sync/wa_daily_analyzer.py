@@ -47,6 +47,20 @@ DEFAULT_BASE_SCORE = 70
 SCORE_WINDOW_DAYS = 30
 DAY_DELTA_CAP_POS = 15   # un solo día no puede subir más que esto sobre la base
 DAY_DELTA_CAP_NEG = -30  # las señales negativas sí pueden pegar más fuerte
+
+# --- Decaimiento por inactividad del grupo de WhatsApp (solo días laborales) ---
+INACTIVITY_STEP = 2       # puntos que baja por cada día hábil sin movimiento
+INACTIVITY_GRACE = 1      # días hábiles de gracia antes de empezar a restar
+INACTIVITY_FLOOR = 50     # el silencio no baja de aquí (silencio != insatisfacción)
+# Festivos MX 2026 (oficiales + Jueves/Viernes Santo) en que NO se resta.
+MX_HOLIDAYS = {
+    "2026-01-01", "2026-02-02", "2026-03-16", "2026-04-02", "2026-04-03",
+    "2026-05-01", "2026-09-16", "2026-11-16", "2026-12-25",
+}
+
+
+def _is_business_day(d: date) -> bool:
+    return d.weekday() < 5 and d.isoformat() not in MX_HOLIDAYS
 MAX_MESSAGES_PER_GROUP = 600
 MAX_AMBIGUOUS_CONTEXT_MESSAGES = 5
 DEFAULT_MAX_ABS_SCORE_DELTA = 3
@@ -185,6 +199,8 @@ def main() -> None:
             "last_analyzed_date": target_date.isoformat(),
             "last_message_at": batch.last_message_at,
             "rolling_summary": _merge_summary(score_state.get("rolling_summary"), daily_row["summary"]),
+            # Hubo movimiento: se reinicia la racha de silencio.
+            "silent_streak": 0,
             "updated_at": datetime.now(timezone.utc).isoformat(),
         }
         sb.table("wa_account_scores").upsert(score_row, on_conflict="account_id").execute()
@@ -198,6 +214,66 @@ def main() -> None:
             score_delta,
             current_score,
         )
+
+    # Decaimiento por inactividad: castiga (solo días hábiles) a los grupos monitoreados
+    # que hoy NO tuvieron movimiento. Los que sí tuvieron ya se procesaron arriba.
+    active_ids = {b.account_id for b in batches}
+    _apply_inactivity_decay(sb, target_date, active_ids)
+
+
+def _apply_inactivity_decay(sb, target_date: date, active_ids: set[str]) -> None:
+    """Resta puntos a grupos monitoreados sin movimiento, SOLO en días hábiles.
+
+    -INACTIVITY_STEP por día hábil de silencio tras INACTIVITY_GRACE de gracia, con piso
+    INACTIVITY_FLOOR (el silencio no es insatisfacción). Idempotente entre las corridas
+    del día vía last_silent_date. Se recupera solo en cuanto hay movimiento (el loop
+    principal reinicia silent_streak=0).
+    """
+    if not _is_business_day(target_date):
+        logger.info("Inactividad: %s no es día hábil; sin decaimiento.", target_date.isoformat())
+        return
+    try:
+        groups = sb.table("wa_groups").select("account_id,name").execute().data or []
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Inactividad: no pude leer wa_groups: %s", exc)
+        return
+    monitored: dict[str, str] = {}
+    for g in groups:
+        acc = str(g.get("account_id") or "").strip()
+        if acc and acc not in ("00_UNMAPPED", "00_INTERNAL") and acc not in monitored:
+            monitored[acc] = g.get("name") or acc
+
+    decayed = 0
+    for acc, name in monitored.items():
+        if acc in active_ids:
+            continue  # tuvo movimiento hoy → ya procesado y racha reiniciada
+        state = _get_score_state(sb, acc)
+        base_score = float(state.get("base_score") or DEFAULT_BASE_SCORE)
+        streak = int(state.get("silent_streak") or 0)
+        # La racha sube una sola vez por día (idempotencia entre las 5 corridas).
+        if str(state.get("last_silent_date")) != target_date.isoformat():
+            streak += 1
+        avg = _account_score(sb, acc, target_date, base_score)
+        penalty = max(0, streak - INACTIVITY_GRACE) * INACTIVITY_STEP
+        # Piso INACTIVITY_FLOOR; no sube cuentas que ya estén por debajo por señales reales.
+        new_score = min(avg, max(float(INACTIVITY_FLOOR), round(avg - penalty, 1)))
+        row = {
+            "account_id": acc,
+            "account_name": name,
+            "base_score": base_score,
+            "current_score": new_score,
+            "total_delta": round(new_score - base_score, 1),
+            "silent_streak": streak,
+            "last_silent_date": target_date.isoformat(),
+            "last_analyzed_date": target_date.isoformat(),
+            "updated_at": datetime.now(timezone.utc).isoformat(),
+        }
+        sb.table("wa_account_scores").upsert(row, on_conflict="account_id").execute()
+        if penalty > 0:
+            decayed += 1
+            logger.info("Inactividad %s (%s): racha=%d, -%d pts, score %.1f→%.1f",
+                        acc, name, streak, penalty, avg, new_score)
+    logger.info("Inactividad: %d cuenta(s) monitoreada(s) con penalización aplicada.", decayed)
 
 
 def _load_changed_group_batches(sb, target_date: date, start_at: datetime, end_at: datetime) -> list[GroupBatch]:
