@@ -271,7 +271,7 @@ const CLIENT_ROSTER: { num: string; name: string; consultant: string }[] = [
   { num: '29', name: 'Coast Oil', consultant: 'Daniel M.' },
   { num: '30', name: 'Erick Rubi', consultant: 'Johana' },
   { num: '33', name: 'Nezahualcoyotl', consultant: 'Atenas' },
-  { num: '34', name: 'Supply Pay', consultant: 'Uriel' },
+  { num: '34', name: 'Supply Pay', consultant: 'Daniel M.' },
   { num: '35', name: 'PP Aguilar', consultant: 'Angel' },
   { num: '38', name: 'KPS', consultant: 'Daniel M.' },
   { num: '39', name: 'Ismerely', consultant: 'Uriel' },
@@ -956,38 +956,48 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
   const [edit, setEdit] = useState<{ num: string; col: PanoCol } | null>(null)
   const [saving, setSaving] = useState(false)
   const [err, setErr] = useState('')
-  const [statusFilter, setStatusFilter] = useState<string>('all')
+  // Por default mostramos los clientes ACTIVOS (se puede cambiar en el select).
+  const [statusFilter, setStatusFilter] = useState<string>('active_all')
   const [query, setQuery] = useState('')
+  // Cambios pendientes (no se guardan hasta pulsar "Guardar cambios"): así se pueden
+  // mover varias cosas y guardar de una, sin que se recargue en cada edición.
+  type PendingEdit = { row: PanoRow; col: PanoCol; value: string; unlink?: boolean }
+  const [pending, setPending] = useState<Record<string, PendingEdit>>({})
+  const pkey = (num: string, col: PanoCol) => `${num}:${col}`
 
-  async function commit(row: PanoRow, col: PanoCol, raw: string) {
+  // Encolar una edición (no llama al API todavía).
+  function commit(row: PanoRow, col: PanoCol, raw: string) {
     const val = (raw || '').trim()
     setEdit(null)
     if (!val) return
-    setErr('')
-    setSaving(true)
-    let action = '', payload: Record<string, unknown> = {}
-    if (col === 'wa') { action = 'link_wa_group'; payload = { account_number: row.num, wa_group_name: val } }
-    else if (col === 'sheet') { action = 'link_sheet'; payload = { account_number: row.num, sheet_value: val } }
-    else if (col === 'consultor') { action = 'set_assignment'; payload = { account_id: row.num, account_name: row.name, consultant: val } }
-    else if (col === 'meta') { action = 'set_meta'; payload = { account_number: row.num, meta_entregables: val } }
-    else if (col === 'status') { action = 'set_status'; payload = { account_number: row.num, status: val } }
-    const r = await adminApiPost(action, payload)
-    setSaving(false)
-    if (r.ok) onSaved()
-    else setErr(r.error || 'Error al guardar')
+    setPending(p => ({ ...p, [pkey(row.num, col)]: { row, col, value: val } }))
+  }
+  function commitUnlink(row: PanoRow, col: PanoCol) {
+    setEdit(null)
+    setPending(p => ({ ...p, [pkey(row.num, col)]: { row, col, value: '', unlink: true } }))
   }
 
-  async function commitUnlink(row: PanoRow, col: PanoCol) {
-    setEdit(null)
+  async function saveAll() {
+    const edits = Object.values(pending)
+    if (!edits.length) return
     setErr('')
     setSaving(true)
-    const payload: Record<string, unknown> = col === 'consultor'
-      ? { kind: 'consultor', account_id: row.num }
-      : { kind: col, account_number: row.num }
-    const r = await adminApiPost('unlink', payload)
+    for (const e of edits) {
+      let action = '', payload: Record<string, unknown> = {}
+      if (e.unlink) {
+        action = 'unlink'
+        payload = e.col === 'consultor' ? { kind: 'consultor', account_id: e.row.num } : { kind: e.col, account_number: e.row.num }
+      } else if (e.col === 'wa') { action = 'link_wa_group'; payload = { account_number: e.row.num, wa_group_name: e.value } }
+      else if (e.col === 'sheet') { action = 'link_sheet'; payload = { account_number: e.row.num, sheet_value: e.value } }
+      else if (e.col === 'consultor') { action = 'set_assignment'; payload = { account_id: e.row.num, account_name: e.row.name, consultant: e.value } }
+      else if (e.col === 'meta') { action = 'set_meta'; payload = { account_number: e.row.num, meta_entregables: e.value } }
+      else if (e.col === 'status') { action = 'set_status'; payload = { account_number: e.row.num, status: e.value } }
+      const r = await adminApiPost(action, payload)
+      if (!r.ok) { setErr(`Error al guardar ${e.row.name} (${e.col}): ${r.error || ''}`); setSaving(false); return }
+    }
     setSaving(false)
-    if (r.ok) onSaved()
-    else setErr(r.error || 'Error al desvincular')
+    setPending({})
+    onSaved() // una sola recarga al final
   }
 
   const inputStyle: React.CSSProperties = { width: 170, padding: '4px 6px', fontSize: 12, border: '1px solid #3a3a44', borderRadius: 6, boxSizing: 'border-box' }
@@ -1013,13 +1023,20 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
         </td>
       )
     }
-    const short = value && value.length > 22 ? value.slice(0, 22) + '…' : value
+    // Refleja el cambio pendiente (aún no guardado) en ámbar.
+    const pend = pending[pkey(row.num, col)]
+    const effOk = pend ? !pend.unlink : ok
+    const effVal = pend ? (pend.unlink ? '' : pend.value) : value
+    const short = effVal && effVal.length > 22 ? effVal.slice(0, 22) + '…' : effVal
+    const dot = pend ? '#c98a1e' : (effOk ? '#3f7050' : '#a8453b')
+    const txt = pend ? '#b07d1e' : (effOk ? '#2f6b46' : '#a8453b')
     return (
-      <td onClick={() => !saving && setEdit({ num: row.num, col })} title={value ? `${value} · clic para editar` : 'Clic para vincular'}
-        style={{ padding: '8px 10px', whiteSpace: 'nowrap', borderBottom: '1px solid #f3f1ea', cursor: 'pointer' }}>
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, color: ok ? '#2f6b46' : '#a8453b', fontWeight: 600 }}>
-          <span style={{ width: 8, height: 8, borderRadius: 999, background: ok ? '#3f7050' : '#a8453b', display: 'inline-block', flex: '0 0 auto' }} />
-          {ok ? (short || 'Sí') : 'Falta'}
+      <td onClick={() => !saving && setEdit({ num: row.num, col })} title={effVal ? `${effVal}${pend ? ' · pendiente de guardar' : ' · clic para editar'}` : 'Clic para vincular'}
+        style={{ padding: '8px 10px', whiteSpace: 'nowrap', borderBottom: '1px solid #f3f1ea', cursor: 'pointer', background: pend ? '#fdf7e8' : undefined }}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, color: txt, fontWeight: 600 }}>
+          <span style={{ width: 8, height: 8, borderRadius: 999, background: dot, display: 'inline-block', flex: '0 0 auto' }} />
+          {effOk ? (short || 'Sí') : 'Falta'}
+          {pend && <span style={{ fontSize: 9.5, color: '#b07d1e', fontWeight: 700 }}>●pend.</span>}
           <span style={{ opacity: 0.35, fontSize: 10 }}>✎</span>
         </span>
       </td>
@@ -1052,19 +1069,26 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
         </td>
       )
     }
+    const pend = pending[pkey(row.num, 'status')]
+    const effStatus = pend && !pend.unlink ? pend.value : row.status
     return (
-      <td onClick={() => !saving && setEdit({ num: row.num, col: 'status' })} title="Clic para cambiar el status"
-        style={{ padding: '8px 10px', fontSize: 11.5, color: '#666', borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap', cursor: 'pointer' }}>
-        {statusLabels[row.status] || row.status} <span style={{ opacity: 0.35, fontSize: 10 }}>✎</span>
+      <td onClick={() => !saving && setEdit({ num: row.num, col: 'status' })} title={pend ? 'pendiente de guardar' : 'Clic para cambiar el status'}
+        style={{ padding: '8px 10px', fontSize: 11.5, color: pend ? '#b07d1e' : '#666', fontWeight: pend ? 700 : undefined, borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap', cursor: 'pointer', background: pend ? '#fdf7e8' : undefined }}>
+        {statusLabels[effStatus] || effStatus} {pend && <span style={{ fontSize: 9.5 }}>●pend.</span>}<span style={{ opacity: 0.35, fontSize: 10 }}> ✎</span>
       </td>
     )
   }
   const allStatuses = [...new Set(rows.map(r => r.status).filter(Boolean))].sort()
+  const activeCount = rows.filter(r => String(r.status || '').startsWith('active')).length
   const q = query.trim().toLowerCase()
-  const shown = rows.filter(r =>
-    (statusFilter === 'all' || r.status === statusFilter) &&
-    (!q || r.name.toLowerCase().includes(q) || r.num.includes(q))
-  )
+  const shown = rows.filter(r => {
+    const s = String(r.status || '')
+    const statusOk = statusFilter === 'all'
+      ? true
+      : statusFilter === 'active_all' ? s.startsWith('active') : s === statusFilter
+    return statusOk && (!q || r.name.toLowerCase().includes(q) || r.num.includes(q))
+  })
+  const pendingCount = Object.keys(pending).length
   const n = shown.length
   const c = (k: keyof PanoRow) => shown.filter(r => r[k]).length
   const stat = (label: string, k: keyof PanoRow) => (
@@ -1079,14 +1103,28 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
       <datalist id="pano-consult">{consultants.map(cn => <option key={cn} value={cn} />)}</datalist>
       <div style={{ display: 'flex', gap: 10, marginBottom: 12, flexWrap: 'wrap', alignItems: 'center' }}>
         <select style={selStyle} value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
+          <option value="active_all">Activos ({activeCount})</option>
           <option value="all">Todos los status ({rows.length})</option>
           {allStatuses.map(s => <option key={s} value={s}>{statusLabels[s] || s} ({rows.filter(r => r.status === s).length})</option>)}
         </select>
         <input style={{ ...selStyle, width: 180 }} value={query} placeholder="Buscar cliente…" onChange={e => setQuery(e.target.value)} />
-        {(statusFilter !== 'all' || q) && (
-          <button onClick={() => { setStatusFilter('all'); setQuery('') }} style={{ ...selStyle, cursor: 'pointer', color: '#666' }}>Limpiar</button>
+        {(statusFilter !== 'active_all' || q) && (
+          <button onClick={() => { setStatusFilter('active_all'); setQuery('') }} style={{ ...selStyle, cursor: 'pointer', color: '#666' }}>Limpiar</button>
         )}
       </div>
+      {pendingCount > 0 && (
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 12, padding: '10px 14px', background: '#fdf7e8', border: '1px solid #ecd9a8', borderRadius: 10 }}>
+          <span style={{ fontSize: 13, fontWeight: 700, color: '#8a6412' }}>{pendingCount} cambio{pendingCount === 1 ? '' : 's'} sin guardar</span>
+          <button onClick={saveAll} disabled={saving}
+            style={{ padding: '7px 16px', fontSize: 13, fontWeight: 700, color: '#fff', background: saving ? '#9aa0a6' : '#2f6b46', border: 'none', borderRadius: 8, cursor: saving ? 'default' : 'pointer' }}>
+            {saving ? 'Guardando…' : `Guardar cambios (${pendingCount})`}
+          </button>
+          <button onClick={() => setPending({})} disabled={saving}
+            style={{ padding: '7px 12px', fontSize: 12.5, fontWeight: 600, color: '#a8453b', background: 'transparent', border: '1px solid rgba(168,69,59,0.4)', borderRadius: 8, cursor: 'pointer' }}>
+            Descartar
+          </button>
+        </div>
+      )}
       <div style={{ display: 'flex', gap: 18, marginBottom: 10, flexWrap: 'wrap', alignItems: 'center' }}>
         <span style={{ fontSize: 12.5, color: '#666' }}><b>{n}</b> {n === rows.length ? 'cuentas' : `de ${rows.length}`}</span>
         {stat('Contrato', 'hasContract')}
