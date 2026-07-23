@@ -160,6 +160,15 @@ async function handleAction(action, payload, setBy) {
       return { account_operational_scores: await sbWrite('account_operational_scores', row, 'account_id,period_year,period_month') }
     }
 
+    case 'set_meta': {
+      // Actualiza SOLO la meta de entregables en drive_account_intel (merge-
+      // duplicates no toca las demás columnas de la fila existente).
+      const account_number = num2(payload.account_number)
+      if (!account_number) throw new Error('account_number inválido')
+      const row = { account_number, meta_entregables: String(payload.meta_entregables || ''), synced_at: now }
+      return { drive_account_intel: await sbWrite('drive_account_intel', row, 'account_number') }
+    }
+
     case 'set_objectives': {
       const account_number = num2(payload.account_number)
       if (!account_number) throw new Error('account_number inválido')

@@ -554,7 +554,7 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, account
                   ))}
                 </div>
 
-                {adminTab === 'panorama' && <AdminPanorama rows={panorama} />}
+                {adminTab === 'panorama' && <AdminPanorama rows={panorama} consultants={consultants} sheetValues={sheetValues} waGroups={waGroups} onSaved={onSaved} />}
 
                 {adminTab === 'gestion' && <AdminGestion accounts={accounts} consultants={consultants} sheetValues={sheetValues} waGroups={waGroups} onSaved={onSaved} />}
 
@@ -943,10 +943,65 @@ type PanoRow = {
 }
 
 // Panorama de vinculación: mega tabla con verde (vinculado) / rojo (falta) por
-// cada dato clave de cada cuenta, para ver de un vistazo qué acomodar.
-function AdminPanorama({ rows }: { rows: PanoRow[] }) {
-  const cell = (ok: boolean, value?: string) => {
-    const short = value && value.length > 24 ? value.slice(0, 24) + '…' : value
+// cada dato clave de cada cuenta. Las celdas de Meta, Grupo WA, Sheet y Consultor
+// se editan in-place: clic → dropdown/entrada → guarda a Supabase (/api/admin).
+type PanoCol = 'meta' | 'wa' | 'sheet' | 'consultor'
+function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
+  rows: PanoRow[]
+  consultants: string[]
+  sheetValues: string[]
+  waGroups: string[]
+  onSaved: () => void
+}) {
+  const [edit, setEdit] = useState<{ num: string; col: PanoCol } | null>(null)
+  const [saving, setSaving] = useState(false)
+  const [err, setErr] = useState('')
+
+  async function commit(row: PanoRow, col: PanoCol, raw: string) {
+    const val = (raw || '').trim()
+    setEdit(null)
+    if (!val) return
+    setErr('')
+    setSaving(true)
+    let action = '', payload: Record<string, unknown> = {}
+    if (col === 'wa') { action = 'link_wa_group'; payload = { account_number: row.num, wa_group_name: val } }
+    else if (col === 'sheet') { action = 'link_sheet'; payload = { account_number: row.num, sheet_value: val } }
+    else if (col === 'consultor') { action = 'set_assignment'; payload = { account_id: row.num, account_name: row.name, consultant: val } }
+    else if (col === 'meta') { action = 'set_meta'; payload = { account_number: row.num, meta_entregables: val } }
+    const r = await adminApiPost(action, payload)
+    setSaving(false)
+    if (r.ok) onSaved()
+    else setErr(r.error || 'Error al guardar')
+  }
+
+  const inputStyle: React.CSSProperties = { width: 170, padding: '4px 6px', fontSize: 12, border: '1px solid #3a3a44', borderRadius: 6, boxSizing: 'border-box' }
+
+  const editableCell = (row: PanoRow, col: PanoCol, ok: boolean, value: string, listId?: string) => {
+    const isEditing = edit?.num === row.num && edit?.col === col
+    if (isEditing) {
+      return (
+        <td style={{ padding: '6px 10px', borderBottom: '1px solid #f3f1ea' }}>
+          <input autoFocus list={listId} defaultValue={value || ''} style={inputStyle}
+            placeholder={col === 'meta' ? 'ej. 5 publicaciones/mes' : 'elegir…'}
+            onKeyDown={e => { if (e.key === 'Enter') commit(row, col, (e.target as HTMLInputElement).value); if (e.key === 'Escape') setEdit(null) }}
+            onBlur={e => commit(row, col, e.target.value)} />
+        </td>
+      )
+    }
+    const short = value && value.length > 22 ? value.slice(0, 22) + '…' : value
+    return (
+      <td onClick={() => !saving && setEdit({ num: row.num, col })} title={value ? `${value} · clic para editar` : 'Clic para vincular'}
+        style={{ padding: '8px 10px', whiteSpace: 'nowrap', borderBottom: '1px solid #f3f1ea', cursor: 'pointer' }}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, color: ok ? '#2f6b46' : '#a8453b', fontWeight: 600 }}>
+          <span style={{ width: 8, height: 8, borderRadius: 999, background: ok ? '#3f7050' : '#a8453b', display: 'inline-block', flex: '0 0 auto' }} />
+          {ok ? (short || 'Sí') : 'Falta'}
+          <span style={{ opacity: 0.35, fontSize: 10 }}>✎</span>
+        </span>
+      </td>
+    )
+  }
+  const staticCell = (ok: boolean, value?: string) => {
+    const short = value && value.length > 22 ? value.slice(0, 22) + '…' : value
     return (
       <td style={{ padding: '8px 10px', whiteSpace: 'nowrap', borderBottom: '1px solid #f3f1ea' }} title={value || ''}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, color: ok ? '#2f6b46' : '#a8453b', fontWeight: 600 }}>
@@ -956,6 +1011,7 @@ function AdminPanorama({ rows }: { rows: PanoRow[] }) {
       </td>
     )
   }
+
   const n = rows.length
   const c = (k: keyof PanoRow) => rows.filter(r => r[k]).length
   const stat = (label: string, k: keyof PanoRow) => (
@@ -964,15 +1020,20 @@ function AdminPanorama({ rows }: { rows: PanoRow[] }) {
   const cols = ['ID', 'Cliente', 'Status', 'Contrato', 'Meta (CO)', 'Grupo WA', 'Sheet', 'Consultor']
   return (
     <div style={{ marginTop: 20 }}>
-      <div style={{ display: 'flex', gap: 18, marginBottom: 14, flexWrap: 'wrap', alignItems: 'center' }}>
+      <datalist id="pano-wa">{waGroups.map(g => <option key={g} value={g} />)}</datalist>
+      <datalist id="pano-sheet">{sheetValues.map(v => <option key={v} value={v} />)}</datalist>
+      <datalist id="pano-consult">{consultants.map(cn => <option key={cn} value={cn} />)}</datalist>
+      <div style={{ display: 'flex', gap: 18, marginBottom: 10, flexWrap: 'wrap', alignItems: 'center' }}>
         <span style={{ fontSize: 12.5, color: '#666' }}><b>{n}</b> cuentas</span>
         {stat('Contrato', 'hasContract')}
         {stat('Meta', 'hasMeta')}
         {stat('WhatsApp', 'hasWa')}
         {stat('Sheet', 'hasSheet')}
         {stat('Consultor', 'hasConsultant')}
-        <span style={{ fontSize: 11.5, color: '#9aa0a6' }}>🟢 vinculado · 🔴 falta</span>
+        <span style={{ fontSize: 11.5, color: '#9aa0a6' }}>🟢 vinculado · 🔴 falta · clic en una celda para editar</span>
       </div>
+      {err && <div style={{ padding: '8px 12px', borderRadius: 8, marginBottom: 12, fontSize: 12.5, fontWeight: 600, background: '#fbeae8', color: '#a8453b', border: '1px solid #f0c8c2' }}>{err}</div>}
+      {saving && <div style={{ fontSize: 12, color: '#9aa0a6', marginBottom: 8 }}>Guardando…</div>}
       <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, overflow: 'hidden' }}>
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12.5 }}>
@@ -989,11 +1050,11 @@ function AdminPanorama({ rows }: { rows: PanoRow[] }) {
                   <td style={{ padding: '8px 10px', fontFamily: 'var(--mono)', fontSize: 11.5, borderBottom: '1px solid #f3f1ea' }}>{r.num}</td>
                   <td style={{ padding: '8px 10px', fontWeight: 600, borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap' }}>{r.name}</td>
                   <td style={{ padding: '8px 10px', fontSize: 11, color: '#666', borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap' }}>{r.status}</td>
-                  {cell(r.hasContract)}
-                  {cell(r.hasMeta, r.meta)}
-                  {cell(r.hasWa, r.waName)}
-                  {cell(r.hasSheet, r.sheetValue)}
-                  {cell(r.hasConsultant, r.consultant)}
+                  {staticCell(r.hasContract)}
+                  {editableCell(r, 'meta', r.hasMeta, r.meta)}
+                  {editableCell(r, 'wa', r.hasWa, r.waName, 'pano-wa')}
+                  {editableCell(r, 'sheet', r.hasSheet, r.sheetValue, 'pano-sheet')}
+                  {editableCell(r, 'consultor', r.hasConsultant, r.consultant, 'pano-consult')}
                 </tr>
               ))}
             </tbody>
