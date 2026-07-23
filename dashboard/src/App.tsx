@@ -677,6 +677,7 @@ function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }:
   const [sheet, setSheet] = useState({ account_number: '', sheet_value: '', sheet_id: '' })
   const [wg, setWg] = useState({ account_number: '', wa_group_name: '', wa_group_id: '' })
   const [wgNames, setWgNames] = useState<string[]>([]) // grupos en cola para vincular (multi)
+  const [cd, setCd] = useState({ account_number: '', vigencia_inicio: '', vigencia_fin: '' }) // fechas de contrato
   const [wn, setWn] = useState({ phone: '', display_name: '', account_number: '', role: 'cliente' })
   const [asg, setAsg] = useState({ account_number: '', consultant: '', cell_director: '' })
   const [busy, setBusy] = useState(false)
@@ -898,6 +899,24 @@ function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }:
       </div>
 
       {/* Grupos de WhatsApp */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Fechas del contrato (vigencia)</div>
+        <div style={aStyles.sub}>Fija inicio y fin a mano — dibuja la barra de vigencia y activa el score. Marca la cuenta con contrato (aunque no esté firmado).</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Cuenta</label>
+            <select style={aStyles.input} value={cd.account_number} onChange={e => setCd({ ...cd, account_number: e.target.value })}>
+              <option value="">— elegir —</option>
+              {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
+            </select>
+          </div>
+          <div><label style={aStyles.label}>Inicio</label><input type="date" style={aStyles.input} value={cd.vigencia_inicio} onChange={e => setCd({ ...cd, vigencia_inicio: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Fin</label><input type="date" style={aStyles.input} value={cd.vigencia_fin} onChange={e => setCd({ ...cd, vigencia_fin: e.target.value })} /></div>
+        </div>
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy || !cd.account_number || !cd.vigencia_inicio} onClick={() => call('set_contract_dates', cd, 'Fechas del contrato guardadas.')}>Guardar fechas</button>
+        </div>
+      </div>
+
       <div style={aStyles.card}>
         <div style={aStyles.h}>Vincular grupo(s) de WhatsApp</div>
         <div style={aStyles.sub}>Asocia UNO O VARIOS grupos a la cuenta (ej. el del cliente + el interno). Agrega cada grupo y luego vincula todos.</div>
@@ -2771,23 +2790,26 @@ export default function App() {
         }
 
         const hasVigencia = !!data.contract?.vigencia
-        const intelDates = intel.vigencia_inicio || intel.vigencia_fin
+        const bothDates = intel.vigencia_inicio && intel.vigencia_fin
         // Vencido = terminó hace más de ~4 meses (excluye contratos viejos, p.ej. RR).
         const cutoff = (() => { const d = new Date(todayMexicoStr()); d.setMonth(d.getMonth() - 4); return d.toISOString().slice(0, 10) })()
         const stale = !!intel.vigencia_fin && String(intel.vigencia_fin) < cutoff
-        // Activa el contrato (gate del score global) si YA está firmado, o si hay
-        // vigencia + meta (acuerdo con fechas y entregables), y no está vencido.
-        if (!hasVigencia && intelDates && !stale && (intel.tiene_contrato_firmado === true || intelMetaNum != null)) {
+        // Documento presente = contrato (aunque no esté firmado ni tenga fechas): activa el
+        // gate del score global. La barra de vigencia solo se dibuja si hay AMBAS fechas.
+        const hasContractDoc = intel.tiene_contrato_firmado === true || intelMetaNum != null
+        if (!hasVigencia && !stale && hasContractDoc) {
           data.contract = {
             ...(data.contract || {}),
-            // Formato "inicio/fin" cuando hay ambas fechas → dibuja la barra de vigencia
-            // (ContractTimeline parte por "/"). Si falta el fin, texto legible sin barra.
-            vigencia: (intel.vigencia_inicio && intel.vigencia_fin)
+            present: true, // hay contrato/documento → activa aunque falten fechas
+            // "inicio/fin" (con "/") dibuja la barra; si falta alguna fecha, texto o nada.
+            vigencia: bothDates
               ? `${intel.vigencia_inicio}/${intel.vigencia_fin}`
-              : `${intel.vigencia_inicio ?? '¿?'} a ${intel.vigencia_fin ?? 'indefinida'}`,
+              : (intel.vigencia_inicio || intel.vigencia_fin)
+                ? `${intel.vigencia_inicio ?? '¿?'} a ${intel.vigencia_fin ?? 'indefinida'}`
+                : undefined,
             nota: intel.tiene_contrato_firmado === true
               ? 'Contrato detectado en Drive (carpeta 01)'
-              : 'Acuerdo con vigencia + meta detectado en Drive (carpeta 01)',
+              : 'Documento/acuerdo detectado en Drive (carpeta 01)',
           }
         }
 
@@ -2911,7 +2933,7 @@ export default function App() {
   const accountSummariesAll = useMemo<AccountSummary[]>(() => {
     const result = [...accountSummaries]
     for (const { data } of allChecklists) {
-      if (!data?.contract?.vigencia || data.account_number == null) continue
+      if ((!data?.contract?.vigencia && !data?.contract?.present) || data.account_number == null) continue
       const num = String(Number(data.account_number))
       const exists = result.some(a => /^\d+$/.test(a.account_id.trim()) && String(Number(a.account_id.trim())) === num)
       if (exists) continue
@@ -3539,7 +3561,7 @@ export default function App() {
         const checklist = findChecklist(a.account_id, a.name)
         const coApplies = coAppliesFor(a.account_id)
         // Cuentas sin CO se puntúan por SC (no requieren contrato vigente).
-        if (!checklist?.contract?.vigencia && coApplies) return null
+        if (!checklist?.contract?.vigencia && !checklist?.contract?.present && coApplies) return null
         const wa = a.score?.current_score ?? a.latestAnalysis?.new_score ?? null
         const weighted = buildWeightedScore(
           wa,
@@ -3721,7 +3743,7 @@ export default function App() {
                   let globalScore: number | null = null
                   const missing: string[] = []
                   const coApplies = coAppliesFor(account.account_id)
-                  if (checklist?.contract?.vigencia || !coApplies) {
+                  if (checklist?.contract?.vigencia || checklist?.contract?.present || !coApplies) {
                     const waForGlobal = account.score?.current_score ?? account.latestAnalysis?.new_score ?? null
                     const weighted = buildWeightedScore(
                       waForGlobal,

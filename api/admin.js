@@ -190,6 +190,23 @@ async function handleAction(action, payload, setBy) {
       return { drive_account_intel: await sbWrite('drive_account_intel', row, 'account_number') }
     }
 
+    case 'set_contract_dates': {
+      // Fija la vigencia (inicio/fin) del contrato a mano. Marca contrato presente
+      // (documento existe = cuenta con contrato, aunque no esté firmado). merge-duplicates
+      // no toca las demás columnas de drive_account_intel.
+      const account_number = num2(payload.account_number)
+      if (!account_number) throw new Error('account_number inválido')
+      const iso = (v) => { const s = String(v || '').trim(); return /^\d{4}-\d{2}-\d{2}$/.test(s) ? s : null }
+      const row = {
+        account_number,
+        vigencia_inicio: iso(payload.vigencia_inicio),
+        vigencia_fin: iso(payload.vigencia_fin),
+        tiene_contrato_firmado: true,
+        synced_at: now,
+      }
+      return { drive_account_intel: await sbWrite('drive_account_intel', row, 'account_number') }
+    }
+
     case 'set_objectives': {
       const account_number = num2(payload.account_number)
       if (!account_number) throw new Error('account_number inválido')
