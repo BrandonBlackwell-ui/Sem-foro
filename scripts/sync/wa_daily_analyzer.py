@@ -38,6 +38,15 @@ load_dotenv(ROOT / "wa_listener" / ".env", override=False)
 logger = logging.getLogger("wa_daily_analyzer")
 
 DEFAULT_BASE_SCORE = 70
+# Modelo de score WA (nivel diario, no acumulado):
+#   score del día  = clamp(base de la cuenta + delta del día acotado)
+#   score vigente  = promedio de los niveles diarios de los últimos 30 días
+# El modelo acumulado anterior (suma de deltas históricos, luego con ventana)
+# saturaba a toda cuenta activa en 100: con deltas de +10..+45 por día de
+# actividad normal, cualquier suma pega el techo y el histórico sale plano.
+SCORE_WINDOW_DAYS = 30
+DAY_DELTA_CAP_POS = 15   # un solo día no puede subir más que esto sobre la base
+DAY_DELTA_CAP_NEG = -30  # las señales negativas sí pueden pegar más fuerte
 MAX_MESSAGES_PER_GROUP = 600
 MAX_AMBIGUOUS_CONTEXT_MESSAGES = 5
 DEFAULT_MAX_ABS_SCORE_DELTA = 3
@@ -123,15 +132,15 @@ def main() -> None:
     for batch in batches:
         score_state = _get_score_state(sb, batch.account_id)
         existing = batch.existing_analysis or {}
-        existing_delta = float(existing.get("score_delta") or 0)
-        current_score = float(score_state.get("current_score") or score_state.get("base_score") or DEFAULT_BASE_SCORE)
-        previous_score = current_score if existing else _clamp(current_score - existing_delta, 0, 100)
+        base_score = float(score_state.get("base_score") or DEFAULT_BASE_SCORE)
+        # Score vigente hasta ayer (promedio de niveles diarios de la ventana).
+        previous_score = _account_score(sb, batch.account_id, target_date - timedelta(days=1), base_score)
         analysis = _analyze_group_day(model, target_date, batch, previous_score)
         score_delta = _score_delta_from_analysis(analysis)
-        daily_row = _build_daily_row(target_date, batch, previous_score, score_delta, model, analysis)
+        daily_row = _build_daily_row(target_date, batch, previous_score, score_delta, model, analysis, base_score)
 
         if existing:
-            daily_row = _merge_existing_daily_row(existing, daily_row, score_delta)
+            daily_row = _merge_existing_daily_row(existing, daily_row, score_delta, base_score)
             (
                 sb.table("wa_daily_analysis")
                 .update(daily_row)
@@ -164,9 +173,9 @@ def main() -> None:
             except Exception as mil_err:
                 logger.error("Error inserting automatic milestone: %s", mil_err)
 
-        total_delta = _load_total_delta(sb, batch.account_id)
-        base_score = float(score_state.get("base_score") or DEFAULT_BASE_SCORE)
-        current_score = _clamp(base_score + total_delta, 0, 100)
+        # Score vigente: promedio de niveles diarios de la ventana de 30 días.
+        current_score = _account_score(sb, batch.account_id, target_date, base_score)
+        total_delta = round(current_score - base_score, 1)
         score_row = {
             "account_id": batch.account_id,
             "account_name": batch.group_name,
@@ -371,17 +380,20 @@ Reglas criticas sobre contexto:
 
 
 Reglas de score_delta — usa EXACTAMENTE esta tabla de señales WA:
-NO uses un score base. Devuelve la SUMA de los ajustes que apliquen segun lo observado:
-  Cliente inicia conversaciones activamente (no solo responde): +20
-  Respuestas sustanciales con contexto o preguntas: +15
-  Volumen alto, chat activo durante el periodo: +10
-  Tono positivo explicito (gracias, excelente, me gusta, perfecto): +10
+NO uses un score base. Devuelve la SUMA de los ajustes que apliquen segun lo observado.
+La actividad RUTINARIA no suma: que el chat este activo o que Blackwell envie
+reportes es lo esperado, no una senal de satisfaccion del cliente.
+  Cliente inicia conversaciones activamente (no solo responde): +5
+  Respuestas sustanciales con contexto o preguntas: +4
+  Tono positivo explicito del CLIENTE (gracias, excelente, me gusta, perfecto): +3
+  Cliente celebra un resultado o reconoce el trabajo del equipo: +5
+  Volumen alto / chat activo por si solo: 0
   Solo responde cuando se le busca, sin iniciativa: 0
-  Respuestas escasas o con retraso consistente (>3 dias entre mensajes): -10
-  Tono de presion o molestia (no entiendo, sigo esperando, cuando, por que): -20
-  Senal explicita de insatisfaccion o queja directa: -30
+  Respuestas escasas o con retraso consistente (>3 dias entre mensajes): -5
+  Tono de presion o molestia (no entiendo, sigo esperando, cuando, por que): -10
+  Senal explicita de insatisfaccion o queja directa: -15
 Si el dia es completamente neutro sin ninguna senal: devuelve 0.
-El resultado puede ser positivo, negativo o 0 — no hay limite minimo ni maximo predefinido.
+El total del dia se acota despues a [-30, +15]; se puntual y conservador.
 
 Devuelve este JSON:
 {{
@@ -621,8 +633,11 @@ def _build_daily_row(
     score_delta: float,
     model: str,
     analysis: dict,
+    base_score: float = DEFAULT_BASE_SCORE,
 ) -> dict:
-    new_score = _clamp(previous_score + score_delta, 0, 100)
+    # Nivel del día: la base de la cuenta ± las señales de HOY (acotadas).
+    # No se acumula sobre días previos — así el histórico refleja cada día.
+    new_score = _clamp(base_score + _cap_day_delta(score_delta), 0, 100)
     return {
         "account_id": batch.account_id,
         "group_jid": batch.group_jid,
@@ -673,14 +688,40 @@ def _get_score_state(sb, account_id: str) -> dict:
     }
 
 
-def _load_total_delta(sb, account_id: str) -> float:
+def _cap_day_delta(total: float) -> float:
+    return _clamp(total, DAY_DELTA_CAP_NEG, DAY_DELTA_CAP_POS)
+
+
+def _load_day_levels(sb, account_id: str, as_of: date) -> dict[date, float]:
+    """Nivel diario por fecha dentro de la ventana que termina en `as_of`.
+
+    Nivel del día = clamp(base... ) se calcula afuera; aquí regresamos la suma
+    de deltas por fecha (todas las corridas/grupos del día suman).
+    """
+    start = as_of - timedelta(days=SCORE_WINDOW_DAYS - 1)
+    if as_of < start:
+        return {}
     res = (
         sb.table("wa_daily_analysis")
-        .select("score_delta")
+        .select("analysis_date,score_delta")
         .eq("account_id", account_id)
+        .gte("analysis_date", start.isoformat())
+        .lte("analysis_date", as_of.isoformat())
         .execute()
     )
-    return sum(float(row.get("score_delta") or 0) for row in (res.data or []))
+    totals: dict[date, float] = defaultdict(float)
+    for row in res.data or []:
+        totals[date.fromisoformat(row["analysis_date"])] += float(row.get("score_delta") or 0)
+    return totals
+
+
+def _account_score(sb, account_id: str, as_of: date, base_score: float) -> float:
+    """Score vigente: promedio de los niveles diarios de la ventana (o base)."""
+    totals = _load_day_levels(sb, account_id, as_of)
+    if not totals:
+        return _clamp(base_score, 0, 100)
+    levels = [_clamp(base_score + _cap_day_delta(t), 0, 100) for t in totals.values()]
+    return _clamp(sum(levels) / len(levels), 0, 100)
 
 
 def _load_existing_daily_analysis(sb, account_id: str, group_jid: str, target_date: date) -> dict[str, Any] | None:
@@ -711,10 +752,15 @@ def _load_existing_daily_delta(sb, account_id: str, group_jid: str, target_date:
     return float(res.data.get("score_delta") or 0)
 
 
-def _merge_existing_daily_row(existing: dict[str, Any], incremental: dict[str, Any], new_delta: float) -> dict[str, Any]:
+def _merge_existing_daily_row(
+    existing: dict[str, Any],
+    incremental: dict[str, Any],
+    new_delta: float,
+    base_score: float = DEFAULT_BASE_SCORE,
+) -> dict[str, Any]:
     existing_delta = float(existing.get("score_delta") or 0)
     previous_score = float(existing.get("previous_score") or incremental["previous_score"] or DEFAULT_BASE_SCORE)
-    combined_delta = _clamp(existing_delta + new_delta, -10, 10)
+    combined_delta = _cap_day_delta(existing_delta + new_delta)
 
     existing_actions = existing.get("action_items") if isinstance(existing.get("action_items"), list) else []
     new_actions = incremental.get("action_items") if isinstance(incremental.get("action_items"), list) else []
@@ -725,7 +771,7 @@ def _merge_existing_daily_row(existing: dict[str, Any], incremental: dict[str, A
         "score_delta": combined_delta,
         # El nivel de crisis del día es el PICO observado (no baja entre corridas incrementales).
         "crisis_level": max(_clamp_int(existing.get("crisis_level"), 0, 4), _clamp_int(incremental.get("crisis_level"), 0, 4)),
-        "new_score": _clamp(previous_score + combined_delta, 0, 100),
+        "new_score": _clamp(base_score + combined_delta, 0, 100),
         "summary": _merge_summary(existing.get("summary"), incremental.get("summary")),
         "positive_signals": _dedupe_json_list(_json_list(existing.get("positive_signals")) + _json_list(incremental.get("positive_signals"))),
         "negative_signals": _dedupe_json_list(_json_list(existing.get("negative_signals")) + _json_list(incremental.get("negative_signals"))),

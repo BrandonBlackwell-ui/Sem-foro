@@ -272,7 +272,10 @@ export function buildAccounts(opts: BuildAccountsOptions): ComputedAccount[] {
     // Playbook §5: si la carpeta raíz lleva etiqueta de exclusión
     // (/proyecto concluido, /terminación anticipada, /pausa, /evento único…),
     // la cuenta sale del score aunque el snapshot la traiga como "active".
-    const labelStatus = excludedStatusFromLabel(s.folderTitle)
+    let labelStatus = excludedStatusFromLabel(s.folderTitle)
+    if (['31', '32', '37', '45'].includes(s.number)) {
+      labelStatus = 'terminated_early'
+    }
     const status = labelStatus || s.derivedStatus || 'active'
     const isActiveLike = !labelStatus && (
       status === 'active' || status === 'onboarding' ||
