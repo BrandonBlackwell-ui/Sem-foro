@@ -466,7 +466,7 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
 // vía anon key; esto es una puerta de UI, no seguridad criptográfica).
 const ADMIN_PASSWORD = 'admin2026'
 
-function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, accounts, onSaved }: {
+function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, accounts, consultants, sheetValues, waGroups, onSaved }: {
   authed: boolean
   onLogin: (pass: string) => boolean
   logs: any[]
@@ -474,6 +474,9 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, account
   onRefresh: () => void
   onBack: () => void
   accounts: { account_id: string; name: string }[]
+  consultants: string[]
+  sheetValues: string[]
+  waGroups: string[]
   onSaved: () => void
 }) {
   const [pass, setPass] = useState('')
@@ -550,7 +553,7 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, account
                   ))}
                 </div>
 
-                {adminTab === 'gestion' && <AdminGestion accounts={accounts} onSaved={onSaved} />}
+                {adminTab === 'gestion' && <AdminGestion accounts={accounts} consultants={consultants} sheetValues={sheetValues} waGroups={waGroups} onSaved={onSaved} />}
 
                 {adminTab === 'bitacora' && (<>
                 <label style={{ display: 'inline-flex', alignItems: 'center', gap: 7, marginBottom: 10, fontSize: 12.5, color: '#666', cursor: 'pointer', userSelect: 'none' }}>
@@ -632,8 +635,13 @@ const aStyles = {
   btnGhost: { padding: '9px 16px', fontSize: 13, fontWeight: 600, background: 'transparent', color: '#3a3a44', border: '1px solid #3a3a44', borderRadius: 8, cursor: 'pointer' } as React.CSSProperties,
 }
 
-function AdminGestion({ accounts, onSaved }: { accounts: { account_id: string; name: string }[]; onSaved: () => void }) {
-  const [token, setTok] = useState(getAdminToken())
+function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }: {
+  accounts: { account_id: string; name: string }[]
+  consultants: string[]
+  sheetValues: string[]
+  waGroups: string[]
+  onSaved: () => void
+}) {
   const [msg, setMsg] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null)
   const flash = (kind: 'ok' | 'err', text: string) => { setMsg({ kind, text }); if (kind === 'ok') setTimeout(() => setMsg(null), 4000) }
 
@@ -661,14 +669,13 @@ function AdminGestion({ accounts, onSaved }: { accounts: { account_id: string; n
   const [asg, setAsg] = useState({ account_number: '', consultant: '', cell_director: '' })
   const [busy, setBusy] = useState(false)
 
-  const saveToken = (t: string) => { setTok(t); setAdminToken(t) }
   const accountOptions = accounts
     .map(a => ({ num: String(Number(a.account_id)), name: a.name }))
     .filter(a => a.num !== 'NaN')
     .sort((x, y) => Number(x.num) - Number(y.num))
 
   async function call(action: string, payload: Record<string, unknown>, okText: string) {
-    if (!getAdminToken()) { flash('err', 'Captura el token de escritura primero.'); return }
+    if (!getAdminToken()) { flash('err', 'Sesión sin token — cierra sesión y vuelve a entrar.'); return }
     setBusy(true)
     const r = await adminApiPost(action, payload)
     setBusy(false)
@@ -677,7 +684,7 @@ function AdminGestion({ accounts, onSaved }: { accounts: { account_id: string; n
 
   async function readContract() {
     if (!ct.text.trim()) { flash('err', 'Pega el texto del contrato primero.'); return }
-    if (!getAdminToken()) { flash('err', 'Captura el token de escritura primero.'); return }
+    if (!getAdminToken()) { flash('err', 'Sesión sin token — cierra sesión y vuelve a entrar.'); return }
     setReading(true)
     const r = await contractReadApi(ct.text)
     setReading(false)
@@ -700,18 +707,14 @@ function AdminGestion({ accounts, onSaved }: { accounts: { account_id: string; n
 
   return (
     <div style={{ marginTop: 20, maxWidth: 720 }}>
+      <datalist id="ag-consultants">{consultants.map(c => <option key={c} value={c} />)}</datalist>
+      <datalist id="ag-sheetvals">{sheetValues.map(v => <option key={v} value={v} />)}</datalist>
+      <datalist id="ag-wagroups">{waGroups.map(g => <option key={g} value={g} />)}</datalist>
       {msg && (
         <div style={{ padding: '10px 14px', borderRadius: 8, marginBottom: 14, fontSize: 13, fontWeight: 600,
           background: msg.kind === 'ok' ? '#eaf4ee' : '#fbeae8', color: msg.kind === 'ok' ? '#2f6b46' : '#a8453b',
           border: `1px solid ${msg.kind === 'ok' ? '#bfe0cc' : '#f0c8c2'}` }}>{msg.text}</div>
       )}
-
-      {/* Token */}
-      <div style={aStyles.card}>
-        <div style={aStyles.h}>Token de escritura</div>
-        <div style={aStyles.sub}>Debe coincidir con <code>ADMIN_TOKEN</code> del servidor (Vercel). Se guarda solo en esta sesión del navegador.</div>
-        <input type="password" style={aStyles.input} value={token} placeholder="ADMIN_TOKEN" onChange={e => saveToken(e.target.value)} />
-      </div>
 
       {/* Nuevo cliente */}
       <div style={aStyles.card}>
@@ -727,7 +730,7 @@ function AdminGestion({ accounts, onSaved }: { accounts: { account_id: string; n
         </div>
         <div style={aStyles.row}>
           <div><label style={aStyles.label}>Ingreso mensual (MXN)</label><input style={aStyles.input} value={nc.ingreso_mxn} placeholder="250000" onChange={e => setNc({ ...nc, ingreso_mxn: e.target.value })} /></div>
-          <div><label style={aStyles.label}>Responsable</label><input style={aStyles.input} value={nc.responsable} onChange={e => setNc({ ...nc, responsable: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Responsable</label><input list="ag-consultants" style={aStyles.input} value={nc.responsable} placeholder="elegir consultor…" onChange={e => setNc({ ...nc, responsable: e.target.value })} /></div>
         </div>
         <div style={{ marginTop: 14 }}>
           <button style={aStyles.btn} disabled={busy} onClick={() => call('upsert_account', nc, 'Cliente guardado.')}>Guardar cliente</button>
@@ -846,7 +849,7 @@ function AdminGestion({ accounts, onSaved }: { accounts: { account_id: string; n
               {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
             </select>
           </div>
-          <div><label style={aStyles.label}>Valor en el Sheet</label><input style={aStyles.input} value={sheet.sheet_value} placeholder="Arrendo Serv" onChange={e => setSheet({ ...sheet, sheet_value: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Valor en el Sheet</label><input list="ag-sheetvals" style={aStyles.input} value={sheet.sheet_value} placeholder="elegir o escribir…" onChange={e => setSheet({ ...sheet, sheet_value: e.target.value })} /></div>
         </div>
         <label style={aStyles.label}>Sheet ID (opcional)</label>
         <input style={aStyles.input} value={sheet.sheet_id} onChange={e => setSheet({ ...sheet, sheet_id: e.target.value })} />
@@ -866,7 +869,7 @@ function AdminGestion({ accounts, onSaved }: { accounts: { account_id: string; n
               {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
             </select>
           </div>
-          <div><label style={aStyles.label}>Nombre del grupo</label><input style={aStyles.input} value={wg.wa_group_name} placeholder="Estrategia 2026 - Arrendo" onChange={e => setWg({ ...wg, wa_group_name: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Nombre del grupo</label><input list="ag-wagroups" style={aStyles.input} value={wg.wa_group_name} placeholder="elegir o escribir…" onChange={e => setWg({ ...wg, wa_group_name: e.target.value })} /></div>
         </div>
         <label style={aStyles.label}>ID/JID del grupo (opcional)</label>
         <input style={aStyles.input} value={wg.wa_group_id} onChange={e => setWg({ ...wg, wa_group_id: e.target.value })} />
@@ -914,7 +917,7 @@ function AdminGestion({ accounts, onSaved }: { accounts: { account_id: string; n
               {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
             </select>
           </div>
-          <div><label style={aStyles.label}>Consultor</label><input style={aStyles.input} value={asg.consultant} placeholder="Mariana" onChange={e => setAsg({ ...asg, consultant: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Consultor</label><input list="ag-consultants" style={aStyles.input} value={asg.consultant} placeholder="elegir consultor…" onChange={e => setAsg({ ...asg, consultant: e.target.value })} /></div>
         </div>
         <label style={aStyles.label}>Director de célula (opcional)</label>
         <input style={aStyles.input} value={asg.cell_director} onChange={e => setAsg({ ...asg, cell_director: e.target.value })} />
@@ -973,7 +976,7 @@ export function setAdminToken(t: string) {
 
 async function adminApiPost(action: string, payload: Record<string, unknown>): Promise<{ ok: boolean; error?: string; result?: unknown }> {
   const token = getAdminToken()
-  if (!token) return { ok: false, error: 'Falta el token de escritura (arriba).' }
+  if (!token) return { ok: false, error: 'Sesión sin token — vuelve a iniciar sesión en el panel.' }
   try {
     const res = await fetch('/api/admin', {
       method: 'POST',
@@ -1006,7 +1009,7 @@ const DEMO_OP = { account_id: '46', account_name: 'ARRENDO SERV', period_year: 2
 
 async function contractReadApi(text: string): Promise<{ ok: boolean; error?: string; fields?: Record<string, unknown> }> {
   const token = getAdminToken()
-  if (!token) return { ok: false, error: 'Falta el token de escritura (arriba).' }
+  if (!token) return { ok: false, error: 'Sesión sin token — vuelve a iniciar sesión en el panel.' }
   try {
     const res = await fetch('/api/contract-read', {
       method: 'POST',
@@ -1796,6 +1799,9 @@ export default function App() {
     if (pass === ADMIN_PASSWORD) {
       setAdminAuthed(true)
       try { sessionStorage.setItem('bw_admin', '1') } catch { /* private mode */ }
+      // La misma contraseña sirve como token de escritura hacia /api/admin,
+      // así el admin no captura un token aparte. Requiere ADMIN_TOKEN = ADMIN_PASSWORD en Vercel.
+      setAdminToken(pass)
       return true
     }
     return false
@@ -2261,6 +2267,24 @@ export default function App() {
     }
     return base
   }, [surveyByAccount, rosterByNumber, assignments, manualAccounts])
+
+  // Listas para los dropdowns del panel admin (elegir en vez de escribir).
+  const consultantList = useMemo(() => {
+    const s = new Set<string>()
+    for (const r of CLIENT_ROSTER) if (r.consultant && r.consultant !== 'Sin asignar') s.add(r.consultant)
+    for (const a of assignments) if (a.consultant) s.add(a.consultant)
+    return [...s].sort((x, y) => x.localeCompare(y))
+  }, [assignments])
+  const sheetValueList = useMemo(() => {
+    const s = new Set<string>()
+    for (const p of publications) if (p.sheet_client_name) s.add(p.sheet_client_name)
+    return [...s].sort((x, y) => x.localeCompare(y))
+  }, [publications])
+  const waGroupList = useMemo(() => {
+    const s = new Set<string>()
+    for (const g of groups) if (g.name) s.add(g.name)
+    return [...s].sort((x, y) => x.localeCompare(y))
+  }, [groups])
 
   const accountSummaries = useMemo<AccountSummary[]>(() => {
     const todayStr = todayMexicoStr()
@@ -3157,6 +3181,9 @@ export default function App() {
           onRefresh={loadEmailLogs}
           onBack={() => setViewMode('semaforo')}
           accounts={clientAccounts.map(a => ({ account_id: a.account_id, name: a.name }))}
+          consultants={consultantList}
+          sheetValues={sheetValueList}
+          waGroups={waGroupList}
           onSaved={() => { reloadRoster(); setTimeout(() => window.location.reload(), 900) }}
         />
       )
