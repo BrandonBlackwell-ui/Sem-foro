@@ -4,6 +4,50 @@ import path from 'path'
 const SHEET_ID = process.env.MEDIA_SHEET_ID || '1PAcofO80aMuTNdclclqCrKS-uij0S8iI'
 const GENERAL_GID = process.env.MEDIA_SHEET_GENERAL_GID || '905402375'
 
+const SB_URL = process.env.SUPABASE_URL || 'https://vqgfkfvywbpjldreuplb.supabase.co'
+const SB_KEY = process.env.SUPABASE_SERVICE_KEY ||
+  process.env.SUPABASE_ANON_KEY ||
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxZ2ZrZnZ5d2JwamxkcmV1cGxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1MjEwNDMsImV4cCI6MjA5NzA5NzA0M30.wR9_YXMi2udYsVNLY8SlPFwpxkqZ3j78hv961ShBkQk'
+
+async function sbSelect(pathq) {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/${pathq}`, { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } })
+    if (!r.ok) return []
+    return await r.json()
+  } catch {
+    return []
+  }
+}
+
+// Superpone los vínculos MANUALES del panel admin (account_sheet_links) sobre el
+// crosswalk de archivo, resolviendo número→nombre de cliente (el match del CO es
+// por nombre). Así "vincular el Sheet" en el panel pega el CO EN VIVO al recargar.
+async function overlayManualCrosswalk(crosswalk) {
+  const [links, roster, manual] = await Promise.all([
+    sbSelect('account_sheet_links?select=account_number,sheet_value'),
+    sbSelect('drive_account_roster?select=account_number,client_name'),
+    sbSelect('manual_accounts?select=account_number,client_name'),
+  ])
+  if (!links.length) return
+  const nameByNum = new Map()
+  for (const r of [...roster, ...manual]) {
+    const num = String(parseInt(r.account_number, 10))
+    if (num !== 'NaN' && r.client_name && !nameByNum.has(num)) nameByNum.set(num, clean(r.client_name))
+  }
+  for (const row of links) {
+    const sheetName = clean(row.sheet_value)
+    const acc = clean(row.account_number)
+    if (!sheetName || !acc) continue
+    const num = String(parseInt(acc, 10))
+    crosswalk.set(normalize(sheetName), {
+      account_id: acc,
+      account_name: nameByNum.get(num) || sheetName,
+      sheet_client_name: sheetName,
+      crosswalk_status: 'manual',
+    })
+  }
+}
+
 function normalize(value) {
   return String(value || '')
     .normalize('NFD')
@@ -114,7 +158,13 @@ function parseDate(value) {
 }
 
 function loadCrosswalk() {
-  const file = path.join(process.cwd(), 'data', 'account_crosswalk_candidates.json')
+  // En Vercel el cwd es la raíz del repo (data/…); en dev local (Vite) es
+  // dashboard/, así que probamos también ../data.
+  const candidates = [
+    path.join(process.cwd(), 'data', 'account_crosswalk_candidates.json'),
+    path.join(process.cwd(), '..', 'data', 'account_crosswalk_candidates.json'),
+  ]
+  const file = candidates.find((p) => fs.existsSync(p)) || candidates[0]
   const data = JSON.parse(fs.readFileSync(file, 'utf8'))
   const bySheetName = new Map()
   for (const row of data.rows || []) {
@@ -245,6 +295,7 @@ export default async function handler(req, res) {
 
     const csvText = await response.text()
     const crosswalk = loadCrosswalk()
+    await overlayManualCrosswalk(crosswalk)
     const publications = buildPublications(toRecords(csvText), crosswalk)
     const operationalScores = buildOperationalScores(publications)
 
