@@ -159,7 +159,48 @@ def _load_aliases() -> dict[str, dict[str, str]]:
                 "account_name": dashboard_name,
                 "status": status,
             }
+
+    # Overlay de vínculos MANUALES del panel admin (tabla account_sheet_links en
+    # Supabase). Ganan sobre el crosswalk del archivo, para que "vincular el Sheet"
+    # en el panel alimente el CO en la siguiente corrida del sync sin editar JSON.
+    _overlay_manual_sheet_links(aliases)
     return aliases
+
+
+def _overlay_manual_sheet_links(aliases: dict[str, dict[str, str]]) -> None:
+    if not (SUPABASE_URL and SUPABASE_SERVICE_KEY):
+        return
+    try:
+        req = urllib.request.Request(
+            f"{SUPABASE_URL}/rest/v1/account_sheet_links?select=account_number,sheet_value",
+            headers={
+                "apikey": SUPABASE_SERVICE_KEY,
+                "Authorization": f"Bearer {SUPABASE_SERVICE_KEY}",
+            },
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            rows = json.loads(resp.read().decode("utf-8"))
+    except (urllib.error.URLError, ValueError, OSError) as exc:  # tabla ausente / offline
+        logger.warning("account_sheet_links no disponible (%s); solo crosswalk de archivo.", exc)
+        return
+    added = 0
+    for row in rows or []:
+        name = str(row.get("sheet_value") or "").strip()
+        acc = str(row.get("account_number") or "").strip()
+        if not name or not acc:
+            continue
+        # account_id numérico normalizado (mismo formato que usa el dashboard).
+        try:
+            acc_norm = str(int(acc))
+        except ValueError:
+            acc_norm = acc
+        aliases[_normalize(name)] = {
+            "account_id": acc_norm,
+            "account_name": name,
+            "status": "manual",
+        }
+        added += 1
+    logger.info("Overlay de %d alias manual(es) desde account_sheet_links.", added)
 
 
 # Correcciones manuales a filas del Sheet que traen TEXTO en vez de link. Debe coincidir
