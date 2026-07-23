@@ -282,6 +282,14 @@ const CLIENT_ROSTER: { num: string; name: string; consultant: string }[] = [
   { num: '44', name: 'LCH Luxury Travel', consultant: 'Sol' },
 ]
 
+// Score global FORZADO por indicación del equipo (cuentas especiales que van en verde
+// aunque no tengan datos para ponderar). Casa Mata (19): sin WA/CO/PQ, se deja en 100.
+const FORCED_GLOBAL: Record<string, number> = { '19': 100 }
+function forcedGlobal(accountId: string | number | null | undefined): number | null {
+  const n = String(Number(String(accountId ?? '').trim()))
+  return Object.prototype.hasOwnProperty.call(FORCED_GLOBAL, n) ? FORCED_GLOBAL[n] : null
+}
+
 type SurveyClient = {
   account_number: string
   name: string
@@ -668,6 +676,7 @@ function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }:
   // Fase 2
   const [sheet, setSheet] = useState({ account_number: '', sheet_value: '', sheet_id: '' })
   const [wg, setWg] = useState({ account_number: '', wa_group_name: '', wa_group_id: '' })
+  const [wgNames, setWgNames] = useState<string[]>([]) // grupos en cola para vincular (multi)
   const [wn, setWn] = useState({ phone: '', display_name: '', account_number: '', role: 'cliente' })
   const [asg, setAsg] = useState({ account_number: '', consultant: '', cell_director: '' })
   const [busy, setBusy] = useState(false)
@@ -683,6 +692,33 @@ function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }:
     const r = await adminApiPost(action, payload)
     setBusy(false)
     if (r.ok) { flash('ok', okText); onSaved() } else { flash('err', r.error || 'Error al guardar') }
+  }
+
+  // Vincula VARIOS grupos de WhatsApp a la misma cuenta (los de la cola + el que esté
+  // escrito). El backend ya soporta varios por cuenta (llave cuenta+nombre).
+  async function linkWaGroups() {
+    if (!getAdminToken()) { flash('err', 'Sesión sin token — cierra sesión y vuelve a entrar.'); return }
+    const names = [...wgNames]
+    const typed = wg.wa_group_name.trim()
+    if (typed && !names.includes(typed)) names.push(typed)
+    if (!wg.account_number || !names.length) { flash('err', 'Elige cuenta y al menos un grupo.'); return }
+    setBusy(true)
+    let ok = 0, failMsg = ''
+    for (const name of names) {
+      const r = await adminApiPost('link_wa_group', {
+        account_number: wg.account_number,
+        wa_group_name: name,
+        wa_group_id: names.length === 1 ? (wg.wa_group_id || null) : null, // el JID solo aplica si es uno
+      })
+      if (r.ok) ok++; else { failMsg = r.error || 'error'; break }
+    }
+    setBusy(false)
+    if (failMsg) flash('err', `Vinculados ${ok}/${names.length}. Error: ${failMsg}`)
+    else { flash('ok', `${ok} grupo(s) vinculado(s) a la cuenta.`); setWgNames([]); setWg({ ...wg, wa_group_name: '', wa_group_id: '' }); onSaved() }
+  }
+  function addWgName() {
+    const n = wg.wa_group_name.trim()
+    if (n && !wgNames.includes(n)) { setWgNames([...wgNames, n]); setWg({ ...wg, wa_group_name: '' }) }
   }
 
   async function readContract() {
@@ -863,8 +899,8 @@ function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }:
 
       {/* Grupos de WhatsApp */}
       <div style={aStyles.card}>
-        <div style={aStyles.h}>Vincular grupo de WhatsApp</div>
-        <div style={aStyles.sub}>Asocia un grupo de WhatsApp a la cuenta (para atribuir mensajes y survey).</div>
+        <div style={aStyles.h}>Vincular grupo(s) de WhatsApp</div>
+        <div style={aStyles.sub}>Asocia UNO O VARIOS grupos a la cuenta (ej. el del cliente + el interno). Agrega cada grupo y luego vincula todos.</div>
         <div style={aStyles.row}>
           <div><label style={aStyles.label}>Cuenta</label>
             <select style={aStyles.input} value={wg.account_number} onChange={e => setWg({ ...wg, account_number: e.target.value })}>
@@ -872,12 +908,33 @@ function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }:
               {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
             </select>
           </div>
-          <div><label style={aStyles.label}>Nombre del grupo</label><input list="ag-wagroups" style={aStyles.input} value={wg.wa_group_name} placeholder="elegir o escribir…" onChange={e => setWg({ ...wg, wa_group_name: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Nombre del grupo</label>
+            <div style={{ display: 'flex', gap: 6 }}>
+              <input list="ag-wagroups" style={{ ...aStyles.input, flex: 1 }} value={wg.wa_group_name} placeholder="elegir o escribir…"
+                onChange={e => setWg({ ...wg, wa_group_name: e.target.value })}
+                onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); addWgName() } }} />
+              <button type="button" style={{ ...aStyles.btn, padding: '0 14px' }} disabled={!wg.wa_group_name.trim()} onClick={addWgName}>＋ Agregar</button>
+            </div>
+          </div>
         </div>
-        <label style={aStyles.label}>ID/JID del grupo (opcional)</label>
-        <input style={aStyles.input} value={wg.wa_group_id} onChange={e => setWg({ ...wg, wa_group_id: e.target.value })} />
+        {wgNames.length > 0 && (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 10 }}>
+            {wgNames.map(n => (
+              <span key={n} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#eef3ee', border: '1px solid #cdddcf', borderRadius: 999, padding: '4px 10px', fontSize: 12.5, fontWeight: 600, color: '#2f6b46' }}>
+                {n}
+                <span onClick={() => setWgNames(wgNames.filter(x => x !== n))} style={{ cursor: 'pointer', color: '#a8453b', fontWeight: 700 }}>✕</span>
+              </span>
+            ))}
+          </div>
+        )}
+        <div style={{ marginTop: 12 }}>
+          <label style={aStyles.label}>ID/JID del grupo (opcional, solo si vinculas 1)</label>
+          <input style={aStyles.input} value={wg.wa_group_id} onChange={e => setWg({ ...wg, wa_group_id: e.target.value })} />
+        </div>
         <div style={{ marginTop: 14 }}>
-          <button style={aStyles.btn} disabled={busy || !wg.account_number || !wg.wa_group_name} onClick={() => call('link_wa_group', wg, 'Grupo de WhatsApp vinculado.')}>Vincular grupo</button>
+          <button style={aStyles.btn} disabled={busy || !wg.account_number || (wgNames.length === 0 && !wg.wa_group_name.trim())} onClick={linkWaGroups}>
+            Vincular {Math.max(wgNames.length + (wg.wa_group_name.trim() ? 1 : 0), 1)} grupo(s)
+          </button>
         </div>
       </div>
 
@@ -3180,7 +3237,8 @@ export default function App() {
     activeDayAnalysis?.raw_analysis,
     coAppliesFor(selectedAccount?.account_id)
   )
-  const displayScore = weightedScore.globalPartial
+  // Casa Mata y otras cuentas forzadas: score global fijo (ej. 100), sin ponderar.
+  const displayScore = forcedGlobal(selectedAccount?.account_id) ?? weightedScore.globalPartial
   const selectedSatisfaction = latestSelectedAnalysis ? normalizeSatisfaction(latestSelectedAnalysis.satisfaction) : 'unknown'
   const selectedTasks = selectedGroup
     ? tasks.filter(t => t.monday_client_label && selectedGroup.name.toLowerCase().includes(t.monday_client_label.toLowerCase()))
@@ -3655,6 +3713,9 @@ export default function App() {
                   </div>
                 )}
                 {visibleAccounts.map(account => {
+                  // Cuentas con score FORZADO (ej. Casa Mata = 100): verde directo, sin ponderar.
+                  const forced = forcedGlobal(account.account_id)
+                  if (forced != null) return { account, globalScore: forced, missing: [] }
                   // Global ponderado solo para cuentas con checklist completo (contrato + meet)
                   const checklist = findChecklist(account.account_id, account.name)
                   let globalScore: number | null = null
