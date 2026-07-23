@@ -336,6 +336,8 @@ def process_account(service, folder: dict) -> dict | None:
         "objetivos": as_list(llm.get("objetivos")),
         "servicios": as_list(llm.get("servicios")),
         "meta_entregables": meta_field,
+        # meta_monthly: meta mensual como ENTERO (misma fuente que usa el dashboard para el CO).
+        "meta_monthly": (meta_num if (meta_num and meta_num > 0) else None),
         # renovacion: el dashboard la lee y renderiza; antes ningún escritor la llenaba
         # (columna huérfana desde la migración 015).
         "renovacion": (llm.get("renovacion") or None),

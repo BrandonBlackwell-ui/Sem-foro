@@ -2049,7 +2049,7 @@ export default function App() {
   useEffect(() => {
     (async () => {
       const rows = await supabaseGetOptional<any[]>(
-        '/rest/v1/drive_account_intel?select=account_number,project_uid,client_name,docs_total,resumen,tiene_contrato_firmado,tipo_acuerdo,vigencia_inicio,vigencia_fin,objetivos,meta_entregables,renovacion,faltantes,synced_at',
+        '/rest/v1/drive_account_intel?select=account_number,project_uid,client_name,docs_total,resumen,tiene_contrato_firmado,tipo_acuerdo,vigencia_inicio,vigencia_fin,objetivos,meta_entregables,meta_monthly,renovacion,faltantes,synced_at',
         [],
       )
       setDriveIntel(demoOn() ? [...rows.filter((x: any) => String(x.account_number) !== '46'), DEMO_INTEL] : rows)
@@ -2693,7 +2693,11 @@ export default function App() {
         // Meta mensual parseada del texto del contrato (insumo del CO). Se calcula
         // una vez y sirve tanto para el gate como para la meta de publicaciones.
         let intelMetaNum: number | null = null
-        if (intel.meta_entregables) {
+        // Preferimos la meta mensual calculada por IA (drive_account_intel.meta_monthly);
+        // el regex queda solo como respaldo si la IA no la pudo determinar.
+        if (intel.meta_monthly != null && Number(intel.meta_monthly) > 0) {
+          intelMetaNum = Number(intel.meta_monthly)
+        } else if (intel.meta_entregables) {
           const metaText = String(intel.meta_entregables)
           const m = metaText.match(/(\d+)\s*(?:publicacion|nota|bolet[ií]n|contenido|comunicado|art[ií]culo|columna|entregable|impacto|colocaci|acci[oó]n)/i)
           if (m) {

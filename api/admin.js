@@ -16,6 +16,7 @@
 //   set_assignment   (account_id, account_name?, consultant?, cell_director?)
 
 import crypto from 'crypto'
+import { computeMetaMonthly } from './_metaMonthly.js'
 
 const SB_URL = process.env.SUPABASE_URL || 'https://vqgfkfvywbpjldreuplb.supabase.co'
 const SB_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY || ''
@@ -181,7 +182,11 @@ async function handleAction(action, payload, setBy) {
       // duplicates no toca las demás columnas de la fila existente).
       const account_number = num2(payload.account_number)
       if (!account_number) throw new Error('account_number inválido')
-      const row = { account_number, meta_entregables: String(payload.meta_entregables || ''), synced_at: now }
+      const metaText = String(payload.meta_entregables || '')
+      // IA barata: convierte el texto libre en meta mensual (entero). null si no aplica
+      // o si no hay API key (el front cae al regex).
+      const meta_monthly = await computeMetaMonthly(metaText)
+      const row = { account_number, meta_entregables: metaText, meta_monthly, synced_at: now }
       return { drive_account_intel: await sbWrite('drive_account_intel', row, 'account_number') }
     }
 
