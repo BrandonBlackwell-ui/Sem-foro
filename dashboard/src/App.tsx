@@ -678,6 +678,7 @@ function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }:
   const [wg, setWg] = useState({ account_number: '', wa_group_name: '', wa_group_id: '' })
   const [wgNames, setWgNames] = useState<string[]>([]) // grupos en cola para vincular (multi)
   const [cd, setCd] = useState({ account_number: '', vigencia_inicio: '', vigencia_fin: '' }) // fechas de contrato
+  const [sv, setSv] = useState({ account_number: '', tipo_a: '', tipo_b: '' }) // survey manual
   const [wn, setWn] = useState({ phone: '', display_name: '', account_number: '', role: 'cliente' })
   const [asg, setAsg] = useState({ account_number: '', consultant: '', cell_director: '' })
   const [busy, setBusy] = useState(false)
@@ -899,6 +900,24 @@ function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }:
       </div>
 
       {/* Grupos de WhatsApp */}
+      <div style={aStyles.card}>
+        <div style={aStyles.h}>Registrar survey (manual)</div>
+        <div style={aStyles.sub}>Cuando el survey se levantó pero el análisis no lo capturó. Escala 0–100 por pregunta (Tipo A = satisfacción, Tipo B = objetivo). Gana sobre lo automático.</div>
+        <div style={aStyles.row}>
+          <div><label style={aStyles.label}>Cuenta</label>
+            <select style={aStyles.input} value={sv.account_number} onChange={e => setSv({ ...sv, account_number: e.target.value })}>
+              <option value="">— elegir —</option>
+              {accountOptions.map(a => <option key={a.num} value={a.num}>{a.num} · {a.name}</option>)}
+            </select>
+          </div>
+          <div><label style={aStyles.label}>Tipo A (0–100)</label><input type="number" min={0} max={100} style={aStyles.input} value={sv.tipo_a} onChange={e => setSv({ ...sv, tipo_a: e.target.value })} /></div>
+          <div><label style={aStyles.label}>Tipo B (0–100)</label><input type="number" min={0} max={100} style={aStyles.input} value={sv.tipo_b} onChange={e => setSv({ ...sv, tipo_b: e.target.value })} /></div>
+        </div>
+        <div style={{ marginTop: 14 }}>
+          <button style={aStyles.btn} disabled={busy || !sv.account_number || (sv.tipo_a === '' && sv.tipo_b === '')} onClick={() => call('set_survey', sv, 'Survey registrado.')}>Guardar survey</button>
+        </div>
+      </div>
+
       <div style={aStyles.card}>
         <div style={aStyles.h}>Fechas del contrato (vigencia)</div>
         <div style={aStyles.sub}>Fija inicio y fin a mano — dibuja la barra de vigencia y activa el score. Marca la cuenta con contrato (aunque no esté firmado).</div>
@@ -2425,24 +2444,27 @@ export default function App() {
   const [assignments, setAssignments] = useState<any[]>([])
   const [waLinks, setWaLinks] = useState<any[]>([])
   const [sheetLinks, setSheetLinks] = useState<any[]>([])
+  const [manualSurveys, setManualSurveys] = useState<any[]>([])
   const reloadRoster = useCallback(async () => {
     const rows = await supabaseGetOptional<any[]>(
       '/rest/v1/drive_account_roster?select=account_number,client_name,folder_title,status,status_label&order=account_number.asc',
       [],
     )
     setDriveRoster(rows)
-    const [ma, so, asg, wl, sl] = await Promise.all([
+    const [ma, so, asg, wl, sl, msv] = await Promise.all([
       supabaseGetOptional<any[]>('/rest/v1/manual_accounts?select=account_number,client_name,folder_title,tier,tipo,ingreso_mxn,responsable', []),
       supabaseGetOptional<any[]>('/rest/v1/account_status_overrides?select=account_number,status,note', []),
       supabaseGetOptional<any[]>('/rest/v1/account_assignments?select=account_id,account_name,consultant,cell_director', []),
       supabaseGetOptional<any[]>('/rest/v1/account_wa_links?select=account_number,wa_group_name', []),
       supabaseGetOptional<any[]>('/rest/v1/account_sheet_links?select=account_number,sheet_value', []),
+      supabaseGetOptional<any[]>('/rest/v1/manual_surveys?select=account_id,tipo_a,tipo_b,survey_date', []),
     ])
     setManualAccounts(demoOn() && !ma.some((x: any) => String(x.account_number) === '46') ? [...ma, DEMO_MANUAL] : ma)
     setStatusOverrides(so)
     setAssignments(asg)
     setWaLinks(wl)
     setSheetLinks(sl)
+    setManualSurveys(msv)
   }, [])
   useEffect(() => {
     reloadRoster()
@@ -2538,9 +2560,25 @@ export default function App() {
         waByAcct.set(num, { survey: s, date: a.analysis_date || '' })
       }
     }
+    // Surveys registrados a mano (admin) — máxima prioridad (el análisis automático no
+    // los capturó, p.ej. los que levantó Uriel).
+    const manualByAcct = new Map<string, { tipo_a: number | null; tipo_b: number | null; date: string }>()
+    for (const m of manualSurveys) {
+      const k = String(Number(m.account_id))
+      if (k !== 'NaN') manualByAcct.set(k, { tipo_a: m.tipo_a, tipo_b: m.tipo_b, date: m.survey_date || '' })
+    }
     const out = new Map<string, { answered: number; pct: number; tipoA: boolean; tipoB: boolean; source: string; date: string }>()
     for (const { num } of CLIENT_ROSTER) {
       const key = String(Number(num))
+      const man = manualByAcct.get(key)
+      if (man) {
+        const tipoA = man.tipo_a != null, tipoB = man.tipo_b != null
+        const answered = (tipoA ? 1 : 0) + (tipoB ? 1 : 0)
+        const sA = tipoA ? Math.max(0, Math.min(100, Number(man.tipo_a))) : 0
+        const sB = tipoB ? Math.max(0, Math.min(100, Number(man.tipo_b))) : 0
+        out.set(num, { answered, pct: answered > 0 ? Math.round((sA + sB) / 2) : 0, tipoA, tipoB, source: 'Manual', date: man.date })
+        continue
+      }
       const wa = waByAcct.get(key)
       const meet = meetByAcct.get(key)
       const entry = wa || meet || null
@@ -2556,7 +2594,7 @@ export default function App() {
       out.set(num, { answered, pct, tipoA, tipoB, source, date })
     }
     return out
-  }, [meetAnalyses, analyses])
+  }, [meetAnalyses, analyses, manualSurveys])
 
   const surveyClients = useMemo<SurveyClient[]>(() => {
     // Override de consultor desde account_assignments (traslado manual en el
@@ -2582,8 +2620,9 @@ export default function App() {
       const sv = surveyByAccount.get(n) ?? { answered: 0, pct: 0, tipoA: false, tipoB: false, source: '', date: '' }
       base.push({ account_number: n, name: rosterByNumber.get(n)?.name || m.client_name || `Cuenta ${n}`, consultant: asgByNum.get(n) || m.responsable || 'Sin asignar', ...sv })
     }
-    return base
-  }, [surveyByAccount, rosterByNumber, assignments, manualAccounts])
+    // Solo clientes ACTIVOS: los concluidos/pausados/inactivos no aparecen en el survey.
+    return base.filter(c => (rosterFor(c.account_number)?.status || 'active').startsWith('active'))
+  }, [surveyByAccount, rosterByNumber, assignments, manualAccounts, rosterFor])
 
   // Listas para los dropdowns del panel admin (elegir en vez de escribir).
   const consultantList = useMemo(() => {

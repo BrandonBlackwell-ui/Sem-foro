@@ -190,6 +190,22 @@ async function handleAction(action, payload, setBy) {
       return { drive_account_intel: await sbWrite('drive_account_intel', row, 'account_number') }
     }
 
+    case 'set_survey': {
+      // Registra un survey a mano (cuando el análisis automático no lo capturó).
+      const account_id = num2(payload.account_number || payload.account_id)
+      if (!account_id) throw new Error('account_number inválido')
+      const clampInt = (v) => { if (v === '' || v == null) return null; const n = Math.round(Number(v)); return Number.isFinite(n) ? Math.max(0, Math.min(100, n)) : null }
+      const row = {
+        account_id,
+        tipo_a: clampInt(payload.tipo_a),
+        tipo_b: clampInt(payload.tipo_b),
+        survey_date: /^\d{4}-\d{2}-\d{2}$/.test(String(payload.survey_date || '')) ? payload.survey_date : new Date().toISOString().slice(0, 10),
+        set_by: setBy,
+        updated_at: now,
+      }
+      return { manual_surveys: await sbWrite('manual_surveys', row, 'account_id') }
+    }
+
     case 'set_contract_dates': {
       // Fija la vigencia (inicio/fin) del contrato a mano. Marca contrato presente
       // (documento existe = cuenta con contrato, aunque no esté firmado). merge-duplicates
