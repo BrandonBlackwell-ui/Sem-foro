@@ -466,7 +466,7 @@ function SurveyBoard({ clients, onBack }: { clients: SurveyClient[]; onBack: () 
 // vía anon key; esto es una puerta de UI, no seguridad criptográfica).
 const ADMIN_PASSWORD = 'admin2026'
 
-function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, accounts, consultants, sheetValues, waGroups, onSaved }: {
+function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, accounts, consultants, sheetValues, waGroups, panorama, onSaved }: {
   authed: boolean
   onLogin: (pass: string) => boolean
   logs: any[]
@@ -477,11 +477,12 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, account
   consultants: string[]
   sheetValues: string[]
   waGroups: string[]
+  panorama: PanoRow[]
   onSaved: () => void
 }) {
   const [pass, setPass] = useState('')
   const [error, setError] = useState(false)
-  const [adminTab, setAdminTab] = useState<'gestion' | 'bitacora'>('gestion')
+  const [adminTab, setAdminTab] = useState<'panorama' | 'gestion' | 'bitacora'>('panorama')
   // Por defecto la bitácora muestra solo correos que generaron análisis; los
   // duplicados (mismo Meet reenviado por varios buzones) se ocultan tras un toggle.
   const [showDuplicates, setShowDuplicates] = useState(false)
@@ -544,7 +545,7 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, account
             ) : (
               <div style={{ marginTop: 20 }}>
                 <div style={{ display: 'flex', gap: 8, marginBottom: 16, borderBottom: '1px solid #ece9e0' }}>
-                  {([['gestion', 'Gestión de clientes'], ['bitacora', 'Bitácora de Meets']] as const).map(([k, lbl]) => (
+                  {([['panorama', 'Panorama'], ['gestion', 'Gestión de clientes'], ['bitacora', 'Bitácora de Meets']] as const).map(([k, lbl]) => (
                     <button key={k} onClick={() => setAdminTab(k)} style={{
                       background: 'transparent', border: 'none', borderBottom: `2px solid ${adminTab === k ? '#3a3a44' : 'transparent'}`,
                       padding: '8px 4px', marginBottom: -1, fontSize: 13, fontWeight: adminTab === k ? 700 : 500,
@@ -552,6 +553,8 @@ function AdminPanel({ authed, onLogin, logs, loading, onRefresh, onBack, account
                     }}>{lbl}</button>
                   ))}
                 </div>
+
+                {adminTab === 'panorama' && <AdminPanorama rows={panorama} />}
 
                 {adminTab === 'gestion' && <AdminGestion accounts={accounts} consultants={consultants} sheetValues={sheetValues} waGroups={waGroups} onSaved={onSaved} />}
 
@@ -926,6 +929,75 @@ function AdminGestion({ accounts, consultants, sheetValues, waGroups, onSaved }:
             const acc = accountOptions.find(a => a.num === asg.account_number)
             call('set_assignment', { account_id: asg.account_number, account_name: acc?.name, consultant: asg.consultant, cell_director: asg.cell_director }, 'Cuenta trasladada.')
           }}>Trasladar</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+type PanoRow = {
+  num: string; name: string; status: string
+  hasContract: boolean; hasMeta: boolean; meta: string
+  hasWa: boolean; waName: string; hasSheet: boolean; sheetValue: string
+  hasConsultant: boolean; consultant: string
+}
+
+// Panorama de vinculación: mega tabla con verde (vinculado) / rojo (falta) por
+// cada dato clave de cada cuenta, para ver de un vistazo qué acomodar.
+function AdminPanorama({ rows }: { rows: PanoRow[] }) {
+  const cell = (ok: boolean, value?: string) => {
+    const short = value && value.length > 24 ? value.slice(0, 24) + '…' : value
+    return (
+      <td style={{ padding: '8px 10px', whiteSpace: 'nowrap', borderBottom: '1px solid #f3f1ea' }} title={value || ''}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, color: ok ? '#2f6b46' : '#a8453b', fontWeight: 600 }}>
+          <span style={{ width: 8, height: 8, borderRadius: 999, background: ok ? '#3f7050' : '#a8453b', display: 'inline-block', flex: '0 0 auto' }} />
+          {ok ? (short || 'Sí') : 'Falta'}
+        </span>
+      </td>
+    )
+  }
+  const n = rows.length
+  const c = (k: keyof PanoRow) => rows.filter(r => r[k]).length
+  const stat = (label: string, k: keyof PanoRow) => (
+    <span style={{ fontSize: 12.5, color: '#666' }}>{label}: <b style={{ color: '#2f6b46' }}>{c(k)}</b> / <b style={{ color: '#a8453b' }}>{n - c(k)}</b></span>
+  )
+  const cols = ['ID', 'Cliente', 'Status', 'Contrato', 'Meta (CO)', 'Grupo WA', 'Sheet', 'Consultor']
+  return (
+    <div style={{ marginTop: 20 }}>
+      <div style={{ display: 'flex', gap: 18, marginBottom: 14, flexWrap: 'wrap', alignItems: 'center' }}>
+        <span style={{ fontSize: 12.5, color: '#666' }}><b>{n}</b> cuentas</span>
+        {stat('Contrato', 'hasContract')}
+        {stat('Meta', 'hasMeta')}
+        {stat('WhatsApp', 'hasWa')}
+        {stat('Sheet', 'hasSheet')}
+        {stat('Consultor', 'hasConsultant')}
+        <span style={{ fontSize: 11.5, color: '#9aa0a6' }}>🟢 vinculado · 🔴 falta</span>
+      </div>
+      <div style={{ background: '#fff', border: '1px solid #ece9e0', borderRadius: 12, overflow: 'hidden' }}>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12.5 }}>
+            <thead>
+              <tr style={{ background: '#faf8f2', textAlign: 'left' }}>
+                {cols.map(h => (
+                  <th key={h} style={{ padding: '10px 10px', fontSize: 10.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.5, color: '#9aa0a6', borderBottom: '1px solid #ece9e0', whiteSpace: 'nowrap' }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map(r => (
+                <tr key={r.num}>
+                  <td style={{ padding: '8px 10px', fontFamily: 'var(--mono)', fontSize: 11.5, borderBottom: '1px solid #f3f1ea' }}>{r.num}</td>
+                  <td style={{ padding: '8px 10px', fontWeight: 600, borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap' }}>{r.name}</td>
+                  <td style={{ padding: '8px 10px', fontSize: 11, color: '#666', borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap' }}>{r.status}</td>
+                  {cell(r.hasContract)}
+                  {cell(r.hasMeta, r.meta)}
+                  {cell(r.hasWa, r.waName)}
+                  {cell(r.hasSheet, r.sheetValue)}
+                  {cell(r.hasConsultant, r.consultant)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -2112,20 +2184,26 @@ export default function App() {
   const [manualAccounts, setManualAccounts] = useState<any[]>([])
   const [statusOverrides, setStatusOverrides] = useState<any[]>([])
   const [assignments, setAssignments] = useState<any[]>([])
+  const [waLinks, setWaLinks] = useState<any[]>([])
+  const [sheetLinks, setSheetLinks] = useState<any[]>([])
   const reloadRoster = useCallback(async () => {
     const rows = await supabaseGetOptional<any[]>(
       '/rest/v1/drive_account_roster?select=account_number,client_name,folder_title,status,status_label&order=account_number.asc',
       [],
     )
     setDriveRoster(rows)
-    const [ma, so, asg] = await Promise.all([
+    const [ma, so, asg, wl, sl] = await Promise.all([
       supabaseGetOptional<any[]>('/rest/v1/manual_accounts?select=account_number,client_name,folder_title,tier,tipo,ingreso_mxn,responsable', []),
       supabaseGetOptional<any[]>('/rest/v1/account_status_overrides?select=account_number,status,note', []),
       supabaseGetOptional<any[]>('/rest/v1/account_assignments?select=account_id,account_name,consultant,cell_director', []),
+      supabaseGetOptional<any[]>('/rest/v1/account_wa_links?select=account_number,wa_group_name', []),
+      supabaseGetOptional<any[]>('/rest/v1/account_sheet_links?select=account_number,sheet_value', []),
     ])
     setManualAccounts(demoOn() && !ma.some((x: any) => String(x.account_number) === '46') ? [...ma, DEMO_MANUAL] : ma)
     setStatusOverrides(so)
     setAssignments(asg)
+    setWaLinks(wl)
+    setSheetLinks(sl)
   }, [])
   useEffect(() => {
     reloadRoster()
@@ -2285,6 +2363,7 @@ export default function App() {
     for (const g of groups) if (g.name) s.add(g.name)
     return [...s].sort((x, y) => x.localeCompare(y))
   }, [groups])
+
 
   const accountSummaries = useMemo<AccountSummary[]>(() => {
     const todayStr = todayMexicoStr()
@@ -2711,6 +2790,43 @@ export default function App() {
     }
     return [...byNum.values()]
   }, [accountSummariesAll, rosterByNumber, operationalLookup, publicationQualityLookup])
+
+  // Panorama de vinculación: una fila por cuenta con qué está vinculado (verde)
+  // y qué falta (rojo). Alimenta la pestaña "Panorama" del panel admin.
+  const panorama = useMemo(() => {
+    const waNums = new Set<string>()
+    for (const g of groups) { const n = String(Number(g.account_id)); if (n !== 'NaN') waNums.add(n) }
+    for (const l of waLinks) { const n = String(Number(l.account_number)); if (n !== 'NaN') waNums.add(n) }
+    const waNameByNum = new Map<string, string>()
+    for (const g of groups) { const n = String(Number(g.account_id)); if (n !== 'NaN' && g.name && !waNameByNum.has(n)) waNameByNum.set(n, g.name) }
+    for (const l of waLinks) { const n = String(Number(l.account_number)); if (n !== 'NaN' && l.wa_group_name && !waNameByNum.has(n)) waNameByNum.set(n, l.wa_group_name) }
+    const sheetByNum = new Map<string, string>()
+    for (const p of publications) { const n = String(Number(p.account_id)); if (n !== 'NaN' && p.sheet_client_name && !sheetByNum.has(n)) sheetByNum.set(n, p.sheet_client_name) }
+    for (const l of sheetLinks) { const n = String(Number(l.account_number)); if (n !== 'NaN' && l.sheet_value && !sheetByNum.has(n)) sheetByNum.set(n, l.sheet_value) }
+    const intelByNum = new Map<string, any>()
+    for (const r of driveIntel) { const n = String(Number(r.account_number)); if (n !== 'NaN') intelByNum.set(n, r) }
+    const asgByNum = new Map<string, string>()
+    for (const a of assignments) { const n = String(Number(a.account_id)); if (n !== 'NaN' && a.consultant) asgByNum.set(n, a.consultant) }
+    const rosterConsult = new Map<string, string>()
+    for (const r of CLIENT_ROSTER) rosterConsult.set(String(Number(r.num)), r.consultant)
+
+    return clientAccounts.map(a => {
+      const num = String(Number(a.account_id))
+      const intel = intelByNum.get(num)
+      const consultant = asgByNum.get(num) || rosterConsult.get(num) || ''
+      const meta = (intel?.meta_entregables || '').toString()
+      return {
+        num,
+        name: a.name,
+        status: rosterByNumber.get(num)?.status || 'active',
+        hasContract: !!(intel && (intel.tiene_contrato_firmado || intel.vigencia_inicio || intel.vigencia_fin)),
+        hasMeta: !!meta, meta,
+        hasWa: waNums.has(num), waName: waNameByNum.get(num) || '',
+        hasSheet: sheetByNum.has(num), sheetValue: sheetByNum.get(num) || '',
+        hasConsultant: !!consultant && consultant !== 'Sin asignar', consultant,
+      }
+    }).sort((x, y) => Number(x.num) - Number(y.num))
+  }, [clientAccounts, groups, waLinks, publications, sheetLinks, driveIntel, assignments, rosterByNumber])
 
   const selectedGroup = selectedJid ? groupSummaries.find((group) => group.jid === selectedJid) ?? null : null
 
@@ -3184,6 +3300,7 @@ export default function App() {
           consultants={consultantList}
           sheetValues={sheetValueList}
           waGroups={waGroupList}
+          panorama={panorama}
           onSaved={() => { reloadRoster(); setTimeout(() => window.location.reload(), 900) }}
         />
       )
