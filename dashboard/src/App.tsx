@@ -956,6 +956,8 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
   const [edit, setEdit] = useState<{ num: string; col: PanoCol } | null>(null)
   const [saving, setSaving] = useState(false)
   const [err, setErr] = useState('')
+  const [statusFilter, setStatusFilter] = useState<string>('all')
+  const [query, setQuery] = useState('')
 
   async function commit(row: PanoRow, col: PanoCol, raw: string) {
     const val = (raw || '').trim()
@@ -974,6 +976,19 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
     else setErr(r.error || 'Error al guardar')
   }
 
+  async function commitUnlink(row: PanoRow, col: PanoCol) {
+    setEdit(null)
+    setErr('')
+    setSaving(true)
+    const payload: Record<string, unknown> = col === 'consultor'
+      ? { kind: 'consultor', account_id: row.num }
+      : { kind: col, account_number: row.num }
+    const r = await adminApiPost('unlink', payload)
+    setSaving(false)
+    if (r.ok) onSaved()
+    else setErr(r.error || 'Error al desvincular')
+  }
+
   const inputStyle: React.CSSProperties = { width: 170, padding: '4px 6px', fontSize: 12, border: '1px solid #3a3a44', borderRadius: 6, boxSizing: 'border-box' }
 
   const editableCell = (row: PanoRow, col: PanoCol, ok: boolean, value: string, listId?: string) => {
@@ -981,10 +996,19 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
     if (isEditing) {
       return (
         <td style={{ padding: '6px 10px', borderBottom: '1px solid #f3f1ea' }}>
-          <input autoFocus list={listId} defaultValue={value || ''} style={inputStyle}
-            placeholder={col === 'meta' ? 'ej. 5 publicaciones/mes' : 'elegir…'}
-            onKeyDown={e => { if (e.key === 'Enter') commit(row, col, (e.target as HTMLInputElement).value); if (e.key === 'Escape') setEdit(null) }}
-            onBlur={e => commit(row, col, e.target.value)} />
+          <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+            <input autoFocus list={listId} defaultValue={value || ''} style={inputStyle}
+              placeholder={col === 'meta' ? 'ej. 5 publicaciones/mes' : 'elegir…'}
+              onKeyDown={e => { if (e.key === 'Enter') commit(row, col, (e.target as HTMLInputElement).value); if (e.key === 'Escape') setEdit(null) }}
+              onBlur={e => commit(row, col, e.target.value)} />
+            {ok && (
+              <button type="button" title="Quitar el vínculo (vuelve a Falta)"
+                onMouseDown={e => { e.preventDefault(); commitUnlink(row, col) }}
+                style={{ padding: '4px 8px', fontSize: 11, fontWeight: 600, color: '#a8453b', background: 'transparent', border: '1px solid rgba(168,69,59,0.4)', borderRadius: 6, cursor: 'pointer', whiteSpace: 'nowrap' }}>
+                Desvincular
+              </button>
+            )}
+          </div>
         </td>
       )
     }
@@ -1012,19 +1036,37 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
     )
   }
 
-  const n = rows.length
-  const c = (k: keyof PanoRow) => rows.filter(r => r[k]).length
+  const statusLabels: Record<string, string> = Object.fromEntries(ADMIN_STATUS_OPTIONS.map(o => [o.value, o.label]))
+  const allStatuses = [...new Set(rows.map(r => r.status).filter(Boolean))].sort()
+  const q = query.trim().toLowerCase()
+  const shown = rows.filter(r =>
+    (statusFilter === 'all' || r.status === statusFilter) &&
+    (!q || r.name.toLowerCase().includes(q) || r.num.includes(q))
+  )
+  const n = shown.length
+  const c = (k: keyof PanoRow) => shown.filter(r => r[k]).length
   const stat = (label: string, k: keyof PanoRow) => (
     <span style={{ fontSize: 12.5, color: '#666' }}>{label}: <b style={{ color: '#2f6b46' }}>{c(k)}</b> / <b style={{ color: '#a8453b' }}>{n - c(k)}</b></span>
   )
+  const selStyle: React.CSSProperties = { padding: '6px 10px', fontSize: 12.5, border: '1px solid #d0ccc4', borderRadius: 8, background: '#fff' }
   const cols = ['ID', 'Cliente', 'Status', 'Contrato', 'Meta (CO)', 'Grupo WA', 'Sheet', 'Consultor']
   return (
     <div style={{ marginTop: 20 }}>
       <datalist id="pano-wa">{waGroups.map(g => <option key={g} value={g} />)}</datalist>
       <datalist id="pano-sheet">{sheetValues.map(v => <option key={v} value={v} />)}</datalist>
       <datalist id="pano-consult">{consultants.map(cn => <option key={cn} value={cn} />)}</datalist>
+      <div style={{ display: 'flex', gap: 10, marginBottom: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <select style={selStyle} value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
+          <option value="all">Todos los status ({rows.length})</option>
+          {allStatuses.map(s => <option key={s} value={s}>{statusLabels[s] || s} ({rows.filter(r => r.status === s).length})</option>)}
+        </select>
+        <input style={{ ...selStyle, width: 180 }} value={query} placeholder="Buscar cliente…" onChange={e => setQuery(e.target.value)} />
+        {(statusFilter !== 'all' || q) && (
+          <button onClick={() => { setStatusFilter('all'); setQuery('') }} style={{ ...selStyle, cursor: 'pointer', color: '#666' }}>Limpiar</button>
+        )}
+      </div>
       <div style={{ display: 'flex', gap: 18, marginBottom: 10, flexWrap: 'wrap', alignItems: 'center' }}>
-        <span style={{ fontSize: 12.5, color: '#666' }}><b>{n}</b> cuentas</span>
+        <span style={{ fontSize: 12.5, color: '#666' }}><b>{n}</b> {n === rows.length ? 'cuentas' : `de ${rows.length}`}</span>
         {stat('Contrato', 'hasContract')}
         {stat('Meta', 'hasMeta')}
         {stat('WhatsApp', 'hasWa')}
@@ -1045,7 +1087,7 @@ function AdminPanorama({ rows, consultants, sheetValues, waGroups, onSaved }: {
               </tr>
             </thead>
             <tbody>
-              {rows.map(r => (
+              {shown.map(r => (
                 <tr key={r.num}>
                   <td style={{ padding: '8px 10px', fontFamily: 'var(--mono)', fontSize: 11.5, borderBottom: '1px solid #f3f1ea' }}>{r.num}</td>
                   <td style={{ padding: '8px 10px', fontWeight: 600, borderBottom: '1px solid #f3f1ea', whiteSpace: 'nowrap' }}>{r.name}</td>

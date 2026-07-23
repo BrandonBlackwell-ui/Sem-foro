@@ -49,6 +49,22 @@ async function sbWrite(table, rows, onConflict) {
   try { return JSON.parse(text) } catch { return null }
 }
 
+async function sbDelete(table, query) {
+  const resp = await fetch(`${SB_URL}/rest/v1/${table}?${query}`, {
+    method: 'DELETE',
+    headers: {
+      apikey: SB_SERVICE_KEY,
+      Authorization: `Bearer ${SB_SERVICE_KEY}`,
+      Prefer: 'return=minimal',
+    },
+  })
+  if (!resp.ok) {
+    const text = await resp.text().catch(() => '')
+    throw new Error(`Supabase DELETE ${table} → ${resp.status}: ${text.slice(0, 300)}`)
+  }
+  return true
+}
+
 function num2(n) {
   const s = String(n ?? '').trim().replace(/\D/g, '')
   return s ? s.padStart(2, '0') : null
@@ -216,6 +232,20 @@ async function handleAction(action, payload, setBy) {
         updated_at: now,
       }
       return { account_assignments: await sbWrite('account_assignments', row, 'account_id') }
+    }
+
+    case 'unlink': {
+      // Revierte una vinculación (vuelve a "Falta"). Nota: si el verde viene de
+      // datos reales (grupos WA detectados, consultor del roster, publicaciones
+      // del Sheet), esto solo borra el vínculo MANUAL; el dato real permanece.
+      const kind = String(payload.kind || '')
+      const acc = num2(payload.account_number) || String(payload.account_id || '').trim()
+      if (!acc) throw new Error('cuenta inválida')
+      if (kind === 'wa') return { deleted: await sbDelete('account_wa_links', `account_number=eq.${encodeURIComponent(acc)}`) }
+      if (kind === 'sheet') return { deleted: await sbDelete('account_sheet_links', `account_number=eq.${encodeURIComponent(acc)}`) }
+      if (kind === 'consultor') return { deleted: await sbDelete('account_assignments', `account_id=eq.${encodeURIComponent(acc)}`) }
+      if (kind === 'meta') return { drive_account_intel: await sbWrite('drive_account_intel', { account_number: acc, meta_entregables: '', synced_at: now }, 'account_number') }
+      throw new Error(`kind inválido para unlink: ${kind}`)
     }
 
     default:
