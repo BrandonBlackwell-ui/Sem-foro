@@ -73,6 +73,48 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
 });
 const logger = pino({ level: "silent" });
 const groupCache = new Map();
+
+// Vínculos manuales grupo→cuenta del panel admin (tabla account_wa_links).
+// Ganan sobre AUTO_ACCOUNT_RULES. Se refrescan junto con los grupos.
+const manualWaLinks = new Map(); // nombre de grupo normalizado -> account_number
+function normGroupName(s) {
+  return String(s || "")
+    .normalize("NFD").replace(/[̀-ͯ]/g, "")
+    .toLowerCase().replace(/\s+/g, " ").trim();
+}
+async function loadManualWaLinks() {
+  try {
+    const { data, error } = await supabase
+      .from("account_wa_links")
+      .select("account_number, wa_group_name");
+    if (error) {
+      console.warn("account_wa_links no disponible:", error.message);
+      return;
+    }
+    manualWaLinks.clear();
+    for (const r of data ?? []) {
+      const nm = normGroupName(r.wa_group_name);
+      const acc = String(r.account_number || "").trim();
+      if (nm && acc) manualWaLinks.set(nm, acc);
+    }
+    console.log(`${manualWaLinks.size} vínculo(s) manual(es) de WhatsApp cargados (account_wa_links).`);
+    // Re-atribuir grupos ya registrados cuyo nombre coincide con un vínculo
+    // manual (incluye los que estaban en 00_UNMAPPED). Solo escribe si cambia.
+    for (const [jid, cached] of groupCache.entries()) {
+      const acc = manualWaLinks.get(normGroupName(cached.name));
+      if (acc && cached.accountId !== acc) {
+        const { error: upErr } = await supabase
+          .from("wa_groups").update({ account_id: acc }).eq("jid", jid);
+        if (!upErr) {
+          groupCache.set(jid, { ...cached, accountId: acc });
+          console.log(`Grupo '${cached.name}' re-atribuido a cuenta ${acc} (vínculo manual del panel).`);
+        }
+      }
+    }
+  } catch (e) {
+    console.warn("No se pudieron cargar account_wa_links:", e?.message || e);
+  }
+}
 const participantCache = loadParticipantMappings();
 let reconnectCount = 0;
 let latestQrDataUrl = null;
@@ -214,6 +256,9 @@ async function loadGroupMappings() {
 }
 
 function projectMappingForGroupName(name) {
+  // El vínculo manual del panel (account_wa_links) gana sobre las reglas regex.
+  const manualAcc = manualWaLinks.get(normGroupName(name));
+  if (manualAcc) return { accountId: manualAcc, projectUid: null };
   const rule = AUTO_ACCOUNT_RULES.find((r) => r.pattern.test(name || ""));
   return rule ? { accountId: rule.accountId, projectUid: rule.projectUid } : { accountId: "00_UNMAPPED", projectUid: null };
 }
@@ -733,11 +778,14 @@ async function connectToWhatsApp() {
       crisisSock = sock;
       crisis.startTimers(() => crisisSock); // idempotente; usa el socket vigente
       await refreshParticipatingGroups(sock);
+      await loadManualWaLinks();
       if (groupRefreshTimer) clearInterval(groupRefreshTimer);
       groupRefreshTimer = setInterval(() => {
-        refreshParticipatingGroups(sock).catch((error) => {
-          console.warn("Periodic WhatsApp group refresh failed:", error?.message || error);
-        });
+        refreshParticipatingGroups(sock)
+          .then(() => loadManualWaLinks())
+          .catch((error) => {
+            console.warn("Periodic WhatsApp group refresh failed:", error?.message || error);
+          });
       }, GROUP_REFRESH_INTERVAL_MS);
       groupRefreshTimer.unref?.();
     }
